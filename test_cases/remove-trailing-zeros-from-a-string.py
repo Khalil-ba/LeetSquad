@@ -1,0 +1,28 @@
+# Import the utils module for prompts
+from utils import *
+
+def check(candidate):
+    assert candidate(num = "10") == "1"
+    assert candidate(num = "100100") == "1001"
+    assert candidate(num = "1111111111") == "1111111111"
+    assert candidate(num = "1000") == "1"
+    assert candidate(num = "1") == "1"
+    assert candidate(num = "9876543210") == "987654321"
+    assert candidate(num = "10500") == "105"
+    assert candidate(num = "0") == ""
+    assert candidate(num = "51230100") == "512301"
+    assert candidate(num = "10101000") == "10101"
+    assert candidate(num = "987654321000") == "987654321"
+    assert candidate(num = "000000000000000000000") == ""
+    assert candidate(num = "123") == "123"
+    assert candidate(num = "999999999999999999999") == "999999999999999999999"
+    assert candidate(num = "1000000000000000000001") == "1000000000000000000001"
+    assert candidate(num = "1010101010") == "101010101"
+    assert candidate(num = "999999999900") == "9999999999"
+    assert candidate(num = "10000") == "1"
+    assert candidate(num = "1001001000") == "1001001"
+    assert candidate(num = "1000000000") == "1"
+    assert candidate(num = "100100100") == "1001001"
+    assert candidate(num = "9999999999") == "9999999999"
+    assert candidate(num = "00001") == "00001"
+    assert candidate(num = "100000") == "1"

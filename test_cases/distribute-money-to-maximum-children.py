@@ -1,0 +1,51 @@
+# Import the utils module for prompts
+from utils import *
+
+def check(candidate):
+    assert candidate(money = 150,children = 15) == 14
+    assert candidate(money = 100,children = 5) == 4
+    assert candidate(money = 15,children = 3) == 1
+    assert candidate(money = 31,children = 3) == 2
+    assert candidate(money = 7,children = 2) == 0
+    assert candidate(money = 25,children = 4) == 3
+    assert candidate(money = 8,children = 8) == 0
+    assert candidate(money = 50,children = 6) == 5
+    assert candidate(money = 28,children = 3) == 2
+    assert candidate(money = 25,children = 5) == 2
+    assert candidate(money = 150,children = 20) == 18
+    assert candidate(money = 199,children = 25) == 24
+    assert candidate(money = 100,children = 12) == 11
+    assert candidate(money = 7,children = 3) == 0
+    assert candidate(money = 16,children = 2) == 2
+    assert candidate(money = 40,children = 5) == 5
+    assert candidate(money = 30,children = 4) == 3
+    assert candidate(money = 300,children = 30) == 29
+    assert candidate(money = 3,children = 2) == 0
+    assert candidate(money = 4,children = 2) == 0
+    assert candidate(money = 30,children = 3) == 2
+    assert candidate(money = 31,children = 4) == 3
+    assert candidate(money = 8,children = 2) == 0
+    assert candidate(money = 20,children = 3) == 1
+    assert candidate(money = 200,children = 30) == 24
+    assert candidate(money = 72,children = 9) == 9
+    assert candidate(money = 300,children = 25) == 24
+    assert candidate(money = 28,children = 4) == 2
+    assert candidate(money = 7,children = 1) == 0
+    assert candidate(money = 32,children = 4) == 4
+    assert candidate(money = 12,children = 2) == 0
+    assert candidate(money = 25,children = 3) == 2
+    assert candidate(money = 6,children = 2) == 0
+    assert candidate(money = 4,children = 1) == -1
+    assert candidate(money = 1,children = 2) == -1
+    assert candidate(money = 200,children = 25) == 25
+    assert candidate(money = 8,children = 1) == 1
+    assert candidate(money = 10,children = 2) == 1
+    assert candidate(money = 30,children = 5) == 3
+    assert candidate(money = 50,children = 7) == 6
+    assert candidate(money = 100,children = 10) == 9
+    assert candidate(money = 1,children = 1) == 0
+    assert candidate(money = 15,children = 2) == 1
+    assert candidate(money = 56,children = 7) == 7
+    assert candidate(money = 24,children = 3) == 3
+    assert candidate(money = 5,children = 2) == 0
+    assert candidate(money = 50,children = 5) == 4

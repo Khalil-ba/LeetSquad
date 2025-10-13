@@ -1,0 +1,95 @@
+# Import the utils module for prompts
+from utils import *
+
+def check(candidate):
+    assert candidate(derived = [0, 0, 0]) == True
+    assert candidate(derived = [0, 0, 1, 1]) == True
+    assert candidate(derived = [0, 1, 1, 0, 1]) == False
+    assert candidate(derived = [1, 0, 1, 0]) == True
+    assert candidate(derived = [0, 1, 0, 1]) == True
+    assert candidate(derived = [1, 0, 0, 1]) == True
+    assert candidate(derived = [0, 1, 1, 0]) == True
+    assert candidate(derived = [1]) == False
+    assert candidate(derived = [0]) == True
+    assert candidate(derived = [1, 1, 1, 1, 1]) == False
+    assert candidate(derived = [1, 0]) == False
+    assert candidate(derived = [1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 1]) == True
+    assert candidate(derived = [0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [1, 1, 0]) == True
+    assert candidate(derived = [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0]) == True
+    assert candidate(derived = [1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1]) == False
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [0, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]) == True
+    assert candidate(derived = [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]) == True
+    assert candidate(derived = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1]) == True
+    assert candidate(derived = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+    assert candidate(derived = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1]) == True
+    assert candidate(derived = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1]) == True
+    assert candidate(derived = [0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+    assert candidate(derived = [0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0]) == False
+    assert candidate(derived = [1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [0, 0, 0, 0, 0, 0, 0, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 1, 0, 1, 0, 1, 1, 0]) == False
+    assert candidate(derived = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0]) == True
+    assert candidate(derived = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0]) == True
+    assert candidate(derived = [1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0]) == False
+    assert candidate(derived = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]) == True
+    assert candidate(derived = [1, 0, 1, 1, 0, 1, 1, 0]) == False
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [1, 1, 1, 0, 0, 0, 1, 1, 1, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [1, 1, 0, 1, 1, 0, 1, 1, 0, 1]) == False
+    assert candidate(derived = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0]) == True
+    assert candidate(derived = [1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1]) == False
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]) == True
+    assert candidate(derived = [1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]) == True
+    assert candidate(derived = [1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0]) == False
+    assert candidate(derived = [1, 1, 0, 0, 1, 1, 0, 0, 1]) == False
+    assert candidate(derived = [1, 1, 0, 0, 1, 1, 0, 0, 1, 1]) == True
+    assert candidate(derived = [1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1]) == False
+    assert candidate(derived = [0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1]) == False
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1]) == True
+    assert candidate(derived = [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]) == False
+    assert candidate(derived = [1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1]) == False
+    assert candidate(derived = [0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]) == True
+    assert candidate(derived = [1, 0, 1, 1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]) == True
+    assert candidate(derived = [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]) == True
+    assert candidate(derived = [1, 1, 0, 0, 1, 1, 0, 0]) == True
+    assert candidate(derived = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+    assert candidate(derived = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1]) == False
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0]) == True
+    assert candidate(derived = [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0]) == True
+    assert candidate(derived = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == True
+    assert candidate(derived = [0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1]) == True
+    assert candidate(derived = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]) == False
+    assert candidate(derived = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1]) == True
+    assert candidate(derived = [1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1]) == True
+    assert candidate(derived = [1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1]) == True

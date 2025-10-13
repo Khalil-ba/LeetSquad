@@ -1,0 +1,49 @@
+# Import the utils module for prompts
+from utils import *
+
+def check(candidate):
+    assert candidate(low = 5,high = 7,zero = 1,one = 1) == 224
+    assert candidate(low = 100,high = 200,zero = 10,one = 20) == 28513
+    assert candidate(low = 1,high = 5,zero = 2,one = 3) == 5
+    assert candidate(low = 5,high = 10,zero = 2,one = 4) == 16
+    assert candidate(low = 10,high = 15,zero = 3,one = 2) == 93
+    assert candidate(low = 5,high = 5,zero = 2,one = 3) == 2
+    assert candidate(low = 5,high = 10,zero = 3,one = 4) == 8
+    assert candidate(low = 1,high = 5,zero = 1,one = 1) == 62
+    assert candidate(low = 5,high = 5,zero = 2,one = 2) == 0
+    assert candidate(low = 4,high = 6,zero = 2,one = 2) == 12
+    assert candidate(low = 4,high = 4,zero = 2,one = 2) == 4
+    assert candidate(low = 2,high = 3,zero = 1,one = 2) == 5
+    assert candidate(low = 3,high = 7,zero = 3,one = 3) == 6
+    assert candidate(low = 50000,high = 50000,zero = 5000,one = 5000) == 1024
+    assert candidate(low = 7,high = 9,zero = 3,one = 2) == 12
+    assert candidate(low = 50,high = 100,zero = 5,one = 7) == 177635
+    assert candidate(low = 4,high = 6,zero = 2,one = 3) == 5
+    assert candidate(low = 6,high = 10,zero = 2,one = 3) == 21
+    assert candidate(low = 20,high = 25,zero = 5,one = 6) == 17
+    assert candidate(low = 10,high = 15,zero = 2,one = 2) == 224
+    assert candidate(low = 10,high = 100,zero = 5,one = 7) == 178096
+    assert candidate(low = 4,high = 8,zero = 2,one = 2) == 28
+    assert candidate(low = 6,high = 10,zero = 3,one = 4) == 8
+    assert candidate(low = 5,high = 10,zero = 2,one = 3) == 23
+    assert candidate(low = 20,high = 30,zero = 3,one = 5) == 283
+    assert candidate(low = 1,high = 5,zero = 1,one = 5) == 6
+    assert candidate(low = 3,high = 9,zero = 2,one = 2) == 28
+    assert candidate(low = 1,high = 10,zero = 1,one = 1) == 2046
+    assert candidate(low = 1,high = 5,zero = 2,one = 2) == 6
+    assert candidate(low = 10,high = 15,zero = 3,one = 4) == 23
+    assert candidate(low = 10,high = 15,zero = 5,one = 6) == 5
+    assert candidate(low = 10,high = 15,zero = 4,one = 5) == 9
+    assert candidate(low = 5,high = 7,zero = 2,one = 3) == 7
+    assert candidate(low = 10,high = 15,zero = 2,one = 3) == 93
+    assert candidate(low = 10,high = 10,zero = 3,one = 4) == 3
+    assert candidate(low = 10,high = 15,zero = 1,one = 1) == 64512
+    assert candidate(low = 2,high = 5,zero = 1,one = 3) == 10
+    assert candidate(low = 10,high = 10,zero = 5,one = 5) == 4
+    assert candidate(low = 50,high = 100,zero = 10,one = 15) == 444
+    assert candidate(low = 3,high = 3,zero = 1,one = 1) == 8
+    assert candidate(low = 10,high = 15,zero = 5,one = 5) == 12
+    assert candidate(low = 6,high = 8,zero = 4,one = 5) == 1
+    assert candidate(low = 1,high = 4,zero = 1,one = 1) == 30
+    assert candidate(low = 1,high = 100,zero = 1,one = 1) == 952742561
+    assert candidate(low = 1,high = 100,zero = 25,one = 25) == 30

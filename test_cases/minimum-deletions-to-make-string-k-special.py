@@ -1,0 +1,57 @@
+# Import the utils module for prompts
+from utils import *
+
+def check(candidate):
+    assert candidate(word = "abacabadaba",k = 2) == 3
+    assert candidate(word = "abacabadabacaba",k = 3) == 4
+    assert candidate(word = "xyz",k = 0) == 0
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 10) == 0
+    assert candidate(word = "abcabcabc",k = 1) == 0
+    assert candidate(word = "mnbvcxzlkjhgfdsapoiuytrewq",k = 5) == 0
+    assert candidate(word = "aabcaba",k = 0) == 3
+    assert candidate(word = "dabdcbdcdcd",k = 2) == 2
+    assert candidate(word = "zzzzz",k = 0) == 0
+    assert candidate(word = "aaabaaa",k = 2) == 1
+    assert candidate(word = "abcdabcdabcd",k = 1) == 0
+    assert candidate(word = "aaaaa",k = 0) == 0
+    assert candidate(word = "xyz",k = 1) == 0
+    assert candidate(word = "abcde",k = 3) == 0
+    assert candidate(word = "abacabadabacaba",k = 1) == 6
+    assert candidate(word = "qqwweerrttyyuuiioopp",k = 2) == 0
+    assert candidate(word = "aabcccdddd",k = 1) == 2
+    assert candidate(word = "xyxxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",k = 2) == 0
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 0) == 0
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 0
+    assert candidate(word = "lkjghwertyuiopasdfghjklzxcvbnmlkjhgfdwsazxcvbnmlkjhgfdwsazxcvbnmlkjhgfdwsa",k = 15) == 0
+    assert candidate(word = "zzzzzyyyyyxxxxxwwwwvvvvuttttssssrrrrqqqqppppooooonnnnmmmmmllllkkkkjjjjiiiihhhhggggffffffeeeeee",k = 5) == 0
+    assert candidate(word = "xyzzzzzzzzzyxyzzzzzzzzzyxyzzzzzzzzzy",k = 5) == 9
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 3) == 0
+    assert candidate(word = "mnbvcxzlkjhgfdsapoiuytrewqmnbvcxzlkjhgfdsapoiuytrewqmnbvcxzlkjhgfdsapoiuytrewq",k = 8) == 0
+    assert candidate(word = "aaabbbcccddddeeeffffffgggggggg",k = 4) == 1
+    assert candidate(word = "thisisanexamplestringwithvariousfrequencies",k = 3) == 4
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 5) == 0
+    assert candidate(word = "almosteveryletterisusedbutnotallabcdefghijklmnopqrstuvwxyzzzzzzzzzzz",k = 2) == 17
+    assert candidate(word = "thisisaverylongwordthatcontainsmanycharactersandneedscomplexprocessing",k = 10) == 0
+    assert candidate(word = "aaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbcccccccccccccccc",k = 2) == 0
+    assert candidate(word = "aaaaaaaaaaabbbbbbbbbbbccccccccccdddddddddd",k = 5) == 0
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 25) == 0
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzz",k = 0) == 0
+    assert candidate(word = "abcdefghijklmnopqrstuvwxyz",k = 0) == 0
+    assert candidate(word = "abcdefghijklmnopqrstuvwxyzzzzzzzzzz",k = 5) == 4
+    assert candidate(word = "aaaaaaaaaabbbbbbbbccccccccddddddddeeeeeeeffffffffggggggghhhhhhhhiiiiiiiiii",k = 3) == 0
+    assert candidate(word = "unevenfrequenciesaxbxcxdxeuxyvxuyvyvxvyvxvyvxvyvxvyvxvyvxyvxyvxyvxyvxyvxyvxyvxyvxyvxyvxyvxy",k = 10) == 23
+    assert candidate(word = "aaaaaabbbccccdddddeeeeeffffffffggggghhhhhiiiiijjjjjkkkkklllllmmmmmnnnnnooooo",k = 5) == 0
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzz",k = 1) == 17
+    assert candidate(word = "abcdefghij",k = 0) == 0
+    assert candidate(word = "ppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxxyyyyyyyyyyzzzzzzzzzz",k = 10) == 0
+    assert candidate(word = "qwertyuiopasdfghjklzxcvbnm",k = 10) == 0
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 10) == 0
+    assert candidate(word = "verylongstringwithrepeatingcharactersaaaaaaaaaabbbbbbbbbbcccccccccc",k = 4) == 20
+    assert candidate(word = "ppppppppppppppppppppppppppppppppppppppppppppppppppppp",k = 0) == 0
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 1) == 0
+    assert candidate(word = "abcdeabcdabcdeabcdeabcdeabcdeabcde",k = 2) == 0
+    assert candidate(word = "ppppqqqqrrrsssttttuuuuvvvvwwwwxxxxxyyyyyzzzzzaaaaabbbbccccddddeeeeffffgggghhhhiiii",k = 5) == 0
+    assert candidate(word = "aabbaaccddccbbbaaadddcccbbaaa",k = 1) == 6
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 0) == 0
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabc",k = 1) == 0
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzqqqqqqqqqq",k = 4) == 6
