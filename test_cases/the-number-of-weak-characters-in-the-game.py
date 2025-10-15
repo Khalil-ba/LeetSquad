@@ -1,5 +1,805 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [6, 3], [3, 6], [2, 2], [1, 1]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [6, 3], [3, 6], [2, 2], [1, 1]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[2, 2], [3, 3]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[2, 2], [3, 3]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 1], [5, 10], [4, 10], [4, 4], [3, 14], [3, 6], [2, 10], [1, 14], [1, 4]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 1], [5, 10], [4, 10], [4, 4], [3, 14], [3, 6], [2, 10], [1, 14], [1, 4]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [6, 3], [3, 6]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [6, 3], [3, 6]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [5, 1], [7, 10], [4, 1], [5, 9], [6, 9], [7, 2], [1, 10]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [5, 1], [7, 10], [4, 1], [5, 9], [6, 9], [7, 2], [1, 10]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [10, 4], [4, 3], [5, 6], [7, 8], [8, 7], [9, 9], [2, 2]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [10, 4], [4, 3], [5, 6], [7, 8], [8, 7], [9, 9], [2, 2]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [10, 1], [4, 4], [4, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [10, 1], [4, 4], [4, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [10, 4], [4, 3], [3, 15], [1, 20]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [10, 4], [4, 3], [3, 15], [1, 20]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [10, 4], [4, 3]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [10, 4], [4, 3]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [6, 3], [3, 6], [2, 2], [1, 1], [6, 7]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [6, 3], [3, 6], [2, 2], [1, 1], [6, 7]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [1, 5], [1, 5], [10, 4], [4, 3]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [1, 5], [1, 5], [10, 4], [4, 3]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [5, 1], [7, 10], [4, 11], [12, 1], [8, 4], [9, 7]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [5, 1], [7, 10], [4, 11], [12, 1], [8, 4], [9, 7]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[6, 9], [7, 5], [7, 9], [7, 10], [10, 4], [10, 7], [8, 4]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[6, 9], [7, 5], [7, 9], [7, 10], [10, 4], [10, 7], [8, 4]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 100000], [1, 1], [2, 2], [3, 3], [4, 4]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 100000], [1, 1], [2, 2], [3, 3], [4, 4]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995], [7, 99994], [8, 99993], [9, 99992], [10, 99991], [11, 99990], [12, 99989], [13, 99988], [14, 99987], [15, 99986], [16, 99985], [17, 99984], [18, 99983], [19, 99982], [20, 99981]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995], [7, 99994], [8, 99993], [9, 99992], [10, 99991], [11, 99990], [12, 99989], [13, 99988], [14, 99987], [15, 99986], [16, 99985], [17, 99984], [18, 99983], [19, 99982], [20, 99981]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [2, 1], [2, 2], [1, 3], [2, 3], [3, 1], [3, 2], [3, 3], [4, 1], [4, 2], [4, 3], [1, 4], [2, 4], [3, 4], [4, 4], [1, 5], [2, 5], [3, 5], [4, 5], [5, 1], [5, 2], [5, 3], [5, 4], [5, 5]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [2, 1], [2, 2], [1, 3], [2, 3], [3, 1], [3, 2], [3, 3], [4, 1], [4, 2], [4, 3], [1, 4], [2, 4], [3, 4], [4, 4], [1, 5], [2, 5], [3, 5], [4, 5], [5, 1], [5, 2], [5, 3], [5, 4], [5, 5]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995], [7, 99994], [8, 99993], [9, 99992], [10, 99991]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995], [7, 99994], [8, 99993], [9, 99992], [10, 99991]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [9, 5], [8, 5], [7, 5], [6, 5], [5, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [9, 5], [8, 5], [7, 5], [6, 5], [5, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 2]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 2]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10], [1, 11]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10], [1, 11]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 100000], [1, 1], [2, 2], [99999, 99999], [50000, 50000], [10000, 10000]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 100000], [1, 1], [2, 2], [99999, 99999], [50000, 50000], [10000, 10000]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 100000], [99999, 99999], [99998, 99998], [99997, 99997], [99996, 99996], [99995, 99995], [99994, 99994], [99993, 99993], [99992, 99992], [99991, 99991]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 100000], [99999, 99999], [99998, 99998], [99997, 99997], [99996, 99996], [99995, 99995], [99994, 99994], [99993, 99993], [99992, 99992], [99991, 99991]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 1], [1, 100000], [50000, 50000], [25000, 75000], [75000, 25000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 1], [1, 100000], [50000, 50000], [25000, 75000], [75000, 25000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 10]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 10]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 9], [5, 7], [5, 5], [5, 3], [5, 1], [10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [10, 5], [10, 4], [10, 3], [10, 2], [10, 1]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 9], [5, 7], [5, 5], [5, 3], [5, 1], [10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [10, 5], [10, 4], [10, 3], [10, 2], [10, 1]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [10, 1], [2, 9], [9, 2], [3, 8], [8, 3], [4, 7], [7, 4], [5, 6], [6, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [10, 1], [2, 9], [9, 2], [3, 8], [8, 3], [4, 7], [7, 4], [5, 6], [6, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [2, 10], [3, 9], [4, 8], [5, 7], [6, 6], [7, 5], [8, 4], [9, 3], [10, 2], [1, 10]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [2, 10], [3, 9], [4, 8], [5, 7], [6, 6], [7, 5], [8, 4], [9, 3], [10, 2], [1, 10]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 10], [1, 100], [1, 1000], [1, 10000], [1, 100000], [10, 1], [10, 10], [10, 100], [10, 1000], [10, 10000], [10, 100000]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 10], [1, 100], [1, 1000], [1, 10000], [1, 100000], [10, 1], [10, 10], [10, 100], [10, 1000], [10, 10000], [10, 100000]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 10]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 10]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 100000], [99999, 99999], [99998, 99998], [99997, 99997], [99996, 99996]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 100000], [99999, 99999], [99998, 99998], [99997, 99997], [99996, 99996]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [10, 5], [10, 4], [10, 3], [10, 2], [10, 1], [9, 10], [8, 10], [7, 10], [6, 10], [5, 10], [4, 10], [3, 10], [2, 10], [1, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [10, 5], [10, 4], [10, 3], [10, 2], [10, 1], [9, 10], [8, 10], [7, 10], [6, 10], [5, 10], [4, 10], [3, 10], [2, 10], [1, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [10, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [1, 90], [2, 89], [3, 88], [4, 87], [5, 86], [6, 85], [7, 84], [8, 83], [9, 82], [10, 81], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [1, 90], [2, 89], [3, 88], [4, 87], [5, 86], [6, 85], [7, 84], [8, 83], [9, 82], [10, 81], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[50, 50], [51, 49], [52, 48], [53, 47], [54, 46], [55, 45], [56, 44], [57, 43], [58, 42], [59, 41], [60, 40]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[50, 50], [51, 49], [52, 48], [53, 47], [54, 46], [55, 45], [56, 44], [57, 43], [58, 42], [59, 41], [60, 40]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 1], [99999, 2], [99998, 3], [99997, 4], [99996, 5], [99995, 6], [99994, 7], [99993, 8], [99992, 9], [99991, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 1], [99999, 2], [99998, 3], [99997, 4], [99996, 5], [99995, 6], [99994, 7], [99993, 8], [99992, 9], [99991, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 5], [9, 6], [8, 7], [7, 8], [6, 9], [5, 10], [4, 11], [3, 12], [2, 13], [1, 14], [10, 15], [9, 16], [8, 17], [7, 18], [6, 19], [5, 20], [4, 21], [3, 22], [2, 23], [1, 24]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 5], [9, 6], [8, 7], [7, 8], [6, 9], [5, 10], [4, 11], [3, 12], [2, 13], [1, 14], [10, 15], [9, 16], [8, 17], [7, 18], [6, 19], [5, 20], [4, 21], [3, 22], [2, 23], [1, 24]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100000, 1], [1, 100000], [50000, 50000], [90000, 20000], [20000, 90000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100000, 1], [1, 100000], [50000, 50000], [90000, 20000], [20000, 90000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [2, 4], [2, 5], [2, 6], [3, 7], [3, 8], [3, 9], [4, 10], [4, 11], [4, 12], [5, 13], [5, 14], [5, 15]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [2, 4], [2, 5], [2, 6], [3, 7], [3, 8], [3, 9], [4, 10], [4, 11], [4, 12], [5, 13], [5, 14], [5, 15]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 5], [2, 4], [2, 3], [2, 2], [2, 1], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 5], [2, 4], [2, 3], [2, 2], [2, 1], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3], [4, 1], [4, 2], [4, 3], [5, 1], [5, 2], [5, 3]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3], [4, 1], [4, 2], [4, 3], [5, 1], [5, 2], [5, 3]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [2, 10], [3, 15], [4, 20], [5, 25], [6, 30], [7, 35], [8, 40], [9, 45], [10, 50], [5, 5], [10, 10], [15, 15], [20, 20], [25, 25], [30, 30], [35, 35], [40, 40], [45, 45]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [2, 10], [3, 15], [4, 20], [5, 25], [6, 30], [7, 35], [8, 40], [9, 45], [10, 50], [5, 5], [10, 10], [15, 15], [20, 20], [25, 25], [30, 30], [35, 35], [40, 40], [45, 45]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [1, 20], [1, 30], [1, 40], [1, 50], [1, 60], [1, 70], [1, 80], [1, 90], [1, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [1, 20], [1, 30], [1, 40], [1, 50], [1, 60], [1, 70], [1, 80], [1, 90], [1, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 9], [7, 7], [4, 3], [1, 10], [6, 6], [8, 2], [3, 5]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 9], [7, 7], [4, 3], [1, 10], [6, 6], [8, 2], [3, 5]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [15, 6], [25, 11], [35, 16], [45, 21], [55, 26], [10, 7], [20, 12], [30, 17], [40, 22], [50, 27]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [15, 6], [25, 11], [35, 16], [45, 21], [55, 26], [10, 7], [20, 12], [30, 17], [40, 22], [50, 27]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 1], [8, 2], [9, 3], [10, 4]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 1], [8, 2], [9, 3], [10, 4]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100000], [2, 99999], [3, 99998], [4, 99997], [5, 99996], [6, 99995]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[20, 39], [19, 37], [18, 35], [17, 33], [16, 31], [15, 29], [14, 27], [13, 25], [12, 23], [11, 21], [10, 19], [9, 17], [8, 15], [7, 13], [6, 11], [5, 9], [4, 7], [3, 5], [2, 3], [1, 1]]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[20, 39], [19, 37], [18, 35], [17, 33], [16, 31], [15, 29], [14, 27], [13, 25], [12, 23], [11, 21], [10, 19], [9, 17], [8, 15], [7, 13], [6, 11], [5, 9], [4, 7], [3, 5], [2, 3], [1, 1]]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100000], [100000, 1], [50000, 50000], [75000, 25000], [25000, 75000], [1, 1], [100000, 100000]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100000], [100000, 1], [50000, 50000], [75000, 25000], [25000, 75000], [1, 1], [100000, 100000]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [1, 9], [1, 8], [1, 7], [1, 6], [1, 5], [1, 4], [1, 3], [1, 2], [1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [1, 9], [1, 8], [1, 7], [1, 6], [1, 5], [1, 4], [1, 3], [1, 2], [1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[100, 1], [100, 2], [100, 3], [100, 4], [100, 5], [100, 6], [100, 7], [100, 8], [100, 9], [100, 10], [99, 11], [98, 12], [97, 13], [96, 14], [95, 15], [94, 16], [93, 17], [92, 18], [91, 19], [90, 20]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[100, 1], [100, 2], [100, 3], [100, 4], [100, 5], [100, 6], [100, 7], [100, 8], [100, 9], [100, 10], [99, 11], [98, 12], [97, 13], [96, 14], [95, 15], [94, 16], [93, 17], [92, 18], [91, 19], [90, 20]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 1]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 1]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10], [1, 11]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10], [1, 11]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [1, 90], [2, 89], [3, 88], [4, 87], [5, 86], [6, 85], [7, 84], [8, 83], [9, 82], [10, 81]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [1, 90], [2, 89], [3, 88], [4, 87], [5, 86], [6, 85], [7, 84], [8, 83], [9, 82], [10, 81]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [5, 6], [6, 5], [6, 6], [1, 1], [1, 2], [2, 1], [2, 2], [7, 7], [8, 8]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [5, 6], [6, 5], [6, 6], [1, 1], [1, 2], [2, 1], [2, 2], [7, 7], [8, 8]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 1]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 1]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [9, 10], [8, 10], [7, 10], [6, 10], [5, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 10], [10, 9], [10, 8], [10, 7], [10, 6], [9, 10], [8, 10], [7, 10], [6, 10], [5, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 5], [1, 5], [1, 5], [10, 4], [4, 3], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 5], [1, 5], [1, 5], [10, 4], [4, 3], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [1, 10]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [1, 10]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 50000], [50000, 1], [2, 49999], [49999, 2], [3, 49998], [49998, 3], [4, 49997], [49997, 4], [5, 49996], [49996, 5], [6, 49995], [49995, 6], [7, 49994], [49994, 7], [8, 49993], [49993, 8], [9, 49992], [49992, 9], [10, 49991], [49991, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 50000], [50000, 1], [2, 49999], [49999, 2], [3, 49998], [49998, 3], [4, 49997], [49997, 4], [5, 49996], [49996, 5], [6, 49995], [49995, 6], [7, 49994], [49994, 7], [8, 49993], [49993, 8], [9, 49992], [49992, 9], [10, 49991], [49991, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12]]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12]]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1], [10, 9], [11, 8], [12, 7], [13, 6], [14, 5], [15, 4]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1], [10, 9], [11, 8], [12, 7], [13, 6], [14, 5], [15, 4]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 3], [3, 5], [4, 7], [5, 9], [6, 11], [7, 13], [8, 15], [9, 17], [10, 19], [11, 21], [12, 23], [13, 25], [14, 27], [15, 29], [16, 31], [17, 33], [18, 35], [19, 37], [20, 39]]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 3], [3, 5], [4, 7], [5, 9], [6, 11], [7, 13], [8, 15], [9, 17], [10, 19], [11, 21], [12, 23], [13, 25], [14, 27], [15, 29], [16, 31], [17, 33], [18, 35], [19, 37], [20, 39]]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [4, 5], [3, 5], [2, 5], [1, 5], [5, 4], [5, 3], [5, 2], [5, 1]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [4, 5], [3, 5], [2, 5], [1, 5], [5, 4], [5, 3], [5, 2], [5, 1]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[50, 50], [40, 40], [30, 30], [20, 20], [10, 10], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[50, 50], [40, 40], [30, 30], [20, 20], [10, 10], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [5, 5], [5, 5], [5, 5], [5, 5], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [5, 5], [5, 5], [5, 5], [5, 5], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1], [10, 10]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1], [1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1], [10, 10]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[9, 8], [8, 9], [7, 10], [6, 11], [5, 12], [4, 13], [3, 14], [2, 15], [1, 16], [10, 7], [11, 6], [12, 5], [13, 4], [14, 3], [15, 2], [16, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[9, 8], [8, 9], [7, 10], [6, 11], [5, 12], [4, 13], [3, 14], [2, 15], [1, 16], [10, 7], [11, 6], [12, 5], [13, 4], [14, 3], [15, 2], [16, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5], [4, 1], [4, 2], [4, 3], [4, 4], [4, 5], [5, 1], [5, 2], [5, 3], [5, 4], [5, 5]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5], [4, 1], [4, 2], [4, 3], [4, 4], [4, 5], [5, 1], [5, 2], [5, 3], [5, 4], [5, 5]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 50], [50, 1], [2, 49], [49, 2], [3, 48], [48, 3], [4, 47], [47, 4], [5, 46], [46, 5], [6, 45], [45, 6], [7, 44], [44, 7], [8, 43], [43, 8], [9, 42], [42, 9], [10, 41], [41, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 50], [50, 1], [2, 49], [49, 2], [3, 48], [48, 3], [4, 47], [47, 4], [5, 46], [46, 5], [6, 45], [45, 6], [7, 44], [44, 7], [8, 43], [43, 8], [9, 42], [42, 9], [10, 41], [41, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[9, 7], [9, 8], [9, 9], [10, 7], [10, 8], [10, 9], [11, 7], [11, 8], [11, 9]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[9, 7], [9, 8], [9, 9], [10, 7], [10, 8], [10, 9], [11, 7], [11, 8], [11, 9]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[1, 100000], [100000, 1], [50000, 50000], [75000, 25000], [25000, 75000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[1, 100000], [100000, 1], [50000, 50000], [75000, 25000], [25000, 75000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 10], [10, 5], [15, 15], [20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 10], [10, 5], [15, 15], [20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(properties = [[5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(properties = [[5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 9: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(properties = [[5, 5], [6, 3], [3, 6], [2, 2], [1, 1]]) == 2
@@ -101,3 +901,5 @@ def check(candidate):
     assert candidate(properties = [[1, 100000], [100000, 1], [50000, 50000], [75000, 25000], [25000, 75000]]) == 0
     assert candidate(properties = [[5, 10], [10, 5], [15, 15], [20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40]]) == 9
     assert candidate(properties = [[5, 5], [4, 4], [3, 3], [2, 2], [1, 1], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 9
+
+

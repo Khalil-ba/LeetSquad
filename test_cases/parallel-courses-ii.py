@@ -1,5 +1,749 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 4,relations = [[2, 1], [3, 1], [1, 4]],k = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,relations = [[2, 1], [3, 1], [1, 4]],k = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,relations = [],k = 3) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,relations = [],k = 3) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,relations = [[2, 1], [3, 1], [4, 1], [1, 5]],k = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,relations = [[2, 1], [3, 1], [4, 1], [1, 5]],k = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,relations = [[1, 3], [2, 3]],k = 2) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,relations = [[1, 3], [2, 3]],k = 2) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,relations = [],k = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,relations = [],k = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,relations = [[2, 1], [3, 1]],k = 1) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,relations = [[2, 1], [3, 1]],k = 1) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,relations = [[1, 2], [2, 3], [4, 5], [5, 6]],k = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,relations = [[1, 2], [2, 3], [4, 5], [5, 6]],k = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [7, 15]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [7, 15]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 3) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 3) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [3, 6], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10], [9, 11], [10, 12], [11, 12], [12, 13], [12, 14], [13, 15], [14, 15]],k = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [3, 6], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10], [9, 11], [10, 12], [11, 12], [12, 13], [12, 14], [13, 15], [14, 15]],k = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,relations = [],k = 2) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,relations = [],k = 2) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [1, 3], [1, 5], [1, 7], [1, 9]],k = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [1, 3], [1, 5], [1, 7], [1, 9]],k = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [1, 4], [2, 5], [3, 6]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [1, 4], [2, 5], [3, 6]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]],k = 2) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]],k = 2) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [1, 6], [2, 6], [3, 6], [4, 6], [1, 7], [2, 7], [3, 7], [4, 7]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [1, 6], [2, 6], [3, 6], [4, 6], [1, 7], [2, 7], [3, 7], [4, 7]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]],k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]],k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 5], [1, 6], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10]],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 5], [1, 6], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10]],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 4) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 4) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 12], [10, 12]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 12], [10, 12]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 10]],k = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 10]],k = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 6], [4, 7], [5, 6], [5, 7], [6, 8], [7, 8]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 6], [4, 7], [5, 6], [5, 7], [6, 8], [7, 8]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 13], [10, 13]],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 13], [10, 13]],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 10]],k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 10]],k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 14], [12, 14], [13, 14]],k = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 14], [12, 14], [13, 14]],k = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 6], [4, 7], [5, 7], [6, 7], [7, 8], [7, 9]],k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 6], [4, 7], [5, 7], [6, 7], [7, 8], [7, 9]],k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 5], [1, 6], [2, 6], [2, 7], [3, 7], [3, 8], [4, 8], [4, 9], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10]],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 5], [1, 6], [2, 6], [2, 7], [3, 7], [3, 8], [4, 8], [4, 9], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10]],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [4, 6], [5, 7], [5, 8], [6, 9], [6, 10], [7, 11], [7, 12], [8, 13], [8, 14], [9, 13], [10, 14]],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [4, 6], [5, 7], [5, 8], [6, 9], [6, 10], [7, 11], [7, 12], [8, 13], [8, 14], [9, 13], [10, 14]],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 2) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 2) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 12], [8, 13], [9, 12], [9, 13], [10, 13], [11, 13]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 12], [8, 13], [9, 12], [9, 13], [10, 13], [11, 13]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 3], [1, 4], [1, 5], [2, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 7], [4, 8], [5, 7], [5, 8], [6, 9], [7, 9], [8, 9]],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 3], [1, 4], [1, 5], [2, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 7], [4, 8], [5, 7], [5, 8], [6, 9], [7, 9], [8, 9]],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 11]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 11]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10]],k = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10]],k = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 12], [10, 12]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 12], [8, 12], [9, 12], [10, 12]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 6], [5, 7], [5, 8], [5, 9], [6, 10], [7, 10], [8, 10], [9, 10], [10, 11], [11, 12], [11, 13], [11, 14]],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 6], [5, 7], [5, 8], [5, 9], [6, 10], [7, 10], [8, 10], [9, 10], [10, 11], [11, 12], [11, 13], [11, 14]],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12], [10, 13], [11, 13]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12], [10, 13], [11, 13]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 14]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 14]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 12]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 12]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 2) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 2) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [6, 7], [7, 8], [8, 9], [9, 10]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 5], [2, 5], [3, 5], [4, 5], [6, 7], [7, 8], [8, 9], [9, 10]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 5) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 5) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 11], [6, 11], [7, 11], [8, 11], [9, 11], [10, 12], [11, 12]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 11], [6, 11], [7, 11], [8, 11], [9, 11], [10, 12], [11, 12]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 8], [7, 8]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 8], [7, 8]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12]],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12]],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 5], [3, 6], [4, 6], [4, 7], [5, 8], [6, 8], [7, 8]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 5], [3, 6], [4, 6], [4, 7], [5, 8], [6, 8], [7, 8]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]],k = 4) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]],k = 4) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 3) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 3) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]],k = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]],k = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],k = 1) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],k = 1) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 7], [5, 7], [6, 7]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 7], [5, 7], [6, 7]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 6], [1, 7], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [6, 15], [7, 14], [7, 15], [8, 14], [8, 15], [9, 14], [9, 15], [10, 14], [10, 15], [11, 14], [11, 15], [12, 14], [12, 15], [13, 14], [13, 15]],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 6], [1, 7], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [6, 15], [7, 14], [7, 15], [8, 14], [8, 15], [9, 14], [9, 15], [10, 14], [10, 15], [11, 14], [11, 15], [12, 14], [12, 15], [13, 14], [13, 15]],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [7, 10], [8, 11], [9, 11]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [7, 10], [8, 11], [9, 11]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 3) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]],k = 3) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 11], [8, 11], [9, 11], [10, 11]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 11], [7, 11], [8, 11], [9, 11], [10, 11]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 8], [7, 8]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 8], [7, 8]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 7], [4, 8]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 7], [4, 8]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],k = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],k = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 6], [4, 7], [5, 8], [5, 9], [6, 10], [7, 10], [8, 10], [9, 10]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 6], [4, 7], [5, 8], [5, 9], [6, 10], [7, 10], [8, 10], [9, 10]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 12]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 2], [2, 3], [1, 3], [4, 5], [5, 6], [4, 6], [7, 8], [8, 9], [7, 9], [2, 4], [3, 5]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 2], [2, 3], [1, 3], [4, 5], [5, 6], [4, 6], [7, 8], [8, 9], [7, 9], [2, 4], [3, 5]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 3], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 5) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 3], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]],k = 5) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 4], [2, 4], [3, 4], [4, 5], [5, 6], [5, 7], [6, 8], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]],k = 3) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 4], [2, 4], [3, 4], [4, 5], [5, 6], [5, 7], [6, 8], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]],k = 3) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10]],k = 3) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10]],k = 3) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [4, 7], [5, 8], [5, 9], [6, 10], [6, 11], [7, 12], [8, 10], [9, 11]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [4, 7], [5, 8], [5, 9], [6, 10], [6, 11], [7, 12], [8, 10], [9, 11]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 5], [4, 6], [5, 6], [6, 7]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 5], [4, 6], [5, 6], [6, 7]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10], [9, 11], [10, 12], [11, 12]],k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,relations = [[1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [5, 6], [6, 7], [6, 8], [7, 9], [8, 9], [9, 10], [9, 11], [10, 12], [11, 12]],k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7]],k = 1) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7]],k = 1) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [3, 5], [4, 6], [5, 7], [5, 8], [6, 9], [6, 10], [7, 10], [8, 10]],k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [3, 5], [4, 6], [5, 7], [5, 8], [6, 9], [6, 10], [7, 10], [8, 10]],k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [5, 7], [6, 8], [7, 8], [8, 9], [8, 10]],k = 3) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [3, 4], [4, 5], [5, 6], [5, 7], [6, 8], [7, 8], [8, 9], [8, 10]],k = 3) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [6, 15], [7, 14], [7, 15], [8, 14], [8, 15], [9, 14], [9, 15], [10, 14], [10, 15], [11, 14], [11, 15], [12, 14], [12, 15], [13, 14], [13, 15]],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [4, 11], [5, 12], [5, 13], [6, 14], [6, 15], [7, 14], [7, 15], [8, 14], [8, 15], [9, 14], [9, 15], [10, 14], [10, 15], [11, 14], [11, 15], [12, 14], [12, 15], [13, 14], [13, 15]],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 4], [1, 5], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10], [10, 11], [10, 12], [11, 13], [12, 13], [13, 14], [13, 15], [14, 15]],k = 4) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 4], [1, 5], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10], [10, 11], [10, 12], [11, 13], [12, 13], [13, 14], [13, 15], [14, 15]],k = 4) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9]],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9]],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 11], [9, 10]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 8], [5, 9], [6, 10], [6, 11], [7, 10], [7, 11], [8, 11], [9, 10]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [6, 10], [7, 10]],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [6, 10], [7, 10]],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [1, 6], [2, 7], [3, 8], [4, 9]],k = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [1, 6], [2, 7], [3, 8], [4, 9]],k = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15]],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15]],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10]],k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 8], [6, 9], [7, 9], [8, 10], [9, 10]],k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,relations = [[1, 3], [1, 4], [2, 4], [2, 5], [3, 6], [4, 7], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [2, 6], [3, 7]],k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,relations = [[1, 3], [1, 4], [2, 4], [2, 5], [3, 6], [4, 7], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [2, 6], [3, 7]],k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13]],k = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13]],k = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10]],k = 1) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10]],k = 1) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,relations = [[1, 15], [2, 15], [3, 15], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,relations = [[1, 15], [2, 15], [3, 15], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 5) == 4: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 4,relations = [[2, 1], [3, 1], [1, 4]],k = 2) == 3
@@ -94,3 +838,5 @@ def check(candidate):
     assert candidate(n = 13,relations = [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13]],k = 2) == 7
     assert candidate(n = 10,relations = [[1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10]],k = 1) == 10
     assert candidate(n = 15,relations = [[1, 15], [2, 15], [3, 15], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15]],k = 5) == 4
+
+

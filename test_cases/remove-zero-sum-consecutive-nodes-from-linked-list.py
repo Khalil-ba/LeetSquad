@@ -1,5 +1,965 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0, 0, 0, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0, 0, 0, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 0, 1, -1, 2])), list_node([1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 0, 1, -1, 2])), list_node([1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5])), list_node([1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5])), list_node([1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, 20, -30, 40, -50, 60, -10, -50])), list_node([40, -50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, 20, -30, 40, -50, 60, -10, -50])), list_node([40, -50])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 1, -1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 1, -1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -3, 4])), list_node([1, 2, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -3, 4])), list_node([1, 2, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, -1, 2, -2, 3])), list_node([3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, -1, 2, -2, 3])), list_node([3])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, -1, 1, -1, 1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, -1, 1, -1, 1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 0, -1, 2])), list_node([2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 0, -1, 2])), list_node([2])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, 5, -5, 3, 2, -2])), list_node([10, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, 5, -5, 3, 2, -2])), list_node([10, 3])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, -1, 1, -1, 1, -1, 1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, -1, 1, -1, 1, -1, 1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0, 0, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0, 0, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([-1])), list_node([-1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([-1])), list_node([-1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, -3, 3, 1])), list_node([3, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, -3, 3, 1])), list_node([3, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -3, -2])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -3, -2])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([10, 5, 3, -3, -5, -10])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([10, 5, 3, -3, -5, -10])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 2, -2, 3, -3])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 2, -2, 3, -3])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 0, 4, 0, -4])), list_node([1, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 0, 4, 0, -4])), list_node([1, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([5, 6, 7, -7, -6, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([5, 6, 7, -7, -6, -5])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, 20, -10, -10])), list_node([10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, 20, -10, -10])), list_node([10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -5, 4, -4, 3, -3, 2, -2, 1, -1])), list_node([1, 2, 3, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -5, 4, -4, 3, -3, 2, -2, 1, -1])), list_node([1, 2, 3, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, -28, 8, 9])), list_node([8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, -28, 8, 9])), list_node([8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 1, 2, 3, 4])), list_node([1, 2, 3, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 1, 2, 3, 4])), list_node([1, 2, 3, 4])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, -2, 2, -3, 3, -4, 4, 5, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, -2, 2, -3, 3, -4, 4, 5, -5])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 5, 6, 7, 8, -30, 10, 11])), list_node([5, 6, 7, 8, -30, 10, 11]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 5, 6, 7, 8, -30, 10, 11])), list_node([5, 6, 7, 8, -30, 10, 11])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, 4, 5, -5, -4, -3, -2, -1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, 4, 5, -5, -4, -3, -2, -1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -5, -5, 3, 2, -2, 1, -1])), list_node([3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -5, -5, 3, 2, -2, 1, -1])), list_node([3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -6, 2, 3, 4, -9, 1, 2])), list_node([1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -6, 2, 3, 4, -9, 1, 2])), list_node([1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -10, 1, 2, 3])), list_node([1, 2, 3, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -10, 1, 2, 3])), list_node([1, 2, 3, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -2, -1, 1, 4])), list_node([1, 2, 1, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -2, -1, 1, 4])), list_node([1, 2, 1, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -6, 4, -4, 5, 0, -5, 6])), list_node([6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -6, 4, -4, 5, 0, -5, 6])), list_node([6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9, 10, -35, 11, 12])), list_node([7, 8, 9, 10, -35, 11, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9, 10, -35, 11, 12])), list_node([7, 8, 9, 10, -35, 11, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -6, 2, 3, 4, -9, 5])), list_node([5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -6, 2, 3, 4, -9, 5])), list_node([5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([100, -50, -50, 200, 300, -500, 400, 500, -1000, 600])), list_node([400, 500, -1000, 600]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([100, -50, -50, 200, 300, -500, 400, 500, -1000, 600])), list_node([400, 500, -1000, 600])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5, -9])), list_node([1, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5, -9])), list_node([1, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5])), list_node([5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5])), list_node([5])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([100, -50, -50, 25, -25, 50, -50, 25, -25, 100, -100])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([100, -50, -50, 25, -25, 50, -50, 25, -25, 100, -100])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -10, 20, -20, 30, -30, 40])), list_node([40]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -10, 20, -20, 30, -30, 40])), list_node([40])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, -5, 5, -3, -2])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, -5, 5, -3, -2])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([0, 0, 0, 1, 2, -3, 3, -2, 2])), list_node([3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([0, 0, 0, 1, 2, -3, 3, -2, 2])), list_node([3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -3, -2, -1, 4, -4, 5])), list_node([5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -3, -2, -1, 4, -4, 5])), list_node([5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5])), list_node([5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5])), list_node([5])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -2, 3, -3, 2, -1, 4, -4, 5, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -2, 3, -3, 2, -1, 4, -4, 5, -5])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0, 1, 2, 3, 0, -3, -2, -1, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0, 1, 2, 3, 0, -3, -2, -1, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, -3, 3, -2, 2, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8])), list_node([3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, -3, 3, -2, 2, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8])), list_node([3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -10, 20, -20, 30, -30, 40])), list_node([40]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -10, 20, -20, 30, -30, 40])), list_node([40])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -120, 16])), list_node([16]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -120, 16])), list_node([16])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -5, 5, -6, 6, -7, 7, 8])), list_node([1, 2, 7, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -5, 5, -6, 6, -7, 7, 8])), list_node([1, 2, 7, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 5, -5])), list_node([5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 5, -5])), list_node([5])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 1, -1, 1, -1, 1, -1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 1, -1, 1, -1, 1, -1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 0, -1, 0, 1, 0, -1, 0, 1])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 0, -1, 0, 1, 0, -1, 0, 1])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 1, 4, -10, 20, -5, -15, 2, 3, 4, -9, 1])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 1, 4, -10, 20, -5, -15, 2, 3, 4, -9, 1])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, -30, 9, 10])), list_node([5, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, -30, 9, 10])), list_node([5, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -2, 3, -1, 5, -3, 2, -2, 1, -1])), list_node([10, 5, -3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -2, 3, -1, 5, -3, 2, -2, 1, -1])), list_node([10, 5, -3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -3, -5, -10, 20])), list_node([1, 2, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -3, -5, -10, 20])), list_node([1, 2, 20])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 3, -5, 2, -2, 1])), list_node([5, -2, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 3, -5, 2, -2, 1])), list_node([5, -2, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 6, -6, 7, 8, -15, 9])), list_node([5, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 6, -6, 7, 8, -15, 9])), list_node([5, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9, 10, -35, 1, 2, 3])), list_node([2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9, 10, -35, 1, 2, 3])), list_node([2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 5])), list_node([5, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 5])), list_node([5, 5])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, 4, 5, -5, -4, -3, -2, -1, 6, 7, 8, -8, -7, -6])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, 4, 5, -5, -4, -3, -2, -1, 6, 7, 8, -8, -7, -6])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 6, 7, -18, 19, 20, -39, 21, 22, 23, -65, 24])), list_node([21, 22, 23, -65, 24]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 6, 7, -18, 19, 20, -39, 21, 22, 23, -65, 24])), list_node([21, 22, 23, -65, 24])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([100, -50, -50, 200, -100, -100, 300, -200, -200, 400])), list_node([300]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([100, -50, -50, 200, -100, -100, 300, -200, -200, 400])), list_node([300])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9])), list_node([7, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, -21, 7, 8, 9])), list_node([7, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([5, -5, 5, -5, 5, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([5, -5, 5, -5, 5, -5])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([0, 0, 0, 1, 2, 3, -6, 7, 8, -15, 9])), list_node([9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([0, 0, 0, 1, 2, 3, -6, 7, 8, -15, 9])), list_node([9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 3, 4, 5, -12, 6, 7])), list_node([6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 3, 4, 5, -12, 6, 7])), list_node([6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5])), list_node([1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5])), list_node([1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 6, 7, 8, 9, 10, -33, 11, 12])), list_node([6, 7, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 6, 7, 8, 9, 10, -33, 11, 12])), list_node([6, 7, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, 4, -10, 2, 3, 4, 5, -14])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, 4, -10, 2, 3, 4, 5, -14])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 0, 5, -5, 10, -10, 15, -15, 20])), list_node([5, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 0, 5, -5, 10, -10, 15, -15, 20])), list_node([5, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -3, 4, -4, 5])), list_node([1, 2, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -3, 4, -4, 5])), list_node([1, 2, 5])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0, 0, 0, 0, 0, 0, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0, 0, 0, 0, 0, 0, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 10, 1, 2, 3, 4, -10, 10])), list_node([10, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 10, 1, 2, 3, 4, -10, 10])), list_node([10, 10])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([0, 1, 2, 3, 4, 5, -5, -4, -3, -2, -1, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([0, 1, 2, 3, 4, 5, -5, -4, -3, -2, -1, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, 9, 10, -5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -50])), list_node([5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, 9, 10, -5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -50])), list_node([5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1000, -500, -250, 250, -250, 500, -1000, 2000, -2000, 3000, -3000])), list_node([1000, -500, -250, 500, -1000]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1000, -500, -250, 250, -250, 500, -1000, 2000, -2000, 3000, -3000])), list_node([1000, -500, -250, 500, -1000])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, -5, 10, -10, 15, -15, 20, -20, 25])), list_node([25]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, -5, 10, -10, 15, -15, 20, -20, 25])), list_node([25])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, -3, 3, -2, 2, 1, -1])), list_node([3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, -3, 3, -2, 2, 1, -1])), list_node([3])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, -6, 3, 2, 1, 0, -1, -2, -3, 0])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, -6, 3, 2, 1, 0, -1, -2, -3, 0])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 11, 12, 13, 14, 15, 16])), list_node([11, 12, 13, 14, 15, 16]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 11, 12, 13, 14, 15, 16])), list_node([11, 12, 13, 14, 15, 16])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 6, -11, 1, 2, 3, -5, -6, 7])), list_node([1, -6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 6, -11, 1, 2, 3, -5, -6, 7])), list_node([1, -6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, -45])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, -45])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 0, 0, 0, 0, 0, 1])), list_node([1, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 0, 0, 0, 0, 0, 1])), list_node([1, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 6, -11, 10, 5, -10])), list_node([10, 5, -10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 6, -11, 10, 5, -10])), list_node([10, 5, -10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 6])), list_node([6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -15, 6])), list_node([6])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([100, -50, 25, -25, -25, 25, -100, 50])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([100, -50, 25, -25, -25, 25, -100, 50])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, -3, 4, 0, 5, -5, 6])), list_node([1, 2, 4, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, -3, 4, 0, 5, -5, 6])), list_node([1, 2, 4, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -3, 4, -3, 6, -6, 2])), list_node([10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -3, 4, -3, 6, -6, 2])), list_node([10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([100, -50, 50, -50, 50, -50, 50, -50, 50, -50])), list_node([100, -50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([100, -50, 50, -50, 50, -50, 50, -50, 50, -50])), list_node([100, -50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -55, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 0, -5, 0, 0, 0, 6, 7, 8, -20])), list_node([1, 2, 3, 4, 6, 7, 8, -20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 0, -5, 0, 0, 0, 6, 7, 8, -20])), list_node([1, 2, 3, 4, 6, 7, 8, -20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 6, 7, 8, -24])), list_node([1, 2, 3, 4, 5, 6, 7, 8, -24]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 6, 7, 8, -24])), list_node([1, 2, 3, 4, 5, 6, 7, 8, -24])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([7, 8, 9, -9, -8, -7, 10, -10, 11, 12, -12, -11])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([7, 8, 9, -9, -8, -7, 10, -10, 11, 12, -12, -11])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, 20, -10, -10, 30, 40, -70, 80])), list_node([10, 80]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, 20, -10, -10, 30, 40, -70, 80])), list_node([10, 80])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -45, 5, 5, -10])), list_node([1, 2, 3, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -45, 5, 5, -10])), list_node([1, 2, 3, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, -45, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -190])), list_node([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -190]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, -45, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -190])), list_node([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -190])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([0, 0, 0, 0, 1, 2, 3, 4, 5, -14, 0, 0])), list_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([0, 0, 0, 0, 1, 2, 3, 4, 5, -14, 0, 0])), list_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5, -9, 6, 7, -13])), list_node([1, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 0, 0, 0, 4, 5, -9, 6, 7, -13])), list_node([1, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -5, 5, -10, 20, -10, 5])), list_node([20, -10, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -5, 5, -10, 20, -10, 5])), list_node([20, -10, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([5, 6, 7, 8, -20, 3, 4, 5, 6, -18, 1, 2])), list_node([5, 6, 7, 6, -18, 1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([5, 6, 7, 8, -20, 3, 4, 5, 6, -18, 1, 2])), list_node([5, 6, 7, 6, -18, 1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -45, 11, 12, 13, 14, 15, 16, -80])), list_node([1, 2, 3, 4, 11, 12, 13, 14, 15, 16, -80]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -45, 11, 12, 13, 14, 15, 16, -80])), list_node([1, 2, 3, 4, 11, 12, 13, 14, 15, 16, -80])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, 1, -1, 1, -1, 1, 1, -1, -1])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, 1, -1, 1, -1, 1, 1, -1, -1])) == None: {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([1, -1, 2, -2, 3, -3, 4, -4, 5, -5])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, 9, 10, -40, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, -10, 5, 6, 7, 8, 9, 10, -40, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([0, 1, 2, 3, 4, 5, -15, 10])), list_node([10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([0, 1, 2, 3, 4, 5, -15, 10])), list_node([10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, -5, -3, 2, 3, -2, 1, 2, -1, 0, 0, 0])), list_node([10, -5, 1, 2, -1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, -5, -3, 2, 3, -2, 1, 2, -1, 0, 0, 0])), list_node([10, -5, 1, 2, -1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([10, 20, -10, -10, 30, 40, -50, 20])), list_node([10, 30, 40, -50, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([10, 20, -10, -10, 30, 40, -50, 20])), list_node([10, 30, 40, -50, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -1, 0, 1, -1, 0])), list_node([1, 2, 3, 4, 5, -1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -1, 0, 1, -1, 0])), list_node([1, 2, 3, 4, 5, -1])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(head = list_node([-1, 1, -2, 2, -3, 3, -4, 4, 5, -5])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(head = list_node([-1, 1, -2, 2, -3, 3, -4, 4, 5, -5])) == None: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(head = list_node([0, 0, 0, 0])) == None
@@ -121,3 +1081,5 @@ def check(candidate):
     assert is_same_list(candidate(head = list_node([10, 20, -10, -10, 30, 40, -50, 20])), list_node([10, 30, 40, -50, 20]))
     assert is_same_list(candidate(head = list_node([1, 2, 3, 4, 5, -1, 0, 1, -1, 0])), list_node([1, 2, 3, 4, 5, -1]))
     assert candidate(head = list_node([-1, 1, -2, 2, -3, 3, -4, 4, 5, -5])) == None
+
+

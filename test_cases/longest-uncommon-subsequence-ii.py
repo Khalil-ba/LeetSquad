@@ -1,5 +1,861 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaa', 'aaa', 'aa']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaa', 'aaa', 'aa']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['a', 'b', 'c', 'd', 'e']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['a', 'b', 'c', 'd', 'e']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['a', 'a', 'a', 'a']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['a', 'a', 'a', 'a']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'xy', 'xz', 'yzz']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'xy', 'xz', 'yzz']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'abc', 'aabbc', 'aabc']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'abc', 'aabbc', 'aabc']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abcde', 'ab', 'abc']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abcde', 'ab', 'abc']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'ab', 'bc', 'cd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'ab', 'bc', 'cd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'abc', 'abcd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'abc', 'abcd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'abc', 'abbc', 'aabbc']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'abc', 'abbc', 'aabbc']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'def', 'ghi']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'def', 'ghi']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'abc', 'de', 'a']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'abc', 'de', 'a']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aba', 'cdc', 'eae']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aba', 'cdc', 'eae']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['a', 'b', 'c']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['a', 'b', 'c']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'zyx', 'yxz', 'xzy', 'yzx', 'zxy', 'xyz', 'zyx']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'zyx', 'yxz', 'xzy', 'yzx', 'zxy', 'xyz', 'zyx']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaaa', 'bbbbb', 'ccccc', 'ddddd', 'eeeee', 'ffffff']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaaa', 'bbbbb', 'ccccc', 'ddddd', 'eeeee', 'ffffff']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cadb', 'bacd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cadb', 'bacd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['apple', 'apples', 'applesauce', 'appl', 'applf', 'applfs', 'applfsa', 'applfsau', 'applfsauc']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['apple', 'apples', 'applesauce', 'appl', 'applf', 'applfs', 'applfsa', 'applfsau', 'applfsauc']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['programming', 'programing', 'progamming', 'programmig', 'proogramming', 'programmiing']) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['programming', 'programing', 'progamming', 'programmig', 'proogramming', 'programmiing']) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['mississippi', 'mississipi', 'mississipp', 'mississip', 'mississi', 'mississ', 'missis', 'missi', 'misi', 'msi', 'mi', 'm']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['mississippi', 'mississipi', 'mississipp', 'mississip', 'mississi', 'mississ', 'missis', 'missi', 'misi', 'msi', 'mi', 'm']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'abxde', 'axcde', 'abxde', 'abcde', 'abcde']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'abxde', 'axcde', 'abxde', 'abcde', 'abcde']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abac', 'bca', 'cab', 'aaa', 'bbb', 'ccc']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abac', 'bca', 'cab', 'aaa', 'bbb', 'ccc']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['banana', 'bananb', 'bananc', 'bandan', 'bandna', 'bandan', 'bandnaa', 'bandnaab', 'bandnaabc']) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['banana', 'bananb', 'bananc', 'bandan', 'bandna', 'bandan', 'bandnaa', 'bandnaab', 'bandnaabc']) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'aebc', 'aecb', 'acbe']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'aebc', 'aecb', 'acbe']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abc', 'ab', 'a', 'aaaa', 'aaa', 'aa', 'a']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abc', 'ab', 'a', 'aaaa', 'aaa', 'aa', 'a']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['mnopqr', 'nopqrm', 'opqrmn', 'pqrmno', 'qrmnop', 'rmnopq']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['mnopqr', 'nopqrm', 'opqrmn', 'pqrmno', 'qrmnop', 'rmnopq']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['pqr', 'pqrs', 'pqs', 'prs', 'qs', 'qrs', 'qr', 'rs', 'r', 's']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['pqr', 'pqrs', 'pqs', 'prs', 'qs', 'qrs', 'qr', 'rs', 'r', 's']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'world', 'hold', 'hero']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'world', 'hold', 'hero']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'edcba', 'abdec', 'cabde', 'deabc', 'eabcd']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'edcba', 'abdec', 'cabde', 'deabc', 'eabcd']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'aabbbc', 'aabbcccc', 'aabbccdd', 'aabbccdde', 'aabbccddee']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'aabbbc', 'aabbcccc', 'aabbccdd', 'aabbccdde', 'aabbccddee']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'abcabc', 'aabcbc', 'abacbc', 'aabbcc', 'aacbbc', 'aabbbc']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'abcabc', 'aabcbc', 'abacbc', 'aabbcc', 'aacbbc', 'aabbbc']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xxyy', 'xyxy', 'yxyx', 'xyyx', 'yxxxy', 'xyxxy', 'xxyxy', 'xyxyx']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xxyy', 'xyxy', 'yxyx', 'xyyx', 'yxxxy', 'xyxxy', 'xxyxy', 'xyxyx']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcabc', 'bcabca', 'cababc', 'abacbc', 'bcbcab', 'acbcab']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcabc', 'bcabca', 'cababc', 'abacbc', 'bcbcab', 'acbcab']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'hallo', 'hxllo', 'hell', 'helo', 'helo', 'heo', 'he', 'h', 'o']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'hallo', 'hxllo', 'hell', 'helo', 'helo', 'heo', 'he', 'h', 'o']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abacax', 'bacaxa', 'caxaba', 'axabac', 'xacaba', 'cabaxa']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abacax', 'bacaxa', 'caxaba', 'axabac', 'xacaba', 'cabaxa']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['pqrst', 'pqrstu', 'pqrstu', 'pqrstu', 'pqr', 'pq', 'p']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['pqrst', 'pqrstu', 'pqrstu', 'pqrstu', 'pqr', 'pq', 'p']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['unique', 'uniqe', 'unque', 'uniqu', 'uqnie', 'unieq', 'unqiue']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['unique', 'uniqe', 'unque', 'uniqu', 'uqnie', 'unieq', 'unqiue']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aab', 'aac', 'baa', 'bca', 'caa', 'cab', 'abc', 'acb']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aab', 'aac', 'baa', 'bca', 'caa', 'cab', 'abc', 'acb']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['x', 'xy', 'xyz', 'xyzz', 'xyzzz', 'xyzzzz', 'xyzzzzz', 'xyzzzzzz']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['x', 'xy', 'xyz', 'xyzz', 'xyzzz', 'xyzzzz', 'xyzzzzz', 'xyzzzzzz']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abcde', 'abcdef', 'ab', 'abcd']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abcde', 'abcdef', 'ab', 'abcd']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'bbaacc', 'ccabba', 'aaccbb', 'cabbba', 'bccaba']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'bbaacc', 'ccabba', 'aaccbb', 'cabbba', 'bccaba']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaaa', 'aaaba', 'aabaa', 'abaab', 'abbaa']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaaa', 'aaaba', 'aabaa', 'abaab', 'abbaa']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdefg', 'bcdefga', 'cdefgab', 'defgabc', 'efgabcd', 'fgabcde']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdefg', 'bcdefga', 'cdefgab', 'defgabc', 'efgabcd', 'fgabcde']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'edcba', 'bcdea', 'cdeab', 'decba']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'edcba', 'bcdea', 'cdeab', 'decba']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'hallo', 'hxllo', 'hexlo', 'helxo']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'hallo', 'hxllo', 'hexlo', 'helxo']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abab', 'baba', 'abba', 'baab', 'abba']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abab', 'baba', 'abba', 'baab', 'abba']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdabcd', 'abcdeabc', 'abdcabdc', 'dacbdacb', 'dabcdbac', 'bacdabcd', 'abcdabdc']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdabcd', 'abcdeabc', 'abdcabdc', 'dacbdacb', 'dabcdbac', 'bacdabcd', 'abcdabdc']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'aabcbc', 'abacbc', 'abcabc', 'abcbac', 'abccba']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'aabcbc', 'abacbc', 'abcabc', 'abcbac', 'abccba']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['banana', 'anana', 'nana', 'ana', 'na', 'a']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['banana', 'anana', 'nana', 'ana', 'na', 'a']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaaa', 'aaaba', 'aabaa', 'abaaa', 'baaaa']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaaa', 'aaaba', 'aabaa', 'abaaa', 'baaaa']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'abc', 'ab', 'a']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'abc', 'ab', 'a']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'abcd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'abcd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['banana', 'anana', 'nana', 'ana', 'na', 'a', 'b']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['banana', 'anana', 'nana', 'ana', 'na', 'a', 'b']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['longstring', 'longerstring', 'longeststring', 'longstringer', 'longstringest', 'longstringerer']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['longstring', 'longerstring', 'longeststring', 'longstringer', 'longstringest', 'longstringerer']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdef', 'abcfed', 'bacdef', 'badcfe', 'bcadef', 'bcdafe']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdef', 'abcfed', 'bacdef', 'badcfe', 'bcadef', 'bcdafe']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaa', 'aaab', 'aaba', 'abaa', 'abab', 'abba', 'bbaa', 'baab', 'baba', 'bbaa']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaa', 'aaab', 'aaba', 'abaa', 'abab', 'abba', 'bbaa', 'baab', 'baba', 'bbaa']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcabc', 'bcabc', 'cabc', 'abc', 'ab', 'a', 'b', 'c']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcabc', 'bcabc', 'cabc', 'abc', 'ab', 'a', 'b', 'c']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaaa', 'aaab', 'aab', 'aba', 'baa', 'aaa']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaaa', 'aaab', 'aab', 'aba', 'baa', 'aaa']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['mississippi', 'missisipi', 'missippi', 'mssippi', 'msissippi']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['mississippi', 'missisipi', 'missippi', 'mssippi', 'msissippi']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdefg', 'bcdefga', 'cdefgab', 'defgabc', 'efgabcd', 'fgabcde', 'gabcdef']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdefg', 'bcdefga', 'cdefgab', 'defgabc', 'efgabcd', 'fgabcde', 'gabcdef']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['cat', 'dog', 'caterpillar', 'cattle', 'tall']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['cat', 'dog', 'caterpillar', 'cattle', 'tall']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'hallo', 'hullo', 'hellu', 'hullo', 'helou']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'hallo', 'hullo', 'hellu', 'hullo', 'helou']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'abbccc', 'aabccc', 'aaabcc', 'aabbcc', 'aabbbc', 'aabbbc', 'aabccc', 'abbccc', 'abaccc']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'abbccc', 'aabccc', 'aaabcc', 'aabbcc', 'aabbbc', 'aabbbc', 'aabccc', 'abbccc', 'abaccc']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abac', 'abca', 'acba', 'acab', 'aabc', 'abbc', 'aabb', 'abbb', 'bbbb']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abac', 'abca', 'acba', 'acab', 'aabc', 'abbc', 'aabb', 'abbb', 'bbbb']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'dabc', 'dacb']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'dabc', 'dacb']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcabc', 'ababc', 'abc', 'abcd', 'abcde']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcabc', 'ababc', 'abc', 'abcd', 'abcde']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdef', 'abdefc', 'acdefb', 'adefbc', 'aebcdf', 'afedcb']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdef', 'abdefc', 'acdefb', 'adefbc', 'aebcdf', 'afedcb']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'world', 'hold', 'wolf', 'hold', 'hold']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'world', 'hold', 'wolf', 'hold', 'hold']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdefgh', 'bghcdefa', 'cdefghba', 'defghbac', 'efghbacd', 'fghbacde']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdefgh', 'bghcdefa', 'cdefghba', 'defghbac', 'efghbacd', 'fghbacde']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'abced', 'acbed', 'acbde', 'adbec', 'adebc']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'abced', 'acbed', 'acbde', 'adbec', 'adebc']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcde', 'edcba', 'cbade', 'badce', 'aecdb', 'bcdea', 'abced']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcde', 'edcba', 'cbade', 'badce', 'aecdb', 'bcdea', 'abced']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdefgh', 'bcdefgh', 'cdefgh', 'defgh', 'efgh', 'fgh', 'gh', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdefgh', 'bcdefgh', 'cdefgh', 'defgh', 'efgh', 'fgh', 'gh', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaa', 'aaab', 'aaba', 'abaa', 'baaa']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaa', 'aaab', 'aaba', 'abaa', 'baaa']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cabd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cabd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'zyx', 'yz', 'zx', 'yx', 'x', 'y', 'z', '']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'zyx', 'yz', 'zx', 'yx', 'x', 'y', 'z', '']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abcde', 'ab', 'abc', 'a', 'abcd', 'abcde', 'ab', 'abc', 'a']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abcde', 'ab', 'abc', 'a', 'abcd', 'abcde', 'ab', 'abc', 'a']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aab', 'abc', 'abcd', 'abcde', 'abcdef']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aab', 'abc', 'abcd', 'abcde', 'abcdef']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'adcb', 'bacd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'adcb', 'bacd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyzz', 'zyxz', 'xzyz', 'zxzy', 'xzzy', 'zzxy']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyzz', 'zyxz', 'xzyz', 'zxzy', 'xzzy', 'zzxy']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['banana', 'bandana', 'bandanna', 'band', 'anana']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['banana', 'bandana', 'bandanna', 'band', 'anana']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aabbcc', 'aabbc', 'aabc', 'abc', 'aab', 'ab', 'ac', 'a', 'b', 'c', 'd']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aabbcc', 'aabbc', 'aabc', 'abc', 'aab', 'ab', 'ac', 'a', 'b', 'c', 'd']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abc', 'abc', 'abc', 'abcd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abc', 'abc', 'abc', 'abcd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['apple', 'ale', 'app', 'appl', 'ample']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['apple', 'ale', 'app', 'appl', 'ample']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['zzzzzzzzzz', 'zzzzzzzzz', 'zzzzzzzz', 'zzzzzzz', 'zzzzzz', 'zzzzz', 'zzzz', 'zzz', 'zz', 'z']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['zzzzzzzzzz', 'zzzzzzzzz', 'zzzzzzzz', 'zzzzzzz', 'zzzzzz', 'zzzzz', 'zzzz', 'zzz', 'zz', 'z']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['unique', 'distinct', 'different', 'separate', 'unequal', 'unique', 'distinct', 'different', 'separate', 'unequal']) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['unique', 'distinct', 'different', 'separate', 'unequal', 'unique', 'distinct', 'different', 'separate', 'unequal']) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['sequence', 'subsequence', 'subseq', 'seq', 'sequencee']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['sequence', 'subsequence', 'subseq', 'seq', 'sequencee']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaaa', 'aaaab', 'aaaba', 'aabaa', 'abaaa', 'baaaa', 'aabba', 'aabra', 'abaab', 'baaab', 'ababa', 'babaa', 'abaab', 'baaba', 'abaaa', 'baaaa', 'aabaa', 'abaaa', 'baaba', 'abaab']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaaa', 'aaaab', 'aaaba', 'aabaa', 'abaaa', 'baaaa', 'aabba', 'aabra', 'abaab', 'baaab', 'ababa', 'babaa', 'abaab', 'baaba', 'abaaa', 'baaaa', 'aabaa', 'abaaa', 'baaba', 'abaab']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['zzzz', 'zzzzz', 'zzzzzz', 'zzzzzzz', 'zzzzzzzz', 'zzzzzzzzz', 'zzzzzzzzzz']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['zzzz', 'zzzzz', 'zzzzzz', 'zzzzzzz', 'zzzzzzzz', 'zzzzzzzzz', 'zzzzzzzzzz']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cdab', 'cabd']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcd', 'abdc', 'acbd', 'dacb', 'cdab', 'cabd']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'xyx', 'xyy', 'xzy', 'yzy', 'yzz', 'zzy', 'zzyz', 'zzzy', 'zzzz']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'xyx', 'xyy', 'xzy', 'yzy', 'yzz', 'zzy', 'zzyz', 'zzzy', 'zzzz']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['apple', 'aple', 'appl', 'pple', 'aplp']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['apple', 'aple', 'appl', 'pple', 'aplp']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['hello', 'hallo', 'hxllo', 'hexlo', 'hxllo', 'hxllo']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['hello', 'hallo', 'hxllo', 'hexlo', 'hxllo', 'hxllo']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaaabbbb', 'aaabbb', 'aabbb', 'abbb', 'bbb', 'bb', 'b']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaaabbbb', 'aaabbb', 'aabbb', 'abbb', 'bbb', 'bb', 'b']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['pqr', 'qrp', 'rpq', 'prq', 'rqp', 'qpr', 'ppp', 'qqq', 'rrr']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['pqr', 'qrp', 'rpq', 'prq', 'rqp', 'qpr', 'ppp', 'qqq', 'rrr']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['qwerty', 'qwertyuiop', 'qwertyuio', 'qwertyui', 'qwer']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['qwerty', 'qwertyuiop', 'qwertyuio', 'qwertyui', 'qwer']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['aaabbb', 'aabbbb', 'abbbbb', 'aaabbbb', 'aabbbbbb', 'abbbbbbb']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['aaabbb', 'aabbbb', 'abbbbb', 'aaabbbb', 'aabbbbbb', 'abbbbbbb']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcabcabc', 'abc', 'bc', 'c', 'bca', 'cab', 'bac', 'acb', 'cba', 'abcabc']) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcabcabc', 'abc', 'bc', 'c', 'bca', 'cab', 'bac', 'acb', 'cba', 'abcabc']) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['pqr', 'pqrs', 'pqrst', 'pqrstu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['pqr', 'pqrs', 'pqrst', 'pqrstu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'xy', 'xz', 'yz', 'x', 'y', 'z', 'xyx', 'yzy', 'zxz']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'xy', 'xz', 'yz', 'x', 'y', 'z', 'xyx', 'yzy', 'zxz']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['xyz', 'xyx', 'xzy', 'yxz', 'yzy', 'zyx', 'zyz']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['xyz', 'xyx', 'xzy', 'yxz', 'yzy', 'zyx', 'zyz']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(strs = ['abcdefghij', 'abcdefghi', 'abcdefgh', 'abcdefg', 'abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(strs = ['abcdefghij', 'abcdefghi', 'abcdefgh', 'abcdefg', 'abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a']) == 10: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(strs = ['aaa', 'aaa', 'aa']) == -1
@@ -108,3 +964,5 @@ def check(candidate):
     assert candidate(strs = ['xyz', 'xy', 'xz', 'yz', 'x', 'y', 'z', 'xyx', 'yzy', 'zxz']) == 3
     assert candidate(strs = ['xyz', 'xyx', 'xzy', 'yxz', 'yzy', 'zyx', 'zyz']) == 3
     assert candidate(strs = ['abcdefghij', 'abcdefghi', 'abcdefgh', 'abcdefg', 'abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a']) == 10
+
+

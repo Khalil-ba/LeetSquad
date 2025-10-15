@@ -1,5 +1,973 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1],volume = 5,k = 2) == [2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1],volume = 5,k = 2) == [2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 1, 1, 2, 1, 2, 2],volume = 4,k = 3) == [2, 2, 2, 3, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 1, 1, 2, 1, 2, 2],volume = 4,k = 3) == [2, 2, 2, 3, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1],volume = 3,k = 2) == [2, 2, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1],volume = 3,k = 2) == [2, 2, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 2, 1],volume = 4,k = 2) == [3, 3, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 2, 1],volume = 4,k = 2) == [3, 3, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 2, 1, 2, 0],volume = 5,k = 2) == [2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 2, 1, 2, 0],volume = 5,k = 2) == [2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 5, 5, 5, 5],volume = 3,k = 2) == [6, 6, 6, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 5, 5, 5, 5],volume = 3,k = 2) == [6, 6, 6, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 0, 0, 0, 0, 0, 0],volume = 15,k = 3) == [2, 2, 2, 3, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 0, 0, 0, 0, 0, 0],volume = 15,k = 3) == [2, 2, 2, 3, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4],volume = 2,k = 2) == [2, 3, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4],volume = 2,k = 2) == [2, 3, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 5,k = 5) == [10, 9, 8, 7, 6, 5, 4, 4, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 5,k = 5) == [10, 9, 8, 7, 6, 5, 4, 4, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1, 1, 1],volume = 7,k = 3) == [2, 2, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1, 1, 1],volume = 7,k = 3) == [2, 2, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2],volume = 5,k = 5) == [2, 3, 4, 3, 3, 4, 3, 3, 4, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2],volume = 5,k = 5) == [2, 3, 4, 3, 3, 4, 3, 3, 4, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 10,k = 5) == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 10,k = 5) == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1],volume = 7,k = 3) == [2, 3, 3, 3, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1],volume = 7,k = 3) == [2, 3, 3, 3, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 1, 3],volume = 5,k = 1) == [4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 1, 3],volume = 5,k = 1) == [4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 10,k = 5) == [5, 5, 5, 5, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 10,k = 5) == [5, 5, 5, 5, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],volume = 10,k = 5) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],volume = 10,k = 5) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [99, 99, 99],volume = 0,k = 1) == [99, 99, 99]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [99, 99, 99],volume = 0,k = 1) == [99, 99, 99]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1],volume = 6,k = 2) == [5, 4, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1],volume = 6,k = 2) == [5, 4, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 0, 0, 0, 0, 0],volume = 10,k = 3) == [2, 2, 2, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 0, 0, 0, 0, 0],volume = 10,k = 3) == [2, 2, 2, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5],volume = 3,k = 2) == [3, 3, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5],volume = 3,k = 2) == [3, 3, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 10,k = 5) == [10, 9, 8, 7, 6, 5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 10,k = 5) == [10, 9, 8, 7, 6, 5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1],volume = 3,k = 2) == [5, 4, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1],volume = 3,k = 2) == [5, 4, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 2, 1],volume = 5,k = 2) == [3, 3, 3, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 2, 1],volume = 5,k = 2) == [3, 3, 3, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],volume = 50,k = 10) == [10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],volume = 50,k = 10) == [10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [4, 3, 3, 4, 3, 3, 4, 3, 3, 4],volume = 15,k = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [4, 3, 3, 4, 3, 3, 4, 3, 3, 4],volume = 15,k = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 30,k = 6) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 30,k = 6) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 25,k = 4) == [6, 6, 6, 6, 6, 6, 6, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 25,k = 4) == [6, 6, 6, 6, 6, 6, 6, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 4, 1, 3, 1],volume = 6,k = 3) == [4, 4, 4, 4, 1, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 4, 1, 3, 1],volume = 6,k = 3) == [4, 4, 4, 4, 1, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 25,k = 6) == [4, 4, 4, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 25,k = 6) == [4, 4, 4, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 60,k = 9) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 8, 7, 6, 6, 6, 6, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 60,k = 9) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 8, 7, 6, 6, 6, 6, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],volume = 25,k = 10) == [7, 7, 7, 8, 8, 8, 8, 8, 9, 10, 11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],volume = 25,k = 10) == [7, 7, 7, 8, 8, 8, 8, 8, 9, 10, 11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 0, 5, 0, 5, 0, 5],volume = 10,k = 3) == [5, 5, 5, 5, 5, 0, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 0, 5, 0, 5, 0, 5],volume = 10,k = 3) == [5, 5, 5, 5, 5, 0, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 200,k = 10) == [11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 200,k = 10) == [11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [7, 6, 5, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7],volume = 40,k = 6) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [7, 6, 5, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7],volume = 40,k = 6) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 5, 7, 9, 7, 5, 3, 5, 7, 9],volume = 30,k = 4) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 5, 7, 9, 7, 5, 3, 5, 7, 9],volume = 30,k = 4) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 2, 2, 3, 2, 2, 2, 2, 3, 2, 2, 2],volume = 10,k = 5) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 2, 2, 3, 2, 2, 2, 2, 3, 2, 2, 2],volume = 10,k = 5) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1],volume = 20,k = 4) == [4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1],volume = 20,k = 4) == [4, 4, 4, 4, 4, 4, 4, 4, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 0, 2, 0, 2],volume = 10,k = 2) == [3, 3, 4, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 0, 2, 0, 2],volume = 10,k = 2) == [3, 3, 4, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 25,k = 9) == [9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 25,k = 9) == [9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 1, 3, 2, 1, 3, 2, 1],volume = 20,k = 5) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 1, 3, 2, 1, 3, 2, 1],volume = 20,k = 5) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 0, 2, 0, 2, 0, 2, 0, 2],volume = 10,k = 4) == [2, 2, 2, 3, 3, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 0, 2, 0, 2, 0, 2, 0, 2],volume = 10,k = 4) == [2, 2, 2, 3, 3, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],volume = 25,k = 9) == [3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],volume = 25,k = 9) == [3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [4, 2, 1, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 20,k = 6) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [4, 2, 1, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 20,k = 6) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 10) == [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 10) == [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 30,k = 10) == [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 30,k = 10) == [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 1, 2, 1, 2, 1, 2, 1, 0],volume = 15,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 1, 2, 1, 2, 1, 2, 1, 0],volume = 15,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 0, 3, 4, 3, 5, 1, 2, 2, 1, 3, 4, 0, 5],volume = 25,k = 6) == [5, 4, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 0, 3, 4, 3, 5, 1, 2, 2, 1, 3, 4, 0, 5],volume = 25,k = 6) == [5, 4, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 8, 7, 9, 8, 10, 9, 11, 10],volume = 60,k = 10) == [9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 9, 9, 9, 9, 10, 9, 11, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7, 6, 8, 7, 9, 8, 10, 9, 11, 10],volume = 60,k = 10) == [9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 9, 9, 9, 9, 10, 9, 11, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],volume = 50,k = 8) == [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],volume = 50,k = 8) == [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 5, 3, 3, 3, 3, 3, 3, 5, 1],volume = 30,k = 4) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 5, 3, 3, 3, 3, 3, 3, 5, 1],volume = 30,k = 4) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 20,k = 8) == [9, 8, 7, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 20,k = 8) == [9, 8, 7, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 10,k = 4) == [3, 3, 3, 3, 3, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 10,k = 4) == [3, 3, 3, 3, 3, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 3, 1, 2, 4, 1, 3, 2, 4, 1, 5, 3, 2, 4, 1],volume = 30,k = 7) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 3, 1, 2, 4, 1, 3, 2, 4, 1, 5, 3, 2, 4, 1],volume = 30,k = 7) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 4, 2, 3, 1, 5, 3, 2, 4],volume = 18,k = 4) == [5, 5, 5, 5, 5, 5, 4, 5, 3, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 4, 2, 3, 1, 5, 3, 2, 4],volume = 18,k = 4) == [5, 5, 5, 5, 5, 5, 4, 5, 3, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],volume = 10,k = 4) == [2, 2, 2, 2, 2, 2, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],volume = 10,k = 4) == [2, 2, 2, 2, 2, 2, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],volume = 50,k = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],volume = 50,k = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 2, 1, 0, 1, 0, 1, 2, 3],volume = 20,k = 4) == [4, 4, 4, 4, 4, 4, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 2, 1, 0, 1, 0, 1, 2, 3],volume = 20,k = 4) == [4, 4, 4, 4, 4, 4, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 1, 3, 2, 1, 4, 3, 2, 1, 2],volume = 15,k = 4) == [4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 1, 3, 2, 1, 4, 3, 2, 1, 2],volume = 15,k = 4) == [4, 4, 4, 4, 4, 4, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1],volume = 40,k = 8) == [5, 5, 5, 5, 5, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1, 3, 5, 1],volume = 40,k = 8) == [5, 5, 5, 5, 5, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 5, 5, 5, 6, 5, 5, 5, 5],volume = 15,k = 4) == [7, 7, 7, 7, 7, 7, 7, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 5, 5, 5, 6, 5, 5, 5, 5],volume = 15,k = 4) == [7, 7, 7, 7, 7, 7, 7, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],volume = 12,k = 5) == [2, 2, 2, 3, 3, 3, 2, 3, 2, 1, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],volume = 12,k = 5) == [2, 2, 2, 3, 3, 3, 2, 3, 2, 1, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 60,k = 9) == [9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 60,k = 9) == [9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 2, 2, 2, 3, 2, 2, 2, 2],volume = 12,k = 4) == [3, 4, 4, 4, 4, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 2, 2, 2, 3, 2, 2, 2, 2],volume = 12,k = 4) == [3, 4, 4, 4, 4, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],volume = 25,k = 9) == [3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 5, 4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],volume = 25,k = 9) == [3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 5, 4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0],volume = 20,k = 9) == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0],volume = 20,k = 9) == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],volume = 50,k = 6) == [8, 8, 8, 8, 8, 9, 9, 8, 8, 8, 8, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],volume = 50,k = 6) == [8, 8, 8, 8, 8, 9, 9, 8, 8, 8, 8, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5],volume = 20,k = 5) == [3, 4, 4, 4, 4, 4, 3, 4, 0, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5],volume = 20,k = 5) == [3, 4, 4, 4, 4, 4, 3, 4, 0, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],volume = 12,k = 6) == [2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],volume = 12,k = 6) == [2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 2, 2, 1, 1, 1, 2, 2, 2],volume = 10,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 2, 2, 1, 1, 1, 2, 2, 2],volume = 10,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 4, 3, 5, 6, 4, 5, 4, 6, 7, 4, 3, 2, 4, 6],volume = 30,k = 6) == [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 4, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 4, 3, 5, 6, 4, 5, 4, 6, 7, 4, 3, 2, 4, 6],volume = 30,k = 6) == [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 4, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 30,k = 6) == [4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 30,k = 6) == [4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],volume = 12,k = 5) == [2, 3, 3, 3, 3, 3, 3, 2, 1, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],volume = 12,k = 5) == [2, 3, 3, 3, 3, 3, 3, 2, 1, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 0, 1, 0, 1],volume = 15,k = 6) == [1, 2, 3, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 0, 1, 0, 1],volume = 15,k = 6) == [1, 2, 3, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 6, 7, 8, 9, 10],volume = 25,k = 5) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 6, 7, 8, 9, 10],volume = 25,k = 5) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 30,k = 5) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 30,k = 5) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 50,k = 9) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],volume = 50,k = 9) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 1, 3, 2, 1, 4, 1, 5, 1, 3],volume = 15,k = 4) == [5, 4, 5, 5, 5, 4, 4, 5, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 1, 3, 2, 1, 4, 1, 5, 1, 3],volume = 15,k = 4) == [5, 4, 5, 5, 5, 4, 4, 5, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2],volume = 10,k = 5) == [3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2],volume = 10,k = 5) == [3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5],volume = 15,k = 5) == [5, 4, 4, 4, 4, 4, 4, 4, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5],volume = 15,k = 5) == [5, 4, 4, 4, 4, 4, 4, 4, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],volume = 10,k = 5) == [1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],volume = 10,k = 5) == [1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 0, 2, 1, 0, 1, 3],volume = 8,k = 5) == [2, 2, 2, 2, 2, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 0, 2, 1, 0, 1, 3],volume = 8,k = 5) == [2, 2, 2, 2, 2, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 6, 7, 8, 9],volume = 15,k = 4) == [9, 9, 9, 9, 9, 9, 9, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 6, 7, 8, 9],volume = 15,k = 4) == [9, 9, 9, 9, 9, 9, 9, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 2, 3, 4, 5],volume = 15,k = 4) == [5, 5, 5, 5, 5, 5, 5, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 2, 3, 4, 5],volume = 15,k = 4) == [5, 5, 5, 5, 5, 5, 5, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 20,k = 6) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1],volume = 20,k = 6) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0],volume = 20,k = 9) == [3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0],volume = 20,k = 9) == [3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 25,k = 7) == [3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 25,k = 7) == [3, 3, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5],volume = 18,k = 5) == [5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5],volume = 18,k = 5) == [5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2],volume = 15,k = 5) == [4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2],volume = 15,k = 5) == [4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6],volume = 30,k = 7) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6],volume = 30,k = 7) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],volume = 25,k = 10) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],volume = 25,k = 10) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],volume = 20,k = 4) == [9, 8, 7, 6, 6, 6, 6, 6, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],volume = 20,k = 4) == [9, 8, 7, 6, 6, 6, 6, 6, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4],volume = 30,k = 10) == [5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 8, 9, 8, 7, 6, 5, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4],volume = 30,k = 10) == [5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 8, 9, 8, 7, 6, 5, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 70,k = 10) == [10, 9, 8, 8, 8, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 70,k = 10) == [10, 9, 8, 8, 8, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1],volume = 30,k = 9) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1],volume = 30,k = 9) == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 6, 7, 8, 9, 10],volume = 20,k = 5) == [10, 9, 10, 10, 10, 10, 9, 9, 9, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 6, 7, 8, 9, 10],volume = 20,k = 5) == [10, 9, 10, 10, 10, 10, 9, 9, 9, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 30,k = 10) == [10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 30,k = 10) == [10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 4, 1, 3, 5, 1, 4, 2, 3, 1, 5, 2, 4, 1, 3, 5],volume = 50,k = 8) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 4, 1, 3, 5, 1, 4, 2, 3, 1, 5, 2, 4, 1, 3, 5],volume = 50,k = 8) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 4, 3, 4, 3, 4, 3, 4, 3, 4],volume = 20,k = 5) == [5, 6, 6, 6, 6, 6, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 4, 3, 4, 3, 4, 3, 4, 3, 4],volume = 20,k = 5) == [5, 6, 6, 6, 6, 6, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4],volume = 25,k = 9) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4],volume = 25,k = 9) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 4, 3, 5, 4, 6, 5, 4, 3, 2, 1],volume = 25,k = 6) == [6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 4, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 4, 3, 5, 4, 6, 5, 4, 3, 2, 1],volume = 25,k = 6) == [6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 4, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],volume = 50,k = 10) == [15, 15, 15, 15, 15, 15, 16, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],volume = 50,k = 10) == [15, 15, 15, 15, 15, 15, 16, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 5, 7, 9, 7, 5, 3, 1, 0, 1, 3, 5, 7, 9, 7, 5, 3, 1, 0],volume = 30,k = 9) == [1, 3, 5, 7, 9, 7, 7, 7, 7, 7, 7, 7, 6, 7, 9, 7, 5, 3, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 5, 7, 9, 7, 5, 3, 1, 0, 1, 3, 5, 7, 9, 7, 5, 3, 1, 0],volume = 30,k = 9) == [1, 3, 5, 7, 9, 7, 7, 7, 7, 7, 7, 7, 6, 7, 9, 7, 5, 3, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],volume = 20,k = 5) == [2, 2, 2, 3, 3, 3, 2, 2, 2, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],volume = 20,k = 5) == [2, 2, 2, 3, 3, 3, 2, 2, 2, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2],volume = 50,k = 10) == [40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 16, 15, 15, 15, 15, 15, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2],volume = 50,k = 10) == [40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 16, 15, 15, 15, 15, 15, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 50,k = 9) == [9, 8, 7, 7, 7, 7, 7, 7, 7, 8, 7, 7, 7, 7, 7, 7, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],volume = 50,k = 9) == [9, 8, 7, 7, 7, 7, 7, 7, 7, 8, 7, 7, 7, 7, 7, 7, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],volume = 20,k = 5) == [5, 5, 5, 5, 5, 5, 4, 3, 3, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],volume = 20,k = 5) == [5, 5, 5, 5, 5, 5, 4, 3, 3, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 2, 1, 2, 1, 3, 1, 2, 1, 3, 1],volume = 15,k = 5) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 2, 1, 2, 1, 3, 1, 2, 1, 3, 1],volume = 15,k = 5) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1],volume = 20,k = 8) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1],volume = 20,k = 8) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 8) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 7, 6, 6, 6, 6, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 8) == [9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 7, 6, 6, 6, 6, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [9, 8, 7, 6, 5, 6, 7, 8, 9],volume = 20,k = 4) == [9, 10, 10, 10, 10, 9, 9, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [9, 8, 7, 6, 5, 6, 7, 8, 9],volume = 20,k = 4) == [9, 10, 10, 10, 10, 9, 9, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1],volume = 15,k = 5) == [3, 3, 3, 4, 4, 4, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1],volume = 15,k = 5) == [3, 3, 3, 4, 4, 4, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 9) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 8, 7, 6, 5, 4, 4, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 50,k = 9) == [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 8, 7, 6, 5, 4, 4, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 3, 5, 7, 9, 7, 5, 3, 1],volume = 40,k = 4) == [9, 9, 9, 9, 9, 9, 9, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 3, 5, 7, 9, 7, 5, 3, 1],volume = 40,k = 4) == [9, 9, 9, 9, 9, 9, 9, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 30,k = 10) == [10, 9, 8, 7, 6, 5, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],volume = 30,k = 10) == [10, 9, 8, 7, 6, 5, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 40,k = 7) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],volume = 40,k = 7) == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3],volume = 25,k = 10) == [4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3],volume = 25,k = 10) == [4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],volume = 30,k = 10) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],volume = 30,k = 10) == [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 12,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 12,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [5, 3, 5, 2, 5, 3, 5, 2, 5, 3],volume = 15,k = 5) == [5, 5, 5, 6, 6, 6, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [5, 3, 5, 2, 5, 3, 5, 2, 5, 3],volume = 15,k = 5) == [5, 5, 5, 6, 6, 6, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 30,k = 9) == [8, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 30,k = 9) == [8, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(heights = [1, 1, 1, 1, 1],volume = 5,k = 2) == [2, 2, 2, 2, 2]
@@ -122,3 +1090,5 @@ def check(candidate):
     assert candidate(heights = [1, 2, 1, 2, 1, 2, 1, 2, 1],volume = 12,k = 4) == [3, 3, 3, 3, 3, 3, 3, 2, 2]
     assert candidate(heights = [5, 3, 5, 2, 5, 3, 5, 2, 5, 3],volume = 15,k = 5) == [5, 5, 5, 6, 6, 6, 5, 5, 5, 5]
     assert candidate(heights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],volume = 30,k = 9) == [8, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+

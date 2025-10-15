@@ -1,5 +1,1077 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(binary = "01010101010") == "11111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01010101010") == "11111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01") == "01"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01") == "01": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000001") == "111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000001") == "111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1111") == "1111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1111") == "1111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10101010101010101010") == "11111111110111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10101010101010101010") == "11111111110111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000000") == "111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000000") == "111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "010101") == "110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "010101") == "110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111000011") == "111111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111000011") == "111111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00110011") == "11101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00110011") == "11101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000") == "11110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000") == "11110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000") == "111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000") == "111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1100101") == "1111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1100101") == "1111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "001001") == "111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "001001") == "111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "101010") == "111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "101010") == "111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000") == "1110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000") == "1110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0101010101") == "1111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0101010101") == "1111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000111000") == "111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000111000") == "111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10101010") == "11110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10101010") == "11110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1100110011") == "1111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1100110011") == "1111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0101010") == "1110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0101010") == "1110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111000") == "111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111000") == "111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0001010101") == "1111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0001010101") == "1111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000001111") == "111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000001111") == "111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111") == "111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111") == "111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00001111") == "11101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00001111") == "11101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11001000101") == "11111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11001000101") == "11111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0010101") == "1110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0010101") == "1110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11001100") == "11111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11001100") == "11111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11110000") == "11111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11110000") == "11111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "011110") == "101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "011110") == "101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "110010") == "111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "110010") == "111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000110") == "111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000110") == "111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "100100100") == "111111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "100100100") == "111111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1000000") == "1111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1000000") == "1111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111") == "11111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111") == "11111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "100000000001") == "111111111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "100000000001") == "111111111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10101001010100101") == "11111111101111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10101001010100101") == "11111111101111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000111111111111") == "11111111111111111110111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000111111111111") == "11111111111111111110111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01111111111111111111111111111111") == "01111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01111111111111111111111111111111") == "01111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000") == "11111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000") == "11111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01001001001001001") == "11111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01001001001001001") == "11111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000000000") == "1111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000000000") == "1111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000111100001111") == "1111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000111100001111") == "1111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000001111000001111000001111000001111000001111") == "111111111111111111111111011111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000001111000001111000001111000001111000001111") == "111111111111111111111111011111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "001001001001001001001001001001001001001001001001001001") == "111111111111111111111111111111111110111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "001001001001001001001001001001001001001001001001001001") == "111111111111111111111111111111111110111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000000000") == "111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000000000") == "111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111011111011111011111011111011111011111011111") == "11111111111011111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111011111011111011111011111011111011111011111") == "11111111111011111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10010010010010010") == "11111111111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10010010010010010") == "11111111111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111001001001001000") == "111111111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111001001001001000") == "111111111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000011100000") == "11111111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000011100000") == "11111111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111111111111111111111111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111111111111111111111111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00011001100110011") == "11111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00011001100110011") == "11111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "010101010101010101010") == "111111111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "010101010101010101010") == "111111111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00010101010100") == "11111111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00010101010100") == "11111111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000000000000000000000000000000000000000000000000000000000000000000000") == "111111111111111111111111111111111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000000000000000000000000000000000000000000000000000000000000000000000") == "111111111111111111111111111111111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1010101010101010101010101010101010101010101010101010101010101010") == "1111111111111111111111111111111101111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1010101010101010101010101010101010101010101010101010101010101010") == "1111111111111111111111111111111101111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111100000000111") == "11111111111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111100000000111") == "11111111111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01010101010101010101") == "11111111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01010101010101010101") == "11111111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10101010101010101010101010101010") == "11111111111111110111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10101010101010101010101010101010") == "11111111111111110111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000111111110000") == "1111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000111111110000") == "1111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000011111111111111111111") == "11111111111011111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000011111111111111111111") == "11111111111011111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "001010101010") == "111111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "001010101010") == "111111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1111111111111111") == "1111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1111111111111111") == "1111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1010101010") == "1111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1010101010") == "1111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0101010101010101") == "1111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0101010101010101") == "1111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00001111000011110000111100001111") == "11111111111111101111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00001111000011110000111100001111") == "11111111111111101111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000000000000000000000000001") == "1111111111111111111111111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000000000000000000000000001") == "1111111111111111111111111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111111") == "11111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111111") == "11111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000011110000") == "111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000011110000") == "111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000010101010101010101010101010101010101010101010") == "111111111111111111111111101111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000010101010101010101010101010101010101010101010") == "111111111111111111111111101111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11011011011011011") == "11111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11011011011011011") == "11111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000010000000100000001000000010000000100000001") == "11111111111111111111111111111111111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000010000000100000001000000010000000100000001") == "11111111111111111111111111111111111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111100000000000000000000000000") == "11111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111100000000000000000000000000") == "11111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11000000000000000000") == "11111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11000000000000000000") == "11111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1010101010101010") == "1111111101111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1010101010101010") == "1111111101111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "110011001100") == "111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "110011001100") == "111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00001111000011110000") == "11111111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00001111000011110000") == "11111111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00011110101010101010101010101010101010101010101") == "11111111111111111111110111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00011110101010101010101010101010101010101010101") == "11111111111111111111110111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11100001010101010100001111100001111000011110000") == "11111111111111111111111111101111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11100001010101010100001111100001111000011110000") == "11111111111111111111111111101111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "001100110011") == "111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "001100110011") == "111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01001001001001001001") == "11111111111101111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01001001001001001001") == "11111111111101111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000001111110000001111") == "1111111111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000001111110000001111") == "1111111111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111111110") == "111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111111110") == "111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000001111") == "11111111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000001111") == "11111111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "101010100000") == "111111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "101010100000") == "111111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111") == "11111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111") == "11111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00001010101010100") == "11111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00001010101010100") == "11111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01010101010101010") == "11111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01010101010101010") == "11111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "10101010101010101") == "11111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "10101010101010101") == "11111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0101010101010101010101010101010101010101010101010101") == "1111111111111111111111111011111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0101010101010101010101010101010101010101010101010101") == "1111111111111111111111111011111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000000000000001") == "11111111111111111111111111111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000000000000001") == "11111111111111111111111111111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "010101010101010101010101010101010101010101010101") == "111111111111111111111110111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "010101010101010101010101010101010101010101010101") == "111111111111111111111110111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1100000000000011") == "1111111111111011"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1100000000000011") == "1111111111111011": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111111111111111111111111111111") == "11111111111111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111111111111111111111111111111") == "11111111111111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000010000000000000000000000") == "11111111111111111111111111111101"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000010000000000000000000000") == "11111111111111111111111111111101": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11001100110011001") == "11111111101111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11001100110011001") == "11111111101111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "101010101010101010101") == "111111111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "101010101010101010101") == "111111111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111100001111") == "111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111100001111") == "111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1100110011001100") == "1111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1100110011001100") == "1111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111111111") == "111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111111111") == "111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0001100010001000") == "1111111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0001100010001000") == "1111111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000000000000111111") == "1111111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000000000000111111") == "1111111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1110000110001100") == "1111111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1110000110001100") == "1111111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111111") == "111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111111") == "111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000000000000000000000000000000000000000000000000000000000000000000000000000") == "1111111111111111111111111111111111111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000000000000000000000000000000000000000000000000000000000000000000000000000") == "1111111111111111111111111111111111111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111111111111111111111111111111111111111111") == "11111111111111111111111111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111111111111111111111111111111111111111111") == "11111111111111111111111111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1001001001001") == "1111111101111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1001001001001") == "1111111101111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000000000000000000000000000000000000000000000000") == "111111111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000000000000000000000000000000000000000000000000") == "111111111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "010101010101") == "111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "010101010101") == "111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00100100100100100100100100100100") == "11111111111111111111101111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00100100100100100100100100100100") == "11111111111111111111101111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11110000000000000") == "11111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11110000000000000") == "11111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11110000111100001111000011110000111100001111") == "11111111111111111111111011111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11110000111100001111000011110000111100001111") == "11111111111111111111111011111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0011001100110011") == "1111111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0011001100110011") == "1111111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11000000110000001100000011000000") == "11111111111111111111111110111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11000000110000001100000011000000") == "11111111111111111111111110111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01010101010101010101010101010101") == "11111111111111101111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01010101010101010101010101010101") == "11111111111111101111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "111111111111111111111111111111111111111111111111") == "111111111111111111111111111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000") == "11111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000") == "11111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "110101010101") == "111111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "110101010101") == "111111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01001010100101001") == "11111111101111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01001010100101001") == "11111111101111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1010101010101010101010101010101010101010101010101010") == "1111111111111111111111111101111111111111111111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1010101010101010101010101010101010101010101010101010") == "1111111111111111111111111101111111111111111111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0110110110110") == "1111011111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0110110110110") == "1111011111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "00000000000000000000000000000000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "00000000000000000000000000000000000000000000000000000000000000000000000") == "11111111111111111111111111111111111111111111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111111111111111110") == "11111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111111111111111110") == "11111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "0000000000000000") == "1111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "0000000000000000") == "1111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1100101010100001") == "1111111111011111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1100101010100001") == "1111111111011111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "01101101101101101") == "11111011111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "01101101101101101") == "11111011111111111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111111111000000000000") == "11111111111111111111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111111111000000000000") == "11111111111111111111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "11111111111111110") == "11111111111111110"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "11111111111111110") == "11111111111111110": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "000100010001") == "111111110111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "000100010001") == "111111110111": {e}')
+    
+    total += 1
+    try:
+        result = candidate(binary = "1111111111") == "1111111111"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(binary = "1111111111") == "1111111111": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(binary = "01010101010") == "11111011111"
@@ -135,3 +1207,5 @@ def check(candidate):
     assert candidate(binary = "11111111111111110") == "11111111111111110"
     assert candidate(binary = "000100010001") == "111111110111"
     assert candidate(binary = "1111111111") == "1111111111"
+
+

@@ -1,5 +1,741 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabc",neededTime = [1, 2, 3, 1, 2, 3]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabc",neededTime = [1, 2, 3, 1, 2, 3]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaa",neededTime = [5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaa",neededTime = [5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abacabadabacaba",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abacabadabacaba",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabaa",neededTime = [1, 2, 3, 4, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabaa",neededTime = [1, 2, 3, 4, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzz",neededTime = [1, 1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzz",neededTime = [1, 1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaa",neededTime = [10, 5, 4, 2]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaa",neededTime = [10, 5, 4, 2]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdef",neededTime = [1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdef",neededTime = [1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abaac",neededTime = [1, 2, 3, 4, 5]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abaac",neededTime = [1, 2, 3, 4, 5]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abc",neededTime = [1, 2, 3]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abc",neededTime = [1, 2, 3]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdefg",neededTime = [1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdefg",neededTime = [1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabbb",neededTime = [1, 2, 3, 4, 5, 6]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabbb",neededTime = [1, 2, 3, 4, 5, 6]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbcc",neededTime = [1, 2, 3, 1, 2, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbcc",neededTime = [1, 2, 3, 1, 2, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcd",neededTime = [4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcd",neededTime = [4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "bbbaaa",neededTime = [4, 9, 3, 8, 8, 9]) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "bbbaaa",neededTime = [4, 9, 3, 8, 8, 9]) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababab",neededTime = [1, 2, 3, 4, 5, 6]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababab",neededTime = [1, 2, 3, 4, 5, 6]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "a",neededTime = [5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "a",neededTime = [5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabab",neededTime = [3, 5, 10, 7, 5]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabab",neededTime = [3, 5, 10, 7, 5]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabbb",neededTime = [3, 5, 10, 7, 5, 3]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabbb",neededTime = [3, 5, 10, 7, 5, 3]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "a",neededTime = [1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "a",neededTime = [1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzz",neededTime = [10, 1, 1, 100]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzz",neededTime = [10, 1, 1, 100]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababababab",neededTime = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababababab",neededTime = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaaaaaaabbbbbbbbbb",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaaaaaaabbbbbbbbbb",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabbbcccdddeee",neededTime = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabbbcccdddeee",neededTime = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabaaaabaaaaaaaabaa",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabaaaabaaaaaaaabaa",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababaababaaba",neededTime = [1, 3, 5, 2, 4, 6, 3, 5, 7, 4, 6, 8, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababaababaaba",neededTime = [1, 3, 5, 2, 4, 6, 3, 5, 7, 4, 6, 8, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaa",neededTime = [1, 2, 3, 4, 5, 6]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaa",neededTime = [1, 2, 3, 4, 5, 6]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaabbbbccccdddd",neededTime = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaabbbbccccdddd",neededTime = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abacabadabacabadabacabadabacabadabacabad",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abacabadabacabadabacabadabacabadabacabad",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabaaabbaaaabaaa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 76
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabaaabbaaaabaaa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 76: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaabbbbcccc",neededTime = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaabbbbcccc",neededTime = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abababababab",neededTime = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abababababab",neededTime = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeff",neededTime = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeff",neededTime = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabccbaa",neededTime = [3, 5, 10, 7, 5, 3, 5, 3]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabccbaa",neededTime = [3, 5, 10, 7, 5, 3, 5, 3]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgg",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgg",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaaaaaaa",neededTime = [1, 10, 100, 1000, 10000, 1, 10, 100, 1000, 10000]) == 12222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaaaaaaa",neededTime = [1, 10, 100, 1000, 10000, 1, 10, 100, 1000, 10000]) == 12222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "bbbaaabbb",neededTime = [10, 1, 1, 1, 10, 10, 1, 1, 10]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "bbbaaabbb",neededTime = [10, 1, 1, 1, 10, 10, 1, 1, 10]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "xyzzzyx",neededTime = [1, 2, 3, 4, 5, 6, 7]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "xyzzzyx",neededTime = [1, 2, 3, 4, 5, 6, 7]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaaaaaaaaa",neededTime = [10000, 9999, 9998, 9997, 9996, 9995, 9994, 9993, 9992, 9991, 9990, 9989]) == 109934
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaaaaaaaaa",neededTime = [10000, 9999, 9998, 9997, 9996, 9995, 9994, 9993, 9992, 9991, 9990, 9989]) == 109934: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbbaaabbbaaa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbbaaabbbaaa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abccbaabccba",neededTime = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abccbaabccba",neededTime = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaa",neededTime = [10, 5, 1, 1, 5, 10]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaa",neededTime = [10, 5, 1, 1, 5, 10]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabc",neededTime = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabc",neededTime = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdefghij",neededTime = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdefghij",neededTime = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgghhiijjkk",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgghhiijjkk",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabc",neededTime = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabc",neededTime = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabbbcccddd",neededTime = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabbbcccddd",neededTime = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaabbbb",neededTime = [1, 2, 3, 4, 5, 6, 7, 8]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaabbbb",neededTime = [1, 2, 3, 4, 5, 6, 7, 8]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]) == 676
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]) == 676: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abababababababababab",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abababababababababab",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabccbaabccbaabc",neededTime = [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabccbaabccbaabc",neededTime = [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabcabcabcabc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabcabcabcabc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abababababababababab",neededTime = [1, 9, 2, 8, 3, 7, 4, 6, 5, 5, 4, 6, 3, 7, 2, 8, 1, 9, 1, 9]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abababababababababab",neededTime = [1, 9, 2, 8, 3, 7, 4, 6, 5, 5, 4, 6, 3, 7, 2, 8, 1, 9, 1, 9]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabaaaaba",neededTime = [1, 2, 1, 1, 1, 1, 1, 2, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabaaaaba",neededTime = [1, 2, 1, 1, 1, 1, 1, 2, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababababab",neededTime = [5, 4, 5, 4, 5, 4, 5, 4, 5, 4]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababababab",neededTime = [5, 4, 5, 4, 5, 4, 5, 4, 5, 4]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaa",neededTime = [10, 1, 10, 2, 10, 3]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaa",neededTime = [10, 1, 10, 2, 10, 3]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabc",neededTime = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabc",neededTime = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababaababa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababaababa",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabcabcabc",neededTime = [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabcabcabc",neededTime = [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaabbbbccccdddd",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaabbbbccccdddd",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgg",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgg",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgg",neededTime = [9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgg",neededTime = [9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaaaaaaaabbbbbbbbbb",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaaaaaaaabbbbbbbbbb",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaabbcc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaabbcc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabaaaaba",neededTime = [5, 5, 5, 1, 1, 5, 5, 1, 1, 5]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabaaaaba",neededTime = [5, 5, 5, 1, 1, 5, 5, 1, 1, 5]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdabcde",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdabcde",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdefghijklmnopqrstuvwxyz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdefghijklmnopqrstuvwxyz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaabaaaabaaab",neededTime = [3, 2, 1, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaabaaaabaaab",neededTime = [3, 2, 1, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdeffedcba",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdeffedcba",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaaabbbaaa",neededTime = [1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaaabbbaaa",neededTime = [1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzzzzzzzz",neededTime = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzzzzzzzz",neededTime = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabc",neededTime = [10, 20, 30, 10, 20, 30, 10, 20, 30, 10, 20, 30]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabc",neededTime = [10, 20, 30, 10, 20, 30, 10, 20, 30, 10, 20, 30]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "ababababab",neededTime = [100, 1, 100, 1, 100, 1, 100, 1, 100, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "ababababab",neededTime = [100, 1, 100, 1, 100, 1, 100, 1, 100, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abababababab",neededTime = [1, 9, 2, 8, 3, 7, 4, 6, 5, 10, 6, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abababababab",neededTime = [1, 9, 2, 8, 3, 7, 4, 6, 5, 10, 6, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabcabcabcabcabcabcabc",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabcabcabcabcabcabcabc",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbbcccaabbcc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbbcccaabbcc",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbaabbaabb",neededTime = [10, 20, 30, 40, 10, 20, 30, 40, 10, 20, 30, 40]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbaabbaabb",neededTime = [10, 20, 30, 40, 10, 20, 30, 40, 10, 20, 30, 40]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeff",neededTime = [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeff",neededTime = [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcabcabcabc",neededTime = [2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcabcabcabc",neededTime = [2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzzz",neededTime = [1, 2, 3, 4, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzzz",neededTime = [1, 2, 3, 4, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeffgg",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeffgg",neededTime = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "zzzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "zzzzzzzzzz",neededTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabacbacba",neededTime = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabacbacba",neededTime = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdabcda",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdabcda",neededTime = [1, 2, 3, 4, 1, 2, 3, 4, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aabbccddeeff",neededTime = [1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aabbccddeeff",neededTime = [1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "aaaabbbb",neededTime = [1, 2, 3, 4, 1, 2, 3, 4]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "aaaabbbb",neededTime = [1, 2, 3, 4, 1, 2, 3, 4]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = "abcdefghij",neededTime = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = "abcdefghij",neededTime = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(colors = "abcabc",neededTime = [1, 2, 3, 1, 2, 3]) == 0
@@ -93,3 +829,5 @@ def check(candidate):
     assert candidate(colors = "aabbccddeeff",neededTime = [1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10]) == 6
     assert candidate(colors = "aaaabbbb",neededTime = [1, 2, 3, 4, 1, 2, 3, 4]) == 12
     assert candidate(colors = "abcdefghij",neededTime = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 0
+
+

@@ -1,5 +1,797 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10],a = 2,b = 1,x = 1) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10],a = 2,b = 1,x = 1) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [],a = 1,b = 1,x = 0) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [],a = 1,b = 1,x = 0) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 6, 7],a = 1,b = 1,x = 10) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 6, 7],a = 1,b = 1,x = 10) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 6, 2, 14, 5, 17, 4],a = 16,b = 9,x = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 6, 2, 14, 5, 17, 4],a = 16,b = 9,x = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [8, 3, 16, 6, 12, 20],a = 15,b = 13,x = 11) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [8, 3, 16, 6, 12, 20],a = 15,b = 13,x = 11) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [14, 4, 18, 1, 15],a = 3,b = 15,x = 9) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [14, 4, 18, 1, 15],a = 3,b = 15,x = 9) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],a = 3,b = 5,x = 20) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],a = 3,b = 5,x = 20) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 1,b = 3,x = 50) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 1,b = 3,x = 50) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 2,x = 25) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 2,x = 25) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],a = 2,b = 4,x = 58) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],a = 2,b = 4,x = 58) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200],a = 5,b = 10,x = 195) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200],a = 5,b = 10,x = 195) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],a = 2,b = 1,x = 51) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],a = 2,b = 1,x = 51) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [300, 600, 900, 1200, 1500, 1800],a = 300,b = 150,x = 2100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [300, 600, 900, 1200, 1500, 1800],a = 300,b = 150,x = 2100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],a = 2,b = 4,x = 41) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],a = 2,b = 4,x = 41) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],a = 100,b = 50,x = 1950) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],a = 100,b = 50,x = 1950) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 3,x = 20) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 3,x = 20) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900],a = 100,b = 200,x = 1999) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900],a = 100,b = 200,x = 1999) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1536, 2048],a = 1,b = 2,x = 1500) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1536, 2048],a = 1,b = 2,x = 1500) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 20,x = 210) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 20,x = 210) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 1,x = 21) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 1,x = 21) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 2,x = 21) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 2,x = 21) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],a = 100,b = 200,x = 2100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],a = 100,b = 200,x = 2100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 50,x = 1000) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 50,x = 1000) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000],a = 500,b = 100,x = 5500) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000],a = 500,b = 100,x = 5500) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 199) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 199) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],a = 2,b = 1,x = 28) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],a = 2,b = 1,x = 28) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519],a = 100,b = 50,x = 600) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519],a = 100,b = 50,x = 600) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 210) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 210) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],a = 25,b = 50,x = 600) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],a = 25,b = 50,x = 600) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90],a = 15,b = 25,x = 100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90],a = 15,b = 25,x = 100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990],a = 1,b = 2,x = 2000) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990],a = 1,b = 2,x = 2000) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1500],a = 250,b = 125,x = 2000) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1500],a = 250,b = 125,x = 2000) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],a = 2,b = 4,x = 50) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],a = 2,b = 4,x = 50) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],a = 5,b = 3,x = 20) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],a = 5,b = 3,x = 20) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 50,x = 1001) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 50,x = 1001) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],a = 3,b = 6,x = 63) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],a = 3,b = 6,x = 63) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],a = 100,b = 50,x = 2100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],a = 100,b = 50,x = 2100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 195) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 195) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [199, 399, 599, 799, 999, 1199, 1399, 1599, 1799, 1999],a = 200,b = 100,x = 1998) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [199, 399, 599, 799, 999, 1199, 1399, 1599, 1799, 1999],a = 200,b = 100,x = 1998) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [500, 1000, 1500],a = 100,b = 50,x = 2000) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [500, 1000, 1500],a = 100,b = 50,x = 2000) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2000],a = 1000,b = 500,x = 1500) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2000],a = 1000,b = 500,x = 1500) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],a = 10,b = 5,x = 200) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],a = 10,b = 5,x = 200) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 2,b = 4,x = 30) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 2,b = 4,x = 30) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 25) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 25) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 4,x = 21) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 4,x = 21) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],a = 5,b = 3,x = 140) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],a = 5,b = 3,x = 140) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [500, 1000, 1500, 2000],a = 500,b = 250,x = 2500) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [500, 1000, 1500, 2000],a = 500,b = 250,x = 2500) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],a = 5,b = 10,x = 135) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],a = 5,b = 10,x = 135) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],a = 50,b = 100,x = 350) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],a = 50,b = 100,x = 350) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000],a = 500,b = 1000,x = 6000) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000],a = 500,b = 1000,x = 6000) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [],a = 1000,b = 500,x = 2000) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [],a = 1000,b = 500,x = 2000) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 200,x = 1500) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],a = 100,b = 200,x = 1500) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 15, 25, 35, 45],a = 10,b = 5,x = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 15, 25, 35, 45],a = 10,b = 5,x = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],a = 3,b = 9,x = 88) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],a = 3,b = 9,x = 88) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 150, 200, 250, 300],a = 50,b = 20,x = 180) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 150, 200, 250, 300],a = 50,b = 20,x = 180) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901],a = 100,b = 50,x = 1899) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901],a = 100,b = 50,x = 1899) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 195) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 195) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 4,x = 20) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = 2,b = 4,x = 20) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],a = 1,b = 2,x = 31) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],a = 1,b = 2,x = 31) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950],a = 150,b = 100,x = 1000) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950],a = 150,b = 100,x = 1000) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597],a = 7,b = 5,x = 400) == 64
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597],a = 7,b = 5,x = 400) == 64: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 3,x = 21) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 1,b = 3,x = 21) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],a = 20,b = 10,x = 199) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],a = 20,b = 10,x = 199) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50],a = 5,b = 10,x = 15) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50],a = 5,b = 10,x = 15) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 20,x = 200) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 20,x = 200) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 210) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],a = 10,b = 5,x = 210) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],a = 5,b = 10,x = 105) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],a = 5,b = 10,x = 105) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 2,b = 1,x = 19) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],a = 2,b = 1,x = 19) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],a = 5,b = 3,x = 48) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],a = 5,b = 3,x = 48) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27],a = 3,b = 2,x = 30) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [3, 6, 9, 12, 15, 18, 21, 24, 27],a = 3,b = 2,x = 30) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [300, 600, 900, 1200, 1500, 1800, 2000],a = 100,b = 200,x = 1900) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [300, 600, 900, 1200, 1500, 1800, 2000],a = 100,b = 200,x = 1900) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950],a = 150,b = 75,x = 1995) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950],a = 150,b = 75,x = 1995) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [199, 198, 197, 196, 195, 194, 193, 192, 191, 190, 189, 188, 187, 186, 185, 184, 183, 182, 181, 180],a = 1,b = 2,x = 175) == 175
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [199, 198, 197, 196, 195, 194, 193, 192, 191, 190, 189, 188, 187, 186, 185, 184, 183, 182, 181, 180],a = 1,b = 2,x = 175) == 175: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],a = 10,b = 5,x = 199) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],a = 10,b = 5,x = 199) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131, 135, 139, 143, 147, 151, 155, 159, 163, 167, 171, 175, 179, 183, 187, 191, 195, 199],a = 4,b = 8,x = 197) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131, 135, 139, 143, 147, 151, 155, 159, 163, 167, 171, 175, 179, 183, 187, 191, 195, 199],a = 4,b = 8,x = 197) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],a = 2,b = 3,x = 50) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],a = 2,b = 3,x = 50) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],a = 5,b = 10,x = 150) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],a = 5,b = 10,x = 150) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [50, 100, 150, 200],a = 50,b = 25,x = 200) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [50, 100, 150, 200],a = 50,b = 25,x = 200) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],a = 10,b = 5,x = 145) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],a = 10,b = 5,x = 145) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 200, 300, 400, 500],a = 100,b = 200,x = 600) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 200, 300, 400, 500],a = 100,b = 200,x = 600) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145, 160, 175, 190, 205, 220, 235, 250, 265, 280, 295],a = 15,b = 30,x = 290) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145, 160, 175, 190, 205, 220, 235, 250, 265, 280, 295],a = 15,b = 30,x = 290) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],a = 1,b = 1,x = 110) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],a = 1,b = 1,x = 110) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 15, 20, 25, 30],a = 5,b = 10,x = 40) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 15, 20, 25, 30],a = 5,b = 10,x = 40) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],a = 5,b = 10,x = 55) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],a = 5,b = 10,x = 55) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],a = 3,b = 1,x = 45) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],a = 3,b = 1,x = 45) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60],a = 2,b = 4,x = 62) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60],a = 2,b = 4,x = 62) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 185) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 185) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 2,b = 1,x = 39) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 2,b = 1,x = 39) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 21) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 21) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 5, 7, 10, 15, 20],a = 2,b = 4,x = 25) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 5, 7, 10, 15, 20],a = 2,b = 4,x = 25) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],a = 1,b = 2,x = 2048) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],a = 1,b = 2,x = 2048) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],a = 1,b = 1,x = 120) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],a = 1,b = 1,x = 120) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90],a = 10,b = 5,x = 100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90],a = 10,b = 5,x = 100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],a = 10,b = 20,x = 105) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],a = 10,b = 20,x = 105) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 30) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],a = 1,b = 2,x = 30) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 2,b = 3,x = 42) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 2,b = 3,x = 42) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 195) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 195) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290],a = 10,b = 20,x = 299) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290],a = 10,b = 20,x = 299) == -1: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(forbidden = [2, 4, 6, 8, 10],a = 2,b = 1,x = 1) == -1
@@ -100,3 +892,5 @@ def check(candidate):
     assert candidate(forbidden = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],a = 2,b = 3,x = 42) == -1
     assert candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],a = 10,b = 5,x = 195) == -1
     assert candidate(forbidden = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290],a = 10,b = 20,x = 299) == -1
+
+

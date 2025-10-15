@@ -1,5 +1,853 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "AB-CD-EF-GH-IJ",k = 2) == "AB-CD-EF-GH-IJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AB-CD-EF-GH-IJ",k = 2) == "AB-CD-EF-GH-IJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "",k = 1) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "",k = 1) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "",k = 10) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "",k = 10) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890",k = 3) == "1-234-567-890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890",k = 3) == "1-234-567-890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2-4A0r7-4k",k = 3) == "24-A0R-74K"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2-4A0r7-4k",k = 3) == "24-A0R-74K": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2-5g-3-J",k = 2) == "2-5G-3J"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2-5g-3-J",k = 2) == "2-5G-3J": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "5F3Z-2e-9-w",k = 4) == "5F3Z-2E9W"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "5F3Z-2e-9-w",k = 4) == "5F3Z-2E9W": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "----",k = 2) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "----",k = 2) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg",k = 2) == "A-BC-DE-FG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg",k = 2) == "A-BC-DE-FG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-a-a-a-",k = 1) == "A-A-A-A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-a-a-a-",k = 1) == "A-A-A-A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-23-456",k = 2) == "12-34-56"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-23-456",k = 2) == "12-34-56": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ",k = 1) == "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ",k = 1) == "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 6) == "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 6) == "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000-0000-0000-0000-0000-0000",k = 8) == "00000000-00000000-00000000"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000-0000-0000-0000-0000-0000",k = 8) == "00000000-00000000-00000000": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890",k = 3) == "ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ1-234-567-890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890",k = 3) == "ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ1-234-567-890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 6) == "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 6) == "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-",k = 2) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-",k = 2) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 1) == "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 1) == "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "X1-Y2-Z3",k = 1) == "X-1-Y-2-Z-3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "X1-Y2-Z3",k = 1) == "X-1-Y-2-Z-3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-4567-890-ABCD-EFGH-IJKL",k = 3) == "1-234-567-890-ABC-DEF-GHI-JKL"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-4567-890-ABCD-EFGH-IJKL",k = 3) == "1-234-567-890-ABC-DEF-GHI-JKL": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 10) == "123456-7890ABCDEF-GHIJKLMNOP-QRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 10) == "123456-7890ABCDEF-GHIJKLMNOP-QRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-",k = 1) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-",k = 1) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "x-y-z",k = 10) == "XYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "x-y-z",k = 10) == "XYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-789-0123-4567-8901",k = 4) == "1-2345-6789-0123-4567-8901"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-789-0123-4567-8901",k = 4) == "1-2345-6789-0123-4567-8901": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 6) == "MN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 6) == "MN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890",k = 1) == "1-2-3-4-5-6-7-8-9-0"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890",k = 1) == "1-2-3-4-5-6-7-8-9-0": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX",k = 5) == "X-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX",k = 5) == "X-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "----",k = 1) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "----",k = 1) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Z1-23X4-567-89A-BCD-EFG-HIJ-KLM-NOP-QRS-TUV-WXY-Z",k = 3) == "Z-123-X45-678-9AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Z1-23X4-567-89A-BCD-EFG-HIJ-KLM-NOP-QRS-TUV-WXY-Z",k = 3) == "Z-123-X45-678-9AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A1-B2-C3-D4-E5-F6-G7-H8-I9-J0-K1-L2-M3-N4-O5-P6-Q7-R8-S9-T0-U1-V2-W3-X4-Y5-Z6",k = 6) == "A1B2-C3D4E5-F6G7H8-I9J0K1-L2M3N4-O5P6Q7-R8S9T0-U1V2W3-X4Y5Z6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A1-B2-C3-D4-E5-F6-G7-H8-I9-J0-K1-L2-M3-N4-O5-P6-Q7-R8-S9-T0-U1-V2-W3-X4-Y5-Z6",k = 6) == "A1B2-C3D4E5-F6G7H8-I9J0K1-L2M3N4-O5P6Q7-R8S9T0-U1V2W3-X4Y5Z6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-1-b-2-c-3-d-4-e-5-f-6-g-7-h-8-i-9-j-0",k = 2) == "A1-B2-C3-D4-E5-F6-G7-H8-I9-J0"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-1-b-2-c-3-d-4-e-5-f-6-g-7-h-8-i-9-j-0",k = 2) == "A1-B2-C3-D4-E5-F6-G7-H8-I9-J0": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aA-bB-cC-dD-eE-fF-gG-hH-iI-jJ-kK-lL-mM-nN-oO-pP-qQ-rR-sS-tT-uU-vV-wW-xX-yY-zZ",k = 5) == "AA-BBCCD-DEEFF-GGHHI-IJJKK-LLMMN-NOOPP-QQRRS-STTUU-VVWWX-XYYZZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aA-bB-cC-dD-eE-fF-gG-hH-iI-jJ-kK-lL-mM-nN-oO-pP-qQ-rR-sS-tT-uU-vV-wW-xX-yY-zZ",k = 5) == "AA-BBCCD-DEEFF-GGHHI-IJJKK-LLMMN-NOOPP-QQRRS-STTUU-VVWWX-XYYZZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0-0-0-0-0-0-0-0-0-0",k = 2) == "00-00-00-00-00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0-0-0-0-0-0-0-0-0-0",k = 2) == "00-00-00-00-00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij-klmnopqrstuvwxyz",k = 6) == "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij-klmnopqrstuvwxyz",k = 6) == "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0",k = 3) == "12-345-678-901-234-567-890-123-456-789-012-345-678-901-234-567-890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0",k = 3) == "12-345-678-901-234-567-890-123-456-789-012-345-678-901-234-567-890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "x-y-z-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 7) == "XYZ1-2345678-90ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "x-y-z-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 7) == "XYZ1-2345678-90ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "000-000-000-000-000",k = 5) == "00000-00000-00000"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "000-000-000-000-000",k = 5) == "00000-00000-00000": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-7890-ABCD-EFGH-IJKL",k = 3) == "1-234-567-890-ABC-DEF-GHI-JKL"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-7890-ABCD-EFGH-IJKL",k = 3) == "1-234-567-890-ABC-DEF-GHI-JKL": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2-5G-3-J-",k = 1) == "2-5-G-3-J"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2-5G-3-J-",k = 1) == "2-5-G-3-J": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-this-is-a-test-string-for-the-problem-description-",k = 5) == "T-HISIS-ATEST-STRIN-GFORT-HEPRO-BLEMD-ESCRI-PTION"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-this-is-a-test-string-for-the-problem-description-",k = 5) == "T-HISIS-ATEST-STRIN-GFORT-HEPRO-BLEMD-ESCRI-PTION": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-12345-67890",k = 6) == "ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ1234-567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg-hijkl-mnopqr-stuv-wxyz-12345-67890",k = 6) == "ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ1234-567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "W3LC--DR5F--HR5P-TR22--W48P",k = 4) == "W3LC-DR5F-HR5P-TR22-W48P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "W3LC--DR5F--HR5P-TR22--W48P",k = 4) == "W3LC-DR5F-HR5P-TR22-W48P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 26) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 26) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdef",k = 10) == "ABCDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdef",k = 10) == "ABCDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "---",k = 1) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "---",k = 1) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ",k = 7) == "ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ",k = 7) == "ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ01-2345-6789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ01-2345-6789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "---",k = 2) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "---",k = 2) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a",k = 2) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a",k = 2) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9---",k = 1) == "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9---",k = 1) == "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "X-5F3Z-2E-9-W",k = 3) == "X5F-3Z2-E9W"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "X-5F3Z-2E-9-W",k = 3) == "X5F-3Z2-E9W": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789",k = 3) == "WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789",k = 3) == "WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-",k = 1) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-",k = 1) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 10) == "12-34567890AB-CDEFGHIJKL-MNOPQRSTUV-WXYZABCDEF-GHIJKLMNOP-QRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 10) == "12-34567890AB-CDEFGHIJKL-MNOPQRSTUV-WXYZABCDEF-GHIJKLMNOP-QRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890-1234567890-1234567890-1234567890",k = 9) == "1234-567890123-456789012-345678901-234567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890-1234567890-1234567890-1234567890",k = 9) == "1234-567890123-456789012-345678901-234567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Z1234567890123456789012345678901234567890",k = 15) == "Z1234567890-123456789012345-678901234567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Z1234567890123456789012345678901234567890",k = 15) == "Z1234567890-123456789012345-678901234567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a0b1-c2d3-e4f5-g6h7-i8j9-k0l1-m2n3-o4p5-q6r7-s8t9-u0v1-w2x3-y4z5",k = 3) == "A-0B1-C2D-3E4-F5G-6H7-I8J-9K0-L1M-2N3-O4P-5Q6-R7S-8T9-U0V-1W2-X3Y-4Z5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a0b1-c2d3-e4f5-g6h7-i8j9-k0l1-m2n3-o4p5-q6r7-s8t9-u0v1-w2x3-y4z5",k = 3) == "A-0B1-C2D-3E4-F5G-6H7-I8J-9K0-L1M-2N3-O4P-5Q6-R7S-8T9-U0V-1W2-X3Y-4Z5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-a",k = 1) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-a",k = 1) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 13) == "ABCDEFGHIJKLM-NOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 13) == "ABCDEFGHIJKLM-NOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0",k = 1) == "1-2-3-4-5-6-7-8-9-0"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0",k = 1) == "1-2-3-4-5-6-7-8-9-0": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "---a---b---c---d---e---f---g---h---i---j---",k = 2) == "AB-CD-EF-GH-IJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "---a---b---c---d---e---f---g---h---i---j---",k = 2) == "AB-CD-EF-GH-IJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdef-ghijklm-nopqrst-uvwxyz-012345-67890",k = 6) == "A-BCDEFG-HIJKLM-NOPQRS-TUVWXY-Z01234-567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdef-ghijklm-nopqrst-uvwxyz-012345-67890",k = 6) == "A-BCDEFG-HIJKLM-NOPQRS-TUVWXY-Z01234-567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890-abcdefghij-klmnopqrstuvwxyz",k = 6) == "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890-abcdefghij-klmnopqrstuvwxyz",k = 6) == "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-a-b--c-d--e-f--g-h--i-j--k-l--m-n--o-p--q-r--s-t--u-v--w-x--y-z-",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-a-b--c-d--e-f--g-h--i-j--k-l--m-n--o-p--q-r--s-t--u-v--w-x--y-z-",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789",k = 8) == "ABCD-EFGHIJKL-MNOPQRST-UVWXYZ01-23456789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789",k = 8) == "ABCD-EFGHIJKL-MNOPQRST-UVWXYZ01-23456789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ012-3456789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ012-3456789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890-abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 6) == "12-345678-90ABCD-EFGHIJ-KLMNOP-QRSTUV-WXYZAB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890-abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 6) == "12-345678-90ABCD-EFGHIJ-KLMNOP-QRSTUV-WXYZAB-CDEFGH-IJKLMN-OPQRST-UVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 1) == "1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 1) == "1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-789-0ABC-DEF",k = 4) == "1234-5678-90AB-CDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-789-0ABC-DEF",k = 4) == "1234-5678-90AB-CDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210-zyxwvutsrqponmlkjihgfedcba-9876543210-zyxwvutsrqponmlkjihgfedcba",k = 5) == "98-76543-210ZY-XWVUT-SRQPO-NMLKJ-IHGFE-DCBA9-87654-3210Z-YXWVU-TSRQP-ONMLK-JIHGF-EDCBA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210-zyxwvutsrqponmlkjihgfedcba-9876543210-zyxwvutsrqponmlkjihgfedcba",k = 5) == "98-76543-210ZY-XWVUT-SRQPO-NMLKJ-IHGFE-DCBA9-87654-3210Z-YXWVU-TSRQP-ONMLK-JIHGF-EDCBA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-789-0-ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ",k = 2) == "12-34-56-78-90-AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-789-0-ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ",k = 2) == "12-34-56-78-90-AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0123456789",k = 2) == "01-23-45-67-89"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0123456789",k = 2) == "01-23-45-67-89": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZEBRA-1234-APPLE-5678-BANANA-9012-CHERRY",k = 4) == "ZE-BRA1-234A-PPLE-5678-BANA-NA90-12CH-ERRY"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZEBRA-1234-APPLE-5678-BANANA-9012-CHERRY",k = 4) == "ZE-BRA1-234A-PPLE-5678-BANA-NA90-12CH-ERRY": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-abc-def-ghi-jkl-mno-pqr-stu-vwx-yz-123-456-789-0",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-abc-def-ghi-jkl-mno-pqr-stu-vwx-yz-123-456-789-0",k = 7) == "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "X-Y-Z",k = 1) == "X-Y-Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "X-Y-Z",k = 1) == "X-Y-Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Z",k = 10) == "Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Z",k = 10) == "Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0",k = 10) == "1234567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0",k = 10) == "1234567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-7890-ABC-DEF",k = 3) == "1-234-567-890-ABC-DEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-7890-ABC-DEF",k = 3) == "1-234-567-890-ABC-DEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123-456-789-0ABC-DEF",k = 3) == "1-234-567-890-ABC-DEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123-456-789-0ABC-DEF",k = 3) == "1-234-567-890-ABC-DEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 15) == "123456-7890ABCDEFGHIJK-LMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",k = 15) == "123456-7890ABCDEFGHIJK-LMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890-abcdef-1234567890-ABCDEF",k = 7) == "1234-567890A-BCDEF12-3456789-0ABCDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890-abcdef-1234567890-ABCDEF",k = 7) == "1234-567890A-BCDEF12-3456789-0ABCDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000-0000-0000-0000",k = 4) == "0000-0000-0000-0000"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000-0000-0000-0000",k = 4) == "0000-0000-0000-0000": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "--a-b--c-d--e-f--g-h--i-j--",k = 2) == "AB-CD-EF-GH-IJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "--a-b--c-d--e-f--g-h--i-j--",k = 2) == "AB-CD-EF-GH-IJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Z",k = 1) == "Z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Z",k = 1) == "Z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 27) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 27) == "ABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z",k = 4) == "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-A--B--C--D--E--F--G--H--I--J--K--L--M--N--O--P--Q--R--S--T--U--V--W--X--Y--Z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-A--B--C--D--E--F--G--H--I--J--K--L--M--N--O--P--Q--R--S--T--U--V--W--X--Y--Z-",k = 2) == "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9-",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "LICENSE-KEY-FOR-EXAMPLE-1234567",k = 7) == "LICENS-EKEYFOR-EXAMPLE-1234567"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "LICENSE-KEY-FOR-EXAMPLE-1234567",k = 7) == "LICENS-EKEYFOR-EXAMPLE-1234567": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a",k = 2) == "A-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a",k = 2) == "A-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "---a---b---c---d---e---f---g---h---i---j---k---l---m---n---o---p---q---r---s---t---u---v---w---x---y---z---",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "---a---b---c---d---e---f---g---h---i---j---k---l---m---n---o---p---q---r---s---t---u---v---w---x---y---z---",k = 5) == "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0",k = 4) == "00-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0",k = 4) == "00-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0",k = 10) == "1234567890-1234567890-1234567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0",k = 10) == "1234567890-1234567890-1234567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "AB-CD-EF-GH-IJ",k = 2) == "AB-CD-EF-GH-IJ"
@@ -107,3 +955,5 @@ def check(candidate):
     assert candidate(s = "0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0",k = 4) == "00-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000"
     assert candidate(s = "1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0",k = 10) == "1234567890-1234567890-1234567890"
     assert candidate(s = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z",k = 3) == "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+
+

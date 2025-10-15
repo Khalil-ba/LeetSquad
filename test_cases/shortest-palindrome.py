@@ -1,5 +1,1269 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "abcba") == "abcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcba") == "abcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "madam") == "madam"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "madam") == "madam": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz") == "zyxwvutsrqponmlkjihgfedcbabcdefghijklmnopqrstuvwxyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz") == "zyxwvutsrqponmlkjihgfedcbabcdefghijklmnopqrstuvwxyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abac") == "cabac"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abac") == "cabac": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zxcvbnm") == "mnbvcxzxcvbnm"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zxcvbnm") == "mnbvcxzxcvbnm": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaa") == "aabbaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaa") == "aabbaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdcba") == "abcdcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdcba") == "abcdcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaa") == "aaaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaa") == "aaaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a") == "a"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a") == "a": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabcabc") == "cbacbacbabcabcabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabcabc") == "cbacbacbabcabcabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "step") == "petstep"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "step") == "petstep": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacdfgdcaba") == "abacdgfdcabacdfgdcaba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacdfgdcaba") == "abacdgfdcabacdfgdcaba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ab") == "bab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ab") == "bab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcde") == "edcbabcde"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcde") == "edcbabcde": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabc") == "cbacbabcabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabc") == "cbacbabcabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "rotor") == "rotor"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "rotor") == "rotor": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabb") == "bbaabb"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabb") == "bbaabb": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "racecar") == "racecar"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "racecar") == "racecar": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aacecaaa") == "aaacecaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aacecaaa") == "aaacecaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabba") == "abbaabba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabba") == "abbaabba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abba") == "abba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abba") == "abba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "race") == "ecarace"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "race") == "ecarace": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "noon") == "noon"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "noon") == "noon": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "banana") == "ananabanana"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "banana") == "ananabanana": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deeee") == "eeeedeeee"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deeee") == "eeeedeeee": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzazzacca") == "accazzazzacca"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzazzacca") == "accazzazzacca": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd") == "dcbabcd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd") == "dcbabcd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aba") == "aba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aba") == "aba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbacd") == "dcabbacd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbacd") == "dcabbacd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "level") == "level"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "level") == "level": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcba") == "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcba") == "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaab") == "baabbaab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaab") == "baabbaab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaca") == "acabbaabbaca"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaca") == "acabbaabbaca": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeeffgg") == "ggffeeeddccbbaabbccddeeeffgg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeeffgg") == "ggffeeeddccbbaabbccddeeeffgg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "noonappo") == "oppanoonappo"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "noonappo") == "oppanoonappo": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacabadabacabadabacaba") == "abacabadabacabadabacaba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacabadabacabadabacaba") == "abacabadabacabadabacaba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repaperrepaper") == "repaperrepaper"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repaperrepaper") == "repaperrepaper": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyx") == "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyx") == "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abracadabra") == "arbadacarbabracadabra"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abracadabra") == "arbadacarbabracadabra": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "rotorrotor") == "rotorrotor"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "rotorrotor") == "rotorrotor": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzz") == "zzzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzz") == "zzzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbaa") == "aabbaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbaa") == "aabbaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zazazz") == "zzazazz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zazazz") == "zzazazz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaabaaaa") == "aaaabaaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaabaaaa") == "aaaabaaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "noonnoon") == "noonnoon"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "noonnoon") == "noonnoon": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffgg") == "ggfffeeeddccbbaabbccddeeefffgg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffgg") == "ggfffeeeddccbbaabbccddeeefffgg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repaid") == "diaperepaid"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repaid") == "diaperepaid": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithm") == "mhtiroglalgorithm"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithm") == "mhtiroglalgorithm": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ananabanana") == "ananabanana"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ananabanana") == "ananabanana": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hello") == "ollehello"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hello") == "ollehello": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdecba") == "abcedcbabcdecba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdecba") == "abcedcbabcdecba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "redder") == "redder"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "redder") == "redder": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiop") == "poiuytrewqwertyuiop"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiop") == "poiuytrewqwertyuiop": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "noonnoonnoonnoon") == "noonnoonnoonnoon"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "noonnoonnoonnoon") == "noonnoonnoonnoon": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deeeeffffgggggggggggggggggggggggggggggggg") == "ggggggggggggggggggggggggggggggggffffeeeedeeeeffffgggggggggggggggggggggggggggggggg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deeeeffffgggggggggggggggggggggggggggggggg") == "ggggggggggggggggggggggggggggggggffffeeeedeeeeffffgggggggggggggggggggggggggggggggg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabc") == "cbadcbabcdabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabc") == "cbadcbabcdabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippimississippi") == "ippississimippississimississippimississippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippimississippi") == "ippississimippississimississippimississippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeee") == "eeeddccbbaabbccddeee"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeee") == "eeeddccbbaabbccddeee": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzyx") == "xyzzyx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzyx") == "xyzzyx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghihgfedcbabc") == "cbabcdefghihgfedcbabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghihgfedcbabc") == "cbabcdefghihgfedcbabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abca") == "acbabca"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abca") == "acbabca": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bba") == "abba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bba") == "abba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbae") == "eabbae"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbae") == "eabbae": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repaperandmorepaperrepaperandmorepaper") == "repaperomdnarepaperrepaperomdnarepaperandmorepaperrepaperandmorepaper"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repaperandmorepaperrepaperandmorepaper") == "repaperomdnarepaperrepaperomdnarepaperandmorepaperrepaperandmorepaper": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorhythmhmorthygrola") == "alorgyhtromhmhtyhroglalgorhythmhmorthygrola"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorhythmhmorthygrola") == "alorgyhtromhmhtyhroglalgorhythmhmorthygrola": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "palindrome") == "emordnilapalindrome"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "palindrome") == "emordnilapalindrome": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacaxi") == "ixacabacaxi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacaxi") == "ixacabacaxi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "kayak") == "kayak"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "kayak") == "kayak": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abab") == "babab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abab") == "babab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffhhh") == "hhhfffeeeddccbbaabbccddeeefffhhh"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffhhh") == "hhhfffeeeddccbbaabbccddeeefffhhh": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbbaaa") == "aaabbbaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbbaaa") == "aaabbbaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxz") == "zxyxz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxz") == "zxyxz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghihgfedcbabcd") == "dcbabcdefghihgfedcbabcd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghihgfedcbabcd") == "dcbabcdefghihgfedcbabcd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffggghhh") == "hhhgggfffeeeddccbbaabbccddeeefffggghhh"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffggghhh") == "hhhgggfffeeeddccbbaabbccddeeefffggghhh": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiopasdfghjklzxcvbnm") == "mnbvcxzlkjhgfdsapoiuytrewqwertyuiopasdfghjklzxcvbnm"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiopasdfghjklzxcvbnm") == "mnbvcxzlkjhgfdsapoiuytrewqwertyuiopasdfghjklzxcvbnm": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "levelup") == "pulevelup"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "levelup") == "pulevelup": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "raceacar") == "racaecaraceacar"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "raceacar") == "racaecaraceacar": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "levelupandnevergiveup") == "puevigrevendnapulevelupandnevergiveup"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "levelupandnevergiveup") == "puevigrevendnapulevelupandnevergiveup": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz") == "zzzzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz") == "zzzzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdeedcba") == "abcdeedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdeedcba") == "abcdeedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "leveler") == "releveler"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "leveler") == "releveler": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzyxw") == "wxyzzyxw"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzyxw") == "wxyzzyxw": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcbae") == "eabcbae"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcbae") == "eabcbae": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeeff") == "ffeeeddccbbaabbccddeeeff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeeff") == "ffeeeddccbbaabbccddeeeff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdeffedcba") == "abcdeffedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdeffedcba") == "abcdeffedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deeeeffffgggg") == "ggggffffeeeedeeeeffffgggg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deeeeffffgggg") == "ggggffffeeeedeeeeffffgggg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "levellevel") == "levellevel"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "levellevel") == "levellevel": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffhhhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiiihhhfffeeeddccbbaabbccddeeefffhhhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffhhhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiiihhhfffeeeddccbbaabbccddeeefffhhhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz") == "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz") == "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabcd") == "dcbaabcd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabcd") == "dcbaabcd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefedcba") == "abcdefedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefedcba") == "abcdefedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisnotapalindrome") == "emordnilapatonsisihthisisnotapalindrome"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisnotapalindrome") == "emordnilapatonsisihthisisnotapalindrome": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "amanaplanacanalsofpnmala") == "alamnpfoslanacanalpanamanaplanacanalsofpnmala"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "amanaplanacanalsofpnmala") == "alamnpfoslanacanalpanamanaplanacanalsofpnmala": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzzzzzzzzzzzzzzzzyx") == "xyzzzzzzzzzzzzzzzzzyx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzzzzzzzzzzzzzzzzyx") == "xyzzzzzzzzzzzzzzzzzyx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aeroplaneeplanar") == "ranalpeenalporeaeroplaneeplanar"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aeroplaneeplanar") == "ranalpeenalporeaeroplaneeplanar": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabbaaaaa") == "aaaaabbaaaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabbaaaaa") == "aaaaabbaaaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk") == "kjihgfedcbabcdefghijk"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk") == "kjihgfedcbabcdefghijk": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababab") == "babababab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababab") == "babababab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghihgfedcbaa") == "aabcdefghihgfedcbaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghihgfedcbaa") == "aabcdefghihgfedcbaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacabadabacaba") == "abacabadabacaba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacabadabacaba") == "abacabadabacaba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababa") == "abababa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababa") == "abababa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananab") == "bananaananab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananab") == "bananaananab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ananabananabana") == "anabananabananabana"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ananabananabana") == "anabananabananabana": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "rotator") == "rotator"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "rotator") == "rotator": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "redderredder") == "redderredder"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "redderredder") == "redderredder": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffgghhiiijjjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjjiiihhggfffeeeddccbbaabbccddeeefffgghhiiijjjkkllmmnnooppqqrrssttuuvvwwxxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffgghhiiijjjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjjiiihhggfffeeeddccbbaabbccddeeefffgghhiiijjjkkllmmnnooppqqrrssttuuvvwwxxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzabcxyzabc") == "cbazyxcbazyxyzabcxyzabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzabcxyzabc") == "cbazyxcbazyxyzabcxyzabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "world") == "dlroworld"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "world") == "dlroworld": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcbabcba") == "abcbabcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcbabcba") == "abcbabcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcbad") == "dabcbad"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcbad") == "dabcbad": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffhhhiijj") == "jjiihhhfffeeeddccbbaabbccddeeefffhhhiijj"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffhhhiijj") == "jjiihhhfffeeeddccbbaabbccddeeefffhhhiijj": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgh") == "hgfedcbabcdefgh"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgh") == "hgfedcbabcdefgh": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "civiccivic") == "civiccivic"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "civiccivic") == "civiccivic": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "detartrated") == "detartrated"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "detartrated") == "detartrated": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "racecarcar") == "racracecarcar"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "racecarcar") == "racracecarcar": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabaaa") == "aaabaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabaaa") == "aaabaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeff") == "ffeeddccbbaabbccddeeff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeff") == "ffeeddccbbaabbccddeeff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "reviver") == "reviver"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "reviver") == "reviver": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "madamimadam") == "madamimadam"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "madamimadam") == "madamimadam": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeefffhhhiiijjkkll") == "llkkjjiiihhhfffeeeddccbbaabbccddeeefffhhhiiijjkkll"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeefffhhhiiijjkkll") == "llkkjjiiihhhfffeeeddccbbaabbccddeeefffhhhiiijjkkll": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "amanaplanacanalpanama") == "amanaplanacanalpanama"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "amanaplanacanalpanama") == "amanaplanacanalpanama": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcba") == "abcbadcbabcdabcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcba") == "abcbadcbabcdabcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg") == "gfedcbabcdefg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg") == "gfedcbabcdefg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaabbbbccccdddd") == "ddddccccbbbbaaaabbbbccccdddd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaabbbbccccdddd") == "ddddccccbbbbaaaabbbbccccdddd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "racecarracecar") == "racecarracecar"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "racecarracecar") == "racecarracecar": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbaab") == "baabbaab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbaab") == "baabbaab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deified") == "deified"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deified") == "deified": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repaper") == "repaper"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repaper") == "repaper": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbaabbaabba") == "abbaabbaabba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbaabbaabba") == "abbaabbaabba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdef") == "fedcbabcdef"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdef") == "fedcbabcdef": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzy") == "yzzzzy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzy") == "yzzzzy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdedcba") == "abcdedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdedcba") == "abcdedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzzzzzzyx") == "xyzzzzzzzyx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzzzzzzyx") == "xyzzzzzzzyx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm") == "mnbvcxzlkjhgfdsapoiuytrewqmnbvcxzlkjhgfdsapoiuytrewqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm") == "mnbvcxzlkjhgfdsapoiuytrewqmnbvcxzlkjhgfdsapoiuytrewqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repaperandmorepaper") == "repaperomdnarepaperandmorepaper"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repaperandmorepaper") == "repaperomdnarepaperandmorepaper": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deifieddeified") == "deifieddeified"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deifieddeified") == "deifieddeified": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcddcba") == "abcddcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcddcba") == "abcddcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "civic") == "civic"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "civic") == "civic": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabaaa") == "aaabaaaaabaaa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabaaa") == "aaabaaaaabaaa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghihgfedcba") == "abcdefghihgfedcba"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghihgfedcba") == "abcdefghihgfedcba": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "amanaplanacanalsofpnmalamalamalamalamal") == "lamalamalamalamalamnpfoslanacanalpanamanaplanacanalsofpnmalamalamalamalamal"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "amanaplanacanalsofpnmalamalamalamalamal") == "lamalamalamalamalamnpfoslanacanalpanamanaplanacanalsofpnmalamalamalamalamal": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababa") == "ababababa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababa") == "ababababa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aquickbrownfoxjumpsoverthelazydog") == "godyzalehtrevospmujxofnworbkciuqaquickbrownfoxjumpsoverthelazydog"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aquickbrownfoxjumpsoverthelazydog") == "godyzalehtrevospmujxofnworbkciuqaquickbrownfoxjumpsoverthelazydog": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "reviled") == "delivereviled"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "reviled") == "delivereviled": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "levelupandnevergiveuplevelupandnevergiveup") == "puevigrevendnapulevelpuevigrevendnapulevelupandnevergiveuplevelupandnevergiveup"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "levelupandnevergiveuplevelupandnevergiveup") == "puevigrevendnapulevelpuevigrevendnapulevelupandnevergiveuplevelupandnevergiveup": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "amandaplanacanalpanama") == "amanaplanacanalpadnamandaplanacanalpanama"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "amandaplanacanalpanama") == "amanaplanacanalpadnamandaplanacanalpanama": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbcc") == "ccbbaabbcc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbcc") == "ccbbaabbcc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi") == "ippississimississippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi") == "ippississimississippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aeroplane") == "enalporeaeroplane"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aeroplane") == "enalporeaeroplane": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "deed") == "deed"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "deed") == "deed": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxzyzyx") == "xyzyzxyxzyzyx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxzyzyx") == "xyzyzxyxzyzyx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzabc") == "cbazyxyzabc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzabc") == "cbazyxyzabc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "refer") == "refer"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "refer") == "refer": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "abcba") == "abcba"
@@ -159,3 +1423,5 @@ def check(candidate):
     assert candidate(s = "xyxzyzyx") == "xyzyzxyxzyzyx"
     assert candidate(s = "xyzabc") == "cbazyxyzabc"
     assert candidate(s = "refer") == "refer"
+
+

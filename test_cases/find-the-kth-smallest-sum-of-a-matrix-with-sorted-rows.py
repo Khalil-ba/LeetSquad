@@ -1,5 +1,693 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 10, 10], [1, 4, 5], [2, 3, 6]],k = 7) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 10, 10], [1, 4, 5], [2, 3, 6]],k = 7) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6]],k = 9) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6]],k = 9) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 11], [2, 4, 6]],k = 5) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 11], [2, 4, 6]],k = 5) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 11], [2, 4, 6]],k = 9) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 11], [2, 4, 6]],k = 9) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6]],k = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6]],k = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 5, 9], [10, 11, 13], [12, 13, 15]],k = 8) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 5, 9], [10, 11, 13], [12, 13, 15]],k = 8) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]],k = 100) == 69
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]],k = 100) == 69: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]],k = 100) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]],k = 100) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 7, 10, 15], [2, 8, 12, 16], [3, 9, 13, 17], [4, 10, 14, 18]],k = 15) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 7, 10, 15], [2, 8, 12, 16], [3, 9, 13, 17], [4, 10, 14, 18]],k = 15) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]],k = 100) == 68
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]],k = 100) == 68: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5]],k = 160) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5]],k = 160) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]],k = 180) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]],k = 180) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21]],k = 200) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21]],k = 200) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],k = 100) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],k = 100) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[500, 1000, 1500], [550, 1050, 1550], [600, 1100, 1600], [650, 1150, 1650]],k = 10) == 3300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[500, 1000, 1500], [550, 1050, 1550], [600, 1100, 1600], [650, 1150, 1650]],k = 10) == 3300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]],k = 200) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]],k = 200) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [10, 11, 12, 13, 14], [20, 21, 22, 23, 24], [30, 31, 32, 33, 34]],k = 50) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [10, 11, 12, 13, 14], [20, 21, 22, 23, 24], [30, 31, 32, 33, 34]],k = 50) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [3, 5, 7, 9, 11]],k = 100) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [3, 5, 7, 9, 11]],k = 100) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[10, 20, 30], [15, 25, 35], [20, 30, 40], [25, 35, 45], [30, 40, 50]],k = 50) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[10, 20, 30], [15, 25, 35], [20, 30, 40], [25, 35, 45], [30, 40, 50]],k = 50) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 10, 15], [6, 11, 16], [7, 12, 17], [8, 13, 18]],k = 25) == 41
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 10, 15], [6, 11, 16], [7, 12, 17], [8, 13, 18]],k = 25) == 41: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 10, 15, 20, 25], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [11, 13, 15, 17, 19]],k = 100) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 10, 15, 20, 25], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [11, 13, 15, 17, 19]],k = 100) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[100, 200, 300, 400, 500], [101, 201, 301, 401, 501], [102, 202, 302, 402, 502], [103, 203, 303, 403, 503]],k = 20) == 706
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[100, 200, 300, 400, 500], [101, 201, 301, 401, 501], [102, 202, 302, 402, 502], [103, 203, 303, 403, 503]],k = 20) == 706: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 100, 200], [5, 150, 250], [9, 190, 290], [13, 230, 330]],k = 80) == 970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 100, 200], [5, 150, 250], [9, 190, 290], [13, 230, 330]],k = 80) == 970: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9, 11], [2, 4, 6, 8, 10, 12], [3, 5, 7, 9, 11, 13], [4, 6, 8, 10, 12, 14]],k = 50) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9, 11], [2, 4, 6, 8, 10, 12], [3, 5, 7, 9, 11, 13], [4, 6, 8, 10, 12, 14]],k = 50) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]],k = 150) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]],k = 150) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[10, 20, 30, 40, 50], [5, 15, 25, 35, 45], [1, 11, 21, 31, 41], [6, 16, 26, 36, 46]],k = 50) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[10, 20, 30, 40, 50], [5, 15, 25, 35, 45], [1, 11, 21, 31, 41], [6, 16, 26, 36, 46]],k = 50) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 8, 12, 18], [1, 3, 7, 11], [2, 4, 6, 10], [9, 13, 15, 17]],k = 100) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 8, 12, 18], [1, 3, 7, 11], [2, 4, 6, 10], [9, 13, 15, 17]],k = 100) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 250) == 61
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 250) == 61: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19]],k = 50) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19]],k = 50) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24]],k = 150) == 46
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24]],k = 150) == 46: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 5, 9, 12], [2, 6, 10, 13], [3, 7, 11, 14], [4, 8, 15, 16]],k = 15) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 5, 9, 12], [2, 6, 10, 13], [3, 7, 11, 14], [4, 8, 15, 16]],k = 15) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 10, 15, 20], [25, 30, 35, 40], [45, 50, 55, 60]],k = 15) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 10, 15, 20], [25, 30, 35, 40], [45, 50, 55, 60]],k = 15) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]],k = 150) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]],k = 150) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]],k = 30) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]],k = 30) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 9, 14], [4, 12, 18], [2, 8, 10], [1, 3, 6]],k = 25) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 9, 14], [4, 12, 18], [2, 8, 10], [1, 3, 6]],k = 25) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],k = 50) == 102
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],k = 50) == 102: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[100, 200, 300, 400, 500], [50, 100, 150, 200, 250], [25, 50, 75, 100, 125], [1, 2, 3, 4, 5]],k = 80) == 328
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[100, 200, 300, 400, 500], [50, 100, 150, 200, 250], [25, 50, 75, 100, 125], [1, 2, 3, 4, 5]],k = 80) == 328: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[10, 20, 30, 40, 50], [11, 22, 33, 44, 55], [12, 24, 36, 48, 60], [13, 26, 39, 52, 65]],k = 100) == 104
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[10, 20, 30, 40, 50], [11, 22, 33, 44, 55], [12, 24, 36, 48, 60], [13, 26, 39, 52, 65]],k = 100) == 104: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[500, 1000, 1500], [100, 200, 300], [250, 500, 750], [50, 100, 150], [200, 400, 600]],k = 60) == 1800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[500, 1000, 1500], [100, 200, 300], [250, 500, 750], [50, 100, 150], [200, 400, 600]],k = 60) == 1800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 10, 100], [1, 4, 50], [2, 3, 60]],k = 20) == 107
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 10, 100], [1, 4, 50], [2, 3, 60]],k = 20) == 107: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9], [11, 13, 15, 17, 19], [21, 23, 25, 27, 29], [31, 33, 35, 37, 39]],k = 175) == 76
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9], [11, 13, 15, 17, 19], [21, 23, 25, 27, 29], [31, 33, 35, 37, 39]],k = 175) == 76: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[2, 4, 6, 8, 10], [12, 14, 16, 18, 20], [22, 24, 26, 28, 30], [32, 34, 36, 38, 40]],k = 30) == 74
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[2, 4, 6, 8, 10], [12, 14, 16, 18, 20], [22, 24, 26, 28, 30], [32, 34, 36, 38, 40]],k = 30) == 74: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[2, 6, 10, 14], [1, 5, 9, 13], [3, 7, 11, 15], [4, 8, 12, 16]],k = 15) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[2, 6, 10, 14], [1, 5, 9, 13], [3, 7, 11, 15], [4, 8, 12, 16]],k = 15) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]],k = 50) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]],k = 50) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]],k = 50) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]],k = 50) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1000, 2000, 3000, 4000], [2, 2000, 3000, 4000, 5000], [3, 3000, 4000, 5000, 6000], [4, 4000, 5000, 6000, 7000]],k = 120) == 9005
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1000, 2000, 3000, 4000], [2, 2000, 3000, 4000, 5000], [3, 3000, 4000, 5000, 6000], [4, 4000, 5000, 6000, 7000]],k = 120) == 9005: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 300) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 300) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 199) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 199) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1], [1, 2, 2, 2], [1, 2, 3, 3], [1, 2, 3, 4]],k = 20) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1], [1, 2, 2, 2], [1, 2, 3, 3], [1, 2, 3, 4]],k = 20) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1000, 5000], [500, 2000, 4000], [100, 3000, 4500], [200, 2500, 3500]],k = 100) == 17000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1000, 5000], [500, 2000, 4000], [100, 3000, 4500], [200, 2500, 3500]],k = 100) == 17000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16], [5, 9, 13, 17]],k = 200) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16], [5, 9, 13, 17]],k = 200) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6], [4, 5, 6, 7]],k = 120) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6], [4, 5, 6, 7]],k = 120) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9, 11, 13], [2, 4, 6, 8, 10, 12, 14], [3, 5, 7, 9, 11, 13, 15], [4, 6, 8, 10, 12, 14, 16]],k = 70) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9, 11, 13], [2, 4, 6, 8, 10, 12, 14], [3, 5, 7, 9, 11, 13, 15], [4, 6, 8, 10, 12, 14, 16]],k = 70) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1000, 2000, 3000, 4000], [500, 1500, 2500, 3500], [100, 1100, 2100, 3100], [50, 1050, 2050, 3050]],k = 10) == 3650
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1000, 2000, 3000, 4000], [500, 1500, 2500, 3500], [100, 1100, 2100, 3100], [50, 1050, 2050, 3050]],k = 10) == 3650: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[100, 200, 300, 400, 500], [600, 700, 800, 900, 1000], [1100, 1200, 1300, 1400, 1500]],k = 18) == 2100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[100, 200, 300, 400, 500], [600, 700, 800, 900, 1000], [1100, 1200, 1300, 1400, 1500]],k = 18) == 2100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]],k = 60) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]],k = 60) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[100, 200, 300], [50, 150, 250], [10, 110, 210], [5, 105, 205], [1, 101, 201]],k = 80) == 566
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[100, 200, 300], [50, 150, 250], [10, 110, 210], [5, 105, 205], [1, 101, 201]],k = 80) == 566: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1000, 2000, 3000], [2, 2000, 3000, 4000], [3, 3000, 4000, 5000], [4, 4000, 5000, 6000]],k = 160) == 12001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1000, 2000, 3000], [2, 2000, 3000, 4000], [3, 3000, 4000, 5000], [4, 4000, 5000, 6000]],k = 160) == 12001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4], [5, 5, 5, 5, 5]],k = 125) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4], [5, 5, 5, 5, 5]],k = 125) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]],k = 10) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]],k = 10) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9, 11, 13], [2, 4, 6, 8, 10, 12, 14], [15, 17, 19, 21, 23, 25, 27], [29, 31, 33, 35, 37, 39, 41]],k = 180) == 59
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9, 11, 13], [2, 4, 6, 8, 10, 12, 14], [15, 17, 19, 21, 23, 25, 27], [29, 31, 33, 35, 37, 39, 41]],k = 180) == 59: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 150) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],k = 150) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30]],k = 120) == 69
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30]],k = 120) == 69: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 7, 12, 22], [5, 8, 9, 13], [6, 12, 15, 18]],k = 15) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 7, 12, 22], [5, 8, 9, 13], [6, 12, 15, 18]],k = 15) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[3, 6, 9, 12], [2, 5, 8, 11], [1, 4, 7, 10]],k = 24) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[3, 6, 9, 12], [2, 5, 8, 11], [1, 4, 7, 10]],k = 24) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]],k = 60) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]],k = 60) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 10, 15, 20, 25], [6, 11, 16, 21, 26], [7, 12, 17, 22, 27], [8, 13, 18, 23, 28], [9, 14, 19, 24, 29]],k = 50) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 10, 15, 20, 25], [6, 11, 16, 21, 26], [7, 12, 17, 22, 27], [8, 13, 18, 23, 28], [9, 14, 19, 24, 29]],k = 50) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 5, 9, 13, 17], [2, 6, 10, 14, 18], [3, 7, 11, 15, 19], [4, 8, 12, 16, 20]],k = 150) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 5, 9, 13, 17], [2, 6, 10, 14, 18], [3, 7, 11, 15, 19], [4, 8, 12, 16, 20]],k = 150) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]],k = 120) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]],k = 120) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15]],k = 60) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15]],k = 60) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]],k = 100) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]],k = 100) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 100, 500, 1000], [2, 200, 600, 1100], [3, 300, 700, 1200], [4, 400, 800, 1300]],k = 120) == 1904
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 100, 500, 1000], [2, 200, 600, 1100], [3, 300, 700, 1200], [4, 400, 800, 1300]],k = 120) == 1904: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[10, 20, 30, 40], [11, 22, 33, 44], [12, 24, 36, 48], [13, 26, 39, 52]],k = 150) == 121
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[10, 20, 30, 40], [11, 22, 33, 44], [12, 24, 36, 48], [13, 26, 39, 52]],k = 150) == 121: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 150) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 150) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 7, 9], [2, 4, 6, 8], [0, 5, 10, 12], [1, 6, 11, 13]],k = 20) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 7, 9], [2, 4, 6, 8], [0, 5, 10, 12], [1, 6, 11, 13]],k = 20) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5]],k = 32) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5]],k = 32) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [9, 10, 11, 12, 13]],k = 50) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [9, 10, 11, 12, 13]],k = 50) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 100) == 59
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]],k = 100) == 59: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14, 16], [3, 5, 7, 9, 11, 13, 15, 17], [4, 6, 8, 10, 12, 14, 16, 18]],k = 100) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14, 16], [3, 5, 7, 9, 11, 13, 15, 17], [4, 6, 8, 10, 12, 14, 16, 18]],k = 100) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[5, 10, 15, 20, 25], [4, 9, 14, 19, 24], [3, 8, 13, 18, 23], [2, 7, 12, 17, 22], [1, 6, 11, 16, 21]],k = 50) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[5, 10, 15, 20, 25], [4, 9, 14, 19, 24], [3, 8, 13, 18, 23], [2, 7, 12, 17, 22], [1, 6, 11, 16, 21]],k = 50) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 100, 200, 300, 400], [2, 200, 300, 400, 500], [3, 300, 400, 500, 600], [4, 400, 500, 600, 700], [5, 500, 600, 700, 800]],k = 150) == 910
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 100, 200, 300, 400], [2, 200, 300, 400, 500], [3, 300, 400, 500, 600], [4, 400, 500, 600, 700], [5, 500, 600, 700, 800]],k = 150) == 910: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]],k = 200) == 41
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]],k = 200) == 41: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]],k = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]],k = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 100, 1000], [2, 200, 2000], [3, 300, 3000]],k = 20) == 3201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 100, 1000], [2, 200, 2000], [3, 300, 3000]],k = 20) == 3201: {e}')
+    
+    total += 1
+    try:
+        result = candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]],k = 200) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]],k = 200) == 42: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(mat = [[1, 10, 10], [1, 4, 5], [2, 3, 6]],k = 7) == 9
@@ -87,3 +775,5 @@ def check(candidate):
     assert candidate(mat = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]],k = 100) == 5
     assert candidate(mat = [[1, 100, 1000], [2, 200, 2000], [3, 300, 3000]],k = 20) == 3201
     assert candidate(mat = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]],k = 200) == 42
+
+

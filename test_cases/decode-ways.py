@@ -1,5 +1,1421 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "100100100") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "100100100") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111001111001111001111001111001111001111001111001111001111") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111001111001111001111001111001111001111001111001111001111") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2611055971756562") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2611055971756562") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10011") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10011") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11106") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11106") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "30") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "30") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "260260260260260260260260260260260260260260260260260260260") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "260260260260260260260260260260260260260260260260260260260") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "50633191395000636099666") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "50633191395000636099666") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12212212212212212212212212212212") == 3524578
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12212212212212212212212212212212") == 3524578: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "120123") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "120123") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1201234") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1201234") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "999999999999999999999999999999999999999999999999999999999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "999999999999999999999999999999999999999999999999999999999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1230123") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1230123") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2626262626262626262626262626262626262626262626262626262626") == 536870912
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2626262626262626262626262626262626262626262626262626262626") == 536870912: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567891011121314151617181920212223242526") == 259584
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567891011121314151617181920212223242526") == 259584: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "200") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "200") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "100") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "100") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2121212121212121212121212121212121212121212121212121212121") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2121212121212121212121212121212121212121212121212121212121") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1231231231231231231231231231231231231231231231231231231231") == 1162261467
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1231231231231231231231231231231231231231231231231231231231") == 1162261467: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "47575625458446174945557469461") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "47575625458446174945557469461") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2200") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2200") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "010") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "010") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99999999999999999999999999999999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99999999999999999999999999999999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "230") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "230") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2020202020202020202020202020202020202020202020202020202020") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2020202020202020202020202020202020202020202020202020202020") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111122221111222211112222111122221111222211112222111122221111") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111122221111222211112222111122221111222211112222111122221111") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111") == 3524578
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111") == 3524578: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "27") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "27") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1000000000000000000000000000000000000000000000000000000000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1000000000000000000000000000000000000000000000000000000000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "301") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "301") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "61105709526116709637291338570167016761") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "61105709526116709637291338570167016761") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1010101010101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1010101010101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1101101101101101101101101101101101101101101101101101101101") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1101101101101101101101101101101101101101101101101101101101") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101010101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101010101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "110") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "110") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "226") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "226") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2222002222002222002222002222002222002222002222002222002222") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2222002222002222002222002222002222002222002222002222002222") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2323232323232323232323232323232323232323232323232323232323") == 536870912
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2323232323232323232323232323232323232323232323232323232323") == 536870912: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1010101010101010101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1010101010101010101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1001001001001001001001001001001001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1001001001001001001001001001001001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111111111111111111") == 20365011074
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111111111111111111") == 20365011074: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111111111111111111111111111111111111111111111111111111") == 139583862445
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111111111111111111111111111111111111111111111111111111") == 139583862445: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2101") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2101") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "20") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "20") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1212121212121212121212121212121212121212121212121212121212") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1212121212121212121212121212121212121212121212121212121212") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111111111111111111111111111111111111111111111111111111111") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111111111111111111111111111111111111111111111111111111111") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1001001001001001001001001001001001001001001001001001001001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1001001001001001001001001001001001001001001001001001001001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "06") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "06") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890123456789012345678901234567890123456789012345679") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890123456789012345678901234567890123456789012345679") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12321213213213213213213213213213213213213213213213") == 114791256
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12321213213213213213213213213213213213213213213213") == 114791256: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111111111111111111111111111111111111111111111111111111111111") == 4052739537881
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111111111111111111111111111111111111111111111111111111111111") == 4052739537881: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12211221122112211221122112211221122112211221122112211221122112") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12211221122112211221122112211221122112211221122112211221122112") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678987654321") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678987654321") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222222222222222222222222222222222222222222222222") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222222222222222222222222222222222222222222222222") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2525252525252525252525252525252525252525252525252525252525") == 536870912
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2525252525252525252525252525252525252525252525252525252525") == 536870912: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678901234567890123456789012345678901234567890") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678901234567890123456789012345678901234567890") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1010101010101010101010101010101010101010101010101010101010101") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1010101010101010101010101010101010101010101010101010101010101") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "121212121212121212121212121212121212121212121212121212121212121") == 10610209857723
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "121212121212121212121212121212121212121212121212121212121212121") == 10610209857723: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1201201201201201201201201201201201201201201201201201201201") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1201201201201201201201201201201201201201201201201201201201") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "122522201") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "122522201") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "20202020202020202020202020202020202020202020202020202020202") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "20202020202020202020202020202020202020202020202020202020202") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2222222222222222222222222222222222222222222222222222222222") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2222222222222222222222222222222222222222222222222222222222") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "200200200200200200200200200200200200200200200200200") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "200200200200200200200200200200200200200200200200200") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "25252525252525252525252525252525252525252525252525252525250") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "25252525252525252525252525252525252525252525252525252525250") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "120120120120120") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "120120120120120") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "191919191919191919191919191919191919191919191919191919191919") == 1073741824
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "191919191919191919191919191919191919191919191919191919191919") == 1073741824: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9999999999999999999999999999999999999999999999999999999999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9999999999999999999999999999999999999999999999999999999999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112112112112112112112112112112112112112112112112112112112112") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112112112112112112112112112112112112112112112112112112112112") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890123456789012345678901234567890123456789012345678") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890123456789012345678901234567890123456789012345678") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112233445566778899") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112233445566778899") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99999999999999999999999999999999999999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99999999999999999999999999999999999999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111110") == 24157817
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111110") == 24157817: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "192939495969798991011121314151617181920212223242526272829") == 173056
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "192939495969798991011121314151617181920212223242526272829") == 173056: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "20202020202020202020202020202020202020202020202020") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "20202020202020202020202020202020202020202020202020") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890987654321012345678909876543210") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890987654321012345678909876543210") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "272727") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "272727") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "21212121212121212121212121212121212121212121212121212121212121") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "21212121212121212121212121212121212121212121212121212121212121") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3030303030303030303030303030303030303030303030303030303030303") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3030303030303030303030303030303030303030303030303030303030303") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22122212122212122212122212122212122212122212122212122212122") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22122212122212122212122212122212122212122212122212122212122") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1122221122221122221122221122221122221122221122221122221122221") == 4052739537881
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1122221122221122221122221122221122221122221122221122221122221") == 4052739537881: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11110011110011110011110011110011110011110011110011") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11110011110011110011110011110011110011110011110011") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111111111111111111111111111111111111111111111111111111112") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111111111111111111111111111111111111111111111111111111112") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2511452311222112511452311222112511452311222112511") == 143748000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2511452311222112511452311222112511452311222112511") == 143748000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112112112112112112112112112112112112112112112112112112112112112") == 10610209857723
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112112112112112112112112112112112112112112112112112112112112112") == 10610209857723: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222222222222222222222222222222222222222222222222222222222222") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222222222222222222222222222222222222222222222222222222222222") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567898765432123456789876543212345678987654321234567898") == 375
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567898765432123456789876543212345678987654321234567898") == 375: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "30515015150150150150150150150150150150150150150150") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "30515015150150150150150150150150150150150150150150") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11213141516171819202122232425262728293031323334353637383940") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11213141516171819202122232425262728293031323334353637383940") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "212121212121212121212121212121212121212121212121212121212") == 591286729879
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "212121212121212121212121212121212121212121212121212121212") == 591286729879: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10203040506070809010111213141516171819202122232425262728293031") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10203040506070809010111213141516171819202122232425262728293031") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22111122111122111122111122111122111122111122111122111122111122") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22111122111122111122111122111122111122111122111122111122111122") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0102030405060708091011121314151617181920212223242526") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0102030405060708091011121314151617181920212223242526") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111111111111111111111111112") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111111111111111111111111112") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "212221222122212221222122212221222122212221222122212221222122") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "212221222122212221222122212221222122212221222122212221222122") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11122211122211122211122211122211122211122211122211122211122211") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11122211122211122211122211122211122211122211122211122211122211") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "01010101010101010101010101010101010101010101010101010101010") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "01010101010101010101010101010101010101010101010101010101010") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111222333444555666777888999000111222333444555666777888999000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111222333444555666777888999000111222333444555666777888999000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890123456789012345678901234567890123456789012345670") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890123456789012345678901234567890123456789012345670") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000000000000000000000000000000000000000000000000000000000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000000000000000000000000000000000000000000000000000000000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234056789") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234056789") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "19019019019019019019019019019019019019019019019019") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "19019019019019019019019019019019019019019019019019") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12223242526272829303132333435363738394041424344454647484950") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12223242526272829303132333435363738394041424344454647484950") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111111") == 63245986
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111111") == 63245986: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "30313233343536373839404142434445464748495051525354555657585960") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "30313233343536373839404142434445464748495051525354555657585960") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "21212121212121212121212121212121212121212121212121212121212") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "21212121212121212121212121212121212121212121212121212121212") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "270029") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "270029") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11001100110011001100") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11001100110011001100") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678987654321234567898765432123456789") == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678987654321234567898765432123456789") == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1122334455667788991011121314151617181920212223242526") == 692224
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1122334455667788991011121314151617181920212223242526") == 692224: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10101010101010101010101010101010101010101010101010101010101") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10101010101010101010101010101010101010101010101010101010101") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "273747576787980") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "273747576787980") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "129129129") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "129129129") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112211221122112211221122112211221122112211221122112211221122112") == 10610209857723
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112211221122112211221122112211221122112211221122112211221122112") == 10610209857723: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "301010") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "301010") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "121212121212121212121212121212121212121212121212121212121212") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "121212121212121212121212121212121212121212121212121212121212") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1101111011111011111011111011111011111011111011111") == 375000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1101111011111011111011111011111011111011111011111") == 375000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789012345678901234567890123456789012345678901234567890") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789012345678901234567890123456789012345678901234567890") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1101010101010101010101010101010101010101010101010101010101") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1101010101010101010101010101010101010101010101010101010101") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111000111000111000111000111000111000111000111000111000") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111000111000111000111000111000111000111000111000111000") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1225232125") == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1225232125") == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "212223242526212223242526212223242526212223242526") == 116985856
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "212223242526212223242526212223242526212223242526") == 116985856: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "262626262626262626262626262626262626262626262626262626262") == 268435456
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "262626262626262626262626262626262626262626262626262626262") == 268435456: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0123456789") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0123456789") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11223344556677889911223344556677889911223344556677889911") == 1024
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11223344556677889911223344556677889911223344556677889911") == 1024: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11223344556677889910111213141516171819202122232425262728293031") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11223344556677889910111213141516171819202122232425262728293031") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "26262626262626262626262626262626262626") == 524288
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "26262626262626262626262626262626262626") == 524288: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101010101010101010101010101010101010101010101010101010101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101010101010101010101010101010101010101010101010101010101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111111111111111111111111111111111111111111111111111111111111") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111111111111111111111111111111111111111111111111111111111111") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12222222222222222222222222222222222222222222222222222222222") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12222222222222222222222222222222222222222222222222222222222") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22322322322322322322322322322322322322322322322322322322322") == 2324522934
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22322322322322322322322322322322322322322322322322322322322") == 2324522934: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12121212121212121212121212121212121212") == 63245986
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12121212121212121212121212121212121212") == 63245986: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1222222222222222222222222222222222222222222222222222222222") == 956722026041
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1222222222222222222222222222222222222222222222222222222222") == 956722026041: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "25242322212019181716151413121110987654321") == 51200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "25242322212019181716151413121110987654321") == 51200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101010101010101010101010101010101010101010101010101010101010100") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101010101010101010101010101010101010101010101010101010101010100") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101112131415161718192021222324252620212223242526") == 8998912
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101112131415161718192021222324252620212223242526") == 8998912: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111111111111111111111111110") == 591286729879
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111111111111111111111111110") == 591286729879: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11121314151617181920212223242526") == 86528
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11121314151617181920212223242526") == 86528: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222222222222222222222222222") == 63245986
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222222222222222222222222222") == 63245986: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1230011010101010101010101010101010101010101010101010101010") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1230011010101010101010101010101010101010101010101010101010") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2727272727272727272727272727272727272727272727272727272727") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2727272727272727272727272727272727272727272727272727272727") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1230450678901234567890") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1230450678901234567890") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11223344556677889911223344556677889911223344556677889911222") == 4096
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11223344556677889911223344556677889911223344556677889911222") == 4096: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "33333333333333333333333333333333333333333333333333333333333") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "33333333333333333333333333333333333333333333333333333333333") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "21012101210121012101210121012101210121012101210121") == 6144
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "21012101210121012101210121012101210121012101210121") == 6144: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11111111111111111111111111111111111111111111111111111111111101") == 1548008755920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11111111111111111111111111111111111111111111111111111111111101") == 1548008755920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "212121212121212121212121212121212121212121212121212121212121") == 2504730781961
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "212121212121212121212121212121212121212121212121212121212121") == 2504730781961: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12121212121212121212121212121212121212121212121212121212121212") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12121212121212121212121212121212121212121212121212121212121212") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112358132134558914423337761098765534211") == 360
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112358132134558914423337761098765534211") == 360: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "262626262626262626262626262626262626262626262626262626262626") == 1073741824
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "262626262626262626262626262626262626262626262626262626262626") == 1073741824: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "102030405060708090") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "102030405060708090") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9999999999999999999999999999999999999999999999999") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9999999999999999999999999999999999999999999999999") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "25252525252525252525252525252525252525252525252525") == 33554432
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "25252525252525252525252525252525252525252525252525") == 33554432: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333444555666777888999") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333444555666777888999") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "272727272727272727272727272727272727272727272727272727272") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "272727272727272727272727272727272727272727272727272727272") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "101010") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "101010") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "102233445566778899112233445566778899112233445566") == 192
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "102233445566778899112233445566778899112233445566") == 192: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "110110110") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "110110110") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "110110110110110110110110110110110110110110110110110110110110") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "110110110110110110110110110110110110110110110110110110110110") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "21211212211212122112121221121212211212122112121221121212211212") == 6557470319842
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "21211212211212122112121221121212211212122112121221121212211212") == 6557470319842: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "19191919191919191919191919191919191919191919191919191919191919") == 2147483648
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "19191919191919191919191919191919191919191919191919191919191919") == 2147483648: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "26262626262626262626262626262626262626262626262626") == 33554432
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "26262626262626262626262626262626262626262626262626") == 33554432: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "112233445566778899112233445566778899112233445566") == 512
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "112233445566778899112233445566778899112233445566") == 512: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "100100100") == 0
@@ -178,3 +1594,5 @@ def check(candidate):
     assert candidate(s = "19191919191919191919191919191919191919191919191919191919191919") == 2147483648
     assert candidate(s = "26262626262626262626262626262626262626262626262626") == 33554432
     assert candidate(s = "112233445566778899112233445566778899112233445566") == 512
+
+

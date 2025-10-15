@@ -1,5 +1,621 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', 'D', '+', '2', 'C', '+', '+', 'C', 'C', 'C']) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', 'D', '+', '2', 'C', '+', '+', 'C', 'C', 'C']) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '20', '30', 'D', '+']) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '20', '30', 'D', '+']) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '6', '+', 'D', 'C', '3', 'D', '+', '-2', 'D', '9', '+']) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '6', '+', 'D', 'C', '3', 'D', '+', '-2', 'D', '9', '+']) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '20', '+', 'D', 'C', '5', 'D', '+']) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '20', '+', 'D', 'C', '5', 'D', '+']) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-1', '-2', '-3', 'C', 'D', '+', '-4', '-5', '+', '-6']) == -37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-1', '-2', '-3', 'C', 'D', '+', '-4', '-5', '+', '-6']) == -37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '8', '+', 'D', 'C', '2']) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '8', '+', 'D', 'C', '2']) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '-2', '4', 'C', 'D', '9', '+', '+']) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '-2', '4', 'C', 'D', '9', '+', '+']) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', 'D', 'D', '+', 'C', 'D', 'C', 'D', 'C', '+']) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', 'D', 'D', '+', 'C', 'D', 'C', 'D', 'C', '+']) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', 'D', 'C', 'D', 'C', '10']) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', 'D', 'C', 'D', 'C', '10']) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '2', 'C', 'D', '+']) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '2', 'C', 'D', '+']) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'D', 'C', '1', 'D', 'C', '1', 'D', 'C', '1']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'D', 'C', '1', 'D', 'C', '1', 'D', 'C', '1']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '20', 'D', '+', 'C', '+', 'D', '+', '-10', 'C', '100']) == 530
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '20', 'D', '+', 'C', '+', 'D', '+', '-10', 'C', '100']) == 530: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', 'D', '+', '5', 'C', 'D']) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', 'D', '+', '5', 'C', 'D']) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '200', '300', 'C', 'D', '+', 'C', '+', 'D', '+']) == 4300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '200', '300', 'C', 'D', '+', 'C', '+', 'D', '+']) == 4300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '-50', 'D', 'C', '+']) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '-50', 'D', 'C', '+']) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'C']) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'C']) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10000', '-10000', 'D', 'D', '+', 'C', 'D', '+', 'C', 'D']) == -300000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10000', '-10000', 'D', 'D', '+', 'C', 'D', '+', 'C', 'D']) == -300000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1000', '500', '250', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C']) == 12500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1000', '500', '250', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C', '+', 'D', 'C', 'D', 'C']) == 12500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-1', '-2', '3', 'D', '+', 'C', 'D', '+']) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-1', '-2', '3', 'D', '+', 'C', 'D', '+']) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'C', '2', 'C', '3', 'C', '4', 'C', '5', 'C', '6', 'C', '7', 'C', '8', 'C', '9', 'C', '10', 'C', '11', 'C', '12', 'C', '13', 'C', '14', 'C', '15', 'C', '16', 'C', '17', 'C', '18', 'C', '19', 'C', '20', 'C']) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'C', '2', 'C', '3', 'C', '4', 'C', '5', 'C', '6', 'C', '7', 'C', '8', 'C', '9', 'C', '10', 'C', '11', 'C', '12', 'C', '13', 'C', '14', 'C', '15', 'C', '16', 'C', '17', 'C', '18', 'C', '19', 'C', '20', 'C']) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['50000', '-50000', '+', 'D', 'C', '25000', 'D', '+', '+', '-25000', 'D', '+']) == 125000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['50000', '-50000', '+', 'D', 'C', '25000', 'D', '+', '+', '-25000', 'D', '+']) == 125000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '-2', '4', 'C', 'D', '9', '+', '+', 'C', 'D', '+', 'C', 'D', '+']) == 73
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '-2', '4', 'C', 'D', '9', '+', '+', 'C', 'D', '+', 'C', 'D', '+']) == 73: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['30', '-10', 'C', 'D', 'D', '+', '+', '5', 'C', '+']) == 1170
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['30', '-10', 'C', 'D', 'D', '+', '+', '5', 'C', '+']) == 1170: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 61572651155455
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 61572651155455: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-10', '-20', '+', 'C', '-30', 'D', '+', '-40', '+', 'D', 'C', 'C', '50', 'D', '+', '+']) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-10', '-20', '+', 'C', '-30', 'D', '+', '-40', '+', 'D', 'C', 'C', '50', 'D', '+', '+']) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'D', 'D', 'D', 'C', 'C', 'C', 'D', 'D', 'D', '100', '200', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '1', '2', '3', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+']) == 74401
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'D', 'D', 'D', 'C', 'C', 'C', 'D', 'D', 'D', '100', '200', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '1', '2', '3', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+']) == 74401: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '10', 'C', '20', 'D', '+', '30', 'C', '40', 'D', '+', '50']) == 415
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '10', 'C', '20', 'D', '+', '30', 'C', '40', 'D', '+', '50']) == 415: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '-100', 'D', 'D', '+', 'C', '+', 'D', 'C', '+']) == -2200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '-100', 'D', 'D', '+', 'C', '+', 'D', 'C', '+']) == -2200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D']) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D']) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '50', '25', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', '-1', 'C', '-2', 'C', '-3', 'C', '-4', 'C', '-5', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 82575490
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '50', '25', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', '-1', 'C', '-2', 'C', '-3', 'C', '-4', 'C', '-5', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 82575490: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', 'C', '10', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 550
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', 'C', '10', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 550: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', 'C', '5', 'D', '+', 'C', 'D', '5', 'D', '+', 'C', 'D', '5', 'D', '+', 'C', 'D', '+']) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', 'C', '5', 'D', '+', 'C', 'D', '5', 'D', '+', 'C', 'D', '5', 'D', '+', 'C', 'D', '+']) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', 'C', '20', 'C', '30', 'C', '40', 'D', '+', 'C', '+', 'D', '+']) == 840
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', 'C', '20', 'C', '30', 'C', '40', 'D', '+', 'C', '+', 'D', '+']) == 840: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-32768', '32767', 'D', 'D', '+', 'C', 'D', '+', '-32768', '32767', 'D', 'D', '+', 'C', 'D', '+', '-32768', '32767', 'D', 'D', '+', 'C', 'D', '+']) == 2555823
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-32768', '32767', 'D', 'D', '+', 'C', 'D', '+', '-32768', '32767', 'D', 'D', '+', 'C', 'D', '+', '-32768', '32767', 'D', 'D', '+', 'C', 'D', '+']) == 2555823: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '6', '+', 'D', 'C', '2', 'D', '+', '+', '-3', 'D', '+']) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '6', '+', 'D', 'C', '2', 'D', '+', '+', '-3', 'D', '+']) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '-10', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -73400300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '-10', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -73400300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D']) == 16401
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D', '+', '+', 'C', 'D']) == 16401: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '20', '30', '40', '50', 'C', 'D', '+', '60', '70', '80', '90', '100', 'C', 'D', '+', '110', '120', '130', '140', 'C', 'D', '+', '150']) == 2210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '20', '30', '40', '50', 'C', 'D', '+', '60', '70', '80', '90', '100', 'C', 'D', '+', '110', '120', '130', '140', 'C', 'D', '+', '150']) == 2210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', 'C', '2', 'D', '+', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D']) == 2185
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', 'C', '2', 'D', '+', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D', 'C', 'D', '+', 'C', '+', 'D']) == 2185: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '200', '300', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2202009600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '200', '300', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2202009600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '+', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2241
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '+', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2241: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', 'C', 'D', '+', '100', '-100', 'C', 'D', '+']) == 606
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', 'C', 'D', '+', '100', '-100', 'C', 'D', '+']) == 606: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '-50', 'D', '+', 'C', '25', 'D', '+', '150', 'C', '-200', 'D', '+']) == -1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '-50', 'D', '+', 'C', '25', 'D', '+', '150', 'C', '-200', 'D', '+']) == -1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '-3', '5', '-5', 'D', 'C', '+', 'D', 'C', 'C', 'C']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '-3', '5', '-5', 'D', 'C', '+', 'D', 'C', 'C', 'C']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', 'C', 'D', '+', '4', '5', '6', 'C', 'D', '+', '7', '8', '9', 'C', 'D', '+', '10']) == 112
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', 'C', 'D', '+', '4', '5', '6', 'C', 'D', '+', '7', '8', '9', 'C', 'D', '+', '10']) == 112: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '6', '+', 'C', 'D', '12', '+', '-10', 'D', '+', '5', 'C', '+', '20']) == -33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '6', '+', 'C', 'D', '12', '+', '-10', 'D', '+', '5', 'C', '+', '20']) == -33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-1', '-2', '-3', '-4', '-5', 'C', 'D', '+', '-6', '-7', '-8', '-9', '-10', 'C', 'D', '+', '-11', '-12', '-13', '-14', 'C', 'D', '+', '-15']) == -221
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-1', '-2', '-3', '-4', '-5', 'C', 'D', '+', '-6', '-7', '-8', '-9', '-10', 'C', 'D', '+', '-11', '-12', '-13', '-14', 'C', 'D', '+', '-15']) == -221: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '+', 'D', 'C', '4', '5', '+', '6', 'D', 'C', '7', '8', '+', '9', 'D', 'C', '10', '11', '+', '12', 'D', 'C', '13', '14', '+', '15', 'D', 'C', '16', '17', '+', '18', 'D', 'C', '19', '20', '+', '21', 'D', 'C', '22', '23', '+', '24', 'D', 'C', '25', '26', '+', '27', 'D', 'C', '28', '29', '+', '30', 'D', 'C', '+', '-50']) == 804
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '+', 'D', 'C', '4', '5', '+', '6', 'D', 'C', '7', '8', '+', '9', 'D', 'C', '10', '11', '+', '12', 'D', 'C', '13', '14', '+', '15', 'D', 'C', '16', '17', '+', '18', 'D', 'C', '19', '20', '+', '21', 'D', 'C', '22', '23', '+', '24', 'D', 'C', '25', '26', '+', '27', 'D', 'C', '28', '29', '+', '30', 'D', 'C', '+', '-50']) == 804: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '6', 'D', '+', '-2', 'D', 'C', '+', '5', 'D', '+']) == 83
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '6', 'D', '+', '-2', 'D', 'C', '+', '5', 'D', '+']) == 83: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', 'C', '-100', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -183500700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', 'C', '-100', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -183500700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '200', '+', 'D', 'C', '100', 'D', '+', '+', 'C', '100', 'D', '+', '+', 'C', '100', 'D', '+']) == 2400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '200', '+', 'D', 'C', '100', 'D', '+', '+', 'C', '100', 'D', '+', '+', 'C', '100', 'D', '+']) == 2400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-100', 'C', '-50', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -2750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-100', 'C', '-50', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -2750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '-50', 'D', 'C', 'D', '+', '20', '-20', 'C', '+', 'D', 'C', '1000', 'D', 'C', '+', '-500', '+', 'D', '+']) == 3280
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '-50', 'D', 'C', 'D', '+', '20', '-20', 'C', '+', 'D', 'C', '1000', 'D', 'C', '+', '-500', '+', 'D', '+']) == 3280: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '2', 'C', 'D', '+', '3', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 1371
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '2', 'C', 'D', '+', '3', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 1371: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '-1', '-1', 'C', '2', 'D', '5', '+', '10', 'C', 'D', '+', '-5']) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '-1', '-1', 'C', '2', 'D', '5', '+', '10', 'C', 'D', '+', '-5']) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-1', '-2', '+', 'D', 'C', '-3', 'D', '+', '+', 'C', '-4', 'D', '+', '+', 'C', '-5', 'D', '+']) == -78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-1', '-2', '+', 'D', 'C', '-3', 'D', '+', '+', 'C', '-4', 'D', '+', '+', 'C', '-5', 'D', '+']) == -78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '200', 'C', 'D', '+', 'C', 'D', '+', '1000', '-1000', 'C', 'D', '+']) == 7300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '200', 'C', 'D', '+', 'C', 'D', '+', '1000', '-1000', 'C', 'D', '+']) == 7300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C']) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C', '1', 'C']) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-1', '-2', 'C', '-3', 'D', '+', '-4', 'C', '-5', 'D', '+', '-6']) == -55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-1', '-2', 'C', '-3', 'D', '+', '-4', 'C', '-5', 'D', '+', '-6']) == -55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['3', '-1', '-4', 'D', '+', 'C', 'D', '+', '-5', 'D', 'C', '+']) == -84
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['3', '-1', '-4', 'D', '+', 'C', 'D', '+', '-5', 'D', 'C', '+']) == -84: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'C', '1', 'D', '+', -1, 'D', 'C', '+', 'D', '+', 'C', 'D', '+', '-10', 'C', '100', 'D', '+', 'C']) == 331
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'C', '1', 'D', '+', -1, 'D', 'C', '+', 'D', '+', 'C', 'D', '+', '-10', 'C', '100', 'D', '+', 'C']) == 331: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1000', '-1000', 'D', '+', 'C', '500', 'D', '+', '1500', 'C', '-2000', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -3670013000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1000', '-1000', 'D', '+', 'C', '500', 'D', '+', '1500', 'C', '-2000', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == -3670013000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['-5', 'D', '-10', '+', 'C', 'D', '+', '5', 'D', 'C', '+']) == -95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['-5', 'D', '-10', '+', 'C', 'D', '+', '5', 'D', 'C', '+']) == -95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '2', '3', 'D', '+', 'C', '5', 'D', '+', '-5', 'C', '10', 'D', 'C', '+', '-10', 'D', '+', '-20', '+', '-30', 'D', 'C', '+', '-40', '+', '-50', 'D', 'C', '+']) == -539
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '2', '3', 'D', '+', 'C', '5', 'D', '+', '-5', 'C', '10', 'D', 'C', '+', '-10', 'D', '+', '-20', '+', '-30', 'D', 'C', '+', '-40', '+', '-50', 'D', 'C', '+']) == -539: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '20', '+', '30', '+', 'C', '40', 'D', '+', '50', '+', '60', '+', 'C', '70', 'D', '+', '80', '+', '90']) == 1490
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '20', '+', '30', '+', 'C', '40', 'D', '+', '50', '+', '60', '+', 'C', '70', 'D', '+', '80', '+', '90']) == 1490: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '50', 'D', '+', '-25', 'C', '75', 'D', '+', '25', 'C', '+', 'D']) == 1975
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '50', 'D', '+', '-25', 'C', '75', 'D', '+', '25', 'C', '+', 'D']) == 1975: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', '6', '7', '8', '9', '10', 'C', 'D', '+', '11', '12', '13', '14', 'C', 'D', '+', '15']) == 221
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', '6', '7', '8', '9', '10', 'C', 'D', '+', '11', '12', '13', '14', 'C', 'D', '+', '15']) == 221: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '+', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2164
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '+', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 2164: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['100', '50', '+', 'C', 'D', '20', 'D', '+', '10', 'C', '+']) == 470
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['100', '50', '+', 'C', 'D', '20', 'D', '+', '10', 'C', '+']) == 470: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 1794
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', '2', '3', '4', '5', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+', 'C', 'D', '+']) == 1794: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['10', '-10', 'D', '+', 'D', 'C', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C']) == -20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['10', '-10', 'D', '+', 'D', 'C', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C', 'D', '+', 'D', 'C', 'C', 'C']) == -20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'C', '2', 'D', 'C', '3', 'D', 'C', '4', 'D', 'C', '5', 'D', 'C', '6', 'D', 'C', '7', 'D', '+']) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'C', '2', 'D', 'C', '3', 'D', 'C', '4', 'D', 'C', '5', 'D', 'C', '6', 'D', 'C', '7', 'D', '+']) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['5', '10', 'D', '+', 'C', '5', 'D', 'C', '+', '-5', 'D', '+']) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['5', '10', 'D', '+', 'C', '5', 'D', 'C', '+', '-5', 'D', '+']) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(operations = ['1', 'D', '2', 'D', '3', 'D', '+', '+', '+', 'C', 'C', 'C']) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(operations = ['1', 'D', '2', 'D', '3', 'D', '+', '+', '+', 'C', 'C', 'C']) == 18: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(operations = ['3', 'D', '+', '2', 'C', '+', '+', 'C', 'C', 'C']) == 9
@@ -78,3 +694,5 @@ def check(candidate):
     assert candidate(operations = ['1', 'C', '2', 'D', 'C', '3', 'D', 'C', '4', 'D', 'C', '5', 'D', 'C', '6', 'D', 'C', '7', 'D', '+']) == 62
     assert candidate(operations = ['5', '10', 'D', '+', 'C', '5', 'D', 'C', '+', '-5', 'D', '+']) == 35
     assert candidate(operations = ['1', 'D', '2', 'D', '3', 'D', '+', '+', '+', 'C', 'C', 'C']) == 18
+
+

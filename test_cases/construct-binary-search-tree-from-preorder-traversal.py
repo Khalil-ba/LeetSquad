@@ -1,5 +1,765 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [1, 3]), tree_node([1, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [1, 3]), tree_node([1, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [5, 2, 1, 3, 8, 7, 9]), tree_node([5, 2, 8, 1, 3, 7, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [5, 2, 1, 3, 8, 7, 9]), tree_node([5, 2, 8, 1, 3, 7, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 75, 200, 125, 150, 250]), tree_node([100, 50, 200, 25, 75, 125, 250, None, None, None, None, None, 150]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 75, 200, 125, 150, 250]), tree_node([100, 50, 200, 25, 75, 125, 250, None, None, None, None, None, 150])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [8, 5, 1, 7, 10, 12]), tree_node([8, 5, 10, 1, 7, None, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [8, 5, 1, 7, 10, 12]), tree_node([8, 5, 10, 1, 7, None, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [2]), tree_node([2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [2]), tree_node([2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [5, 2, 1, 3, 7, 6, 8]), tree_node([5, 2, 7, 1, 3, 6, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [5, 2, 1, 3, 7, 6, 8]), tree_node([5, 2, 7, 1, 3, 6, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 15, 3, 7, 12, 20]), tree_node([10, 5, 12, 15, 7, None, 20, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 15, 3, 7, 12, 20]), tree_node([10, 5, 12, 15, 7, None, 20, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [4, 2, 1, 3, 7, 5, 6, 8]), tree_node([4, 2, 7, 1, 3, 5, 8, None, None, None, None, None, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [4, 2, 1, 3, 7, 5, 6, 8]), tree_node([4, 2, 7, 1, 3, 5, 8, None, None, None, None, None, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [2, 3]), tree_node([2, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [2, 3]), tree_node([2, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 1, 7, 40, 50]), tree_node([10, 5, 40, 1, 7, None, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 1, 7, 40, 50]), tree_node([10, 5, 40, 1, 7, None, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [3, 1, 2, 5, 4, 6]), tree_node([3, 1, 5, None, 2, 4, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [3, 1, 2, 5, 4, 6]), tree_node([3, 1, 5, None, 2, 4, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [2, 1]), tree_node([2, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [2, 1]), tree_node([2, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 1, 7, 12, 20, 17, 16, 18, 35, 30, 28, 27, 29, 40, 37, 36, 38, 45, 42, 41, 43, 50, 48, 47, 49, 55, 52, 51, 53, 57, 56, 58, 60]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, 12, 17, None, 28, None, 37, 45, 3, 7, None, None, 16, 18, 27, 29, 36, 38, 42, 50, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 41, 43, 48, 55, None, None, None, None, None, None, 47, 49, 52, 57, None, None, None, None, 51, 53, 56, 58, None, None, None, None, None, None, None, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 1, 7, 12, 20, 17, 16, 18, 35, 30, 28, 27, 29, 40, 37, 36, 38, 45, 42, 41, 43, 50, 48, 47, 49, 55, 52, 51, 53, 57, 56, 58, 60]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, 12, 17, None, 28, None, 37, 45, 3, 7, None, None, 16, 18, 27, 29, 36, 38, 42, 50, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 41, 43, 48, 55, None, None, None, None, None, None, 47, 49, 52, 57, None, None, None, None, 51, 53, 56, 58, None, None, None, None, None, None, None, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [15, 10, 5, 3, 1, 7, 12, 6, 8, 20, 17, 16, 18, 25, 23, 24, 27]), tree_node([15, 10, 20, 5, None, 17, 25, 3, 7, 16, 18, 23, 27, 1, None, 12, 8, None, None, None, None, None, 24, None, None, None, None, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [15, 10, 5, 3, 1, 7, 12, 6, 8, 20, 17, 16, 18, 25, 23, 24, 27]), tree_node([15, 10, 20, 5, None, 17, 25, 3, 7, 16, 18, 23, 27, 1, None, 12, 8, None, None, None, None, None, 24, None, None, None, None, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 30, 28, 27, 29, 35, 32, 31, 33, 37, 36, 38]), tree_node([20, 10, 25, 5, 15, 22, 30, 3, 7, 12, 18, 21, 23, 28, 35, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, 27, 29, 32, 37, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 31, 33, 36, 38]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 30, 28, 27, 29, 35, 32, 31, 33, 37, 36, 38]), tree_node([20, 10, 25, 5, 15, 22, 30, 3, 7, 12, 18, 21, 23, 28, 35, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, 27, 29, 32, 37, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 31, 33, 36, 38])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 15, 10, 5, 12, 18, 16, 17, 25, 22, 21, 24, 30, 28, 29, 32, 31]), tree_node([20, 15, 25, 10, 18, 22, 30, 5, 12, 16, None, 21, 24, 28, 32, None, None, None, None, None, 17, None, None, None, None, None, 29, 31]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 15, 10, 5, 12, 18, 16, 17, 25, 22, 21, 24, 30, 28, 29, 32, 31]), tree_node([20, 15, 25, 10, 18, 22, 30, 5, 12, 16, None, 21, 24, 28, 32, None, None, None, None, None, 17, None, None, None, None, None, 29, 31])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 70, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 90]), tree_node([50, 30, 70, 20, None, 60, 80, 10, None, 55, 65, 75, 85, 5, 15, 53, 57, 62, 68, 72, 78, 82, 88, 3, 7, 12, 18, 52, 54, 56, 58, 61, 63, 67, 69, 71, 73, 77, 79, 81, 83, 87, 89, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 90]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 70, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 90]), tree_node([50, 30, 70, 20, None, 60, 80, 10, None, 55, 65, 75, 85, 5, 15, 53, 57, 62, 68, 72, 78, 82, 88, 3, 7, 12, 18, 52, 54, 56, 58, 61, 63, 67, 69, 71, 73, 77, 79, 81, 83, 87, 89, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 90])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [1, 2, 4, 3, 5, 6, 8, 7, 9, 10, 12, 11, 13, 14, 15]), tree_node([1, None, 2, None, 4, 3, 5, None, None, None, 6, None, 8, 7, 9, None, None, None, 10, None, 12, 11, 13, None, None, None, 14, None, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [1, 2, 4, 3, 5, 6, 8, 7, 9, 10, 12, 11, 13, 14, 15]), tree_node([1, None, 2, None, 4, 3, 5, None, None, None, 6, None, 8, 7, 9, None, None, None, 10, None, 12, 11, 13, None, None, None, 14, None, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 2, 1, 3, 7, 6, 8, 15, 12, 11, 13, 18, 17, 20]), tree_node([10, 5, 15, 2, 7, 12, 18, 1, 3, 6, 8, 11, 13, 17, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 2, 1, 3, 7, 6, 8, 15, 12, 11, 13, 18, 17, 20]), tree_node([10, 5, 15, 2, 7, 12, 18, 1, 3, 6, 8, 11, 13, 17, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 40, 35, 30, 45, 75, 60, 55, 57, 65, 85, 80, 77, 78, 87, 90, 95, 100]), tree_node([100, 50, None, 25, 75, 10, 40, 60, 85, 5, 15, 35, 45, 55, 65, 80, 87, None, None, None, None, 30, None, None, None, None, 57, None, None, 77, None, None, 90, None, None, None, None, None, 78, None, 95, None, None, None, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 40, 35, 30, 45, 75, 60, 55, 57, 65, 85, 80, 77, 78, 87, 90, 95, 100]), tree_node([100, 50, None, 25, 75, 10, 40, 60, 85, 5, 15, 35, 45, 55, 65, 80, 87, None, None, None, None, 30, None, None, None, None, 57, None, None, 77, None, None, 90, None, None, None, None, None, 78, None, 95, None, None, None, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), tree_node([20, 19, None, 18, None, 17, None, 16, None, 15, None, 14, None, 13, None, 12, None, 11, None, 10, None, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), tree_node([20, 19, None, 18, None, 17, None, 16, None, 15, None, 14, None, 13, None, 12, None, 11, None, 10, None, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 15, 10, 8, 6, 7, 12, 11, 20, 18, 17, 19, 30, 28, 27, 29, 35, 33, 32, 34, 37, 36, 38]), tree_node([25, 15, 30, 10, 20, 28, 35, 8, 12, 18, None, 27, 29, 33, 37, 6, None, 11, None, 17, 19, None, None, None, None, 32, 34, 36, 38, None, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 15, 10, 8, 6, 7, 12, 11, 20, 18, 17, 19, 30, 28, 27, 29, 35, 33, 32, 34, 37, 36, 38]), tree_node([25, 15, 30, 10, 20, 28, 35, 8, 12, 18, None, 27, 29, 33, 37, 6, None, 11, None, 17, 19, None, None, None, None, 32, 34, 36, 38, None, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 30, 28, 32, 75, 65, 60, 63, 70, 80, 90, 85, 95]), tree_node([100, 50, None, 25, 75, 10, 30, 65, 80, 5, 15, 28, 32, 60, 70, None, 90, None, None, None, None, None, None, None, None, None, 63, None, None, 85, 95]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 30, 28, 32, 75, 65, 60, 63, 70, 80, 90, 85, 95]), tree_node([100, 50, None, 25, 75, 10, 30, 65, 80, 5, 15, 28, 32, 60, 70, None, 90, None, None, None, None, None, None, None, None, None, 63, None, None, 85, 95])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 3, 7, 12, 18, 21, 23, 26, 28, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 3, 7, 12, 18, 21, 23, 26, 28, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [8, 10, 12, 14, 16, 18, 20, 7, 6, 5, 4, 3, 2, 1, 11, 9, 13, 15, 17, 19]), tree_node([8, 10, 11, 12, None, 9, 13, 14, None, None, None, None, 15, 16, None, None, 17, 18, None, None, 19, 20, None, None, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [8, 10, 12, 14, 16, 18, 20, 7, 6, 5, 4, 3, 2, 1, 11, 9, 13, 15, 17, 19]), tree_node([8, 10, 11, 12, None, 9, 13, 14, None, None, None, None, 15, 16, None, None, 17, 18, None, None, 19, 20, None, None, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 40, 35, 30, 25, 45, 42, 47, 60, 55, 57, 65, 70, 67, 75, 80]), tree_node([50, 40, 60, 35, 45, 55, 65, 30, None, 42, 47, None, 57, None, 70, 25, None, None, None, None, None, None, None, 67, 75, None, None, None, None, None, 80]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 40, 35, 30, 25, 45, 42, 47, 60, 55, 57, 65, 70, 67, 75, 80]), tree_node([50, 40, 60, 35, 45, 55, 65, 30, None, 42, 47, None, 57, None, 70, 25, None, None, None, None, None, None, None, 67, 75, None, None, None, None, None, 80])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 70, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 95, 92, 91, 93, 98, 97, 99]), tree_node([50, 30, 70, 20, None, 60, 80, 10, None, 55, 65, 75, 85, 5, 15, 53, 57, 62, 68, 72, 78, 82, 88, 3, 7, 12, 18, 52, 54, 56, 58, 61, 63, 67, 69, 71, 73, 77, 79, 81, 83, 87, 89, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 95, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 92, 98, 91, 93, 97, 99]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 70, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 95, 92, 91, 93, 98, 97, 99]), tree_node([50, 30, 70, 20, None, 60, 80, 10, None, 55, 65, 75, 85, 5, 15, 53, 57, 62, 68, 72, 78, 82, 88, 3, 7, 12, 18, 52, 54, 56, 58, 61, 63, 67, 69, 71, 73, 77, 79, 81, 83, 87, 89, 1, 4, 6, 8, 11, 13, 17, 19, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 95, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 92, 98, 91, 93, 97, 99])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 3, 2, 1, 4, 7, 6, 8, 15, 13, 12, 14, 18, 17, 16, 19, 20]), tree_node([10, 5, 15, 3, 7, 13, 18, 2, 4, 6, 8, 12, 14, 17, 19, 1, None, None, None, None, None, None, None, None, None, None, None, 16, None, None, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 3, 2, 1, 4, 7, 6, 8, 15, 13, 12, 14, 18, 17, 16, 19, 20]), tree_node([10, 5, 15, 3, 7, 13, 18, 2, 4, 6, 8, 12, 14, 17, 19, 1, None, None, None, None, None, None, None, None, None, None, None, 16, None, None, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), tree_node([10, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), tree_node([10, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 15, 10, 5, 1, 3, 7, 6, 8, 20, 17, 16, 18, 25, 22, 23, 27, 30]), tree_node([30, 15, None, 10, 20, 5, None, 17, 25, 1, 7, 16, 18, 22, 27, None, 3, 6, 8, None, None, None, None, None, 23, None, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 15, 10, 5, 1, 3, 7, 6, 8, 20, 17, 16, 18, 25, 22, 23, 27, 30]), tree_node([30, 15, None, 10, 20, 5, None, 17, 25, 1, 7, 16, 18, 22, 27, None, 3, 6, 8, None, None, None, None, None, 23, None, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 3, 7, 15, 12, 17, 25, 22, 27, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 3, 7, 12, 17, None, None, None, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 3, 7, 15, 12, 17, 25, 22, 27, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 3, 7, 12, 17, None, None, None, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 22, 40, 35, 32, 33, 38, 37, 36, 39, 50, 45, 43, 44, 48, 47, 46, 49, 55, 52, 51, 53, 54, 58, 56, 57, 59, 60]), tree_node([30, 20, 40, 10, 25, 35, 50, 5, 15, 18, None, 32, 38, 45, 55, None, None, None, None, None, 22, None, 33, 37, 39, 43, 48, 52, 58, None, None, None, None, 36, None, None, None, None, 44, 47, 49, 51, 53, 56, 59, None, None, None, None, 46, None, None, None, None, None, None, 54, None, 57, None, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 22, 40, 35, 32, 33, 38, 37, 36, 39, 50, 45, 43, 44, 48, 47, 46, 49, 55, 52, 51, 53, 54, 58, 56, 57, 59, 60]), tree_node([30, 20, 40, 10, 25, 35, 50, 5, 15, 18, None, 32, 38, 45, 55, None, None, None, None, None, 22, None, 33, 37, 39, 43, 48, 52, 58, None, None, None, None, 36, None, None, None, None, 44, 47, 49, 51, 53, 56, 59, None, None, None, None, 46, None, None, None, None, None, None, 54, None, 57, None, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [15, 10, 5, 3, 7, 12, 9, 14, 20, 18, 17, 19, 25, 23, 24, 28, 27, 29, 30]), tree_node([15, 10, 20, 5, 12, 18, 25, 3, 7, 9, 14, 17, 19, 23, 28, None, None, None, None, None, None, None, None, None, None, None, None, None, 24, 27, 29, None, None, None, None, None, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [15, 10, 5, 3, 7, 12, 9, 14, 20, 18, 17, 19, 25, 23, 24, 28, 27, 29, 30]), tree_node([15, 10, 20, 5, 12, 18, 25, 3, 7, 9, 14, 17, 19, 23, 28, None, None, None, None, None, None, None, None, None, None, None, None, None, 24, 27, 29, None, None, None, None, None, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 15, 12, 14, 17, 20]), tree_node([10, 5, 15, 1, 7, 12, 17, None, 3, 6, 8, None, 14, None, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 15, 12, 14, 17, 20]), tree_node([10, 5, 15, 1, 7, 12, 17, None, 3, 6, 8, None, 14, None, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [1, 2, 4, 3, 5, 6, 8, 7, 10, 9, 11]), tree_node([1, None, 2, None, 4, 3, 5, None, None, None, 6, None, 8, 7, 10, None, None, 9, 11]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [1, 2, 4, 3, 5, 6, 8, 7, 10, 9, 11]), tree_node([1, None, 2, None, 4, 3, 5, None, None, None, 6, None, 8, 7, 10, None, None, 9, 11])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 18, 22, 17, 19, 30, 27, 26, 28, 35, 32, 31, 33, 40, 37, 39, 45, 42, 43, 47, 50]), tree_node([25, 20, 30, 15, None, 27, 35, 10, 18, 26, 28, 32, 40, 5, None, 22, 19, None, None, None, None, 31, 33, 37, 45, None, None, 17, None, None, None, None, None, None, None, None, 39, 42, 47, None, None, None, None, None, 43, None, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 18, 22, 17, 19, 30, 27, 26, 28, 35, 32, 31, 33, 40, 37, 39, 45, 42, 43, 47, 50]), tree_node([25, 20, 30, 15, None, 27, 35, 10, 18, 26, 28, 32, 40, 5, None, 22, 19, None, None, None, None, 31, 33, 37, 45, None, None, 17, None, None, None, None, None, None, None, None, 39, 42, 47, None, None, None, None, None, 43, None, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 10, 5, 3, 1, 4, 7, 6, 8, 20, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28]), tree_node([30, 10, None, 5, 20, 3, 7, 15, 25, 1, 4, 6, 8, 12, 18, 22, 27, None, None, None, None, None, None, None, None, 11, 13, 17, 19, 21, 23, 26, 28]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 10, 5, 3, 1, 4, 7, 6, 8, 20, 15, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28]), tree_node([30, 10, None, 5, 20, 3, 7, 15, 25, 1, 4, 6, 8, 12, 18, 22, 27, None, None, None, None, None, None, None, None, 11, 13, 17, 19, 21, 23, 26, 28])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 1, 3, 7, 6, 8, 15, 12, 14, 17, 25, 22, 27, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 1, 7, 12, 17, None, None, None, 30, None, 3, 6, 8, None, 14]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 1, 3, 7, 6, 8, 15, 12, 14, 17, 25, 22, 27, 30]), tree_node([20, 10, 25, 5, 15, 22, 27, 1, 7, 12, 17, None, None, None, 30, None, 3, 6, 8, None, 14])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [40, 30, 20, 10, 5, 3, 7, 25, 22, 27, 35, 32, 38, 50, 45, 42, 47, 55, 52, 58, 60]), tree_node([40, 30, 50, 20, 35, 45, 55, 10, 25, 32, 38, 42, 47, 52, 58, 5, None, 22, 27, None, None, None, None, None, None, None, None, None, None, None, 60, 3, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [40, 30, 20, 10, 5, 3, 7, 25, 22, 27, 35, 32, 38, 50, 45, 42, 47, 55, 52, 58, 60]), tree_node([40, 30, 50, 20, 35, 45, 55, 10, 25, 32, 38, 42, 47, 52, 58, 5, None, 22, 27, None, None, None, None, None, None, None, None, None, None, None, 60, 3, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 1, 4, 12, 8, 7, 6, 11, 20, 18, 17, 16, 19, 35, 30, 28, 27, 29, 26, 32, 31, 33, 31, 34, 45, 40, 38, 37, 39, 42, 41, 43, 48, 46, 45, 47, 49, 55, 50, 49, 51, 52, 58, 56, 57, 59, 60]), tree_node([25, 15, 35, 10, 20, 30, 45, 5, 12, 18, None, 28, 32, 40, 48, 3, None, 8, None, 17, 19, 27, 29, 31, 34, 38, 42, 46, 49, 1, 4, 7, 11, 16, None, None, None, None, None, 26, None, 33, None, None, None, 37, 39, 41, 43, 45, 47, 55, 51, None, None, None, None, 6, None, None, None, None, None, None, None, 31, None, None, None, None, None, None, None, None, None, None, None, None, None, 50, None, None, 52, None, None, None, None, 49, None, None, 58, None, None, 56, 59, None, 57, None, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 1, 4, 12, 8, 7, 6, 11, 20, 18, 17, 16, 19, 35, 30, 28, 27, 29, 26, 32, 31, 33, 31, 34, 45, 40, 38, 37, 39, 42, 41, 43, 48, 46, 45, 47, 49, 55, 50, 49, 51, 52, 58, 56, 57, 59, 60]), tree_node([25, 15, 35, 10, 20, 30, 45, 5, 12, 18, None, 28, 32, 40, 48, 3, None, 8, None, 17, 19, 27, 29, 31, 34, 38, 42, 46, 49, 1, 4, 7, 11, 16, None, None, None, None, None, 26, None, 33, None, None, None, 37, 39, 41, 43, 45, 47, 55, 51, None, None, None, None, 6, None, None, None, None, None, None, None, 31, None, None, None, None, None, None, None, None, None, None, None, None, None, 50, None, None, 52, None, None, None, None, 49, None, None, 58, None, None, 56, 59, None, 57, None, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 75, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 95, 92, 91, 93, 98, 97, 99, 150, 125, 110, 105, 103, 102, 104, 107, 106, 108, 115, 112, 111, 113, 118, 117, 119, 130, 122, 121, 123, 128, 127, 129, 140, 135, 132, 131, 133, 138, 137, 139, 155, 152, 151, 153, 158, 157, 159]), tree_node([100, 50, 150, 25, 75, 125, 155, 10, None, 60, 78, 110, 130, 152, 158, 5, 15, 55, 65, 77, 79, 105, 115, 122, 140, 151, 153, 157, 159, 3, 7, 12, 18, 53, 57, 62, 68, None, None, None, 85, 103, 107, 112, 118, 121, 123, 135, None, None, None, None, None, None, None, None, None, 1, 4, 6, 8, 11, 13, 17, 19, 52, 54, 56, 58, 61, 63, 67, 69, 82, 88, 102, 104, 106, 108, 111, 113, 117, 119, None, None, None, 128, 132, 138, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 80, 81, 83, 87, 89, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 127, 129, 131, 133, 137, 139, 75, None, None, None, None, None, None, None, None, 95, None, None, None, None, None, None, None, None, None, None, None, None, 72, None, 92, 98, 71, 73, 91, 93, 97, 99]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19, 75, 60, 55, 53, 52, 54, 57, 56, 58, 65, 62, 61, 63, 68, 67, 69, 80, 75, 72, 71, 73, 78, 77, 79, 85, 82, 81, 83, 88, 87, 89, 95, 92, 91, 93, 98, 97, 99, 150, 125, 110, 105, 103, 102, 104, 107, 106, 108, 115, 112, 111, 113, 118, 117, 119, 130, 122, 121, 123, 128, 127, 129, 140, 135, 132, 131, 133, 138, 137, 139, 155, 152, 151, 153, 158, 157, 159]), tree_node([100, 50, 150, 25, 75, 125, 155, 10, None, 60, 78, 110, 130, 152, 158, 5, 15, 55, 65, 77, 79, 105, 115, 122, 140, 151, 153, 157, 159, 3, 7, 12, 18, 53, 57, 62, 68, None, None, None, 85, 103, 107, 112, 118, 121, 123, 135, None, None, None, None, None, None, None, None, None, 1, 4, 6, 8, 11, 13, 17, 19, 52, 54, 56, 58, 61, 63, 67, 69, 82, 88, 102, 104, 106, 108, 111, 113, 117, 119, None, None, None, 128, 132, 138, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 80, 81, 83, 87, 89, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 127, 129, 131, 133, 137, 139, 75, None, None, None, None, None, None, None, None, 95, None, None, None, None, None, None, None, None, None, None, None, None, 72, None, 92, 98, 71, 73, 91, 93, 97, 99])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 15, 25, 35, 40, 45, 70, 60, 55, 58, 65, 80, 75, 72, 73, 78, 85, 82, 83, 87, 90, 95, 92, 93, 98, 97, 99]), tree_node([50, 30, 70, 20, 35, 60, 80, 10, 25, None, 40, 55, 65, 75, 85, None, 15, None, None, None, 45, None, 58, None, None, 72, 78, 82, 87, None, None, None, None, None, None, None, 73, None, None, None, 83, None, 90, None, None, None, None, None, 95, 92, 98, None, 93, 97, 99]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 15, 25, 35, 40, 45, 70, 60, 55, 58, 65, 80, 75, 72, 73, 78, 85, 82, 83, 87, 90, 95, 92, 93, 98, 97, 99]), tree_node([50, 30, 70, 20, 35, 60, 80, 10, 25, None, 40, 55, 65, 75, 85, None, 15, None, None, None, 45, None, 58, None, None, 72, 78, 82, 87, None, None, None, None, None, None, None, 73, None, None, None, 83, None, 90, None, None, None, None, None, 95, 92, 98, None, 93, 97, 99])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 40, 30, 75, 60, 55, 57, 65, 80, 70, 72, 90, 85, 95]), tree_node([100, 50, None, 25, 75, 10, 40, 60, 90, 5, 15, 30, None, 55, 65, 85, 95, None, None, None, None, None, None, None, 57, None, 80, None, None, None, None, None, None, 70, None, None, 72]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 40, 30, 75, 60, 55, 57, 65, 80, 70, 72, 90, 85, 95]), tree_node([100, 50, None, 25, 75, 10, 40, 60, 90, 5, 15, 30, None, 55, 65, 85, 95, None, None, None, None, None, None, None, 57, None, 80, None, None, None, None, None, None, 70, None, None, 72])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 9, 12, 11, 13]), tree_node([10, 5, 12, 1, 7, 11, 13, None, 3, 6, 8, None, None, None, None, None, None, None, None, None, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 9, 12, 11, 13]), tree_node([10, 5, 12, 1, 7, 11, 13, None, 3, 6, 8, None, None, None, None, None, None, None, None, None, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 25, 10, 5, 3, 7, 15, 12, 18, 40, 30, 28, 32, 35, 38, 75, 60, 55, 58, 65, 80, 72, 70, 73, 78, 85, 82, 83, 87, 90, 95, 92, 93, 98, 97, 99]), tree_node([50, 25, 75, 10, 40, 60, 78, 5, 15, 30, None, 55, 65, None, 85, 3, 7, 12, 18, 28, 32, None, 58, None, 80, 82, 87, None, None, None, None, None, None, None, None, None, None, None, 35, None, None, 72, None, None, 83, None, 90, None, 38, 70, 73, None, None, None, 95, None, None, None, None, None, None, 92, 98, None, 93, 97, 99]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 25, 10, 5, 3, 7, 15, 12, 18, 40, 30, 28, 32, 35, 38, 75, 60, 55, 58, 65, 80, 72, 70, 73, 78, 85, 82, 83, 87, 90, 95, 92, 93, 98, 97, 99]), tree_node([50, 25, 75, 10, 40, 60, 78, 5, 15, 30, None, 55, 65, None, 85, 3, 7, 12, 18, 28, 32, None, 58, None, 80, 82, 87, None, None, None, None, None, None, None, None, None, None, None, 35, None, None, 72, None, None, 83, None, 90, None, 38, 70, 73, None, None, None, 95, None, None, None, None, None, None, 92, 98, None, 93, 97, 99])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 12, 6, 37, 43, 75, 62, 60, 61, 70, 80, 150, 125, 110, 115, 113, 114, 130, 140, 135, 137, 155, 160, 158, 159]), tree_node([100, 50, 150, 25, 75, 125, 155, 12, 37, 62, 80, 110, 130, None, 160, 6, None, None, 43, 60, 70, None, None, None, 115, None, 140, 158, None, None, None, None, None, None, 61, None, None, 113, None, 135, None, None, 159, None, None, None, 114, None, 137]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 12, 6, 37, 43, 75, 62, 60, 61, 70, 80, 150, 125, 110, 115, 113, 114, 130, 140, 135, 137, 155, 160, 158, 159]), tree_node([100, 50, 150, 25, 75, 125, 155, 12, 37, 62, 80, 110, 130, None, 160, 6, None, None, 43, 60, 70, None, None, None, 115, None, 140, 158, None, None, None, None, None, None, 61, None, None, 113, None, 135, None, None, 159, None, None, None, 114, None, 137])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 20, 15, 30, 40, 35, 37, 75, 60, 55, 58, 65, 80, 70, 72, 78, 90, 85, 88, 95, 92, 94, 98, 97, 99, 100]), tree_node([100, 50, None, 25, 75, 20, 30, 60, 80, 15, None, None, 40, 55, 65, 70, 90, None, None, 35, None, None, 58, None, None, None, 72, 85, 95, None, 37, None, None, None, 78, None, 88, 92, 98, None, None, None, None, None, None, None, 94, 97, 99, None, None, None, None, None, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 20, 15, 30, 40, 35, 37, 75, 60, 55, 58, 65, 80, 70, 72, 78, 90, 85, 88, 95, 92, 94, 98, 97, 99, 100]), tree_node([100, 50, None, 25, 75, 20, 30, 60, 80, 15, None, None, 40, 55, 65, 70, 90, None, None, 35, None, None, 58, None, None, None, 72, 85, 95, None, 37, None, None, None, 78, None, 88, 92, 98, None, None, None, None, None, None, None, 94, 97, 99, None, None, None, None, None, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 7, 15, 6, 8, 30, 25, 22, 27, 35, 32, 37, 40]), tree_node([20, 10, 30, 5, None, 25, 35, 3, 7, 22, 27, 32, 37, 1, None, 15, 8, None, None, None, None, None, None, None, 40, None, None, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 3, 1, 7, 15, 6, 8, 30, 25, 22, 27, 35, 32, 37, 40]), tree_node([20, 10, 30, 5, None, 25, 35, 3, 7, 22, 27, 32, 37, 1, None, 15, 8, None, None, None, None, None, None, None, 40, None, None, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 15, 10, 5, 8, 20, 17, 16, 18, 35, 30, 27, 28, 32, 33, 40, 37, 38, 42, 41, 43]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 17, None, 27, 32, 37, 42, None, 8, 16, 18, None, 28, None, 33, None, 38, 41, 43]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 15, 10, 5, 8, 20, 17, 16, 18, 35, 30, 27, 28, 32, 33, 40, 37, 38, 42, 41, 43]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 17, None, 27, 32, 37, 42, None, 8, 16, 18, None, 28, None, 33, None, 38, 41, 43])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [15, 10, 5, 3, 2, 7, 13, 12, 11, 14, 20, 18, 17, 16, 19, 25, 23, 22, 21, 24, 27, 26, 28, 30, 29, 31]), tree_node([15, 10, 20, 5, 13, 18, 25, 3, 7, 12, 14, 17, 19, 23, 27, 2, None, None, None, 11, None, None, None, 16, None, None, None, 22, 24, 26, 28, None, None, None, None, None, None, 21, None, None, None, None, None, None, 30, None, None, 29, 31]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [15, 10, 5, 3, 2, 7, 13, 12, 11, 14, 20, 18, 17, 16, 19, 25, 23, 22, 21, 24, 27, 26, 28, 30, 29, 31]), tree_node([15, 10, 20, 5, 13, 18, 25, 3, 7, 12, 14, 17, 19, 23, 27, 2, None, None, None, 11, None, None, None, 16, None, None, None, 22, 24, 26, 28, None, None, None, None, None, None, 21, None, None, None, None, None, None, 30, None, None, 29, 31])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 3, 1, 4, 7, 6, 9, 15, 12, 11, 13, 18, 17, 19]), tree_node([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 9, 11, 13, 17, 19]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 3, 1, 4, 7, 6, 9, 15, 12, 11, 13, 18, 17, 19]), tree_node([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 9, 11, 13, 17, 19])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [7, 3, 1, 0, -1, 2, 5, 4, 6, 9, 8, 10, 12, 11, 13]), tree_node([7, 3, 9, 1, 5, 8, 10, 0, 2, 4, 6, None, None, None, 12, -1, None, None, None, None, None, None, None, 11, 13]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [7, 3, 1, 0, -1, 2, 5, 4, 6, 9, 8, 10, 12, 11, 13]), tree_node([7, 3, 9, 1, 5, 8, 10, 0, 2, 4, 6, None, None, None, 12, -1, None, None, None, None, None, None, None, 11, 13])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 9, 12, 11, 13, 14]), tree_node([10, 5, 12, 1, 7, 11, 13, None, 3, 6, 8, None, None, None, 14, None, None, None, None, None, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 1, 3, 7, 6, 8, 9, 12, 11, 13, 14]), tree_node([10, 5, 12, 1, 7, 11, 13, None, 3, 6, 8, None, None, None, 14, None, None, None, None, None, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39, 150, 125, 100, 75, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39, 175, 150, 125, 100, 75, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39]), tree_node([100, 50, None, 25, None, 10, 40, 5, 11, 35, None, 1, 12, None, None, 32, 38, None, 4, 8, None, 31, 33, 36, 39, None, None, 7, None, 33, 40, None, None, 37, 38, None, None, 6, None, 38, None, 35, None, 39, 40, 36, None, None, None, 36, None, 32, None, 175, None, 35, None, None, 37, 37, None, 31, None, 150, None, 32, None, None, None, 39, None, None, None, 125, None, 31, 33, 150, None, 100, None, None, None, None, None, 125, None, 75, None, 100, None, 50, None, 75, None, 25, None, 50, None, 10, None, 25, None, 5, 11, 10, None, 1, 12, None, None, 5, 11, None, 4, 8, None, 1, 12, None, None, None, None, 7, None, None, 4, 8, None, 6, None, None, None, 7, None, None, None, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39, 150, 125, 100, 75, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39, 175, 150, 125, 100, 75, 50, 25, 10, 5, 1, 4, 12, 8, 7, 6, 11, 40, 35, 32, 31, 33, 38, 36, 37, 39]), tree_node([100, 50, None, 25, None, 10, 40, 5, 11, 35, None, 1, 12, None, None, 32, 38, None, 4, 8, None, 31, 33, 36, 39, None, None, 7, None, 33, 40, None, None, 37, 38, None, None, 6, None, 38, None, 35, None, 39, 40, 36, None, None, None, 36, None, 32, None, 175, None, 35, None, None, 37, 37, None, 31, None, 150, None, 32, None, None, None, 39, None, None, None, 125, None, 31, 33, 150, None, 100, None, None, None, None, None, 125, None, 75, None, 100, None, 50, None, 75, None, 25, None, 50, None, 10, None, 25, None, 5, 11, 10, None, 1, 12, None, None, 5, 11, None, 4, 8, None, 1, 12, None, None, None, None, 7, None, None, 4, 8, None, 6, None, None, None, 7, None, None, None, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 40, 30, 20, 10, 60, 55, 58, 57, 59, 65, 63, 62, 64, 67, 66, 68, 70, 69, 71]), tree_node([50, 40, 60, 30, None, 55, 65, 20, None, None, 58, 63, 67, 10, None, 57, 59, 62, 64, 66, 68, None, None, None, None, None, None, None, None, None, None, None, None, None, 70, 69, 71]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 40, 30, 20, 10, 60, 55, 58, 57, 59, 65, 63, 62, 64, 67, 66, 68, 70, 69, 71]), tree_node([50, 40, 60, 30, None, 55, 65, 20, None, None, 58, 63, 67, 10, None, 57, 59, 62, 64, 66, 68, None, None, None, None, None, None, None, None, None, None, None, None, None, 70, 69, 71])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 25, 20, 10, 5, 3, 1, 4, 7, 6, 8, 22, 21, 23, 30, 28, 27, 29, 40, 35, 32, 31, 33, 38, 36, 37, 55, 52, 51, 53, 58, 57, 59, 60, 56, 54, 65, 62, 61, 63, 68, 67, 69, 70, 66, 64, 75, 72, 71, 73, 78, 77, 79, 80, 76]), tree_node([50, 25, 55, 20, 30, 52, 58, 10, 22, 28, 40, 51, 53, 57, 65, 5, None, 21, 23, 27, 29, 35, None, None, None, None, None, 59, None, 62, 68, 3, 7, None, None, None, None, None, None, None, None, 32, 38, 60, None, 61, 63, 67, 75, 1, 4, 6, 8, 31, 33, 36, None, 56, None, None, None, None, None, 69, None, 72, 78, None, None, None, None, None, None, None, None, None, None, None, None, None, 37, 54, None, 70, None, 71, 73, 77, 79, None, None, None, None, 66, None, None, None, None, None, None, None, 80, None, 64, None, 76]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 25, 20, 10, 5, 3, 1, 4, 7, 6, 8, 22, 21, 23, 30, 28, 27, 29, 40, 35, 32, 31, 33, 38, 36, 37, 55, 52, 51, 53, 58, 57, 59, 60, 56, 54, 65, 62, 61, 63, 68, 67, 69, 70, 66, 64, 75, 72, 71, 73, 78, 77, 79, 80, 76]), tree_node([50, 25, 55, 20, 30, 52, 58, 10, 22, 28, 40, 51, 53, 57, 65, 5, None, 21, 23, 27, 29, 35, None, None, None, None, None, 59, None, 62, 68, 3, 7, None, None, None, None, None, None, None, None, 32, 38, 60, None, 61, 63, 67, 75, 1, 4, 6, 8, 31, 33, 36, None, 56, None, None, None, None, None, 69, None, 72, 78, None, None, None, None, None, None, None, None, None, None, None, None, None, 37, 54, None, 70, None, 71, 73, 77, 79, None, None, None, None, 66, None, None, None, None, None, None, None, 80, None, 64, None, 76])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 15, 10, 5, 3, 1, 4, 7, 6, 8, 25, 22, 21, 23, 40, 35, 32, 31, 33, 37, 36, 38, 60, 55, 52, 51, 53, 58, 57, 59, 65, 62, 61, 63, 68, 67, 69]), tree_node([50, 30, 60, 15, 40, 55, 65, 10, 25, 35, None, 52, 58, 62, 68, 5, None, 22, None, 32, 37, 51, 53, 57, 59, 61, 63, 67, 69, 3, 7, 21, 23, 31, 33, 36, 38, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, 4, 6, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 15, 10, 5, 3, 1, 4, 7, 6, 8, 25, 22, 21, 23, 40, 35, 32, 31, 33, 37, 36, 38, 60, 55, 52, 51, 53, 58, 57, 59, 65, 62, 61, 63, 68, 67, 69]), tree_node([50, 30, 60, 15, 40, 55, 65, 10, 25, 35, None, 52, 58, 62, 68, 5, None, 22, None, 32, 37, 51, 53, 57, 59, 61, 63, 67, 69, 3, 7, 21, 23, 31, 33, 36, 38, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, 4, 6, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 15, 25, 22, 27, 40, 35, 32, 37, 45, 42, 47, 60, 55, 52, 57, 65, 62, 67]), tree_node([50, 30, 60, 20, 40, 55, 65, 10, 25, 35, 45, 52, 57, 62, 67, 5, 15, 22, 27, 32, 37, 42, 47]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 15, 25, 22, 27, 40, 35, 32, 37, 45, 42, 47, 60, 55, 52, 57, 65, 62, 67]), tree_node([50, 30, 60, 20, 40, 55, 65, 10, 25, 35, 45, 52, 57, 62, 67, 5, 15, 22, 27, 32, 37, 42, 47])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [8, 3, 1, 0, 2, 5, 4, 6, 10, 9, 11, 14, 13, 12, 15, 18, 17, 16, 19]), tree_node([8, 3, 10, 1, 5, 9, 11, 0, 2, 4, 6, None, None, None, 14, None, None, None, None, None, None, None, None, 13, 15, 12, None, None, 18, None, None, 17, 19, 16]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [8, 3, 1, 0, 2, 5, 4, 6, 10, 9, 11, 14, 13, 12, 15, 18, 17, 16, 19]), tree_node([8, 3, 10, 1, 5, 9, 11, 0, 2, 4, 6, None, None, None, 14, None, None, None, None, None, None, None, None, 13, 15, 12, None, None, 18, None, None, 17, 19, 16])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 15, 10, 12, 25, 22, 21, 24, 35, 32, 31, 33, 40, 38, 37, 39, 45, 42, 41, 43, 48, 47, 46, 49]), tree_node([30, 20, 35, 15, 25, 32, 40, 10, None, 22, None, 31, 33, 38, 45, None, 12, 21, 24, None, None, None, None, 37, 39, 42, 48, None, None, None, None, None, None, None, None, None, None, 41, 43, 47, 49, None, None, None, None, 46]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 15, 10, 12, 25, 22, 21, 24, 35, 32, 31, 33, 40, 38, 37, 39, 45, 42, 41, 43, 48, 47, 46, 49]), tree_node([30, 20, 35, 15, 25, 32, 40, 10, None, 22, None, 31, 33, 38, 45, None, 12, 21, 24, None, None, None, None, 37, 39, 42, 48, None, None, None, None, None, None, None, None, None, None, 41, 43, 47, 49, None, None, None, None, 46])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [8, 5, 3, 2, 1, 4, 7, 6, 8, 10, 9, 12, 11, 13, 15, 14, 16, 18, 17, 19, 20]), tree_node([8, 5, 10, 3, 7, 9, 12, 2, 4, 6, 8, None, None, 11, 13, 1, None, None, None, None, None, None, None, None, None, None, 15, None, None, 14, 16, None, None, None, 18, 17, 19, None, None, None, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [8, 5, 3, 2, 1, 4, 7, 6, 8, 10, 9, 12, 11, 13, 15, 14, 16, 18, 17, 19, 20]), tree_node([8, 5, 10, 3, 7, 9, 12, 2, 4, 6, 8, None, None, 11, 13, 1, None, None, None, None, None, None, None, None, None, None, 15, None, None, 14, 16, None, None, None, 18, 17, 19, None, None, None, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 22, 40, 35, 32, 37, 45, 42, 43, 47, 50]), tree_node([30, 20, 40, 10, 25, 35, 45, 5, 15, 18, None, 32, 37, 42, 47, None, None, None, None, None, 22, None, None, None, None, None, 43, None, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 22, 40, 35, 32, 37, 45, 42, 43, 47, 50]), tree_node([30, 20, 40, 10, 25, 35, 45, 5, 15, 18, None, 32, 37, 42, 47, None, None, None, None, None, 22, None, None, None, None, None, 43, None, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [5, 3, 2, 1, 4, 7, 6, 8, 9, 10]), tree_node([5, 3, 7, 2, 4, 6, 8, 1, None, None, None, None, None, None, 9, None, None, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [5, 3, 2, 1, 4, 7, 6, 8, 9, 10]), tree_node([5, 3, 7, 2, 4, 6, 8, 1, None, None, None, None, None, None, 9, None, None, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [7, 3, 1, 0, 2, 5, 4, 6, 10, 9, 11, 15, 13, 12, 14, 18, 16, 17, 19]), tree_node([7, 3, 10, 1, 5, 9, 11, 0, 2, 4, 6, None, None, None, 15, None, None, None, None, None, None, None, None, 13, 18, 12, 14, 16, 19, None, None, None, None, None, 17]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [7, 3, 1, 0, 2, 5, 4, 6, 10, 9, 11, 15, 13, 12, 14, 18, 16, 17, 19]), tree_node([7, 3, 10, 1, 5, 9, 11, 0, 2, 4, 6, None, None, None, 15, None, None, None, None, None, None, None, None, 13, 18, 12, 14, 16, 19, None, None, None, None, None, 17])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 7, 20, 18, 22, 35, 30, 28, 32, 40, 45]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 18, 22, 28, 32, None, 45, 3, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 15, 10, 5, 3, 7, 20, 18, 22, 35, 30, 28, 32, 40, 45]), tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 18, 22, 28, 32, None, 45, 3, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 7, 15, 25, 22, 27, 40, 35, 32, 38, 45, 42, 47, 50, 48, 49, 55, 52, 58, 60]), tree_node([30, 20, 40, 10, 25, 35, 45, 5, 15, 22, 27, 32, 38, 42, 47, None, 7, None, None, None, None, None, None, None, None, None, None, None, None, None, 50, None, None, 48, 55, None, 49, 52, 58, None, None, None, None, None, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 7, 15, 25, 22, 27, 40, 35, 32, 38, 45, 42, 47, 50, 48, 49, 55, 52, 58, 60]), tree_node([30, 20, 40, 10, 25, 35, 45, 5, 15, 22, 27, 32, 38, 42, 47, None, 7, None, None, None, None, None, None, None, None, None, None, None, None, None, 50, None, None, 48, 55, None, 49, 52, 58, None, None, None, None, None, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]), tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15, None, 16, None, 17, None, 18, None, 19, None, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]), tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15, None, 16, None, 17, None, 18, None, 19, None, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 25, 20, 15, 10, 5, 3, 1, 4, 7, 6, 8, 27, 26, 28, 40, 35, 32, 31, 33, 37, 36, 38, 45, 42, 41, 43, 47, 46, 48, 60, 55, 52, 51, 53, 58, 57, 59, 65, 62, 61, 63, 68, 67, 69]), tree_node([50, 30, 60, 25, 40, 55, 65, 20, 27, 35, 45, 52, 58, 62, 68, 15, None, 26, 28, 32, 37, 42, 47, 51, 53, 57, 59, 61, 63, 67, 69, 10, None, None, None, None, None, 31, 33, 36, 38, 41, 43, 46, 48, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 5, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 3, 7, 1, 4, 6, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 25, 20, 15, 10, 5, 3, 1, 4, 7, 6, 8, 27, 26, 28, 40, 35, 32, 31, 33, 37, 36, 38, 45, 42, 41, 43, 47, 46, 48, 60, 55, 52, 51, 53, 58, 57, 59, 65, 62, 61, 63, 68, 67, 69]), tree_node([50, 30, 60, 25, 40, 55, 65, 20, 27, 35, 45, 52, 58, 62, 68, 15, None, 26, 28, 32, 37, 42, 47, 51, 53, 57, 59, 61, 63, 67, 69, 10, None, None, None, None, None, 31, 33, 36, 38, 41, 43, 46, 48, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 5, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 3, 7, 1, 4, 6, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19]), tree_node([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 8, 11, 13, 17, 19]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 18, 17, 19]), tree_node([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 8, 11, 13, 17, 19])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 15, 40, 25, 35, 70, 60, 55, 65, 80, 75, 85]), tree_node([50, 30, 70, 20, 35, 60, 80, 10, 40, None, None, 55, 65, 75, 85, 5, 15, 25]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 15, 40, 25, 35, 70, 60, 55, 65, 80, 75, 85]), tree_node([50, 30, 70, 20, 35, 60, 80, 10, 40, None, None, 55, 65, 75, 85, 5, 15, 25])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 15, 10, 5, 3, 2, 1, 4, 7, 6, 8, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28, 30]), tree_node([20, 15, 25, 10, 18, 22, 27, 5, 12, 17, 19, 21, 23, 26, 28, 3, 7, 11, 13, None, None, None, None, None, None, None, None, None, None, None, 30, 2, 4, 6, 8, None, None, None, None, None, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 15, 10, 5, 3, 2, 1, 4, 7, 6, 8, 12, 11, 13, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28, 30]), tree_node([20, 15, 25, 10, 18, 22, 27, 5, 12, 17, 19, 21, 23, 26, 28, 3, 7, 11, 13, None, None, None, None, None, None, None, None, None, None, None, 30, 2, 4, 6, 8, None, None, None, None, None, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 3, 1, 4, 7, 6, 8, 22, 21, 23, 30, 28, 27, 29, 35, 33, 32, 34, 38, 36, 37, 40, 39, 41]), tree_node([25, 20, 30, 15, 22, 28, 35, 10, None, 21, 23, 27, 29, 33, 38, 5, None, None, None, None, None, None, None, None, None, 32, 34, 36, 40, 3, 7, None, None, None, None, None, 37, 39, 41, 1, 4, 6, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 3, 1, 4, 7, 6, 8, 22, 21, 23, 30, 28, 27, 29, 35, 33, 32, 34, 38, 36, 37, 40, 39, 41]), tree_node([25, 20, 30, 15, 22, 28, 35, 10, None, 21, 23, 27, 29, 33, 38, 5, None, None, None, None, None, None, None, None, None, 32, 34, 36, 40, 3, 7, None, None, None, None, None, 37, 39, 41, 1, 4, 6, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [5, 15, 3, 7, 12, 18, 2, 1, 4, 6, 8, 11, 13, 17, 19]), tree_node([5, 15, 6, 3, 18, None, 8, None, 7, 2, None, None, 11, None, 12, 1, 4, None, 13, None, None, None, None, None, None, None, 17, None, 19]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [5, 15, 3, 7, 12, 18, 2, 1, 4, 6, 8, 11, 13, 17, 19]), tree_node([5, 15, 6, 3, 18, None, 8, None, 7, 2, None, None, 11, None, 12, 1, 4, None, 13, None, None, None, None, None, None, None, 17, None, 19])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 8, 7, 6, 15, 12, 11, 13, 40, 35, 32, 31, 33, 38, 36, 37, 39, 70, 60, 55, 50, 45, 40, 42, 43, 57, 53, 52, 51, 54, 58, 59, 65, 62, 61, 63, 68, 67, 69, 75, 72, 71, 73, 78, 76, 77, 79]), tree_node([50, 30, 57, 20, 40, 53, 58, 10, None, 35, 70, 52, 54, None, 59, 5, 15, 32, 38, 60, None, 51, None, None, None, None, 65, 3, 8, 12, None, 31, 33, 36, 39, 55, None, None, None, 62, 68, 1, None, 7, None, 11, 13, None, None, None, None, None, 37, None, None, 50, None, 61, 63, 67, 69, None, None, 6, None, None, None, None, None, None, None, 45, None, None, None, None, None, None, None, None, 75, None, None, 40, None, 72, 78, None, 42, 71, 73, 76, 79, None, 43, None, None, None, None, None, 77]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 5, 3, 1, 8, 7, 6, 15, 12, 11, 13, 40, 35, 32, 31, 33, 38, 36, 37, 39, 70, 60, 55, 50, 45, 40, 42, 43, 57, 53, 52, 51, 54, 58, 59, 65, 62, 61, 63, 68, 67, 69, 75, 72, 71, 73, 78, 76, 77, 79]), tree_node([50, 30, 57, 20, 40, 53, 58, 10, None, 35, 70, 52, 54, None, 59, 5, 15, 32, 38, 60, None, 51, None, None, None, None, 65, 3, 8, 12, None, 31, 33, 36, 39, 55, None, None, None, 62, 68, 1, None, 7, None, 11, 13, None, None, None, None, None, 37, None, None, 50, None, 61, 63, 67, 69, None, None, 6, None, None, None, None, None, None, None, 45, None, None, None, None, None, None, None, None, 75, None, None, 40, None, 72, 78, None, 42, 71, 73, 76, 79, None, 43, None, None, None, None, None, 77])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [75, 50, 25, 10, 5, 15, 30, 20, 28, 40, 35, 45, 60, 55, 57, 65, 100, 80, 77, 78, 85, 87, 90, 95, 110, 105, 115]), tree_node([75, 50, 100, 25, 60, 80, 110, 10, 28, 55, 65, 77, 85, 105, 115, 5, 15, None, 40, None, 57, None, None, None, 78, None, 87, None, None, None, None, None, None, None, 30, 35, 45, None, None, None, None, None, 90, 20, None, None, None, None, None, None, 95]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [75, 50, 25, 10, 5, 15, 30, 20, 28, 40, 35, 45, 60, 55, 57, 65, 100, 80, 77, 78, 85, 87, 90, 95, 110, 105, 115]), tree_node([75, 50, 100, 25, 60, 80, 110, 10, 28, 55, 65, 77, 85, 105, 115, 5, 15, None, 40, None, 57, None, None, None, 78, None, 87, None, None, None, None, None, None, None, 30, 35, 45, None, None, None, None, None, 90, 20, None, None, None, None, None, None, 95])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 30, 20, 10, 25, 40, 35, 38, 70, 60, 55, 65, 80, 75, 85]), tree_node([50, 30, 70, 20, 40, 60, 80, 10, 25, 35, None, 55, 65, 75, 85, None, None, None, None, None, 38]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 30, 20, 10, 25, 40, 35, 38, 70, 60, 55, 65, 80, 75, 85]), tree_node([50, 30, 70, 20, 40, 60, 80, 10, 25, 35, None, 55, 65, 75, 85, None, None, None, None, None, 38])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 3, 7, 15, 12, 17, 25, 22, 27, 35, 32, 33, 37]), tree_node([30, 20, 35, 10, 25, 32, 37, 5, 15, 22, 27, None, 33, None, None, 3, 7, 12, 17]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 3, 7, 15, 12, 17, 25, 22, 27, 35, 32, 33, 37]), tree_node([30, 20, 35, 10, 25, 32, 37, 5, 15, 22, 27, None, 33, None, None, 3, 7, 12, 17])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 15, 10, 5, 12, 17, 16, 18, 25, 22, 24, 28, 27, 29]), tree_node([20, 15, 25, 10, 17, 22, 28, 5, 12, 16, 18, None, 24, 27, 29]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 15, 10, 5, 12, 17, 16, 18, 25, 22, 24, 28, 27, 29]), tree_node([20, 15, 25, 10, 17, 22, 28, 5, 12, 16, 18, None, 24, 27, 29])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [200, 100, 50, 25, 10, 5, 15, 75, 60, 55, 63, 70, 150, 125, 120, 110, 115, 130, 135, 250, 225, 220, 210, 215, 230, 235, 275, 255, 245, 260, 265, 285, 280, 290, 295]), tree_node([200, 100, 250, 50, 150, 225, 275, 25, 75, 125, None, 220, 230, 255, 285, 10, None, 60, None, 120, 130, 210, None, None, 235, 245, 260, 280, 290, 5, 15, 55, 63, 110, None, None, 135, None, 215, None, None, None, None, None, 265, None, None, None, 295, None, None, None, None, None, None, None, 70, None, 115]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [200, 100, 50, 25, 10, 5, 15, 75, 60, 55, 63, 70, 150, 125, 120, 110, 115, 130, 135, 250, 225, 220, 210, 215, 230, 235, 275, 255, 245, 260, 265, 285, 280, 290, 295]), tree_node([200, 100, 250, 50, 150, 225, 275, 25, 75, 125, None, 220, 230, 255, 285, 10, None, 60, None, 120, 130, 210, None, None, 235, 245, 260, 280, 290, 5, 15, 55, 63, 110, None, None, 135, None, 215, None, None, None, None, None, 265, None, None, None, 295, None, None, None, None, None, None, None, 70, None, 115])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [50, 40, 30, 20, 10, 35, 45, 33, 36, 42, 48, 60, 55, 52, 53, 58, 56, 57, 65, 62, 61, 63, 68, 66, 67, 69, 70]), tree_node([50, 40, 60, 30, 45, 55, 65, 20, 35, 33, 48, 52, 58, 62, 68, 10, None, None, None, None, 36, None, None, None, 53, 56, None, 61, 63, 66, 69, None, None, None, 42, None, None, None, 57, None, None, None, None, None, 67, None, 70]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [50, 40, 30, 20, 10, 35, 45, 33, 36, 42, 48, 60, 55, 52, 53, 58, 56, 57, 65, 62, 61, 63, 68, 66, 67, 69, 70]), tree_node([50, 40, 60, 30, 45, 55, 65, 20, 35, 33, 48, 52, 58, 62, 68, 10, None, None, None, None, 36, None, None, None, 53, 56, None, 61, 63, 66, 69, None, None, None, 42, None, None, None, 57, None, None, None, None, None, 67, None, 70])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [2, 1, 4, 3, 5, 7, 6, 8, 9, 10]), tree_node([2, 1, 4, None, None, 3, 5, None, None, None, 7, 6, 8, None, None, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [2, 1, 4, 3, 5, 7, 6, 8, 9, 10]), tree_node([2, 1, 4, None, None, 3, 5, None, None, None, 7, 6, 8, None, None, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 25, 22, 21, 23, 27, 26, 28]), tree_node([30, 20, None, 10, 25, 5, 15, 22, 27, 3, 7, 12, None, 21, 23, 26, 28, 1, 4, 6, 8, 11, 13]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 3, 1, 4, 7, 6, 8, 15, 12, 11, 13, 25, 22, 21, 23, 27, 26, 28]), tree_node([30, 20, None, 10, 25, 5, 15, 22, 27, 3, 7, 12, None, 21, 23, 26, 28, 1, 4, 6, 8, 11, 13])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 28, 40, 35, 32, 38, 50, 45, 55]), tree_node([30, 20, 40, 10, 25, 35, 50, 5, 15, 18, 28, 32, 38, 45, 55]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [30, 20, 10, 5, 15, 25, 18, 28, 40, 35, 32, 38, 50, 45, 55]), tree_node([30, 20, 40, 10, 25, 35, 50, 5, 15, 18, 28, 32, 38, 45, 55])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [45, 25, 10, 5, 15, 20, 30, 35, 40, 65, 55, 50, 58, 60, 67, 70, 80, 75, 77, 85, 90, 88, 89, 95, 92, 93, 98, 97, 99]), tree_node([45, 25, 65, 10, 30, 55, 67, 5, 15, None, 35, 50, 58, None, 70, None, None, None, 20, None, 40, None, None, None, 60, None, 80, None, None, None, None, None, None, 75, 85, None, 77, None, 90, None, None, 88, 95, None, 89, 92, 98, None, None, None, 93, 97, 99]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [45, 25, 10, 5, 15, 20, 30, 35, 40, 65, 55, 50, 58, 60, 67, 70, 80, 75, 77, 85, 90, 88, 89, 95, 92, 93, 98, 97, 99]), tree_node([45, 25, 65, 10, 30, 55, 67, 5, 15, None, 35, 50, 58, None, 70, None, None, None, 20, None, 40, None, None, None, 60, None, 80, None, None, None, None, None, None, 75, 85, None, 77, None, 90, None, None, 88, 95, None, 89, 92, 98, None, None, None, 93, 97, 99])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [7, 3, 1, 2, 5, 4, 6, 10, 9, 12, 11, 13]), tree_node([7, 3, 10, 1, 5, 9, 12, None, 2, 4, 6, None, None, 11, 13]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [7, 3, 1, 2, 5, 4, 6, 10, 9, 12, 11, 13]), tree_node([7, 3, 10, 1, 5, 9, 12, None, 2, 4, 6, None, None, 11, 13])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [10, 5, 3, 2, 1, 4, 7, 6, 8, 15, 12, 11, 13, 20, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28]), tree_node([10, 5, 15, 3, 7, 12, 20, 2, 4, 6, 8, 11, 13, 18, 25, 1, None, None, None, None, None, None, None, None, None, None, None, 17, 19, 22, 27, None, None, None, None, None, None, 21, 23, 26, 28]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [10, 5, 3, 2, 1, 4, 7, 6, 8, 15, 12, 11, 13, 20, 18, 17, 19, 25, 22, 21, 23, 27, 26, 28]), tree_node([10, 5, 15, 3, 7, 12, 20, 2, 4, 6, 8, 11, 13, 18, 25, 1, None, None, None, None, None, None, None, None, None, None, None, 17, 19, 22, 27, None, None, None, None, None, None, 21, 23, 26, 28])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [80, 70, 60, 50, 40, 45, 55, 65, 75, 90, 85, 88, 95, 100, 98, 99, 105, 102, 103, 110, 108, 109, 115, 112, 113, 118, 117, 119, 120]), tree_node([80, 70, 90, 60, 75, 85, 95, 50, 65, None, None, None, 88, None, 100, 40, 55, None, None, None, None, 98, 105, None, 45, None, None, None, 99, 102, 110, None, None, None, None, None, 103, 108, 115, None, None, None, 109, 112, 118, None, None, None, 113, 117, 119, None, None, None, None, None, 120]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [80, 70, 60, 50, 40, 45, 55, 65, 75, 90, 85, 88, 95, 100, 98, 99, 105, 102, 103, 110, 108, 109, 115, 112, 113, 118, 117, 119, 120]), tree_node([80, 70, 90, 60, 75, 85, 95, 50, 65, None, None, None, 88, None, 100, 40, 55, None, None, None, None, 98, 105, None, 45, None, None, None, 99, 102, 110, None, None, None, None, None, 103, 108, 115, None, None, None, 109, 112, 118, None, None, None, 113, 117, 119, None, None, None, None, None, 120])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 7, 12, 30, 20, 27, 18, 22, 75, 60, 55, 58, 65, 70, 80, 90, 120, 110, 115, 130, 140]), tree_node([100, 50, 120, 25, 75, 110, 130, 10, 30, 60, 80, None, 115, None, 140, 5, 12, 20, None, 55, 65, None, 90, None, None, None, None, None, 15, None, None, 27, 22, None, 58, None, 70, None, None, 7, None, 18]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 5, 15, 7, 12, 30, 20, 27, 18, 22, 75, 60, 55, 58, 65, 70, 80, 90, 120, 110, 115, 130, 140]), tree_node([100, 50, 120, 25, 75, 110, 130, 10, 30, 60, 80, None, 115, None, 140, 5, 12, 20, None, 55, 65, None, 90, None, None, None, None, None, 15, None, None, 27, 22, None, 58, None, 70, None, None, 7, None, 18])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [9, 6, 3, 2, 1, 4, 8, 7, 10, 12, 11, 13]), tree_node([9, 6, 10, 3, 8, None, 12, 2, 4, 7, None, 11, 13, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [9, 6, 3, 2, 1, 4, 8, 7, 10, 12, 11, 13]), tree_node([9, 6, 10, 3, 8, None, 12, 2, 4, 7, None, 11, 13, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [60, 30, 20, 10, 5, 15, 25, 22, 27, 40, 35, 32, 38, 50, 45, 42, 47, 55, 52, 58, 65, 62, 63, 64, 67, 68, 70]), tree_node([60, 30, 65, 20, 40, 62, 67, 10, 25, 35, 50, None, 63, None, 68, 5, 15, 22, 27, 32, 38, 45, 55, None, 64, None, 70, None, None, None, None, None, None, None, None, None, None, None, None, 42, 47, 52, 58]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [60, 30, 20, 10, 5, 15, 25, 22, 27, 40, 35, 32, 38, 50, 45, 42, 47, 55, 52, 58, 65, 62, 63, 64, 67, 68, 70]), tree_node([60, 30, 65, 20, 40, 62, 67, 10, 25, 35, 50, None, 63, None, 68, 5, 15, 22, 27, 32, 38, 45, 55, None, 64, None, 70, None, None, None, None, None, None, None, None, None, None, None, None, 42, 47, 52, 58])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [20, 10, 5, 1, 3, 7, 15, 12, 17, 30, 25, 22, 27, 40, 35, 32, 37, 45]), tree_node([20, 10, 30, 5, 15, 25, 40, 1, 7, 12, 17, 22, 27, 35, 45, None, 3, None, None, None, None, None, None, None, None, None, None, 32, 37]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [20, 10, 5, 1, 3, 7, 15, 12, 17, 30, 25, 22, 27, 40, 35, 32, 37, 45]), tree_node([20, 10, 30, 5, 15, 25, 40, 1, 7, 12, 17, 22, 27, 35, 45, None, 3, None, None, None, None, None, None, None, None, None, None, 32, 37])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 7, 12, 18, 23, 30, 27, 29, 35, 32, 38, 40, 37, 39, 45, 42, 44, 48, 50]), tree_node([25, 20, 30, 15, 23, 27, 35, 10, 18, None, None, None, 29, 32, 38, 5, 12, None, None, None, None, None, None, 40, 39, None, 7, None, None, 37, None, None, 45, None, None, None, None, 42, 48, None, 44, None, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 7, 12, 18, 23, 30, 27, 29, 35, 32, 38, 40, 37, 39, 45, 42, 44, 48, 50]), tree_node([25, 20, 30, 15, 23, 27, 35, 10, 18, None, None, None, 29, 32, 38, 5, 12, None, None, None, None, None, None, 40, 39, None, 7, None, None, 37, None, None, 45, None, None, None, None, 42, 48, None, 44, None, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(preorder = [100, 50, 25, 10, 15, 75, 60, 55, 65, 70, 80, 90, 110, 105, 108, 109, 115, 112, 113, 118, 117, 119, 120]), tree_node([100, 50, 110, 25, 75, 105, 115, 10, None, 60, 80, None, 108, 112, 118, None, 15, 55, 65, None, 90, None, 109, None, 113, 117, 119, None, None, None, None, None, 70, None, None, None, None, None, None, None, None, None, 120]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(preorder = [100, 50, 25, 10, 15, 75, 60, 55, 65, 70, 80, 90, 110, 105, 108, 109, 115, 112, 113, 118, 117, 119, 120]), tree_node([100, 50, 110, 25, 75, 105, 115, 10, None, 60, 80, None, 108, 112, 118, None, 15, 55, 65, None, 90, None, 109, None, 113, 117, 119, None, None, None, None, None, 70, None, None, None, None, None, None, None, None, None, 120])): {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert is_same_tree(candidate(preorder = [1, 3]), tree_node([1, None, 3]))
@@ -96,3 +856,5 @@ def check(candidate):
     assert is_same_tree(candidate(preorder = [20, 10, 5, 1, 3, 7, 15, 12, 17, 30, 25, 22, 27, 40, 35, 32, 37, 45]), tree_node([20, 10, 30, 5, 15, 25, 40, 1, 7, 12, 17, 22, 27, 35, 45, None, 3, None, None, None, None, None, None, None, None, None, None, 32, 37]))
     assert is_same_tree(candidate(preorder = [25, 20, 15, 10, 5, 7, 12, 18, 23, 30, 27, 29, 35, 32, 38, 40, 37, 39, 45, 42, 44, 48, 50]), tree_node([25, 20, 30, 15, 23, 27, 35, 10, 18, None, None, None, 29, 32, 38, 5, 12, None, None, None, None, None, None, 40, 39, None, 7, None, None, 37, None, None, 45, None, None, None, None, 42, 48, None, 44, None, 50]))
     assert is_same_tree(candidate(preorder = [100, 50, 25, 10, 15, 75, 60, 55, 65, 70, 80, 90, 110, 105, 108, 109, 115, 112, 113, 118, 117, 119, 120]), tree_node([100, 50, 110, 25, 75, 105, 115, 10, None, 60, 80, None, 108, 112, 118, None, 15, 55, 65, None, 90, None, 109, None, 113, 117, 119, None, None, None, None, None, 70, None, None, None, None, None, None, None, None, None, 120]))
+
+

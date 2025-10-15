@@ -1,5 +1,845 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(k = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 0) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 0) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 100000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 100000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 25) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 25) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 48828125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 48828125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1192092) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1192092) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 9999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 9999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 50) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 50) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 100000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 100000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2384185) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2384185) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 6) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 6) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000045) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000045) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 19073486) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 19073486) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 13) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 13) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000025) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000025) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 625) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 625) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000035) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000035) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 78125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 78125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1249) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1249) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 200000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 200000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1250) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1250) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4768371) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4768371) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 50000001) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 50000001) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 80000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 80000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 750000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 750000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4096) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4096) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 627) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 627) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000050) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000050) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 536870912) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 536870912) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2500000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2500000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2048) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2048) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000015) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000015) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 152587890) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 152587890) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 123456789) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 123456789) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000001) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000001) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 31250) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 31250) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 20000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 20000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000005) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000005) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000020) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000020) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 99999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 99999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 610351562) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 610351562) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2499999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2499999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000010) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000010) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 9) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 9) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 123456) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 123456) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 987654321) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 987654321) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 258) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 258) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 500000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 500000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 9765625) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 9765625) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 32) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 32) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 268435456) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 268435456) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 101) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 101) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 76293945) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 76293945) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 99999999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 99999999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 15625) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 15625) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 999999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 999999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 64) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 64) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 390625) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 390625) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 38146972) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 38146972) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2147483647) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2147483647) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1953125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1953125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 31) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 31) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 50000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 50000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1220703125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1220703125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 250) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 250) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 125) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 125) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 16) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 16) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 999999999) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 999999999) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 256) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 256) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1001) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1001) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 249) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 249) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 9536743) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 9536743) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 500000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 500000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000030) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000030) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 20) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 20) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1024) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1024) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 39062) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 39062) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 244140625) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 244140625) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 500) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 500) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1000040) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1000040) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 21) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 21) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 800000000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 800000000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 12345) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 12345) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 129) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 129) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 305175781) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 305175781) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 8) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 8) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 512) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 512) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 11) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 11) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 128) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 128) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 50000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 50000) == 5: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(k = 100) == 5
@@ -106,3 +946,5 @@ def check(candidate):
     assert candidate(k = 11) == 0
     assert candidate(k = 128) == 5
     assert candidate(k = 50000) == 5
+
+

@@ -1,5 +1,869 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000],queries = [1000000000, 1, 999999999]) == [0, 999999999, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000],queries = [1000000000, 1, 999999999]) == [0, 999999999, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 9, 6, 3],queries = [10]) == [20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 9, 6, 3],queries = [10]) == [20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1],queries = [1, 2, 3]) == [0, 5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1],queries = [1, 2, 3]) == [0, 5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300],queries = [150, 250]) == [250, 250]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300],queries = [150, 250]) == [250, 250]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],queries = [3]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],queries = [3]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4],queries = [2, 3, 4]) == [12, 8, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4],queries = [2, 3, 4]) == [12, 8, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1],queries = [1]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1],queries = [1]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 1, 6, 8],queries = [1, 5]) == [14, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 1, 6, 8],queries = [1, 5]) == [14, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1000000000, 1000000000],queries = [1000000000]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1000000000, 1000000000],queries = [1000000000]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],queries = [2, 4, 6, 8]) == [17, 13, 13, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],queries = [2, 4, 6, 8]) == [17, 13, 13, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 1, 10, 3]) == [25, 45, 45, 31]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 1, 10, 3]) == [25, 45, 45, 31]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [3, 7, 10]) == [40, 40, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [3, 7, 10]) == [40, 40, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000, 1000000, 1000000, 1000000, 1000000],queries = [500000, 1500000]) == [2500000, 2500000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000, 1000000, 1000000, 1000000, 1000000],queries = [500000, 1500000]) == [2500000, 2500000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [3, 10]) == [21, 66]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [3, 10]) == [21, 66]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 5]) == [12, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 5]) == [12, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500000000, 1, 1000000000]) == [4888888889, 1111111101, 8888888889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500000000, 1, 1000000000]) == [4888888889, 1111111101, 8888888889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [5, 50, 500, 5000, 50000, 500000, 5000000, 50000000, 500000000]) == [1111111069, 1111110789, 1111108889, 1111098889, 1111088889, 1111888889, 1128888889, 1388888889, 4888888889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [5, 50, 500, 5000, 50000, 500000, 5000000, 50000000, 500000000]) == [1111111069, 1111110789, 1111108889, 1111098889, 1111088889, 1111888889, 1128888889, 1388888889, 4888888889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [15, 20, 25]) == [225, 245, 315]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [15, 20, 25]) == [225, 245, 315]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],queries = [10, 25, 1, 35]) == [260, 208, 400, 298]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],queries = [10, 25, 1, 35]) == [260, 208, 400, 298]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [7, 15, 1]) == [57, 105, 105]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [7, 15, 1]) == [57, 105, 105]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [20, 10, 30, 15]) == [200, 250, 250, 212]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [20, 10, 30, 15]) == [200, 250, 250, 212]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],queries = [25, 50, 75]) == [250, 0, 250]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],queries = [25, 50, 75]) == [250, 0, 250]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],queries = [5, 0, 10, 3]) == [25, 45, 55, 27]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],queries = [5, 0, 10, 3]) == [25, 45, 55, 27]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500000000, 1, 1000000000]) == [4888888889, 1111111101, 8888888889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500000000, 1, 1000000000]) == [4888888889, 1111111101, 8888888889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]) == [500, 410, 340, 290, 260, 250, 260, 290, 340, 410, 500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]) == [500, 410, 340, 290, 260, 250, 260, 290, 340, 410, 500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [5, 1, 10, 3]) == [0, 40, 50, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [5, 1, 10, 3]) == [0, 40, 50, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [1, 3, 5, 7, 9]) == [33, 21, 21, 37, 55]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [1, 3, 5, 7, 9]) == [33, 21, 21, 37, 55]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [55, 45, 65, 35, 75]) == [250, 260, 260, 290, 290]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [55, 45, 65, 35, 75]) == [250, 260, 260, 290, 290]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],queries = [25, 15, 35, 10, 40]) == [125, 155, 135, 185, 155]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],queries = [25, 15, 35, 10, 40]) == [125, 155, 135, 185, 155]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [1, 50, 100, 500, 1000, 5000, 10000, 50000, 1000000]) == [1111111092, 1111110749, 1111110399, 1111108399, 1111105899, 1111093899, 1111078899, 1111038899, 1111888899]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [1, 50, 100, 500, 1000, 5000, 10000, 50000, 1000000]) == [1111111092, 1111110749, 1111110399, 1111108399, 1111105899, 1111093899, 1111078899, 1111038899, 1111888899]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 1000000001, 999999998, 1000000002],queries = [1000000000, 999999999, 1000000001]) == [6, 7, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 1000000001, 999999998, 1000000002],queries = [1000000000, 999999999, 1000000001]) == [6, 7, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [1, 5, 10]) == [90, 50, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [1, 5, 10]) == [90, 50, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 5, 9]) == [40, 0, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 5, 9]) == [40, 0, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 1, 999999998, 2, 999999997, 3, 999999996, 4, 999999995, 5],queries = [999999999, 1, 500000000, 1000000000]) == [4999999990, 4999999990, 4999999970, 5000000000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 1, 999999998, 2, 999999997, 3, 999999996, 4, 999999995, 5],queries = [999999999, 1, 500000000, 1000000000]) == [4999999990, 4999999990, 4999999970, 5000000000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [999999990, 999999995, 999999999]) == [45, 25, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [999999990, 999999995, 999999999]) == [45, 25, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50],queries = [15, 25, 35, 45]) == [85, 65, 65, 85]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50],queries = [15, 25, 35, 45]) == [85, 65, 65, 85]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [10, 20, 30, 40]) == [250, 200, 250, 400]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [10, 20, 30, 40]) == [250, 200, 250, 400]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 5, 10]) == [40, 0, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 5, 10]) == [40, 0, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [15, 10, 25, 20]) == [225, 255, 315, 245]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [15, 10, 25, 20]) == [225, 255, 315, 245]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [25, 95, 195, 295, 395, 495, 595, 695, 795, 895]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [25, 95, 195, 295, 395, 495, 595, 695, 795, 895]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [25, 75, 50]) == [340, 290, 250]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [25, 75, 50]) == [340, 290, 250]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],queries = [25, 35, 15, 45]) == [125, 135, 155, 185]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],queries = [25, 35, 15, 45]) == [125, 135, 155, 185]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],queries = [10, 15, 20]) == [125, 112, 125]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],queries = [10, 15, 20]) == [125, 112, 125]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [10, 20, 30]) == [250, 200, 250]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [10, 20, 30]) == [250, 200, 250]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 10, 1]) == [20, 45, 36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 10, 1]) == [20, 45, 36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [500000000, 1500000000]) == [2500000000, 2500000000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [500000000, 1500000000]) == [2500000000, 2500000000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [1, 5, 9]) == [36, 20, 36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [1, 5, 9]) == [36, 20, 36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [90, 74, 62, 54, 50, 50, 54, 62, 74, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [90, 74, 62, 54, 50, 50, 54, 62, 74, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [1, 8, 15]) == [105, 56, 105]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [1, 8, 15]) == [105, 56, 105]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [55, 65]) == [250, 260]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [55, 65]) == [250, 260]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [500, 410, 340, 290, 260, 250, 260, 290, 340, 410]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [500, 410, 340, 290, 260, 250, 260, 290, 340, 410]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 3, 4, 5]) == [0, 10, 20, 30, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 3, 4, 5]) == [0, 10, 20, 30, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [500000000, 1000000000, 1500000000]) == [10499999790, 19999999790, 30499999790]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [500000000, 1000000000, 1500000000]) == [10499999790, 19999999790, 30499999790]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 5, 20]) == [100, 120, 130, 190]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 5, 20]) == [100, 120, 130, 190]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 1000000001],queries = [1000000000]) == [2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 1000000001],queries = [1000000000]) == [2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1000000000, 1, 1000000000, 1, 1000000000],queries = [500000000, 1000000000, 1]) == [2999999997, 2999999997, 2999999997]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1000000000, 1, 1000000000, 1, 1000000000],queries = [500000000, 1000000000, 1]) == [2999999997, 2999999997, 2999999997]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [1000000000, 5, 1, 10]) == [8999999955, 1000000015, 1000000035, 1000000035]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [1000000000, 5, 1, 10]) == [8999999955, 1000000015, 1000000035, 1000000035]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [10, 1, 5]) == [90, 0, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [10, 1, 5]) == [90, 0, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 3, 7]) == [20, 24, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 3, 7]) == [20, 24, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 10, 1]) == [25, 45, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 10, 1]) == [25, 45, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [1, 55, 101]) == [540, 250, 460]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [1, 55, 101]) == [540, 250, 460]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [55, 85, 105, 125]) == [625, 565, 625, 765]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [55, 85, 105, 125]) == [625, 565, 625, 765]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 0]) == [0, 20, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 0]) == [0, 20, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 3, 7, 1]) == [25, 31, 27, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 3, 7, 1]) == [25, 31, 27, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],queries = [25, 50, 75]) == [650, 500, 600]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],queries = [25, 50, 75]) == [650, 500, 600]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [3, 7, 11, 1]) == [62, 54, 110, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [3, 7, 11, 1]) == [62, 54, 110, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1000000000, 2, 999999999, 3, 999999998, 4, 999999997, 5, 999999996],queries = [1000000000, 500000000, 1, 1000000001]) == [4999999995, 4999999975, 4999999995, 5000000005]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1000000000, 2, 999999999, 3, 999999998, 4, 999999997, 5, 999999996],queries = [1000000000, 500000000, 1, 1000000001]) == [4999999995, 4999999975, 4999999995, 5000000005]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [1, 5, 10]) == [45, 25, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [1, 5, 10]) == [45, 25, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [1, 5, 9]) == [36, 20, 36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [1, 5, 9]) == [36, 20, 36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],queries = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 30]) == [210, 184, 162, 144, 130, 120, 114, 112, 114, 120, 130, 144, 162, 184, 210, 225]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],queries = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 30]) == [210, 184, 162, 144, 130, 120, 114, 112, 114, 120, 130, 144, 162, 184, 210, 225]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [5, 10, 1]) == [0, 50, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [5, 10, 1]) == [0, 50, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 4, 2, 1]) == [12, 14, 14, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 4, 2, 1]) == [12, 14, 14, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 10]) == [40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [1, 10]) == [40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [2, 6, 10, 14, 18]) == [82, 58, 50, 58, 82]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [2, 6, 10, 14, 18]) == [82, 58, 50, 58, 82]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [10, 55, 100]) == [450, 250, 450]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [10, 55, 100]) == [450, 250, 450]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 5, 25]) == [100, 120, 130, 290]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 5, 25]) == [100, 120, 130, 290]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991],queries = [999999993, 500000000]) == [31, 4999999955]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991],queries = [999999993, 500000000]) == [31, 4999999955]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [500000000, 600000000, 700000000, 800000000, 900000000],queries = [400000000, 1000000000]) == [1500000000, 1500000000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [500000000, 600000000, 700000000, 800000000, 900000000],queries = [400000000, 1000000000]) == [1500000000, 1500000000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [1, 1000000000, 1000000001]) == [4999999995, 0, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [1, 1000000000, 1000000001]) == [4999999995, 0, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 500000000, 250000000, 125000000, 62500000, 31250000, 15625000, 7812500, 3906250, 1953125],queries = [1000000000, 1, 1953125]) == [8001953125, 1998046865, 1978515625]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 500000000, 250000000, 125000000, 62500000, 31250000, 15625000, 7812500, 3906250, 1953125],queries = [1000000000, 1, 1953125]) == [8001953125, 1998046865, 1978515625]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 3, 7, 10]) == [25, 31, 27, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [5, 3, 7, 10]) == [25, 31, 27, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 3]) == [0, 10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2, 3]) == [0, 10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [45, 37, 31, 27, 25, 25, 27, 31, 37, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [45, 37, 31, 27, 25, 25, 27, 31, 37, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [1, 2, 3, 4, 5]) == [20, 14, 12, 14, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [1, 2, 3, 4, 5]) == [20, 14, 12, 14, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 999999998, 999999997, 999999996],queries = [999999995, 999999998, 1000000000]) == [15, 6, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 999999998, 999999997, 999999996],queries = [999999995, 999999998, 1000000000]) == [15, 6, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],queries = [2, 4, 6, 8, 10]) == [17, 13, 13, 17, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],queries = [2, 4, 6, 8, 10]) == [17, 13, 13, 17, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [0, 5, 10, 15, 20]) == [100, 62, 50, 62, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [0, 5, 10, 15, 20]) == [100, 62, 50, 62, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == [82, 68, 58, 52, 50, 52, 58, 68, 82, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == [82, 68, 58, 52, 50, 52, 58, 68, 82, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [1, 20, 10, 15]) == [190, 190, 100, 120]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [1, 20, 10, 15]) == [190, 190, 100, 120]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 7, 5, 3, 1],queries = [6, 4, 2, 0, 8]) == [13, 13, 17, 25, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 7, 5, 3, 1],queries = [6, 4, 2, 0, 8]) == [13, 13, 17, 25, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 1, 10, 3]) == [25, 45, 45, 31]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 1, 10, 3]) == [25, 45, 45, 31]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],queries = [12, 13, 14]) == [157, 156, 157]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],queries = [12, 13, 14]) == [157, 156, 157]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2]) == [0, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [1, 2]) == [0, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [7, 14]) == [57, 92]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [7, 14]) == [57, 92]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500, 50000, 5000000, 500000000]) == [1111108889, 1111088889, 1128888889, 4888888889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [500, 50000, 5000000, 500000000]) == [1111108889, 1111088889, 1128888889, 4888888889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [11, 12, 13, 14, 15]) == [55, 65, 75, 85, 95]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [11, 12, 13, 14, 15]) == [55, 65, 75, 85, 95]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15]) == [25, 95]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15]) == [25, 95]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 20, 30]) == [100, 190, 390]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 20, 30]) == [100, 190, 390]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [5, 10, 15]) == [130, 100, 120]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [5, 10, 15]) == [130, 100, 120]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 4]) == [12, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [3, 4]) == [12, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15, 0]) == [25, 95, 55]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [5, 15, 0]) == [25, 95, 55]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [10, 20, 0, 15]) == [50, 100, 100, 62]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [10, 20, 0, 15]) == [50, 100, 100, 62]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]) == [21, 33, 20, 33, 21, 55, 26, 28, 21, 21, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],queries = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]) == [21, 33, 20, 33, 21, 55, 26, 28, 21, 21, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [3, 7, 10]) == [20, 20, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [3, 7, 10]) == [20, 20, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],queries = [1, 13, 25]) == [300, 156, 300]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],queries = [1, 13, 25]) == [300, 156, 300]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [45, 37, 31, 27, 25, 25, 27, 31, 37, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [45, 37, 31, 27, 25, 25, 27, 31, 37, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 20]) == [100, 120, 190]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 20]) == [100, 120, 190]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(nums = [1000000000],queries = [1000000000, 1, 999999999]) == [0, 999999999, 1]
@@ -109,3 +973,5 @@ def check(candidate):
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],queries = [1, 13, 25]) == [300, 156, 300]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [45, 37, 31, 27, 25, 25, 27, 31, 37, 45]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [10, 15, 20]) == [100, 120, 190]
+
+

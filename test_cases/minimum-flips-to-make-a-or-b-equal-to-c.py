@@ -1,5 +1,749 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(a = 10,b = 15,c = 25) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 10,b = 15,c = 25) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 2,b = 6,c = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 2,b = 6,c = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1,b = 2,c = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1,b = 2,c = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 8,b = 3,c = 11) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 8,b = 3,c = 11) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 4,b = 2,c = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 4,b = 2,c = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 1000000000,c = 1) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 1000000000,c = 1) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123,b = 456,c = 789) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123,b = 456,c = 789) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000007,b = 1000000009,c = 1000000011) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000007,b = 1000000009,c = 1000000011) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 8388607,b = 16777215,c = 16777215) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 8388607,b = 16777215,c = 16777215) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 65535,b = 65535,c = 65535) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 65535,b = 65535,c = 65535) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 987654321,b = 123456789,c = 864197532) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 987654321,b = 123456789,c = 864197532) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 135792468) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 135792468) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1048575,b = 2097151,c = 3145727) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1048575,b = 2097151,c = 3145727) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 1234567890) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 1234567890) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 128,c = 254) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 128,c = 254) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 894967295,b = 1073741823,c = 2147483647) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 894967295,b = 1073741823,c = 2147483647) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 255,c = 0) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 255,c = 0) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 16777215,b = 33554431,c = 67108863) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 16777215,b = 33554431,c = 67108863) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 511,c = 1535) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 511,c = 1535) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 2047,c = 3071) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 2047,c = 3071) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1073741824,b = 536870912,c = 1610612736) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1073741824,b = 536870912,c = 1610612736) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 128,c = 383) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 128,c = 383) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 987654,b = 321456,c = 654321) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 987654,b = 321456,c = 654321) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 987654321,b = 348712387,c = 1) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 987654321,b = 348712387,c = 1) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 2147483647,b = 0,c = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 2147483647,b = 0,c = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 777,b = 888,c = 999) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 777,b = 888,c = 999) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 999999999) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 999999999) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 134217728,b = 67108864,c = 201326592) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 134217728,b = 67108864,c = 201326592) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 15,b = 30,c = 45) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 15,b = 30,c = 45) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 512,c = 1024) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 512,c = 1024) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 1000000000) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 1000000000) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 987654321) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 987654321) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 134217727,b = 67108863,c = 201326592) == 53
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 134217727,b = 67108863,c = 201326592) == 53: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 1,c = 1000000001) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 1,c = 1000000001) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 32,b = 16,c = 48) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 32,b = 16,c = 48) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 14,b = 28,c = 42) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 14,b = 28,c = 42) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 8,b = 3,c = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 8,b = 3,c = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 999,b = 888,c = 777) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 999,b = 888,c = 777) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 2147483647,b = 2147483647,c = 0) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 2147483647,b = 2147483647,c = 0) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000,b = 999999,c = 1000001) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000,b = 999999,c = 1000001) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1073741823,b = 536870912,c = 805306368) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1073741823,b = 536870912,c = 805306368) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 8,b = 16,c = 24) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 8,b = 16,c = 24) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1048575,b = 524287,c = 1572863) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1048575,b = 524287,c = 1572863) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 999999999,c = 1000000000) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 999999999,c = 1000000000) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 2147483647,b = 2147483647,c = 1) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 2147483647,b = 2147483647,c = 1) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 500000000,c = 1000000001) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 500000000,c = 1000000001) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 512,c = 768) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 512,c = 768) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 134217727,b = 268435455,c = 335544319) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 134217727,b = 268435455,c = 335544319) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 897,b = 564,c = 231) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 897,b = 564,c = 231) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 511,b = 255,c = 127) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 511,b = 255,c = 127) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 134217727,b = 268435455,c = 536870911) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 134217727,b = 268435455,c = 536870911) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 511,c = 255) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 511,c = 255) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 536870911,b = 268435455,c = 805306367) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 536870911,b = 268435455,c = 805306367) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 511,c = 1023) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 511,c = 1023) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 128,c = 191) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 128,c = 191) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 1000000000,c = 500000000) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 1000000000,c = 500000000) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1000000000,b = 500000000,c = 1500000000) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1000000000,b = 500000000,c = 1500000000) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 65535,b = 131071,c = 262143) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 65535,b = 131071,c = 262143) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 500,b = 600,c = 700) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 500,b = 600,c = 700) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 2147483647,b = 2147483647,c = 4294967295) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 2147483647,b = 2147483647,c = 4294967295) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 65535,b = 32768,c = 98304) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 65535,b = 32768,c = 98304) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 255,b = 128,c = 64) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 255,b = 128,c = 64) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 16777215,b = 255,c = 16777470) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 16777215,b = 255,c = 16777470) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 100000000,b = 200000000,c = 300000000) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 100000000,b = 200000000,c = 300000000) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 5349,b = 7281,c = 12630) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 5349,b = 7281,c = 12630) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 123456789,b = 987654321,c = 101110101) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 123456789,b = 987654321,c = 101110101) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 29,b = 15,c = 31) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 29,b = 15,c = 31) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 7,b = 14,c = 21) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 7,b = 14,c = 21) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 3,b = 12,c = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 3,b = 12,c = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1048576,b = 2097152,c = 3145727) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1048576,b = 2097152,c = 3145727) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 25,b = 50,c = 75) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 25,b = 50,c = 75) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 500000000,b = 500000000,c = 1000000000) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 500000000,b = 500000000,c = 1000000000) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 31,b = 15,c = 7) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 31,b = 15,c = 7) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1,b = 1,c = 0) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1,b = 1,c = 0) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1048575,b = 1048576,c = 2097151) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1048575,b = 1048576,c = 2097151) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 536870911,b = 268435455,c = 703687440) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 536870911,b = 268435455,c = 703687440) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 348712387,b = 987654321,c = 1000000000) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 348712387,b = 987654321,c = 1000000000) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 170,b = 85,c = 255) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 170,b = 85,c = 255) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 987654,b = 321456,c = 1309110) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 987654,b = 321456,c = 1309110) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1023,b = 512,c = 1535) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1023,b = 512,c = 1535) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 999999,b = 888888,c = 777777) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 999999,b = 888888,c = 777777) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1048575,b = 524287,c = 262143) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1048575,b = 524287,c = 262143) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 65535,b = 65535,c = 131071) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 65535,b = 65535,c = 131071) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 89,b = 67,c = 45) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 89,b = 67,c = 45) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1,b = 1023,c = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1,b = 1023,c = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 858993459,b = 2576980377,c = 1717986918) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 858993459,b = 2576980377,c = 1717986918) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 65535,b = 32767,c = 98303) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 65535,b = 32767,c = 98303) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 536870911,b = 1073741823,c = 2147483647) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 536870911,b = 1073741823,c = 2147483647) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 1,b = 1000000000,c = 1000000000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 1,b = 1000000000,c = 1000000000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 8,b = 3,c = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 8,b = 3,c = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 789,b = 456,c = 1245) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 789,b = 456,c = 1245) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(a = 4294967295,b = 2147483647,c = 4294967294) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(a = 4294967295,b = 2147483647,c = 4294967294) == 2: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(a = 10,b = 15,c = 25) == 4
@@ -94,3 +838,5 @@ def check(candidate):
     assert candidate(a = 8,b = 3,c = 10) == 1
     assert candidate(a = 789,b = 456,c = 1245) == 4
     assert candidate(a = 4294967295,b = 2147483647,c = 4294967294) == 2
+
+

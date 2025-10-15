@@ -1,5 +1,541 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['writing code', 'code rocks']) == ['writing code rocks']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['writing code', 'code rocks']) == ['writing code rocks']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a', 'b', 'a']) == ['a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a', 'b', 'a']) == ['a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['mission statement', 'a quick bite to eat', 'a chip off the old block', 'chocolate bar', 'mission impossible', 'a man on a mission', 'block party', 'eat my words', 'bar of soap']) == ['a chip off the old block party', 'a man on a mission impossible', 'a man on a mission statement', 'a quick bite to eat my words', 'chocolate bar of soap']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['mission statement', 'a quick bite to eat', 'a chip off the old block', 'chocolate bar', 'mission impossible', 'a man on a mission', 'block party', 'eat my words', 'bar of soap']) == ['a chip off the old block party', 'a man on a mission impossible', 'a man on a mission statement', 'a quick bite to eat my words', 'chocolate bar of soap']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a journey of', 'journey of a thousand miles', 'miles to go', 'to go before', 'before we sleep', 'sleepless nights', 'nights of dreaming', 'dreaming big', 'big plans', 'plans for tomorrow', 'tomorrow will be', 'will be better', 'better days ahead', 'ahead of the curve', 'curve ball', 'ballad of the brave']) == ['ahead of the curve ball', 'better days ahead of the curve', 'big plans for tomorrow', 'dreaming big plans', 'journey of a thousand miles to go', 'nights of dreaming big', 'plans for tomorrow will be', 'sleepless nights of dreaming', 'to go before we sleep', 'will be better days ahead']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a journey of', 'journey of a thousand miles', 'miles to go', 'to go before', 'before we sleep', 'sleepless nights', 'nights of dreaming', 'dreaming big', 'big plans', 'plans for tomorrow', 'tomorrow will be', 'will be better', 'better days ahead', 'ahead of the curve', 'curve ball', 'ballad of the brave']) == ['ahead of the curve ball', 'better days ahead of the curve', 'big plans for tomorrow', 'dreaming big plans', 'journey of a thousand miles to go', 'nights of dreaming big', 'plans for tomorrow will be', 'sleepless nights of dreaming', 'to go before we sleep', 'will be better days ahead']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a b c', 'c d e', 'e f g', 'g h i', 'i j k', 'k l m', 'm n o', 'o p q', 'q r s', 's t u', 'u v w', 'w x y', 'y z a', 'z a b', 'b c d', 'd e f', 'f g h', 'h i j']) == ['a b c d e', 'b c d e f', 'c d e f g', 'd e f g h', 'e f g h i', 'f g h i j', 'g h i j k', 'i j k l m', 'k l m n o', 'm n o p q', 'o p q r s', 'q r s t u', 's t u v w', 'u v w x y', 'w x y z a', 'y z a b c', 'z a b c d']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a b c', 'c d e', 'e f g', 'g h i', 'i j k', 'k l m', 'm n o', 'o p q', 'q r s', 's t u', 'u v w', 'w x y', 'y z a', 'z a b', 'b c d', 'd e f', 'f g h', 'h i j']) == ['a b c d e', 'b c d e f', 'c d e f g', 'd e f g h', 'e f g h i', 'f g h i j', 'g h i j k', 'i j k l m', 'k l m n o', 'm n o p q', 'o p q r s', 'q r s t u', 's t u v w', 'u v w x y', 'w x y z a', 'y z a b c', 'z a b c d']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon a time', 'time after time', 'time flies', 'flies like an arrow', 'arrow', 'arrow of time', 'time machine', 'machine gun', 'gun to the head', 'head over heels', 'heels', 'heels over head', 'head case', 'case study', 'study', 'study case', 'case in point', 'point', 'point in time']) == ['arrow of time', 'arrow of time after time', 'arrow of time flies', 'arrow of time machine', 'case in point', 'case in point in time', 'case study', 'case study case', 'flies like an arrow', 'flies like an arrow of time', 'gun to the head case', 'gun to the head over heels', 'head case in point', 'head case study', 'head over heels', 'head over heels over head', 'heels over head', 'heels over head case', 'heels over head over heels', 'machine gun to the head', 'once upon a time after time', 'once upon a time flies', 'once upon a time machine', 'point in time', 'point in time after time', 'point in time flies', 'point in time machine', 'study case', 'study case in point', 'study case study', 'time after time flies', 'time after time machine', 'time flies like an arrow', 'time machine gun']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon a time', 'time after time', 'time flies', 'flies like an arrow', 'arrow', 'arrow of time', 'time machine', 'machine gun', 'gun to the head', 'head over heels', 'heels', 'heels over head', 'head case', 'case study', 'study', 'study case', 'case in point', 'point', 'point in time']) == ['arrow of time', 'arrow of time after time', 'arrow of time flies', 'arrow of time machine', 'case in point', 'case in point in time', 'case study', 'case study case', 'flies like an arrow', 'flies like an arrow of time', 'gun to the head case', 'gun to the head over heels', 'head case in point', 'head case study', 'head over heels', 'head over heels over head', 'heels over head', 'heels over head case', 'heels over head over heels', 'machine gun to the head', 'once upon a time after time', 'once upon a time flies', 'once upon a time machine', 'point in time', 'point in time after time', 'point in time flies', 'point in time machine', 'study case', 'study case in point', 'study case study', 'time after time flies', 'time after time machine', 'time flies like an arrow', 'time machine gun']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world is great', 'great place', 'place to be', 'be there', 'there and back']) == ['be there and back', 'great place to be', 'hello world is great', 'place to be there', 'world is great place']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world is great', 'great place', 'place to be', 'be there', 'there and back']) == ['be there and back', 'great place to be', 'hello world is great', 'place to be there', 'world is great place']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start small', 'small steps', 'steps to success', 'success story', 'story of a journey', 'journey to the end', 'end of the line', 'line in the sand', 'sand castle', 'castle in the air', 'airborne']) == ['end of the line in the sand', 'journey to the end of the line', 'line in the sand castle', 'sand castle in the air', 'small steps to success', 'start small steps', 'steps to success story', 'story of a journey to the end', 'success story of a journey']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start small', 'small steps', 'steps to success', 'success story', 'story of a journey', 'journey to the end', 'end of the line', 'line in the sand', 'sand castle', 'castle in the air', 'airborne']) == ['end of the line in the sand', 'journey to the end of the line', 'line in the sand castle', 'sand castle in the air', 'small steps to success', 'start small steps', 'steps to success story', 'story of a journey to the end', 'success story of a journey']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'the world', 'hello there', 'there be dragons', 'dragons be', 'be careful', 'careful now', 'now and forever', 'forever young']) == ['be careful now', 'careful now and forever', 'dragons be careful', 'hello there be dragons', 'hello world of wonders', 'now and forever young', 'the world of wonders', 'there be dragons be', 'wonders of the world of wonders', 'world of wonders of the world']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'the world', 'hello there', 'there be dragons', 'dragons be', 'be careful', 'careful now', 'now and forever', 'forever young']) == ['be careful now', 'careful now and forever', 'dragons be careful', 'hello there be dragons', 'hello world of wonders', 'now and forever young', 'the world of wonders', 'there be dragons be', 'wonders of the world of wonders', 'world of wonders of the world']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chased the', 'the quick brown fox jumps']) == ['dog chased the quick brown fox', 'dog chased the quick brown fox jumps', 'fox jumps over the lazy dog', 'over the lazy dog chased the', 'the quick brown fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chased the', 'the quick brown fox jumps']) == ['dog chased the quick brown fox', 'dog chased the quick brown fox jumps', 'fox jumps over the lazy dog', 'over the lazy dog chased the', 'the quick brown fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start', 'start again', 'again and again', 'again we go', 'go go go', 'go back', 'back to start', 'start fresh', 'fresh start', 'start anew']) == ['again and again we go', 'again we go back', 'again we go go go', 'back to start', 'back to start again', 'back to start anew', 'back to start fresh', 'fresh start', 'fresh start again', 'fresh start anew', 'fresh start fresh', 'go back to start', 'go go go back', 'start again', 'start again and again', 'start again we go', 'start anew', 'start fresh', 'start fresh start']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start', 'start again', 'again and again', 'again we go', 'go go go', 'go back', 'back to start', 'start fresh', 'fresh start', 'start anew']) == ['again and again we go', 'again we go back', 'again we go go go', 'back to start', 'back to start again', 'back to start anew', 'back to start fresh', 'fresh start', 'fresh start again', 'fresh start anew', 'fresh start fresh', 'go back to start', 'go go go back', 'start again', 'start again and again', 'start again we go', 'start anew', 'start fresh', 'start fresh start']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['apple pie', 'pie chart', 'chartreuse', 'chartreuse color', 'colorful charts', 'charts and graphs', 'graphs and charts', 'charts are fun', 'fun and games', 'games and fun']) == ['apple pie chart', 'chartreuse color', 'charts and graphs and charts', 'charts are fun and games', 'colorful charts and graphs', 'colorful charts are fun', 'fun and games and fun', 'games and fun and games', 'graphs and charts and graphs', 'graphs and charts are fun']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['apple pie', 'pie chart', 'chartreuse', 'chartreuse color', 'colorful charts', 'charts and graphs', 'graphs and charts', 'charts are fun', 'fun and games', 'games and fun']) == ['apple pie chart', 'chartreuse color', 'charts and graphs and charts', 'charts are fun and games', 'colorful charts and graphs', 'colorful charts are fun', 'fun and games and fun', 'games and fun and games', 'graphs and charts and graphs', 'graphs and charts are fun']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['abc', 'bca', 'cab', 'bac', 'acb', 'abc abc', 'bca bca', 'cab cab', 'bac bac', 'acb acb']) == ['abc abc', 'acb acb', 'bac bac', 'bca bca', 'cab cab']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['abc', 'bca', 'cab', 'bac', 'acb', 'abc abc', 'bca bca', 'cab cab', 'bac bac', 'acb acb']) == ['abc abc', 'acb acb', 'bac bac', 'bca bca', 'cab cab']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the dark knight', 'knight in shining armor', 'armor clad', 'clad in black', 'black and white', 'white knight', 'knight rider', 'rider in the storm', 'storm clouds', 'clouds gather', 'gather round', 'round the clock']) == ['armor clad in black', 'black and white knight', 'clad in black and white', 'clouds gather round', 'gather round the clock', 'knight in shining armor clad', 'knight rider in the storm', 'rider in the storm clouds', 'storm clouds gather', 'the dark knight in shining armor', 'the dark knight rider', 'white knight in shining armor', 'white knight rider']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the dark knight', 'knight in shining armor', 'armor clad', 'clad in black', 'black and white', 'white knight', 'knight rider', 'rider in the storm', 'storm clouds', 'clouds gather', 'gather round', 'round the clock']) == ['armor clad in black', 'black and white knight', 'clad in black and white', 'clouds gather round', 'gather round the clock', 'knight in shining armor clad', 'knight rider in the storm', 'rider in the storm clouds', 'storm clouds gather', 'the dark knight in shining armor', 'the dark knight rider', 'white knight in shining armor', 'white knight rider']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat', 'cat catches mouse', 'mouse', 'mouse trap']) == ['cat catches mouse', 'cat catches mouse trap', 'dog chases cat', 'dog chases cat catches mouse', 'fox jumps over the lazy dog', 'mouse trap', 'over the lazy dog chases cat', 'quick brown fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat', 'cat catches mouse', 'mouse', 'mouse trap']) == ['cat catches mouse', 'cat catches mouse trap', 'dog chases cat', 'dog chases cat catches mouse', 'fox jumps over the lazy dog', 'mouse trap', 'over the lazy dog chases cat', 'quick brown fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['red green', 'green blue', 'blue black', 'black white', 'white red', 'red yellow', 'yellow green', 'green red']) == ['black white red', 'blue black white', 'green blue black', 'green red green', 'green red yellow', 'red green blue', 'red green red', 'red yellow green', 'white red green', 'white red yellow', 'yellow green blue', 'yellow green red']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['red green', 'green blue', 'blue black', 'black white', 'white red', 'red yellow', 'yellow green', 'green red']) == ['black white red', 'blue black white', 'green blue black', 'green red green', 'green red yellow', 'red green blue', 'red green red', 'red yellow green', 'white red green', 'white red yellow', 'yellow green blue', 'yellow green red']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['repeated word repeated', 'repeated', 'word repeated word', 'repeated word', 'word repeated', 'repeated word repeated', 'word']) == ['repeated word', 'repeated word repeated', 'repeated word repeated word', 'repeated word repeated word repeated', 'word repeated', 'word repeated word', 'word repeated word repeated']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['repeated word repeated', 'repeated', 'word repeated word', 'repeated word', 'word repeated', 'repeated word repeated', 'word']) == ['repeated word', 'repeated word repeated', 'repeated word repeated word', 'repeated word repeated word repeated', 'word repeated', 'word repeated word', 'word repeated word repeated']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown', 'brown fox', 'fox jumps', 'jumps over', 'over the', 'the lazy', 'lazy dog', 'dog chases', 'chases the', 'the quick']) == ['brown fox jumps', 'chases the lazy', 'chases the quick', 'chases the quick brown', 'dog chases the', 'fox jumps over', 'jumps over the', 'lazy dog chases', 'over the lazy', 'over the quick', 'over the quick brown', 'the lazy dog', 'the quick brown fox']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown', 'brown fox', 'fox jumps', 'jumps over', 'over the', 'the lazy', 'lazy dog', 'dog chases', 'chases the', 'the quick']) == ['brown fox jumps', 'chases the lazy', 'chases the quick', 'chases the quick brown', 'dog chases the', 'fox jumps over', 'jumps over the', 'lazy dog chases', 'over the lazy', 'over the quick', 'over the quick brown', 'the lazy dog', 'the quick brown fox']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['one two', 'two three', 'three four', 'four five', 'five six', 'six seven', 'seven eight', 'eight nine', 'nine ten', 'ten eleven', 'eleven twelve', 'twelve thirteen', 'thirteen fourteen', 'fourteen fifteen', 'fifteen sixteen', 'sixteen seventeen', 'seventeen eighteen', 'eighteen nineteen', 'nineteen twenty', 'twenty one']) == ['eight nine ten', 'eighteen nineteen twenty', 'eleven twelve thirteen', 'fifteen sixteen seventeen', 'five six seven', 'four five six', 'fourteen fifteen sixteen', 'nine ten eleven', 'nineteen twenty one', 'one two three', 'seven eight nine', 'seventeen eighteen nineteen', 'six seven eight', 'sixteen seventeen eighteen', 'ten eleven twelve', 'thirteen fourteen fifteen', 'three four five', 'twelve thirteen fourteen', 'twenty one two', 'two three four']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['one two', 'two three', 'three four', 'four five', 'five six', 'six seven', 'seven eight', 'eight nine', 'nine ten', 'ten eleven', 'eleven twelve', 'twelve thirteen', 'thirteen fourteen', 'fourteen fifteen', 'fifteen sixteen', 'sixteen seventeen', 'seventeen eighteen', 'eighteen nineteen', 'nineteen twenty', 'twenty one']) == ['eight nine ten', 'eighteen nineteen twenty', 'eleven twelve thirteen', 'fifteen sixteen seventeen', 'five six seven', 'four five six', 'fourteen fifteen sixteen', 'nine ten eleven', 'nineteen twenty one', 'one two three', 'seven eight nine', 'seventeen eighteen nineteen', 'six seven eight', 'sixteen seventeen eighteen', 'ten eleven twelve', 'thirteen fourteen fifteen', 'three four five', 'twelve thirteen fourteen', 'twenty one two', 'two three four']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start over', 'over the moon', 'moonlit night', 'night and day', 'daydream', 'dream big', 'big ideas', 'ideas for all']) == ['big ideas for all', 'dream big ideas', 'moonlit night and day', 'start over the moon']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start over', 'over the moon', 'moonlit night', 'night and day', 'daydream', 'dream big', 'big ideas', 'ideas for all']) == ['big ideas for all', 'dream big ideas', 'moonlit night and day', 'start over the moon']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world is great', 'great place to be', 'be careful', 'careful out there', 'there and back again']) == ['be careful out there', 'careful out there and back again', 'great place to be careful', 'hello world is great', 'world is great place to be']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world is great', 'great place to be', 'be careful', 'careful out there', 'there and back again']) == ['be careful out there', 'careful out there and back again', 'great place to be careful', 'hello world is great', 'world is great place to be']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['loop back', 'back to start', 'start again', 'again and again', 'and again', 'again loop', 'loop back to', 'to start loop']) == ['again and again loop', 'again loop back', 'again loop back to', 'and again and again', 'and again loop', 'back to start again', 'loop back to start', 'loop back to start loop', 'start again and again', 'start again loop', 'to start loop back', 'to start loop back to']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['loop back', 'back to start', 'start again', 'again and again', 'and again', 'again loop', 'loop back to', 'to start loop']) == ['again and again loop', 'again loop back', 'again loop back to', 'and again and again', 'and again loop', 'back to start again', 'loop back to start', 'loop back to start loop', 'start again and again', 'start again loop', 'to start loop back', 'to start loop back to']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['abc def', 'def ghi', 'ghi jkl', 'jkl mno', 'mno pqr', 'pqr stu', 'stu vwx', 'vwx yza', 'yza abc']) == ['abc def ghi', 'def ghi jkl', 'ghi jkl mno', 'jkl mno pqr', 'mno pqr stu', 'pqr stu vwx', 'stu vwx yza', 'vwx yza abc', 'yza abc def']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['abc def', 'def ghi', 'ghi jkl', 'jkl mno', 'mno pqr', 'pqr stu', 'stu vwx', 'vwx yza', 'yza abc']) == ['abc def ghi', 'def ghi jkl', 'ghi jkl mno', 'jkl mno pqr', 'mno pqr stu', 'pqr stu vwx', 'stu vwx yza', 'vwx yza abc', 'yza abc def']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat and mouse', 'mouse in the house', 'house is on fire', 'fire truck arrives', 'arrives with sirens', 'sirens wailing', 'wailing winds', 'winds of change', 'change is good', 'good day to play', 'play tag with', 'tag with friends', 'friends are great', 'great things happen', 'happen when you', 'you least expect']) == ['arrives with sirens wailing', 'cat and mouse in the house', 'change is good day to play', 'dog chases cat and mouse', 'fire truck arrives with sirens', 'fox jumps over the lazy dog', 'friends are great things happen', 'good day to play tag with', 'great things happen when you', 'happen when you least expect', 'house is on fire truck arrives', 'mouse in the house is on fire', 'over the lazy dog chases cat', 'sirens wailing winds', 'tag with friends are great', 'the quick brown fox jumps over', 'wailing winds of change', 'winds of change is good']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat and mouse', 'mouse in the house', 'house is on fire', 'fire truck arrives', 'arrives with sirens', 'sirens wailing', 'wailing winds', 'winds of change', 'change is good', 'good day to play', 'play tag with', 'tag with friends', 'friends are great', 'great things happen', 'happen when you', 'you least expect']) == ['arrives with sirens wailing', 'cat and mouse in the house', 'change is good day to play', 'dog chases cat and mouse', 'fire truck arrives with sirens', 'fox jumps over the lazy dog', 'friends are great things happen', 'good day to play tag with', 'great things happen when you', 'happen when you least expect', 'house is on fire truck arrives', 'mouse in the house is on fire', 'over the lazy dog chases cat', 'sirens wailing winds', 'tag with friends are great', 'the quick brown fox jumps over', 'wailing winds of change', 'winds of change is good']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['red', 'red carpet', 'carpet', 'carpet bag', 'bag', 'baggage', 'baggage handler', 'handler', 'handler', 'handler of', 'of', 'of course', 'course', 'course of', 'course of action', 'action', 'action plan', 'plan', 'plan B', 'B', 'B to the future', 'future', 'future tense', 'tense', 'tense moment', 'moment', 'moment in time', 'time to', 'to', 'to the', 'to the point']) == ['B to the future', 'B to the future tense', 'action plan', 'action plan B', 'baggage handler', 'baggage handler of', 'carpet bag', 'course of', 'course of action', 'course of action plan', 'course of course', 'future tense', 'future tense moment', 'handler', 'handler of', 'handler of course', 'moment in time', 'moment in time to', 'of course', 'of course of', 'of course of action', 'plan B', 'plan B to the future', 'red carpet', 'red carpet bag', 'tense moment', 'tense moment in time', 'time to', 'time to the', 'time to the point', 'to the', 'to the point']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['red', 'red carpet', 'carpet', 'carpet bag', 'bag', 'baggage', 'baggage handler', 'handler', 'handler', 'handler of', 'of', 'of course', 'course', 'course of', 'course of action', 'action', 'action plan', 'plan', 'plan B', 'B', 'B to the future', 'future', 'future tense', 'tense', 'tense moment', 'moment', 'moment in time', 'time to', 'to', 'to the', 'to the point']) == ['B to the future', 'B to the future tense', 'action plan', 'action plan B', 'baggage handler', 'baggage handler of', 'carpet bag', 'course of', 'course of action', 'course of action plan', 'course of course', 'future tense', 'future tense moment', 'handler', 'handler of', 'handler of course', 'moment in time', 'moment in time to', 'of course', 'of course of', 'of course of action', 'plan B', 'plan B to the future', 'red carpet', 'red carpet bag', 'tense moment', 'tense moment in time', 'time to', 'time to the', 'time to the point', 'to the', 'to the point']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['abc def', 'def ghi', 'ghi jkl', 'jkl mno', 'mno pqr', 'pqr stu', 'stu vwx', 'vwx yza', 'yza abc']) == ['abc def ghi', 'def ghi jkl', 'ghi jkl mno', 'jkl mno pqr', 'mno pqr stu', 'pqr stu vwx', 'stu vwx yza', 'vwx yza abc', 'yza abc def']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['abc def', 'def ghi', 'ghi jkl', 'jkl mno', 'mno pqr', 'pqr stu', 'stu vwx', 'vwx yza', 'yza abc']) == ['abc def ghi', 'def ghi jkl', 'ghi jkl mno', 'jkl mno pqr', 'mno pqr stu', 'pqr stu vwx', 'stu vwx yza', 'vwx yza abc', 'yza abc def']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a bird in the hand', 'hand is worth two in the bush', 'bush is burning', 'burning hot day', 'day and night', 'night and day', 'daybreak', 'break of dawn']) == ['a bird in the hand is worth two in the bush', 'burning hot day and night', 'bush is burning hot day', 'day and night and day', 'hand is worth two in the bush is burning', 'night and day and night']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a bird in the hand', 'hand is worth two in the bush', 'bush is burning', 'burning hot day', 'day and night', 'night and day', 'daybreak', 'break of dawn']) == ['a bird in the hand is worth two in the bush', 'burning hot day and night', 'bush is burning hot day', 'day and night and day', 'hand is worth two in the bush is burning', 'night and day and night']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat and mouse', 'mouse over the moon', 'moon phases', 'phases of the moon', 'the universe']) == ['cat and mouse over the moon', 'dog chases cat and mouse', 'fox jumps over the lazy dog', 'moon phases of the moon', 'mouse over the moon phases', 'over the lazy dog chases cat', 'phases of the moon phases', 'the quick brown fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases cat', 'cat and mouse', 'mouse over the moon', 'moon phases', 'phases of the moon', 'the universe']) == ['cat and mouse over the moon', 'dog chases cat and mouse', 'fox jumps over the lazy dog', 'moon phases of the moon', 'mouse over the moon phases', 'over the lazy dog chases cat', 'phases of the moon phases', 'the quick brown fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon a time', 'time flies when', 'when you are having', 'having fun', 'fun is over', 'over the hill', 'hill and dale', 'dale road', 'road to nowhere']) == ['dale road to nowhere', 'fun is over the hill', 'having fun is over', 'hill and dale road', 'once upon a time flies when', 'over the hill and dale', 'time flies when you are having', 'when you are having fun']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon a time', 'time flies when', 'when you are having', 'having fun', 'fun is over', 'over the hill', 'hill and dale', 'dale road', 'road to nowhere']) == ['dale road to nowhere', 'fun is over the hill', 'having fun is over', 'hill and dale road', 'once upon a time flies when', 'over the hill and dale', 'time flies when you are having', 'when you are having fun']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog and fox', 'fox and hound', 'hound and dog', 'dog and cat', 'cat and dog']) == ['cat and dog and cat', 'cat and dog and fox', 'dog and cat and dog', 'dog and fox and hound', 'dog and fox jumps over', 'fox and hound and dog', 'fox jumps over the lazy dog', 'hound and dog and cat', 'hound and dog and fox', 'over the lazy dog and cat', 'over the lazy dog and fox', 'the quick brown fox and hound', 'the quick brown fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog and fox', 'fox and hound', 'hound and dog', 'dog and cat', 'cat and dog']) == ['cat and dog and cat', 'cat and dog and fox', 'dog and cat and dog', 'dog and fox and hound', 'dog and fox jumps over', 'fox and hound and dog', 'fox jumps over the lazy dog', 'hound and dog and cat', 'hound and dog and fox', 'over the lazy dog and cat', 'over the lazy dog and fox', 'the quick brown fox and hound', 'the quick brown fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon a time', 'time after time', 'time flies', 'flies in the ointment', 'ointment of salvation', 'salvation through faith', 'faith in humanity', 'humanity is fragile', 'fragile hope', 'hope for the future', 'future belongs to', 'belongs to us', 'us together', 'together we can']) == ['belongs to us together', 'faith in humanity is fragile', 'flies in the ointment of salvation', 'fragile hope for the future', 'hope for the future belongs to', 'humanity is fragile hope', 'ointment of salvation through faith', 'once upon a time after time', 'once upon a time flies', 'salvation through faith in humanity', 'time after time flies', 'time flies in the ointment', 'us together we can']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon a time', 'time after time', 'time flies', 'flies in the ointment', 'ointment of salvation', 'salvation through faith', 'faith in humanity', 'humanity is fragile', 'fragile hope', 'hope for the future', 'future belongs to', 'belongs to us', 'us together', 'together we can']) == ['belongs to us together', 'faith in humanity is fragile', 'flies in the ointment of salvation', 'fragile hope for the future', 'hope for the future belongs to', 'humanity is fragile hope', 'ointment of salvation through faith', 'once upon a time after time', 'once upon a time flies', 'salvation through faith in humanity', 'time after time flies', 'time flies in the ointment', 'us together we can']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start small', 'small things grow', 'grow into big', 'big dreams', 'dreams come true', 'true love', 'love yourself', 'yourself first', 'first things first', 'first step', 'step by step', 'step into success', 'success comes', 'comes naturally', 'naturally', 'naturally']) == ['big dreams come true', 'comes naturally', 'dreams come true love', 'first step by step', 'first step into success', 'first things first step', 'grow into big dreams', 'love yourself first', 'naturally', 'small things grow into big', 'start small things grow', 'step by step into success', 'step into success comes', 'success comes naturally', 'true love yourself', 'yourself first step', 'yourself first things first']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start small', 'small things grow', 'grow into big', 'big dreams', 'dreams come true', 'true love', 'love yourself', 'yourself first', 'first things first', 'first step', 'step by step', 'step into success', 'success comes', 'comes naturally', 'naturally', 'naturally']) == ['big dreams come true', 'comes naturally', 'dreams come true love', 'first step by step', 'first step into success', 'first things first step', 'grow into big dreams', 'love yourself first', 'naturally', 'small things grow into big', 'start small things grow', 'step by step into success', 'step into success comes', 'success comes naturally', 'true love yourself', 'yourself first step', 'yourself first things first']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog bites man', 'man overboard', 'board game', 'game on', 'on the fence', 'fence post', 'post office']) == ['board game on', 'dog bites man overboard', 'fence post office', 'fox jumps over the lazy dog', 'game on the fence', 'on the fence post', 'over the lazy dog bites man', 'the quick brown fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog bites man', 'man overboard', 'board game', 'game on', 'on the fence', 'fence post', 'post office']) == ['board game on', 'dog bites man overboard', 'fence post office', 'fox jumps over the lazy dog', 'game on the fence', 'on the fence post', 'over the lazy dog bites man', 'the quick brown fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start the journey', 'journey into the unknown', 'unknown territories', 'territories of the mind', 'mind over matter', 'matter of fact', 'fact or fiction', 'fiction and truth', 'truth be told', 'told and retold', 'retold story', 'story of a lifetime']) == ['fact or fiction and truth', 'fiction and truth be told', 'journey into the unknown territories', 'matter of fact or fiction', 'mind over matter of fact', 'retold story of a lifetime', 'start the journey into the unknown', 'territories of the mind over matter', 'told and retold story', 'truth be told and retold', 'unknown territories of the mind']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start the journey', 'journey into the unknown', 'unknown territories', 'territories of the mind', 'mind over matter', 'matter of fact', 'fact or fiction', 'fiction and truth', 'truth be told', 'told and retold', 'retold story', 'story of a lifetime']) == ['fact or fiction and truth', 'fiction and truth be told', 'journey into the unknown territories', 'matter of fact or fiction', 'mind over matter of fact', 'retold story of a lifetime', 'start the journey into the unknown', 'territories of the mind over matter', 'told and retold story', 'truth be told and retold', 'unknown territories of the mind']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['beginning of the end', 'end of an era', 'era of change', 'change is constant', 'constant motion', 'motion sickness', 'sickness and health', 'health is wealth', 'wealth of knowledge', 'knowledge is power', 'power of words', 'words of wisdom']) == ['beginning of the end of an era', 'change is constant motion', 'constant motion sickness', 'end of an era of change', 'era of change is constant', 'health is wealth of knowledge', 'knowledge is power of words', 'motion sickness and health', 'power of words of wisdom', 'sickness and health is wealth', 'wealth of knowledge is power']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['beginning of the end', 'end of an era', 'era of change', 'change is constant', 'constant motion', 'motion sickness', 'sickness and health', 'health is wealth', 'wealth of knowledge', 'knowledge is power', 'power of words', 'words of wisdom']) == ['beginning of the end of an era', 'change is constant motion', 'constant motion sickness', 'end of an era of change', 'era of change is constant', 'health is wealth of knowledge', 'knowledge is power of words', 'motion sickness and health', 'power of words of wisdom', 'sickness and health is wealth', 'wealth of knowledge is power']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start of a journey', 'journey of a thousand miles', 'miles must be walked', 'walked by many', 'many people start']) == ['journey of a thousand miles must be walked', 'many people start of a journey', 'miles must be walked by many', 'start of a journey of a thousand miles', 'walked by many people start']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start of a journey', 'journey of a thousand miles', 'miles must be walked', 'walked by many', 'many people start']) == ['journey of a thousand miles must be walked', 'many people start of a journey', 'miles must be walked by many', 'start of a journey of a thousand miles', 'walked by many people start']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['one two', 'two three', 'three four', 'four five', 'five six', 'six seven', 'seven eight', 'eight nine', 'nine ten', 'ten one']) == ['eight nine ten', 'five six seven', 'four five six', 'nine ten one', 'one two three', 'seven eight nine', 'six seven eight', 'ten one two', 'three four five', 'two three four']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['one two', 'two three', 'three four', 'four five', 'five six', 'six seven', 'seven eight', 'eight nine', 'nine ten', 'ten one']) == ['eight nine ten', 'five six seven', 'four five six', 'nine ten one', 'one two three', 'seven eight nine', 'six seven eight', 'ten one two', 'three four five', 'two three four']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world peace', 'peace love', 'love everyone', 'everyone together', 'together we', 'we can', 'can do', 'do it', 'it well']) == ['can do it', 'do it well', 'everyone together we', 'hello world peace', 'love everyone together', 'peace love everyone', 'together we can', 'we can do', 'world peace love']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world peace', 'peace love', 'love everyone', 'everyone together', 'together we', 'we can', 'can do', 'do it', 'it well']) == ['can do it', 'do it well', 'everyone together we', 'hello world peace', 'love everyone together', 'peace love everyone', 'together we can', 'we can do', 'world peace love']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['apple orange', 'orange banana', 'banana apple', 'apple', 'orange', 'banana', 'grape', 'grape juice', 'juice apple', 'apple pie', 'pie apple', 'apple orange banana', 'banana orange apple']) == ['apple orange', 'apple orange banana', 'apple orange banana apple', 'apple orange banana orange apple', 'apple pie', 'apple pie apple', 'banana apple', 'banana apple orange', 'banana apple orange banana', 'banana apple pie', 'banana orange apple', 'banana orange apple orange', 'banana orange apple orange banana', 'banana orange apple pie', 'grape juice', 'grape juice apple', 'juice apple', 'juice apple orange', 'juice apple orange banana', 'juice apple pie', 'orange banana', 'orange banana apple', 'orange banana orange apple', 'pie apple', 'pie apple orange', 'pie apple orange banana', 'pie apple pie']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['apple orange', 'orange banana', 'banana apple', 'apple', 'orange', 'banana', 'grape', 'grape juice', 'juice apple', 'apple pie', 'pie apple', 'apple orange banana', 'banana orange apple']) == ['apple orange', 'apple orange banana', 'apple orange banana apple', 'apple orange banana orange apple', 'apple pie', 'apple pie apple', 'banana apple', 'banana apple orange', 'banana apple orange banana', 'banana apple pie', 'banana orange apple', 'banana orange apple orange', 'banana orange apple orange banana', 'banana orange apple pie', 'grape juice', 'grape juice apple', 'juice apple', 'juice apple orange', 'juice apple orange banana', 'juice apple pie', 'orange banana', 'orange banana apple', 'orange banana orange apple', 'pie apple', 'pie apple orange', 'pie apple orange banana', 'pie apple pie']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['one fish two fish', 'fish red fish blue fish', 'blue fish green eggs and ham', 'eggs and ham green eggs and ham', 'ham and eggs', 'eggs are delicious', 'delicious eggs', 'eggs fish', 'fish']) == ['blue fish green eggs and ham and eggs', 'delicious eggs and ham green eggs and ham', 'delicious eggs are delicious', 'delicious eggs fish', 'eggs and ham green eggs and ham and eggs', 'eggs are delicious eggs', 'eggs fish', 'eggs fish red fish blue fish', 'fish red fish blue fish', 'ham and eggs and ham green eggs and ham', 'ham and eggs are delicious', 'ham and eggs fish', 'one fish two fish', 'one fish two fish red fish blue fish']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['one fish two fish', 'fish red fish blue fish', 'blue fish green eggs and ham', 'eggs and ham green eggs and ham', 'ham and eggs', 'eggs are delicious', 'delicious eggs', 'eggs fish', 'fish']) == ['blue fish green eggs and ham and eggs', 'delicious eggs and ham green eggs and ham', 'delicious eggs are delicious', 'delicious eggs fish', 'eggs and ham green eggs and ham and eggs', 'eggs are delicious eggs', 'eggs fish', 'eggs fish red fish blue fish', 'fish red fish blue fish', 'ham and eggs and ham green eggs and ham', 'ham and eggs are delicious', 'ham and eggs fish', 'one fish two fish', 'one fish two fish red fish blue fish']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['nested phrases nested', 'phrases nested', 'nested phrases', 'nested', 'phrases', 'another example', 'example another', 'another example another']) == ['another example another', 'another example another example', 'example another example', 'example another example another', 'nested phrases', 'nested phrases nested', 'nested phrases nested phrases', 'phrases nested', 'phrases nested phrases', 'phrases nested phrases nested']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['nested phrases nested', 'phrases nested', 'nested phrases', 'nested', 'phrases', 'another example', 'example another', 'another example another']) == ['another example another', 'another example another example', 'example another example', 'example another example another', 'nested phrases', 'nested phrases nested', 'nested phrases nested phrases', 'phrases nested', 'phrases nested phrases', 'phrases nested phrases nested']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'the world', 'world traveler', 'traveler in time', 'time flies', 'flies like an arrow', 'arrow', 'arrow and the city', 'city of lights', 'lights out', 'out of sight', 'sight unseen']) == ['arrow and the city', 'arrow and the city of lights', 'city of lights out', 'flies like an arrow', 'flies like an arrow and the city', 'hello world of wonders', 'hello world traveler', 'lights out of sight', 'out of sight unseen', 'the world of wonders', 'the world traveler', 'time flies like an arrow', 'traveler in time flies', 'wonders of the world of wonders', 'wonders of the world traveler', 'world of wonders of the world', 'world traveler in time']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'the world', 'world traveler', 'traveler in time', 'time flies', 'flies like an arrow', 'arrow', 'arrow and the city', 'city of lights', 'lights out', 'out of sight', 'sight unseen']) == ['arrow and the city', 'arrow and the city of lights', 'city of lights out', 'flies like an arrow', 'flies like an arrow and the city', 'hello world of wonders', 'hello world traveler', 'lights out of sight', 'out of sight unseen', 'the world of wonders', 'the world traveler', 'time flies like an arrow', 'traveler in time flies', 'wonders of the world of wonders', 'wonders of the world traveler', 'world of wonders of the world', 'world traveler in time']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon a time', 'time travel', 'travel to the past', 'past and present', 'present and future', 'future shock', 'shock and awe', 'awe and wonder']) == ['future shock and awe', 'once upon a time travel', 'past and present and future', 'present and future shock', 'shock and awe and wonder', 'time travel to the past', 'travel to the past and present']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon a time', 'time travel', 'travel to the past', 'past and present', 'present and future', 'future shock', 'shock and awe', 'awe and wonder']) == ['future shock and awe', 'once upon a time travel', 'past and present and future', 'present and future shock', 'shock and awe and wonder', 'time travel to the past', 'travel to the past and present']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world is flat', 'flat earth theory', 'theory of everything', 'everything is connected', 'connected we stand', 'stand up and', 'up and away', 'away we go', 'go with the', 'the flow of time', 'time flies when', 'when we play', 'play hard']) == ['away we go with the', 'connected we stand up and', 'everything is connected we stand', 'flat earth theory of everything', 'go with the flow of time', 'hello world is flat', 'the flow of time flies when', 'theory of everything is connected', 'time flies when we play', 'up and away we go', 'when we play hard', 'world is flat earth theory']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world is flat', 'flat earth theory', 'theory of everything', 'everything is connected', 'connected we stand', 'stand up and', 'up and away', 'away we go', 'go with the', 'the flow of time', 'time flies when', 'when we play', 'play hard']) == ['away we go with the', 'connected we stand up and', 'everything is connected we stand', 'flat earth theory of everything', 'go with the flow of time', 'hello world is flat', 'the flow of time flies when', 'theory of everything is connected', 'time flies when we play', 'up and away we go', 'when we play hard', 'world is flat earth theory']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['beginning', 'beginning of the end', 'end', 'end of', 'of', 'of all', 'all', 'all around', 'around', 'around the world', 'world', 'worldly', 'lyrically', 'rically', 'ically', 'cally', 'lly', 'ly', 'y', 'the', 'the cat', 'cat', 'cat in', 'in', 'in the', 'the hat', 'hat', 'hat trick', 'trick', 'trick or', 'or', 'or treat', 'treat', 'treat or', 'or', 'or not', 'not', 'not to', 'to', 'to be', 'be', 'be or', 'or not', 'not to be', 'to be or not to be']) == ['all around', 'all around the world', 'around the world', 'be or', 'be or not', 'be or treat', 'beginning of the end', 'beginning of the end of', 'cat in', 'cat in the', 'end of', 'end of all', 'hat trick', 'hat trick or', 'in the', 'in the cat', 'in the hat', 'not to', 'not to be', 'not to be or', 'not to be or not to be', 'of all', 'of all around', 'or', 'or not', 'or not to', 'or not to be', 'or treat', 'or treat or', 'the cat', 'the cat in', 'the hat', 'the hat trick', 'to be', 'to be or', 'to be or not to be', 'to be or not to be or', 'treat or', 'treat or not', 'treat or treat', 'trick or', 'trick or not', 'trick or treat']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['beginning', 'beginning of the end', 'end', 'end of', 'of', 'of all', 'all', 'all around', 'around', 'around the world', 'world', 'worldly', 'lyrically', 'rically', 'ically', 'cally', 'lly', 'ly', 'y', 'the', 'the cat', 'cat', 'cat in', 'in', 'in the', 'the hat', 'hat', 'hat trick', 'trick', 'trick or', 'or', 'or treat', 'treat', 'treat or', 'or', 'or not', 'not', 'not to', 'to', 'to be', 'be', 'be or', 'or not', 'not to be', 'to be or not to be']) == ['all around', 'all around the world', 'around the world', 'be or', 'be or not', 'be or treat', 'beginning of the end', 'beginning of the end of', 'cat in', 'cat in the', 'end of', 'end of all', 'hat trick', 'hat trick or', 'in the', 'in the cat', 'in the hat', 'not to', 'not to be', 'not to be or', 'not to be or not to be', 'of all', 'of all around', 'or', 'or not', 'or not to', 'or not to be', 'or treat', 'or treat or', 'the cat', 'the cat in', 'the hat', 'the hat trick', 'to be', 'to be or', 'to be or not to be', 'to be or not to be or', 'treat or', 'treat or not', 'treat or treat', 'trick or', 'trick or not', 'trick or treat']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['one two three', 'three two one', 'one fish two fish', 'fish in the pond', 'pond life', 'life is good', 'good times', 'times are changing', 'changing of the guard', 'guardian of the galaxy', 'galaxy far far away']) == ['fish in the pond life', 'good times are changing', 'guardian of the galaxy far far away', 'life is good times', 'one fish two fish in the pond', 'one two three two one', 'pond life is good', 'three two one fish two fish', 'three two one two three', 'times are changing of the guard']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['one two three', 'three two one', 'one fish two fish', 'fish in the pond', 'pond life', 'life is good', 'good times', 'times are changing', 'changing of the guard', 'guardian of the galaxy', 'galaxy far far away']) == ['fish in the pond life', 'good times are changing', 'guardian of the galaxy far far away', 'life is good times', 'one fish two fish in the pond', 'one two three two one', 'pond life is good', 'three two one fish two fish', 'three two one two three', 'times are changing of the guard']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['red blue', 'blue green', 'green yellow', 'yellow red', 'red green', 'green blue', 'blue yellow', 'yellow green', 'green red', 'red yellow', 'yellow blue', 'blue red']) == ['blue green blue', 'blue green red', 'blue green yellow', 'blue red blue', 'blue red green', 'blue red yellow', 'blue yellow blue', 'blue yellow green', 'blue yellow red', 'green blue green', 'green blue red', 'green blue yellow', 'green red blue', 'green red green', 'green red yellow', 'green yellow blue', 'green yellow green', 'green yellow red', 'red blue green', 'red blue red', 'red blue yellow', 'red green blue', 'red green red', 'red green yellow', 'red yellow blue', 'red yellow green', 'red yellow red', 'yellow blue green', 'yellow blue red', 'yellow blue yellow', 'yellow green blue', 'yellow green red', 'yellow green yellow', 'yellow red blue', 'yellow red green', 'yellow red yellow']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['red blue', 'blue green', 'green yellow', 'yellow red', 'red green', 'green blue', 'blue yellow', 'yellow green', 'green red', 'red yellow', 'yellow blue', 'blue red']) == ['blue green blue', 'blue green red', 'blue green yellow', 'blue red blue', 'blue red green', 'blue red yellow', 'blue yellow blue', 'blue yellow green', 'blue yellow red', 'green blue green', 'green blue red', 'green blue yellow', 'green red blue', 'green red green', 'green red yellow', 'green yellow blue', 'green yellow green', 'green yellow red', 'red blue green', 'red blue red', 'red blue yellow', 'red green blue', 'red green red', 'red green yellow', 'red yellow blue', 'red yellow green', 'red yellow red', 'yellow blue green', 'yellow blue red', 'yellow blue yellow', 'yellow green blue', 'yellow green red', 'yellow green yellow', 'yellow red blue', 'yellow red green', 'yellow red yellow']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start of something', 'something new', 'new beginning', 'beginning of the', 'the end', 'end of an era', 'era of enlightenment', 'enlightenment through knowledge', 'knowledge is power', 'power to the people', 'people matter', 'matter of fact']) == ['beginning of the end', 'end of an era of enlightenment', 'enlightenment through knowledge is power', 'era of enlightenment through knowledge', 'knowledge is power to the people', 'new beginning of the', 'people matter of fact', 'power to the people matter', 'something new beginning', 'start of something new', 'the end of an era']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start of something', 'something new', 'new beginning', 'beginning of the', 'the end', 'end of an era', 'era of enlightenment', 'enlightenment through knowledge', 'knowledge is power', 'power to the people', 'people matter', 'matter of fact']) == ['beginning of the end', 'end of an era of enlightenment', 'enlightenment through knowledge is power', 'era of enlightenment through knowledge', 'knowledge is power to the people', 'new beginning of the', 'people matter of fact', 'power to the people matter', 'something new beginning', 'start of something new', 'the end of an era']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world peace', 'peace and love', 'love is love', 'love', 'hello', 'is']) == ['hello world', 'hello world peace', 'love is love', 'peace and love', 'peace and love is love', 'world peace and love']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world peace', 'peace and love', 'love is love', 'love', 'hello', 'is']) == ['hello world', 'hello world peace', 'love is love', 'peace and love', 'peace and love is love', 'world peace and love']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world peace', 'peace on earth', 'earth is round', 'round and round', 'round the world', 'world cup', 'cup of tea', 'tea time', 'time flies', 'flies like', 'flies like an', 'an apple', 'apple pie', 'pie in the sky', 'sky high', 'high and low', 'low and behold']) == ['an apple pie', 'apple pie in the sky', 'cup of tea time', 'earth is round and round', 'earth is round the world', 'flies like an apple', 'hello world cup', 'hello world peace', 'high and low and behold', 'peace on earth is round', 'pie in the sky high', 'round and round the world', 'round the world cup', 'round the world peace', 'sky high and low', 'tea time flies', 'time flies like', 'time flies like an', 'world cup of tea', 'world peace on earth']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world peace', 'peace on earth', 'earth is round', 'round and round', 'round the world', 'world cup', 'cup of tea', 'tea time', 'time flies', 'flies like', 'flies like an', 'an apple', 'apple pie', 'pie in the sky', 'sky high', 'high and low', 'low and behold']) == ['an apple pie', 'apple pie in the sky', 'cup of tea time', 'earth is round and round', 'earth is round the world', 'flies like an apple', 'hello world cup', 'hello world peace', 'high and low and behold', 'peace on earth is round', 'pie in the sky high', 'round and round the world', 'round the world cup', 'round the world peace', 'sky high and low', 'tea time flies', 'time flies like', 'time flies like an', 'world cup of tea', 'world peace on earth']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start your engines', 'engines revving', 'revving up', 'up and running', 'running fast', 'fast and furious', 'furious racing', 'racing legends', 'legends told', 'told and retold']) == ['engines revving up', 'fast and furious racing', 'furious racing legends', 'legends told and retold', 'racing legends told', 'revving up and running', 'running fast and furious', 'start your engines revving', 'up and running fast']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start your engines', 'engines revving', 'revving up', 'up and running', 'running fast', 'fast and furious', 'furious racing', 'racing legends', 'legends told', 'told and retold']) == ['engines revving up', 'fast and furious racing', 'furious racing legends', 'legends told and retold', 'racing legends told', 'revving up and running', 'running fast and furious', 'start your engines revving', 'up and running fast']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon a time', 'time flies', 'flies like an arrow', 'arrow of time', 'time and tide', 'tide turns', 'turns the wheel', 'wheel of fortune']) == ['arrow of time and tide', 'arrow of time flies', 'flies like an arrow of time', 'once upon a time and tide', 'once upon a time flies', 'tide turns the wheel', 'time and tide turns', 'time flies like an arrow', 'turns the wheel of fortune']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon a time', 'time flies', 'flies like an arrow', 'arrow of time', 'time and tide', 'tide turns', 'turns the wheel', 'wheel of fortune']) == ['arrow of time and tide', 'arrow of time flies', 'flies like an arrow of time', 'once upon a time and tide', 'once upon a time flies', 'tide turns the wheel', 'time and tide turns', 'time flies like an arrow', 'turns the wheel of fortune']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['repeat repeat', 'repeat', 'word word word', 'word', 'same same same', 'same', 'example example', 'example']) == ['example example', 'repeat repeat', 'same same same', 'word word word']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['repeat repeat', 'repeat', 'word word word', 'word', 'same same same', 'same', 'example example', 'example']) == ['example example', 'repeat repeat', 'same same same', 'word word word']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a', 'a a', 'a a a', 'a a a a', 'a a a a a', 'a a a a a a']) == ['a a', 'a a a', 'a a a a', 'a a a a a', 'a a a a a a', 'a a a a a a a', 'a a a a a a a a', 'a a a a a a a a a', 'a a a a a a a a a a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a', 'a a', 'a a a', 'a a a a', 'a a a a a', 'a a a a a a']) == ['a a', 'a a a', 'a a a a', 'a a a a a', 'a a a a a a', 'a a a a a a a', 'a a a a a a a a', 'a a a a a a a a a', 'a a a a a a a a a a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world is round', 'round the clock', 'clock strikes', 'strikes at midnight', 'midnight is dark', 'dark and stormy', 'stormy night']) == ['clock strikes at midnight', 'dark and stormy night', 'hello world is round', 'midnight is dark and stormy', 'round the clock strikes', 'strikes at midnight is dark', 'world is round the clock']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world is round', 'round the clock', 'clock strikes', 'strikes at midnight', 'midnight is dark', 'dark and stormy', 'stormy night']) == ['clock strikes at midnight', 'dark and stormy night', 'hello world is round', 'midnight is dark and stormy', 'round the clock strikes', 'strikes at midnight is dark', 'world is round the clock']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start over', 'over again', 'again and again', 'and again', 'again', 'the end', 'end of the world', 'world map', 'map of the world', 'the world', 'worldly affairs', 'affairs of state', 'state of the art', 'artificial intelligence', 'intelligence', 'intelligence quotient', 'quotient and remainder', 'remainder', 'remainder of the division']) == ['affairs of state of the art', 'again and again', 'and again', 'and again and again', 'artificial intelligence', 'artificial intelligence quotient', 'end of the world map', 'intelligence quotient', 'intelligence quotient and remainder', 'map of the world map', 'over again', 'over again and again', 'quotient and remainder', 'quotient and remainder of the division', 'remainder of the division', 'start over again', 'the end of the world', 'the world map', 'world map of the world', 'worldly affairs of state']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start over', 'over again', 'again and again', 'and again', 'again', 'the end', 'end of the world', 'world map', 'map of the world', 'the world', 'worldly affairs', 'affairs of state', 'state of the art', 'artificial intelligence', 'intelligence', 'intelligence quotient', 'quotient and remainder', 'remainder', 'remainder of the division']) == ['affairs of state of the art', 'again and again', 'and again', 'and again and again', 'artificial intelligence', 'artificial intelligence quotient', 'end of the world map', 'intelligence quotient', 'intelligence quotient and remainder', 'map of the world map', 'over again', 'over again and again', 'quotient and remainder', 'quotient and remainder of the division', 'remainder of the division', 'start over again', 'the end of the world', 'the world map', 'world map of the world', 'worldly affairs of state']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a tale of two cities', 'cities of the world', 'world peace', 'peaceful journey', 'journey through time', 'time capsule', 'capsule stuffed', 'stuffed animal', 'animal kingdom', 'kingdom hearts']) == ['a tale of two cities of the world', 'animal kingdom hearts', 'capsule stuffed animal', 'cities of the world peace', 'journey through time capsule', 'peaceful journey through time', 'stuffed animal kingdom', 'time capsule stuffed']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a tale of two cities', 'cities of the world', 'world peace', 'peaceful journey', 'journey through time', 'time capsule', 'capsule stuffed', 'stuffed animal', 'animal kingdom', 'kingdom hearts']) == ['a tale of two cities of the world', 'animal kingdom hearts', 'capsule stuffed animal', 'cities of the world peace', 'journey through time capsule', 'peaceful journey through time', 'stuffed animal kingdom', 'time capsule stuffed']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['beginning middle', 'middle end', 'end result', 'result is', 'is key', 'key to', 'to success', 'success is', 'is happiness', 'happiness begins']) == ['beginning middle end', 'end result is', 'is happiness begins', 'is key to', 'key to success', 'middle end result', 'result is happiness', 'result is key', 'success is happiness', 'success is key', 'to success is']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['beginning middle', 'middle end', 'end result', 'result is', 'is key', 'key to', 'to success', 'success is', 'is happiness', 'happiness begins']) == ['beginning middle end', 'end result is', 'is happiness begins', 'is key to', 'key to success', 'middle end result', 'result is happiness', 'result is key', 'success is happiness', 'success is key', 'to success is']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chased the', 'the quick brown fox jumps', 'jumps over the lazy', 'lazy dog barked at']) == ['dog chased the quick brown fox', 'dog chased the quick brown fox jumps', 'fox jumps over the lazy dog', 'jumps over the lazy dog barked at', 'over the lazy dog chased the', 'the quick brown fox jumps over', 'the quick brown fox jumps over the lazy']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chased the', 'the quick brown fox jumps', 'jumps over the lazy', 'lazy dog barked at']) == ['dog chased the quick brown fox', 'dog chased the quick brown fox jumps', 'fox jumps over the lazy dog', 'jumps over the lazy dog barked at', 'over the lazy dog chased the', 'the quick brown fox jumps over', 'the quick brown fox jumps over the lazy']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['start of something', 'something new', 'new era', 'era of peace', 'peace and love', 'love and harmony', 'harmony in the air']) == ['era of peace and love', 'love and harmony in the air', 'new era of peace', 'peace and love and harmony', 'something new era', 'start of something new']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['start of something', 'something new', 'new era', 'era of peace', 'peace and love', 'love and harmony', 'harmony in the air']) == ['era of peace and love', 'love and harmony in the air', 'new era of peace', 'peace and love and harmony', 'something new era', 'start of something new']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases the', 'the quick fox', 'lazy dog sleeps']) == ['dog chases the quick brown fox', 'dog chases the quick fox', 'fox jumps over the lazy dog', 'over the lazy dog chases the', 'the quick brown fox jumps over', 'the quick fox jumps over']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['the quick brown fox', 'fox jumps over', 'over the lazy dog', 'dog chases the', 'the quick fox', 'lazy dog sleeps']) == ['dog chases the quick brown fox', 'dog chases the quick fox', 'fox jumps over the lazy dog', 'over the lazy dog chases the', 'the quick brown fox jumps over', 'the quick fox jumps over']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world of wonders', 'wonders of the universe', 'universe is vast', 'vast and endless', 'endless possibilities', 'possibilities are endless', 'hello everyone']) == ['endless possibilities are endless', 'hello world of wonders', 'possibilities are endless possibilities', 'universe is vast and endless', 'vast and endless possibilities', 'wonders of the universe is vast', 'world of wonders of the universe']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world of wonders', 'wonders of the universe', 'universe is vast', 'vast and endless', 'endless possibilities', 'possibilities are endless', 'hello everyone']) == ['endless possibilities are endless', 'hello world of wonders', 'possibilities are endless possibilities', 'universe is vast and endless', 'vast and endless possibilities', 'wonders of the universe is vast', 'world of wonders of the universe']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'hello again', 'again and again', 'and again and again', 'worldwide web', 'web of lies', 'lies and deceit', 'deceitful dealings', 'dealings of the day', 'day to day']) == ['and again and again and again', 'dealings of the day to day', 'deceitful dealings of the day', 'hello again and again', 'hello world of wonders', 'web of lies and deceit', 'wonders of the world of wonders', 'world of wonders of the world', 'worldwide web of lies']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['hello world', 'world of wonders', 'wonders of the world', 'hello again', 'again and again', 'and again and again', 'worldwide web', 'web of lies', 'lies and deceit', 'deceitful dealings', 'dealings of the day', 'day to day']) == ['and again and again and again', 'dealings of the day to day', 'deceitful dealings of the day', 'hello again and again', 'hello world of wonders', 'web of lies and deceit', 'wonders of the world of wonders', 'world of wonders of the world', 'worldwide web of lies']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['apple banana', 'banana cherry', 'cherry date', 'date elderberry', 'elderberry fig', 'fig grape', 'grape honeydew', 'honeydew apple']) == ['apple banana cherry', 'banana cherry date', 'cherry date elderberry', 'date elderberry fig', 'elderberry fig grape', 'fig grape honeydew', 'grape honeydew apple', 'honeydew apple banana']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['apple banana', 'banana cherry', 'cherry date', 'date elderberry', 'elderberry fig', 'fig grape', 'grape honeydew', 'honeydew apple']) == ['apple banana cherry', 'banana cherry date', 'cherry date elderberry', 'date elderberry fig', 'elderberry fig grape', 'fig grape honeydew', 'grape honeydew apple', 'honeydew apple banana']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['a very long phrase that is intended to test the solution', 'solution for a very long phrase', 'long phrase that is', 'is intended to test', 'test the solution', 'phrase that is intended']) == ['a very long phrase that is intended to test the solution for a very long phrase', 'is intended to test the solution', 'long phrase that is intended to test', 'solution for a very long phrase that is intended', 'test the solution for a very long phrase']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['a very long phrase that is intended to test the solution', 'solution for a very long phrase', 'long phrase that is', 'is intended to test', 'test the solution', 'phrase that is intended']) == ['a very long phrase that is intended to test the solution for a very long phrase', 'is intended to test the solution', 'long phrase that is intended to test', 'solution for a very long phrase that is intended', 'test the solution for a very long phrase']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(phrases = ['once upon', 'upon a', 'a time', 'time in', 'in the', 'the woods', 'woods', 'woods and', 'and', 'and all', 'all that', 'that glitters', 'glitters is', 'is not', 'not gold', 'gold', 'gold dust', 'dust', 'dust in', 'in the', 'the wind', 'wind', 'wind and', 'and sand', 'sand', 'sand in', 'in the', 'the eyes', 'eyes']) == ['a time in', 'all that glitters', 'and all', 'and all that', 'and sand', 'and sand in', 'dust in', 'dust in the', 'glitters is not', 'gold dust', 'gold dust in', 'in the eyes', 'in the wind', 'in the woods', 'is not gold', 'not gold', 'not gold dust', 'once upon a', 'sand in', 'sand in the', 'that glitters is', 'the eyes', 'the wind', 'the wind and', 'the woods', 'the woods and', 'time in the', 'upon a time', 'wind and', 'wind and all', 'wind and sand', 'woods and', 'woods and all', 'woods and sand']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(phrases = ['once upon', 'upon a', 'a time', 'time in', 'in the', 'the woods', 'woods', 'woods and', 'and', 'and all', 'all that', 'that glitters', 'glitters is', 'is not', 'not gold', 'gold', 'gold dust', 'dust', 'dust in', 'in the', 'the wind', 'wind', 'wind and', 'and sand', 'sand', 'sand in', 'in the', 'the eyes', 'eyes']) == ['a time in', 'all that glitters', 'and all', 'and all that', 'and sand', 'and sand in', 'dust in', 'dust in the', 'glitters is not', 'gold dust', 'gold dust in', 'in the eyes', 'in the wind', 'in the woods', 'is not gold', 'not gold', 'not gold dust', 'once upon a', 'sand in', 'sand in the', 'that glitters is', 'the eyes', 'the wind', 'the wind and', 'the woods', 'the woods and', 'time in the', 'upon a time', 'wind and', 'wind and all', 'wind and sand', 'woods and', 'woods and all', 'woods and sand']: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(phrases = ['writing code', 'code rocks']) == ['writing code rocks']
@@ -68,3 +604,5 @@ def check(candidate):
     assert candidate(phrases = ['apple banana', 'banana cherry', 'cherry date', 'date elderberry', 'elderberry fig', 'fig grape', 'grape honeydew', 'honeydew apple']) == ['apple banana cherry', 'banana cherry date', 'cherry date elderberry', 'date elderberry fig', 'elderberry fig grape', 'fig grape honeydew', 'grape honeydew apple', 'honeydew apple banana']
     assert candidate(phrases = ['a very long phrase that is intended to test the solution', 'solution for a very long phrase', 'long phrase that is', 'is intended to test', 'test the solution', 'phrase that is intended']) == ['a very long phrase that is intended to test the solution for a very long phrase', 'is intended to test the solution', 'long phrase that is intended to test', 'solution for a very long phrase that is intended', 'test the solution for a very long phrase']
     assert candidate(phrases = ['once upon', 'upon a', 'a time', 'time in', 'in the', 'the woods', 'woods', 'woods and', 'and', 'and all', 'all that', 'that glitters', 'glitters is', 'is not', 'not gold', 'gold', 'gold dust', 'dust', 'dust in', 'in the', 'the wind', 'wind', 'wind and', 'and sand', 'sand', 'sand in', 'in the', 'the eyes', 'eyes']) == ['a time in', 'all that glitters', 'and all', 'and all that', 'and sand', 'and sand in', 'dust in', 'dust in the', 'glitters is not', 'gold dust', 'gold dust in', 'in the eyes', 'in the wind', 'in the woods', 'is not gold', 'not gold', 'not gold dust', 'once upon a', 'sand in', 'sand in the', 'that glitters is', 'the eyes', 'the wind', 'the wind and', 'the woods', 'the woods and', 'time in the', 'upon a time', 'wind and', 'wind and all', 'wind and sand', 'woods and', 'woods and all', 'woods and sand']
+
+

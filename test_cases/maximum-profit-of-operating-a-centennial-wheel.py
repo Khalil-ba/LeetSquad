@@ -1,5 +1,453 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 50, 50, 50, 50],boardingCost = 100,runningCost = 1) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 50, 50, 50, 50],boardingCost = 100,runningCost = 1) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [5, 5, 0, 8, 2],boardingCost = 6,runningCost = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [5, 5, 0, 8, 2],boardingCost = 6,runningCost = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0],boardingCost = 1,runningCost = 1) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0],boardingCost = 1,runningCost = 1) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 1,runningCost = 2) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 1,runningCost = 2) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0],boardingCost = 10,runningCost = 5) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0],boardingCost = 10,runningCost = 5) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 9, 6],boardingCost = 6,runningCost = 4) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 9, 6],boardingCost = 6,runningCost = 4) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0],boardingCost = 10,runningCost = 1) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0],boardingCost = 10,runningCost = 1) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [8, 3],boardingCost = 5,runningCost = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [8, 3],boardingCost = 5,runningCost = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0],boardingCost = 1,runningCost = 10) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0],boardingCost = 1,runningCost = 10) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0],boardingCost = 5,runningCost = 1) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0],boardingCost = 5,runningCost = 1) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 50, 50, 50],boardingCost = 2,runningCost = 1) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 50, 50, 50],boardingCost = 2,runningCost = 1) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 50, 50, 50, 50],boardingCost = 10,runningCost = 1) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 50, 50, 50, 50],boardingCost = 10,runningCost = 1) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [3, 4, 0, 5, 1],boardingCost = 1,runningCost = 92) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [3, 4, 0, 5, 1],boardingCost = 1,runningCost = 92) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [5, 5, 0, 8, 7, 1, 4, 7, 3, 23],boardingCost = 43,runningCost = 59) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [5, 5, 0, 8, 7, 1, 4, 7, 3, 23],boardingCost = 43,runningCost = 59) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 10, 10, 10, 10],boardingCost = 5,runningCost = 4) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 10, 10, 10, 10],boardingCost = 5,runningCost = 4) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 50, 50, 50, 50],boardingCost = 100,runningCost = 50) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 50, 50, 50, 50],boardingCost = 100,runningCost = 50) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49],boardingCost = 1,runningCost = 1) == 343
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49],boardingCost = 1,runningCost = 1) == 343: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],boardingCost = 5,runningCost = 3) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],boardingCost = 5,runningCost = 3) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 10, 0, 10, 0, 10, 0, 10, 0, 10],boardingCost = 1,runningCost = 99) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 10, 0, 10, 0, 10, 0, 10, 0, 10],boardingCost = 1,runningCost = 99) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0],boardingCost = 10,runningCost = 20) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0, 50, 0],boardingCost = 10,runningCost = 20) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boardingCost = 1,runningCost = 2) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boardingCost = 1,runningCost = 2) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 0, 0, 10, 0, 0, 10, 0, 0, 10],boardingCost = 6,runningCost = 4) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 0, 0, 10, 0, 0, 10, 0, 0, 10],boardingCost = 6,runningCost = 4) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],boardingCost = 3,runningCost = 15) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],boardingCost = 3,runningCost = 15) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],boardingCost = 2,runningCost = 1) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],boardingCost = 2,runningCost = 1) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 100],boardingCost = 5,runningCost = 4) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 100],boardingCost = 5,runningCost = 4) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],boardingCost = 5,runningCost = 8) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],boardingCost = 5,runningCost = 8) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],boardingCost = 2,runningCost = 3) == 53
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],boardingCost = 2,runningCost = 3) == 53: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 1,runningCost = 1) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 1,runningCost = 1) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boardingCost = 10,runningCost = 5) == 138
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boardingCost = 10,runningCost = 5) == 138: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100],boardingCost = 5,runningCost = 1) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100],boardingCost = 5,runningCost = 1) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 20, 30, 40, 50],boardingCost = 50,runningCost = 1) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 20, 30, 40, 50],boardingCost = 50,runningCost = 1) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 20, 15, 5, 25],boardingCost = 4,runningCost = 7) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 20, 15, 5, 25],boardingCost = 4,runningCost = 7) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [20, 10, 0, 30, 10, 0, 40, 10, 0, 50],boardingCost = 20,runningCost = 10) == 43
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [20, 10, 0, 30, 10, 0, 40, 10, 0, 50],boardingCost = 20,runningCost = 10) == 43: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [30, 0, 10, 40, 20],boardingCost = 3,runningCost = 5) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [30, 0, 10, 40, 20],boardingCost = 3,runningCost = 5) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 0, 50, 0, 50, 0, 50, 0, 50, 0],boardingCost = 10,runningCost = 5) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 0, 50, 0, 50, 0, 50, 0, 50, 0],boardingCost = 10,runningCost = 5) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 20, 30, 40, 50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100, 95, 85, 75, 65, 55, 45, 35, 25, 15, 5],boardingCost = 10,runningCost = 20) == 337
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 20, 30, 40, 50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100, 95, 85, 75, 65, 55, 45, 35, 25, 15, 5],boardingCost = 10,runningCost = 20) == 337: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 1,runningCost = 5) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 1,runningCost = 5) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],boardingCost = 1,runningCost = 1) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],boardingCost = 1,runningCost = 1) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [30, 20, 10, 0, 0, 0, 0, 0, 0, 0],boardingCost = 3,runningCost = 10) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [30, 20, 10, 0, 0, 0, 0, 0, 0, 0],boardingCost = 3,runningCost = 10) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [45, 50, 55, 60, 65, 70, 75, 80, 85, 90],boardingCost = 15,runningCost = 12) == 169
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [45, 50, 55, 60, 65, 70, 75, 80, 85, 90],boardingCost = 15,runningCost = 12) == 169: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 1,runningCost = 2) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 1,runningCost = 2) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 20, 30, 40, 50],boardingCost = 1,runningCost = 95) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 20, 30, 40, 50],boardingCost = 1,runningCost = 95) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],boardingCost = 5,runningCost = 4) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],boardingCost = 5,runningCost = 4) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],boardingCost = 2,runningCost = 3) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],boardingCost = 2,runningCost = 3) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 10,runningCost = 90) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [100, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 10,runningCost = 90) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [4, 3, 2, 1, 0, 0, 0, 0, 0, 0],boardingCost = 50,runningCost = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [4, 3, 2, 1, 0, 0, 0, 0, 0, 0],boardingCost = 50,runningCost = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 10,runningCost = 20) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 10,runningCost = 20) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40],boardingCost = 1,runningCost = 1) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40],boardingCost = 1,runningCost = 1) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 2,runningCost = 3) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boardingCost = 2,runningCost = 3) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],boardingCost = 5,runningCost = 4) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],boardingCost = 5,runningCost = 4) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [2, 5, 3, 1, 4, 6, 2, 3, 5, 1, 4, 2, 3, 6, 5, 1, 4, 2, 3, 6, 5],boardingCost = 3,runningCost = 5) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [2, 5, 3, 1, 4, 6, 2, 3, 5, 1, 4, 2, 3, 6, 5, 1, 4, 2, 3, 6, 5],boardingCost = 3,runningCost = 5) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [15, 25, 35, 45, 55],boardingCost = 10,runningCost = 8) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [15, 25, 35, 45, 55],boardingCost = 10,runningCost = 8) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 5,runningCost = 4) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 5,runningCost = 4) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [50, 25, 50, 25, 50, 25, 50, 25, 50, 25],boardingCost = 4,runningCost = 10) == 94
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [50, 25, 50, 25, 50, 25, 50, 25, 50, 25],boardingCost = 4,runningCost = 10) == 94: {e}')
+    
+    total += 1
+    try:
+        result = candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 5,runningCost = 6) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 5,runningCost = 6) == -1: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(customers = [50, 50, 50, 50, 50],boardingCost = 100,runningCost = 1) == 63
@@ -57,3 +505,5 @@ def check(candidate):
     assert candidate(customers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boardingCost = 5,runningCost = 4) == 20
     assert candidate(customers = [50, 25, 50, 25, 50, 25, 50, 25, 50, 25],boardingCost = 4,runningCost = 10) == 94
     assert candidate(customers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],boardingCost = 5,runningCost = 6) == -1
+
+

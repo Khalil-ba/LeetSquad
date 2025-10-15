@@ -1,5 +1,645 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 4,connections = [[1, 2, 3], [3, 4, 4]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,connections = [[1, 2, 3], [3, 4, 4]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,connections = [[1, 2, 5], [1, 3, 6], [2, 3, 1]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,connections = [[1, 2, 5], [1, 3, 6], [2, 3, 1]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,connections = [[1, 2, 5]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,connections = [[1, 2, 5]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 10], [1, 3, 9], [1, 4, 8], [1, 5, 7], [1, 6, 6], [1, 7, 5], [1, 8, 4], [1, 9, 3], [1, 10, 2], [1, 11, 1], [1, 12, 0]]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 10], [1, 3, 9], [1, 4, 8], [1, 5, 7], [1, 6, 6], [1, 7, 5], [1, 8, 4], [1, 9, 3], [1, 10, 2], [1, 11, 1], [1, 12, 0]]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 15], [1, 4, 5], [2, 4, 10], [2, 3, 8], [3, 4, 9], [4, 5, 20], [5, 6, 7], [5, 7, 12], [6, 7, 18]]) == 61
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 15], [1, 4, 5], [2, 4, 10], [2, 3, 8], [3, 4, 9], [4, 5, 20], [5, 6, 7], [5, 7, 12], [6, 7, 18]]) == 61: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 3], [1, 3, 3], [1, 4, 5], [2, 3, 2], [2, 4, 3], [3, 5, 4], [4, 5, 2], [4, 6, 1], [5, 7, 1], [6, 7, 1], [7, 8, 2], [8, 9, 2], [9, 6, 3]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 3], [1, 3, 3], [1, 4, 5], [2, 3, 2], [2, 4, 3], [3, 5, 4], [4, 5, 2], [4, 6, 1], [5, 7, 1], [6, 7, 1], [7, 8, 2], [8, 9, 2], [9, 6, 3]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 100], [1, 3, 200], [2, 3, 50], [4, 5, 20], [5, 6, 15], [4, 6, 10], [3, 7, 80], [6, 7, 30]]) == 285
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 100], [1, 3, 200], [2, 3, 50], [4, 5, 20], [5, 6, 15], [4, 6, 10], [3, 7, 80], [6, 7, 30]]) == 285: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 1, 7]]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 1, 7]]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 5], [1, 3, 3], [1, 4, 7], [2, 3, 2], [2, 5, 4], [3, 4, 8], [3, 5, 6], [4, 5, 1], [1, 5, 9], [2, 4, 10], [3, 6, 11], [4, 7, 12], [5, 8, 13], [6, 9, 14], [7, 10, 15], [8, 9, 16], [9, 10, 17], [1, 6, 18], [2, 7, 19], [3, 8, 20], [4, 9, 21], [5, 10, 22], [6, 7, 23], [7, 8, 24], [8, 10, 25]]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 5], [1, 3, 3], [1, 4, 7], [2, 3, 2], [2, 5, 4], [3, 4, 8], [3, 5, 6], [4, 5, 1], [1, 5, 9], [2, 4, 10], [3, 6, 11], [4, 7, 12], [5, 8, 13], [6, 9, 14], [7, 10, 15], [8, 9, 16], [9, 10, 17], [1, 6, 18], [2, 7, 19], [3, 8, 20], [4, 9, 21], [5, 10, 22], [6, 7, 23], [7, 8, 24], [8, 10, 25]]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 15]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 15]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 100], [2, 3, 101], [3, 4, 102], [4, 5, 103], [5, 6, 104], [6, 7, 105], [7, 8, 106], [8, 9, 107], [9, 10, 108], [10, 11, 109], [11, 12, 110], [12, 1, 111], [1, 3, 1], [2, 4, 2], [3, 5, 3], [4, 6, 4], [5, 7, 5], [6, 8, 6], [7, 9, 7], [8, 10, 8], [9, 11, 9], [10, 12, 10]]) == 155
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 100], [2, 3, 101], [3, 4, 102], [4, 5, 103], [5, 6, 104], [6, 7, 105], [7, 8, 106], [8, 9, 107], [9, 10, 108], [10, 11, 109], [11, 12, 110], [12, 1, 111], [1, 3, 1], [2, 4, 2], [3, 5, 3], [4, 6, 4], [5, 7, 5], [6, 8, 6], [7, 9, 7], [8, 10, 8], [9, 11, 9], [10, 12, 10]]) == 155: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 30], [4, 5, 40], [5, 6, 50], [6, 7, 60], [7, 8, 70], [8, 9, 80], [9, 10, 90], [10, 11, 100], [11, 12, 110], [1, 12, 120]]) == 660
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 30], [4, 5, 40], [5, 6, 50], [6, 7, 60], [7, 8, 70], [8, 9, 80], [9, 10, 90], [10, 11, 100], [11, 12, 110], [1, 12, 120]]) == 660: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 15], [1, 3, 20], [2, 3, 5], [4, 5, 10], [5, 6, 2], [4, 6, 8]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 15], [1, 3, 20], [2, 3, 5], [4, 5, 10], [5, 6, 2], [4, 6, 8]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12], [13, 1, 13]]) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12], [13, 1, 13]]) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 50], [1, 3, 60], [2, 3, 10], [2, 4, 70], [3, 5, 20], [4, 5, 30], [5, 6, 40], [6, 7, 50], [7, 8, 60], [8, 9, 70], [9, 10, 80], [1, 10, 90]]) == 410
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 50], [1, 3, 60], [2, 3, 10], [2, 4, 70], [3, 5, 20], [4, 5, 30], [5, 6, 40], [6, 7, 50], [7, 8, 60], [8, 9, 70], [9, 10, 80], [1, 10, 90]]) == 410: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 1, 9]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 1, 9]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 10], [1, 3, 20], [2, 3, 5], [2, 4, 15], [3, 5, 25], [4, 5, 30], [5, 6, 40], [6, 7, 50], [7, 8, 60], [8, 9, 70], [9, 10, 80], [10, 11, 90], [11, 12, 100], [12, 1, 110]]) == 545
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 10], [1, 3, 20], [2, 3, 5], [2, 4, 15], [3, 5, 25], [4, 5, 30], [5, 6, 40], [6, 7, 50], [7, 8, 60], [8, 9, 70], [9, 10, 80], [10, 11, 90], [11, 12, 100], [12, 1, 110]]) == 545: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 4, 7], [4, 5, 9], [4, 6, 10], [5, 6, 14], [6, 7, 2], [5, 7, 10], [6, 8, 2], [7, 8, 6], [8, 9, 16], [7, 9, 14]]) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 4, 7], [4, 5, 9], [4, 6, 10], [5, 6, 14], [6, 7, 2], [5, 7, 10], [6, 8, 2], [7, 8, 6], [8, 9, 16], [7, 9, 14]]) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 10], [1, 3, 20], [2, 4, 30], [3, 4, 40], [4, 5, 50], [5, 6, 60], [6, 7, 70], [1, 7, 80]]) == 240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 10], [1, 3, 20], [2, 4, 30], [3, 4, 40], [4, 5, 50], [5, 6, 60], [6, 7, 70], [1, 7, 80]]) == 240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 10], [1, 3, 50], [2, 3, 100], [4, 5, 20], [5, 6, 30], [4, 6, 40], [7, 8, 1], [8, 9, 2], [9, 10, 3], [10, 11, 4], [11, 12, 5], [4, 7, 60]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 10], [1, 3, 50], [2, 3, 100], [4, 5, 20], [5, 6, 30], [4, 6, 40], [7, 8, 1], [8, 9, 2], [9, 10, 3], [10, 11, 4], [11, 12, 5], [4, 7, 60]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [1, 9, 1]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [1, 9, 1]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [1, 6, 10]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [1, 6, 10]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [9, 10, 10]]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [9, 10, 10]]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 2], [1, 3, 4], [2, 4, 3], [3, 5, 7], [4, 6, 5], [5, 7, 6], [6, 8, 8]]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 2], [1, 3, 4], [2, 4, 3], [3, 5, 7], [4, 6, 5], [5, 7, 6], [6, 8, 8]]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 100], [2, 3, 200], [3, 4, 300], [4, 5, 400], [5, 6, 500], [6, 7, 600], [7, 8, 700], [8, 9, 800], [1, 3, 150], [2, 4, 250], [3, 5, 350], [4, 6, 450], [5, 7, 550], [6, 8, 650], [7, 9, 750], [1, 4, 200], [2, 5, 300], [3, 6, 400], [4, 7, 500], [5, 8, 600], [6, 9, 700]]) == 2950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 100], [2, 3, 200], [3, 4, 300], [4, 5, 400], [5, 6, 500], [6, 7, 600], [7, 8, 700], [8, 9, 800], [1, 3, 150], [2, 4, 250], [3, 5, 350], [4, 6, 450], [5, 7, 550], [6, 8, 650], [7, 9, 750], [1, 4, 200], [2, 5, 300], [3, 6, 400], [4, 7, 500], [5, 8, 600], [6, 9, 700]]) == 2950: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [1, 10, 10], [1, 10, 20]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [1, 10, 10], [1, 10, 20]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 4, 7], [4, 5, 9], [4, 6, 10], [5, 6, 14], [6, 7, 2], [5, 7, 10], [6, 8, 2], [7, 8, 6], [8, 9, 16], [7, 9, 14], [9, 10, 5], [10, 11, 3], [11, 12, 6], [12, 13, 4], [13, 14, 8], [14, 15, 1], [15, 10, 7], [11, 13, 9], [12, 14, 11], [13, 15, 6]]) == 81
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 4, 7], [4, 5, 9], [4, 6, 10], [5, 6, 14], [6, 7, 2], [5, 7, 10], [6, 8, 2], [7, 8, 6], [8, 9, 16], [7, 9, 14], [9, 10, 5], [10, 11, 3], [11, 12, 6], [12, 13, 4], [13, 14, 8], [14, 15, 1], [15, 10, 7], [11, 13, 9], [12, 14, 11], [13, 15, 6]]) == 81: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [1, 9, 5]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [1, 9, 5]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 5], [2, 3, 4], [3, 4, 3], [4, 5, 2], [5, 6, 1], [6, 7, 7]]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 5], [2, 3, 4], [3, 4, 3], [4, 5, 2], [5, 6, 1], [6, 7, 7]]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12]]) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12]]) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,connections = [[1, 2, 10], [2, 3, 9], [3, 4, 8], [4, 5, 7], [5, 6, 6], [6, 7, 5], [7, 8, 4], [8, 9, 3], [9, 10, 2], [10, 11, 1], [11, 12, 7], [12, 13, 8], [13, 14, 9]]) == 79
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,connections = [[1, 2, 10], [2, 3, 9], [3, 4, 8], [4, 5, 7], [5, 6, 6], [6, 7, 5], [7, 8, 4], [8, 9, 3], [9, 10, 2], [10, 11, 1], [11, 12, 7], [12, 13, 8], [13, 14, 9]]) == 79: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 30], [4, 5, 40], [5, 6, 50], [6, 7, 60], [7, 8, 70], [8, 9, 80], [9, 10, 90], [10, 11, 100], [11, 12, 110], [12, 13, 120], [13, 14, 130], [14, 15, 140]]) == 1050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 30], [4, 5, 40], [5, 6, 50], [6, 7, 60], [7, 8, 70], [8, 9, 80], [9, 10, 90], [10, 11, 100], [11, 12, 110], [12, 13, 120], [13, 14, 130], [14, 15, 140]]) == 1050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 15], [4, 5, 5], [5, 6, 25], [1, 6, 30]]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [2, 3, 20], [3, 4, 15], [4, 5, 5], [5, 6, 25], [1, 6, 30]]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 5, 7], [4, 5, 2], [4, 6, 7], [5, 6, 4], [6, 7, 14], [6, 8, 9], [7, 8, 10], [5, 9, 5], [8, 9, 6]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 4], [1, 3, 8], [2, 3, 11], [2, 4, 8], [3, 5, 7], [4, 5, 2], [4, 6, 7], [5, 6, 4], [6, 7, 14], [6, 8, 9], [7, 8, 10], [5, 9, 5], [8, 9, 6]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 15], [1, 3, 10], [2, 4, 5], [3, 5, 20], [4, 5, 7], [4, 6, 9]]) == 46
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 15], [1, 3, 10], [2, 4, 5], [3, 5, 20], [4, 5, 7], [4, 6, 9]]) == 46: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 1, 5]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 1, 5]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5], [4, 5, 20], [5, 6, 15], [4, 6, 10]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5], [4, 5, 20], [5, 6, 15], [4, 6, 10]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 5], [1, 3, 15], [2, 3, 10], [2, 4, 6], [3, 4, 3], [4, 5, 8], [5, 6, 7]]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 5], [1, 3, 15], [2, 3, 10], [2, 4, 6], [3, 4, 3], [4, 5, 8], [5, 6, 7]]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 10], [2, 3, 12], [3, 4, 9], [4, 5, 8], [5, 6, 7], [6, 7, 6], [7, 8, 5], [8, 1, 4]]) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 10], [2, 3, 12], [3, 4, 9], [4, 5, 8], [5, 6, 7], [6, 7, 6], [7, 8, 5], [8, 1, 4]]) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 5], [2, 3, 6], [3, 4, 7], [4, 5, 8], [5, 6, 9], [1, 6, 10]]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 5], [2, 3, 6], [3, 4, 7], [4, 5, 8], [5, 6, 9], [1, 6, 10]]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 1], [1, 3, 2], [2, 4, 5], [3, 4, 7], [4, 5, 3], [5, 6, 1], [6, 7, 8], [7, 8, 9], [8, 9, 4], [9, 10, 5], [10, 11, 3], [11, 12, 6], [12, 1, 7], [2, 5, 2], [3, 6, 4], [7, 10, 10]]) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 1], [1, 3, 2], [2, 4, 5], [3, 4, 7], [4, 5, 3], [5, 6, 1], [6, 7, 8], [7, 8, 9], [8, 9, 4], [9, 10, 5], [10, 11, 3], [11, 12, 6], [12, 1, 7], [2, 5, 2], [3, 6, 4], [7, 10, 10]]) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [1, 10, 10]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [1, 10, 10]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 5], [1, 3, 4], [2, 3, 3], [4, 5, 2], [4, 6, 6], [5, 6, 1], [5, 7, 7], [6, 7, 8]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 5], [1, 3, 4], [2, 3, 3], [4, 5, 2], [4, 6, 6], [5, 6, 1], [5, 7, 7], [6, 7, 8]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,connections = [[1, 2, 10], [2, 3, 9], [3, 4, 8], [4, 5, 7], [5, 6, 6], [6, 7, 5], [7, 8, 4], [8, 9, 3], [9, 10, 2], [10, 11, 1]]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,connections = [[1, 2, 10], [2, 3, 9], [3, 4, 8], [4, 5, 7], [5, 6, 6], [6, 7, 5], [7, 8, 4], [8, 9, 3], [9, 10, 2], [10, 11, 1]]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 5], [2, 3, 3], [3, 4, 7], [4, 5, 2], [5, 6, 6], [6, 7, 8], [7, 8, 9], [8, 9, 10]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 5], [2, 3, 3], [3, 4, 7], [4, 5, 2], [5, 6, 6], [6, 7, 8], [7, 8, 9], [8, 9, 10]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1], [5, 6, 1], [6, 7, 1], [7, 8, 1], [1, 8, 1]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1], [5, 6, 1], [6, 7, 1], [7, 8, 1], [1, 8, 1]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5], [2, 4, 6], [3, 4, 15], [4, 5, 20], [5, 6, 25]]) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [1, 3, 30], [2, 3, 5], [2, 4, 6], [3, 4, 15], [4, 5, 20], [5, 6, 25]]) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 100], [1, 3, 200], [2, 3, 150], [4, 5, 300], [4, 6, 100], [5, 6, 200], [6, 7, 50]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 100], [1, 3, 200], [2, 3, 150], [4, 5, 300], [4, 6, 100], [5, 6, 200], [6, 7, 50]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 15], [4, 5, 20], [5, 6, 25], [6, 7, 30], [1, 7, 35], [2, 6, 40], [3, 5, 45]]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 15], [4, 5, 20], [5, 6, 25], [6, 7, 30], [1, 7, 35], [2, 6, 40], [3, 5, 45]]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 10, 10], [10, 11, 10], [1, 11, 10]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 10, 10], [10, 11, 10], [1, 11, 10]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 20], [2, 3, 10], [3, 4, 15], [4, 5, 30], [5, 6, 25], [6, 7, 5], [7, 8, 10], [8, 9, 20], [9, 1, 40], [2, 4, 25], [3, 5, 35], [4, 6, 30], [5, 7, 20], [6, 8, 15], [7, 9, 10], [8, 1, 25], [9, 2, 30]]) == 115
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 20], [2, 3, 10], [3, 4, 15], [4, 5, 30], [5, 6, 25], [6, 7, 5], [7, 8, 10], [8, 9, 20], [9, 1, 40], [2, 4, 25], [3, 5, 35], [4, 6, 30], [5, 7, 20], [6, 8, 15], [7, 9, 10], [8, 1, 25], [9, 2, 30]]) == 115: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 1], [1, 3, 3], [2, 3, 2], [3, 4, 4], [4, 5, 5], [5, 6, 6]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 1], [1, 3, 3], [2, 3, 2], [3, 4, 4], [4, 5, 5], [5, 6, 6]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 4], [2, 3, 6], [3, 4, 5], [4, 5, 7], [5, 6, 1], [6, 7, 9], [1, 7, 3]]) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 4], [2, 3, 6], [3, 4, 5], [4, 5, 7], [5, 6, 1], [6, 7, 9], [1, 7, 3]]) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,connections = [[1, 2, 1], [1, 3, 2], [2, 3, 4], [2, 4, 5], [3, 5, 6], [4, 5, 3]]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,connections = [[1, 2, 1], [1, 3, 2], [2, 3, 4], [2, 4, 5], [3, 5, 6], [4, 5, 3]]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 10], [1, 3, 20], [2, 4, 30], [3, 5, 40], [4, 6, 50], [5, 7, 60], [6, 8, 70], [7, 9, 80], [8, 10, 90]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 10], [1, 3, 20], [2, 4, 30], [3, 5, 40], [4, 6, 50], [5, 7, 60], [6, 8, 70], [7, 9, 80], [8, 10, 90]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 15], [4, 5, 20], [5, 6, 25], [6, 7, 30], [7, 8, 35], [8, 9, 40], [9, 10, 45]]) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 15], [4, 5, 20], [5, 6, 25], [6, 7, 30], [7, 8, 35], [8, 9, 40], [9, 10, 45]]) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,connections = [[1, 2, 2], [1, 3, 4], [2, 3, 1], [2, 4, 3], [2, 5, 5], [3, 6, 6], [4, 5, 10], [5, 6, 7], [5, 7, 9]]) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,connections = [[1, 2, 2], [1, 3, 4], [2, 3, 1], [2, 4, 3], [2, 5, 5], [3, 6, 6], [4, 5, 10], [5, 6, 7], [5, 7, 9]]) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,connections = [[1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [5, 6, 30], [6, 7, 35], [7, 8, 40], [8, 9, 45], [9, 10, 50], [10, 11, 55], [1, 11, 60], [2, 10, 65], [3, 9, 70], [4, 8, 75], [5, 7, 80], [6, 8, 85], [7, 9, 90], [8, 10, 95], [9, 11, 100], [1, 9, 105], [2, 8, 110], [3, 7, 115], [4, 6, 120], [5, 11, 125]]) == 325
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,connections = [[1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [5, 6, 30], [6, 7, 35], [7, 8, 40], [8, 9, 45], [9, 10, 50], [10, 11, 55], [1, 11, 60], [2, 10, 65], [3, 9, 70], [4, 8, 75], [5, 7, 80], [6, 8, 85], [7, 9, 90], [8, 10, 95], [9, 11, 100], [1, 9, 105], [2, 8, 110], [3, 7, 115], [4, 6, 120], [5, 11, 125]]) == 325: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5], [10, 1, 5], [1, 3, 10], [3, 5, 10], [5, 7, 10], [7, 9, 10]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5], [10, 1, 5], [1, 3, 10], [3, 5, 10], [5, 7, 10], [7, 9, 10]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 1], [4, 5, 6], [5, 6, 7], [6, 7, 8], [7, 8, 9], [8, 9, 10], [9, 1, 15]]) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 5], [2, 3, 10], [3, 4, 1], [4, 5, 6], [5, 6, 7], [6, 7, 8], [7, 8, 9], [8, 9, 10], [9, 1, 15]]) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,connections = [[1, 2, 1], [1, 3, 2], [1, 4, 3], [2, 4, 4], [3, 4, 5], [4, 5, 6], [5, 6, 7], [6, 7, 8], [7, 8, 9], [8, 9, 10], [9, 10, 11], [10, 11, 12], [11, 1, 13]]) == 69
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,connections = [[1, 2, 1], [1, 3, 2], [1, 4, 3], [2, 4, 4], [3, 4, 5], [4, 5, 6], [5, 6, 7], [6, 7, 8], [7, 8, 9], [8, 9, 10], [9, 10, 11], [10, 11, 12], [11, 1, 13]]) == 69: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,connections = [[1, 2, 2], [1, 3, 3], [2, 4, 1], [3, 4, 4], [4, 5, 5]]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,connections = [[1, 2, 2], [1, 3, 3], [2, 4, 1], [3, 4, 4], [4, 5, 5]]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 3], [2, 4, 4], [4, 6, 7], [6, 8, 9], [1, 3, 11], [3, 5, 8], [5, 7, 10], [2, 5, 6]]) == 47
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 3], [2, 4, 4], [4, 6, 7], [6, 8, 9], [1, 3, 11], [3, 5, 8], [5, 7, 10], [2, 5, 6]]) == 47: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 100], [2, 3, 200], [3, 4, 300], [4, 5, 400], [5, 6, 500], [6, 7, 600], [7, 8, 700], [8, 9, 800], [9, 10, 900]]) == 4500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 100], [2, 3, 200], [3, 4, 300], [4, 5, 400], [5, 6, 500], [6, 7, 600], [7, 8, 700], [8, 9, 800], [9, 10, 900]]) == 4500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 1, 8], [1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 1, 8], [1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 10]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 10]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 8], [2, 7, 9], [3, 6, 10], [4, 5, 11]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [1, 8, 8], [2, 7, 9], [3, 6, 10], [4, 5, 11]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [5, 6, 30], [1, 4, 35]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [5, 6, 30], [1, 4, 35]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [1, 9, 10]]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [1, 9, 10]]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,connections = [[1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1], [5, 6, 1], [6, 7, 1], [7, 8, 1], [8, 9, 1], [9, 10, 1], [10, 11, 1], [1, 11, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,connections = [[1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1], [5, 6, 1], [6, 7, 1], [7, 8, 1], [8, 9, 1], [9, 10, 1], [10, 11, 1], [1, 11, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,connections = [[1, 2, 20], [1, 3, 21], [2, 3, 22], [2, 4, 23], [3, 4, 24], [3, 5, 25], [4, 5, 26], [5, 6, 27], [6, 7, 28], [7, 8, 29], [8, 9, 30], [9, 10, 31], [10, 1, 32]]) == 234
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,connections = [[1, 2, 20], [1, 3, 21], [2, 3, 22], [2, 4, 23], [3, 4, 24], [3, 5, 25], [4, 5, 26], [5, 6, 27], [6, 7, 28], [7, 8, 29], [8, 9, 30], [9, 10, 31], [10, 1, 32]]) == 234: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12], [13, 14, 13], [14, 15, 14], [15, 16, 15], [16, 17, 16], [17, 18, 17], [18, 19, 18], [19, 20, 19]]) == 190
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 13, 12], [13, 14, 13], [14, 15, 14], [15, 16, 15], [16, 17, 16], [17, 18, 17], [18, 19, 18], [19, 20, 19]]) == 190: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,connections = [[1, 2, 1], [1, 3, 2], [2, 4, 3], [3, 5, 4], [4, 6, 5], [5, 7, 6], [6, 8, 7], [7, 9, 8]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,connections = [[1, 2, 1], [1, 3, 2], [2, 4, 3], [3, 5, 4], [4, 6, 5], [5, 7, 6], [6, 8, 7], [7, 9, 8]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,connections = [[1, 2, 10], [1, 3, 10], [2, 3, 5], [3, 4, 3], [4, 5, 2], [5, 6, 7], [6, 4, 8], [4, 1, 9], [2, 5, 15], [3, 6, 12]]) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,connections = [[1, 2, 10], [1, 3, 10], [2, 3, 5], [3, 4, 3], [4, 5, 2], [5, 6, 7], [6, 4, 8], [4, 1, 9], [2, 5, 15], [3, 6, 12]]) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 1, 12], [1, 3, 3], [2, 4, 4], [3, 5, 5], [4, 6, 6], [5, 7, 7], [6, 8, 8], [7, 9, 9], [8, 10, 10], [9, 11, 11], [10, 12, 12]]) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 1, 12], [1, 3, 3], [2, 4, 4], [3, 5, 5], [4, 6, 6], [5, 7, 7], [6, 8, 8], [7, 9, 9], [8, 10, 10], [9, 11, 11], [10, 12, 12]]) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,connections = [[1, 2, 2], [1, 4, 8], [1, 5, 5], [2, 3, 4], [2, 5, 6], [3, 4, 1], [3, 6, 5], [4, 6, 7], [5, 6, 8], [5, 7, 9], [6, 7, 10], [6, 8, 11], [7, 8, 12]]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,connections = [[1, 2, 2], [1, 4, 8], [1, 5, 5], [2, 3, 4], [2, 5, 6], [3, 4, 1], [3, 6, 5], [4, 6, 7], [5, 6, 8], [5, 7, 9], [6, 7, 10], [6, 8, 11], [7, 8, 12]]) == 37: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 4,connections = [[1, 2, 3], [3, 4, 4]]) == -1
@@ -81,3 +721,5 @@ def check(candidate):
     assert candidate(n = 6,connections = [[1, 2, 10], [1, 3, 10], [2, 3, 5], [3, 4, 3], [4, 5, 2], [5, 6, 7], [6, 4, 8], [4, 1, 9], [2, 5, 15], [3, 6, 12]]) == 26
     assert candidate(n = 12,connections = [[1, 2, 1], [2, 3, 2], [3, 4, 3], [4, 5, 4], [5, 6, 5], [6, 7, 6], [7, 8, 7], [8, 9, 8], [9, 10, 9], [10, 11, 10], [11, 12, 11], [12, 1, 12], [1, 3, 3], [2, 4, 4], [3, 5, 5], [4, 6, 6], [5, 7, 7], [6, 8, 8], [7, 9, 9], [8, 10, 10], [9, 11, 11], [10, 12, 12]]) == 66
     assert candidate(n = 8,connections = [[1, 2, 2], [1, 4, 8], [1, 5, 5], [2, 3, 4], [2, 5, 6], [3, 4, 1], [3, 6, 5], [4, 6, 7], [5, 6, 8], [5, 7, 9], [6, 7, 10], [6, 8, 11], [7, 8, 12]]) == 37
+
+

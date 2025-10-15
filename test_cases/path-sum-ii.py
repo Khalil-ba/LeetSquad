@@ -1,5 +1,325 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([0, 1, 1]),targetSum = 1) == [[0, 1], [0, 1]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([0, 1, 1]),targetSum = 1) == [[0, 1], [0, 1]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 45) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 45) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6]),targetSum = 21) == [[1, 2, 3, 4, 5, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6]),targetSum = 21) == [[1, 2, 3, 4, 5, 6]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([-2, None, -3]),targetSum = -5) == [[-2, -3]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([-2, None, -3]),targetSum = -5) == [[-2, -3]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 15) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 15) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3]),targetSum = 5) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3]),targetSum = 5) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1, -1]),targetSum = -1) == [[1, -2, 1, -1], [1, -2, 1, -1]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1, -1]),targetSum = -1) == [[1, -2, 1, -1], [1, -2, 1, -1]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 27) == [[5, 4, 11, 7]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 27) == [[5, 4, 11, 7]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, None, 4, None, 5, None, 6]),targetSum = 15) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, None, 4, None, 5, None, 6]),targetSum = 15) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, -3, 3, 2, None, 11, 3, -2, None, 1]),targetSum = 8) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, -3, 3, 2, None, 11, 3, -2, None, 1]),targetSum = 8) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, None, 18]),targetSum = 22) == [[10, 5, 7]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, None, 18]),targetSum = 22) == [[10, 5, 7]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]),targetSum = 15) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]),targetSum = 15) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2]),targetSum = 0) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2]),targetSum = 0) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 27) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 27) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([0, 0, 0, 0, 0]),targetSum = 0) == [[0, 0, 0], [0, 0, 0], [0, 0]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([0, 0, 0, 0, 0]),targetSum = 0) == [[0, 0, 0], [0, 0, 0], [0, 0]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1]),targetSum = 1) == [[1]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1]),targetSum = 1) == [[1]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([]),targetSum = 0) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([]),targetSum = 0) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 30) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 30) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15]),targetSum = -15) == [[-1, 2, -5, -11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15]),targetSum = -15) == [[-1, 2, -5, -11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, None, 18]),targetSum = 25) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, None, 18]),targetSum = 25) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, 12, 18]),targetSum = 25) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, 12, 18]),targetSum = 25) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 60) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 60) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1]),targetSum = 2) == [[1, -2, 3]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1]),targetSum = 2) == [[1, -2, 3]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5]),targetSum = 15) == [[1, 2, 3, 4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5]),targetSum = 15) == [[1, 2, 3, 4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([]),targetSum = 5) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([]),targetSum = 5) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 26) == [[5, 8, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 26) == [[5, 8, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([0, 1, 1]),targetSum = 0) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([0, 1, 1]),targetSum = 0) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5]),targetSum = 10) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5]),targetSum = 10) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 22) == [[5, 4, 11, 2], [5, 8, 4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 22) == [[5, 4, 11, 2], [5, 8, 4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 18) == [[5, 8, 4, 1]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 18) == [[5, 8, 4, 1]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 21) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1]),targetSum = 21) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 100) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),targetSum = 100) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1]),targetSum = 3) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, -2, -3, 1, 3, -2, None, -1]),targetSum = 3) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 9) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 9) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([100, 50, 150, 25, 75, 125, 175, 10, 30, 60, 80, 110, 140, 160, 190]),targetSum = 300) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([100, 50, 150, 25, 75, 125, 175, 10, 30, 60, 80, 110, 140, 160, 190]),targetSum = 300) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([8, 6, 10, 5, 7, 9, 11, 4, None, None, None, None, None, 3]),targetSum = 26) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([8, 6, 10, 5, 7, 9, 11, 4, None, None, None, None, None, 3]),targetSum = 26) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([100, 50, 150, 25, 75, 125, 175, 10, 40, 60, 90, 110, 140, 160, 190]),targetSum = 250) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([100, 50, 150, 25, 75, 125, 175, 10, 40, 60, 90, 110, 140, 160, 190]),targetSum = 250) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([]),targetSum = 1) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([]),targetSum = 1) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 10) == [[1, 3, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 10) == [[1, 3, 6]]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(root = tree_node([0, 1, 1]),targetSum = 1) == [[0, 1], [0, 1]]
@@ -41,3 +361,5 @@ def check(candidate):
     assert candidate(root = tree_node([100, 50, 150, 25, 75, 125, 175, 10, 40, 60, 90, 110, 140, 160, 190]),targetSum = 250) == []
     assert candidate(root = tree_node([]),targetSum = 1) == []
     assert candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7]),targetSum = 10) == [[1, 3, 6]]
+
+

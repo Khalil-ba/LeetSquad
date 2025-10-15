@@ -1,5 +1,549 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0], [0, 1, 1], [0, 1, 0]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0], [0, 1, 1], [0, 1, 0]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0], [0, 1, 0, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0], [0, 1, 0, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1], [1, 0, 0], [1, 0, 0]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1], [1, 0, 0], [1, 0, 0]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0], [0, 1, 0, 1], [1, 0, 0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0], [0, 1, 0, 1], [1, 0, 0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 1], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 1], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 1, 0, 1], [1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 1, 0, 1], [1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0]]) == 144
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0]]) == 144: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1]]) == 72
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1]]) == 72: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0]]) == 288
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0]]) == 288: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 0, 1], [1, 0, 1, 1, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 0, 1], [1, 0, 1, 1, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 1, 1], [1, 0, 0, 1], [1, 0, 0, 1], [1, 1, 1, 1]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 1, 1], [1, 0, 0, 1], [1, 0, 0, 1], [1, 1, 1, 1]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 1], [0, 0, 1, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 1, 0, 0, 1]]) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 1], [0, 0, 1, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 1, 0, 0, 1]]) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 0, 0, 1, 0, 1]]) == 109
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 0, 0, 1, 0, 1]]) == 109: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 1, 0, 1, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0]]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 1, 0, 1, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0]]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [0, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 1]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [0, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 1]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1], [1, 0, 0, 0, 1], [0, 1, 1, 1, 0]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1], [1, 0, 0, 0, 1], [0, 1, 1, 1, 0]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1], [0, 0, 1, 0, 1, 0], [1, 0, 0, 1, 0, 1], [0, 1, 0, 0, 1, 0], [1, 0, 1, 0, 0, 1]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1], [0, 0, 1, 0, 1, 0], [1, 0, 0, 1, 0, 1], [0, 1, 0, 0, 1, 0], [1, 0, 1, 0, 0, 1]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [0, 0, 0, 1, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [0, 0, 0, 1, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0, 1, 1], [0, 0, 1, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0]]) == 82
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0, 1, 1], [0, 0, 1, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0]]) == 82: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0]]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0]]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0, 0], [0, 1, 0, 1, 0, 0, 1], [0, 0, 1, 0, 1, 0, 0], [1, 0, 0, 0, 0, 1, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0, 0], [0, 1, 0, 1, 0, 0, 1], [0, 0, 1, 0, 1, 0, 0], [1, 0, 0, 0, 0, 1, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1]]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1]]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0]]) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0]]) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 1], [1, 1, 1, 1, 1], [1, 0, 1, 0, 1]]) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 1], [1, 1, 1, 1, 1], [1, 0, 1, 0, 1]]) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 1, 0, 0, 0], [0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 1, 0, 0, 0], [0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 1], [1, 0, 1, 1, 0, 1], [1, 0, 1, 1, 0, 1], [1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1]]) == 296
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 1], [1, 0, 1, 1, 0, 1], [1, 0, 1, 1, 0, 1], [1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1]]) == 296: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 0, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 0, 0, 1]]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 0, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 0, 0, 1]]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1], [1, 0, 0, 0, 1], [0, 1, 0, 0, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1], [1, 0, 0, 0, 1], [0, 1, 0, 0, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 0], [0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0], [0, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 0], [0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0], [0, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0], [0, 1, 1, 0], [1, 1, 1, 1], [0, 1, 1, 0], [0, 0, 0, 0]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0], [0, 1, 1, 0], [1, 1, 1, 1], [0, 1, 1, 0], [0, 0, 0, 0]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 1], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [1, 0, 0, 0, 1]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 1], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [1, 0, 0, 0, 1]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0]]) == 192
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0]]) == 192: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0], [0, 1, 1, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 1, 1], [0, 0, 0, 0, 1]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0], [0, 1, 1, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 1, 1], [0, 0, 0, 0, 1]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1], [0, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1], [0, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0], [0, 0, 1, 1, 0, 0], [0, 0, 1, 1, 0, 0], [0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 0, 1]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0], [0, 0, 1, 1, 0, 0], [0, 0, 1, 1, 0, 0], [0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 0, 1]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 1, 1], [0, 0, 1, 1, 1], [0, 0, 1, 1, 1]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 1, 1], [0, 0, 1, 1, 1], [0, 0, 1, 1, 1]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 1, 1, 0], [0, 1, 0, 0, 1], [1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 1, 0, 0, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 1, 1, 0], [0, 1, 0, 0, 1], [1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 1, 0, 0, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]]) == 144
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]]) == 144: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0], [0, 0, 1, 1, 0, 0], [0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 0, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0], [0, 0, 1, 1, 0, 0], [0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 0, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 0, 1, 0, 1], [1, 0, 0, 1, 0], [0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 0, 1, 0, 1], [1, 0, 0, 1, 0], [0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 1], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 1], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 1], [0, 1, 1, 0], [1, 0, 0, 1], [0, 1, 1, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 1], [0, 1, 1, 0], [1, 0, 0, 1], [0, 1, 1, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0], [1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0], [1, 1, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [0, 0, 1, 1, 0, 0], [1, 0, 0, 0, 1, 0], [0, 1, 0, 1, 0, 1]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [0, 0, 1, 1, 0, 0], [1, 0, 0, 0, 1, 0], [0, 1, 0, 1, 0, 1]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 1]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 1]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1]]) == 544
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0, 1, 0, 1]]) == 544: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 1, 0, 0, 0, 0, 0, 1], [1, 1, 0, 0, 0, 0, 0, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 1]]) == 108
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 1, 0, 0, 0, 0, 0, 1], [1, 1, 0, 0, 0, 0, 0, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 1]]) == 108: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[1, 0, 0, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[1, 0, 0, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grid = [[0, 1, 0, 1, 0], [1, 0, 0, 0, 1], [0, 1, 1, 0, 0], [0, 0, 0, 1, 0], [1, 0, 0, 0, 1]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grid = [[0, 1, 0, 1, 0], [1, 0, 0, 0, 1], [0, 1, 1, 0, 0], [0, 0, 0, 1, 0], [1, 0, 0, 0, 1]]) == 7: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(grid = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]) == 36
@@ -69,3 +613,5 @@ def check(candidate):
     assert candidate(grid = [[1, 1, 0, 0, 0, 0, 0, 1], [1, 1, 0, 0, 0, 0, 0, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 1, 1, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 1]]) == 108
     assert candidate(grid = [[1, 0, 0, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0], [0, 1, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0]]) == 36
     assert candidate(grid = [[0, 1, 0, 1, 0], [1, 0, 0, 0, 1], [0, 1, 1, 0, 0], [0, 0, 0, 1, 0], [1, 0, 0, 0, 1]]) == 7
+
+

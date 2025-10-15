@@ -1,5 +1,725 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 2,sy = 4,fx = 7,fy = 7,t = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 2,sy = 4,fx = 7,fy = 7,t = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 14) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 14) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000000000,sy = 1000000000,fx = 1000000000,fy = 1000000000,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000000000,sy = 1000000000,fx = 1000000000,fy = 1000000000,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 1,t = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 1,t = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 1000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 1000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 3,sy = 1,fx = 7,fy = 3,t = 3) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 3,sy = 1,fx = 7,fy = 3,t = 3) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1999999998) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1999999998) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 1) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 1) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 2000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 2000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 5,fy = 5,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 5,fy = 5,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 20,fy = 20,t = 21) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 20,fy = 20,t = 21) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 0,sy = 0,fx = 500000000,fy = 500000000,t = 999999999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 0,sy = 0,fx = 500000000,fy = 500000000,t = 999999999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 0) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 0) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 10,fy = 10,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 10,fy = 10,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 5,fy = 6,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 5,fy = 6,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000000000,sy = 1,fx = 1000000000,fy = 1,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000000000,sy = 1,fx = 1000000000,fy = 1,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 4,fy = 4,t = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 4,fy = 4,t = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 1000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 1000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000,sy = 1000,fx = 999,fy = 999,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000,sy = 1000,fx = 999,fy = 999,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 1,fy = 1,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 1,fy = 1,t = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 500000000,sy = 500000000,fx = 1,fy = 1,t = 999999998) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 500000000,sy = 500000000,fx = 1,fy = 1,t = 999999998) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 999999999,sy = 999999999,fx = 1,fy = 1,t = 1999999998) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 999999999,sy = 999999999,fx = 1,fy = 1,t = 1999999998) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 11) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 11) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 5,fy = 15,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 5,fy = 15,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 19) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 19) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 1) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 1) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 0,sy = 0,fx = 0,fy = 0,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 0,sy = 0,fx = 0,fy = 0,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 10,fy = 10,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 10,fy = 10,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 500,sy = 500,fx = 500,fy = 500,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 500,sy = 500,fx = 500,fy = 500,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 5,fy = 5,t = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 5,fy = 5,t = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 10,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 10,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 9,fy = 9,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 9,fy = 9,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 10,t = 9) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 10,t = 9) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 10,fy = 10,t = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 10,fy = 10,t = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 500000000,sy = 500000000,fx = 500000000,fy = 500000000,t = 1000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 500000000,sy = 500000000,fx = 500000000,fy = 500000000,t = 1000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 5,fy = 5,t = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 5,fy = 5,t = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 9) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 9) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 100,sy = 100,fx = 105,fy = 105,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 100,sy = 100,fx = 105,fy = 105,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 3,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 3,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 1,t = 9) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 1,t = 9) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000,sy = 1000,fx = 998,fy = 998,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000,sy = 1000,fx = 998,fy = 998,t = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 1,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 500000000,sy = 500000000,fx = 600000000,fy = 600000000,t = 100000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 500000000,sy = 500000000,fx = 600000000,fy = 600000000,t = 100000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 3,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 3,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 15,fy = 15,t = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 2,t = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 15,fy = 15,t = 18) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 15,fy = 15,t = 18) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 0,sy = 0,fx = 1,fy = 1,t = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 0,sy = 0,fx = 1,fy = 1,t = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 1,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 1,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1,fy = 3,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1,fy = 3,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 0,sy = 0,fx = 3,fy = 4,t = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 0,sy = 0,fx = 3,fy = 4,t = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 999999999,sy = 999999999,fx = 1000000000,fy = 1000000000,t = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 999999999,sy = 999999999,fx = 1000000000,fy = 1000000000,t = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 18) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 18) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 10,fy = 15,t = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 10,fy = 15,t = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 500,sy = 500,fx = 500,fy = 500,t = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 500,sy = 500,fx = 500,fy = 500,t = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 100,sy = 100,fx = 105,fy = 95,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 100,sy = 100,fx = 105,fy = 95,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000000000,sy = 1000000000,fx = 1000000000,fy = 1000000000,t = 1000000000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000000000,sy = 1000000000,fx = 1000000000,fy = 1000000000,t = 1000000000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000000000,sy = 1000000000,fx = 1,fy = 1,t = 1999999998) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000000000,sy = 1000000000,fx = 1,fy = 1,t = 1999999998) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1999999999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 1000000000,fy = 1000000000,t = 1999999999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 2,fy = 3,t = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 2,fy = 3,t = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 10,sy = 10,fx = 5,fy = 5,t = 9) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 10,sy = 10,fx = 5,fy = 5,t = 9) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 3,sy = 3,fx = 1,fy = 1,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 3,sy = 3,fx = 1,fy = 1,t = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 5,sy = 5,fx = 5,fy = 5,t = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 1,t = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 1,t = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 3,fy = 3,t = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1000000000,sy = 1,fx = 1,fy = 1000000000,t = 1999999998) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1000000000,sy = 1,fx = 1,fy = 1000000000,t = 1999999998) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 17) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 10,fy = 10,t = 17) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 4,fy = 4,t = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 4,fy = 4,t = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 1,fx = 100,fy = 100,t = 198) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 1,fx = 100,fy = 100,t = 198) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sx = 1,sy = 2,fx = 3,fy = 4,t = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sx = 1,sy = 2,fx = 3,fy = 4,t = 4) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(sx = 1,sy = 1,fx = 2,fy = 2,t = 1) == True
@@ -91,3 +811,5 @@ def check(candidate):
     assert candidate(sx = 1,sy = 1,fx = 4,fy = 4,t = 5) == True
     assert candidate(sx = 1,sy = 1,fx = 100,fy = 100,t = 198) == True
     assert candidate(sx = 1,sy = 2,fx = 3,fy = 4,t = 4) == True
+
+

@@ -1,5 +1,1053 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [-100, -100], [0, 0]],r = 150) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [-100, -100], [0, 0]],r = 150) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [5000, 5000], [-5000, 5000], [5000, -5000]],r = 7071) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [5000, 5000], [-5000, 5000], [5000, -5000]],r = 7071) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-3, 0], [3, 0], [2, 6], [5, 4], [0, 9], [7, 8]],r = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-3, 0], [3, 0], [2, 6], [5, 4], [0, 9], [7, 8]],r = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10000, 10000], [10000, -10000]],r = 5000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10000, 10000], [10000, -10000]],r = 5000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, -1], [1, 1], [-1, 1], [1, -1]],r = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, -1], [1, 1], [-1, 1], [1, -1]],r = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, 2], [-3, 3], [-1, 1], [0, 0]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, 2], [-3, 3], [-1, 1], [0, 0]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 2], [3, 3]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 2], [3, 3]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 1], [1.4, 1.4]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 1], [1.4, 1.4]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10000, 0], [0, 10000], [10000, 10000]],r = 5000) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10000, 0], [0, 10000], [10000, 10000]],r = 5000) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, -1000], [-1000, 1000], [0, 0]],r = 1500) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, -1000], [-1000, 1000], [0, 0]],r = 1500) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5, 0], [5, 0], [0, 5], [0, -5]],r = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5, 0], [5, 0], [0, 5], [0, -5]],r = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10, 0], [0, 10], [10, 10]],r = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10, 0], [0, 10], [10, 10]],r = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5, -5], [5, 5], [-5, 5], [5, -5]],r = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5, -5], [5, 5], [-5, 5], [5, -5]],r = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4]],r = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, 0], [0, 1], [1, 0], [0, -1]],r = 1) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, 0], [0, 1], [1, 0], [0, -1]],r = 1) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]],r = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]],r = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 10], [11, 11], [12, 12], [13, 13], [14, 14]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 10], [11, 11], [12, 12], [13, 13], [14, 14]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1]],r = 1) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1]],r = 1) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [0, 1]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [0, 1]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, 0], [2, 0], [0, 2], [0, -2]],r = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, 0], [2, 0], [0, 2], [0, -2]],r = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, 0], [5000, 0], [0, -5000], [0, 5000], [2500, 2500]],r = 5000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, 0], [5000, 0], [0, -5000], [0, 5000], [2500, 2500]],r = 5000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, -2], [-2, 0], [-2, 2], [0, -2], [0, 0], [0, 2], [2, -2], [2, 0], [2, 2]],r = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, -2], [-2, 0], [-2, 2], [0, -2], [0, 0], [0, 2], [2, -2], [2, 0], [2, 2]],r = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-200, 200], [-100, 100], [-50, 50], [0, 0], [50, -50], [100, -100], [200, -200], [50, 150], [150, 50], [-150, -50], [-50, -150]],r = 150) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-200, 200], [-100, 100], [-50, 50], [0, 0], [50, -50], [100, -100], [200, -200], [50, 150], [150, 50], [-150, -50], [-50, -150]],r = 150) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 10], [20, 10], [30, 10], [40, 10], [50, 10], [60, 10], [70, 10], [80, 10], [90, 10], [100, 10]],r = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 10], [20, 10], [30, 10], [40, 10], [50, 10], [60, 10], [70, 10], [80, 10], [90, 10], [100, 10]],r = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10000, 10000], [10000, -10000], [0, 0], [5000, 5000], [-5000, -5000]],r = 5000) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10000, 10000], [10000, -10000], [0, 0], [5000, 5000], [-5000, -5000]],r = 5000) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],r = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],r = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, 0], [1, 0], [0, -1], [0, 1], [0.5, 0.5], [-0.5, -0.5], [0.5, -0.5], [-0.5, 0.5]],r = 1) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, 0], [1, 0], [0, -1], [0, 1], [0.5, 0.5], [-0.5, -0.5], [0.5, -0.5], [-0.5, 0.5]],r = 1) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]],r = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]],r = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, 2], [-2, -2], [2, 2], [2, -2], [0, 0], [0, 4], [4, 0], [4, 4]],r = 4) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, 2], [-2, -2], [2, 2], [2, -2], [0, 0], [0, 4], [4, 0], [4, 4]],r = 4) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [200, 200], [150, 150], [50, 50], [300, 300]],r = 150) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [200, 200], [150, 150], [50, 50], [300, 300]],r = 150) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15]],r = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15]],r = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [1, 3], [3, 1], [3, 3], [5, 5], [5, 7], [7, 5], [7, 7], [9, 9], [9, 11]],r = 2.83) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [1, 3], [3, 1], [3, 3], [5, 5], [5, 7], [7, 5], [7, 7], [9, 9], [9, 11]],r = 2.83) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [-5000, 5000], [5000, 5000], [5000, -5000], [0, 0]],r = 7071) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [-5000, 5000], [5000, 5000], [5000, -5000], [0, 0]],r = 7071) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0], [50, 0], [60, 0], [70, 0], [80, 0], [90, 0]],r = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0], [50, 0], [60, 0], [70, 0], [80, 0], [90, 0]],r = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, -1000], [1000, 1000], [1000, -1000], [-1000, 1000], [0, 0]],r = 1414) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, -1000], [1000, 1000], [1000, -1000], [-1000, 1000], [0, 0]],r = 1414) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 200], [300, 400], [500, 600], [700, 800], [900, 1000], [1100, 1200], [1300, 1400], [1500, 1600], [1700, 1800], [1900, 2000]],r = 500) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 200], [300, 400], [500, 600], [700, 800], [900, 1000], [1100, 1200], [1300, 1400], [1500, 1600], [1700, 1800], [1900, 2000]],r = 500) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700]],r = 150) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700]],r = 150) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [5000, 0], [0, 5000], [5000, 5000], [2500, 2500]],r = 3000) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [5000, 0], [0, 5000], [5000, 5000], [2500, 2500]],r = 3000) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, -10], [-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1]],r = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, -10], [-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1]],r = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, -1000], [-1000, 1000], [1000, -1000], [1000, 1000], [0, 0]],r = 1500) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, -1000], [-1000, 1000], [1000, -1000], [1000, 1000], [0, 0]],r = 1500) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-500, -500], [-250, -250], [0, 0], [250, 250], [500, 500], [-500, 500], [500, -500]],r = 500) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-500, -500], [-250, -250], [0, 0], [250, 250], [500, 500], [-500, 500], [500, -500]],r = 500) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]],r = 4) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]],r = 4) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 2], [2, 0], [2, 2], [1, 1], [1, 3], [3, 1], [3, 3]],r = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 2], [2, 0], [2, 2], [1, 1], [1, 3], [3, 1], [3, 3]],r = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [500, 0], [600, 0], [700, 0], [800, 0], [900, 0]],r = 150) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [500, 0], [600, 0], [700, 0], [800, 0], [900, 0]],r = 150) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]],r = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]],r = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10, 0], [5, 5]],r = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10, 0], [5, 5]],r = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [200, 100], [100, 200], [200, 200], [150, 150], [125, 125], [175, 175]],r = 50) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [200, 100], [100, 200], [200, 200], [150, 150], [125, 125], [175, 175]],r = 50) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [50, 0], [100, 0], [150, 0], [200, 0], [250, 0], [300, 0], [350, 0], [400, 0], [450, 0], [500, 0]],r = 200) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [50, 0], [100, 0], [150, 0], [200, 0], [250, 0], [300, 0], [350, 0], [400, 0], [450, 0], [500, 0]],r = 200) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [150, 150], [200, 200], [250, 250], [300, 300], [100, 200], [200, 300]],r = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [150, 150], [200, 200], [250, 250], [300, 300], [100, 200], [200, 300]],r = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, 1000], [2000, 2000], [3000, 3000], [4000, 4000], [5000, 5000]],r = 5000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, 1000], [2000, 2000], [3000, 3000], [4000, 4000], [5000, 5000]],r = 5000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [0, 1], [1, 1], [0.5, 0.5]],r = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [0, 1], [1, 1], [0.5, 0.5]],r = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, -1], [-1, 1], [1, -1], [1, 1], [0, 0]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, -1], [-1, 1], [1, -1], [1, 1], [0, 0]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0]],r = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0]],r = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2000, -2000], [-1000, -1000], [0, 0], [1000, 1000], [2000, 2000], [1000, 0], [0, 1000]],r = 1414) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2000, -2000], [-1000, -1000], [0, 0], [1000, 1000], [2000, 2000], [1000, 0], [0, 1000]],r = 1414) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [-4000, -4000], [-4500, -4500], [-3000, -3000], [-5500, -5500]],r = 1000) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [-4000, -4000], [-4500, -4500], [-3000, -3000], [-5500, -5500]],r = 1000) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, -1], [0, -1], [1, -1], [-1, 0], [0, 0], [1, 0], [-1, 1], [0, 1], [1, 1]],r = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, -1], [0, -1], [1, -1], [-1, 0], [0, 0], [1, 0], [-1, 1], [0, 1], [1, 1]],r = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, -10], [-5, -5], [0, 0], [5, 5], [10, 10]],r = 8) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, -10], [-5, -5], [0, 0], [5, 5], [10, 10]],r = 8) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-100, -100], [-100, 100], [100, -100], [100, 100], [0, 0]],r = 150) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-100, -100], [-100, 100], [100, -100], [100, 100], [0, 0]],r = 150) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1, -2], [-2, -4], [-3, -6], [-4, -8], [-5, -10], [-6, -12], [-7, -14]],r = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1, -2], [-2, -4], [-3, -6], [-4, -8], [-5, -10], [-6, -12], [-7, -14]],r = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, 0], [0, -1000], [1000, 0], [0, 1000], [500, 500], [-500, 500], [500, -500], [-500, -500]],r = 1000) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, 0], [0, -1000], [1000, 0], [0, 1000], [500, 500], [-500, 500], [500, -500], [-500, -500]],r = 1000) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, -1000], [-1000, 1000], [1000, 1000], [1000, -1000], [0, 0], [500, 500]],r = 1000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, -1000], [-1000, 1000], [1000, 1000], [1000, -1000], [0, 0], [500, 500]],r = 1000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, 0], [0, -10], [10, 0], [0, 10], [0, 0], [5, 5], [-5, -5], [-5, 5], [5, -5]],r = 15) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, 0], [0, -10], [10, 0], [0, 10], [0, 0], [5, 5], [-5, -5], [-5, 5], [5, -5]],r = 15) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, -10], [-10, 0], [-10, 10], [0, -10], [0, 0], [0, 10], [10, -10], [10, 0], [10, 10]],r = 15) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, -10], [-10, 0], [-10, 10], [0, -10], [0, 0], [0, 10], [10, -10], [10, 0], [10, 10]],r = 15) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, 0], [10, 0], [0, -10], [0, 10], [5, 5], [-5, -5]],r = 10) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, 0], [10, 0], [0, -10], [0, 10], [5, 5], [-5, -5]],r = 10) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 10], [10, 20], [20, 10], [20, 20], [15, 15], [0, 0]],r = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 10], [10, 20], [20, 10], [20, 20], [15, 15], [0, 0]],r = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90]],r = 50) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90]],r = 50) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 100], [0, 200], [0, 300], [0, 400], [0, 500], [0, 600], [0, 700], [0, 800], [0, 900]],r = 150) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 100], [0, 200], [0, 300], [0, 400], [0, 500], [0, 600], [0, 700], [0, 800], [0, 900]],r = 150) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100]],r = 15) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100]],r = 15) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 10], [10, 20], [20, 10], [20, 20], [30, 30], [40, 40], [50, 50]],r = 15) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 10], [10, 20], [20, 10], [20, 20], [30, 30], [40, 40], [50, 50]],r = 15) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2000, -2000], [-2000, 2000], [2000, -2000], [2000, 2000], [0, 0]],r = 2500) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2000, -2000], [-2000, 2000], [2000, -2000], [2000, 2000], [0, 0]],r = 2500) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, 0], [5000, 0], [0, 5000], [0, -5000]],r = 5000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, 0], [5000, 0], [0, 5000], [0, -5000]],r = 5000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2, -2], [-2, 2], [2, -2], [2, 2], [0, 0], [-1, 1], [1, -1], [-1, -1], [1, 1]],r = 3) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2, -2], [-2, 2], [2, -2], [2, 2], [0, 0], [-1, 1], [1, -1], [-1, -1], [1, 1]],r = 3) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [1, 5], [5, 5], [5, 1], [3, 3], [2, 2], [4, 4], [2, 3], [3, 2], [4, 3], [3, 4]],r = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [1, 5], [5, 5], [5, 1], [3, 3], [2, 2], [4, 4], [2, 3], [3, 2], [4, 3], [3, 4]],r = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-500, 0], [-400, 0], [-300, 0], [-200, 0], [-100, 0], [0, 0], [100, 0], [200, 0], [300, 0], [400, 0]],r = 100) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-500, 0], [-400, 0], [-300, 0], [-200, 0], [-100, 0], [0, 0], [100, 0], [200, 0], [300, 0], [400, 0]],r = 100) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [5000, 5000], [0, 0], [1000, 1000], [-1000, -1000]],r = 6000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [5000, 5000], [0, 0], [1000, 1000], [-1000, -1000]],r = 6000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-10, 10], [10, -10], [-10, -10], [10, 10], [0, 0]],r = 20) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-10, 10], [10, -10], [-10, -10], [10, 10], [0, 0]],r = 20) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, 1000], [1500, 1000], [1000, 1500], [1500, 1500], [2500, 2500]],r = 1000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, 1000], [1500, 1000], [1000, 1500], [1500, 1500], [2500, 2500]],r = 1000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, 1000], [-500, 500], [0, 0], [500, -500], [1000, -1000]],r = 1500) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, 1000], [-500, 500], [0, 0], [500, -500], [1000, -1000]],r = 1500) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900], [1000, 1000]],r = 150) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900], [1000, 1000]],r = 150) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[5, 5], [10, 5], [15, 5], [20, 5], [25, 5], [5, 10], [10, 10], [15, 10], [20, 10], [25, 10]],r = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[5, 5], [10, 5], [15, 5], [20, 5], [25, 5], [5, 10], [10, 10], [15, 10], [20, 10], [25, 10]],r = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-20, 20], [-20, -20], [20, 20], [20, -20], [0, 0], [0, 40], [40, 0], [40, 40], [50, 50]],r = 50) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-20, 20], [-20, -20], [20, 20], [20, -20], [0, 0], [0, 40], [40, 0], [40, 40], [50, 50]],r = 50) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 1], [3, 1], [4, 1], [1, 2], [2, 2], [3, 2], [4, 2], [1, 3], [2, 3], [3, 3], [4, 3]],r = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 1], [3, 1], [4, 1], [1, 2], [2, 2], [3, 2], [4, 2], [1, 3], [2, 3], [3, 3], [4, 3]],r = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, 1000], [2000, 2000], [3000, 3000], [4000, 4000], [5000, 5000]],r = 1000) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, 1000], [2000, 2000], [3000, 3000], [4000, 4000], [5000, 5000]],r = 1000) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]],r = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]],r = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, 5000], [5000, -5000], [-5000, -5000], [5000, 5000], [0, 0]],r = 5000) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, 5000], [5000, -5000], [-5000, -5000], [5000, 5000], [0, 0]],r = 5000) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [500, 0], [600, 0], [700, 0], [800, 0], [900, 0]],r = 100) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [500, 0], [600, 0], [700, 0], [800, 0], [900, 0]],r = 100) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, -1000], [1500, -1000], [2000, -1000], [1000, -1500], [1000, -2000]],r = 500) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, -1000], [1500, -1000], [2000, -1000], [1000, -1500], [1000, -2000]],r = 500) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1000, 1000], [1001, 1001], [1002, 1002], [1003, 1003], [1004, 1004], [1005, 1005], [1006, 1006], [1007, 1007], [1008, 1008], [1009, 1009]],r = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1000, 1000], [1001, 1001], [1002, 1002], [1003, 1003], [1004, 1004], [1005, 1005], [1006, 1006], [1007, 1007], [1008, 1008], [1009, 1009]],r = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [1, 4], [4, 1], [4, 4], [2, 2], [3, 3]],r = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [1, 4], [4, 1], [4, 4], [2, 2], [3, 3]],r = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9]],r = 3) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9]],r = 3) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [5000, 5000], [0, 0], [1, 1]],r = 5000) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [5000, 5000], [0, 0], [1, 1]],r = 5000) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 10], [10, 0], [10, 10]],r = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 10], [10, 0], [10, 10]],r = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [10000, 10000], [-10000, -10000], [5000, -5000], [-5000, 5000]],r = 14142) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [10000, 10000], [-10000, -10000], [5000, -5000], [-5000, 5000]],r = 14142) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],r = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]],r = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, 1000], [1000, -1000], [500, 500], [-500, -500]],r = 1000) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, 1000], [1000, -1000], [500, 500], [-500, -500]],r = 1000) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [1, 3], [3, 1], [3, 3], [2, 2], [4, 4], [4, 5], [5, 4]],r = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [1, 3], [3, 1], [3, 3], [2, 2], [4, 4], [4, 5], [5, 4]],r = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5000, -5000], [-4000, -4000], [-3000, -3000], [-2000, -2000], [-1000, -1000]],r = 1000) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5000, -5000], [-4000, -4000], [-3000, -3000], [-2000, -2000], [-1000, -1000]],r = 1000) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0]],r = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0]],r = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5, -5], [0, 0], [5, 5], [10, 10], [15, 15]],r = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5, -5], [0, 0], [5, 5], [10, 10], [15, 15]],r = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-100, -100], [100, 100], [-100, 100], [100, -100], [0, 0]],r = 150) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-100, -100], [100, 100], [-100, 100], [100, -100], [0, 0]],r = 150) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]],r = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]],r = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700]],r = 100) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700]],r = 100) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [101, 100], [102, 102], [102, 101], [101, 102]],r = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [101, 100], [102, 102], [102, 101], [101, 102]],r = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [5, 0], [5, 5], [0, 5], [2.5, 2.5]],r = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [5, 0], [5, 5], [0, 5], [2.5, 2.5]],r = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [2, 3], [3, 2], [3, 3]],r = 1) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [2, 3], [3, 2], [3, 3]],r = 1) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14]],r = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14]],r = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-1000, 1000], [-900, 1100], [-800, 1200], [-700, 1300], [-600, 1400], [-500, 1500], [-400, 1600], [-300, 1700]],r = 200) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-1000, 1000], [-900, 1100], [-800, 1200], [-700, 1300], [-600, 1400], [-500, 1500], [-400, 1600], [-300, 1700]],r = 200) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]],r = 50) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]],r = 50) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-2000, -2000], [2000, 2000], [0, 0], [1000, -1000], [-1000, 1000]],r = 2500) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-2000, -2000], [2000, 2000], [0, 0], [1000, -1000], [-1000, 1000]],r = 2500) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600]],r = 100) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600]],r = 100) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],r = 1.5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]],r = 1.5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[500, 500], [500, 600], [600, 500], [600, 600], [300, 300], [300, 400], [400, 300], [400, 400]],r = 141) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[500, 500], [500, 600], [600, 500], [600, 600], [300, 300], [300, 400], [400, 300], [400, 400]],r = 141) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[-5, 5], [5, 5], [5, -5], [-5, -5], [0, 0]],r = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[-5, 5], [5, 5], [5, -5], [-5, -5], [0, 0]],r = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[1, 1], [2, 1], [1, 2], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]],r = 1) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[1, 1], [2, 1], [1, 2], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]],r = 1) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1], [0, 2], [1, 2], [2, 0], [2, 1], [2, 2]],r = 1.5) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1], [0, 2], [1, 2], [2, 0], [2, 1], [2, 2]],r = 1.5) == 9: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(darts = [[100, 100], [-100, -100], [0, 0]],r = 150) == 3
@@ -132,3 +1180,5 @@ def check(candidate):
     assert candidate(darts = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]],r = 2) == 3
     assert candidate(darts = [[1, 1], [2, 1], [1, 2], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]],r = 1) == 4
     assert candidate(darts = [[0, 0], [0, 1], [1, 0], [1, 1], [0, 2], [1, 2], [2, 0], [2, 1], [2, 2]],r = 1.5) == 9
+
+

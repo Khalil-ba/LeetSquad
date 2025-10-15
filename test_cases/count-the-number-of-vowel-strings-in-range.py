@@ -1,5 +1,805 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(words = ['sky', 'fly', 'why'],left = 0,right = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sky', 'fly', 'why'],left = 0,right = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'banana', 'orange', 'umbrella'],left = 0,right = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'banana', 'orange', 'umbrella'],left = 0,right = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['are', 'amy', 'u'],left = 0,right = 2) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['are', 'amy', 'u'],left = 0,right = 2) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hey', 'aeo', 'mu', 'ooo', 'artro'],left = 1,right = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hey', 'aeo', 'mu', 'ooo', 'artro'],left = 1,right = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['up', 'open', 'over'],left = 1,right = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['up', 'open', 'over'],left = 1,right = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ae', 'ea', 'ei', 'ie', 'ou'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ae', 'ea', 'ei', 'ie', 'ou'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uoiea', 'aeiou', 'uoiea', 'aeiou', 'uoiea'],left = 0,right = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uoiea', 'aeiou', 'uoiea', 'aeiou', 'uoiea'],left = 0,right = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sky', 'fly', 'why', 'a', 'e'],left = 0,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sky', 'fly', 'why', 'a', 'e'],left = 0,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'encyclopedia', 'analysis', 'outstanding', 'initiative'],left = 1,right = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'encyclopedia', 'analysis', 'outstanding', 'initiative'],left = 1,right = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ocean', 'mountain', 'forest', 'desert', 'rain'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ocean', 'mountain', 'forest', 'desert', 'rain'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['beautiful', 'world', 'with', 'diverse', 'languages'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['beautiful', 'world', 'with', 'diverse', 'languages'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uoiea', 'uiaeou', 'ouaei', 'eioua'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uoiea', 'uiaeou', 'ouaei', 'eioua'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'zephyr', 'orchestra', 'xylophone', 'aeiou', 'uoiea', 'uoiea'],left = 0,right = 6) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'zephyr', 'orchestra', 'xylophone', 'aeiou', 'uoiea', 'uoiea'],left = 0,right = 6) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'eee', 'iii', 'ooo', 'uuu', 'aaee', 'eeaa', 'aeea', 'aaea', 'eeea', 'eaae', 'eaeaa', 'aeaae', 'aaeae'],left = 0,right = 13) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'eee', 'iii', 'ooo', 'uuu', 'aaee', 'eeaa', 'aeea', 'aaea', 'eeea', 'eaae', 'eaeaa', 'aeaae', 'aaeae'],left = 0,right = 13) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['queue', 'adieu', 'ice', 'ocean', 'earth'],left = 0,right = 3) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['queue', 'adieu', 'ice', 'ocean', 'earth'],left = 0,right = 3) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'moon', 'noon', 'noon', 'moon'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'moon', 'noon', 'noon', 'moon'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'education', 'umbrella', 'icecream', 'operation', 'university'],left = 1,right = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'education', 'umbrella', 'icecream', 'operation', 'university'],left = 1,right = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm', 'umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm'],left = 3,right = 7) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm', 'umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm'],left = 3,right = 7) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['elephant', 'umbrella', 'apple', 'orange', 'ice', 'echo', 'umbrella'],left = 1,right = 6) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['elephant', 'umbrella', 'apple', 'orange', 'ice', 'echo', 'umbrella'],left = 1,right = 6) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aviation', 'exhibition', 'occasion', 'environment', 'instrumentation'],left = 1,right = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aviation', 'exhibition', 'occasion', 'environment', 'instrumentation'],left = 1,right = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'nonvowel', 'aeiou', 'bvowel', 'endvowel'],left = 0,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'nonvowel', 'aeiou', 'bvowel', 'endvowel'],left = 0,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabb', 'abba', 'baab', 'baba', 'abab'],left = 0,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabb', 'abba', 'baab', 'baba', 'abab'],left = 0,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['example', 'samples', 'tests', 'inputs', 'outputs'],left = 0,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['example', 'samples', 'tests', 'inputs', 'outputs'],left = 0,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'uvw', 'qwe', 'rty', 'poi'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'uvw', 'qwe', 'rty', 'poi'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],left = 0,right = 24) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],left = 0,right = 24) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['environment', 'umbrella', 'education', 'algorithm', 'university', 'encyclopedia'],left = 2,right = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['environment', 'umbrella', 'education', 'algorithm', 'university', 'encyclopedia'],left = 2,right = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['beautiful', 'enormous', 'interesting', 'unexpected', 'odd'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['beautiful', 'enormous', 'interesting', 'unexpected', 'odd'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'equal', 'education', 'algorithm', 'encyclopedia'],left = 0,right = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'equal', 'education', 'algorithm', 'encyclopedia'],left = 0,right = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['eeeee', 'aaaaa', 'iiiii', 'ooooo', 'uuuuu', 'auaeu', 'eiaie', 'ouioo', 'uaeuu', 'ieoia'],left = 2,right = 9) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['eeeee', 'aaaaa', 'iiiii', 'ooooo', 'uuuuu', 'auaeu', 'eiaie', 'ouioo', 'uaeuu', 'ieoia'],left = 2,right = 9) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwxyz', 'zyxwvutsr', 'qrstponmlkjihgfedcba'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwxyz', 'zyxwvutsr', 'qrstponmlkjihgfedcba'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'orange', 'grape', 'kiwi', 'pear', 'peach', 'plum', 'grapefruit', 'blueberry', 'cherry'],left = 3,right = 9) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'orange', 'grape', 'kiwi', 'pear', 'peach', 'plum', 'grapefruit', 'blueberry', 'cherry'],left = 3,right = 9) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['racecar', 'level', 'rotor', 'kayak', 'reviler'],left = 1,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['racecar', 'level', 'rotor', 'kayak', 'reviler'],left = 1,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aerodynamic', 'encyclopedia', 'umbrella', 'idea', 'audio'],left = 1,right = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aerodynamic', 'encyclopedia', 'umbrella', 'idea', 'audio'],left = 1,right = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'map', 'python', 'algorithm', 'encyclopedia'],left = 1,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'map', 'python', 'algorithm', 'encyclopedia'],left = 1,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm'],left = 1,right = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'opposite', 'idea', 'encyclopedia', 'algorithm'],left = 1,right = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dog'],left = 1,right = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dog'],left = 1,right = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aardvark', 'elephant', 'iguana', 'okapi', 'umbrella'],left = 0,right = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aardvark', 'elephant', 'iguana', 'okapi', 'umbrella'],left = 0,right = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'voewl', 'ovwle', 'wolve', 'volve'],left = 0,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'voewl', 'ovwle', 'wolve', 'volve'],left = 0,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['beautiful', 'umbrella', 'innovative', 'economic', 'outstanding', 'underwater'],left = 0,right = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['beautiful', 'umbrella', 'innovative', 'economic', 'outstanding', 'underwater'],left = 0,right = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['applepie', 'banana', 'orangejuice', 'grape', 'peach'],left = 1,right = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['applepie', 'banana', 'orangejuice', 'grape', 'peach'],left = 1,right = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ar', 'er', 'ir', 'or', 'ur'],left = 1,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ar', 'er', 'ir', 'or', 'ur'],left = 1,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'e', 'i', 'o', 'u', 'a', 'e', 'i', 'o', 'u'],left = 0,right = 9) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'e', 'i', 'o', 'u', 'a', 'e', 'i', 'o', 'u'],left = 0,right = 9) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'development', 'environment', 'assignment', 'information'],left = 1,right = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'development', 'environment', 'assignment', 'information'],left = 1,right = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'e', 'i', 'o', 'u', 'aeiou'],left = 0,right = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'e', 'i', 'o', 'u', 'aeiou'],left = 0,right = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['racecar', 'level', 'rotor', 'deified', 'repaper'],left = 1,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['racecar', 'level', 'rotor', 'deified', 'repaper'],left = 1,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['orchid', 'ocean', 'octopus', 'ostrich', 'oak', 'oceanography'],left = 0,right = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['orchid', 'ocean', 'octopus', 'ostrich', 'oak', 'oceanography'],left = 0,right = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['volcano', 'trident', 'ozone', 'ocean', 'mountain'],left = 2,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['volcano', 'trident', 'ozone', 'ocean', 'mountain'],left = 2,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzzzz', 'yyyyy', 'xxxxx', 'wwwww', 'vvvvv'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzzzz', 'yyyyy', 'xxxxx', 'wwwww', 'vvvvv'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'anana', 'nana', 'ana', 'na', 'a'],left = 0,right = 9) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'anana', 'nana', 'ana', 'na', 'a'],left = 0,right = 9) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'university', 'algorithm', 'openai'],left = 1,right = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'university', 'algorithm', 'openai'],left = 1,right = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'bcd', 'efg', 'hij', 'klm', 'nop', 'qrst', 'uvw', 'xyz'],left = 2,right = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'bcd', 'efg', 'hij', 'klm', 'nop', 'qrst', 'uvw', 'xyz'],left = 2,right = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aardvark', 'algorithm', 'antelope', 'antenna', 'apple', 'antiquity', 'apricot', 'atlas'],left = 1,right = 7) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aardvark', 'algorithm', 'antelope', 'antenna', 'apple', 'antiquity', 'apricot', 'atlas'],left = 1,right = 7) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'evaluation', 'interview', 'education', 'optimization'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'evaluation', 'interview', 'education', 'optimization'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uoiea', 'iouea', 'uaieo', 'oieau', 'aeo', 'uoiea', 'uoiea', 'uoiea', 'uoiea', 'uoiea', 'uoiea'],left = 0,right = 11) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uoiea', 'iouea', 'uaieo', 'oieau', 'aeo', 'uoiea', 'uoiea', 'uoiea', 'uoiea', 'uoiea', 'uoiea'],left = 0,right = 11) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abracadabra', 'alabama', 'alaska', 'aerodynamic', 'algorithm', 'azalea'],left = 1,right = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abracadabra', 'alabama', 'alaska', 'aerodynamic', 'algorithm', 'azalea'],left = 1,right = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['start', 'end', 'begin', 'finish', 'conclude'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['start', 'end', 'begin', 'finish', 'conclude'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'is', 'awesome', 'and', 'effective'],left = 1,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'is', 'awesome', 'and', 'effective'],left = 1,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'uvw', 'qrs', 'tuv', 'lmn', 'opq'],left = 1,right = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'uvw', 'qrs', 'tuv', 'lmn', 'opq'],left = 1,right = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'ueiou', 'ieoai', 'oeuia', 'uaeio'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'ueiou', 'ieoai', 'oeuia', 'uaeio'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'],left = 0,right = 14) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'],left = 0,right = 14) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'xylophones', 'xylophonically', 'xylophonist', 'xylophonists'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'xylophones', 'xylophonically', 'xylophonist', 'xylophonists'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uaeiou', 'aeu', 'aue', 'eua'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uaeiou', 'aeu', 'aue', 'eua'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'yacht', 'gymnymphilia', 'hydrangea', 'ivory'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'yacht', 'gymnymphilia', 'hydrangea', 'ivory'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['bcd', 'efg', 'hij', 'klm', 'nop'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['bcd', 'efg', 'hij', 'klm', 'nop'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'education', 'umbrella', 'encyclopedia', 'ocean'],left = 2,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'education', 'umbrella', 'encyclopedia', 'ocean'],left = 2,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'e', 'i', 'o', 'u'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'e', 'i', 'o', 'u'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'raincoat', 'scarf', 'boots', 'gloves', 'jacket', 'shoes', 'hat', 'mittens', 'gloves', 'umbrella', 'hat'],left = 0,right = 11) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'raincoat', 'scarf', 'boots', 'gloves', 'jacket', 'shoes', 'hat', 'mittens', 'gloves', 'umbrella', 'hat'],left = 0,right = 11) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'a', 'a', 'a', 'a', 'a'],left = 0,right = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'a', 'a', 'a', 'a', 'a'],left = 0,right = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'algorithm', 'encyclopedia', 'under', 'umbrella'],left = 1,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'algorithm', 'encyclopedia', 'under', 'umbrella'],left = 1,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uoiea', 'aieou', 'euoia', 'oueai'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uoiea', 'aieou', 'euoia', 'oueai'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'university', 'algorithm', 'optimization', 'encyclopedia'],left = 1,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'university', 'algorithm', 'optimization', 'encyclopedia'],left = 1,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'ddeeff', 'gghhii', 'jjkkll', 'mmnnoo'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'ddeeff', 'gghhii', 'jjkkll', 'mmnnoo'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'algorithm', 'umbrella', 'opposite', 'idea'],left = 0,right = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'algorithm', 'umbrella', 'opposite', 'idea'],left = 0,right = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiouaeiou', 'uoieauoiea', 'aieouaieou', 'euoiaeuoia', 'oueaioueai'],left = 1,right = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiouaeiou', 'uoieauoiea', 'aieouaieou', 'euoiaeuoia', 'oueaioueai'],left = 1,right = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'eee', 'iii', 'ooo', 'uuu'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'eee', 'iii', 'ooo', 'uuu'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['education', 'umbrella', 'idea', 'algorithm', 'elephant'],left = 1,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['education', 'umbrella', 'idea', 'algorithm', 'elephant'],left = 1,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abacaxi', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince'],left = 0,right = 11) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abacaxi', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince'],left = 0,right = 11) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequential', 'programming', 'leads', 'to', 'complexity'],left = 1,right = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequential', 'programming', 'leads', 'to', 'complexity'],left = 1,right = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'uoiea', 'ioeau', 'oaeiu', 'ueiao'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'uoiea', 'ioeau', 'oaeiu', 'ueiao'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaa', 'eeeee', 'iiiii', 'ooooo', 'uuuuu'],left = 1,right = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaa', 'eeeee', 'iiiii', 'ooooo', 'uuuuu'],left = 1,right = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'encounter', 'interval', 'equation', 'occasion'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'encounter', 'interval', 'equation', 'occasion'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['acoustic', 'analysis', 'bassoon', 'clarinet', 'didgeridoo', 'flute', 'guitar', 'harp', 'harp', 'piano', 'tuba'],left = 2,right = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['acoustic', 'analysis', 'bassoon', 'clarinet', 'didgeridoo', 'flute', 'guitar', 'harp', 'harp', 'piano', 'tuba'],left = 2,right = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'sequences', 'sequentially', 'sequenceable', 'sequenceless'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'sequences', 'sequentially', 'sequenceable', 'sequenceless'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ae', 'ea', 'oi', 'io', 'ou', 'uo'],left = 0,right = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ae', 'ea', 'oi', 'io', 'ou', 'uo'],left = 0,right = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['understanding', 'learning', 'grows', 'every', 'day'],left = 0,right = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['understanding', 'learning', 'grows', 'every', 'day'],left = 0,right = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e'],left = 0,right = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e'],left = 0,right = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['elephant', 'giraffe', 'hippo', 'iguana', 'jaguar'],left = 0,right = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['elephant', 'giraffe', 'hippo', 'iguana', 'jaguar'],left = 0,right = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'xylo', 'yolo', 'mono', 'neon'],left = 1,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'xylo', 'yolo', 'mono', 'neon'],left = 1,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'structure', 'synergy', 'symmetry', 'spectrum', 'syzygy'],left = 2,right = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'structure', 'synergy', 'symmetry', 'spectrum', 'syzygy'],left = 2,right = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'testing', 'algorithm', 'education', 'umbrella', 'sequence', 'interview', 'exhibition', 'occasion', 'environment'],left = 3,right = 8) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'testing', 'algorithm', 'education', 'umbrella', 'sequence', 'interview', 'exhibition', 'occasion', 'environment'],left = 3,right = 8) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'data', 'structure', 'programming', 'language'],left = 2,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'data', 'structure', 'programming', 'language'],left = 2,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['', 'a', 'e', 'i', 'o', 'u', 'aeiou', 'uoiea', 'euioa', 'aoieu'],left = 1,right = 9) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['', 'a', 'e', 'i', 'o', 'u', 'aeiou', 'uoiea', 'euioa', 'aoieu'],left = 1,right = 9) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'words', 'only', 'here', 'now'],left = 0,right = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'words', 'only', 'here', 'now'],left = 0,right = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aeiou', 'eioua', 'iouae', 'ouaei', 'uaeio'],left = 0,right = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aeiou', 'eioua', 'iouae', 'ouaei', 'uaeio'],left = 0,right = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'vowels', 'vowelstring', 'vowelstrings', 'vowels', 'strings', 'string', 'vow', 'owel', 'vowels', 'vowel'],left = 3,right = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'vowels', 'vowelstring', 'vowelstrings', 'vowels', 'strings', 'string', 'vow', 'owel', 'vowels', 'vowel'],left = 3,right = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['vowel', 'start', 'end', 'middle', 'zone', 'sequence'],left = 2,right = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['vowel', 'start', 'end', 'middle', 'zone', 'sequence'],left = 2,right = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['sequence', 'queue', 'deque', 'peep', 'beep', 'keel', 'heel', 'heal', 'heap', 'heap', 'jeep', 'weep'],left = 1,right = 11) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['sequence', 'queue', 'deque', 'peep', 'beep', 'keel', 'heel', 'heal', 'heap', 'heap', 'jeep', 'weep'],left = 1,right = 11) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['elephant', 'antelope', 'giraffe', 'hippo', 'iguana', 'jackal', 'kangaroo', 'lemur'],left = 1,right = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['elephant', 'antelope', 'giraffe', 'hippo', 'iguana', 'jackal', 'kangaroo', 'lemur'],left = 1,right = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['amazing', 'algorithm', 'umbrella', 'opposite', 'idea', 'beautiful', 'enormous', 'interesting', 'unexpected', 'odd'],left = 0,right = 9) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['amazing', 'algorithm', 'umbrella', 'opposite', 'idea', 'beautiful', 'enormous', 'interesting', 'unexpected', 'odd'],left = 0,right = 9) == 3: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(words = ['sky', 'fly', 'why'],left = 0,right = 2) == 0
@@ -101,3 +901,5 @@ def check(candidate):
     assert candidate(words = ['sequence', 'queue', 'deque', 'peep', 'beep', 'keel', 'heel', 'heal', 'heap', 'heap', 'jeep', 'weep'],left = 1,right = 11) == 0
     assert candidate(words = ['elephant', 'antelope', 'giraffe', 'hippo', 'iguana', 'jackal', 'kangaroo', 'lemur'],left = 1,right = 7) == 2
     assert candidate(words = ['amazing', 'algorithm', 'umbrella', 'opposite', 'idea', 'beautiful', 'enormous', 'interesting', 'unexpected', 'odd'],left = 0,right = 9) == 3
+
+

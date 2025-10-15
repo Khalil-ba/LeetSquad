@@ -1,5 +1,773 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [10, 10], [3, 3], [7, 7]]) == [6, 55, -9, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [10, 10], [3, 3], [7, 7]]) == [6, 55, -9, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50],queries = [[15, 2], [25, 3], [35, 4], [45, 5]]) == [-30, 20, 80, 140]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50],queries = [[15, 2], [25, 3], [35, 4], [45, 5]]) == [-30, 20, 80, 140]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500],queries = [[150, 2], [450, 4], [500, 5], [200, 3]]) == [-300, 1000, 1500, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500],queries = [[150, 2], [450, 4], [500, 5], [200, 3]]) == [-300, 1000, 1500, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 22, 10, 19],queries = [[18, 4], [5, 2]]) == [34, -21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 22, 10, 19],queries = [[18, 4], [5, 2]]) == [34, -21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50],queries = [[15, 3], [25, 2], [35, 1]]) == [-30, 10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50],queries = [[15, 3], [25, 2], [35, 1]]) == [-30, 10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 6, 7],queries = [[10, 1], [5, 3], [3, 3]]) == [5, 12, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 6, 7],queries = [[10, 1], [5, 3], [3, 3]]) == [5, 12, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50],queries = [[25, 3], [35, 2], [15, 4]]) == [20, 30, -20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50],queries = [[25, 3], [35, 2], [15, 4]]) == [20, 30, -20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [10, 10], [1, 1]]) == [6, 55, -8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [10, 10], [1, 1]]) == [6, 55, -8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 4, 3, 7, 11, 9],queries = [[5, 4], [5, 7], [7, 3], [4, 5]]) == [4, 16, 7, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 4, 3, 7, 11, 9],queries = [[5, 4], [5, 7], [7, 3], [4, 5]]) == [4, 16, 7, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [50, 40, 30, 20, 10],queries = [[15, 3], [25, 2], [35, 5]]) == [-30, 10, 110]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [50, 40, 30, 20, 10],queries = [[15, 3], [25, 2], [35, 5]]) == [-30, 10, 110]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 10], [6, 9], [7, 8], [8, 7], [9, 6]]) == [25, 29, 30, 27, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 10], [6, 9], [7, 8], [8, 7], [9, 6]]) == [25, 29, 30, 27, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],queries = [[500, 10], [1000, 15], [1500, 20]]) == [-5500, 5600, 18000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],queries = [[500, 10], [1000, 15], [1500, 20]]) == [-5500, 5600, 18000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [5, 8], [7, 10]]) == [5, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [5, 8], [7, 10]]) == [5, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7],queries = [[5, 5], [7, 10], [10, 10]]) == [15, 70, 70]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7],queries = [[5, 5], [7, 10], [10, 10]]) == [15, 70, 70]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [250, 3], [750, 8], [600, 10]]) == [600, -1200, 3200, 3500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [250, 3], [750, 8], [600, 10]]) == [600, -1200, 3200, 3500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 3], [7, 2], [4, 4], [2, 5]]) == [4, 3, 1, -15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 3], [7, 2], [4, 4], [2, 5]]) == [4, 3, 1, -15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [1, 1], [10, 10], [3, 3]]) == [6, -8, 55, -9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [1, 1], [10, 10], [3, 3]]) == [6, -8, 55, -9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [[50, 7], [100, 10], [20, 5]]) == [-140, 460, -450]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [[50, 7], [100, 10], [20, 5]]) == [-140, 460, -450]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 5], [25, 5], [35, 5], [45, 5], [55, 5], [65, 5], [75, 5], [85, 5], [95, 5]]) == [-250, -150, -50, 30, 90, 130, 150, 150, 150]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 5], [25, 5], [35, 5], [45, 5], [55, 5], [65, 5], [75, 5], [85, 5], [95, 5]]) == [-250, -150, -50, 30, 90, 130, 150, 150, 150]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10],queries = [[2, 3], [4, 4], [5, 5], [6, 6]]) == [-15, -2, 6, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10],queries = [[2, 3], [4, 4], [5, 5], [6, 6]]) == [-15, -2, 6, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [800, 7], [300, 3], [600, 10]]) == [600, 2700, -900, 3500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [800, 7], [300, 3], [600, 10]]) == [600, 2700, -900, 3500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[50, 6], [25, 4], [75, 8], [90, 10]]) == [90, -140, 320, 530]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[50, 6], [25, 4], [75, 8], [90, 10]]) == [90, -140, 320, 530]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [[60, 6], [70, 8], [80, 9], [90, 10], [100, 11]]) == [-40, 110, 250, 390, 540]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],queries = [[60, 6], [70, 8], [80, 9], [90, 10], [100, 11]]) == [-40, 110, 250, 390, 540]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [3, 3], [7, 7], [10, 10]]) == [6, -9, 24, 55]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [3, 3], [7, 7], [10, 10]]) == [6, -9, 24, 55]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 999999999, 999999998, 999999997, 999999996],queries = [[1000000000, 5], [999999999, 3], [999999998, 2], [999999997, 1]]) == [4999999990, 2999999991, 1999999992, 999999994]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 999999999, 999999998, 999999997, 999999996],queries = [[1000000000, 5], [999999999, 3], [999999998, 2], [999999997, 1]]) == [4999999990, 2999999991, 1999999992, 999999994]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [[1, 1], [10, 2], [100, 3], [1000, 4], [10000, 5], [100000, 6], [1000000, 7], [10000000, 8], [100000000, 9], [1000000000, 10]]) == [-999999998, -1099999960, -1109999400, -1110992000, -1111000000, -1110199989, -1103998889, -1059888889, -788888889, 1111111111]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [[1, 1], [10, 2], [100, 3], [1000, 4], [10000, 5], [100000, 6], [1000000, 7], [10000000, 8], [100000000, 9], [1000000000, 10]]) == [-999999998, -1099999960, -1109999400, -1110992000, -1111000000, -1110199989, -1103998889, -1059888889, -788888889, 1111111111]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == [-8, -11, -9, -2, 6, 15, 24, 34, 44, 55]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == [-8, -11, -9, -2, 6, 15, 24, 34, 44, 55]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 3], [7, 5], [2, 9]]) == [4, 15, -11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 3], [7, 5], [2, 9]]) == [4, 15, -11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 1, 2, 5, 4, 6, 8, 7, 9, 10],queries = [[7, 5], [4, 3], [8, 7], [6, 10]]) == [14, -3, 27, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 1, 2, 5, 4, 6, 8, 7, 9, 10],queries = [[7, 5], [4, 3], [8, 7], [6, 10]]) == [14, -3, 27, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [50, 30, 20, 10, 40, 60, 70, 80, 90, 100],queries = [[45, 5], [60, 3], [25, 8]]) == [30, 50, -130]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [50, 30, 20, 10, 40, 60, 70, 80, 90, 100],queries = [[45, 5], [60, 3], [25, 8]]) == [30, 50, -130]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[10, 10], [5, 5], [3, 3], [1, 1]]) == [55, 6, -9, -8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[10, 10], [5, 5], [3, 3], [1, 1]]) == [55, 6, -9, -8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 999999999],queries = [[1, 1], [999999999, 1]]) == [-999999997, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 999999999],queries = [[1, 1], [999999999, 1]]) == [-999999997, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[25, 5], [35, 5], [15, 5], [65, 5]]) == [-150, -50, -250, 130]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[25, 5], [35, 5], [15, 5], [65, 5]]) == [-150, -50, -250, 130]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],queries = [[15, 5], [20, 3], [5, 7], [25, 10]]) == [18, 18, -77, 151]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],queries = [[15, 5], [20, 3], [5, 7], [25, 10]]) == [18, 18, -77, 151]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 10], [3, 5], [7, 8]]) == [25, -10, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 10], [3, 5], [7, 8]]) == [25, -10, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[2, 10], [4, 20], [3, 30]]) == [10, 60, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[2, 10], [4, 20], [3, 30]]) == [10, 60, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[10, 5], [5, 10], [1000000000, 10]]) == [-999999970, -999999965, 1000000045]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[10, 5], [5, 10], [1000000000, 10]]) == [-999999970, -999999965, 1000000045]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555],queries = [[300000000, 2], [200000000, 3], [100000000, 4]]) == [-343209876, -787654320, -1520987653]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555],queries = [[300000000, 2], [200000000, 3], [100000000, 4]]) == [-343209876, -787654320, -1520987653]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[1, 5], [1, 10]]) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[1, 5], [1, 10]]) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 1, 2, 3, 999999999, 500000000],queries = [[500000000, 3], [1000000000, 6], [2, 4]]) == [2, 2500000005, -2499999986]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 1, 2, 3, 999999999, 500000000],queries = [[500000000, 3], [1000000000, 6], [2, 4]]) == [2, 2500000005, -2499999986]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[5, 5], [5, 10], [5, 2], [5, 8]]) == [25, 50, 10, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[5, 5], [5, 10], [5, 2], [5, 8]]) == [25, 50, 10, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[10, 10], [5, 15], [8, 7]]) == [46, 10, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[10, 10], [5, 15], [8, 7]]) == [46, 10, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[3, 3], [5, 5], [7, 7], [9, 9]]) == [-6, 9, 26, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[3, 3], [5, 5], [7, 7], [9, 9]]) == [-6, 9, 26, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [7, 5], [5, 5]]) == [5, 25, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [7, 5], [5, 5]]) == [5, 25, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],queries = [[20, 5], [40, 3], [60, 4], [80, 6], [100, 10]]) == [-175, -15, 70, 180, 500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],queries = [[20, 5], [40, 3], [60, 4], [80, 6], [100, 10]]) == [-175, -15, 70, 180, 500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [[999999995, 5], [999999990, 10]]) == [4999999956, 9999999855]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [[999999995, 5], [999999990, 10]]) == [4999999956, 9999999855]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[10, 5], [15, 3], [5, 8], [20, 10]]) == [13, 9, -20, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[10, 5], [15, 3], [5, 8], [20, 10]]) == [13, 9, -20, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [[500, 3], [10000, 5], [100, 7]]) == [-1109997000, -1111000000, -1111109600]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],queries = [[500, 3], [10000, 5], [100, 7]]) == [-1109997000, -1111000000, -1111109600]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [250, 3], [750, 7], [100, 10]]) == [600, -1200, 2600, -3500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [250, 3], [750, 7], [100, 10]]) == [600, -1200, 2600, -3500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[7, 7], [5, 5], [10, 10], [12, 15]]) == [8, -15, 46, 108]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[7, 7], [5, 5], [10, 10], [12, 15]]) == [8, -15, 46, 108]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [300, 7], [600, 4]]) == [600, -800, 800]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],queries = [[500, 5], [300, 7], [600, 4]]) == [600, -800, 800]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],queries = [[5000, 3], [2000, 2], [8000, 4]]) == [2000, -11000, 10000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],queries = [[5000, 3], [2000, 2], [8000, 4]]) == [2000, -11000, 10000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [5, 10], [1, 5], [10, 10]]) == [6, 25, -30, 55]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [5, 10], [1, 5], [10, 10]]) == [6, 25, -30, 55]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 22, 10, 19, 15, 30, 25, 40, 5],queries = [[18, 6], [5, 3], [30, 7], [10, 5]]) == [27, -65, 79, -36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 22, 10, 19, 15, 30, 25, 40, 5],queries = [[18, 6], [5, 3], [30, 7], [10, 5]]) == [27, -65, 79, -36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 3], [5, 5], [7, 7]]) == [3, 25, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 3], [5, 5], [7, 7]]) == [3, 25, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 1, 9, 1, 9, 1, 9, 1, 9],queries = [[5, 5], [5, 10], [5, 3], [9, 8], [1, 2]]) == [5, 10, 3, 32, -14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 1, 9, 1, 9, 1, 9, 1, 9],queries = [[5, 5], [5, 10], [5, 3], [9, 8], [1, 2]]) == [5, 10, 3, 32, -14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[50, 10], [10, 10], [90, 10]]) == [250, -350, 530]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[50, 10], [10, 10], [90, 10]]) == [250, -350, 530]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[1, 15], [2, 15], [3, 15], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15], [15, 15]]) == [-90, -62, -36, -12, 10, 30, 48, 64, 78, 90, 100, 108, 114, 118, 120]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[1, 15], [2, 15], [3, 15], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [10, 15], [11, 15], [12, 15], [13, 15], [14, 15], [15, 15]]) == [-90, -62, -36, -12, 10, 30, 48, 64, 78, 90, 100, 108, 114, 118, 120]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10]]) == [0, 1, 2, 4, 6, 9, 12, 16, 20, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 10]]) == [0, 1, 2, 4, 6, 9, 12, 16, 20, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[1, 5], [3, 5], [5, 5], [7, 5], [9, 5], [11, 5], [13, 5], [15, 5], [17, 5], [19, 5]]) == [-70, -50, -30, -10, 6, 18, 26, 30, 30, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[1, 5], [3, 5], [5, 5], [7, 5], [9, 5], [11, 5], [13, 5], [15, 5], [17, 5], [19, 5]]) == [-70, -50, -30, -10, 6, 18, 26, 30, 30, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],queries = [[50, 10], [150, 10], [250, 10], [350, 10], [450, 10], [550, 10], [650, 10], [750, 10], [850, 10], [950, 10], [1050, 10], [1150, 10], [1250, 10], [1350, 10], [1450, 10]]) == [-9500, -7500, -5500, -3500, -1700, -100, 1300, 2500, 3500, 4300, 4900, 5300, 5500, 5500, 5500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],queries = [[50, 10], [150, 10], [250, 10], [350, 10], [450, 10], [550, 10], [650, 10], [750, 10], [850, 10], [950, 10], [1050, 10], [1150, 10], [1250, 10], [1350, 10], [1450, 10]]) == [-9500, -7500, -5500, -3500, -1700, -100, 1300, 2500, 3500, 4300, 4900, 5300, 5500, 5500, 5500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [-11, -1, 6, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [-11, -1, 6, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 5], [25, 5], [35, 5], [45, 5], [55, 5], [65, 5], [75, 5], [85, 5], [95, 5]]) == [-250, -150, -50, 30, 90, 130, 150, 150, 150]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 5], [25, 5], [35, 5], [45, 5], [55, 5], [65, 5], [75, 5], [85, 5], [95, 5]]) == [-250, -150, -50, 30, 90, 130, 150, 150, 150]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 900000000, 800000000, 700000000, 600000000, 500000000, 400000000, 300000000, 200000000, 100000000],queries = [[600000000, 5], [300000000, 3], [800000000, 7], [500000000, 10]]) == [1100000000, -900000000, 2700000000, 2500000000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 900000000, 800000000, 700000000, 600000000, 500000000, 400000000, 300000000, 200000000, 100000000],queries = [[600000000, 5], [300000000, 3], [800000000, 7], [500000000, 10]]) == [1100000000, -900000000, 2700000000, 2500000000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 7], [10, 10], [15, 15], [1, 3]]) == [-14, 46, 120, -36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 7], [10, 10], [15, 15], [1, 3]]) == [-14, 46, 120, -36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 4, 3, 2, 1],queries = [[3, 1], [4, 2], [2, 3], [1, 4], [5, 5]]) == [1, 3, 0, -6, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 4, 3, 2, 1],queries = [[3, 1], [4, 2], [2, 3], [1, 4], [5, 5]]) == [1, 3, 0, -6, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [[999999995, 5], [999999992, 3], [999999998, 7], [999999990, 10]]) == [4999999956, 2999999958, 6999999951, 9999999855]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],queries = [[999999995, 5], [999999992, 3], [999999998, 7], [999999990, 10]]) == [4999999956, 2999999958, 6999999951, 9999999855]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [5, 10], [7, 3]]) == [5, 50, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [5, 10], [7, 3]]) == [5, 50, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [-11, -1, 6, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [-11, -1, 6, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 100, 200, 300, 400, 500],queries = [[100, 10], [50, 15], [10, 5]]) == [-579, -945, -1400]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 100, 200, 300, 400, 500],queries = [[100, 10], [50, 15], [10, 5]]) == [-579, -945, -1400]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 5], [10, 10], [3, 3], [8, 8], [7, 7], [6, 6], [4, 4], [2, 2], [1, 1], [15, 15]]) == [-15, 46, -24, 20, 8, -4, -22, -21, -13, 120]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 5], [10, 10], [3, 3], [8, 8], [7, 7], [6, 6], [4, 4], [2, 2], [1, 1], [15, 15]]) == [-15, 46, -24, 20, 8, -4, -22, -21, -13, 120]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[15, 10], [20, 15], [5, 5], [25, 20]]) == [25, 111, -90, 210]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[15, 10], [20, 15], [5, 5], [25, 20]]) == [25, 111, -90, 210]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[11, 6], [7, 4], [3, 9], [17, 10]]) == [24, -12, -54, 102]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[11, 6], [7, 4], [3, 9], [17, 10]]) == [24, -12, -54, 102]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 500000000, 250000000, 125000000, 62500000, 31250000, 15625000, 7812500, 3906250, 1953125],queries = [[500000000, 5], [1000000000, 10], [1953125, 10]]) == [29296875, 1998046875, -1958984375]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 500000000, 250000000, 125000000, 62500000, 31250000, 15625000, 7812500, 3906250, 1953125],queries = [[500000000, 5], [1000000000, 10], [1953125, 10]]) == [29296875, 1998046875, -1958984375]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[5, 2], [25, 5], [50, 10], [75, 3], [100, 1]]) == [-170, -150, 250, 60, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[5, 2], [25, 5], [50, 10], [75, 3], [100, 1]]) == [-170, -150, 250, 60, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10],queries = [[2, 3], [5, 5], [7, 7], [10, 10], [1, 1]]) == [-15, 6, 24, 55, -8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10],queries = [[2, 3], [5, 5], [7, 7], [10, 10], [1, 1]]) == [-15, 6, 24, 55, -8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],queries = [[15, 10], [25, 15], [5, 5], [35, 20]]) == [-18, 180, -130, 402]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],queries = [[15, 10], [25, 15], [5, 5], [35, 20]]) == [-18, 180, -130, 402]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],queries = [[5, 3], [50, 5], [500, 7], [5000, 9]]) == [-110999970, -111109500, -111104999, -111058889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],queries = [[5, 3], [50, 5], [500, 7], [5000, 9]]) == [-110999970, -111109500, -111104999, -111058889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[5, 10], [1000000000, 10], [2, 5]]) == [-999999965, 1000000045, -1000000010]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[5, 10], [1000000000, 10], [2, 5]]) == [-999999965, 1000000045, -1000000010]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000],queries = [[5, 3], [100, 4], [10000, 5]]) == [-1109970, -1110200, -1059889]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 10, 100, 1000, 10000, 100000, 1000000],queries = [[5, 3], [100, 4], [10000, 5]]) == [-1109970, -1110200, -1059889]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],queries = [[5, 5], [15, 5], [10, 10], [10, 2]]) == [0, 50, 100, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],queries = [[5, 5], [15, 5], [10, 10], [10, 2]]) == [0, 50, 100, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[1, 5], [2, 5], [3, 5], [1, 10]]) == [5, 5, 5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[1, 5], [2, 5], [3, 5], [1, 10]]) == [5, 5, 5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [-25, -14, -6, -1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [-25, -14, -6, -1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[55, 5], [50, 5], [45, 5], [40, 5], [35, 5]]) == [90, 60, 30, -10, -50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[55, 5], [50, 5], [45, 5], [40, 5], [35, 5]]) == [90, 60, 30, -10, -50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[10, 10], [5, 5], [15, 15]]) == [25, -40, 111]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[10, 10], [5, 5], [15, 15]]) == [25, -40, 111]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],queries = [[55, 15], [125, 10], [75, 5], [195, 20]]) == [-360, 460, -150, 2090]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],queries = [[55, 15], [125, 10], [75, 5], [195, 20]]) == [-360, 460, -150, 2090]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[55, 5], [75, 6], [25, 3], [45, 4], [65, 5]]) == [90, 200, -120, 10, 130]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[55, 5], [75, 6], [25, 3], [45, 4], [65, 5]]) == [90, 200, -120, 10, 130]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 10], [25, 5], [45, 7], [65, 3]]) == [-260, -150, 80, 60]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],queries = [[15, 10], [25, 5], [45, 7], [65, 3]]) == [-260, -150, 80, 60]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [999999999, 1000000000, 1000000001],queries = [[1000000000, 2], [1000000001, 3], [999999999, 1]]) == [1999999998, 3000000000, 999999997]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [999999999, 1000000000, 1000000001],queries = [[1000000000, 2], [1000000001, 3], [999999999, 1]]) == [1999999998, 3000000000, 999999997]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [[1000000000, 5], [500000000, 3], [1500000000, 2]]) == [5000000000, 0, 2000000000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000],queries = [[1000000000, 5], [500000000, 3], [1500000000, 2]]) == [5000000000, 0, 2000000000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [6, 3], [5, 10], [2, 2]]) == [5, 15, 50, -2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],queries = [[3, 5], [6, 3], [5, 10], [2, 2]]) == [5, 15, 50, -2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 7], [10, 10], [15, 5]]) == [-14, 46, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[5, 7], [10, 10], [15, 5]]) == [-14, 46, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],queries = [[30, 10], [60, 15], [40, 5], [100, 20]]) == [-175, 420, -50, 1050]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],queries = [[30, 10], [60, 15], [40, 5], [100, 20]]) == [-175, 420, -50, 1050]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[3, 5], [3, 10], [3, 2], [3, 8]]) == [15, 30, 6, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[3, 5], [3, 10], [3, 2], [3, 8]]) == [15, 30, 6, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 5], [3, 7], [8, 3]]) == [6, -8, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 5], [3, 7], [8, 3]]) == [6, -8, 6]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[5, 5], [10, 10], [3, 3], [7, 7]]) == [6, 55, -9, 24]
@@ -97,3 +865,5 @@ def check(candidate):
     assert candidate(prices = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],queries = [[30, 10], [60, 15], [40, 5], [100, 20]]) == [-175, 420, -50, 1050]
     assert candidate(prices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[3, 5], [3, 10], [3, 2], [3, 8]]) == [15, 30, 6, 24]
     assert candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],queries = [[5, 5], [3, 7], [8, 3]]) == [6, -8, 6]
+
+

@@ -1,5 +1,557 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'pleas', 'please'],puzzles = ['aelwxyz', 'aelpxyz', 'aelpsxy', 'saelpxy', 'xaelpsy']) == [0, 1, 3, 2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'pleas', 'please'],puzzles = ['aelwxyz', 'aelpxyz', 'aelpsxy', 'saelpxy', 'xaelpsy']) == [0, 1, 3, 2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world', 'abc', 'def', 'ghi'],puzzles = ['ahelloz', 'dworldz', 'abcdefg', 'xyzghif', 'mnopqrs']) == [0, 1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world', 'abc', 'def', 'ghi'],puzzles = ['ahelloz', 'dworldz', 'abcdefg', 'xyzghif', 'mnopqrs']) == [0, 1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaa', 'asas', 'able', 'ability', 'actt', 'actor', 'access'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz']) == [1, 1, 3, 2, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaa', 'asas', 'able', 'ability', 'actt', 'actor', 'access'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz']) == [1, 1, 3, 2, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world'],puzzles = ['ehlol', 'dlrow']) == [1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world'],puzzles = ['ehlol', 'dlrow']) == [1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['cat', 'dog', 'bird'],puzzles = ['act', 'dgo', 'bdir']) == [1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['cat', 'dog', 'bird'],puzzles = ['act', 'dgo', 'bdir']) == [1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzzz', 'zzz', 'zz', 'z'],puzzles = ['zabcdefghijklmnopqrstuvwxy']) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzzz', 'zzz', 'zz', 'z'],puzzles = ['zabcdefghijklmnopqrstuvwxy']) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaa', 'aaa', 'aa', 'a'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [4, 0, 4, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaa', 'aaa', 'aa', 'a'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [4, 0, 4, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a'],puzzles = ['abcdefg', 'ghijklm', 'nopqrst']) == [3, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a'],puzzles = ['abcdefg', 'ghijklm', 'nopqrst']) == [3, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],puzzles = ['abcdefg']) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],puzzles = ['abcdefg']) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c'],puzzles = ['abc', 'def', 'ghi']) == [1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c'],puzzles = ['abc', 'def', 'ghi']) == [1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefg'],puzzles = ['abcdefg']) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefg'],puzzles = ['abcdefg']) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'def', 'ghi'],puzzles = ['abcdefg', 'ghijklm', 'nopqrst']) == [1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'def', 'ghi'],puzzles = ['abcdefg', 'ghijklm', 'nopqrst']) == [1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm', 'abcp', 'abcd', 'abcde', 'abcdf', 'abcde', 'abcde', 'abcdf'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'defghij', 'ghijklm', 'ijklmno', 'jklmnop', 'klmnopq', 'lmnopqr', 'mnopqrs', 'nopqrst', 'opqrstu', 'pqrstuv', 'qrstuvw', 'rstuvwx', 'stuvwxy', 'tuvwxyz']) == [10, 1, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm', 'abcp', 'abcd', 'abcde', 'abcdf', 'abcde', 'abcde', 'abcdf'],puzzles = ['abcdefg', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'defghij', 'ghijklm', 'ijklmno', 'jklmnop', 'klmnopq', 'lmnopqr', 'mnopqrs', 'nopqrst', 'opqrstu', 'pqrstuv', 'qrstuvw', 'rstuvwx', 'stuvwxy', 'tuvwxyz']) == [10, 1, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'bc', 'cd', 'de', 'ef', 'fg', 'gh'],puzzles = ['abcdefgh', 'bcdefghi', 'cdefghij', 'defghijk', 'efghijkl']) == [1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'bc', 'cd', 'de', 'ef', 'fg', 'gh'],puzzles = ['abcdefgh', 'bcdefghi', 'cdefghij', 'defghijk', 'efghijkl']) == [1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefghijklmnop', 'qrstuvwxyz'],puzzles = ['abcdefghijklnoprstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba']) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefghijklmnop', 'qrstuvwxyz'],puzzles = ['abcdefghijklnoprstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba']) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abacax', 'bacbac', 'cababc', 'xdsv', 'abcd', 'dcba', 'abdc', 'bacd', 'acbd', 'cabd'],puzzles = ['abcaxd', 'bacxzd', 'cabxdz', 'xdsvab', 'abcdx', 'dcba', 'abcd', 'bacd', 'acbd', 'cabd']) == [9, 9, 9, 1, 9, 6, 8, 8, 8, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abacax', 'bacbac', 'cababc', 'xdsv', 'abcd', 'dcba', 'abdc', 'bacd', 'acbd', 'cabd'],puzzles = ['abcaxd', 'bacxzd', 'cabxdz', 'xdsvab', 'abcdx', 'dcba', 'abcd', 'bacd', 'acbd', 'cabd']) == [9, 9, 9, 1, 9, 6, 8, 8, 8, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc']) == [1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc']) == [1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['umbrella', 'raincoat', 'boot', 'galoshes', 'sunglasses', 'scarf', 'jacket', 'boots', 'mittens', 'hat'],puzzles = ['blutgos', 'mireach', 'nabstgr', 'lgohtua', 'ogtsbem', 'rtgpsha', 'suboegt', 'ahrctbq', 'smrguth', 'bmeghiu']) == [2, 0, 0, 0, 2, 0, 1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['umbrella', 'raincoat', 'boot', 'galoshes', 'sunglasses', 'scarf', 'jacket', 'boots', 'mittens', 'hat'],puzzles = ['blutgos', 'mireach', 'nabstgr', 'lgohtua', 'ogtsbem', 'rtgpsha', 'suboegt', 'ahrctbq', 'smrguth', 'bmeghiu']) == [2, 0, 0, 0, 2, 0, 1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world', 'python', 'programming', 'challenge', 'algorithms', 'data', 'structure', 'complexity', 'algorithm'],puzzles = ['ehlol', 'dlrow', 'htpon', 'gnimmargorp', 'llengec', 'smhtloga', 'aadtt', 'ctreusd', 'xytacpml', 'lgoitamha']) == [1, 1, 0, 1, 0, 0, 1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world', 'python', 'programming', 'challenge', 'algorithms', 'data', 'structure', 'complexity', 'algorithm'],puzzles = ['ehlol', 'dlrow', 'htpon', 'gnimmargorp', 'llengec', 'smhtloga', 'aadtt', 'ctreusd', 'xytacpml', 'lgoitamha']) == [1, 1, 0, 1, 0, 0, 1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'pleas', 'please', 'apples', 'please', 'applesauce', 'pease', 'app', 'leap', 'pelase'],puzzles = ['aelwxyz', 'aelpxyz', 'aelpsxy', 'saelpxy', 'xaelpsy', 'applsey', 'peasely', 'ppleasy', 'leaps', 'peaslp']) == [0, 3, 9, 6, 0, 9, 9, 9, 7, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'pleas', 'please', 'apples', 'please', 'applesauce', 'pease', 'app', 'leap', 'pelase'],puzzles = ['aelwxyz', 'aelpxyz', 'aelpsxy', 'saelpxy', 'xaelpsy', 'applsey', 'peasely', 'ppleasy', 'leaps', 'peaslp']) == [0, 3, 9, 6, 0, 9, 9, 9, 7, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'orange', 'apple', 'grape', 'melon', 'kiwi', 'watermelon', 'strawberry', 'blueberry', 'raspberry', 'blackberry', 'mango', 'papaya', 'pineapple'],puzzles = ['aegimno', 'abegijm', 'aceimnu', 'agikmnp', 'agiknpw', 'aegilmn', 'bcehikn', 'abefhij', 'acdefln', 'acdelpw', 'aeghijn', 'aeiklnt', 'agilnop', 'abcklmn']) == [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'orange', 'apple', 'grape', 'melon', 'kiwi', 'watermelon', 'strawberry', 'blueberry', 'raspberry', 'blackberry', 'mango', 'papaya', 'pineapple'],puzzles = ['aegimno', 'abegijm', 'aceimnu', 'agikmnp', 'agiknpw', 'aegilmn', 'bcehikn', 'abefhij', 'acdefln', 'acdelpw', 'aeghijn', 'aeiklnt', 'agilnop', 'abcklmn']) == [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm'],puzzles = ['abcdefg', 'bcdefgh', 'cdefghi', 'defghij', 'efghijk', 'fghijkl', 'ghijklm', 'hijklmn']) == [1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm'],puzzles = ['abcdefg', 'bcdefgh', 'cdefghi', 'defghij', 'efghijk', 'fghijkl', 'ghijklm', 'hijklmn']) == [1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc', 'defghijk', 'lmnopqrs', 'tuvwxyz', 'abcdeefg'],puzzles = ['aaaabbbb', 'ccccdddd', 'eeeeffff', 'ggggghhh', 'iiiijjjj', 'kkkkllll', 'mmmmnnnn', 'oooooooo', 'pppppppp', 'qqqqqqqq', 'rrrrrrrr', 'ssssssss', 'tttttttt', 'uuuuuuuu', 'vvvvvvvv', 'wwwwwwww', 'xxxxxxxx', 'yyyyyyyy', 'zzzzzzzz']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc', 'defghijk', 'lmnopqrs', 'tuvwxyz', 'abcdeefg'],puzzles = ['aaaabbbb', 'ccccdddd', 'eeeeffff', 'ggggghhh', 'iiiijjjj', 'kkkkllll', 'mmmmnnnn', 'oooooooo', 'pppppppp', 'qqqqqqqq', 'rrrrrrrr', 'ssssssss', 'tttttttt', 'uuuuuuuu', 'vvvvvvvv', 'wwwwwwww', 'xxxxxxxx', 'yyyyyyyy', 'zzzzzzzz']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'bbccdd', 'ccddeeff', 'ddeeffgg', 'effgghhi', 'ffgghhii', 'gghhiijj', 'hhiijjkk'],puzzles = ['abcdefgh', 'hgfedcba', 'ijklmnop', 'ponmlkj', 'efghijkl', 'ghijklmn', 'opqrstuv', 'wzyxvutsr']) == [1, 0, 0, 0, 1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'bbccdd', 'ccddeeff', 'ddeeffgg', 'effgghhi', 'ffgghhii', 'gghhiijj', 'hhiijjkk'],puzzles = ['abcdefgh', 'hgfedcba', 'ijklmnop', 'ponmlkj', 'efghijkl', 'ghijklmn', 'opqrstuv', 'wzyxvutsr']) == [1, 0, 0, 0, 1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'cdefghi', 'jklmnop', 'qrstuvw', 'xyzabcd', 'efghijk', 'lmnopqr', 'stuvxyz', 'abcdefghi', 'jklmnopqr', 'stuvwxyz', 'abcdefghijklmnop', 'qrstuvwxyzabc', 'defghijklmn', 'opqrstuvwxy', 'zabcdefghij', 'klmnopqrstu', 'vwxyzabcde', 'fghijklmnop', 'ghijklmnopq', 'ijklmnopqr', 'jklmnopqrs', 'klmnopqrst', 'mnopqrstu', 'nopqrstuv', 'opqrstuvw', 'pqrsuvwxy', 'qrstuvxyz', 'rstuvwxyz', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'cdefghi', 'jklmnop', 'qrstuvw', 'xyzabcd', 'efghijk', 'lmnopqr', 'stuvxyz', 'abcdefghi', 'jklmnopqr', 'stuvwxyz', 'abcdefghijklmnop', 'qrstuvwxyzabc', 'defghijklmn', 'opqrstuvwxy', 'zabcdefghij', 'klmnopqrstu', 'vwxyzabcde', 'fghijklmnop', 'ghijklmnopq', 'ijklmnopqr', 'jklmnopqrs', 'klmnopqrst', 'mnopqrstu', 'nopqrstuv', 'opqrstuvw', 'pqrsuvwxy', 'qrstuvxyz', 'rstuvwxyz', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['small', 'larger', 'largest', 'tiny', 'little', 'biggest'],puzzles = ['smallest', 'largestp', 'tinyabc', 'littlezyx', 'biggestuvw', 'smallxyz']) == [1, 2, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['small', 'larger', 'largest', 'tiny', 'little', 'biggest'],puzzles = ['smallest', 'largestp', 'tinyabc', 'littlezyx', 'biggestuvw', 'smallxyz']) == [1, 2, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'backpack', 'calculator', 'database', 'encoder', 'firewall', 'government', 'hierarchy', 'identifier', 'jungle', 'kangaroo', 'lemonade', 'molecule', 'narrative', 'occasion', 'printer', 'queue', 'rabbit', 'snapshot', 'treatment', 'umbrella', 'vaccinate', 'wonderful', 'xylophone', 'yield', 'zoo'],puzzles = ['acdeinor', 'bfjkpstu', 'aghlmopt', 'cddegkln', 'egilnoqs', 'fhiklmpr', 'ajnpqrsv', 'bcdghstv', 'adeikmou', 'bcfgimnp']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'backpack', 'calculator', 'database', 'encoder', 'firewall', 'government', 'hierarchy', 'identifier', 'jungle', 'kangaroo', 'lemonade', 'molecule', 'narrative', 'occasion', 'printer', 'queue', 'rabbit', 'snapshot', 'treatment', 'umbrella', 'vaccinate', 'wonderful', 'xylophone', 'yield', 'zoo'],puzzles = ['acdeinor', 'bfjkpstu', 'aghlmopt', 'cddegkln', 'egilnoqs', 'fhiklmpr', 'ajnpqrsv', 'bcdghstv', 'adeikmou', 'bcfgimnp']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dogs'],puzzles = ['quickbz', 'brownxz', 'foxgjkl', 'jumpsxz', 'overmnp', 'lazyuvw', 'dogswyz']) == [1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dogs'],puzzles = ['quickbz', 'brownxz', 'foxgjkl', 'jumpsxz', 'overmnp', 'lazyuvw', 'dogswyz']) == [1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc', 'defghijk', 'lmnopqrs', 'tuvwxyz', 'abcdeefg']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'mnopqrst', 'vwxyzabc', 'defghijk', 'lmnopqrs', 'tuvwxyz', 'abcdeefg']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'efghijkl', 'ijklmnop', 'mnopqrst', 'opqrstuv', 'qrstuvwx', 'stuvwxyz', 'vwxyzabc', 'wxyzabcd', 'xyzabcde', 'yzabcdef', 'abcdefgh', 'ijklmnop', 'qrstuvwx', 'wxyzabcd'],puzzles = ['abcdefghijkl', 'mnopqrstuv', 'qrstuvwxy', 'stuvwxyzab', 'vwxyzabcde', 'wxyzabcdef', 'xyzabcdefg', 'yzabcdefgh', 'zabcdefghi', 'abcdefghij', 'bcdefghijk', 'cdefghijkl', 'defghijklm', 'efghijklmn', 'fghijklmno', 'ghijklmnop', 'hijklmnopq', 'ijklmnopqr', 'jklmnopqrs', 'klmnopqrst', 'lmnopqrstu', 'mnopqrstuv', 'nopqrstuvw', 'opqrstuvwx', 'pqrstuvwxy', 'qrstuvwx', 'rstuvwxy', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [2, 1, 2, 1, 1, 2, 1, 1, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'efghijkl', 'ijklmnop', 'mnopqrst', 'opqrstuv', 'qrstuvwx', 'stuvwxyz', 'vwxyzabc', 'wxyzabcd', 'xyzabcde', 'yzabcdef', 'abcdefgh', 'ijklmnop', 'qrstuvwx', 'wxyzabcd'],puzzles = ['abcdefghijkl', 'mnopqrstuv', 'qrstuvwxy', 'stuvwxyzab', 'vwxyzabcde', 'wxyzabcdef', 'xyzabcdefg', 'yzabcdefgh', 'zabcdefghi', 'abcdefghij', 'bcdefghijk', 'cdefghijkl', 'defghijklm', 'efghijklmn', 'fghijklmno', 'ghijklmnop', 'hijklmnopq', 'ijklmnopqr', 'jklmnopqrs', 'klmnopqrst', 'lmnopqrstu', 'mnopqrstuv', 'nopqrstuvw', 'opqrstuvwx', 'pqrstuvwxy', 'qrstuvwx', 'rstuvwxy', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [2, 1, 2, 1, 1, 2, 1, 1, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['alphabet', 'apricot', 'banana', 'character', 'date', 'elderberry', 'fig', 'grape', 'honeydew'],puzzles = ['abcdefgh', 'bdegijkm', 'aehlstu', 'cfimnpr', 'dgoqrsv', 'fhiklmt', 'ajnoprt', 'bgpqwxyz']) == [0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['alphabet', 'apricot', 'banana', 'character', 'date', 'elderberry', 'fig', 'grape', 'honeydew'],puzzles = ['abcdefgh', 'bdegijkm', 'aehlstu', 'cfimnpr', 'dgoqrsv', 'fhiklmt', 'ajnoprt', 'bgpqwxyz']) == [0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apricot', 'banana', 'berry', 'blueberry', 'grape', 'orange', 'peach', 'pear', 'pineapple', 'plum', 'raspberry', 'strawberry'],puzzles = ['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy', 'zabcde', 'efghij', 'klmnop', 'qrstuv', 'vwxyz', 'abcdefg', 'hijklmnop', 'qrstuvwxy']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apricot', 'banana', 'berry', 'blueberry', 'grape', 'orange', 'peach', 'pear', 'pineapple', 'plum', 'raspberry', 'strawberry'],puzzles = ['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy', 'zabcde', 'efghij', 'klmnop', 'qrstuv', 'vwxyz', 'abcdefg', 'hijklmnop', 'qrstuvwxy']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['programming', 'puzzle', 'valid', 'word', 'condition', 'satisfied', 'contain', 'letter', 'each', 'given', 'example', 'explained', 'characters', 'repeated', 'wordlist', 'respect', 'array', 'answer', 'number', 'words', 'validity', 'requirements', 'constraint', 'solution', 'algorithm', 'datastructure', 'python', 'java', 'cpp', 'ruby', 'javascript'],puzzles = ['rogrammping', 'zlepuz', 'dlivav', 'drwo', 'noitcnidio', 'tdiatseifas', 'naicton', 'ttelr', 'aech', 'nevig', 'elpmaxe', 'dnaiexpleid', 'srcahracter', 'tepreprea', 'ltsidrowd', 'ectspor', 'yarra', 'srnaa', 'mrubov', 'noitpircsaj', 'vaftsiw', 'ogp', 'tsur', 'perl', 'alcas', 'niltok', 'lleksah', 'tpircsavaj', 'tekcarr', 'ual', 'gnerl', 'xirele', 'ailuj', 'lboc']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['programming', 'puzzle', 'valid', 'word', 'condition', 'satisfied', 'contain', 'letter', 'each', 'given', 'example', 'explained', 'characters', 'repeated', 'wordlist', 'respect', 'array', 'answer', 'number', 'words', 'validity', 'requirements', 'constraint', 'solution', 'algorithm', 'datastructure', 'python', 'java', 'cpp', 'ruby', 'javascript'],puzzles = ['rogrammping', 'zlepuz', 'dlivav', 'drwo', 'noitcnidio', 'tdiatseifas', 'naicton', 'ttelr', 'aech', 'nevig', 'elpmaxe', 'dnaiexpleid', 'srcahracter', 'tepreprea', 'ltsidrowd', 'ectspor', 'yarra', 'srnaa', 'mrubov', 'noitpircsaj', 'vaftsiw', 'ogp', 'tsur', 'perl', 'alcas', 'niltok', 'lleksah', 'tpircsavaj', 'tekcarr', 'ual', 'gnerl', 'xirele', 'ailuj', 'lboc']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefg', 'hijklmnop', 'qrstuvwxyz'],puzzles = ['abcdefg', 'hijklmnop', 'qrstuvwxyz', 'mnopqrstuvw', 'abcdefgxyz']) == [1, 1, 1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefg', 'hijklmnop', 'qrstuvwxyz'],puzzles = ['abcdefg', 'hijklmnop', 'qrstuvwxyz', 'mnopqrstuvw', 'abcdefgxyz']) == [1, 1, 1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['leetcode', 'contest', 'coding', 'challenges'],puzzles = ['leetcodez', 'contestx', 'codingv', 'challengesm']) == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['leetcode', 'contest', 'coding', 'challenges'],puzzles = ['leetcodez', 'contestx', 'codingv', 'challengesm']) == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'bbaacc', 'ccddaa', 'aabbdd', 'bbccdd', 'aaccbb', 'aaddee', 'bbffee', 'ccddee', 'ddeeff', 'aabb', 'bbcc', 'ccdd', 'aadd', 'bbeeff', 'ddeegg'],puzzles = ['abcdeff', 'aabbbcc', 'ccdddee', 'bbffeea', 'ddeeggh', 'ffggggg', 'aabbccc', 'dddeeff', 'aabbccf', 'aabbbcc', 'aacceeg', 'bbddeee', 'cdddeee', 'ddeeffe', 'eefffgg', 'bbbeeee']) == [8, 4, 2, 3, 1, 0, 4, 1, 4, 4, 0, 0, 2, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'bbaacc', 'ccddaa', 'aabbdd', 'bbccdd', 'aaccbb', 'aaddee', 'bbffee', 'ccddee', 'ddeeff', 'aabb', 'bbcc', 'ccdd', 'aadd', 'bbeeff', 'ddeegg'],puzzles = ['abcdeff', 'aabbbcc', 'ccdddee', 'bbffeea', 'ddeeggh', 'ffggggg', 'aabbccc', 'dddeeff', 'aabbccf', 'aabbbcc', 'aacceeg', 'bbddeee', 'cdddeee', 'ddeeffe', 'eefffgg', 'bbbeeee']) == [8, 4, 2, 3, 1, 0, 4, 1, 4, 4, 0, 0, 2, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['puzzle', 'word', 'game', 'challenge', 'dictionary', 'trivia', 'clue'],puzzles = ['elpuzs', 'drow', 'emag', 'nllgcahe', 'arnidcwoy', 'arvit', 'ucl']) == [1, 1, 1, 1, 0, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['puzzle', 'word', 'game', 'challenge', 'dictionary', 'trivia', 'clue'],puzzles = ['elpuzs', 'drow', 'emag', 'nllgcahe', 'arnidcwoy', 'arvit', 'ucl']) == [1, 1, 1, 1, 0, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'datastructure', 'binarysearch', 'hashmap'],puzzles = ['agrthmo', 'dtaustruc', 'binaryzse', 'hashmpq']) == [0, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'datastructure', 'binarysearch', 'hashmap'],puzzles = ['agrthmo', 'dtaustruc', 'binaryzse', 'hashmpq']) == [0, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef']) == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef']) == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'datastructure', 'programming', 'python', 'java', 'csharp'],puzzles = ['adphgrm', 'lstcrud', 'gyproam', 'nohtyp', 'avaj', 'rphscwa']) == [0, 0, 0, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'datastructure', 'programming', 'python', 'java', 'csharp'],puzzles = ['adphgrm', 'lstcrud', 'gyproam', 'nohtyp', 'avaj', 'rphscwa']) == [0, 0, 0, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa'],puzzles = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa']) == [5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa'],puzzles = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa']) == [5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaa', 'asas', 'able', 'ability', 'actt', 'actor', 'access', 'zzzz', 'zzzzz', 'zzzzzz'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz', 'zzzzzzy', 'zzzzzzz', 'zzzzzz', 'zzzzz']) == [1, 1, 3, 2, 4, 0, 3, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaa', 'asas', 'able', 'ability', 'actt', 'actor', 'access', 'zzzz', 'zzzzz', 'zzzzzz'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz', 'zzzzzzy', 'zzzzzzz', 'zzzzzz', 'zzzzz']) == [1, 1, 3, 2, 4, 0, 3, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['unique', 'words', 'only', 'once'],puzzles = ['uniqwxyz', 'wordpqr', 'onlyzxcv', 'oncevbnm']) == [0, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['unique', 'words', 'only', 'once'],puzzles = ['uniqwxyz', 'wordpqr', 'onlyzxcv', 'oncevbnm']) == [0, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'],puzzles = ['plea', 'anab', 'rehcyr', 'ated', 'rielderby', 'gfi', 'erap']) == [1, 1, 1, 1, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'],puzzles = ['plea', 'anab', 'rehcyr', 'ated', 'rielderby', 'gfi', 'erap']) == [1, 1, 1, 1, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaa', 'abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy', 'zabcd', 'efghi', 'jklmn', 'opqrs', 'tuvwx', 'yzabc'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'ghijklmn', 'opqrstuv', 'wxyzabcd', 'efghijkl', 'mnopqrst', 'uvwxabcd', 'yzmnopqr', 'abcdefgh']) == [2, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaa', 'abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy', 'zabcd', 'efghi', 'jklmn', 'opqrs', 'tuvwx', 'yzabc'],puzzles = ['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yzabcdef', 'ghijklmn', 'opqrstuv', 'wxyzabcd', 'efghijkl', 'mnopqrst', 'uvwxabcd', 'yzmnopqr', 'abcdefgh']) == [2, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'bbaacc', 'ccaabb', 'abbcdd', 'ddeebf', 'ffgghh', 'iiijjk', 'kkllmm', 'nnoopp', 'qqrstu', 'vwxyzw', 'abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'bcdefgh', 'cdefghi', 'defghij', 'efghijk', 'fghijkl', 'ghijklm', 'hijklmn', 'ijklmno', 'jklmnop', 'klmnopq', 'lmnopqr', 'mnopqrs', 'nopqrst', 'opqrstu', 'pqrstuv', 'qrstuvw', 'rstuvwx', 'stuvwxy', 'tuvwxyz', 'uvwxyzx', 'vwxyzwy']) == [5, 1, 1, 2, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'bbaacc', 'ccaabb', 'abbcdd', 'ddeebf', 'ffgghh', 'iiijjk', 'kkllmm', 'nnoopp', 'qqrstu', 'vwxyzw', 'abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'bcdefgh', 'cdefghi', 'defghij', 'efghijk', 'fghijkl', 'ghijklm', 'hijklmn', 'ijklmno', 'jklmnop', 'klmnopq', 'lmnopqr', 'mnopqrs', 'nopqrst', 'opqrstu', 'pqrstuv', 'qrstuvw', 'rstuvwx', 'stuvwxy', 'tuvwxyz', 'uvwxyzx', 'vwxyzwy']) == [5, 1, 1, 2, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['optimization', 'performance', 'complexity', 'computation', 'algorithm', 'graph', 'network'],puzzles = ['optimiz', 'perforanc', 'complex', 'compute', 'algorit', 'graphno', 'network']) == [0, 0, 0, 0, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['optimization', 'performance', 'complexity', 'computation', 'algorithm', 'graph', 'network'],puzzles = ['optimiz', 'perforanc', 'complex', 'compute', 'algorit', 'graphno', 'network']) == [0, 0, 0, 0, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['python', 'java', 'javascript', 'csharp', 'ruby', 'swift', 'go', 'kotlin', 'typescript', 'scala'],puzzles = ['japvoty', 'pryanst', 'thcykop', 'itvslgo', 'khpscrw', 'gytrskf', 'sptiygo', 'otpsrga', 'ksvcrtp', 'dgipyst']) == [1, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['python', 'java', 'javascript', 'csharp', 'ruby', 'swift', 'go', 'kotlin', 'typescript', 'scala'],puzzles = ['japvoty', 'pryanst', 'thcykop', 'itvslgo', 'khpscrw', 'gytrskf', 'sptiygo', 'otpsrga', 'ksvcrtp', 'dgipyst']) == [1, 0, 0, 0, 0, 0, 0, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'elephant', 'giraffe', 'hippopotamus', 'kangaroo', 'koala', 'panda', 'penguin', 'rhinoceros', 'sloth', 'tiger', 'wombat'],puzzles = ['zebraele', 'elephantg', 'giraffehi', 'hippopota', 'kangaroop', 'koalapd', 'pandarh', 'penguinr', 'rhinocerosl', 'slothti', 'tigerwo', 'wombatze']) == [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'elephant', 'giraffe', 'hippopotamus', 'kangaroo', 'koala', 'panda', 'penguin', 'rhinoceros', 'sloth', 'tiger', 'wombat'],puzzles = ['zebraele', 'elephantg', 'giraffehi', 'hippopota', 'kangaroop', 'koalapd', 'pandarh', 'penguinr', 'rhinocerosl', 'slothti', 'tigerwo', 'wombatze']) == [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['qwertyuiop', 'asdfghjklz', 'xcvbnm', 'python', 'java', 'csharp', 'javascript', 'html', 'css'],puzzles = ['qwertyui', 'asdfghjk', 'zxcvbnmq', 'pythonj', 'javabc', 'csharpx', 'javascriptz', 'htmlc', 'cssd']) == [0, 0, 0, 1, 1, 2, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['qwertyuiop', 'asdfghjklz', 'xcvbnm', 'python', 'java', 'csharp', 'javascript', 'html', 'css'],puzzles = ['qwertyui', 'asdfghjk', 'zxcvbnmq', 'pythonj', 'javabc', 'csharpx', 'javascriptz', 'htmlc', 'cssd']) == [0, 0, 0, 1, 1, 2, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn'],puzzles = ['abcdefghijkl', 'ijklmnopqr', 'mnopqrstuvwx', 'nopqrstuvwxy', 'opqrstuvwxy', 'pqrstuvwxy', 'qrstuvwxyzab', 'rstuvwxy', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn'],puzzles = ['abcdefghijkl', 'ijklmnopqr', 'mnopqrstuvwx', 'nopqrstuvwxy', 'opqrstuvwxy', 'pqrstuvwxy', 'qrstuvwxyzab', 'rstuvwxy', 'stuvwxyz', 'tuvwxyz', 'uvwxyz', 'vwxyz', 'wxyz', 'xyz', 'yz', 'z']) == [12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'data', 'structure', 'binary', 'tree', 'graph', 'queue', 'stack'],puzzles = ['dabtr', 'qagtr', 'stgfa', 'gihrq', 'pholm', 'thrue', 'qrtha']) == [1, 0, 0, 0, 0, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'data', 'structure', 'binary', 'tree', 'graph', 'queue', 'stack'],puzzles = ['dabtr', 'qagtr', 'stgfa', 'gihrq', 'pholm', 'thrue', 'qrtha']) == [1, 0, 0, 0, 0, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaab', 'bbbbb', 'ccccc', 'ddddd', 'eeeee', 'fffff', 'ggggg'],puzzles = ['abccccd', 'bccdde', 'ccdee', 'ddeeef', 'eeefff', 'fffggg', 'gggggh']) == [1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaab', 'bbbbb', 'ccccc', 'ddddd', 'eeeee', 'fffff', 'ggggg'],puzzles = ['abccccd', 'bccdde', 'ccdee', 'ddeeef', 'eeefff', 'fffggg', 'gggggh']) == [1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'data', 'structure', 'binary', 'tree', 'graph', 'queue', 'stack', 'hashmap', 'trie', 'heap', 'array', 'linkedlist', 'hashset', 'deque', 'priorityqueue', 'bloomfilter', 'bitmask', 'segmenttree', 'binarysearchtree'],puzzles = ['hsdcafr', 'gimnhpt', 'qertabc', 'xylotzp', 'qexhtab', 'qabctrs', 'dhracgp', 'fgihmpr', 'afbnmpt', 'bcdehmp']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'data', 'structure', 'binary', 'tree', 'graph', 'queue', 'stack', 'hashmap', 'trie', 'heap', 'array', 'linkedlist', 'hashset', 'deque', 'priorityqueue', 'bloomfilter', 'bitmask', 'segmenttree', 'binarysearchtree'],puzzles = ['hsdcafr', 'gimnhpt', 'qertabc', 'xylotzp', 'qexhtab', 'qabctrs', 'dhracgp', 'fgihmpr', 'afbnmpt', 'bcdehmp']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ability', 'actt', 'actor', 'access', 'apple', 'pleas', 'please', 'zzzz', 'zzyz', 'zzx', 'zzy', 'zzzzz'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz', 'zzzzzzz', 'zzzzzzy', 'zzzzzzy', 'zzzzzzx', 'zzzzzzy', 'zzzzzzz']) == [0, 0, 0, 0, 2, 0, 2, 4, 4, 3, 4, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ability', 'actt', 'actor', 'access', 'apple', 'pleas', 'please', 'zzzz', 'zzyz', 'zzx', 'zzy', 'zzzzz'],puzzles = ['aboveyz', 'abrodyz', 'abslute', 'absoryz', 'actresz', 'gaswxyz', 'zzzzzzz', 'zzzzzzy', 'zzzzzzy', 'zzzzzzx', 'zzzzzzy', 'zzzzzzz']) == [0, 0, 0, 0, 2, 0, 2, 4, 4, 3, 4, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg'],puzzles = ['abcdefg', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg'],puzzles = ['abcdefg', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb', 'bcadefg', 'abcgfed', 'gfedcba', 'agfedcb', 'bagfedc', 'cagfedb']) == [10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5, 6, 10, 1, 10, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'abcdefg', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl'],puzzles = ['abcdefgh', 'bcdefghi', 'cdefghij', 'defghijk', 'efghijkl', 'fghijklm', 'ghijklmn']) == [2, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'abcdefg', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl'],puzzles = ['abcdefgh', 'bcdefghi', 'cdefghij', 'defghijk', 'efghijkl', 'fghijklm', 'ghijklmn']) == [2, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'cdefghi', 'jklmnop', 'qrstuvi', 'wxyzabc', 'defghij', 'klmnopq', 'rstuvwx', 'yzabcde', 'fghijkl', 'mnopqrs', 'tuvwxy', 'xyzabcd', 'ghijklm', 'nopqrst', 'stuvwxy', 'tuvwxya', 'uvwxyab', 'vwxyzabc', 'wxyzabcd', 'xyzabcde']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],puzzles = ['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab', 'cdefghi', 'jklmnop', 'qrstuvi', 'wxyzabc', 'defghij', 'klmnopq', 'rstuvwx', 'yzabcde', 'fghijkl', 'mnopqrs', 'tuvwxy', 'xyzabcd', 'ghijklm', 'nopqrst', 'stuvwxy', 'tuvwxya', 'uvwxyab', 'vwxyzabc', 'wxyzabcd', 'xyzabcde']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'wonderful', 'algorithm', 'backpack', 'calculator', 'database', 'encoder', 'firewall', 'government', 'hierarchy', 'identifier', 'jungle', 'kangaroo', 'lemonade', 'molecule', 'narrative', 'occasion', 'printer', 'queue', 'rabbit', 'snapshot', 'treatment', 'umbrella', 'vaccinate', 'yield', 'zoo'],puzzles = ['zxylophon', 'wonderfll', 'algorithm', 'bacpack', 'calcutor', 'datbase', 'enconder', 'frwall', 'govrnment', 'hierchy', 'idenfitier', 'jngl', 'kngroo', 'lmndade', 'mclucule', 'nrrtive', 'oacasion', 'printer', 'queue', 'rabbit', 'snapshot', 'tratment', 'umbrlla', 'vcninate', 'yeld', 'zoo']) == [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'wonderful', 'algorithm', 'backpack', 'calculator', 'database', 'encoder', 'firewall', 'government', 'hierarchy', 'identifier', 'jungle', 'kangaroo', 'lemonade', 'molecule', 'narrative', 'occasion', 'printer', 'queue', 'rabbit', 'snapshot', 'treatment', 'umbrella', 'vaccinate', 'yield', 'zoo'],puzzles = ['zxylophon', 'wonderfll', 'algorithm', 'bacpack', 'calcutor', 'datbase', 'enconder', 'frwall', 'govrnment', 'hierchy', 'idenfitier', 'jngl', 'kngroo', 'lmndade', 'mclucule', 'nrrtive', 'oacasion', 'printer', 'queue', 'rabbit', 'snapshot', 'tratment', 'umbrlla', 'vcninate', 'yeld', 'zoo']) == [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'bcdefgha', 'cdefghab', 'defghabc', 'efghabcd', 'fghabcde', 'ghabcdef', 'habcdefg'],puzzles = ['abcdefgh', 'ghfedcba', 'bagfedch', 'cbaghfed', 'dcbagfhe', 'edcbaghf', 'fedcbagh', 'gfedcbah']) == [8, 8, 8, 8, 8, 8, 8, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'bcdefgha', 'cdefghab', 'defghabc', 'efghabcd', 'fghabcde', 'ghabcdef', 'habcdefg'],puzzles = ['abcdefgh', 'ghfedcba', 'bagfedch', 'cbaghfed', 'dcbagfhe', 'edcbaghf', 'fedcbagh', 'gfedcbah']) == [8, 8, 8, 8, 8, 8, 8, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'ijk', 'jkl', 'klm', 'lmn', 'mno', 'nop', 'opq', 'pqr', 'qrs', 'rst', 'stu', 'tuv', 'uvw', 'vwx', 'wxy', 'xyz'],puzzles = ['abcdef', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm', 'ijklmn', 'jklmno', 'klmnop', 'lmnopq', 'mnopqr', 'nopqrs', 'opqrst', 'pqrstu', 'qrstuv', 'rstuvw', 'stuvwx', 'tuvwxy', 'uvwxy', 'vwxyz', 'wxyz', 'xyz']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'ijk', 'jkl', 'klm', 'lmn', 'mno', 'nop', 'opq', 'pqr', 'qrs', 'rst', 'stu', 'tuv', 'uvw', 'vwx', 'wxy', 'xyz'],puzzles = ['abcdef', 'bcdefg', 'cdefgh', 'defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm', 'ijklmn', 'jklmno', 'klmnop', 'lmnopq', 'mnopqr', 'nopqrs', 'opqrst', 'pqrstu', 'qrstuv', 'rstuvw', 'stuvwx', 'tuvwxy', 'uvwxy', 'vwxyz', 'wxyz', 'xyz']) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world', 'python', 'programming'],puzzles = ['hellozp', 'dlrowxy', 'thonpqr', 'grammxyz']) == [1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world', 'python', 'programming'],puzzles = ['hellozp', 'dlrowxy', 'thonpqr', 'grammxyz']) == [1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcde', 'xyz', 'mnopqr', 'stuv', 'wxyz', 'abcdefgh', 'ijklmnop', 'qrstuv', 'vwxyz'],puzzles = ['abcdefgh', 'hgfedcba', 'ijklmnop', 'ponmlkji', 'qrstuv', 'vutsrq', 'wxyz', 'zyxw', 'mnopqrs', 'tuvwxyz']) == [3, 1, 1, 1, 1, 2, 1, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcde', 'xyz', 'mnopqr', 'stuv', 'wxyz', 'abcdefgh', 'ijklmnop', 'qrstuv', 'vwxyz'],puzzles = ['abcdefgh', 'hgfedcba', 'ijklmnop', 'ponmlkji', 'qrstuv', 'vutsrq', 'wxyz', 'zyxw', 'mnopqrs', 'tuvwxyz']) == [3, 1, 1, 1, 1, 2, 1, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa'],puzzles = ['aabcdef', 'aabbcde', 'aaccdde', 'aadddee', 'aaeefgg', 'aaffggg', 'aaggghh']) == [7, 7, 7, 7, 7, 7, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa'],puzzles = ['aabcdef', 'aabbcde', 'aaccdde', 'aadddee', 'aaeefgg', 'aaffggg', 'aaggghh']) == [7, 7, 7, 7, 7, 7, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh'],puzzles = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh']) == [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh'],puzzles = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh']) == [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['algorithm', 'data', 'structure', 'binary', 'search', 'tree'],puzzles = ['abcdert', 'datastr', 'binsear', 'algorithm']) == [1, 1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['algorithm', 'data', 'structure', 'binary', 'search', 'tree'],puzzles = ['abcdert', 'datastr', 'binsear', 'algorithm']) == [1, 1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['programming', 'coding', 'debugging', 'optimization', 'compilation', 'execution', 'interpretation', 'software'],puzzles = ['cpdibqr', 'gingqru', 'eohpamg', 'spgroit', 'qtoadfn', 'hpramgi', 'ironsgd', 'digspqr']) == [0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['programming', 'coding', 'debugging', 'optimization', 'compilation', 'execution', 'interpretation', 'software'],puzzles = ['cpdibqr', 'gingqru', 'eohpamg', 'spgroit', 'qtoadfn', 'hpramgi', 'ironsgd', 'digspqr']) == [0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(words = ['apple', 'pleas', 'please'],puzzles = ['aelwxyz', 'aelpxyz', 'aelpsxy', 'saelpxy', 'xaelpsy']) == [0, 1, 3, 2, 0]
@@ -70,3 +622,5 @@ def check(candidate):
     assert candidate(words = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh'],puzzles = ['abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh', 'abcdefgh']) == [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]
     assert candidate(words = ['algorithm', 'data', 'structure', 'binary', 'search', 'tree'],puzzles = ['abcdert', 'datastr', 'binsear', 'algorithm']) == [1, 1, 0, 1]
     assert candidate(words = ['programming', 'coding', 'debugging', 'optimization', 'compilation', 'execution', 'interpretation', 'software'],puzzles = ['cpdibqr', 'gingqru', 'eohpamg', 'spgroit', 'qtoadfn', 'hpramgi', 'ironsgd', 'digspqr']) == [0, 0, 0, 0, 0, 0, 0, 0]
+
+

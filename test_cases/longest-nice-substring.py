@@ -1,5 +1,1229 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Bb") == "Bb"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Bb") == "Bb": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgG") == "aAbBcCdDeEfFgG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgG") == "aAbBcCdDeEfFgG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "c") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "c") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "BbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "BbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgHIJKlmnopQRStuVwxYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgHIJKlmnopQRStuVwxYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaBbCc") == "aAaBbCc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaBbCc") == "aAaBbCc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "QwertyuiopASDFGHJKLzxcvbnmMNBVCXZLKJHGFDSAPOIUYTREWq") == "zxcvbnmMNBVCXZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "QwertyuiopASDFGHJKLzxcvbnmMNBVCXZLKJHGFDSAPOIUYTREWq") == "zxcvbnmMNBVCXZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaAAbbBBccCC") == "aaAAbbBBccCC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaAAbbBBccCC") == "aaAAbbBBccCC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aA") == "aA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aA") == "aA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "dDcCbBaA") == "dDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "dDcCbBaA") == "dDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AabbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "CcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AabbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "CcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAb") == "aA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAb") == "aA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcC") == "aAbBcC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcC") == "aAbBcC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "YazaAay") == "aAa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "YazaAay") == "aAa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "dDfFgG") == "dDfFgG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "dDfFgG") == "dDfFgG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopQRstuvQR") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopQRstuvQR") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDef") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDef") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abABB") == "abABB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abABB") == "abABB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbcDEdEfghIjklmNoPqRsTuVwXyZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbcDEdEfghIjklmNoPqRsTuVwXyZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abABcdCDefEF") == "abABcdCDefEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abABcdCDefEF") == "abABcdCDefEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabBcC") == "bBcC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabBcC") == "bBcC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDd") == "AaBbCcDd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDd") == "AaBbCcDd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzXYZ") == "xyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzXYZ") == "xyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcD") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcD") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcABCdefDEFghGHijIJklKLmnopMNOPqrstQRSTuvUVwxWXyzYZ") == "abcABCdefDEFghGHijIJklKLmnopMNOPqrstQRSTuvUVwxWXyzYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcABCdefDEFghGHijIJklKLmnopMNOPqrstQRSTuvUVwxWXyzYZ") == "abcABCdefDEFghGHijIJklKLmnopMNOPqrstQRSTuvUVwxWXyzYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefgHIJKLmnopQRstuvWxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefgHIJKLmnopQRstuvWxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcD") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcD") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdEFGH") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdEFGH"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdEFGH") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdEFGH": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmM") == "aAbBcCdDeEfFgGhHiIjJkKlLmM"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmM") == "aAbBcCdDeEfFgGhHiIjJkKlLmM": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzXYZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "xyzXYZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzXYZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "xyzXYZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzXYZaBcDedCbAz") == "xyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzXYZaBcDedCbAz") == "xyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyzaA") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyzaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyzaA") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyzaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbCCddEEffGGhhIIjjKKllMMnnOOppQQrrSSttuUvVwWxXyYzZ") == "uUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbCCddEEffGGhhIIjjKKllMMnnOOppQQrrSSttuUvVwWxXyYzZ") == "uUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijklMNOpQRstUVwxyzZ") == "zZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijklMNOpQRstUVwxyzZ") == "zZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abABcdCDefEFGghHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "abABcdCDefEFGghHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abABcdCDefEFGghHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "abABcdCDefEFGghHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGhijKLMnopQRStuVwXYz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGhijKLMnopQRStuVwXYz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefGhijklMnopqrstuvwxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefGhijklMnopqrstuvwxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaBcDeFgHiJkLmNoPqRsTuVwXyZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaBcDeFgHiJkLmNoPqRsTuVwXyZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefABCDefghijklmnoMNOPQRSTuvwxyXYZ") == "mnoMNO"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefABCDefghijklmnoMNOPQRSTuvwxyXYZ") == "mnoMNO": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijklMNOPqrstUVWXyzABCDefghIJKLmnopQRstuVWXyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijklMNOPqrstUVWXyzABCDefghIJKLmnopQRstuVWXyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDabcdABCD") == "aBcDabcdABCD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDabcdABCD") == "aBcDabcdABCD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwW") == "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwW"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwW") == "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwW": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDEfGhIjKlMnOpQrStUvWxYz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDEfGhIjKlMnOpQrStUvWxYz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzXYZabcABCdefDEFghijGHIJklmnopqrQRSTUVWstuvUVW") == "xyzXYZabcABCdefDEFghijGHIJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzXYZabcABCdefDEFghijGHIJklmnopqrQRSTUVWstuvUVW") == "xyzXYZabcABCdefDEFghijGHIJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA") == "bBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA") == "bBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefABCDefgHIJKlMNOPqrSTUVwxYZaBcDefGhIjKlMnoPqrStUvWxYz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefABCDefgHIJKlMNOPqrSTUVwxYZaBcDefGhIjKlMnoPqrStUvWxYz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abABcdCDefEFghGHijIJklKLmnopMNOPqrstuvwxyzZXYwvuUVtsrSRQPONMLKJIHgfedcbaABab") == "abABcdCDefEFghGHijIJklKLmnopMNOP"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abABcdCDefEFghGHijIJklKLmnopMNOPqrstuvwxyzZXYwvuUVtsrSRQPONMLKJIHgfedcbaABab") == "abABcdCDefEFghGHijIJklKLmnopMNOP": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZabcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZabcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZabcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAxyzXYZabcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "QwErTyUiOpAsDfGhJkLzXcVbNm") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "QwErTyUiOpAsDfGhJkLzXcVbNm") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijABCDEFGHIJKLmnopqrstuvwxyz") == "abcdefghijABCDEFGHIJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijABCDEFGHIJKLmnopqrstuvwxyz") == "abcdefghijABCDEFGHIJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") == "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") == "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZxyzXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZxyzXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZxyzXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabBBcccAAbbbCCC") == "aaabBBcccAAbbbCCC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabBBcccAAbbbCCC") == "aaabBBcccAAbbbCCC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZzZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgHIJKLmnopQRstuvWxyzabcdefgHIJKLmnopQRstuvWxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgHIJKLmnopQRstuvWxyzabcdefgHIJKLmnopQRstuvWxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDabcdABCDzzZZyyYYxxXXwwWWvvVVuuUUttTTssSSrrQQppOOmmLLkkJJiiHHggFFddBBAA") == "aBcDabcdABCDzzZZyyYYxxXXwwWWvvVVuuUUttTTssSS"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDabcdABCDzzZZyyYYxxXXwwWWvvVVuuUUttTTssSSrrQQppOOmmLLkkJJiiHHggFFddBBAA") == "aBcDabcdABCDzzZZyyYYxxXXwwWWvvVVuuUUttTTssSS": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaAbB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaAaAaBbBbBbCcCcCc") == "aaAaAaBbBbBbCcCcCc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaAaAaBbBbBbCcCcCc") == "aaAaAaBbBbBbCcCcCc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZabcdEFGHijklMNOPqrstUVWXyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZabcdEFGHijklMNOPqrstUVWXyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaaBBccDDeeffGghhiiJjkkLLmmNnoopPqqRrssTtuUvvWwXxyYzz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaaBBccDDeeffGghhiiJjkkLLmmNnoopPqqRrssTtuUvvWwXxyYzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaaBBccDDeeffGghhiiJjkkLLmmNnoopPqqRrssTtuUvvWwXxyYzz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaaBBccDDeeffGghhiiJjkkLLmmNnoopPqqRrssTtuUvvWwXxyYzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bAcBdCd") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bAcBdCd") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZxyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZxyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZxyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZxyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "zZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "zZyYxXwWvVuUtTsSrRpPqQoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcABCxyzXYZdefDEF") == "abcABCxyzXYZdefDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcABCxyzXYZdefDEF") == "abcABCxyzXYZdefDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abAcBdCdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "EeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abAcBdCdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "EeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcDEF") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcDEF") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCdef") == "aAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCdef"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCdef") == "aAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCdef": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeEfffGgHHiiJjKKllMMnnOOPPqqRRsstttUUvvWWxxYYzzZZ") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeEfffGgHHiiJjKKllMMnnOOPPqqRRsstttUUvvWWxxYYzzZZ") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ") == "abcABCdefDEFghGH"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcABCdefDEFghGHIjklKLmnopqrQRstuvUVwxyzXYZ") == "abcABCdefDEFghGH": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abABcdCDefEFghGHijIJklKLmnopMNOPqrstuvwxyzZXYwvuUVtsrSRQPONMLKJIHgfedcba") == "abABcdCDefEFghGHijIJklKLmnopMNOP"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abABcdCDefEFghGHijIJklKLmnopMNOPqrstuvwxyzZXYwvuUVtsrSRQPONMLKJIHgfedcba") == "abABcdCDefEFghGHijIJklKLmnopMNOP": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefABCDefgHIJKlMNOPqrSTUVwxYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefABCDefgHIJKlMNOPqrSTUVwxYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopqrQRST") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopqrQRST"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopqrQRST") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopqrQRST": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcdEfghijklmnopqrstuVwxy") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcdEfghijklmnopqrstuVwxy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcdEfghijklmnopqrstuVwxy") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZabcdEfghijklmnopqrstuVwxy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZa") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZa") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcC") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcC") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBaAcCdD") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBaAcCdD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBaAcCdD") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBaAcCdD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zZyYxXwWvVuUtTsSrRpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "zZyYxXwWvVuUtTsSrRpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zZyYxXwWvVuUtTsSrRpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "zZyYxXwWvVuUtTsSrRpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "xYzZyXaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCc") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCc") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcABCdefDEFgGhHijIJklKLmMnopNOPqrQRstSTuUVwWXyYzZ") == "abcABCdefDEFgGhHijIJklKLmMnopNOPqrQRstSTuU"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcABCdefDEFgGhHijIJklKLmMnopNOPqrQRstSTuUVwWXyYzZ") == "abcABCdefDEFgGhHijIJklKLmMnopNOPqrQRstSTuU": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbcDeFgHiJklMnopqrStuvWxyzZ") == "zZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbcDeFgHiJklMnopqrStuvWxyzZ") == "zZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeEfffGg") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeEfffGg") == "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaBbCcdDeE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefABCDEFxyzXYZuvwUVWqQrRsStTuUvVwWxXyYzZ") == "abcdefABCDEFxyzXYZuvwUVWqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefABCDEFxyzXYZuvwUVWqQrRsStTuUvVwWxXyYzZ") == "abcdefABCDEFxyzXYZuvwUVWqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijklMNOPqrSTUVwxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijklMNOPqrSTUVwxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcXYZabcXYZabcXYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcXYZabcXYZabcXYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijklMNOPqrstUVWXyzabcdEFGHijklMNOPqrstUVWXyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijklMNOPqrstUVWXyzabcdEFGHijklMNOPqrstUVWXyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAA") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAA") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyzABCdefGHIjklMNOpQRstuVWXyz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyzABCdefGHIjklMNOpQRstuVWXyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyzABCdefGHIjklMNOpQRstuVWXyz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzmnopQRstuVWXyzABCdefGHIjklMNOpQRstuVWXyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZ") == "Kk"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZ") == "Kk": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAbCdEfGhIjKlMnOpQrStUvWxYz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAbCdEfGhIjKlMnOpQrStUvWxYz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAbCdEfGhIjKlMnOpQrStUvWxYz") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAbCdEfGhIjKlMnOpQrStUvWxYz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ") == "xyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ") == "xyzXYZabcABCdefDEFghiGHIjklJKLmnoMNOpqrPQRstuSTUvVwWxyXYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbcDefGhiJklMnoPqrStuVwxYzABCdefGHIjklMNOpQRstuVWXyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbcDefGhiJklMnoPqrStuVwxYzABCdefGHIjklMNOpQRstuVWXyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijklMNOPqrstUVWXyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijklMNOPqrstUVWXyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefgHIJKLmnopQRstuvWxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefgHIJKLmnopQRstuvWxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbC") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbC") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYzABCD") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYzABCD") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aBcDeFgHiJkLmNoPqRsTuVwXyZaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgHIJKLmnopQRstUVwXYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgHIJKLmnopQRstUVwXYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdEFGHijkLmnopQRstUVwxYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdEFGHijkLmnopQRstUVwxYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZab") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZab"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZab") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZab": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgHIJKLmnopQRstuvWxyz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgHIJKLmnopQRstuvWxyz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgHIJKLmnopQRstuvWxyzab") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgHIJKLmnopQRstuvWxyzab") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyza") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyza"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyza") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzabcdefghijklmnopqrstuvwxyza": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZaaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZ") == "Kk"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZaaBBccDDeeFFggHHiiJJKkllMMnnOoPPqqRRssTTuuVVwwXXyyZZ") == "Kk": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefGHIJkLmnopQRstuvWXYZ") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefGHIJkLmnopQRstuvWXYZ") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCDEF") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCDEF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCDEF") == "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzABCDEF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xXyYzZwWvVuUtTsSrRqQpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "xXyYzZwWvVuUtTsSrRqQpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xXyYzZwWvVuUtTsSrRqQpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "xXyYzZwWvVuUtTsSrRqQpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz") == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz") == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aBcDcBaEeFfEgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "EeFfEgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aBcDcBaEeFfEgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "EeFfEgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
@@ -154,3 +1378,5 @@ def check(candidate):
     assert candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     assert candidate(s = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG") == "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZaabbCCddeeffGG"
     assert candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA") == "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaAaabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzxyzyxwvutVUtUrRqQpPnNmMlLkKjJiIhHgGfFeEdDcCbBaA"
+
+

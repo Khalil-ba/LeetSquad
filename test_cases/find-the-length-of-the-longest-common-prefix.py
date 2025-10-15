@@ -1,5 +1,981 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100000, 99999, 88888],arr2 = [10000, 9999, 8888]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100000, 99999, 88888],arr2 = [10000, 9999, 8888]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000],arr2 = [1000, 10000, 100000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000],arr2 = [1000, 10000, 100000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 1, 1],arr2 = [1, 1, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 1, 1],arr2 = [1, 1, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100000000],arr2 = [10000000, 1000000, 100000]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100000000],arr2 = [10000000, 1000000, 100000]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 456, 789],arr2 = [12345, 45678, 78901]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 456, 789],arr2 = [12345, 45678, 78901]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3],arr2 = [4, 4, 4]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3],arr2 = [4, 4, 4]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1],arr2 = [2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1],arr2 = [2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30],arr2 = [100, 200, 300]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30],arr2 = [100, 200, 300]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 55, 555],arr2 = [5, 50, 55]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 55, 555],arr2 = [5, 50, 55]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321],arr2 = [987654321, 98765432, 987654]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321],arr2 = [987654321, 98765432, 987654]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5678, 567, 56],arr2 = [56789, 56780, 5670]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5678, 567, 56],arr2 = [56789, 56780, 5670]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1],arr2 = [10, 100, 1000]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1],arr2 = [10, 100, 1000]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5655359, 56554],arr2 = [565, 5655]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5655359, 56554],arr2 = [565, 5655]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 11, 111],arr2 = [111, 11, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 11, 111],arr2 = [111, 11, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 12, 1],arr2 = [1234, 12, 123]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 12, 1],arr2 = [1234, 12, 123]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111, 222, 333],arr2 = [1111, 2222, 3333]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111, 222, 333],arr2 = [1111, 2222, 3333]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789],arr2 = [987654321]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789],arr2 = [987654321]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 456, 789],arr2 = [1234, 4567, 7890]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 456, 789],arr2 = [1234, 4567, 7890]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321],arr2 = [9876543210]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321],arr2 = [9876543210]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1234, 123, 12],arr2 = [12345, 1230, 120]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1234, 123, 12],arr2 = [12345, 1230, 120]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345, 67890, 1234],arr2 = [123456, 1234, 112233]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345, 67890, 1234],arr2 = [123456, 1234, 112233]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100],arr2 = [1000]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100],arr2 = [1000]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300],arr2 = [100, 200, 300]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300],arr2 = [100, 200, 300]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321],arr2 = [1234567890, 9876543210, 123456789, 987654321]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321],arr2 = [1234567890, 9876543210, 123456789, 987654321]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101010101, 202020202, 303030303],arr2 = [1010101010, 2020202020, 3030303030]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101010101, 202020202, 303030303],arr2 = [1010101010, 2020202020, 3030303030]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1234567, 123456, 12345, 1234, 123],arr2 = [12345678, 1234567, 123456, 12345, 1234]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1234567, 123456, 12345, 1234, 123],arr2 = [12345678, 1234567, 123456, 12345, 1234]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111, 222222, 333333],arr2 = [1111111, 2222222, 3333333, 111111, 222222, 333333]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111, 222222, 333333],arr2 = [1111111, 2222222, 3333333, 111111, 222222, 333333]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [56789012, 98765432, 12345678, 87654321],arr2 = [567890123, 987654321, 123456789, 876543210]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [56789012, 98765432, 12345678, 87654321],arr2 = [567890123, 987654321, 123456789, 876543210]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 101, 1001, 10001],arr2 = [10, 100, 1000, 10000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 101, 1001, 10001],arr2 = [10, 100, 1000, 10000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [888888, 777777, 666666, 555555],arr2 = [8888888, 7777777, 6666666, 5555555, 8888880, 7777770, 6666660, 5555550]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [888888, 777777, 666666, 555555],arr2 = [8888888, 7777777, 6666666, 5555555, 8888880, 7777770, 6666660, 5555550]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345678, 87654321, 11223344],arr2 = [123456789, 876543210, 112233445, 12345678, 87654321, 11223344]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345678, 87654321, 11223344],arr2 = [123456789, 876543210, 112233445, 12345678, 87654321, 11223344]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345678, 87654321, 135792468, 246813579],arr2 = [123456789, 876543210, 1357924680, 2468135790]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345678, 87654321, 135792468, 246813579],arr2 = [123456789, 876543210, 1357924680, 2468135790]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111, 222, 333, 444, 555],arr2 = [111111111, 222222222, 333333333, 444444444, 555555555]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111, 222, 333, 444, 555],arr2 = [111111111, 222222222, 333333333, 444444444, 555555555]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345, 54321, 67890, 98765],arr2 = [123456, 654321, 678901, 567890]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345, 54321, 67890, 98765],arr2 = [123456, 654321, 678901, 567890]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 9876543210, 112233445566]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 9876543210, 112233445566]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [99999999, 88888888, 77777777],arr2 = [999999999, 888888888, 777777777]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [99999999, 88888888, 77777777],arr2 = [999999999, 888888888, 777777777]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100000000, 200000000, 300000000],arr2 = [1000000000, 2000000000, 3000000000]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100000000, 200000000, 300000000],arr2 = [1000000000, 2000000000, 3000000000]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [1, 10, 100, 1000, 10000, 100000]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [1, 10, 100, 1000, 10000, 100000]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654, 876543, 765432, 654321],arr2 = [987654321, 876543210, 765432109, 654321098]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654, 876543, 765432, 654321],arr2 = [987654321, 876543210, 765432109, 654321098]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [1111111111, 2222222222, 3333333333]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [1111111111, 2222222222, 3333333333]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321],arr2 = [1234567890, 9876543210]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321],arr2 = [1234567890, 9876543210]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345, 54321, 13579],arr2 = [123456, 543210, 135790]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345, 54321, 13579],arr2 = [123456, 543210, 135790]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [10000, 1000, 100, 10, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [10000, 1000, 100, 10, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101010, 202020, 303030, 404040],arr2 = [101010101, 202020202, 303030303, 404040404]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101010, 202020, 303030, 404040],arr2 = [101010101, 202020202, 303030303, 404040404]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1001, 2002, 3003, 4004],arr2 = [10010, 20020, 30030, 40040]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1001, 2002, 3003, 4004],arr2 = [10010, 20020, 30030, 40040]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 55, 555, 5555, 55555],arr2 = [555555, 555550, 55550, 5550, 550]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 55, 555, 5555, 55555],arr2 = [555555, 555550, 55550, 5550, 550]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456, 654321, 234567],arr2 = [1234567, 6543217, 2345678]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456, 654321, 234567],arr2 = [1234567, 6543217, 2345678]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [11111111, 22222222, 33333333],arr2 = [111111111, 222222222, 333333333]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [11111111, 22222222, 33333333],arr2 = [111111111, 222222222, 333333333]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 987654, 9876],arr2 = [9876543210, 9876540, 98760]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 987654, 9876],arr2 = [9876543210, 9876540, 98760]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1010, 10101, 101010, 1010101],arr2 = [10101010, 101010101, 1010101010, 10101010101]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1010, 10101, 101010, 1010101],arr2 = [10101010, 101010101, 1010101010, 10101010101]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [55555, 66666, 77777],arr2 = [555555, 666666, 777777]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [55555, 66666, 77777],arr2 = [555555, 666666, 777777]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 123456789, 101010101],arr2 = [9876543210, 1234567890, 1010101010]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 123456789, 101010101],arr2 = [9876543210, 1234567890, 1010101010]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456, 654321, 111111, 222222],arr2 = [1234560, 6543210, 1111110, 2222220]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456, 654321, 111111, 222222],arr2 = [1234560, 6543210, 1111110, 2222220]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [10, 100, 1000, 10000, 100000]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000, 10000],arr2 = [10, 100, 1000, 10000, 100000]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100000, 200000, 300000, 400000],arr2 = [1000001, 2000002, 3000003, 4000004]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100000, 200000, 300000, 400000],arr2 = [1000001, 2000002, 3000003, 4000004]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [1111111110, 2222222220, 3333333330]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [1111111110, 2222222220, 3333333330]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1234, 4321, 1111, 2222],arr2 = [12345, 43210, 11111, 22222]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1234, 4321, 1111, 2222],arr2 = [12345, 43210, 11111, 22222]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 876543219, 765432198, 654321987],arr2 = [9876543210, 8765432190, 7654321980, 6543219870]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 876543219, 765432198, 654321987],arr2 = [9876543210, 8765432190, 7654321980, 6543219870]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345, 23456, 34567],arr2 = [54321, 65432, 76543]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345, 23456, 34567],arr2 = [54321, 65432, 76543]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 9876543210, 11223344550]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 9876543210, 11223344550]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [99999, 888888, 7777777],arr2 = [999999, 8888888, 77777777]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [99999, 888888, 7777777],arr2 = [999999, 8888888, 77777777]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [99999, 88888, 77777, 66666],arr2 = [999999, 888888, 777777, 666666]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [99999, 88888, 77777, 66666],arr2 = [999999, 888888, 777777, 666666]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 111222333],arr2 = [1234567890, 1112223334, 9876543210]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 111222333],arr2 = [1234567890, 1112223334, 9876543210]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 876543210, 765432109, 654321098],arr2 = [987654321, 876543210, 765432109, 654321098]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 876543210, 765432109, 654321098],arr2 = [987654321, 876543210, 765432109, 654321098]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100100100, 200200200, 300300300],arr2 = [1001001001, 2002002002, 3003003003]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100100100, 200200200, 300300300],arr2 = [1001001001, 2002002002, 3003003003]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000],arr2 = [10000, 100000, 1000000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000],arr2 = [10000, 100000, 1000000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123123, 234234, 345345, 456456],arr2 = [123123123, 234234234, 345345345, 456456456]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123123, 234234, 345345, 456456],arr2 = [123123123, 234234234, 345345345, 456456456]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321],arr2 = [123456789, 987654321]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321],arr2 = [123456789, 987654321]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10101010, 20202020, 30303030],arr2 = [101010101, 202020202, 303030303]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10101010, 20202020, 30303030],arr2 = [101010101, 202020202, 303030303]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [112233, 223344, 334455],arr2 = [11223311, 22334422, 33445533]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [112233, 223344, 334455],arr2 = [11223311, 22334422, 33445533]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1001001, 2002002, 3003003],arr2 = [10010010, 20020020, 30030030]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1001001, 2002002, 3003003],arr2 = [10010010, 20020020, 30030030]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 10, 100, 1000],arr2 = [10000, 1000, 100, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 10, 100, 1000],arr2 = [10000, 1000, 100, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 111222333],arr2 = [1234567890, 9876543210, 1112223330]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 111222333],arr2 = [1234567890, 9876543210, 1112223330]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [55555555, 66666666, 77777777, 88888888],arr2 = [555555555, 666666666, 777777777, 888888888, 55555555, 66666666, 77777777, 88888888]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [55555555, 66666666, 77777777, 88888888],arr2 = [555555555, 666666666, 777777777, 888888888, 55555555, 66666666, 77777777, 88888888]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12345678, 123456, 123],arr2 = [123456789, 1234567, 12]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12345678, 123456, 123],arr2 = [123456789, 1234567, 12]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1001001, 1010101, 1101101],arr2 = [10010010, 10101010, 11011010]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1001001, 1010101, 1101101],arr2 = [10010010, 10101010, 11011010]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456, 234567, 345678, 456789],arr2 = [123456789, 234567890, 345678901, 456789012]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456, 234567, 345678, 456789],arr2 = [123456789, 234567890, 345678901, 456789012]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [112233, 223344, 334455, 445566],arr2 = [112233112233, 223344223344, 334455334455, 445566445566]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [112233, 223344, 334455, 445566],arr2 = [112233112233, 223344223344, 334455334455, 445566445566]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10101010, 1010101, 101010, 10101, 1010, 101, 10, 1],arr2 = [101010101, 101010100, 10101010, 1010101, 101010, 10101, 1010, 101, 10, 1]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10101010, 1010101, 101010, 10101, 1010, 101, 10, 1],arr2 = [101010101, 101010100, 10101010, 1010101, 101010, 10101, 1010, 101, 10, 1]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1111111, 22222222, 333333333],arr2 = [11111111, 222222222, 3333333333]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1111111, 22222222, 333333333],arr2 = [11111111, 222222222, 3333333333]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10101010, 11001100, 11100011],arr2 = [101010101, 110011001, 111000111]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10101010, 11001100, 11100011],arr2 = [101010101, 110011001, 111000111]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [9, 99, 999, 9999],arr2 = [99999, 999999, 9999999]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [9, 99, 999, 9999],arr2 = [99999, 999999, 9999999]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10101010, 101010, 1010],arr2 = [101010101, 1010101, 101]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10101010, 101010, 1010],arr2 = [101010101, 1010101, 101]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 456, 789, 101112],arr2 = [123456, 456789, 789101, 10111213]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 456, 789, 101112],arr2 = [123456, 456789, 789101, 10111213]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 876543210, 765432109],arr2 = [9876543210, 8765432109, 7654321098]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 876543210, 765432109],arr2 = [9876543210, 8765432109, 7654321098]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101010, 202020, 303030],arr2 = [1010101, 2020202, 3030303]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101010, 202020, 303030],arr2 = [1010101, 2020202, 3030303]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [9999999, 8888888, 7777777],arr2 = [99999999, 88888888, 77777777]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [9999999, 8888888, 7777777],arr2 = [99999999, 88888888, 77777777]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 22, 333, 4444, 55555],arr2 = [10, 220, 3330, 44440, 555550]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 22, 333, 4444, 55555],arr2 = [10, 220, 3330, 44440, 555550]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1010101010, 2020202020, 3030303030],arr2 = [10101010101, 20202020202, 30303030303]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1010101010, 2020202020, 3030303030],arr2 = [10101010101, 20202020202, 30303030303]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 112233445],arr2 = [1234567890, 9876543210, 1122334450]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 112233445],arr2 = [1234567890, 9876543210, 1122334450]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111, 222222, 333333, 444444],arr2 = [111111111, 222222222, 333333333, 444444444]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111, 222222, 333333, 444444],arr2 = [111111111, 222222222, 333333333, 444444444]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [54321, 12345, 55555],arr2 = [543210, 123450, 555550]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [54321, 12345, 55555],arr2 = [543210, 123450, 555550]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 11, 111, 1111],arr2 = [11111, 111111, 1111111, 11111111]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 11, 111, 1111],arr2 = [11111, 111111, 1111111, 11111111]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101010, 1010, 10],arr2 = [1010101, 10101, 101]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101010, 1010, 10],arr2 = [1010101, 10101, 101]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 11, 111, 1111, 11111, 111111],arr2 = [10, 110, 1110, 11110, 111110, 1111110]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 11, 111, 1111, 11111, 111111],arr2 = [10, 110, 1110, 11110, 111110, 1111110]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111222333, 444555666, 777888999],arr2 = [1112223330, 4445556660, 7778889990, 111222333, 444555666, 777888999]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111222333, 444555666, 777888999],arr2 = [1112223330, 4445556660, 7778889990, 111222333, 444555666, 777888999]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [11, 22, 33, 44, 55],arr2 = [111, 222, 333, 444, 555]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [11, 22, 33, 44, 55],arr2 = [111, 222, 333, 444, 555]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 456, 789, 101112, 131415],arr2 = [1234, 4567, 7890, 10111213, 13141516]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 456, 789, 101112, 131415],arr2 = [1234, 4567, 7890, 10111213, 13141516]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123, 456, 789],arr2 = [123123, 456456, 789789]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123, 456, 789],arr2 = [123123, 456456, 789789]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1111111, 2222222, 3333333],arr2 = [11111111, 22222222, 33333333]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1111111, 2222222, 3333333],arr2 = [11111111, 22222222, 33333333]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [99999999, 8888888, 777777, 66666, 5555],arr2 = [999999999, 88888888, 7777777, 666666, 55555]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [99999999, 8888888, 777777, 66666, 5555],arr2 = [999999999, 88888888, 7777777, 666666, 55555]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100000000, 200000000, 300000000],arr2 = [1000000001, 2000000002, 3000000003]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100000000, 200000000, 300000000],arr2 = [1000000001, 2000000002, 3000000003]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [98765432, 87654321, 76543210, 65432109, 54321098],arr2 = [987654321, 876543210, 765432109, 654321098, 543210987]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [98765432, 87654321, 76543210, 65432109, 54321098],arr2 = [987654321, 876543210, 765432109, 654321098, 543210987]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456, 12345, 1234, 123, 12, 1],arr2 = [1234567, 1234560, 123450, 12340, 1230, 120]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456, 12345, 1234, 123, 12, 1],arr2 = [1234567, 1234560, 123450, 12340, 1230, 120]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1122334455, 2233445566, 3344556677],arr2 = [112233445566, 223344556677, 334455667788, 1122334455, 2233445566, 3344556677]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1122334455, 2233445566, 3344556677],arr2 = [112233445566, 223344556677, 334455667788, 1122334455, 2233445566, 3344556677]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [12121212, 21212121, 34343434],arr2 = [121212120, 212121210, 343434340]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [12121212, 21212121, 34343434],arr2 = [121212120, 212121210, 343434340]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9],arr2 = [9876543210, 987654320, 98765430, 9876540, 987650, 98760, 9870, 980, 90]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9],arr2 = [9876543210, 987654320, 98765430, 9876540, 987650, 98760, 9870, 980, 90]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [999, 888, 777, 666, 555, 444, 333, 222, 111],arr2 = [9999, 8888, 7777, 6666, 5555, 4444, 3333, 2222, 1111]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [999, 888, 777, 666, 555, 444, 333, 222, 111],arr2 = [9999, 8888, 7777, 6666, 5555, 4444, 3333, 2222, 1111]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [987654321, 876543210, 765432109],arr2 = [9876543210, 8765432100, 7654321090]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [987654321, 876543210, 765432109],arr2 = [9876543210, 8765432100, 7654321090]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 12345, 12],arr2 = [1234567890, 123450, 120]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 12345, 12],arr2 = [1234567890, 123450, 120]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [111111112, 222222223, 333333334]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [111111112, 222222223, 333333334]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [10, 20, 30, 40, 50, 12, 21, 32, 43, 54]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [10, 20, 30, 40, 50, 12, 21, 32, 43, 54]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],arr2 = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],arr2 = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111, 222, 333, 444, 555],arr2 = [1111, 2222, 3333, 4444, 5555]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111, 222, 333, 444, 555],arr2 = [1111, 2222, 3333, 4444, 5555]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123123, 234234, 345345, 456456],arr2 = [1231231, 2342342, 3453453, 4564564]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123123, 234234, 345345, 456456],arr2 = [1231231, 2342342, 3453453, 4564564]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [11111111, 22222222, 33333333]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [11111111, 22222222, 33333333]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [555555555, 666666666, 777777777],arr2 = [5555555555, 6666666666, 7777777777]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [555555555, 666666666, 777777777],arr2 = [5555555555, 6666666666, 7777777777]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [111111111, 222222222, 333333333]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [111111111, 222222222, 333333333]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 11, 111, 1111],arr2 = [1, 11, 111, 1111, 11111, 111111]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 11, 111, 1111],arr2 = [1, 11, 111, 1111, 11111, 111111]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 1234567, 1122334]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 1234567, 1122334]) == 9: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(arr1 = [100000, 99999, 88888],arr2 = [10000, 9999, 8888]) == 5
@@ -123,3 +1099,5 @@ def check(candidate):
     assert candidate(arr1 = [111111111, 222222222, 333333333],arr2 = [111111111, 222222222, 333333333]) == 9
     assert candidate(arr1 = [1, 11, 111, 1111],arr2 = [1, 11, 111, 1111, 11111, 111111]) == 4
     assert candidate(arr1 = [123456789, 987654321, 1122334455],arr2 = [1234567890, 1234567, 1122334]) == 9
+
+

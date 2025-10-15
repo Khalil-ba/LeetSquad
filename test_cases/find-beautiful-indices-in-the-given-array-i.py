@@ -1,5 +1,933 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifulbeautifulbeautiful",a = "ful",b = "aut",k = 5) == [6, 15, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifulbeautifulbeautiful",a = "ful",b = "aut",k = 5) == [6, 15, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellobeautifulworld",a = "be",b = "autiful",k = 5) == [5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellobeautifulworld",a = "be",b = "autiful",k = 5) == [5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifulbeautifulbeautiful",a = "ful",b = "uti",k = 5) == [6, 15, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifulbeautifulbeautiful",a = "ful",b = "uti",k = 5) == [6, 15, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellohellohello",a = "he",b = "lo",k = 3) == [0, 5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellohellohello",a = "he",b = "lo",k = 3) == [0, 5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifulday",a = "day",b = "beat",k = 10) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifulday",a = "day",b = "beat",k = 10) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababab",a = "ab",b = "ba",k = 2) == [0, 2, 4, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababab",a = "ab",b = "ba",k = 2) == [0, 2, 4, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabcabcabc",a = "ab",b = "bc",k = 3) == [0, 3, 6, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabcabcabc",a = "ab",b = "bc",k = 3) == [0, 3, 6, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellohellohello",a = "he",b = "lo",k = 2) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellohellohello",a = "he",b = "lo",k = 2) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd",a = "a",b = "a",k = 4) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd",a = "a",b = "a",k = 4) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaa",a = "aa",b = "aaa",k = 2) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaa",a = "aa",b = "aaa",k = 2) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "isawsquirrelnearmysquirrelhouseohmy",a = "my",b = "squirrel",k = 15) == [16, 33]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "isawsquirrelnearmysquirrelhouseohmy",a = "my",b = "squirrel",k = 15) == [16, 33]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababab",a = "ab",b = "ba",k = 1) == [0, 2, 4, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababab",a = "ab",b = "ba",k = 1) == [0, 2, 4, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellotherehello",a = "he",b = "lo",k = 5) == [0, 6, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellotherehello",a = "he",b = "lo",k = 5) == [0, 6, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "teststringteststring",a = "test",b = "ing",k = 10) == [0, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "teststringteststring",a = "test",b = "ing",k = 10) == [0, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabcabcabc",a = "abc",b = "cab",k = 3) == [0, 3, 6, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabcabcabc",a = "abc",b = "cab",k = 3) == [0, 3, 6, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifulbeautiful",a = "ful",b = "uti",k = 5) == [6, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifulbeautiful",a = "ful",b = "uti",k = 5) == [6, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellobeautifulworld",a = "bea",b = "ful",k = 7) == [5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellobeautifulworld",a = "bea",b = "ful",k = 7) == [5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "overlappingoverlappingoverlapping",a = "over",b = "lapping",k = 10) == [0, 11, 22]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "overlappingoverlappingoverlapping",a = "over",b = "lapping",k = 10) == [0, 11, 22]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "overlappingoverlappingoverlapping",a = "over",b = "lap",k = 5) == [0, 11, 22]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "overlappingoverlappingoverlapping",a = "over",b = "lap",k = 5) == [0, 11, 22]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "randomstringwithrandomstringinside",a = "random",b = "inside",k = 25) == [16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "randomstringwithrandomstringinside",a = "random",b = "inside",k = 25) == [16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiopqwertyuiop",a = "erty",b = "rtyu",k = 8) == [2, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiopqwertyuiop",a = "erty",b = "rtyu",k = 8) == [2, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedwordrepeatedwordrepeated",a = "word",b = "repeated",k = 10) == [8, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedwordrepeatedwordrepeated",a = "word",b = "repeated",k = 10) == [8, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxxyxyxyxyxxyxyxyxy",a = "xy",b = "yx",k = 4) == [0, 3, 5, 7, 9, 12, 14, 16, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxxyxyxyxyxxyxyxyxy",a = "xy",b = "yx",k = 4) == [0, 3, 5, 7, 9, 12, 14, 16, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "iss",b = "sis",k = 3) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "iss",b = "sis",k = 3) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "uniquestringswithvariouslengthsandcharacters",a = "strings",b = "length",k = 25) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "uniquestringswithvariouslengthsandcharacters",a = "strings",b = "length",k = 25) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "longestsubstringhereandthere",a = "long",b = "here",k = 12) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "longestsubstringhereandthere",a = "long",b = "here",k = 12) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabanana",a = "ana",b = "nan",k = 4) == [1, 3, 6, 8, 12, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabanana",a = "ana",b = "nan",k = 4) == [1, 3, 6, 8, 12, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "issi",b = "sip",k = 4) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "issi",b = "sip",k = 4) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaabaaaaaabaaaaaabaaaaaabaaaaaabaaaaaabaaaaaab",a = "aa",b = "bb",k = 5) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaabaaaaaabaaaaaabaaaaaabaaaaaabaaaaaabaaaaaab",a = "aa",b = "bb",k = 5) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xylophonexylophonexylophone",a = "xylo",b = "phone",k = 7) == [0, 9, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xylophonexylophonexylophone",a = "xylo",b = "phone",k = 7) == [0, 9, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "issi",b = "issi",k = 3) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "issi",b = "issi",k = 3) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "issi",b = "issi",k = 2) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "issi",b = "issi",k = 2) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyz",a = "xyz",b = "zyx",k = 2) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyz",a = "xyz",b = "zyx",k = 2) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "racecaracecaracecar",a = "ace",b = "cec",k = 7) == [1, 7, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "racecaracecaracecar",a = "ace",b = "cec",k = 7) == [1, 7, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababa",a = "aba",b = "bab",k = 3) == [0, 2, 4, 6, 8, 10, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababa",a = "aba",b = "bab",k = 3) == [0, 2, 4, 6, 8, 10, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "overlappingoverlappingoverlapping",a = "lapping",b = "over",k = 10) == [4, 15, 26]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "overlappingoverlappingoverlapping",a = "lapping",b = "over",k = 10) == [4, 15, 26]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thelongestwordinenglishdictionary",a = "word",b = "english",k = 15) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thelongestwordinenglishdictionary",a = "word",b = "english",k = 15) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatthisstringmanytimesrepeatthisstringmanytimes",a = "this",b = "many",k = 25) == [6, 31]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatthisstringmanytimesrepeatthisstringmanytimes",a = "this",b = "many",k = 25) == [6, 31]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabanana",a = "ana",b = "nana",k = 6) == [1, 3, 6, 8, 12, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabanana",a = "ana",b = "nana",k = 6) == [1, 3, 6, 8, 12, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "alibabaibabaibaba",a = "ali",b = "iba",k = 5) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "alibabaibabaibaba",a = "ali",b = "iba",k = 5) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabananananabanana",a = "ana",b = "nana",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 22, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabananananabanana",a = "ana",b = "nana",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 22, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "overlappingstringsoverlapping",a = "lap",b = "ing",k = 10) == [4, 22]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "overlappingstringsoverlapping",a = "lap",b = "ing",k = 10) == [4, 22]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "squirrelmysquirrelhouseohmysquirrel",a = "squirrel",b = "house",k = 20) == [0, 10, 27]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "squirrelmysquirrelhouseohmysquirrel",a = "squirrel",b = "house",k = 20) == [0, 10, 27]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringthatcontainsmultipleinstancesofthesamepattern",a = "this",b = "that",k = 25) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringthatcontainsmultipleinstancesofthesamepattern",a = "this",b = "that",k = 25) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgabcdefgabcdefg",a = "abc",b = "defg",k = 15) == [0, 7, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgabcdefgabcdefg",a = "abc",b = "defg",k = 15) == [0, 7, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababababab",a = "aba",b = "bab",k = 5) == [0, 2, 4, 6, 8, 10, 12, 14, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababababab",a = "aba",b = "bab",k = 5) == [0, 2, 4, 6, 8, 10, 12, 14, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",a = "xy",b = "yx",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",a = "xy",b = "yx",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababababababababababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababababababababababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",a = "abc",b = "xyz",k = 20) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",a = "abc",b = "xyz",k = 20) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "complexexamplecomplexexample",a = "complex",b = "exam",k = 15) == [0, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "complexexamplecomplexexample",a = "complex",b = "exam",k = 15) == [0, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "fuzzywuzzy",a = "fuz",b = "uzz",k = 3) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "fuzzywuzzy",a = "fuz",b = "uzz",k = 3) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zzz",b = "zzz",k = 2) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zzz",b = "zzz",k = 2) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "findingbeautifulindices",a = "find",b = "ind",k = 7) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "findingbeautifulindices",a = "find",b = "ind",k = 7) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaabaaaaaa",a = "aa",b = "aaa",k = 5) == [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaabaaaaaa",a = "aa",b = "aaa",k = 5) == [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedsubstringsarecool",a = "are",b = "cool",k = 10) == [18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedsubstringsarecool",a = "are",b = "cool",k = 10) == [18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "longstringwithmultipleoccurrencesofaandb",a = "multiple",b = "occurrences",k = 30) == [14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "longstringwithmultipleoccurrencesofaandb",a = "multiple",b = "occurrences",k = 30) == [14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "overlappingoverlapping",a = "over",b = "lap",k = 8) == [0, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "overlappingoverlapping",a = "over",b = "lap",k = 8) == [0, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedpatternsrepeatedpatternsrepeatedpatterns",a = "repeated",b = "patterns",k = 20) == [0, 16, 32]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedpatternsrepeatedpatternsrepeatedpatterns",a = "repeated",b = "patterns",k = 20) == [0, 16, 32]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippiissiisipiissipississippi",a = "issi",b = "ippi",k = 10) == [1, 4, 11, 25, 28]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippiissiisipiissipississippi",a = "issi",b = "ippi",k = 10) == [1, 4, 11, 25, 28]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababababababababababababababa",a = "aba",b = "bab",k = 4) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababababababababababababababa",a = "aba",b = "bab",k = 4) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippiississippiississippi",a = "issi",b = "miss",k = 12) == [1, 4, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippiississippiississippi",a = "issi",b = "miss",k = 12) == [1, 4, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxyxyxyxyxy",a = "xyx",b = "yxy",k = 4) == [0, 2, 4, 6, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxyxyxyxyxy",a = "xyx",b = "yxy",k = 4) == [0, 2, 4, 6, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghij",a = "def",b = "ghi",k = 10) == [3, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghij",a = "def",b = "ghi",k = 10) == [3, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "iss",b = "issi",k = 4) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "iss",b = "issi",k = 4) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "onetwothreefourfivesixseveneightnine",a = "one",b = "two",k = 5) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "onetwothreefourfivesixseveneightnine",a = "one",b = "two",k = 5) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaaaaabaaaaaaaaaabaaaaaaaaaab",a = "aaaaaa",b = "aaab",k = 15) == [0, 1, 2, 3, 4, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaaaaabaaaaaaaaaabaaaaaaaaaab",a = "aaaaaa",b = "aaab",k = 15) == [0, 1, 2, 3, 4, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programmingisfun",a = "fun",b = "ing",k = 10) == [13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programmingisfun",a = "fun",b = "ing",k = 10) == [13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abracadabra",a = "abr",b = "cad",k = 8) == [0, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abracadabra",a = "abr",b = "cad",k = 8) == [0, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghij",a = "cdef",b = "ghij",k = 5) == [2, 12, 22]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghij",a = "cdef",b = "ghij",k = 5) == [2, 12, 22]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedrepeatedrepeated",a = "peat",b = "peat",k = 3) == [2, 10, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedrepeatedrepeated",a = "peat",b = "peat",k = 3) == [2, 10, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefabcdefabcdefabcdefabcdef",a = "cdef",b = "ab",k = 8) == [2, 8, 14, 20, 26]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefabcdefabcdefabcdefabcdef",a = "cdef",b = "ab",k = 8) == [2, 8, 14, 20, 26]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zzz",b = "zz",k = 1) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zzz",b = "zz",k = 1) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghij",a = "abc",b = "efg",k = 15) == [0, 10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghij",a = "abc",b = "efg",k = 15) == [0, 10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghij",a = "abc",b = "efg",k = 12) == [0, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghij",a = "abc",b = "efg",k = 12) == [0, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwithaverylongsubstring",a = "very",b = "long",k = 20) == [7, 26]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwithaverylongsubstring",a = "very",b = "long",k = 20) == [7, 26]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "squirrelmysquirrelhouse",a = "my",b = "squirrel",k = 10) == [8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "squirrelmysquirrelhouse",a = "my",b = "squirrel",k = 10) == [8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabananananana",a = "ana",b = "nan",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabananananana",a = "ana",b = "nan",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "iss",b = "sip",k = 4) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "iss",b = "sip",k = 4) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababab",a = "aba",b = "bab",k = 3) == [0, 2, 4, 6, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababab",a = "aba",b = "bab",k = 3) == [0, 2, 4, 6, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifulbeautifulbeautifulbeautiful",a = "bea",b = "ful",k = 15) == [0, 9, 18, 27]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifulbeautifulbeautifulbeautiful",a = "bea",b = "ful",k = 15) == [0, 9, 18, 27]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwithrepeatedsubstringsandlongoccurrencesofpatterns",a = "long",b = "pattern",k = 30) == [46]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwithrepeatedsubstringsandlongoccurrencesofpatterns",a = "long",b = "pattern",k = 30) == [46]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "beautifuldaybeautifulday",a = "day",b = "beau",k = 12) == [9, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "beautifuldaybeautifulday",a = "day",b = "beau",k = 12) == [9, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",a = "xyz",b = "yzx",k = 2) == [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",a = "xyz",b = "yzx",k = 2) == [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "very",b = "string",k = 20) == [7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "very",b = "string",k = 20) == [7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zz",b = "zzz",k = 5) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzz",a = "zz",b = "zzz",k = 5) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyxyxyxyxyxyxyxyxyxy",a = "xy",b = "yx",k = 3) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyxyxyxyxyxyxyxyxyxy",a = "xy",b = "yx",k = 3) == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabaaaabaaaaaaaba",a = "aa",b = "aaa",k = 5) == [0, 1, 2, 3, 6, 7, 8, 11, 12, 13, 14, 15, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabaaaabaaaaaaaba",a = "aa",b = "aaa",k = 5) == [0, 1, 2, 3, 6, 7, 8, 11, 12, 13, 14, 15, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghij",a = "abc",b = "efg",k = 8) == [0, 10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghij",a = "abc",b = "efg",k = 8) == [0, 10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedrepeatedrepeated",a = "repe",b = "ated",k = 6) == [0, 8, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedrepeatedrepeated",a = "repe",b = "ated",k = 6) == [0, 8, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "racecar",a = "race",b = "car",k = 5) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "racecar",a = "race",b = "car",k = 5) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisissomereallylongstringwithsomerepetitions",a = "some",b = "long",k = 15) == [6, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisissomereallylongstringwithsomerepetitions",a = "some",b = "long",k = 15) == [6, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",a = "abc",b = "xyz",k = 10) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",a = "abc",b = "xyz",k = 10) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghijabcdefghij",a = "ghi",b = "def",k = 8) == [6, 16, 26, 36]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghijabcdefghij",a = "ghi",b = "def",k = 8) == [6, 16, 26, 36]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",a = "quick",b = "lazy",k = 20) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",a = "quick",b = "lazy",k = 20) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",a = "mnop",b = "qrst",k = 10) == [12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",a = "mnop",b = "qrst",k = 10) == [12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "onetwothreefourfivesixseveneightnine",a = "two",b = "nine",k = 20) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "onetwothreefourfivesixseveneightnine",a = "two",b = "nine",k = 20) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "very",b = "string",k = 10) == [7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "very",b = "string",k = 10) == [7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "complexstringwithmultipleoccurrences",a = "with",b = "occurrences",k = 28) == [13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "complexstringwithmultipleoccurrences",a = "with",b = "occurrences",k = 28) == [13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "patternmatchingexamplepatternmatchingexamplepatternmatchingexample",a = "example",b = "pattern",k = 50) == [15, 37, 59]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "patternmatchingexamplepatternmatchingexamplepatternmatchingexample",a = "example",b = "pattern",k = 50) == [15, 37, 59]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabbbcccaaa",a = "aaa",b = "bbb",k = 5) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabbbcccaaa",a = "aaa",b = "bbb",k = 5) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringfortesting",a = "very",b = "long",k = 12) == [7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringfortesting",a = "very",b = "long",k = 12) == [7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabay",a = "ana",b = "nana",k = 4) == [1, 3, 6, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabay",a = "ana",b = "nana",k = 4) == [1, 3, 6, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababababab",a = "aba",b = "bab",k = 2) == [0, 2, 4, 6, 8, 10, 12, 14, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabananananabanana",a = "ana",b = "nan",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 22, 24]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabananananabanana",a = "ana",b = "nan",k = 5) == [1, 3, 6, 8, 12, 14, 16, 18, 22, 24]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisissomethingreallylongthatshouldtestthelimits",a = "test",b = "limits",k = 25) == [35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisissomethingreallylongthatshouldtestthelimits",a = "test",b = "limits",k = 25) == [35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiopasdfghjklzxcvbnmqwertyuiop",a = "qwerty",b = "poi",k = 15) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiopasdfghjklzxcvbnmqwertyuiop",a = "qwerty",b = "poi",k = 15) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bananaananabanana",a = "ana",b = "na",k = 5) == [1, 3, 6, 8, 12, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bananaananabanana",a = "ana",b = "na",k = 5) == [1, 3, 6, 8, 12, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghij",a = "def",b = "ghi",k = 10) == [3, 13, 23]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghij",a = "def",b = "ghi",k = 10) == [3, 13, 23]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "long",b = "string",k = 10) == [11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwithmultiplesubstrings",a = "long",b = "string",k = 10) == [11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwertyuiopqwertyuiopqwertyuiop",a = "qwerty",b = "uiop",k = 6) == [0, 10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwertyuiopqwertyuiopqwertyuiop",a = "qwerty",b = "uiop",k = 6) == [0, 10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",a = "issi",b = "iss",k = 5) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",a = "issi",b = "iss",k = 5) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkk",a = "abc",b = "def",k = 10) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkk",a = "abc",b = "def",k = 10) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababababab",a = "aba",b = "bab",k = 4) == [0, 2, 4, 6, 8, 10, 12, 14, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababababab",a = "aba",b = "bab",k = 4) == [0, 2, 4, 6, 8, 10, 12, 14, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "pneumonoultramicroscopicsilicovolcanoconiosis",a = "micro",b = "scopic",k = 30) == [13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "pneumonoultramicroscopicsilicovolcanoconiosis",a = "micro",b = "scopic",k = 30) == [13]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "beautifulbeautifulbeautiful",a = "ful",b = "aut",k = 5) == [6, 15, 24]
@@ -117,3 +1045,5 @@ def check(candidate):
     assert candidate(s = "aabbccddeeffgghhiijjkk",a = "abc",b = "def",k = 10) == []
     assert candidate(s = "abababababababababab",a = "aba",b = "bab",k = 4) == [0, 2, 4, 6, 8, 10, 12, 14, 16]
     assert candidate(s = "pneumonoultramicroscopicsilicovolcanoconiosis",a = "micro",b = "scopic",k = 30) == [13]
+
+

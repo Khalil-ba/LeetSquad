@@ -1,5 +1,917 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 5, 3, 4, 3, 4]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 5, 3, 4, 3, 4]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 3, 3, 2, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 3, 3, 2, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 1, 2, 3, 4]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 1, 2, 3, 4]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 3, 3, 2, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 3, 3, 2, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 2, 3, 4, 4, 5, 5]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 2, 3, 4, 4, 5, 5]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [6, 6, 6, 6, 6, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [6, 6, 6, 6, 6, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 3, 3, 2, 2, 3, 4]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 3, 3, 2, 2, 3, 4]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 1, 1, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 1, 1, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 5, 5, 5, 5, 5, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 5, 5, 5, 5, 5, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 2, 10, 1, 10, 2, 10]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 2, 10, 1, 10, 2, 10]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 3, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 3, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 2, 3, 4, 5, 4, 3, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 2, 3, 4, 5, 4, 3, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 10, 1, 1, 10, 10, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 10, 1, 1, 10, 10, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 1, 3, 1, 3, 1, 3]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 1, 3, 1, 3, 1, 3]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 3, 2, 2, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 3, 2, 2, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 1, 1, 10, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 1, 1, 10, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 10, 10, 5, 5, 10, 10, 5, 5, 10, 10]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 10, 10, 5, 5, 10, 10, 5, 5, 10, 10]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 3, 5, 7, 9, 11, 9, 7, 5, 3, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 3, 5, 7, 9, 11, 9, 7, 5, 3, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 11]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 11]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 5, 1, 1, 5, 5, 1, 1, 5, 5, 1, 1, 5, 5, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 5, 1, 1, 5, 5, 1, 1, 5, 5, 1, 1, 5, 5, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 4, 5, 4, 5, 4]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 4, 5, 4, 5, 4]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [3, 3, 3, 3, 2, 2, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [3, 3, 3, 3, 2, 2, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 3, 1, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 3, 1, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [8, 2, 8, 2, 8, 2, 8, 2, 8, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [8, 2, 8, 2, 8, 2, 8, 2, 8, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 5, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 5, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 1, 2, 3, 4, 5, 6, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 1, 2, 3, 4, 5, 6, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 3, 1, 1, 2, 1, 1, 2, 3, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 3, 1, 1, 2, 1, 1, 2, 3, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 10, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 10, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 3, 3, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 3, 3, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 6, 7, 8, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 6, 7, 8, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, 5, 5, 5]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, 5, 5, 5]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 4, 3, 3, 2, 2, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 4, 3, 3, 2, 2, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 100]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 100]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 3, 3, 2, 1, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 3, 3, 2, 1, 2, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(distance = [3, 5, 3, 4, 3, 4]) == True
@@ -115,3 +1027,5 @@ def check(candidate):
     assert candidate(distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True
     assert candidate(distance = [5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == True
     assert candidate(distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == True
+
+

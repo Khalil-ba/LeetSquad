@@ -1,5 +1,805 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 1, 2, 1, 0, 1, 2]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 1, 2, 1, 0, 1, 2]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 6, 4, 3, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 6, 4, 3, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 3, 5, 0, 0, 3, 1, 4]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 3, 5, 0, 0, 3, 1, 4]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 9, 7, 9, 8, 7, 9, 10, 7, 9, 8, 10, 11, 10, 12]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 9, 7, 9, 8, 7, 9, 10, 7, 9, 8, 10, 11, 10, 12]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 2, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 6]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 2, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 6]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4, 1, 2, 3, 8, 2, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4, 1, 2, 3, 8, 2, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 6, 7, 3, 3, 5, 1, 0, 6, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 6, 7, 3, 3, 5, 1, 0, 6, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 3, 8, 12, 10, 9, 15, 18, 5, 7]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 3, 8, 12, 10, 9, 15, 18, 5, 7]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 2, 6, 5, 0, 3, 1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32, 14, 34, 15, 36, 16, 38, 17, 40]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 2, 6, 5, 0, 3, 1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32, 14, 34, 15, 36, 16, 38, 17, 40]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 3, 6, 2, 8, 8, 8, 4, 2, 0, 9, 5, 7, 6, 2]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 3, 6, 2, 8, 8, 8, 4, 2, 0, 9, 5, 7, 6, 2]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [4, 1, 2, 3, 5, 6, 1, 2, 3, 1, 5, 6, 7, 8, 1, 2, 3, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [4, 1, 2, 3, 5, 6, 1, 2, 3, 1, 5, 6, 7, 8, 1, 2, 3, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [897, 456, 680, 509, 535, 695, 890, 456, 509, 535, 695, 890, 456, 509, 535, 695]) == 434
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [897, 456, 680, 509, 535, 695, 890, 456, 509, 535, 695, 890, 456, 509, 535, 695]) == 434: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 180, 260, 40, 310, 535, 695, 10, 1]) == 655
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 180, 260, 40, 310, 535, 695, 10, 1]) == 655: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 90, 80, 50, 20, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 90, 80, 50, 20, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 2, 3, 4, 2, 3, 4, 5, 3, 4, 5, 6, 4, 5, 6, 7, 5, 6, 7, 8]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 2, 3, 4, 2, 3, 4, 5, 3, 4, 5, 6, 4, 5, 6, 7, 5, 6, 7, 8]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 2, 6, 5, 0, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 2, 6, 5, 0, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 180, 260, 40, 310, 535, 695]) == 655
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 180, 260, 40, 310, 535, 695]) == 655: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 2, 8, 3, 7, 4, 6, 5, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 2, 8, 3, 7, 4, 6, 5, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9, 8, 9, 8, 9, 10, 9, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9, 8, 9, 8, 9, 10, 9, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 6, 4, 6, 8, 9, 3, 4, 5, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 6, 4, 6, 8, 9, 3, 4, 5, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4, 10, 2, 8, 15]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4, 10, 2, 8, 15]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 2, 3, 4, 1, 6, 8, 7, 8, 9]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 2, 3, 4, 1, 6, 8, 7, 8, 9]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 180, 260, 310, 40, 535, 695]) == 655
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 180, 260, 310, 40, 535, 695]) == 655: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 10, 10, 5, 5, 5, 10, 10, 15, 15]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 10, 10, 5, 5, 5, 10, 10, 15, 15]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 5, 12, 9, 19, 1, 7, 17, 3, 18]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 5, 12, 9, 19, 1, 7, 17, 3, 18]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [30, 15, 50, 10, 60, 35, 100, 40, 90, 50, 120, 60, 130, 70, 140, 80, 150, 90]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [30, 15, 50, 10, 60, 35, 100, 40, 90, 50, 120, 60, 130, 70, 140, 80, 150, 90]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50, 20, 30, 10, 50]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 4, 6, 2, 3, 10, 14, 11, 13]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 4, 6, 2, 3, 10, 14, 11, 13]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32, 14, 34, 15, 36]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32, 14, 34, 15, 36]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4, 8, 9, 2, 1, 5, 6, 3, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4, 8, 9, 2, 1, 5, 6, 3, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 5, 7, 11, 8, 12, 14, 15]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 5, 7, 11, 8, 12, 14, 15]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3, 2, 1, 2, 3]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 1, 1, 6, 9, 1, 2, 1, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 1, 1, 6, 9, 1, 2, 1, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 3, 8, 12, 7, 9, 2, 3, 15, 10]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 3, 8, 12, 7, 9, 2, 3, 15, 10]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 6, 7, 8, 4, 9, 1, 9, 4, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 6, 7, 8, 4, 9, 1, 9, 4, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 1, 3, 1, 2, 3, 1, 2, 3, 4]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 1, 3, 1, 2, 3, 1, 2, 3, 4]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 2, 3, 0, 3, 1, 6, 2, 8, 3, 4]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 2, 3, 0, 3, 1, 6, 2, 8, 3, 4]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4, 10, 2, 3, 4, 5, 6, 7, 8, 9, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4, 10, 2, 3, 4, 5, 6, 7, 8, 9, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [7, 1, 5, 3, 6, 4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [7, 1, 5, 3, 6, 4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 3, 6, 7, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 3, 6, 7, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 1, 1, 1, 10, 1, 1, 1, 10, 1, 1, 1, 10, 1, 1, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 1, 1, 1, 10, 1, 1, 1, 10, 1, 1, 1, 10, 1, 1, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 1, 9, 1, 9, 1, 9, 1, 9]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 1, 9, 1, 9, 1, 9, 1, 9]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 200, 300, 100, 150, 200, 250, 100, 150, 200, 250, 300, 100, 150, 200, 250]) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 200, 300, 100, 150, 200, 250, 100, 150, 200, 250, 300, 100, 150, 200, 250]) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 8, 4, 9, 3, 5, 2, 10, 1, 3, 7, 2, 4, 9, 1, 6, 3, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 8, 4, 9, 3, 5, 2, 10, 1, 3, 7, 2, 4, 9, 1, 6, 3, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 18, 2, 7, 21, 12, 17, 6, 19]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 18, 2, 7, 21, 12, 17, 6, 19]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 11, 3, 50, 60, 90, 70, 80, 65, 30, 55, 95]) == 92
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 11, 3, 50, 60, 90, 70, 80, 65, 30, 55, 95]) == 92: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [8, 6, 4, 3, 3, 5, 10, 0, 6, 2, 9, 10, 4, 7, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [8, 6, 4, 3, 3, 5, 10, 0, 6, 2, 9, 10, 4, 7, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [2, 2, 5, 11, 1, 3, 4, 11, 1, 2, 11, 3, 4]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [2, 2, 5, 11, 1, 3, 4, 11, 1, 2, 11, 3, 4]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 7, 2, 9, 4, 6, 3, 8, 5, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 7, 2, 9, 4, 6, 3, 8, 5, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 22, 5, 75, 65, 80]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 22, 5, 75, 65, 80]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 9]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 9]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 6, 9, 2, 8, 7, 1, 9, 4, 9, 2, 3, 8, 1, 6, 5, 8, 1, 1, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 6, 9, 2, 8, 7, 1, 9, 4, 9, 2, 3, 8, 1, 6, 5, 8, 1, 1, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 3, 6, 7, 2, 8, 1, 4, 9, 10, 1, 11]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 3, 6, 7, 2, 8, 1, 4, 9, 10, 1, 11]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 2, 4, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 2, 4, 5, 4, 3, 2, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9, 8]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9, 8]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 9, 6, 9, 1, 7, 1, 1, 5, 9, 9, 9]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 2, 6, 1, 9, 12, 9, 12, 12, 1, 5, 3, 3, 5, 2, 8, 10, 9, 1, 2]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 2, 6, 1, 9, 12, 9, 12, 12, 1, 5, 3, 3, 5, 2, 8, 10, 9, 1, 2]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 8, 4, 9, 3, 5, 10, 6, 2, 3, 1, 5, 20, 3, 1, 2, 3, 10]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 8, 4, 9, 3, 5, 10, 6, 2, 3, 1, 5, 20, 3, 1, 2, 3, 10]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 7, 5, 8, 11, 9]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 7, 5, 8, 11, 9]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 5, 3, 7, 10, 4, 8, 12, 6, 14, 2, 18, 9, 20, 1, 22, 10, 24, 5, 26, 11, 28, 12, 30, 13, 32]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [3, 3, 5, 0, 0, 3, 1, 4]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [3, 3, 5, 0, 0, 3, 1, 4]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100]) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100, 1, 100]) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 9, 1, 6, 2, 8, 3, 7, 4, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 9, 1, 6, 2, 8, 3, 7, 4, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1, 10, 1, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [310, 310, 275, 275, 260, 260, 260, 230, 230, 230]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [310, 310, 275, 275, 260, 260, 260, 230, 230, 230]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(prices = [1, 3, 2, 4, 7, 5, 8, 11, 9, 13]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(prices = [1, 3, 2, 4, 7, 5, 8, 11, 9, 13]) == 12: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(prices = [10, 9, 8, 2]) == 0
@@ -101,3 +901,5 @@ def check(candidate):
     assert candidate(prices = [310, 310, 275, 275, 260, 260, 260, 230, 230, 230]) == 0
     assert candidate(prices = [1, 2, 4, 2, 5, 7, 2, 4, 9, 0]) == 8
     assert candidate(prices = [1, 3, 2, 4, 7, 5, 8, 11, 9, 13]) == 12
+
+

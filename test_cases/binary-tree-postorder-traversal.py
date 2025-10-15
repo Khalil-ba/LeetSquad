@@ -1,5 +1,741 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([2, None, 1])) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([2, None, 1])) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9])) == [4, 6, 7, 5, 2, 9, 8, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9])) == [4, 6, 7, 5, 2, 9, 8, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, 3])) == [3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, 3])) == [3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([3, 1, 2])) == [1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([3, 1, 2])) == [1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1])) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1])) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([])) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([])) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, 3, None, None, 4, None, None, 5])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, 3, None, None, 4, None, None, 5])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])) == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])) == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, None, 3, None, None, None, None, None, 4])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, None, 3, None, None, None, None, None, 4])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, None, None, 6, 20])) == [5, 6, 20, 15, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, None, None, 6, 20])) == [5, 6, 20, 15, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, None, 18, 1, None, 6, 9])) == [1, 3, 6, 9, 7, 5, 18, 15, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, None, 18, 1, None, 6, 9])) == [1, 3, 6, 9, 7, 5, 18, 15, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, None, 18])) == [3, 7, 5, 18, 15, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, None, 18])) == [3, 7, 5, 18, 15, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, 3, 4])) == [3, 4, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, 3, 4])) == [3, 4, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, 3, None, None, 4, None, 5, None, None, None, 6])) == [5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, 3, None, None, 4, None, 5, None, None, None, 6])) == [5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([8, 3, 10, 1, 6, None, 14, None, None, 4, 7, 13])) == [1, 4, 7, 6, 3, 13, 14, 10, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([8, 3, 10, 1, 6, None, 14, None, None, 4, 7, 13])) == [1, 4, 7, 6, 3, 13, 14, 10, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])) == [0, 3, 5, 4, 2, 7, 9, 8, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])) == [0, 3, 5, 4, 2, 7, 9, 8, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15])) == [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15])) == [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15])) == [1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13, 15, 14, 12, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15])) == [1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13, 15, 14, 12, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([9, 7, 20, 5, 8, None, None, 2, None, None, 11])) == [2, 5, 11, 8, 7, 20, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([9, 7, 20, 5, 8, None, None, 2, None, None, 11])) == [2, 5, 11, 8, 7, 20, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, None, None, 4, None, 5])) == [5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, None, None, 4, None, 5])) == [5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 6, 3, None, None, 7, 2, None, 1])) == [2, 3, 4, 1, 7, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 6, 3, None, None, 7, 2, None, 1])) == [2, 3, 4, 1, 7, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8])) == [8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8])) == [8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, None, None, 4, 5, None, None, 6, 7, None, None, 8, 9])) == [2, 4, 6, 8, 9, 7, 5, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, None, None, 4, 5, None, None, 6, 7, None, None, 8, 9])) == [2, 4, 6, 8, 9, 7, 5, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, None, None, 4, None, None, None, None, 5])) == [2, 4, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, None, None, 4, None, None, None, None, 5])) == [2, 4, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([3, 1, 2, None, None, 4, 5])) == [1, 4, 5, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([3, 1, 2, None, None, 4, 5])) == [1, 4, 5, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([2, 1, 3, None, None, 4, None, None, None, 5])) == [1, 4, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([2, 1, 3, None, None, 4, None, None, None, 5])) == [1, 4, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([8, 5, 1, 7, 10, 12])) == [7, 10, 5, 12, 1, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([8, 5, 1, 7, 10, 12])) == [7, 10, 5, 12, 1, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, 4, None, None, 5, None, None, None, 6, None, 7, None, None, 8, None, None, 9, None, None, 10])) == [3, 5, 4, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, 4, None, None, 5, None, None, None, 6, None, 7, None, None, 8, None, None, 9, None, None, 10])) == [3, 5, 4, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 1, 6, None, 2, None, None, 3, 4])) == [3, 4, 2, 1, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 1, 6, None, 2, None, None, 3, 4])) == [3, 4, 2, 1, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([9, 4, 13, 2, 6, 11, 16, 1, 3, 5, 7, 8, 10, 12, 14, 15])) == [15, 1, 3, 2, 5, 7, 6, 4, 8, 10, 11, 12, 14, 16, 13, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([9, 4, 13, 2, 6, 11, 16, 1, 3, 5, 7, 8, 10, 12, 14, 15])) == [15, 1, 3, 2, 5, 7, 6, 4, 8, 10, 11, 12, 14, 16, 13, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, 3, None, None, 4, None, None, 5, None, None, 6, None, None, 7, None, None, 8, None, None, 9, None, None, 10])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, 3, None, None, 4, None, None, 5, None, None, 6, None, None, 7, None, None, 8, None, None, 9, None, None, 10])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([7, 3, 15, None, None, 9, 20])) == [3, 9, 20, 15, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([7, 3, 15, None, None, 9, 20])) == [3, 9, 20, 15, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([22, 11, 33, 5, 17, 27, 41, 2, 6, 14, 19, 25, 31, 37, 45, 1, 3, 4, 7, 10, 13, 16, 18, 21, 24, 26, 29, 32, 36, 38, 40, 43, 44, 46, 47])) == [43, 44, 1, 46, 47, 3, 2, 4, 7, 6, 5, 10, 13, 14, 16, 18, 19, 17, 11, 21, 24, 25, 26, 29, 31, 27, 32, 36, 37, 38, 40, 45, 41, 33, 22]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([22, 11, 33, 5, 17, 27, 41, 2, 6, 14, 19, 25, 31, 37, 45, 1, 3, 4, 7, 10, 13, 16, 18, 21, 24, 26, 29, 32, 36, 38, 40, 43, 44, 46, 47])) == [43, 44, 1, 46, 47, 3, 2, 4, 7, 6, 5, 10, 13, 14, 16, 18, 19, 17, 11, 21, 24, 25, 26, 29, 31, 27, 32, 36, 37, 38, 40, 45, 41, 33, 22]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, None, None, 6, 20, None, None, None, 30])) == [5, 6, 30, 20, 15, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, None, None, 6, 20, None, None, None, 30])) == [5, 6, 30, 20, 15, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, None, 4, None, None, None, None, 5])) == [3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, None, 4, None, None, None, None, 5])) == [3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 7, 2, 4, 6, 8, 1, None, None, None, None, None, 9, 10])) == [1, 2, 4, 3, 6, 9, 10, 8, 7, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 7, 2, 4, 6, 8, 1, None, None, None, None, None, 9, 10])) == [1, 2, 4, 3, 6, 9, 10, 8, 7, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, 4, None, 5, None, None, 6, 7, None, None, None, None, 8, None, None, None, None, 9])) == [6, 7, 5, 3, 4, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, 4, None, 5, None, None, 6, 7, None, None, None, None, 8, None, None, None, None, 9])) == [6, 7, 5, 3, 4, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, None, None, 9, None, None, 10, 11, None, None, None, None, None, None, 12, 13, None, None, 14, 15, None, None, None, None, 16])) == [8, 4, 9, 5, 2, 6, 10, 12, 14, 15, 13, 11, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, None, None, 9, None, None, 10, 11, None, None, None, None, None, None, 12, 13, None, None, 14, 15, None, None, None, None, 16])) == [8, 4, 9, 5, 2, 6, 10, 12, 14, 15, 13, 11, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([7, 3, 15, None, None, None, 20])) == [3, 20, 15, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([7, 3, 15, None, None, None, 20])) == [3, 20, 15, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])) == [10, 8, 6, 4, 2, 9, 7, 5, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])) == [10, 8, 6, 4, 2, 9, 7, 5, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 4, 6, 3, 8, 7, 9])) == [3, 8, 4, 7, 9, 6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 4, 6, 3, 8, 7, 9])) == [3, 8, 4, 7, 9, 6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, None, None, 4, 5, None, None, None, None, 6, 7])) == [2, 4, 5, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, None, None, 4, 5, None, None, None, None, 6, 7])) == [2, 4, 5, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, None, 5, 6])) == [4, 2, 5, 6, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, None, 5, 6])) == [4, 2, 5, 6, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 18, None, None, None, None, 22])) == [5, 10, 18, 20, 15, 30, 22, 40, 35, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([25, 15, 35, 10, 20, 30, 40, 5, None, 18, None, None, None, None, 22])) == [5, 10, 18, 20, 15, 30, 22, 40, 35, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, None, None, 5, 6, None, 7, None, 8, None, 9])) == [8, 6, 4, 2, 9, 7, 5, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, None, None, 5, 6, None, 7, None, 8, None, 9])) == [8, 6, 4, 2, 9, 7, 5, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])) == [16, 17, 8, 18, 19, 9, 4, 20, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])) == [16, 17, 8, 18, 19, 9, 4, 20, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 8, 1, None, None, 10, None, 2, None, None, 11])) == [11, 2, 1, 3, 10, 8, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 8, 1, None, None, 10, None, 2, None, None, 11])) == [11, 2, 1, 3, 10, 8, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])) == [8, 9, 4, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])) == [8, 9, 4, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 8, 2, 4, 6, 9, 1, 7, None, None, None, None, None, 10])) == [1, 7, 2, 4, 3, 6, 10, 9, 8, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 8, 2, 4, 6, 9, 1, 7, None, None, None, None, None, 10])) == [1, 7, 2, 4, 3, 6, 10, 9, 8, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([14, 9, 21, 7, 11, 17, 25, 5, 8, 10, 12, 15, 18, 23, 27, 3, 6, None, None, None, None, None, None, None, 13, None, None, None, 16, None, 19, None, 22, None, 26, None, 24, None, None, None, None, 20, None, None, None, None, None, 28])) == [28, 20, 22, 3, 26, 6, 5, 8, 7, 10, 12, 11, 9, 24, 13, 15, 18, 17, 16, 23, 19, 27, 25, 21, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([14, 9, 21, 7, 11, 17, 25, 5, 8, 10, 12, 15, 18, 23, 27, 3, 6, None, None, None, None, None, None, None, 13, None, None, None, 16, None, 19, None, 22, None, 26, None, 24, None, None, None, None, 20, None, None, None, None, None, 28])) == [28, 20, 22, 3, 26, 6, 5, 8, 7, 10, 12, 11, 9, 24, 13, 15, 18, 17, 16, 23, 19, 27, 25, 21, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, None, 4, None, 5])) == [5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, None, 4, None, 5])) == [5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, None, 6, 7, None, 8, 9, None, None, 10])) == [10, 7, 4, 8, 9, 5, 2, 6, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, None, 6, 7, None, 8, 9, None, None, 10])) == [10, 7, 4, 8, 9, 5, 2, 6, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7])) == [4, 5, 2, 6, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7])) == [4, 5, 2, 6, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5])) == [5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5])) == [5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([17, 8, 26, 4, 13, 22, 31, 2, 6, 11, 15, 19, 24, 28, 34, 1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 20, 23, 25, 27, 29, 32, 33, 35])) == [33, 35, 1, 3, 2, 5, 7, 6, 4, 9, 10, 11, 12, 14, 15, 13, 8, 16, 18, 19, 20, 23, 24, 22, 25, 27, 28, 29, 32, 34, 31, 26, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([17, 8, 26, 4, 13, 22, 31, 2, 6, 11, 15, 19, 24, 28, 34, 1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 20, 23, 25, 27, 29, 32, 33, 35])) == [33, 35, 1, 3, 2, 5, 7, 6, 4, 9, 10, 11, 12, 14, 15, 13, 8, 16, 18, 19, 20, 23, 24, 22, 25, 27, 28, 29, 32, 34, 31, 26, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, None, 3, None, None, None, None, 4])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, None, 3, None, None, None, None, 4])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([15, 7, 23, 3, 11, 19, 27, 1, 5, 9, 13, 17, 21, 25, 29, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 31])) == [2, 4, 1, 6, 8, 5, 3, 10, 12, 9, 14, 16, 13, 11, 7, 18, 20, 17, 22, 24, 21, 19, 26, 28, 25, 30, 31, 29, 27, 23, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([15, 7, 23, 3, 11, 19, 27, 1, 5, 9, 13, 17, 21, 25, 29, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 31])) == [2, 4, 1, 6, 8, 5, 3, 10, 12, 9, 14, 16, 13, 11, 7, 18, 20, 17, 22, 24, 21, 19, 26, 28, 25, 30, 31, 29, 27, 23, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4])) == [4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4])) == [4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, None, 16, None, 17, None, 18, None, 19])) == [16, 8, 17, 9, 4, 18, 10, 19, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, None, 16, None, 17, None, 18, None, 19])) == [16, 8, 17, 9, 4, 18, 10, 19, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 8, 1, 4, 7, 9, None, 2, None, None, None, None, None, 10])) == [2, 1, 4, 3, 7, 10, 9, 8, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 8, 1, 4, 7, 9, None, 2, None, None, None, None, None, 10])) == [2, 1, 4, 3, 7, 10, 9, 8, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([7, 3, 15, None, None, None, 9])) == [3, 9, 15, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([7, 3, 15, None, None, None, 9])) == [3, 9, 15, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, 4, None, 5])) == [5, 3, 4, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, 4, None, 5])) == [5, 3, 4, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([25, 15, 30, 10, 20, 28, 35, 5, 12, 17, 22, 27, 33, 32, 36])) == [5, 12, 10, 17, 22, 20, 15, 27, 33, 28, 32, 36, 35, 30, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([25, 15, 30, 10, 20, 28, 35, 5, 12, 17, 22, 27, 33, 32, 36])) == [5, 12, 10, 17, 22, 20, 15, 27, 33, 28, 32, 36, 35, 30, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 8, 1, 4, 7, 10, None, 2, 6, 9, 11])) == [2, 1, 6, 9, 4, 3, 11, 7, 10, 8, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 8, 1, 4, 7, 10, None, 2, 6, 9, 11])) == [2, 1, 6, 9, 4, 3, 11, 7, 10, 8, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7])) == [7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7])) == [7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 1, 4, None, None, 3, 6])) == [1, 3, 6, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 1, 4, None, None, 3, 6])) == [1, 3, 6, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, 3, None, None, 4, None, 5])) == [5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, 3, None, None, 4, None, 5])) == [5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, None, 5, None, 6, 7, None, 8, None, 9])) == [9, 7, 5, 2, 8, 6, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, None, 5, None, 6, 7, None, 8, None, 9])) == [9, 7, 5, 2, 8, 6, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([10, 5, 15, 3, 7, None, 18, 1, None, 6, 8, None, None, None, None, 9])) == [1, 3, 9, 6, 8, 7, 5, 18, 15, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([10, 5, 15, 3, 7, None, 18, 1, None, 6, 8, None, None, None, None, 9])) == [1, 3, 9, 6, 8, 7, 5, 18, 15, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([11, 7, 19, 3, 9, 13, 21, 1, 5, None, 8, None, 12, 17, None, None, None, None, None, 14, 16, 18, 20, 22, 23])) == [1, 5, 3, 14, 16, 8, 9, 7, 18, 20, 12, 13, 22, 23, 17, 21, 19, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([11, 7, 19, 3, 9, 13, 21, 1, 5, None, 8, None, 12, 17, None, None, None, None, None, 14, 16, 18, 20, 22, 23])) == [1, 5, 3, 14, 16, 8, 9, 7, 18, 20, 12, 13, 22, 23, 17, 21, 19, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, None, None, 2])) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, None, None, 2])) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, None])) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, None])) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, 3, 4])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, 3, 4])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31])) == [1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13, 15, 14, 12, 8, 17, 19, 18, 21, 23, 22, 20, 25, 27, 26, 29, 31, 30, 28, 24, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14, 18, 22, 26, 30, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31])) == [1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13, 15, 14, 12, 8, 17, 19, 18, 21, 23, 22, 20, 25, 27, 26, 29, 31, 30, 28, 24, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([5, 3, 8, 1, 4, 7, 10, 0, 2, 6, 9, None, None, None, None, None, 11])) == [11, 0, 2, 1, 6, 9, 4, 3, 7, 10, 8, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([5, 3, 8, 1, 4, 7, 10, 0, 2, 6, 9, None, None, None, None, None, 11])) == [11, 0, 2, 1, 6, 9, 4, 3, 7, 10, 8, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([2, None, 3, None, 4, None, 5, None, 6, None, 7])) == [7, 6, 5, 4, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([2, None, 3, None, 4, None, 5, None, 6, None, 7])) == [7, 6, 5, 4, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6])) == [6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, 3, None, 4, None, 5, None, 6])) == [6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, None, None, 10, None, None, 11, None, None, 12, None, None, 13, None, None, 14])) == [8, 14, 12, 9, 4, 5, 2, 13, 10, 6, 11, 7, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, 6, 7, 8, 9, None, None, 10, None, None, 11, None, None, 12, None, None, 13, None, None, 14])) == [8, 14, 12, 9, 4, 5, 2, 13, 10, 6, 11, 7, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, None, 2, None, None, 3, None, 4])) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, None, 2, None, None, 3, None, 4])) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([30, 25, 35, 20, 27, 32, 40, 18, None, None, 23, None, None, None, None, None, 45])) == [45, 18, 20, 23, 27, 25, 32, 40, 35, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([30, 25, 35, 20, 27, 32, 40, 18, None, None, 23, None, None, None, None, None, 45])) == [45, 18, 20, 23, 27, 25, 32, 40, 35, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, None, 3, 4, None, 5, None, 6])) == [5, 3, 6, 4, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, None, 3, 4, None, 5, None, 6])) == [5, 3, 6, 4, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([30, 15, 45, 7, 22, 37, 52, 3, 11, 18, 26, 32, 41, 50, 57, 1, 2, 5, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 36, 39, 40, 42, 43, 44, 46, 47, 48, 49, 51, 53, 54, 55, 56, 58, 59])) == [27, 28, 1, 30, 31, 2, 3, 33, 35, 5, 36, 39, 6, 11, 7, 40, 42, 8, 43, 44, 9, 18, 46, 47, 10, 48, 49, 12, 26, 22, 15, 51, 53, 13, 54, 55, 16, 32, 56, 58, 17, 59, 19, 41, 37, 20, 23, 50, 24, 25, 57, 52, 45, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([30, 15, 45, 7, 22, 37, 52, 3, 11, 18, 26, 32, 41, 50, 57, 1, 2, 5, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20, 23, 24, 25, 27, 28, 30, 31, 33, 35, 36, 39, 40, 42, 43, 44, 46, 47, 48, 49, 51, 53, 54, 55, 56, 58, 59])) == [27, 28, 1, 30, 31, 2, 3, 33, 35, 5, 36, 39, 6, 11, 7, 40, 42, 8, 43, 44, 9, 18, 46, 47, 10, 48, 49, 12, 26, 22, 15, 51, 53, 13, 54, 55, 16, 32, 56, 58, 17, 59, 19, 41, 37, 20, 23, 50, 24, 25, 57, 52, 45, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([7, 3, 15, 1, 5, 9, 20, None, None, 2, 6, None, None, 8, 12, None, 18])) == [1, 18, 2, 6, 5, 3, 9, 8, 12, 20, 15, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([7, 3, 15, 1, 5, 9, 20, None, None, 2, 6, None, None, 8, 12, None, 18])) == [1, 18, 2, 6, 5, 3, 9, 8, 12, 20, 15, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([20, 15, 25, 10, 18, 22, 30, 5, 12, None, 17, 21, 24, 28, 35])) == [5, 12, 10, 17, 18, 15, 21, 24, 22, 28, 35, 30, 25, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([20, 15, 25, 10, 18, 22, 30, 5, 12, None, 17, 21, 24, 28, 35])) == [5, 12, 10, 17, 18, 15, 21, 24, 22, 28, 35, 30, 25, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([4, 2, 6, 1, 3, 5, 7])) == [1, 3, 2, 5, 7, 6, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([4, 2, 6, 1, 3, 5, 7])) == [1, 3, 2, 5, 7, 6, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([3, 1, 2, 4, None, 5, 6, 7, None, 8, 9])) == [7, 4, 1, 8, 9, 5, 6, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([3, 1, 2, 4, None, 5, 6, 7, None, 8, 9])) == [7, 4, 1, 8, 9, 5, 6, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([3, 1, 2, 4])) == [4, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([3, 1, 2, 4])) == [4, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([8, 5, 12, 4, 6, 11, 13, 2, None, None, None, None, None, None, 14])) == [2, 4, 6, 5, 11, 14, 13, 12, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([8, 5, 12, 4, 6, 11, 13, 2, None, None, None, None, None, None, 14])) == [2, 4, 6, 5, 11, 14, 13, 12, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([25, 15, 35, 10, 20, 30, 40, 5, 12, 17, 22, 28, 33, 38, 45, 3, 7, 9, 11, 14, 16, 18, 21, 23, 27, 29, 32, 36, 37, 39, 41, 44, 46])) == [44, 46, 3, 7, 5, 9, 11, 12, 10, 14, 16, 17, 18, 21, 22, 20, 15, 23, 27, 28, 29, 32, 33, 30, 36, 37, 38, 39, 41, 45, 40, 35, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([25, 15, 35, 10, 20, 30, 40, 5, 12, 17, 22, 28, 33, 38, 45, 3, 7, 9, 11, 14, 16, 18, 21, 23, 27, 29, 32, 36, 37, 39, 41, 44, 46])) == [44, 46, 3, 7, 5, 9, 11, 12, 10, 14, 16, 17, 18, 21, 22, 20, 15, 23, 27, 28, 29, 32, 33, 30, 36, 37, 38, 39, 41, 45, 40, 35, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(root = tree_node([1, 2, 3, 4, 5, None, 6, None, None, 7, 8])) == [4, 7, 8, 5, 2, 6, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(root = tree_node([1, 2, 3, 4, 5, None, 6, None, None, 7, 8])) == [4, 7, 8, 5, 2, 6, 3, 1]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(root = tree_node([2, None, 1])) == [1, 2]
@@ -93,3 +829,5 @@ def check(candidate):
     assert candidate(root = tree_node([8, 5, 12, 4, 6, 11, 13, 2, None, None, None, None, None, None, 14])) == [2, 4, 6, 5, 11, 14, 13, 12, 8]
     assert candidate(root = tree_node([25, 15, 35, 10, 20, 30, 40, 5, 12, 17, 22, 28, 33, 38, 45, 3, 7, 9, 11, 14, 16, 18, 21, 23, 27, 29, 32, 36, 37, 39, 41, 44, 46])) == [44, 46, 3, 7, 5, 9, 11, 12, 10, 14, 16, 17, 18, 21, 22, 20, 15, 23, 27, 28, 29, 32, 33, 30, 36, 37, 38, 39, 41, 45, 40, 35, 25]
     assert candidate(root = tree_node([1, 2, 3, 4, 5, None, 6, None, None, 7, 8])) == [4, 7, 8, 5, 2, 6, 3, 1]
+
+

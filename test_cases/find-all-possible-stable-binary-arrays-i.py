@@ -1,5 +1,1037 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 5,limit = 3) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 5,limit = 3) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 5,limit = 4) == 242
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 5,limit = 4) == 242: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 5,limit = 2) == 84
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 5,limit = 2) == 84: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 1,limit = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 1,limit = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 2,limit = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 2,limit = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 5,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 5,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 200,limit = 200) == 587893473
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 200,limit = 200) == 587893473: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 4,one = 4,limit = 2) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 4,one = 4,limit = 2) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 4,limit = 2) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 4,limit = 2) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 4,limit = 2) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 4,limit = 2) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 3,limit = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 3,limit = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 10,limit = 5) == 165114
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 10,limit = 5) == 165114: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 4,one = 4,limit = 4) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 4,one = 4,limit = 4) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 2,limit = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 2,limit = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 6,one = 3,limit = 2) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 6,one = 3,limit = 2) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 1,limit = 2) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 1,limit = 2) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 5,limit = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 5,limit = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 4,one = 5,limit = 3) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 4,one = 5,limit = 3) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 3,limit = 2) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 3,limit = 2) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 5,limit = 3) == 194
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 5,limit = 3) == 194: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 7,one = 7,limit = 6) == 3418
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 7,one = 7,limit = 6) == 3418: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 4,one = 3,limit = 2) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 4,one = 3,limit = 2) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 20,limit = 10) == 431683431
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 20,limit = 10) == 431683431: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 3,limit = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 3,limit = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 2,limit = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 2,limit = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 4,limit = 3) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 4,limit = 3) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 6,one = 6,limit = 5) == 912
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 6,one = 6,limit = 5) == 912: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 2,limit = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 2,limit = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 50) == 375840050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 50) == 375840050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 190,one = 10,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 190,one = 10,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 120,limit = 15) == 662485902
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 120,limit = 15) == 662485902: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 190,one = 10,limit = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 190,one = 10,limit = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 15,limit = 5) == 2249276
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 15,limit = 5) == 2249276: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 120,one = 180,limit = 15) == 662485902
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 120,one = 180,limit = 15) == 662485902: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 150,limit = 5) == 357829666
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 150,limit = 5) == 357829666: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 175,one = 125,limit = 30) == 482940468
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 175,one = 125,limit = 30) == 482940468: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 20,limit = 2) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 20,limit = 2) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 200,limit = 10) == 796458380
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 200,limit = 10) == 796458380: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 50,limit = 15) == 814679806
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 50,limit = 15) == 814679806: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 50,limit = 2) == 1326
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 50,limit = 2) == 1326: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 1,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 1,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 150,limit = 30) == 462327057
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 150,limit = 30) == 462327057: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 1,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 1,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 100,limit = 25) == 672942188
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 100,limit = 25) == 672942188: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 15,one = 15,limit = 2) == 860142
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 15,one = 15,limit = 2) == 860142: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 190,one = 10,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 190,one = 10,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 3,one = 7,limit = 4) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 3,one = 7,limit = 4) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 50,limit = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 50,limit = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 200,limit = 2) == 609176335
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 200,limit = 2) == 609176335: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 50,limit = 10) == 701105470
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 50,limit = 10) == 701105470: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 1,limit = 200) == 201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 1,limit = 200) == 201: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 4,limit = 4) == 121
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 4,limit = 4) == 121: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 180,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 180,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 199,one = 199,limit = 199) == 387943228
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 199,one = 199,limit = 199) == 387943228: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 7,one = 3,limit = 4) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 7,one = 3,limit = 4) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 50,limit = 2) == 642129773
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 50,limit = 2) == 642129773: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 2) == 572804009
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 2) == 572804009: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 50,limit = 10) == 430250984
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 50,limit = 10) == 430250984: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 2,one = 100,limit = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 2,one = 100,limit = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 50,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 50,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 10,limit = 4) == 3741210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 10,limit = 4) == 3741210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 100,limit = 50) == 746397052
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 100,limit = 50) == 746397052: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 101,one = 100,limit = 3) == 922524303
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 101,one = 100,limit = 3) == 922524303: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 190,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 190,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 150,limit = 5) == 670611061
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 150,limit = 5) == 670611061: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 200,limit = 200) == 201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 200,limit = 200) == 201: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 199,one = 200,limit = 100) == 287809711
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 199,one = 200,limit = 100) == 287809711: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 200,limit = 75) == 592136303
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 200,limit = 75) == 592136303: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 200,limit = 10) == 346661055
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 200,limit = 10) == 346661055: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 4,one = 4,limit = 3) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 4,one = 4,limit = 3) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 199,limit = 100) == 287809711
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 199,limit = 100) == 287809711: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 120,limit = 10) == 860251283
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 120,limit = 10) == 860251283: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 150,limit = 10) == 966001232
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 150,limit = 10) == 966001232: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 15,one = 15,limit = 4) == 77607590
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 15,one = 15,limit = 4) == 77607590: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 200) == 407336795
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 200) == 407336795: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 200,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 200,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 150,limit = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 150,limit = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 15,one = 10,limit = 5) == 2249276
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 15,one = 10,limit = 5) == 2249276: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 5,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 5,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 190,one = 10,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 190,one = 10,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 20,limit = 3) == 702925689
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 20,limit = 3) == 702925689: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 20,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 20,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 1,limit = 200) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 1,limit = 200) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 100,limit = 10) == 796458380
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 100,limit = 10) == 796458380: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 80,one = 20,limit = 5) == 666262799
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 80,one = 20,limit = 5) == 666262799: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 101,limit = 3) == 922524303
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 101,limit = 3) == 922524303: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 50,limit = 8) == 139177940
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 50,limit = 8) == 139177940: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 20,limit = 6) == 140887996
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 20,limit = 6) == 140887996: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 50,limit = 200) == 538992043
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 50,limit = 200) == 538992043: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 10) == 474184186
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 10) == 474184186: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 10,limit = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 10,limit = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 20,one = 20,limit = 5) == 89895606
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 20,one = 20,limit = 5) == 89895606: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 50,limit = 20) == 644307023
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 50,limit = 20) == 644307023: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 20,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 20,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 199,one = 199,limit = 198) == 387942830
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 199,one = 199,limit = 198) == 387942830: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 199,one = 199,limit = 100) == 541514263
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 199,one = 199,limit = 100) == 541514263: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 150,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 150,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 10,limit = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 10,limit = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 50,limit = 150) == 713790273
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 50,limit = 150) == 713790273: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 150,limit = 60) == 850799592
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 150,limit = 60) == 850799592: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 120,one = 80,limit = 6) == 885202743
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 120,one = 80,limit = 6) == 885202743: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 150,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 150,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 200,one = 200,limit = 3) == 894330409
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 200,one = 200,limit = 3) == 894330409: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 15,one = 15,limit = 3) == 24857864
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 15,one = 15,limit = 3) == 24857864: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 190,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 190,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 1,one = 100,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 1,one = 100,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 5) == 20078082
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 5) == 20078082: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 20,limit = 200) == 680498188
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 20,limit = 200) == 680498188: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 20,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 20,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 15,limit = 4) == 1360424
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 15,limit = 4) == 1360424: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 150,limit = 5) == 245337662
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 150,limit = 5) == 245337662: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 125,one = 175,limit = 80) == 30909440
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 125,one = 175,limit = 80) == 30909440: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 1,limit = 50) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 1,limit = 50) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 10,one = 190,limit = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 10,one = 190,limit = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 50,limit = 5) == 245337662
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 50,limit = 5) == 245337662: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 80,one = 120,limit = 9) == 674949759
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 80,one = 120,limit = 9) == 674949759: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 150,limit = 10) == 701105470
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 150,limit = 10) == 701105470: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 15,one = 10,limit = 4) == 1360424
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 15,one = 10,limit = 4) == 1360424: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 100,limit = 5) == 357829666
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 100,limit = 5) == 357829666: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 50,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 50,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 100,one = 100,limit = 20) == 294133308
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 100,one = 100,limit = 20) == 294133308: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 100,limit = 10) == 10967566
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 100,limit = 10) == 10967566: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 150,one = 200,limit = 199) == 777184933
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 150,one = 200,limit = 199) == 777184933: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 150,limit = 7) == 536640420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 150,limit = 7) == 536640420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 5,one = 200,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 5,one = 200,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 50,one = 200,limit = 20) == 192149064
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 50,one = 200,limit = 20) == 192149064: {e}')
+    
+    total += 1
+    try:
+        result = candidate(zero = 180,one = 180,limit = 50) == 911610311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(zero = 180,one = 180,limit = 50) == 911610311: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(zero = 3,one = 5,limit = 3) == 40
@@ -130,3 +1162,5 @@ def check(candidate):
     assert candidate(zero = 5,one = 200,limit = 4) == 0
     assert candidate(zero = 50,one = 200,limit = 20) == 192149064
     assert candidate(zero = 180,one = 180,limit = 50) == 911610311
+
+

@@ -1,5 +1,757 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrztuvwxyz",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrztuvwxyz",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdcba",distance = [3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdcba",distance = [3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "bbcaac",distance = [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "bbcaac",distance = [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabc",distance = [2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabc",distance = [2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abba",distance = [2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abba",distance = [2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aa",distance = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aa",distance = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abaccb",distance = [1, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abaccb",distance = [1, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcba",distance = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcba",distance = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzabcde",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzabcde",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zazbzczdzdzczbza",distance = [2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zazbzczdzdzczbza",distance = [2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijkllkjihgfedcba",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijkllkjihgfedcba",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zxyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zxyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaa",distance = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaa",distance = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvwxyzzzyxwvutsrqp",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvwxyzzzyxwvutsrqp",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxzyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxzyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "acbacbacbacbacbacb",distance = [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "acbacbacbacbacbacb",distance = [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghij",distance = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghij",distance = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zamnzamn",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zamnzamn",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijzyxwvutsrqponmlk",distance = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijzyxwvutsrqponmlk",distance = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefggfedcba",distance = [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefggfedcba",distance = [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgabcdefg",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgabcdefg",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "lkjihglkjh",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 1, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "lkjihglkjh",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 1, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaabbbbccccddddeeeeffffgggghhhhiiii",distance = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaabbbbccccddddeeeeffffgggghhhhiiii",distance = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgghgfedcba",distance = [6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgghgfedcba",distance = [6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababababababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababababababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "pqrstuvwxyzzzyxwvutsrqp",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "pqrstuvwxyzzzyxwvutsrqp",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacabadabacabad",distance = [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacabadabacabad",distance = [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmabcdefghijklm",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmabcdefghijklm",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgihgfedcba",distance = [6, 5, 4, 3, 2, 1, 0, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgihgfedcba",distance = [6, 5, 4, 3, 2, 1, 0, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qponmlkjihgfedcbazyxwvutsr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qponmlkjihgfedcbazyxwvutsr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzyyxxwwvvuuttssrrqqppoonnmmlkkjjiihhggffeeddccbaa",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzyyxxwwvvuuttssrrqqppoonnmmlkkjjiihhggffeeddccbaa",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "acbacbacbacb",distance = [2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "acbacbacbacb",distance = [2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzz",distance = [25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzz",distance = [25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxzyxzyxzyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxzyxzyxzyxzyxzyx",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvwxzyabcdefghijklmnop",distance = [23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvwxzyabcdefghijklmnop",distance = [23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrstuvwxzzyxwvutsrqponmlkjihgfedcba",distance = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrstuvwxzzyxwvutsrqponmlkjihgfedcba",distance = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 7, 6, 5]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcbazyxw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 7, 6, 5]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgihgfedcba",distance = [0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgihgfedcba",distance = [0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgabcdefg",distance = [5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgabcdefg",distance = [5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrsmnopqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrsmnopqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopmnop",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopmnop",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvqrstuv",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvqrstuv",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgabcdefg",distance = [1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgabcdefg",distance = [1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zebrazebra",distance = [23, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zebrazebra",distance = [23, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijhgfedcba",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijhgfedcba",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababababababababababababababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababababababababababababababababababab",distance = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrsvwxyzxyzwvrsqponm",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrsvwxyzxyzwvrsqponm",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "lmnopqrstuvw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "lmnopqrstuvw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgihgfedcba",distance = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgihgfedcba",distance = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrstuvwxyzz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrstuvwxyzz",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "pqrsrqpq",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "pqrsrqpq",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zabyxwvutsrqponmlkjihgfedcba",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zabyxwvutsrqponmlkjihgfedcba",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcdabcdabcdabcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcdabcdabcdabcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvrstu",distance = [0, 0, 0, 0, 0, 0, 0, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvrstu",distance = [0, 0, 0, 0, 0, 0, 0, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "acbacbacbacbacbacb",distance = [1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "acbacbacbacbacbacb",distance = [1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "lkjhlkjhlkjh",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "lkjhlkjhlkjh",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrsmnopqr",distance = [0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrsmnopqr",distance = [0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdeffedcba",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdeffedcba",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zabzyabzyabzyabz",distance = [0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zabzyabzyabzyabz",distance = [0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghigfedcba",distance = [7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghigfedcba",distance = [7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaaccddaaff",distance = [2, 2, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaaccddaaff",distance = [2, 2, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",distance = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",distance = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghij",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghij",distance = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcdeff",distance = [1, 1, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcdeff",distance = [1, 1, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrstuvtwxzyabcdeffedcba",distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrstuvtwxzyabcdeffedcba",distance = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",distance = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",distance = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzza",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzza",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrstuv",distance = [0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrstuv",distance = [0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrmpqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1, 0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrmpqr",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1, 0, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "lmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "lmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba",distance = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopmnop",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopmnop",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "acbacbacba",distance = [0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "acbacbacba",distance = [0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mnopqrsmnopqrsmnopqrs",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mnopqrsmnopqrsmnopqrs",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "fedcbafedcba",distance = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "fedcbafedcba",distance = [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefabcdefabcdefabcdefabcdefabcdef",distance = [5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefabcdefabcdefabcdefabcdefabcdef",distance = [5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxzy",distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxzy",distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 0]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qrstuvqponmlkjihgfedcbazyxw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 7, 6]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qrstuvqponmlkjihgfedcbazyxw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 7, 6]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "abcdefghijklmnopqrztuvwxyz",distance = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == False
@@ -95,3 +847,5 @@ def check(candidate):
     assert candidate(s = "abcdefghijklmnopqrstuvwxzy",distance = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 0, 0]) == True
     assert candidate(s = "qrstuvqponmlkjihgfedcbazyxw",distance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 7, 6]) == False
     assert candidate(s = "abcdabcdabcd",distance = [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == True
+
+

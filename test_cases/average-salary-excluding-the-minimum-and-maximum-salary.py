@@ -1,5 +1,805 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(salary = [54000, 25000, 75000, 30000, 45000]) == 43000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [54000, 25000, 75000, 30000, 45000]) == 43000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [7500, 8500, 6500, 9500, 7000]) == 7666.666666666667
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [7500, 8500, 6500, 9500, 7000]) == 7666.666666666667: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [5000, 6000, 7000, 8000, 9000, 10000]) == 7500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [5000, 6000, 7000, 8000, 9000, 10000]) == 7500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [12000, 11000, 13000, 9000, 10000, 14000]) == 11500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [12000, 11000, 13000, 9000, 10000, 14000]) == 11500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [4000, 3000, 1000, 2000]) == 2500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [4000, 3000, 1000, 2000]) == 2500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [8000, 9000, 2000, 3000, 6000, 10000, 5000]) == 6200.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [8000, 9000, 2000, 3000, 6000, 10000, 5000]) == 6200.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1500, 2500, 3500, 4500, 5500]) == 3500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1500, 2500, 3500, 4500, 5500]) == 3500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [5000, 10000, 15000, 20000, 25000]) == 15000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [5000, 10000, 15000, 20000, 25000]) == 15000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [15000, 25000, 35000, 45000, 55000]) == 35000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [15000, 25000, 35000, 45000, 55000]) == 35000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 120000, 110000]) == 110000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 120000, 110000]) == 110000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 2000, 3000]) == 2000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 2000, 3000]) == 2000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [7500, 8200, 9000, 12000, 6000]) == 8233.333333333334
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [7500, 8200, 9000, 12000, 6000]) == 8233.333333333334: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [6000, 5000, 4000, 3000, 2000, 1000]) == 3500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [6000, 5000, 4000, 3000, 2000, 1000]) == 3500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 5000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 5000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990]) == 999994.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990]) == 999994.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000]) == 550000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000]) == 550000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 1012]) == 5107.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 1012]) == 5107.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [9999, 10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010]) == 10004.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [9999, 10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010]) == 10004.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [45000, 55000, 65000, 35000, 25000, 75000, 85000, 95000, 105000, 115000, 125000, 135000]) == 80000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [45000, 55000, 65000, 35000, 25000, 75000, 85000, 95000, 105000, 115000, 125000, 135000]) == 80000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000]) == 60000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000]) == 60000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 12345, 54321]) == 460081.8888888889
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 12345, 54321]) == 460081.8888888889: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990, 999989, 999988, 999987, 999986, 999985, 999984, 999983, 999982, 999981]) == 999990.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990, 999989, 999988, 999987, 999986, 999985, 999984, 999983, 999982, 999981]) == 999990.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [111111, 222222, 333333, 444444, 555555, 666666, 777777, 888888, 999999, 1111111, 2222222, 3333333, 4444444, 5555555, 6666666, 7777777, 8888888, 9999999, 10000000]) == 3228757.588235294
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [111111, 222222, 333333, 444444, 555555, 666666, 777777, 888888, 999999, 1111111, 2222222, 3333333, 4444444, 5555555, 6666666, 7777777, 8888888, 9999999, 10000000]) == 3228757.588235294: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009, 10010, 11011, 12012, 13013]) == 7007.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009, 10010, 11011, 12012, 13013]) == 7007.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [10000, 10100, 10200, 10300, 10400, 10500, 10600, 10700, 10800, 10900, 11000, 11100, 11200]) == 10600.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [10000, 10100, 10200, 10300, 10400, 10500, 10600, 10700, 10800, 10900, 11000, 11100, 11200]) == 10600.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [888888, 888889, 888890, 888891, 888892, 888893, 888894, 888895, 888896, 888897, 888898, 888899, 888900, 888901, 888902, 888903, 888904]) == 888896.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [888888, 888889, 888890, 888891, 888892, 888893, 888894, 888895, 888896, 888897, 888898, 888899, 888900, 888901, 888902, 888903, 888904]) == 888896.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [555555, 555556, 555557, 555558, 555559, 555560, 555561, 555562, 555563, 555564, 555565]) == 555560.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [555555, 555556, 555557, 555558, 555559, 555560, 555561, 555562, 555563, 555564, 555565]) == 555560.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 101234, 212345, 321234, 432123, 543212, 654321, 765432]) == 501077.35714285716
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 101234, 212345, 321234, 432123, 543212, 654321, 765432]) == 501077.35714285716: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]) == 1005.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]) == 1005.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000]) == 72500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000]) == 72500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500, 11500, 12500, 13500]) == 8500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500, 11500, 12500, 13500]) == 8500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [9999, 10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007]) == 10003.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [9999, 10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007]) == 10003.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000]) == 7000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000]) == 7000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [15000, 14000, 13000, 12000, 11000, 10000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 8000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [15000, 14000, 13000, 12000, 11000, 10000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 8000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [10500, 20500, 30500, 40500, 50500, 60500, 70500, 80500, 90500, 100500]) == 55500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [10500, 20500, 30500, 40500, 50500, 60500, 70500, 80500, 90500, 100500]) == 55500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [555555, 444444, 333333, 222222, 111111, 999999, 888888, 777777, 666666, 123456, 789012, 345678, 901234, 567890, 234567, 890123, 456789, 678901, 101234, 987654]) == 554183.3333333334
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [555555, 444444, 333333, 222222, 111111, 999999, 888888, 777777, 666666, 123456, 789012, 345678, 901234, 567890, 234567, 890123, 456789, 678901, 101234, 987654]) == 554183.3333333334: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1, 1000000, 2, 999999, 3, 999998, 4, 999997, 5, 999996, 6, 999995, 7, 999994, 8, 999993, 9, 999992, 10]) == 470589.29411764705
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1, 1000000, 2, 999999, 3, 999998, 4, 999997, 5, 999996, 6, 999995, 7, 999994, 8, 999993, 9, 999992, 10]) == 470589.29411764705: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500000, 490000, 480000, 470000, 460000, 450000, 440000, 430000, 420000, 410000, 400000]) == 450000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500000, 490000, 480000, 470000, 460000, 450000, 440000, 430000, 420000, 410000, 400000]) == 450000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [5000, 3000, 4000, 6000, 7000, 8000, 9000, 10000, 11000]) == 7000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [5000, 3000, 4000, 6000, 7000, 8000, 9000, 10000, 11000]) == 7000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [8000, 16000, 24000, 32000, 40000, 48000, 56000, 64000, 72000, 80000, 88000, 96000, 104000, 112000, 120000, 128000]) == 68000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [8000, 16000, 24000, 32000, 40000, 48000, 56000, 64000, 72000, 80000, 88000, 96000, 104000, 112000, 120000, 128000]) == 68000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000]) == 5500000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000]) == 5500000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 654321, 111111, 999999, 555555, 333333, 777777, 888888, 222222, 444444, 666666, 100000, 900000]) == 516161.1818181818
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 654321, 111111, 999999, 555555, 333333, 777777, 888888, 222222, 444444, 666666, 100000, 900000]) == 516161.1818181818: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000]) == 52500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000]) == 52500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000, 14000000, 15000000]) == 8000000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000, 14000000, 15000000]) == 8000000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [250000, 225000, 200000, 175000, 150000, 125000, 100000, 75000, 50000, 25000]) == 137500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [250000, 225000, 200000, 175000, 150000, 125000, 100000, 75000, 50000, 25000]) == 137500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [150000, 250000, 140000, 160000, 130000, 170000, 120000, 180000, 110000, 190000, 100000, 200000, 210000]) == 160000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [150000, 250000, 140000, 160000, 130000, 170000, 120000, 180000, 110000, 190000, 100000, 200000, 210000]) == 160000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [150000, 150001, 150002, 150003, 150004, 150005, 150006, 150007, 150008, 150009, 150010, 150011, 150012]) == 150006.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [150000, 150001, 150002, 150003, 150004, 150005, 150006, 150007, 150008, 150009, 150010, 150011, 150012]) == 150006.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 101234]) == 510802.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 101234]) == 510802.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013]) == 1007.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013]) == 1007.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991]) == 999995.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991]) == 999995.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100001, 100000]) == 450000.125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100001, 100000]) == 450000.125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010]) == 100005.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010]) == 100005.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000, 99999999, 88888888, 77777777, 66666666, 55555555, 44444444, 33333333, 22222222, 11111111]) == 269934640.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000, 99999999, 88888888, 77777777, 66666666, 55555555, 44444444, 33333333, 22222222, 11111111]) == 269934640.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000]) == 2500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000]) == 2500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000]) == 90000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000]) == 90000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000, 160000, 170000, 180000, 190000]) == 120000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000, 130000, 140000, 150000, 160000, 170000, 180000, 190000]) == 120000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 1012, 2123, 3234, 4345, 5456, 6567, 7678, 8789, 9890, 8989, 7989]) == 5835.666666666667
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 1012, 2123, 3234, 4345, 5456, 6567, 7678, 8789, 9890, 8989, 7989]) == 5835.666666666667: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500001, 500002, 500003, 500004, 500005, 500006, 500007, 500008, 500009, 500010, 500011, 500012, 500013, 500014, 500015, 500016, 500017, 500018, 500019, 500020, 500021, 500022, 500023, 500024, 500025]) == 500013.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500001, 500002, 500003, 500004, 500005, 500006, 500007, 500008, 500009, 500010, 500011, 500012, 500013, 500014, 500015, 500016, 500017, 500018, 500019, 500020, 500021, 500022, 500023, 500024, 500025]) == 500013.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000]) == 600000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000]) == 600000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [250000, 260000, 270000, 280000, 290000, 300000, 310000, 320000, 330000, 340000, 350000, 360000, 370000, 380000, 390000]) == 320000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [250000, 260000, 270000, 280000, 290000, 300000, 310000, 320000, 330000, 340000, 350000, 360000, 370000, 380000, 390000]) == 320000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010]) == 100005.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010]) == 100005.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000]) == 500000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000]) == 500000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010, 100011, 100012, 100013, 100014, 100015]) == 100008.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100001, 100002, 100003, 100004, 100005, 100006, 100007, 100008, 100009, 100010, 100011, 100012, 100013, 100014, 100015]) == 100008.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500000, 400000, 300000, 200000, 100000, 150000, 250000, 350000, 450000, 550000]) == 325000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500000, 400000, 300000, 200000, 100000, 150000, 250000, 350000, 450000, 550000]) == 325000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 13.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 13.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 789012, 345678, 901234, 567890, 234567, 890123]) == 565454.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 789012, 345678, 901234, 567890, 234567, 890123]) == 565454.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000, 14000000, 15000000, 16000000, 17000000, 18000000, 19000000, 20000000]) == 10500000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000, 14000000, 15000000, 16000000, 17000000, 18000000, 19000000, 20000000]) == 10500000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005]) == 1000002.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005]) == 1000002.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011]) == 5005.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011]) == 5005.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015]) == 1008.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015]) == 1008.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1700000, 1800000, 1900000, 2000000]) == 1250000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1700000, 1800000, 1900000, 2000000]) == 1250000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 999999, 500000, 250000, 750000, 375000, 625000]) == 500000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 999999, 500000, 250000, 750000, 375000, 625000]) == 500000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011]) == 1006.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011]) == 1006.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 200000, 150000, 180000, 170000, 160000, 130000, 120000, 110000]) == 145714.2857142857
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 200000, 150000, 180000, 170000, 160000, 130000, 120000, 110000]) == 145714.2857142857: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432, 54321, 43210, 32109, 21098, 10987, 9876, 8765]) == 245198.38888888888
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432, 54321, 43210, 32109, 21098, 10987, 9876, 8765]) == 245198.38888888888: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991]) == 999995.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991]) == 999995.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005, 1000006]) == 1000002.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005, 1000006]) == 1000002.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500000, 500001, 500002, 500003, 500004, 500005, 500006, 500007, 500008, 500009, 500010, 500011, 500012, 500013, 500014, 500015]) == 500007.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500000, 500001, 500002, 500003, 500004, 500005, 500006, 500007, 500008, 500009, 500010, 500011, 500012, 500013, 500014, 500015]) == 500007.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 1000000000001, 1000000000002]) == 211111111000.1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 1000000000001, 1000000000002]) == 211111111000.1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000]) == 7000000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000, 11000000, 12000000, 13000000]) == 7000000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432, 54321, 43210, 32109]) == 309964.35714285716
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432, 54321, 43210, 32109]) == 309964.35714285716: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432]) == 379685.2727272727
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [987654, 876543, 765432, 654321, 543210, 432109, 321098, 210987, 109876, 98765, 87654, 76543, 65432]) == 379685.2727272727: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005, 1000006, 1000007, 1000008, 1000009, 1000010]) == 1000004.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999999, 1000000, 1000001, 1000002, 1000003, 1000004, 1000005, 1000006, 1000007, 1000008, 1000009, 1000010]) == 1000004.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 5500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 5500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [200000, 150000, 180000, 170000, 190000, 160000, 210000, 220000, 230000, 240000]) == 195000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [200000, 150000, 180000, 170000, 190000, 160000, 210000, 220000, 230000, 240000]) == 195000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000]) == 800000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000]) == 800000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [23456, 34567, 45678, 56789, 67890, 78901, 89012, 90123, 101234, 111234, 121234, 131234, 141234, 151234]) == 89094.16666666667
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [23456, 34567, 45678, 56789, 67890, 78901, 89012, 90123, 101234, 111234, 121234, 131234, 141234, 151234]) == 89094.16666666667: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000]) == 950000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000]) == 950000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [150000, 250000, 350000, 450000, 550000, 650000, 750000, 850000, 950000, 1050000, 1150000, 1250000, 1350000, 1450000, 1550000, 1650000, 1750000, 1850000, 1950000, 2050000]) == 1100000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [150000, 250000, 350000, 450000, 550000, 650000, 750000, 850000, 950000, 1050000, 1150000, 1250000, 1350000, 1450000, 1550000, 1650000, 1750000, 1850000, 1950000, 2050000]) == 1100000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [3456, 6543, 1234, 4321, 9876, 6789, 2345, 5432, 8765, 7654, 1111, 2222, 3333]) == 4735.818181818182
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [3456, 6543, 1234, 4321, 9876, 6789, 2345, 5432, 8765, 7654, 1111, 2222, 3333]) == 4735.818181818182: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990, 999989, 999988, 999987, 999986, 999985, 999984]) == 999991.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991, 999990, 999989, 999988, 999987, 999986, 999985, 999984]) == 999991.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456, 789012, 345678, 901234, 567890, 1234567, 2345678, 3456789, 4567890, 5678901, 6789012, 7890123, 8901234, 9012345, 10123456]) == 4036950.230769231
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456, 789012, 345678, 901234, 567890, 1234567, 2345678, 3456789, 4567890, 5678901, 6789012, 7890123, 8901234, 9012345, 10123456]) == 4036950.230769231: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [1000, 2500, 5000, 7500, 10000, 12500, 15000]) == 7500.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [1000, 2500, 5000, 7500, 10000, 12500, 15000]) == 7500.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [120000, 95000, 110000, 90000, 105000, 85000, 100000, 80000, 115000]) == 100000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [120000, 95000, 110000, 90000, 105000, 85000, 100000, 80000, 115000]) == 100000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [123456789, 987654321, 111222333, 444555666, 777888999, 222333444, 555666777, 888999000, 333444555, 666777888, 999000111]) == 555641937.6666666
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [123456789, 987654321, 111222333, 444555666, 777888999, 222333444, 555666777, 888999000, 333444555, 666777888, 999000111]) == 555641937.6666666: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [95000, 96000, 97000, 98000, 99000, 100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000]) == 102000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [95000, 96000, 97000, 98000, 99000, 100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000]) == 102000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [12000, 15000, 13000, 10000, 9000, 11000, 14000]) == 12000.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [12000, 15000, 13000, 10000, 9000, 11000, 14000]) == 12000.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(salary = [80000, 75000, 100000, 65000, 90000, 55000, 60000, 70000]) == 73333.33333333333
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(salary = [80000, 75000, 100000, 65000, 90000, 55000, 60000, 70000]) == 73333.33333333333: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(salary = [54000, 25000, 75000, 30000, 45000]) == 43000.0
@@ -101,3 +901,5 @@ def check(candidate):
     assert candidate(salary = [95000, 96000, 97000, 98000, 99000, 100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000]) == 102000.0
     assert candidate(salary = [12000, 15000, 13000, 10000, 9000, 11000, 14000]) == 12000.0
     assert candidate(salary = [80000, 75000, 100000, 65000, 90000, 55000, 60000, 70000]) == 73333.33333333333
+
+

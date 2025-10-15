@@ -1,5 +1,733 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 7,limit = 7) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,limit = 7) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,limit = 1000000) == 500001500001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,limit = 1000000) == 500001500001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,limit = 5) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,limit = 5) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,limit = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,limit = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,limit = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,limit = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,limit = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,limit = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1,limit = 1) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1,limit = 1) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,limit = 10) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,limit = 10) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,limit = 50) == 1326
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,limit = 50) == 1326: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,limit = 500) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,limit = 500) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 150,limit = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 150,limit = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,limit = 10) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,limit = 10) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 123456,limit = 123456) == 7620877153
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 123456,limit = 123456) == 7620877153: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 123,limit = 45) == 91
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 123,limit = 45) == 91: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 123456,limit = 45678) == 92201410
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 123456,limit = 45678) == 92201410: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,limit = 10) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,limit = 10) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 30,limit = 15) == 136
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 30,limit = 15) == 136: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,limit = 7) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,limit = 7) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 75,limit = 35) == 496
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 75,limit = 35) == 496: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 80,limit = 40) == 861
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 80,limit = 40) == 861: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,limit = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,limit = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,limit = 500) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,limit = 500) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,limit = 500000) == 125000750001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,limit = 500000) == 125000750001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,limit = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,limit = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 456,limit = 123) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 456,limit = 123) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999999,limit = 100000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999999,limit = 100000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 789,limit = 234) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 789,limit = 234) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 100) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 100) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12345,limit = 3456) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12345,limit = 3456) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,limit = 5000) == 12507501
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,limit = 5000) == 12507501: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,limit = 250000) == 31250375001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,limit = 250000) == 31250375001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999999,limit = 1000000) == 500000500000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999999,limit = 1000000) == 500000500000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,limit = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,limit = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,limit = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,limit = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,limit = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,limit = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,limit = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,limit = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 150,limit = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 150,limit = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 30,limit = 30) == 496
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 30,limit = 30) == 496: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 800,limit = 200) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 800,limit = 200) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,limit = 8) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,limit = 8) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999999,limit = 333333) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999999,limit = 333333) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,limit = 20) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,limit = 20) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 789012,limit = 12345) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 789012,limit = 12345) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,limit = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,limit = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,limit = 100000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,limit = 100000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999999,limit = 999999) == 500000500000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999999,limit = 999999) == 500000500000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 300000,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 300000,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 75,limit = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 75,limit = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,limit = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,limit = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 250,limit = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 250,limit = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,limit = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,limit = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,limit = 6) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,limit = 6) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,limit = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,limit = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,limit = 2000) == 501501
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,limit = 2000) == 501501: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,limit = 300) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,limit = 300) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 75,limit = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 75,limit = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,limit = 150000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,limit = 150000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,limit = 200) == 5151
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,limit = 200) == 5151: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999,limit = 100) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999,limit = 100) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,limit = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,limit = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,limit = 50000) == 1250075001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,limit = 50000) == 1250075001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,limit = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,limit = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,limit = 5000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,limit = 5000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,limit = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 1000) == 501501
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 1000) == 501501: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,limit = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,limit = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,limit = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,limit = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 67890,limit = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 67890,limit = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,limit = 500) == 125751
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,limit = 500) == 125751: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 30,limit = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 30,limit = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,limit = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,limit = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999,limit = 333) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999,limit = 333) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,limit = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,limit = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,limit = 30000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,limit = 30000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,limit = 200) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,limit = 200) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,limit = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,limit = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,limit = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,limit = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,limit = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,limit = 1) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 7,limit = 7) == 36
@@ -92,3 +820,5 @@ def check(candidate):
     assert candidate(n = 100,limit = 30) == 0
     assert candidate(n = 500,limit = 5) == 0
     assert candidate(n = 10,limit = 1) == 0
+
+

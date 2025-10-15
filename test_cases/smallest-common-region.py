@@ -1,5 +1,501 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Zone1', 'Zone2'], ['Zone1', 'Area1', 'Area2'], ['Area1', 'Location1', 'Location2'], ['Area2', 'Location3', 'Location4'], ['Zone2', 'Area3', 'Area4']],region1 = "Location1",region2 = "Area4") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Zone1', 'Zone2'], ['Zone1', 'Area1', 'Area2'], ['Area1', 'Location1', 'Location2'], ['Area2', 'Location3', 'Location4'], ['Zone2', 'Area3', 'Area4']],region1 = "Location1",region2 = "Area4") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2']],region1 = "SubSubRegion1",region2 = "SubRegion3") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2']],region1 = "SubSubRegion1",region2 = "SubRegion3") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['City1', 'District1', 'District2'], ['City3', 'District3', 'District4']],region1 = "District2",region2 = "District4") == "Continent"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['City1', 'District1', 'District2'], ['City3', 'District3', 'District4']],region1 = "District2",region2 = "District4") == "Continent": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Region1', 'Region2'], ['Region1', 'SubRegion1.1', 'SubRegion1.2'], ['Region2', 'SubRegion2.1', 'SubRegion2.2'], ['SubRegion1.1', 'SubSubRegion1.1.1', 'SubSubRegion1.1.2'], ['SubRegion2.1', 'SubSubRegion2.1.1', 'SubSubRegion2.1.2']],region1 = "SubSubRegion1.1.1",region2 = "SubSubRegion2.1.1") == "Globe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Region1', 'Region2'], ['Region1', 'SubRegion1.1', 'SubRegion1.2'], ['Region2', 'SubRegion2.1', 'SubRegion2.2'], ['SubRegion1.1', 'SubSubRegion1.1.1', 'SubSubRegion1.1.2'], ['SubRegion2.1', 'SubSubRegion2.1.1', 'SubSubRegion2.1.2']],region1 = "SubSubRegion1.1.1",region2 = "SubSubRegion2.1.1") == "Globe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Africa', 'Antarctica'], ['Africa', 'Egypt', 'Kenya'], ['Antarctica', 'East Antarctica', 'West Antarctica'], ['Egypt', 'Cairo'], ['Kenya', 'Nairobi']],region1 = "Cairo",region2 = "Nairobi") == "Africa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Africa', 'Antarctica'], ['Africa', 'Egypt', 'Kenya'], ['Antarctica', 'East Antarctica', 'West Antarctica'], ['Egypt', 'Cairo'], ['Kenya', 'Nairobi']],region1 = "Cairo",region2 = "Nairobi") == "Africa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Americas', 'Eurasia'], ['Americas', 'USA', 'Canada'], ['Eurasia', 'Europe', 'Asia'], ['USA', 'California', 'Texas'], ['Canada', 'Ontario', 'Quebec'], ['Europe', 'Germany', 'France'], ['Asia', 'India', 'China']],region1 = "California",region2 = "India") == "Globe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Americas', 'Eurasia'], ['Americas', 'USA', 'Canada'], ['Eurasia', 'Europe', 'Asia'], ['USA', 'California', 'Texas'], ['Canada', 'Ontario', 'Quebec'], ['Europe', 'Germany', 'France'], ['Asia', 'India', 'China']],region1 = "California",region2 = "India") == "Globe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['SubRegion3', 'SubSubRegion3', 'SubSubRegion4']],region1 = "SubSubRegion1",region2 = "SubSubRegion3") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['SubRegion3', 'SubSubRegion3', 'SubSubRegion4']],region1 = "SubSubRegion1",region2 = "SubSubRegion3") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Continent2', 'Country3', 'Country4']],region1 = "City1",region2 = "Country4") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Continent2', 'Country3', 'Country4']],region1 = "City1",region2 = "Country4") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'NorthAmerica', 'SouthAmerica'], ['NorthAmerica', 'USA', 'Canada'], ['USA', 'NY', 'CA'], ['Canada', 'ON', 'QC'], ['SouthAmerica', 'Brazil']],region1 = "QC",region2 = "NY") == "NorthAmerica"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'NorthAmerica', 'SouthAmerica'], ['NorthAmerica', 'USA', 'Canada'], ['USA', 'NY', 'CA'], ['Canada', 'ON', 'QC'], ['SouthAmerica', 'Brazil']],region1 = "QC",region2 = "NY") == "NorthAmerica": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Country3', 'City5', 'City6'], ['Country4', 'City7', 'City8']],region1 = "City1",region2 = "City7") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Country3', 'City5', 'City6'], ['Country4', 'City7', 'City8']],region1 = "City1",region2 = "City7") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Milky Way', 'Andromeda'], ['Milky Way', 'Solar System', 'Proxima Centauri System'], ['Solar System', 'Earth', 'Mars'], ['Earth', 'North America', 'Europe'], ['Europe', 'Germany', 'France']],region1 = "France",region2 = "Mars") == "Solar System"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Milky Way', 'Andromeda'], ['Milky Way', 'Solar System', 'Proxima Centauri System'], ['Solar System', 'Earth', 'Mars'], ['Earth', 'North America', 'Europe'], ['Europe', 'Germany', 'France']],region1 = "France",region2 = "Mars") == "Solar System": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Continent2', 'Country3', 'Country4']],region1 = "City1",region2 = "Country4") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Continent2', 'Country3', 'Country4']],region1 = "City1",region2 = "Country4") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Continental USA', 'Canada'], ['Continental USA', 'Northeast', 'Southeast'], ['Northeast', 'New York', 'New Jersey'], ['Southeast', 'Florida', 'Georgia'], ['Canada', 'Ontario', 'Quebec']],region1 = "New Jersey",region2 = "Ontario") == "Globe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Continental USA', 'Canada'], ['Continental USA', 'Northeast', 'Southeast'], ['Northeast', 'New York', 'New Jersey'], ['Southeast', 'Florida', 'Georgia'], ['Canada', 'Ontario', 'Quebec']],region1 = "New Jersey",region2 = "Ontario") == "Globe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'France', 'Germany'], ['Asia', 'China', 'Japan'], ['France', 'Paris', 'Lyon'], ['Japan', 'Tokyo', 'Kyoto']],region1 = "Lyon",region2 = "Tokyo") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'France', 'Germany'], ['Asia', 'China', 'Japan'], ['France', 'Paris', 'Lyon'], ['Japan', 'Tokyo', 'Kyoto']],region1 = "Lyon",region2 = "Tokyo") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Quebec",region2 = "New York") == "North America"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Quebec",region2 = "New York") == "North America": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Beijing") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Beijing") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'City1.1', 'City1.2'], ['Country2', 'City2.1', 'City2.2'], ['City1.1', 'District1.1.1', 'District1.1.2'], ['City2.1', 'District2.1.1', 'District2.1.2']],region1 = "District1.1.1",region2 = "District2.1.1") == "Continent"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'City1.1', 'City1.2'], ['Country2', 'City2.1', 'City2.2'], ['City1.1', 'District1.1.1', 'District1.1.2'], ['City2.1', 'District2.1.1', 'District2.1.2']],region1 = "District1.1.1",region2 = "District2.1.1") == "Continent": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "France",region2 = "Mumbai") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "France",region2 = "Mumbai") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['Galaxy2', 'StarSystem3', 'StarSystem4'], ['StarSystem1', 'Planet1', 'Planet2'], ['StarSystem2', 'Planet3', 'Planet4']],region1 = "Planet1",region2 = "Planet4") == "Galaxy1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['Galaxy2', 'StarSystem3', 'StarSystem4'], ['StarSystem1', 'Planet1', 'Planet2'], ['StarSystem2', 'Planet3', 'Planet4']],region1 = "Planet1",region2 = "Planet4") == "Galaxy1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4']],region1 = "SubSubRegion1",region2 = "SubRegion3") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4']],region1 = "SubSubRegion1",region2 = "SubRegion3") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'Japan', 'South Korea'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon'], ['Japan', 'Tokyo', 'Osaka'], ['South Korea', 'Seoul', 'Busan']],region1 = "Berlin",region2 = "Tokyo") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'Japan', 'South Korea'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon'], ['Japan', 'Tokyo', 'Osaka'], ['South Korea', 'Seoul', 'Busan']],region1 = "Berlin",region2 = "Tokyo") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Sector1', 'Sector2'], ['Sector1', 'ClusterA', 'ClusterB'], ['ClusterA', 'System1', 'System2'], ['ClusterB', 'System3', 'System4'], ['Sector2', 'ClusterC', 'ClusterD']],region1 = "System2",region2 = "ClusterD") == "Universe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Sector1', 'Sector2'], ['Sector1', 'ClusterA', 'ClusterB'], ['ClusterA', 'System1', 'System2'], ['ClusterB', 'System3', 'System4'], ['Sector2', 'ClusterC', 'ClusterD']],region1 = "System2",region2 = "ClusterD") == "Universe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1.1', 'SubRegion1.2'], ['Region2', 'SubRegion2.1', 'SubRegion2.2'], ['SubRegion1.1', 'SubSubRegion1.1.1', 'SubSubRegion1.1.2'], ['SubRegion2.1', 'SubSubRegion2.1.1', 'SubSubRegion2.1.2']],region1 = "SubSubRegion1.1.1",region2 = "SubSubRegion2.1.1") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1.1', 'SubRegion1.2'], ['Region2', 'SubRegion2.1', 'SubRegion2.2'], ['SubRegion1.1', 'SubSubRegion1.1.1', 'SubSubRegion1.1.2'], ['SubRegion2.1', 'SubSubRegion2.1.1', 'SubSubRegion2.1.2']],region1 = "SubSubRegion1.1.1",region2 = "SubSubRegion2.1.1") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'NorthAmerica', 'SouthAmerica'], ['NorthAmerica', 'USA', 'Canada'], ['USA', 'NY', 'CA'], ['Canada', 'ON', 'QC'], ['SouthAmerica', 'Brazil']],region1 = "Canada",region2 = "SouthAmerica") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'NorthAmerica', 'SouthAmerica'], ['NorthAmerica', 'USA', 'Canada'], ['USA', 'NY', 'CA'], ['Canada', 'ON', 'QC'], ['SouthAmerica', 'Brazil']],region1 = "Canada",region2 = "SouthAmerica") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Milky Way', 'Andromeda'], ['Milky Way', 'Earth', 'Mars'], ['Andromeda', 'Alpha Andromedae'], ['Earth', 'Asia', 'Europe'], ['Mars', 'Phobos', 'Deimos']],region1 = "Asia",region2 = "Phobos") == "Milky Way"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Milky Way', 'Andromeda'], ['Milky Way', 'Earth', 'Mars'], ['Andromeda', 'Alpha Andromedae'], ['Earth', 'Asia', 'Europe'], ['Mars', 'Phobos', 'Deimos']],region1 = "Asia",region2 = "Phobos") == "Milky Way": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continents', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'India', 'China']],region1 = "Germany",region2 = "China") == "Continents"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continents', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'India', 'China']],region1 = "Germany",region2 = "China") == "Continents": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'CountryA', 'CountryB'], ['CountryA', 'City1', 'City2'], ['CountryB', 'City3', 'City4'], ['Continent2', 'CountryC', 'CountryD']],region1 = "City1",region2 = "City3") == "Continent1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Continent1', 'Continent2'], ['Continent1', 'CountryA', 'CountryB'], ['CountryA', 'City1', 'City2'], ['CountryB', 'City3', 'City4'], ['Continent2', 'CountryC', 'CountryD']],region1 = "City1",region2 = "City3") == "Continent1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Hemisphere1', 'Hemisphere2'], ['Hemisphere1', 'Zone1', 'Zone2'], ['Hemisphere2', 'Zone3', 'Zone4'], ['Zone1', 'Area1', 'Area2'], ['Zone2', 'Area3', 'Area4']],region1 = "Area1",region2 = "Area4") == "Hemisphere1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Hemisphere1', 'Hemisphere2'], ['Hemisphere1', 'Zone1', 'Zone2'], ['Hemisphere2', 'Zone3', 'Zone4'], ['Zone1', 'Area1', 'Area2'], ['Zone2', 'Area3', 'Area4']],region1 = "Area1",region2 = "Area4") == "Hemisphere1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'CityA', 'CityB'], ['Country2', 'CityC', 'CityD'], ['CityA', 'Town1', 'Town2'], ['CityB', 'Town3', 'Town4']],region1 = "Town1",region2 = "Town4") == "Country1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'CityA', 'CityB'], ['Country2', 'CityC', 'CityD'], ['CityA', 'Town1', 'Town2'], ['CityB', 'Town3', 'Town4']],region1 = "Town1",region2 = "Town4") == "Country1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'RegionA', 'RegionB'], ['RegionA', 'SubRegionA1', 'SubRegionA2'], ['SubRegionA1', 'CityA1', 'CityA2'], ['SubRegionA2', 'CityA3', 'CityA4'], ['RegionB', 'SubRegionB1', 'SubRegionB2']],region1 = "SubRegionA1",region2 = "SubRegionB2") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'RegionA', 'RegionB'], ['RegionA', 'SubRegionA1', 'SubRegionA2'], ['SubRegionA1', 'CityA1', 'CityA2'], ['SubRegionA2', 'CityA3', 'CityA4'], ['RegionB', 'SubRegionB1', 'SubRegionB2']],region1 = "SubRegionA1",region2 = "SubRegionB2") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['SubRegion3', 'SubSubRegion3', 'SubSubRegion4']],region1 = "SubSubRegion1",region2 = "SubSubRegion3") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'SubSubRegion1', 'SubSubRegion2'], ['SubRegion3', 'SubSubRegion3', 'SubSubRegion4']],region1 = "SubSubRegion1",region2 = "SubSubRegion3") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Quebec",region2 = "New York") == "North America"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Quebec",region2 = "New York") == "North America": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Beijing") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Beijing") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universal', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystemA', 'StarSystemB'], ['StarSystemA', 'PlanetX', 'PlanetY'], ['StarSystemB', 'PlanetZ', 'PlanetW'], ['Galaxy2', 'StarSystemC', 'StarSystemD']],region1 = "PlanetX",region2 = "PlanetZ") == "Galaxy1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universal', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystemA', 'StarSystemB'], ['StarSystemA', 'PlanetX', 'PlanetY'], ['StarSystemB', 'PlanetZ', 'PlanetW'], ['Galaxy2', 'StarSystemC', 'StarSystemD']],region1 = "PlanetX",region2 = "PlanetZ") == "Galaxy1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Galaxy', 'SolarSystem1', 'SolarSystem2'], ['SolarSystem1', 'Planet1', 'Planet2'], ['SolarSystem2', 'Planet3', 'Planet4'], ['Planet1', 'Moon1', 'Moon2'], ['Planet3', 'Moon3', 'Moon4']],region1 = "Moon1",region2 = "Moon3") == "Galaxy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Galaxy', 'SolarSystem1', 'SolarSystem2'], ['SolarSystem1', 'Planet1', 'Planet2'], ['SolarSystem2', 'Planet3', 'Planet4'], ['Planet1', 'Moon1', 'Moon2'], ['Planet3', 'Moon3', 'Moon4']],region1 = "Moon1",region2 = "Moon3") == "Galaxy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['Galaxy2', 'StarSystem3', 'StarSystem4'], ['StarSystem1', 'Planet1', 'Planet2'], ['StarSystem2', 'Planet3', 'Planet4']],region1 = "Planet1",region2 = "Planet3") == "Galaxy1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['Galaxy2', 'StarSystem3', 'StarSystem4'], ['StarSystem1', 'Planet1', 'Planet2'], ['StarSystem2', 'Planet3', 'Planet4']],region1 = "Planet1",region2 = "Planet3") == "Galaxy1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'France', 'Germany'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'France', 'Germany'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Country3', 'City5', 'City6'], ['Country4', 'City7', 'City8']],region1 = "City2",region2 = "City7") == "Globe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4'], ['Country3', 'City5', 'City6'], ['Country4', 'City7', 'City8']],region1 = "City2",region2 = "City7") == "Globe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'SolarSystem1', 'SolarSystem2'], ['Galaxy2', 'SolarSystem3', 'SolarSystem4'], ['SolarSystem1', 'Earth', 'Mars'], ['SolarSystem2', 'Jupiter', 'Saturn'], ['SolarSystem3', 'Uranus', 'Neptune'], ['SolarSystem4', 'Pluto', 'Haumea']],region1 = "Earth",region2 = "Jupiter") == "Galaxy1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'SolarSystem1', 'SolarSystem2'], ['Galaxy2', 'SolarSystem3', 'SolarSystem4'], ['SolarSystem1', 'Earth', 'Mars'], ['SolarSystem2', 'Jupiter', 'Saturn'], ['SolarSystem3', 'Uranus', 'Neptune'], ['SolarSystem4', 'Pluto', 'Haumea']],region1 = "Earth",region2 = "Jupiter") == "Galaxy1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['Country2', 'State3', 'State4'], ['State1', 'City1', 'City2'], ['State3', 'City3', 'City4']],region1 = "City1",region2 = "City3") == "Continent"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['Country2', 'State3', 'State4'], ['State1', 'City1', 'City2'], ['State3', 'City3', 'City4']],region1 = "City1",region2 = "City3") == "Continent": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universal', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'Planet1', 'Planet2'], ['Planet1', 'Moon1', 'Moon2'], ['Galaxy2', 'Planet3', 'Planet4']],region1 = "Moon1",region2 = "Planet3") == "Universal"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universal', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'Planet1', 'Planet2'], ['Planet1', 'Moon1', 'Moon2'], ['Galaxy2', 'Planet3', 'Planet4']],region1 = "Moon1",region2 = "Planet3") == "Universal": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Europe', 'Africa'], ['Europe', 'Germany', 'France'], ['Africa', 'Egypt', 'Nigeria'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon'], ['Egypt', 'Cairo', 'Alexandria'], ['Nigeria', 'Lagos', 'Abuja']],region1 = "Berlin",region2 = "Lagos") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Europe', 'Africa'], ['Europe', 'Germany', 'France'], ['Africa', 'Egypt', 'Nigeria'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon'], ['Egypt', 'Cairo', 'Alexandria'], ['Nigeria', 'Lagos', 'Abuja']],region1 = "Berlin",region2 = "Lagos") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Kenya'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai'], ['Egypt', 'Cairo', 'Giza']],region1 = "Delhi",region2 = "Shanghai") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Kenya'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai'], ['Egypt', 'Cairo', 'Giza']],region1 = "Delhi",region2 = "Shanghai") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'China', 'India'], ['Europe', 'Germany', 'France'], ['China', 'Beijing', 'Shanghai'], ['India', 'Mumbai', 'Delhi'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon']],region1 = "Beijing",region2 = "Mumbai") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'China', 'India'], ['Europe', 'Germany', 'France'], ['China', 'Beijing', 'Shanghai'], ['India', 'Mumbai', 'Delhi'], ['Germany', 'Berlin', 'Munich'], ['France', 'Paris', 'Lyon']],region1 = "Beijing",region2 = "Mumbai") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['Country2', 'State3', 'State4'], ['State1', 'City1', 'City2'], ['State2', 'City3', 'City4']],region1 = "City2",region2 = "City3") == "Country1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['Country2', 'State3', 'State4'], ['State1', 'City1', 'City2'], ['State2', 'City3', 'City4']],region1 = "City2",region2 = "City3") == "Country1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Mumbai', 'Delhi'], ['China', 'Shanghai', 'Beijing']],region1 = "Mumbai",region2 = "Beijing") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Mumbai', 'Delhi'], ['China', 'Shanghai', 'Beijing']],region1 = "Mumbai",region2 = "Beijing") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Earth', 'North America', 'South America'], ['North America', 'United States', 'Canada'], ['United States', 'New York', 'Boston'], ['Canada', 'Ontario', 'Quebec'], ['South America', 'Brazil']],region1 = "Canada",region2 = "South America") == "Earth": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai'], ['Germany', 'Berlin', 'Hamburg'], ['France', 'Paris', 'Lyon']],region1 = "Delhi",region2 = "Beijing") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Europe'], ['Asia', 'India', 'China'], ['Europe', 'Germany', 'France'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai'], ['Germany', 'Berlin', 'Hamburg'], ['France', 'Paris', 'Lyon']],region1 = "Delhi",region2 = "Beijing") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Nigeria'], ['China', 'Beijing', 'Shanghai']],region1 = "Beijing",region2 = "Nigeria") == "World"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Nigeria'], ['China', 'Beijing', 'Shanghai']],region1 = "Beijing",region2 = "Nigeria") == "World": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4']],region1 = "City1",region2 = "City4") == "Continent1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4']],region1 = "City1",region2 = "City4") == "Continent1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Nigeria'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Asia', 'Africa'], ['Asia', 'India', 'China'], ['Africa', 'Egypt', 'Nigeria'], ['India', 'Delhi', 'Mumbai'], ['China', 'Beijing', 'Shanghai']],region1 = "Delhi",region2 = "Shanghai") == "Asia": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'City1', 'City2'], ['SubRegion2', 'City3', 'City4']],region1 = "City1",region2 = "City4") == "Region1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Region1', 'Region2'], ['Region1', 'SubRegion1', 'SubRegion2'], ['Region2', 'SubRegion3', 'SubRegion4'], ['SubRegion1', 'City1', 'City2'], ['SubRegion2', 'City3', 'City4']],region1 = "City1",region2 = "City4") == "Region1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'Japan', 'China'], ['Germany', 'Berlin', 'Munich'], ['France', 'Lyon', 'Paris']],region1 = "Berlin",region2 = "Paris") == "Europe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['World', 'Europe', 'Asia'], ['Europe', 'Germany', 'France'], ['Asia', 'Japan', 'China'], ['Germany', 'Berlin', 'Munich'], ['France', 'Lyon', 'Paris']],region1 = "Berlin",region2 = "Paris") == "Europe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['StarSystem1', 'Planet1', 'Planet2'], ['Galaxy2', 'StarSystem3'], ['StarSystem3', 'Planet3', 'Planet4']],region1 = "Planet2",region2 = "Planet4") == "Universe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Universe', 'Galaxy1', 'Galaxy2'], ['Galaxy1', 'StarSystem1', 'StarSystem2'], ['StarSystem1', 'Planet1', 'Planet2'], ['Galaxy2', 'StarSystem3'], ['StarSystem3', 'Planet3', 'Planet4']],region1 = "Planet2",region2 = "Planet4") == "Universe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Galaxy', 'Solar System'], ['Solar System', 'Earth', 'Mars'], ['Earth', 'Asia', 'Europe'], ['Mars', 'Phobos', 'Deimos']],region1 = "Europe",region2 = "Phobos") == "Solar System"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Galaxy', 'Solar System'], ['Solar System', 'Earth', 'Mars'], ['Earth', 'Asia', 'Europe'], ['Mars', 'Phobos', 'Deimos']],region1 = "Europe",region2 = "Phobos") == "Solar System": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Global', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['State1', 'City1', 'City2'], ['Country2', 'State3'], ['State3', 'City3', 'City4']],region1 = "City2",region2 = "City4") == "Global"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Global', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['State1', 'City1', 'City2'], ['Country2', 'State3'], ['State3', 'City3', 'City4']],region1 = "City2",region2 = "City4") == "Global": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4']],region1 = "City1",region2 = "City3") == "Continent1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4']],region1 = "City1",region2 = "City3") == "Continent1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(regions = [['Continent', 'Region1', 'Region2'], ['Region1', 'Area1', 'Area2'], ['Area1', 'Subarea1', 'Subarea2'], ['Region2', 'Area3'], ['Area3', 'Subarea3', 'Subarea4']],region1 = "Subarea2",region2 = "Subarea4") == "Continent"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(regions = [['Continent', 'Region1', 'Region2'], ['Region1', 'Area1', 'Area2'], ['Area1', 'Subarea1', 'Subarea2'], ['Region2', 'Area3'], ['Area3', 'Subarea3', 'Subarea4']],region1 = "Subarea2",region2 = "Subarea4") == "Continent": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(regions = [['Global', 'Zone1', 'Zone2'], ['Zone1', 'Area1', 'Area2'], ['Area1', 'Location1', 'Location2'], ['Area2', 'Location3', 'Location4'], ['Zone2', 'Area3', 'Area4']],region1 = "Location1",region2 = "Area4") == "Global"
@@ -63,3 +559,5 @@ def check(candidate):
     assert candidate(regions = [['Global', 'Country1', 'Country2'], ['Country1', 'State1', 'State2'], ['State1', 'City1', 'City2'], ['Country2', 'State3'], ['State3', 'City3', 'City4']],region1 = "City2",region2 = "City4") == "Global"
     assert candidate(regions = [['Globe', 'Continent1', 'Continent2'], ['Continent1', 'Country1', 'Country2'], ['Continent2', 'Country3', 'Country4'], ['Country1', 'City1', 'City2'], ['Country2', 'City3', 'City4']],region1 = "City1",region2 = "City3") == "Continent1"
     assert candidate(regions = [['Continent', 'Region1', 'Region2'], ['Region1', 'Area1', 'Area2'], ['Area1', 'Subarea1', 'Subarea2'], ['Region2', 'Area3'], ['Area3', 'Subarea3', 'Subarea4']],region1 = "Subarea2",region2 = "Subarea4") == "Continent"
+
+

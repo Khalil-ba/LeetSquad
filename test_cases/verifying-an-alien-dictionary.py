@@ -1,5 +1,1277 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['kuvp', 'q'],order = "ngxlkthsjuoqcpavbfdermiyzw") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['kuvp', 'q'],order = "ngxlkthsjuoqcpavbfdermiyzw") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzz', 'zzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzz', 'zzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'hello', 'hello'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'hello', 'hello'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['app', 'apple'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['app', 'apple'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'leetcode'],order = "hlabcdefgijkmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'leetcode'],order = "hlabcdefgijkmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zoo', 'zoop'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zoo', 'zoop'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['kz', 'kzc'],order = "zabklmncopqrstuvwxy") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['kz', 'kzc'],order = "zabklmncopqrstuvwxy") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c'],order = "cba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c'],order = "cba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['kuvp', 'q'],order = "ngxlkthsjuoqcpavbfderimyzw") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['kuvp', 'q'],order = "ngxlkthsjuoqcpavbfderimyzw") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzz', 'zaz'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzz', 'zaz'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'z'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'z'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'row'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'row'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb', 'bac'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb', 'bac'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['wrt', 'wrf', 'er', 'ett', 'rftt'],order = "wertfabcghijklmnopqsudvyxz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['wrt', 'wrf', 'er', 'ett', 'rftt'],order = "wertfabcghijklmnopqsudvyxz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'apple', 'orange'],order = "zyxcbaedfghijklmnopqrstuvw") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'apple', 'orange'],order = "zyxcbaedfghijklmnopqrstuvw") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abcde', 'abcd'],order = "fedcbazyxwvutsrqponmlkjhig") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abcde', 'abcd'],order = "fedcbazyxwvutsrqponmlkjhig") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aab', 'aac'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aab', 'aac'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['cat', 'dog', 'bird'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['cat', 'dog', 'bird'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'sake', 'saki'],order = "askdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'sake', 'saki'],order = "askdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aaab', 'aaac'],order = "abcdefghijkmnopqrstuvwxyzl") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aaab', 'aaac'],order = "abcdefghijkmnopqrstuvwxyzl") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'bandwidth'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'bandwidth'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyzz', 'xyza'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyzz', 'xyza'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "edcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "edcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['short', 'shorter', 'shortest'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['short', 'shorter', 'shortest'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'bandit'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'bandit'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd'],order = "cbaedfghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd'],order = "cbaedfghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyy', 'xyx'],order = "xyzabcdefghijklmnopqrstuvw") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyy', 'xyx'],order = "xyzabcdefghijklmnopqrstuvw") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mismatch', 'mis', 'misleading'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mismatch', 'mis', 'misleading'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['dog', 'cat'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['dog', 'cat'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'dog', 'cat'],order = "dogcatzebraabcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'dog', 'cat'],order = "dogcatzebraabcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abz', 'abcde'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abz', 'abcde'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['long', 'longer', 'longest'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['long', 'longer', 'longest'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['app', 'apple', 'apples'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['app', 'apple', 'apples'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'wor'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'wor'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'app', 'appl'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'app', 'appl'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['dog', 'cat', 'bird'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['dog', 'cat', 'bird'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['alien', 'algorithm', 'all'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['alien', 'algorithm', 'all'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'zebraa'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'zebraa'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'apple'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'apple'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'zoo', 'zoom', 'zoology'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'zoo', 'zoom', 'zoology'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same'],order = "fedcbazyxwvutsrqponmlkjhig") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same'],order = "fedcbazyxwvutsrqponmlkjhig") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abce', 'abcf'],order = "acegbdfhijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abce', 'abcf'],order = "acegbdfhijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['one', 'only', 'on', 'once'],order = "onabcdefghijkmplqstuvxyzwer") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['one', 'only', 'on', 'once'],order = "onabcdefghijkmplqstuvxyzwer") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'aaaa', 'aaaaa'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'aaaa', 'aaaaa'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb', 'bac'],order = "cbafehidgjklmponqrstuvwxzy") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb', 'bac'],order = "cbafehidgjklmponqrstuvwxzy") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzz', 'zz', 'z', ''],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzz', 'zz', 'z', ''],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aab', 'aac'],order = "cbafehidgjklmponqrstuvwxzy") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aab', 'aac'],order = "cbafehidgjklmponqrstuvwxzy") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'xylometer', 'xylography'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'xylometer', 'xylography'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abcde', 'abcdeg', 'abcdef', 'abcdefg'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abcde', 'abcdeg', 'abcdef', 'abcdefg'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'dog', 'duck', 'dove'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'dog', 'duck', 'dove'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zz', 'zzz', 'zzzz', 'zzzzz'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zz', 'zzz', 'zzzz', 'zzzzz'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'wor', 'worl', 'world'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'wor', 'worl', 'world'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abce', 'abcf'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abce', 'abcf'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['short', 'shorter', 'shortest'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['short', 'shorter', 'shortest'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['cat', 'bat', 'rat'],order = "abcdefghirjklmnopqrstuvwxyzct") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['cat', 'bat', 'rat'],order = "abcdefghirjklmnopqrstuvwxyzct") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'zealot', 'zest'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'zealot', 'zest'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c'],order = "cbaz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c'],order = "cbaz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zebra', 'zebr', 'zebraa'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zebra', 'zebr', 'zebraa'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'app'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'app'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xww', 'xwx', 'xw'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xww', 'xwx', 'xw'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xy', 'x'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xy', 'x'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'wor', 'worl'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'wor', 'worl'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zyx', 'zy', 'zxy'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zyx', 'zy', 'zxy'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xya', 'xyb'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xya', 'xyb'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'worlds', 'worldwide'],order = "worldabcdefghijklnmpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'worlds', 'worldwide'],order = "worldabcdefghijklnmpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'wordly'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'wordly'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['long', 'longer', 'longest'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['long', 'longer', 'longest'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aa', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aa', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['longest', 'longer', 'long'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['longest', 'longer', 'long'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "edcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "edcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['special', 'spectacular', 'spectacularly'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['special', 'spectacular', 'spectacularly'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['special', 'spectacular', 'spectacularly'],order = "abcdefghijklmnopqrstuvwxyze") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['special', 'spectacular', 'spectacularly'],order = "abcdefghijklmnopqrstuvwxyze") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'],order = "abcdefghijkmnopqrstuvwxyzl") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'],order = "abcdefghijkmnopqrstuvwxyzl") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zz', 'z', 'zzz'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zz', 'z', 'zzz'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'band', 'bad'],order = "badnecghijklmopqrstuvwxyzf") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'band', 'bad'],order = "badnecghijklmopqrstuvwxyzf") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['one', 'onetwo', 'onefour'],order = "onetwofourmnbvcxzlkjhgfdsapq") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['one', 'onetwo', 'onefour'],order = "onetwofourmnbvcxzlkjhgfdsapq") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zyx', 'zy', 'z', ''],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zyx', 'zy', 'z', ''],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['this', 'thisis', 'thisisatest'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['this', 'thisis', 'thisisatest'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'ab', 'abcd'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'ab', 'abcd'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['jjg', 'jja', 'jj', 'jjb'],order = "jgfedcbaopqrstuvwxyznhimkl") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['jjg', 'jja', 'jj', 'jjb'],order = "jgfedcbaopqrstuvwxyznhimkl") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'band'],order = "banxyzklmnopqrstuvwedcfghij") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'band'],order = "banxyzklmnopqrstuvwedcfghij") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['racecar', 'racecars', 'racecarx'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['racecar', 'racecars', 'racecarx'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abce', 'abcf'],order = "mnopqrstuvwxyzabcdefghijkl") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abce', 'abcf'],order = "mnopqrstuvwxyzabcdefghijkl") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'app', 'application'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'app', 'application'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zz', 'zzz', 'zzzz', 'zzzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zz', 'zzz', 'zzzz', 'zzzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'banana'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'banana'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'app', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'app', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd'],order = "abcdexyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd'],order = "abcdexyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'ab', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'ab', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abcd', 'ab'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abcd', 'ab'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abc'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abc'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abb', 'aaa'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abb', 'aaa'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abc', 'ab', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abc', 'ab', 'a'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mismatch', 'mis', 'misleading'],order = "abcdefghijklmnopqrstuvwxyze") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mismatch', 'mis', 'misleading'],order = "abcdefghijklmnopqrstuvwxyze") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aab', 'aac', 'aad'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aab', 'aac', 'aad'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['prefix', 'pre', 'prelude'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['prefix', 'pre', 'prelude'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'app', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'app', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'wordplay'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'wordplay'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zz', 'za', 'zb'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zz', 'za', 'zb'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'za', 'zb', 'zab'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'za', 'zb', 'zab'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['dog', 'cat', 'bird'],order = "dogcatbirdwxyzefghijklmnpqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['dog', 'cat', 'bird'],order = "dogcatbirdwxyzefghijklmnpqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'abc', 'abcd', 'abcde'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'abc', 'abcd', 'abcde'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'app'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'app'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zzzz', 'zzz', 'zzzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zzzz', 'zzz', 'zzzzz'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['longer', 'long', 'lon'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['longer', 'long', 'lon'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'hallo', 'halloween'],order = "hlabcdefgijkmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'hallo', 'halloween'],order = "hlabcdefgijkmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'helloo', 'hell', 'hellp'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'helloo', 'hell', 'hellp'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['interstellar', 'inter', 'intergalactic'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['interstellar', 'inter', 'intergalactic'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'apple', 'orange'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'apple', 'orange'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'wordld'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'wordld'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'ab', 'abcd'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'ab', 'abcd'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaa', 'bbbb', 'cccc', 'ddd'],order = "abcdefgihjklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaa', 'bbbb', 'cccc', 'ddd'],order = "abcdefgihjklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['cba', 'cbcd'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['cba', 'cbcd'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'sam', 'samesame'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'sam', 'samesame'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'abc', 'abcd', 'abcde'],order = "edcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'abc', 'abcd', 'abcde'],order = "edcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apples', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apples', 'application'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xx', 'xy', 'xz', 'ya', 'yb', 'yc'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xx', 'xy', 'xz', 'ya', 'yb', 'yc'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'world', 'row', 'wordz'],order = "worldabcefghijkmnpqstuvxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'world', 'row', 'wordz'],order = "worldabcefghijkmnpqstuvxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'hell', 'he', 'h'],order = "hlabcdefgijkmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'hell', 'he', 'h'],order = "hlabcdefgijkmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'hell', 'hel', 'he', 'h'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'hell', 'hel', 'he', 'h'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same'],order = "abcdefghijklmnopqrstuvwxyz") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same'],order = "abcdefghijklmnopqrstuvwxyz") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zyx', 'zy', 'z'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zyx', 'zy', 'z'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'],order = "bacdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'],order = "bacdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abd', 'abcd'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abd', 'abcd'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'hallo', 'hella'],order = "hlabcdefgijkmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'hallo', 'hella'],order = "hlabcdefgijkmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['alien', 'algorithm', 'alliance'],order = "abcdefghijklmonpqrsuvwxyztefgh") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['alien', 'algorithm', 'alliance'],order = "abcdefghijklmonpqrsuvwxyztefgh") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abcd', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abcd', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'some', 'sand'],order = "samponedcbjklfgtqrhxvziwuy") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'some', 'sand'],order = "samponedcbjklfgtqrhxvziwuy") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaa', 'aaaab', 'aaaba'],order = "abcdefghijklmnopqrstuvwzyx") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaa', 'aaaab', 'aaaba'],order = "abcdefghijklmnopqrstuvwzyx") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'samee', 'sameee'],order = "zyxwvutsrqponmlkjihgfedcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'samee', 'sameee'],order = "zyxwvutsrqponmlkjihgfedcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abb', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abb', 'ab'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xylophone', 'xylo', 'xylophones'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xylophone', 'xylo', 'xylophones'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['fgh', 'fg', 'f'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['fgh', 'fg', 'f'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['prefix', 'pre', 'prelude'],order = "abcdefghijklmnopqrstuvwxyze") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['prefix', 'pre', 'prelude'],order = "abcdefghijklmnopqrstuvwxyze") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'apply', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'apply', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['banana', 'bandana', 'bandanaa'],order = "zyxwvutsrqponmlkjihgfedcba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['banana', 'bandana', 'bandanaa'],order = "zyxwvutsrqponmlkjihgfedcba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aab', 'aac', 'aaa', 'aad'],order = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aab', 'aac', 'aaa', 'aad'],order = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(words = ['a', 'b', 'c', 'd', 'e'],order = "abcdefghijklmnopqrstuvwxyz") == True
@@ -160,3 +1432,5 @@ def check(candidate):
     assert candidate(words = ['apple', 'apply', 'app'],order = "abcdefghijklmnopqrstuvwxyz") == False
     assert candidate(words = ['banana', 'bandana', 'bandanaa'],order = "zyxwvutsrqponmlkjihgfedcba") == False
     assert candidate(words = ['aab', 'aac', 'aaa', 'aad'],order = "abcdefghijklmnopqrstuvwxyz") == False
+
+

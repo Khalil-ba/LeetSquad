@@ -1,5 +1,925 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -2, 5, -2, 5],obstacles = [[-1, -1], [1, 1]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -2, 5, -2, 5],obstacles = [[-1, -1], [1, 1]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -2, 5],obstacles = [[0, 2], [0, -2], [2, 0], [-2, 0]]) == 41
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -2, 5],obstacles = [[0, 2], [0, -2], [2, 0], [-2, 0]]) == 41: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -1, 3],obstacles = []) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -1, 3],obstacles = []) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -2, 5],obstacles = [[-1, 0], [1, 0], [0, -1], [0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -2, 5],obstacles = [[-1, 0], [1, 0], [0, -1], [0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [-2, -1, 10],obstacles = [[1, 0]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [-2, -1, 10],obstacles = [[1, 0]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 1, 1, 1],obstacles = [[1, 1]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 1, 1, 1],obstacles = [[1, 1]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 3, -1, 4],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0]]) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 3, -1, 4],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0]]) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[2, 2]]) == 81
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[2, 2]]) == 81: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -1, 4, -2, 4],obstacles = [[2, 4]]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -1, 4, -2, 4],obstacles = [[2, 4]]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, -2, 3, -1, 3, -2, 3],obstacles = [[-2, 3], [-1, 3], [0, 3], [1, 3], [2, 3], [-2, -3], [-1, -3], [0, -3], [1, -3], [2, -3]]) == 61
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, -2, 3, -1, 3, -2, 3],obstacles = [[-2, 3], [-1, 3], [0, 3], [1, 3], [2, 3], [-2, -3], [-1, -3], [0, -3], [1, -3], [2, -3]]) == 61: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],obstacles = [[5, 5]]) == 8100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],obstacles = [[5, 5]]) == 8100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [-2, -2, -2, -2],obstacles = [[0, 1], [0, -1], [1, 0], [-1, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [-2, -2, -2, -2],obstacles = [[0, 1], [0, -1], [1, 0], [-1, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [-2, -2, -2, -2],obstacles = []) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [-2, -2, -2, -2],obstacles = []) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [6, -1, -1, 6],obstacles = [[0, 0]]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [6, -1, -1, 6],obstacles = [[0, 0]]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, -2, -2, -1, -1],obstacles = [[1, 1], [2, 2]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, -2, -2, -1, -1],obstacles = [[1, 1], [2, 2]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, -2, 9, -2, 9, -2, 9],obstacles = [[2, 2]]) == 405
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, -2, 9, -2, 9, -2, 9],obstacles = [[2, 2]]) == 405: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[0, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[0, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, 9, -2, -2, -2, -2, 9, 9, 9, 9],obstacles = [[2, 2], [2, -2], [-2, -2], [-2, 2]]) == 5184
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, 9, -2, -2, -2, -2, 9, 9, 9, 9],obstacles = [[2, 2], [2, -2], [-2, -2], [-2, 2]]) == 5184: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4],obstacles = [[1, 1], [2, 2], [3, 3]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4],obstacles = [[1, 1], [2, 2], [3, 3]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 2], [2, 0], [0, -2], [-2, 0]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 2], [2, 0], [0, -2], [-2, 0]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5],obstacles = [[1, 1], [2, 2], [3, 3]]) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5],obstacles = [[1, 1], [2, 2], [3, 3]]) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 2, -2, 3, -2, 4, -2, 5, -2, 6, -2, 7, -2, 8, -2, 9, -2],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 2, -2, 3, -2, 4, -2, 5, -2, 6, -2, 7, -2, 8, -2, 9, -2],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8],obstacles = [[-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8, -1, 8],obstacles = [[-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [7, -2, 8, -1, 9, -2, 1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0]]) == 1201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [7, -2, 8, -1, 9, -2, 1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0]]) == 1201: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 6, -1, 7, -2, 8, -1, 9],obstacles = [[2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 637
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 6, -1, 7, -2, 8, -1, 9],obstacles = [[2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 637: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-3, 0], [-2, 0], [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-3, 0], [-2, 0], [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-1, 1], [0, 0], [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7]]) == 117
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-1, 1], [0, 0], [1, -1], [2, -2], [3, -3], [4, -4], [5, -5], [6, -6], [7, -7]]) == 117: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 2, -1, 3, -2, 4, -1, 5, -2, 6, -1, 7, -2, 8, -1, 9, -2, 1, -1],obstacles = [[-3, 3], [-2, 2], [-1, 1], [0, 0], [1, -1], [2, -2], [3, -3]]) == 986
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 2, -1, 3, -2, 4, -1, 5, -2, 6, -1, 7, -2, 8, -1, 9, -2, 1, -1],obstacles = [[-3, 3], [-2, 2], [-1, 1], [0, 0], [1, -1], [2, -2], [3, -3]]) == 986: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, -2, 2, -1, 5, -2, 5, -1, 3, -2, 3, -1, 3, -2, 3, -1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 365
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, -2, 2, -1, 5, -2, 5, -1, 3, -2, 3, -1, 3, -2, 3, -1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 365: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [6, -1, 6, -2, 6, -1, 6, -2, 6, -1, 6, -2],obstacles = [[0, 6], [6, 0], [3, 3], [2, 2], [4, 4], [5, 5]]) == 545
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [6, -1, 6, -2, 6, -1, 6, -2, 6, -1, 6, -2],obstacles = [[0, 6], [6, 0], [3, 3], [2, 2], [4, 4], [5, 5]]) == 545: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -2, 5, -2, 5, -2, 5, -2],obstacles = [[-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -2, 5, -2, 5, -2, 5, -2],obstacles = [[-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 6, -1, 5, -2, 7, -1, 4],obstacles = [[-2, 3], [0, 2], [1, 1], [2, 0], [3, -1], [2, -2]]) == 269
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 6, -1, 5, -2, 7, -1, 4],obstacles = [[-2, 3], [0, 2], [1, 1], [2, 0], [3, -1], [2, -2]]) == 269: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -2, -1, 8, 7, 6, 5, 4, 3, 2, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 6561
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -2, -1, 8, 7, 6, 5, 4, 3, 2, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 6561: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[-1, -2], [-2, -3], [-3, -4], [-4, -5], [-5, -6], [-6, -7], [-7, -8]]) == 656
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[-1, -2], [-2, -3], [-3, -4], [-4, -5], [-5, -6], [-6, -7], [-7, -8]]) == 656: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [7, -2, 7, -2, 7, -2, 7, -2, 7, -2, 7, -2],obstacles = [[3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 98
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [7, -2, 7, -2, 7, -2, 7, -2, 7, -2, 7, -2],obstacles = [[3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 98: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, 4, -2, 4, 4, -2, 4, 4, -2, 4, 4],obstacles = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9]]) == 128
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, 4, -2, 4, 4, -2, 4, 4, -2, 4, 4],obstacles = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9]]) == 128: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [7, 1, 2, -2, 3, -1, 4, -2, 5, -1],obstacles = [[2, 2], [2, 3], [2, 4], [3, 3], [4, 3]]) == 260
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [7, 1, 2, -2, 3, -1, 4, -2, 5, -1],obstacles = [[2, 2], [2, 3], [2, 4], [3, 3], [4, 3]]) == 260: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9],obstacles = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7], [-8, -8], [-9, -9]]) == 976
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9],obstacles = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7], [-8, -8], [-9, -9]]) == 976: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1],obstacles = [[0, 2], [1, 1], [2, 0], [-1, -1], [-2, -2], [-3, -3], [0, -2], [2, 2]]) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1],obstacles = [[0, 2], [1, 1], [2, 0], [-1, -1], [-2, -2], [-3, -3], [0, -2], [2, 2]]) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -1, 5, -1, 5, -2, 5, -2, 5, -1, 5, -1, 5, -2, 5, -2, 5, -1, 5],obstacles = [[1, 2], [2, 1], [3, 0], [4, -1], [5, -2]]) == 650
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -1, 5, -1, 5, -2, 5, -2, 5, -1, 5, -1, 5, -2, 5, -2, 5, -1, 5],obstacles = [[1, 2], [2, 1], [3, 0], [4, -1], [5, -2]]) == 650: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -1, 7, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]]) == 458
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -1, 7, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]]) == 458: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2],obstacles = [[-3, -3], [-4, -2], [-5, -1], [-6, 0], [-7, 1]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2, 3, -1, 3, -2],obstacles = [[-3, -3], [-4, -2], [-5, -1], [-6, 0], [-7, 1]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -1, 4, -1, 3, -1, 2, -1, 1, -2, 1, -2, 2, -2, 3, -2, 4, -2, 5, -2],obstacles = [[-2, 5], [-1, 4], [0, 3], [1, 2], [2, 1], [3, 0], [4, -1]]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -1, 4, -1, 3, -1, 2, -1, 1, -2, 1, -2, 2, -2, 3, -2, 4, -2, 5, -2],obstacles = [[-2, 5], [-1, 4], [0, 3], [1, 2], [2, 1], [3, 0], [4, -1]]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-4, -4], [-4, -3], [-3, -4], [-3, -3], [-2, -2], [-2, -1], [-1, -2], [-1, -1]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-4, -4], [-4, -3], [-3, -4], [-3, -3], [-2, -2], [-2, -1], [-1, -2], [-1, -1]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, 5, -1, 5, -1, 5, -1, 5],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, 5, -1, 5, -1, 5, -1, 5],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1],obstacles = [[-1, 1], [-1, 2], [-1, 3], [-1, 4], [-1, 5], [-1, 6], [-1, 7], [-1, 8]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5, -1],obstacles = [[-1, 1], [-1, 2], [-1, 3], [-1, 4], [-1, 5], [-1, 6], [-1, 7], [-1, 8]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1],obstacles = [[-2, -2], [-2, -3], [-2, -4], [-2, -5], [-2, -6], [-2, -7], [-2, -8], [-2, -9], [-2, -10]]) == 1250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1],obstacles = [[-2, -2], [-2, -3], [-2, -4], [-2, -5], [-2, -6], [-2, -7], [-2, -8], [-2, -9], [-2, -10]]) == 1250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 8, -1, 8, -2, 8, -1],obstacles = [[-2, 0], [0, -2], [2, 0], [0, 2], [1, 1]]) == 337
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 8, -1, 8, -2, 8, -1],obstacles = [[-2, 0], [0, -2], [2, 0], [0, 2], [1, 1]]) == 337: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9, -1, 10, -2],obstacles = [[-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 1354
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9, -1, 10, -2],obstacles = [[-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 1354: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[0, -5], [1, -4], [2, -3], [3, -2], [4, -1], [5, 0]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[0, -5], [1, -4], [2, -3], [3, -2], [4, -1], [5, 0]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [6, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[-2, 3], [-3, 2], [-1, 4], [-1, -4], [4, -1], [3, -2]]) == 136
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [6, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[-2, 3], [-3, 2], [-1, 4], [-1, -4], [4, -1], [3, -2]]) == 136: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -2, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 4050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -2, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 4050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[-1, -2], [-2, -3], [-3, -4], [-4, -5], [-5, -6], [-6, -7]]) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[-1, -2], [-2, -3], [-3, -4], [-4, -5], [-5, -6], [-6, -7]]) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 2, -2, 3, -2, 4, -2, 5, -2, 6, -2, 7, -2, 8, -2, 9, -2, 10, -2],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 136
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 2, -2, 3, -2, 4, -2, 5, -2, 6, -2, 7, -2, 8, -2, 9, -2, 10, -2],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 136: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5],obstacles = [[3, 0], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5], [3, 6], [3, 7], [3, 8], [3, 9]]) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -1, 5, -1, 5, -1, 5, -1, 5, -1, 5],obstacles = [[3, 0], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5], [3, 6], [3, 7], [3, 8], [3, 9]]) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, 9, 9, -2, 9, 9, 9, 9, 9, -2, 9, 9, 9, 9, 9],obstacles = [[4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]) == 4050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, 9, 9, -2, 9, 9, 9, 9, 9, -2, 9, 9, 9, 9, 9],obstacles = [[4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]) == 4050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, 3, 3, -1, 3, 3, 3, -1, 3, 3, 3, -1, 3, 3, 3, -1, 3],obstacles = [[2, 2], [3, 3], [4, 4], [2, 4], [4, 2], [3, 1], [3, 5]]) == 162
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, 3, 3, -1, 3, 3, 3, -1, 3, 3, 3, -1, 3, 3, 3, -1, 3],obstacles = [[2, 2], [3, 3], [4, 4], [2, 4], [4, 2], [3, 1], [3, 5]]) == 162: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, -2, 9, 9, 9, -2, 9, 9, 9, -2, 9, 9, 9, -2, 9],obstacles = [[5, 5], [5, 4], [5, 3], [5, 2], [5, 1], [4, 5], [3, 5], [2, 5], [1, 5]]) == 1458
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, -2, 9, 9, 9, -2, 9, 9, 9, -2, 9, 9, 9, -2, 9],obstacles = [[5, 5], [5, 4], [5, 3], [5, 2], [5, 1], [4, 5], [3, 5], [2, 5], [1, 5]]) == 1458: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 5, -1, 3, -2, 4, -1, 2],obstacles = [[2, 3], [3, 2], [2, 1], [1, 2], [0, 0]]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 5, -1, 3, -2, 4, -1, 2],obstacles = [[2, 3], [3, 2], [2, 1], [1, 2], [0, 0]]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [10, -1, 9, -2, 8, -1, 7, -2, 6, -1, 5],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [10, -1, 9, -2, 8, -1, 7, -2, 6, -1, 5],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 7, -2, 8, -1, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 628
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 7, -2, 8, -1, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 628: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 2592
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9, -2, 9, 9, 9, 9],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 2592: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 232
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 232: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == 3600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == 3600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 1, -1, 2, -2, 2, -1, 3, -2, 3, -1, 4, -2, 4, -1, 5, -2, 5, -1],obstacles = [[-1, -2], [-1, -3], [-1, -4], [-1, -5], [-1, -6], [-1, -7], [-1, -8], [-1, -9]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 1, -1, 2, -2, 2, -1, 3, -2, 3, -1, 4, -2, 4, -1, 5, -2, 5, -1],obstacles = [[-1, -2], [-1, -3], [-1, -4], [-1, -5], [-1, -6], [-1, -7], [-1, -8], [-1, -9]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9]]) == 724
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 8, -1, 7, -2, 6, -1, 5, -2, 4, -1, 3, -2, 2, -1, 1, -2],obstacles = [[0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9]]) == 724: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, 9, 9, 9, -1, 9, 9, 9, 9, -1, 9, 9, 9, 9, -1, 9, 9, 9, 9, -1],obstacles = [[2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11]]) == 2592
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, 9, 9, 9, -1, 9, 9, 9, 9, -1, 9, 9, 9, 9, -1, 9, 9, 9, 9, -1],obstacles = [[2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11]]) == 2592: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -2, 4, -2, 4, -1, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4],obstacles = [[0, 0], [1, 1], [-1, -1], [2, 2], [-2, -2]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -2, 4, -2, 4, -1, 4, -1, 4, -2, 4, -1, 4, -2, 4, -1, 4],obstacles = [[0, 0], [1, 1], [-1, -1], [2, 2], [-2, -2]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 2, -1, 3, -2, 4, -1, 5, -2, 6, -1, 7, -2, 8, -1, 9, -2, 10, -1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 1525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 2, -1, 3, -2, 4, -1, 5, -2, 6, -1, 7, -2, 8, -1, 9, -2, 10, -1],obstacles = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 1525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2],obstacles = [[2, 1], [4, 2], [6, 3], [8, 4], [10, 5]]) == 2025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2],obstacles = [[2, 1], [4, 2], [6, 3], [8, 4], [10, 5]]) == 2025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],obstacles = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 1853
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],obstacles = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 1853: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [4, -2, 3, -2, 2, -2, 1, -2],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [4, -2, 3, -2, 2, -2, 1, -2],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2, 1, -2],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, -2, 4, -1, 2, -2, 1, -1, 0, -2, 3, -1, 4],obstacles = [[-2, -1], [-3, 0], [-4, 1], [-5, 2], [-6, 3]]) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, -2, 4, -1, 2, -2, 1, -1, 0, -2, 3, -1, 4],obstacles = [[-2, -1], [-3, 0], [-4, 1], [-5, 2], [-6, 3]]) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1], [1, 2], [2, 1], [-2, 1], [1, -2], [2, -1], [-2, -1], [0, 2], [2, 0], [-2, 0], [0, -2], [-2, -2], [2, -2], [2, 2], [0, 3], [3, 0], [-3, 0], [0, -3], [-3, -3], [3, -3], [3, 3]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],obstacles = [[0, 1], [1, 0], [-1, 0], [0, -1], [1, 2], [2, 1], [-2, 1], [1, -2], [2, -1], [-2, -1], [0, 2], [2, 0], [-2, 0], [0, -2], [-2, -2], [2, -2], [2, 2], [0, 3], [3, 0], [-3, 0], [0, -3], [-3, -3], [3, -3], [3, 3]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1, 0],obstacles = [[2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1, 0],obstacles = [[2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 6, -2, 5, -1, 4, -1, 3],obstacles = [[2, 3], [-2, -3], [0, 0]]) == 109
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 6, -2, 5, -1, 4, -1, 3],obstacles = [[2, 3], [-2, -3], [0, 0]]) == 109: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1, 17, -2, 19, -1],obstacles = [[-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1], [0, 0], [1, -1], [2, -2], [3, -3], [4, -4]]) == 4729
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1, 17, -2, 19, -1],obstacles = [[-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1], [0, 0], [1, -1], [2, -2], [3, -3], [4, -4]]) == 4729: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [6, -2, 4, -1, 2, -2, 5, -1, 1, -2, 3, -1],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]) == 153
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [6, -2, 4, -1, 2, -2, 5, -1, 1, -2, 3, -1],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]) == 153: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 6, -1, 4, -2, 2, -1, 5],obstacles = [[0, 3], [1, 2], [2, 1], [3, 0]]) == 185
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 6, -1, 4, -2, 2, -1, 5],obstacles = [[0, 3], [1, 2], [2, 1], [3, 0]]) == 185: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [10, -2, 9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[2, 5], [3, 6], [4, 7], [5, 8]]) == 1525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [10, -2, 9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[2, 5], [3, 6], [4, 7], [5, 8]]) == 1525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1],obstacles = [[2, 1], [4, 3], [6, 5], [8, 7], [10, 9], [12, 11], [14, 13]]) == 2080
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1],obstacles = [[2, 1], [4, 3], [6, 5], [8, 7], [10, 9], [12, 11], [14, 13]]) == 2080: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -2, 9, -2, 9, -1, 9, -1, 9, -2, 9, -1, 9, -2, 9],obstacles = [[-3, 3], [-2, 2], [-1, 1], [1, 1], [2, 2], [3, 3]]) == 1620
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -2, 9, -2, 9, -1, 9, -1, 9, -2, 9, -1, 9, -2, 9],obstacles = [[-3, 3], [-2, 2], [-1, 1], [1, 1], [2, 2], [3, 3]]) == 1620: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [3, -1, 4, -2, 5, -1, 2, -2, 1],obstacles = [[1, 2], [2, 1], [2, 3], [3, 2], [0, 1]]) == 72
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [3, -1, 4, -2, 5, -1, 2, -2, 1],obstacles = [[1, 2], [2, 1], [2, 3], [3, 2], [0, 1]]) == 72: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],obstacles = [[-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, -1], [1, -1], [2, -1], [3, -1], [4, -1], [5, -5], [-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 5000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, -1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],obstacles = [[-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, -1], [1, -1], [2, -1], [3, -1], [4, -1], [5, -5], [-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 5000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1],obstacles = [[5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [9, 11], [8, 12], [7, 13], [6, 14], [5, 15]]) == 565
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1, 10, -1],obstacles = [[5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [9, 11], [8, 12], [7, 13], [6, 14], [5, 15]]) == 565: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [10, -2, 9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 1525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [10, -2, 9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[-4, -4], [-3, -3], [-2, -2], [-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 1525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [10, -2, 10, -1, 10, -2, 10, -1, 10],obstacles = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5]]) == 976
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [10, -2, 10, -1, 10, -2, 10, -1, 10],obstacles = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5]]) == 976: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 221
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1],obstacles = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 221: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -2, -1, -2, -1, -2],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 2025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -2, -1, -2, -1, -2],obstacles = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 2025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -2, 5, -2, 5],obstacles = [[0, 2], [1, 3], [-2, 1], [3, -2], [0, 0]]) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -2, 5, -2, 5],obstacles = [[0, 2], [1, 3], [-2, 1], [3, -2], [0, 0]]) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1, 17, -2, 19],obstacles = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10]]) == 5050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 3, -1, 5, -2, 7, -1, 9, -2, 11, -1, 13, -2, 15, -1, 17, -2, 19],obstacles = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10]]) == 5050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -1, 3, -1, 4, -1, 5, -1, 6, -1, 7, -1, 8, -1, 9, -1, 10, -1],obstacles = [[-10, -10], [-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1]]) == 106
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -1, 3, -1, 4, -1, 5, -1, 6, -1, 7, -1, 8, -1, 9, -1, 10, -1],obstacles = [[-10, -10], [-9, -9], [-8, -8], [-7, -7], [-6, -6], [-5, -5], [-4, -4], [-3, -3], [-2, -2], [-1, -1]]) == 106: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, 8, 8, -2, 8, 8, 8, -2, 8, 8, 8, -2, 8, 8, 8, -2, 8, -1, 8, -1, 8, -1, 8, -1],obstacles = [[4, 4], [4, 5], [4, 6], [4, 7], [4, 8], [5, 4], [6, 4], [7, 4], [8, 4]]) == 1152
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, 8, 8, -2, 8, 8, 8, -2, 8, 8, 8, -2, 8, 8, 8, -2, 8, -1, 8, -1, 8, -1, 8, -1],obstacles = [[4, 4], [4, 5], [4, 6], [4, 7], [4, 8], [5, 4], [6, 4], [7, 4], [8, 4]]) == 1152: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8],obstacles = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5]]) == 656
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8],obstacles = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5]]) == 656: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -2, 9, -2, 8, -2, 7, -2, 6, -2, 5, -2, 4, -2, 3, -2, 2, -2, 1],obstacles = [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2], [9, 2]]) == 169
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -2, 9, -2, 8, -2, 7, -2, 6, -2, 5, -2, 4, -2, 3, -2, 2, -2, 1],obstacles = [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2], [9, 2]]) == 169: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 1025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 1025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, 5, 5, 5, -2, 5, 5, 5, 5, -1],obstacles = [[1, 1], [1, 2], [1, 3], [1, 4], [2, 2], [3, 2], [4, 2]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, 5, 5, 5, -2, 5, 5, 5, 5, -1],obstacles = [[1, 1], [1, 2], [1, 3], [1, 4], [2, 2], [3, 2], [4, 2]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1, 0],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]]) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 8, -1, 7, -1, 6, -1, 5, -1, 4, -1, 3, -1, 2, -1, 1, -1, 0],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]]) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9, -1],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [5, 1], [5, 2], [5, 3]]) == 937
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2, 9, -1],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [5, 1], [5, 2], [5, 3]]) == 937: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3]]) == 656
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [8, -2, 7, -1, 6, -2, 5, -1, 4, -2, 3, -1, 2, -2, 1, -1],obstacles = [[3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3]]) == 656: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, -1, 2, -2, 3, -1, 4, -2, 5, -1, 6, -2, 7, -1, 8, -2],obstacles = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [1, 2, 3, 4, 5, 4, 3, 2, 1, -1, -2, -1, -2, -1, -2, 2, 4, 6, 8, 10],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]) == 3025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [1, 2, 3, 4, 5, 4, 3, 2, 1, -1, -2, -1, -2, -1, -2, 2, 4, 6, 8, 10],obstacles = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]) == 3025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [2, -1, 2, -1, 2, -2, 2, -2, 2, -1, 2, -1, 2, -2, 2, -2, 2, -1, 2],obstacles = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [2, -1, 2, -1, 2, -2, 2, -2, 2, -1, 2, -1, 2, -2, 2, -2, 2, -1, 2],obstacles = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5],obstacles = [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1]]) == 1250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5],obstacles = [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1]]) == 1250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [9, -1, 9, -2, 9, -1, 9, -2, 9, -1, 9, -2],obstacles = [[3, 4], [4, 3], [5, 2], [2, 5], [1, 6], [6, 1]]) == 1458
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [9, -1, 9, -2, 9, -1, 9, -2, 9, -1, 9, -2],obstacles = [[3, 4], [4, 3], [5, 2], [2, 5], [1, 6], [6, 1]]) == 1458: {e}')
+    
+    total += 1
+    try:
+        result = candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0], [4, -1], [3, -2], [2, -3], [1, -4], [0, -5]]) == 1201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0], [4, -1], [3, -2], [2, -3], [1, -4], [0, -5]]) == 1201: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(commands = [5, -2, 5, -2, 5, -2, 5],obstacles = [[-1, -1], [1, 1]]) == 50
@@ -116,3 +1036,5 @@ def check(candidate):
     assert candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5],obstacles = [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1]]) == 1250
     assert candidate(commands = [9, -1, 9, -2, 9, -1, 9, -2, 9, -1, 9, -2],obstacles = [[3, 4], [4, 3], [5, 2], [2, 5], [1, 6], [6, 1]]) == 1458
     assert candidate(commands = [5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1, 5, -2, 5, -1],obstacles = [[0, 5], [1, 4], [2, 3], [3, 2], [4, 1], [5, 0], [4, -1], [3, -2], [2, -3], [1, -4], [0, -5]]) == 1201
+
+

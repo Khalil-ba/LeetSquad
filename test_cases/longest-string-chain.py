@@ -1,5 +1,685 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(words = ['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'ba', 'bca', 'bda', 'bdca']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'ba', 'bca', 'bda', 'bdca']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abde', 'acde', 'bcde', 'abcde']) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abde', 'acde', 'bcde', 'abcde']) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'abc', 'bde', 'abdce']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'abc', 'bde', 'abdce']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['m', 'mo', 'moc', 'moch', 'mocha', 'lca', 'lcoa', 'lcoc', 'lococ', 'loccoc']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['m', 'mo', 'moc', 'moch', 'mocha', 'lca', 'lcoa', 'lcoc', 'lococ', 'loccoc']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ksqvsyqpcq', 'ksqvsyqcpcq', 'vqsqpcq', 'ksqvsyqckpcq', 'kpcq', 'cqcq', 'qpcq', 'pcqcq']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ksqvsyqpcq', 'ksqvsyqcpcq', 'vqsqpcq', 'ksqvsyqckpcq', 'kpcq', 'cqcq', 'qpcq', 'pcqcq']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ksq', 'ksqa', 'k', 'q', 'kq', 'pql', 'kqs', 'ks', 'ar', 'n', 'qn', 'kaq', 'pxq']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ksq', 'ksqa', 'k', 'q', 'kq', 'pql', 'kqs', 'ks', 'ar', 'n', 'qn', 'kaq', 'pxq']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'abc', 'bcd', 'abcd', 'abcde']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'abc', 'bcd', 'abcd', 'abcde']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'abc', 'bdc', 'bcd', 'abcd', 'bdca', 'edcba']) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'abc', 'bdc', 'bcd', 'abcd', 'bdca', 'edcba']) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dbqca']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dbqca']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'abc', 'bdc', 'abcde']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'abc', 'bdc', 'abcde']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyaz', 'xyazt', 'xyaztr', 'xyaztrd', 'xyaztrdf', 'xyaztrdfg', 'xyaztrdfgh', 'xyaztrdfghj', 'xyaztrdfghjk', 'xyaztrdfghjkl', 'xyaztrdfghjklm']) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyaz', 'xyazt', 'xyaztr', 'xyaztrd', 'xyaztrdf', 'xyaztrdfg', 'xyaztrdfgh', 'xyaztrdfghj', 'xyaztrdfghjk', 'xyaztrdfghjkl', 'xyaztrdfghjklm']) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'abcde', 'abce', 'abceg', 'abeg', 'ae', 'ag', 'aeg', 'abc', 'ab', 'a', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'abcde', 'abce', 'abceg', 'abeg', 'ae', 'ag', 'aeg', 'abc', 'ab', 'a', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'abdef', 'abcdf', 'abcef', 'abcd', 'abde', 'abcdx', 'abcdey', 'abcdez', 'abcde', 'abcdfg', 'abcdegh', 'abcdeghi', 'abcdeghij', 'abcdeghijk', 'abcdeghijkl', 'abcdeghijklm', 'abcdeghijklmn', 'abcdeghijklmno', 'abcdeghijklmnop', 'abcdeghijklmnopq', 'abcdeghijklmnopqr', 'abcdeghijklmnopqrs', 'abcdeghijklmnopqrst', 'abcdeghijklmnopqrstu', 'abcdeghijklmnopqrstuv', 'abcdeghijklmnopqrstuvw', 'abcdeghijklmnopqrstuvwx', 'abcdeghijklmnopqrstuvwxy', 'abcdeghijklmnopqrstuvwxyz']) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'abdef', 'abcdf', 'abcef', 'abcd', 'abde', 'abcdx', 'abcdey', 'abcdez', 'abcde', 'abcdfg', 'abcdegh', 'abcdeghi', 'abcdeghij', 'abcdeghijk', 'abcdeghijkl', 'abcdeghijklm', 'abcdeghijklmn', 'abcdeghijklmno', 'abcdeghijklmnop', 'abcdeghijklmnopq', 'abcdeghijklmnopqr', 'abcdeghijklmnopqrs', 'abcdeghijklmnopqrst', 'abcdeghijklmnopqrstu', 'abcdeghijklmnopqrstuv', 'abcdeghijklmnopqrstuvw', 'abcdeghijklmnopqrstuvwx', 'abcdeghijklmnopqrstuvwxy', 'abcdeghijklmnopqrstuvwxyz']) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'az', 'azm', 'azmn', 'azmno', 'azmnop', 'azmnopq', 'azmnopqr', 'azmnopqrs', 'azmnopqrst', 'azmnopqrstu', 'azmnopqrstuv', 'azmnopqrstuvw', 'azmnopqrstuvwx', 'azmnopqrstuvwxy', 'azmnopqrstuvwxyz', 'azmnopqrstuvwxyza', 'azmnopqrstuvwxyzab', 'azmnopqrstuvwxyzabc', 'azmnopqrstuvwxyzabcd', 'azmnopqrstuvwxyzabcde', 'azmnopqrstuvwxyzabcdef', 'azmnopqrstuvwxyzabcdefg', 'azmnopqrstuvwxyzabcdefgh', 'azmnopqrstuvwxyzabcdefghi']) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'az', 'azm', 'azmn', 'azmno', 'azmnop', 'azmnopq', 'azmnopqr', 'azmnopqrs', 'azmnopqrst', 'azmnopqrstu', 'azmnopqrstuv', 'azmnopqrstuvw', 'azmnopqrstuvwx', 'azmnopqrstuvwxy', 'azmnopqrstuvwxyz', 'azmnopqrstuvwxyza', 'azmnopqrstuvwxyzab', 'azmnopqrstuvwxyzabc', 'azmnopqrstuvwxyzabcd', 'azmnopqrstuvwxyzabcde', 'azmnopqrstuvwxyzabcdef', 'azmnopqrstuvwxyzabcdefg', 'azmnopqrstuvwxyzabcdefgh', 'azmnopqrstuvwxyzabcdefghi']) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xy', 'xz', 'yz', 'x', 'y', 'z', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xy', 'xz', 'yz', 'x', 'y', 'z', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'cabd', 'dabc', 'abcdx', 'abcdxy', 'abcdxyz', 'abcdxyza']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'cabd', 'dabc', 'abcdx', 'abcdxy', 'abcdxyz', 'abcdxyza']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvwxyz']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvwxyz']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'def', 'ab', 'bc', 'de', 'ef', 'abcd', 'defg', 'abef', 'abcd', 'bcde', 'cdef', 'abcd', 'bcde', 'cdefg', 'defgh', 'efghi', 'fghij', 'ghijk', 'hijkl', 'ijklm', 'jklmn', 'klmno', 'lmnop', 'mnopq', 'nopqr', 'opqrs', 'pqrs', 'qrstu', 'rstuv', 'stuvw', 'tuvwx', 'uvwxy', 'vwxyz']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'def', 'ab', 'bc', 'de', 'ef', 'abcd', 'defg', 'abef', 'abcd', 'bcde', 'cdef', 'abcd', 'bcde', 'cdefg', 'defgh', 'efghi', 'fghij', 'ghijk', 'hijkl', 'ijklm', 'jklmn', 'klmno', 'lmnop', 'mnopq', 'nopqr', 'opqrs', 'pqrs', 'qrstu', 'rstuv', 'stuvw', 'tuvwx', 'uvwxy', 'vwxyz']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abcde', 'abfde', 'abfce', 'abcfg', 'abcgd', 'abcdefgh', 'abcdfeh', 'abcdfehi', 'abcdfehij']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abcde', 'abfde', 'abfce', 'abcfg', 'abcgd', 'abcdefgh', 'abcdfeh', 'abcdfehi', 'abcdfehij']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop']) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqr', 'abcdefghijklmnopq', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqr', 'abcdefghijklmnopq', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xzy', 'zyx', 'yxz', 'yzx', 'zxy', 'yza', 'yab', 'yac', 'yad', 'ybc', 'ybd', 'ycd', 'yabc', 'yabd', 'yacd', 'ybcd', 'yabcd', 'yabdc', 'yacdb', 'ybcda', 'yzcdb', 'yzdcb', 'zydcb', 'zydcba', 'zydcbaq', 'zydcbaqp', 'zydcbaqpo', 'zydcbaqpon', 'zydcbaqponm', 'zydcbaqponml', 'zydcbaqponmlk', 'zydcbaqponmlkj', 'zydcbaqponmlkji', 'zydcbaqponmlkjih', 'zydcbaqponmlkjihg', 'zydcbaqponmlkjihgf']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xzy', 'zyx', 'yxz', 'yzx', 'zxy', 'yza', 'yab', 'yac', 'yad', 'ybc', 'ybd', 'ycd', 'yabc', 'yabd', 'yacd', 'ybcd', 'yabcd', 'yabdc', 'yacdb', 'ybcda', 'yzcdb', 'yzdcb', 'zydcb', 'zydcba', 'zydcbaq', 'zydcbaqp', 'zydcbaqpo', 'zydcbaqpon', 'zydcbaqponm', 'zydcbaqponml', 'zydcbaqponmlk', 'zydcbaqponmlkj', 'zydcbaqponmlkji', 'zydcbaqponmlkjih', 'zydcbaqponmlkjihg', 'zydcbaqponmlkjihgf']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['k', 'ko', 'kom', 'komo', 'komol', 'komole', 'komolen', 'komolex', 'komolexy', 'komolexyu', 'komolexyuc', 'komolexyucn', 'komolexyucne', 'komolexyucnew', 'komolexyucnewd', 'komolexyucnewdy', 'komolexyucnewdyt']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['k', 'ko', 'kom', 'komo', 'komol', 'komole', 'komolen', 'komolex', 'komolexy', 'komolexyu', 'komolexyuc', 'komolexyucn', 'komolexyucne', 'komolexyucnew', 'komolexyucnewd', 'komolexyucnewdy', 'komolexyucnewdyt']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyzu', 'xyzuv', 'xyzuvw', 'xyzuvwx', 'xyzuvwxy', 'xyzuvwxz', 'xyzuvwxyz', 'xyzuvwxyza', 'xyzuvwxyzab', 'xyzuvwxyzabc', 'xyzuvwxyzabcd', 'xyzuvwxyzabce', 'xyzuvwxyzabcde', 'xyzuvwxyzabcdef', 'xyzuvwxyzabcdefg']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyzu', 'xyzuv', 'xyzuvw', 'xyzuvwx', 'xyzuvwxy', 'xyzuvwxz', 'xyzuvwxyz', 'xyzuvwxyza', 'xyzuvwxyzab', 'xyzuvwxyzabc', 'xyzuvwxyzabcd', 'xyzuvwxyzabce', 'xyzuvwxyzabcde', 'xyzuvwxyzabcdef', 'xyzuvwxyzabcdefg']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'bcad', 'cabd', 'cbad', 'dabc', 'dbac', 'dcab', 'dcba', 'bdac', 'bcad', 'acdb', 'cdba', 'adbc', 'bdca', 'cadb', 'cdab', 'cbda', 'abcd', 'abdc', 'acbd', 'bacd', 'bcad', 'cabd', 'cbad', 'dabc', 'dbac', 'dcab', 'dcba', 'bdac', 'bcad', 'acdb', 'cdba', 'adbc', 'bdca', 'cadb', 'cdab', 'cbda']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'bcad', 'cabd', 'cbad', 'dabc', 'dbac', 'dcab', 'dcba', 'bdac', 'bcad', 'acdb', 'cdba', 'adbc', 'bdca', 'cadb', 'cdab', 'cbda', 'abcd', 'abdc', 'acbd', 'bacd', 'bcad', 'cabd', 'cbad', 'dabc', 'dbac', 'dcab', 'dcba', 'bdac', 'bcad', 'acdb', 'cdba', 'adbc', 'bdca', 'cadb', 'cdab', 'cbda']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['one', 'two', 'three', 'thre', 'threfo', 'threef', 'threefo', 'threefon', 'threefont', 'threefonto', 'threefonton', 'threefontona', 'threefontonat', 'threefontonatu', 'threefontonatup', 'threefontonatupl', 'threefontonatuplo', 'threefontonatuploe', 'threefontonatuploei', 'threefontonatuploein', 'threefontonatuploeink', 'threefontonatuploeinkf', 'threefontonatuploeinkfg', 'threefontonatuploeinkfgj', 'threefontonatuploeinkfgjo', 'threefontonatuploeinkfgjob', 'threefontonatuploeinkfgjobk']) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['one', 'two', 'three', 'thre', 'threfo', 'threef', 'threefo', 'threefon', 'threefont', 'threefonto', 'threefonton', 'threefontona', 'threefontonat', 'threefontonatu', 'threefontonatup', 'threefontonatupl', 'threefontonatuplo', 'threefontonatuploe', 'threefontonatuploei', 'threefontonatuploein', 'threefontonatuploeink', 'threefontonatuploeinkf', 'threefontonatuploeinkfg', 'threefontonatuploeinkfgj', 'threefontonatuploeinkfgjo', 'threefontonatuploeinkfgjob', 'threefontonatuploeinkfgjobk']) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mnop', 'mno', 'mn', 'm', 'ml', 'mlp', 'mlpq', 'mlpqr', 'mlpqrs', 'mlpqrst', 'mlpqrstu', 'mlpqrstuv', 'mlpqrstuvw', 'mlpqrstuvwx', 'mlpqrstuvwxy', 'mlpqrstuvwxyza', 'mlpqrstuvwxyzaq', 'mlpqrstuvwxyzaqp', 'mlpqrstuvwxyzaqpo', 'mlpqrstuvwxyzaqpom', 'mlpqrstuvwxyzaqpomn']) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mnop', 'mno', 'mn', 'm', 'ml', 'mlp', 'mlpq', 'mlpqr', 'mlpqrs', 'mlpqrst', 'mlpqrstu', 'mlpqrstuv', 'mlpqrstuvw', 'mlpqrstuvwx', 'mlpqrstuvwxy', 'mlpqrstuvwxyza', 'mlpqrstuvwxyzaq', 'mlpqrstuvwxyzaqp', 'mlpqrstuvwxyzaqpo', 'mlpqrstuvwxyzaqpom', 'mlpqrstuvwxyzaqpomn']) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xz', 'xy', 'yz', 'x', 'y', 'z', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xz', 'xy', 'yz', 'x', 'y', 'z', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa']) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa']) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mn', 'mno', 'mnoa', 'mnob', 'mnoab', 'mnop', 'mnopq', 'mnopqr', 'mnopqrs', 'mnopqrst']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mn', 'mno', 'mnoa', 'mnob', 'mnoab', 'mnop', 'mnopq', 'mnopqr', 'mnopqrs', 'mnopqrst']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['x', 'xy', 'xyz', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde', 'xyzabcdef', 'xyzabcdefg', 'xyzabcdefgh', 'xyzabcdefghi', 'xyzabcdefghij', 'xyzabcdefghijk', 'xyzabcdefghijklm', 'xyzabcdefghijklmn', 'xyzabcdefghijklmno', 'xyzabcdefghijklmnop']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['x', 'xy', 'xyz', 'xyza', 'xyzab', 'xyzabc', 'xyzabcd', 'xyzabcde', 'xyzabcdef', 'xyzabcdefg', 'xyzabcdefgh', 'xyzabcdefghi', 'xyzabcdefghij', 'xyzabcdefghijk', 'xyzabcdefghijklm', 'xyzabcdefghijklmn', 'xyzabcdefghijklmno', 'xyzabcdefghijklmnop']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'zy', 'zyx', 'zyxz', 'zyxza', 'zyxzag', 'zyxzagh', 'zyxzaghd', 'zyxzaghde', 'zyxzaghdef', 'zyxzaghdefg', 'zyxzaghdefgh', 'zyxzaghdefghi', 'zyxzaghdefghj', 'zyxzaghdefghjk', 'zyxzaghdefghjkl', 'zyxzaghdefghjklm', 'zyxzaghdefghjklmn', 'zyxzaghdefghjklmno', 'zyxzaghdefghjklmnop']) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'zy', 'zyx', 'zyxz', 'zyxza', 'zyxzag', 'zyxzagh', 'zyxzaghd', 'zyxzaghde', 'zyxzaghdef', 'zyxzaghdefg', 'zyxzaghdefgh', 'zyxzaghdefghi', 'zyxzaghdefghj', 'zyxzaghdefghjk', 'zyxzaghdefghjkl', 'zyxzaghdefghjklm', 'zyxzaghdefghjklmn', 'zyxzaghdefghjklmno', 'zyxzaghdefghjklmnop']) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'acbd', 'adcb', 'bacd', 'bcad', 'bdac', 'cabd', 'cbad', 'cdab', 'dabc', 'dbac', 'dcab']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'acbd', 'adcb', 'bacd', 'bcad', 'bdac', 'cabd', 'cbad', 'cdab', 'dabc', 'dbac', 'dcab']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyaz', 'xyazb', 'xyazbc', 'xyazbcd', 'xyazbcde', 'xyazbcdef', 'xyazbcdefg', 'xyazbcdefgh', 'xyazbcdefghi', 'xyazbcdefghij', 'xyazbcdefghijk', 'xyazbcdefghijkl', 'xyazbcdefghijklm', 'xyazbcdefghijklmn', 'xyazbcdefghijklmno']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyaz', 'xyazb', 'xyazbc', 'xyazbcd', 'xyazbcde', 'xyazbcdef', 'xyazbcdefg', 'xyazbcdefgh', 'xyazbcdefghi', 'xyazbcdefghij', 'xyazbcdefghijk', 'xyazbcdefghijkl', 'xyazbcdefghijklm', 'xyazbcdefghijklmn', 'xyazbcdefghijklmno']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abdc', 'acbd', 'adbc', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'abcdex', 'abdcex', 'acbdex', 'adbcex', 'bacdex', 'badcex', 'bcadex', 'bcdaex', 'bdacex', 'bdcaex', 'cabdex', 'cadbex', 'cbadex', 'cbdaex', 'cdabex', 'cdbaex', 'dcabex', 'dcbaex', 'abcdexy', 'abdcexy', 'acbdexy', 'adbcexy', 'bacdexy', 'badcexy', 'bcadexy', 'bcdaexy', 'bdacexy', 'bdcaexy', 'cabdexy', 'cadbexy', 'cbadexy', 'cbdaexy', 'cdabexy', 'cdbaexy', 'dcabexy', 'dcbaexy', 'abcdexyz', 'abdcexyz', 'acbdexyz', 'adbcexyz', 'bacdexyz', 'badcexyz', 'bcadexyz', 'bcdaexyz', 'bdacexyz', 'bdcaexyz', 'cabdexyz', 'cadbexyz', 'cbadexyz', 'cbdaexyz', 'cdabexyz', 'cdbaexyz', 'dcabexyz', 'dcbaexyz', 'abcdefghij', 'abcdefghijk', 'abcdefghijl', 'abcdefghijm', 'abcdefghijn', 'abcdefghijo', 'abcdefghijp', 'abcdefghijq', 'abcdefghijr', 'abcdefghijs', 'abcdefghijt', 'abcdefghiju', 'abcdefghijv', 'abcdefghijw', 'abcdefghijx', 'abcdefghijy', 'abcdefghijz', 'abcdefghijkq', 'abcdefghijkqr', 'abcdefghijkqrs', 'abcdefghijkqrst', 'abcdefghijkqrstu', 'abcdefghijkqrstuv', 'abcdefghijkqrstuvw', 'abcdefghijkqrstuvwx', 'abcdefghijkqrstuvwxy', 'abcdefghijkqrstuvwxyz', 'abcdefghijkqrstuvwxys', 'abcdefghijkqrstuvwxyt', 'abcdefghijkqrstuvwxysu', 'abcdefghijkqrstuvwxyts', 'abcdefghijkqrstuvwxysut', 'abcdefghijkqrstuvwxytus', 'abcdefghijkqrstuvwxysutz', 'abcdefghijkqrstuvwxytzs', 'abcdefghijkqrstuvwxytzsu', 'abcdefghijkqrstuvwxytzst', 'abcdefghijkqrstuvwxytzstu', 'abcdefghijkqrstuvwxytzstuv', 'abcdefghijkqrstuvwxytzstuvw', 'abcdefghijkqrstuvwxytzstuvwx', 'abcdefghijkqrstuvwxytzstuvwxy', 'abcdefghijkqrstuvwxytzstuvwxyz', 'abcdefghijkqrstuvwxytzstuvwxyzs', 'abcdefghijkqrstuvwxytzstuvwxyzst', 'abcdefghijkqrstuvwxytzstuvwxyzstu', 'abcdefghijkqrstuvwxytzstuvwxyzstuv', 'abcdefghijkqrstuvwxytzstuvwxyzstuvw', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwx', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwxy', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwxyz']) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abdc', 'acbd', 'adbc', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'abcdex', 'abdcex', 'acbdex', 'adbcex', 'bacdex', 'badcex', 'bcadex', 'bcdaex', 'bdacex', 'bdcaex', 'cabdex', 'cadbex', 'cbadex', 'cbdaex', 'cdabex', 'cdbaex', 'dcabex', 'dcbaex', 'abcdexy', 'abdcexy', 'acbdexy', 'adbcexy', 'bacdexy', 'badcexy', 'bcadexy', 'bcdaexy', 'bdacexy', 'bdcaexy', 'cabdexy', 'cadbexy', 'cbadexy', 'cbdaexy', 'cdabexy', 'cdbaexy', 'dcabexy', 'dcbaexy', 'abcdexyz', 'abdcexyz', 'acbdexyz', 'adbcexyz', 'bacdexyz', 'badcexyz', 'bcadexyz', 'bcdaexyz', 'bdacexyz', 'bdcaexyz', 'cabdexyz', 'cadbexyz', 'cbadexyz', 'cbdaexyz', 'cdabexyz', 'cdbaexyz', 'dcabexyz', 'dcbaexyz', 'abcdefghij', 'abcdefghijk', 'abcdefghijl', 'abcdefghijm', 'abcdefghijn', 'abcdefghijo', 'abcdefghijp', 'abcdefghijq', 'abcdefghijr', 'abcdefghijs', 'abcdefghijt', 'abcdefghiju', 'abcdefghijv', 'abcdefghijw', 'abcdefghijx', 'abcdefghijy', 'abcdefghijz', 'abcdefghijkq', 'abcdefghijkqr', 'abcdefghijkqrs', 'abcdefghijkqrst', 'abcdefghijkqrstu', 'abcdefghijkqrstuv', 'abcdefghijkqrstuvw', 'abcdefghijkqrstuvwx', 'abcdefghijkqrstuvwxy', 'abcdefghijkqrstuvwxyz', 'abcdefghijkqrstuvwxys', 'abcdefghijkqrstuvwxyt', 'abcdefghijkqrstuvwxysu', 'abcdefghijkqrstuvwxyts', 'abcdefghijkqrstuvwxysut', 'abcdefghijkqrstuvwxytus', 'abcdefghijkqrstuvwxysutz', 'abcdefghijkqrstuvwxytzs', 'abcdefghijkqrstuvwxytzsu', 'abcdefghijkqrstuvwxytzst', 'abcdefghijkqrstuvwxytzstu', 'abcdefghijkqrstuvwxytzstuv', 'abcdefghijkqrstuvwxytzstuvw', 'abcdefghijkqrstuvwxytzstuvwx', 'abcdefghijkqrstuvwxytzstuvwxy', 'abcdefghijkqrstuvwxytzstuvwxyz', 'abcdefghijkqrstuvwxytzstuvwxyzs', 'abcdefghijkqrstuvwxytzstuvwxyzst', 'abcdefghijkqrstuvwxytzstuvwxyzstu', 'abcdefghijkqrstuvwxytzstuvwxyzstuv', 'abcdefghijkqrstuvwxytzstuvwxyzstuvw', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwx', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwxy', 'abcdefghijkqrstuvwxytzstuvwxyzstuvwxyz']) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'ab', 'bc', 'abc', 'abcd', 'abdc', 'acbd', 'bacd', 'bdac', 'cabd', 'cbad', 'dabc', 'dbac']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'ab', 'bc', 'abc', 'abcd', 'abdc', 'acbd', 'bacd', 'bdac', 'cabd', 'cbad', 'dabc', 'dbac']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'ape', 'aple', 'appel', 'apples', 'appl', 'applle', 'appllees']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'ape', 'aple', 'appel', 'apples', 'appl', 'applle', 'appllees']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['x', 'xa', 'xaz', 'xazl', 'xazld', 'xazldq', 'xazldqw', 'xazldqwj', 'xazldqwji', 'xazldqwjit', 'xazldqwjitp', 'xazldqwjitpe', 'xazldqwjitpek', 'xazldqwjitpekf', 'xazldqwjitpekfg', 'xazldqwjitpekfgh', 'xazldqwjitpekfghi', 'xazldqwjitpekfghij', 'xazldqwjitpekfghijk', 'xazldqwjitpekfghijkl', 'xazldqwjitpekfghijklm', 'xazldqwjitpekfghijklmn', 'xazldqwjitpekfghijklmno', 'xazldqwjitpekfghijklmnop', 'xazldqwjitpekfghijklmnopq', 'xazldqwjitpekfghijklmnopqr', 'xazldqwjitpekfghijklmnopqrs', 'xazldqwjitpekfghijklmnopqrst', 'xazldqwjitpekfghijklmnopqrstu', 'xazldqwjitpekfghijklmnopqrstuv', 'xazldqwjitpekfghijklmnopqrstuvw', 'xazldqwjitpekfghijklmnopqrstuvwx', 'xazldqwjitpekfghijklmnopqrstuvwxy', 'xazldqwjitpekfghijklmnopqrstuvwxyz']) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['x', 'xa', 'xaz', 'xazl', 'xazld', 'xazldq', 'xazldqw', 'xazldqwj', 'xazldqwji', 'xazldqwjit', 'xazldqwjitp', 'xazldqwjitpe', 'xazldqwjitpek', 'xazldqwjitpekf', 'xazldqwjitpekfg', 'xazldqwjitpekfgh', 'xazldqwjitpekfghi', 'xazldqwjitpekfghij', 'xazldqwjitpekfghijk', 'xazldqwjitpekfghijkl', 'xazldqwjitpekfghijklm', 'xazldqwjitpekfghijklmn', 'xazldqwjitpekfghijklmno', 'xazldqwjitpekfghijklmnop', 'xazldqwjitpekfghijklmnopq', 'xazldqwjitpekfghijklmnopqr', 'xazldqwjitpekfghijklmnopqrs', 'xazldqwjitpekfghijklmnopqrst', 'xazldqwjitpekfghijklmnopqrstu', 'xazldqwjitpekfghijklmnopqrstuv', 'xazldqwjitpekfghijklmnopqrstuvw', 'xazldqwjitpekfghijklmnopqrstuvwx', 'xazldqwjitpekfghijklmnopqrstuvwxy', 'xazldqwjitpekfghijklmnopqrstuvwxyz']) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xyzz', 'xyyzz', 'xyyyzz', 'xyyyyzz', 'xyyyyyzz', 'xyyyyyyzz', 'xyyyyyzzz', 'xyyyyyyzzzz']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xyzz', 'xyyzz', 'xyyyzz', 'xyyyyzz', 'xyyyyyzz', 'xyyyyyyzz', 'xyyyyyzzz', 'xyyyyyyzzzz']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'badc', 'cabd', 'cbad', 'cdab', 'cdba', 'dcba', 'dcab', 'dbac', 'dbca']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abdc', 'acbd', 'bacd', 'badc', 'cabd', 'cbad', 'cdab', 'cdba', 'dcba', 'dcab', 'dbac', 'dbca']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['apple', 'app', 'aple', 'appl', 'applu', 'apples', 'applks', 'applksa', 'applksag', 'applksage', 'applksager', 'applksagerm']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['apple', 'app', 'aple', 'appl', 'applu', 'apples', 'applks', 'applksa', 'applksag', 'applksage', 'applksager', 'applksagerm']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['m', 'mo', 'moc', 'moch', 'mocha', 'mochas', 'mochaste', 'mochaster', 'mochastera', 'mochasteras']) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['m', 'mo', 'moc', 'moch', 'mocha', 'mochas', 'mochaste', 'mochaster', 'mochastera', 'mochasteras']) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['p', 'pq', 'pqr', 'pqrs', 'pqrst', 'pqrstu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy', 'pqrstuvwxyz', 'pqrstuvwxyza', 'pqrstuvwxyzab', 'pqrstuvwxyzabc', 'pqrstuvwxyzabcd', 'pqrstuvwxyzabcde']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['p', 'pq', 'pqr', 'pqrs', 'pqrst', 'pqrstu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy', 'pqrstuvwxyz', 'pqrstuvwxyza', 'pqrstuvwxyzab', 'pqrstuvwxyzabc', 'pqrstuvwxyzabcd', 'pqrstuvwxyzabcde']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aa', 'aaa', 'aaaa', 'abc', 'abcd', 'abce', 'abcef', 'abcdeg', 'abcdegh', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvwxyz']) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aa', 'aaa', 'aaaa', 'abc', 'abcd', 'abce', 'abcef', 'abcdeg', 'abcdegh', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvwxyz']) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aaab', 'aaabc', 'aab', 'aabcc', 'aabc', 'aabcd', 'aabccd', 'abc', 'abccd', 'abcd', 'abccd', 'abcde', 'abcdde', 'abcdee', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvxyz']) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aaab', 'aaabc', 'aab', 'aabcc', 'aabc', 'aabcd', 'aabccd', 'abc', 'abccd', 'abcd', 'abccd', 'abcde', 'abcdde', 'abcdee', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvxyz']) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnp', 'abcdefghijklmnpo', 'abcdefghijklmnpqr', 'abcdefghijklmnpqrs', 'abcdefghijklmnpqrst', 'abcdefghijklmnpqrstu', 'abcdefghijklmnpqrstuv', 'abcdefghijklmnpqrstuvw', 'abcdefghijklmnpqrstuvwx', 'abcdefghijklmnpqrstuvwxy', 'abcdefghijklmnpqrstuvwxyz']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnp', 'abcdefghijklmnpo', 'abcdefghijklmnpqr', 'abcdefghijklmnpqrs', 'abcdefghijklmnpqrst', 'abcdefghijklmnpqrstu', 'abcdefghijklmnpqrstuv', 'abcdefghijklmnpqrstuvw', 'abcdefghijklmnpqrstuvwx', 'abcdefghijklmnpqrstuvwxy', 'abcdefghijklmnpqrstuvwxyz']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['m', 'mo', 'mop', 'mopt', 'mopti', 'moptio', 'moptiop', 'moptiopi', 'moptiopim', 'moptiopimu', 'moptiopimuv', 'moptiopimuvi', 'moptiopimuvis', 'moptiopimuvisd']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['m', 'mo', 'mop', 'mopt', 'mopti', 'moptio', 'moptiop', 'moptiopi', 'moptiopim', 'moptiopimu', 'moptiopimuv', 'moptiopimuvi', 'moptiopimuvis', 'moptiopimuvisd']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefgh', 'abcdefg', 'abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefgh', 'abcdefg', 'abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xy', 'x', 'xyzpq', 'yzpq', 'ypq', 'pq', 'zpq', 'p', 'q', 'qp']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xy', 'x', 'xyzpq', 'yzpq', 'ypq', 'pq', 'zpq', 'p', 'q', 'qp']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'az', 'bz', 'cz', 'dz', 'ez', 'fz', 'gz', 'hz', 'iz', 'jz', 'kz', 'lz', 'mz', 'nz', 'oz', 'pz', 'qz', 'rz', 'sz', 'tz', 'uz', 'vz', 'wz', 'xz', 'yz', 'abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'ijk', 'jkl', 'klm', 'lmn', 'mno', 'nop', 'opq', 'pqr', 'qrs', 'rst', 'stu', 'tuv', 'uvw', 'vwx', 'wxy', 'xyz']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'az', 'bz', 'cz', 'dz', 'ez', 'fz', 'gz', 'hz', 'iz', 'jz', 'kz', 'lz', 'mz', 'nz', 'oz', 'pz', 'qz', 'rz', 'sz', 'tz', 'uz', 'vz', 'wz', 'xz', 'yz', 'abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'ijk', 'jkl', 'klm', 'lmn', 'mno', 'nop', 'opq', 'pqr', 'qrs', 'rst', 'stu', 'tuv', 'uvw', 'vwx', 'wxy', 'xyz']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['m', 'mo', 'mop', 'mops', 'mopsi', 'mopsin', 'mopsing', 'mopsing', 'mopsingh', 'mopsingha', 'mopsinghar', 'mopsinghark', 'mopsingharky', 'mopsingharkyz', 'mopsingharkyzr', 'mopsingharkyzrf', 'mopsingharkyzrfc', 'mopsingharkyzrfca', 'mopsingharkyzrfcal', 'mopsingharkyzrfcala', 'mopsingharkyzrfcalab', 'mopsingharkyzrfcalabs', 'mopsingharkyzrfcalabss', 'mopsingharkyzrfcalabsss', 'mopsingharkyzrfcalabssss', 'mopsingharkyzrfcalabsssss', 'mopsingharkyzrfcalabssssss', 'mopsingharkyzrfcalabsssssss', 'mopsingharkyzrfcalabssssssss', 'mopsingharkyzrfcalabsssssssss', 'mopsingharkyzrfcalabssssssssss', 'mopsingharkyzrfcalabsssssssssss', 'mopsingharkyzrfcalabssssssssssss', 'mopsingharkyzrfcalabsssssssssssss', 'mopsingharkyzrfcalabssssssssssssss', 'mopsingharkyzrfcalabsssssssssssssss']) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['m', 'mo', 'mop', 'mops', 'mopsi', 'mopsin', 'mopsing', 'mopsing', 'mopsingh', 'mopsingha', 'mopsinghar', 'mopsinghark', 'mopsingharky', 'mopsingharkyz', 'mopsingharkyzr', 'mopsingharkyzrf', 'mopsingharkyzrfc', 'mopsingharkyzrfca', 'mopsingharkyzrfcal', 'mopsingharkyzrfcala', 'mopsingharkyzrfcalab', 'mopsingharkyzrfcalabs', 'mopsingharkyzrfcalabss', 'mopsingharkyzrfcalabsss', 'mopsingharkyzrfcalabssss', 'mopsingharkyzrfcalabsssss', 'mopsingharkyzrfcalabssssss', 'mopsingharkyzrfcalabsssssss', 'mopsingharkyzrfcalabssssssss', 'mopsingharkyzrfcalabsssssssss', 'mopsingharkyzrfcalabssssssssss', 'mopsingharkyzrfcalabsssssssssss', 'mopsingharkyzrfcalabssssssssssss', 'mopsingharkyzrfcalabsssssssssssss', 'mopsingharkyzrfcalabssssssssssssss', 'mopsingharkyzrfcalabsssssssssssssss']) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['p', 'pa', 'pau', 'paws', 'pawst', 'pawstd', 'pawstde', 'pawstdef', 'pawstdefp', 'pawstdefpg', 'pawstdefpgm', 'pawstdefpgmn', 'pawstdefpgmno', 'pawstdefpgmnop', 'pawstdefpgmnopq', 'pawstdefpgmnopqr', 'pawstdefpgmnopqrs', 'pawstdefpgmnopqrst', 'pawstdefpgmnopqrstu', 'pawstdefpgmnopqrstuv', 'pawstdefpgmnopqrstuvw', 'pawstdefpgmnopqrstuvwx', 'pawstdefpgmnopqrstuvwxy', 'pawstdefpgmnopqrstuvwxyz']) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['p', 'pa', 'pau', 'paws', 'pawst', 'pawstd', 'pawstde', 'pawstdef', 'pawstdefp', 'pawstdefpg', 'pawstdefpgm', 'pawstdefpgmn', 'pawstdefpgmno', 'pawstdefpgmnop', 'pawstdefpgmnopq', 'pawstdefpgmnopqr', 'pawstdefpgmnopqrs', 'pawstdefpgmnopqrst', 'pawstdefpgmnopqrstu', 'pawstdefpgmnopqrstuv', 'pawstdefpgmnopqrstuvw', 'pawstdefpgmnopqrstuvwx', 'pawstdefpgmnopqrstuvwxy', 'pawstdefpgmnopqrstuvwxyz']) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xz', 'xy', 'x', 'yz', 'y', 'xzpq', 'zpq', 'zq', 'pq', 'q']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xz', 'xy', 'x', 'yz', 'y', 'xzpq', 'zpq', 'zq', 'pq', 'q']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a', 'aghij', 'aghi', 'agh', 'ag', 'a', 'agghij', 'agghijr', 'agghijrk', 'agghijrkm', 'agghijrkmp', 'agghijrkmpa', 'agghijrkmpab', 'agghijrkmpabc', 'agghijrkmpabcd']) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'abcde', 'abcd', 'abc', 'ab', 'a', 'aghij', 'aghi', 'agh', 'ag', 'a', 'agghij', 'agghijr', 'agghijrk', 'agghijrkm', 'agghijrkmp', 'agghijrkmpa', 'agghijrkmpab', 'agghijrkmpabc', 'agghijrkmpabcd']) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaa']) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaa']) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['q', 'qz', 'qzh', 'qzhd', 'qzhdr', 'qzhdre', 'qzhdrec', 'qzhdrecu', 'qzhdrecuj', 'qzhdrecuju', 'qzhdrecujuu', 'qzhdrecujuus']) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['q', 'qz', 'qzh', 'qzhd', 'qzhdr', 'qzhdre', 'qzhdrec', 'qzhdrecu', 'qzhdrecuj', 'qzhdrecuju', 'qzhdrecujuu', 'qzhdrecujuus']) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii', 'jj', 'kk', 'll', 'mm', 'nn', 'oo', 'pp', 'qq', 'rr', 'ss', 'tt', 'uu', 'vv', 'ww', 'xx', 'yy', 'zz']) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii', 'jj', 'kk', 'll', 'mm', 'nn', 'oo', 'pp', 'qq', 'rr', 'ss', 'tt', 'uu', 'vv', 'ww', 'xx', 'yy', 'zz']) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'bca', 'cab', 'abcd', 'bcad', 'cabd', 'acbd', 'bacd', 'badc', 'bcda', 'acdb', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'abcdx', 'bcadx', 'cabdx', 'abcxd', 'bcadcx', 'cabdcx', 'acbdcx', 'bacdcx', 'bacdx', 'bcadcx', 'bcadxc', 'cabdxc', 'acbdcx', 'bacdxc', 'bacdx', 'bcadxc', 'bcadcx', 'bcadxc', 'abcde', 'bcade', 'cabde', 'acbed', 'bacde', 'baced', 'bcade', 'bcdea', 'cabde', 'cabed', 'cbade', 'cbdea', 'cdabe', 'cdbe', 'cdba', 'dcab', 'dcba', 'abcd', 'bcad', 'cabd', 'acbd', 'bacd', 'badc', 'bcda', 'acdb', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'xyz', 'xyaz', 'xyazb', 'xyazbc', 'xyazbcd', 'xyazbcde', 'xyazbcdef', 'xyazbcdefg', 'xyazbcdefgh', 'xyazbcdefghi', 'xyazbcdefghij', 'xyazbcdefghijk', 'xyazbcdefghijkl', 'xyazbcdefghijklm', 'xyazbcdefghijklmn', 'xyazbcdefghijklmno']) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'bca', 'cab', 'abcd', 'bcad', 'cabd', 'acbd', 'bacd', 'badc', 'bcda', 'acdb', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'abcdx', 'bcadx', 'cabdx', 'abcxd', 'bcadcx', 'cabdcx', 'acbdcx', 'bacdcx', 'bacdx', 'bcadcx', 'bcadxc', 'cabdxc', 'acbdcx', 'bacdxc', 'bacdx', 'bcadxc', 'bcadcx', 'bcadxc', 'abcde', 'bcade', 'cabde', 'acbed', 'bacde', 'baced', 'bcade', 'bcdea', 'cabde', 'cabed', 'cbade', 'cbdea', 'cdabe', 'cdbe', 'cdba', 'dcab', 'dcba', 'abcd', 'bcad', 'cabd', 'acbd', 'bacd', 'badc', 'bcda', 'acdb', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dcab', 'dcba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'xyz', 'xyaz', 'xyazb', 'xyazbc', 'xyazbcd', 'xyazbcde', 'xyazbcdef', 'xyazbcdefg', 'xyazbcdefgh', 'xyazbcdefghi', 'xyazbcdefghij', 'xyazbcdefghijk', 'xyazbcdefghijkl', 'xyazbcdefghijklm', 'xyazbcdefghijklmn', 'xyazbcdefghijklmno']) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'ab', 'bc', 'abc', 'abcd', 'bcde', 'cde', 'efg', 'fgh', 'efgh', 'efghi', 'efghij']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'ab', 'bc', 'abc', 'abcd', 'bcde', 'cde', 'efg', 'fgh', 'efgh', 'efghi', 'efghij']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mnop', 'mno', 'mo', 'mn', 'm', 'on', 'om', 'op', 'pn', 'po', 'np', 'no', 'p', 'o', 'n']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mnop', 'mno', 'mo', 'mn', 'm', 'on', 'om', 'op', 'pn', 'po', 'np', 'no', 'p', 'o', 'n']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['jkl', 'jkla', 'jklo', 'jkloi', 'jkloip', 'jkloipq', 'jkloipqr', 'jkloipqrs', 'jkloipqrst', 'jkloipqrstu', 'jkloipqrstuv', 'jkloipqrstuvw', 'jkloipqrstuvwx', 'jkloipqrstuvwxy', 'jkloipqrstuvwxyz', 'jkloipqrstuvwxyzv', 'jkloipqrstuvwxyza', 'jkloipqrstuvwxyzab', 'jkloipqrstuvwxyzabc', 'jkloipqrstuvwxyzabcd', 'jkloipqrstuvwxyzabcde', 'jkloipqrstuvwxyzabcdef', 'jkloipqrstuvwxyzabcdefg', 'jkloipqrstuvwxyzabcdefgh', 'jkloipqrstuvwxyzabcdefghi', 'jkloipqrstuvwxyzabcdefghij']) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['jkl', 'jkla', 'jklo', 'jkloi', 'jkloip', 'jkloipq', 'jkloipqr', 'jkloipqrs', 'jkloipqrst', 'jkloipqrstu', 'jkloipqrstuv', 'jkloipqrstuvw', 'jkloipqrstuvwx', 'jkloipqrstuvwxy', 'jkloipqrstuvwxyz', 'jkloipqrstuvwxyzv', 'jkloipqrstuvwxyza', 'jkloipqrstuvwxyzab', 'jkloipqrstuvwxyzabc', 'jkloipqrstuvwxyzabcd', 'jkloipqrstuvwxyzabcde', 'jkloipqrstuvwxyzabcdef', 'jkloipqrstuvwxyzabcdefg', 'jkloipqrstuvwxyzabcdefgh', 'jkloipqrstuvwxyzabcdefghi', 'jkloipqrstuvwxyzabcdefghij']) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abcde', 'abcdef', 'abcdf', 'abcdg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abcde', 'abcdef', 'abcdf', 'abcdg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abdc', 'abacd', 'abcd', 'abac', 'abcde', 'abcfde', 'abcdefg', 'abcdegh']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abdc', 'abacd', 'abcd', 'abac', 'abcde', 'abcfde', 'abcdefg', 'abcdegh']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'ab', 'bc', 'abcde', 'abde', 'acde', 'cde', 'a', 'b', 'c', 'd', 'e']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'ab', 'bc', 'abcde', 'abde', 'acde', 'cde', 'a', 'b', 'c', 'd', 'e']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['z', 'yz', 'xyz', 'wxyz', 'vwxyz', 'uvwxy', 'uvwx', 'uvx', 'ux', 'x', 'pq', 'pqr', 'pqrs', 'pqrsu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy', 'pqrstuvwxyz', 'abcdefghijkl', 'abcdefghij', 'abcdefghijk', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['z', 'yz', 'xyz', 'wxyz', 'vwxyz', 'uvwxy', 'uvwx', 'uvx', 'ux', 'x', 'pq', 'pqr', 'pqrs', 'pqrsu', 'pqrstuv', 'pqrstuvw', 'pqrstuvwx', 'pqrstuvwxy', 'pqrstuvwxyz', 'abcdefghijkl', 'abcdefghij', 'abcdefghijk', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmnop']) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['qwe', 'qwerty', 'qwertyu', 'qwertyui', 'qwertyuio', 'qwertyuiop', 'qwertyuiopl', 'qwertyuioplk', 'qwertyuioplkj', 'qwertyuioplkjh', 'qwertyuioplkjhg', 'qwertyuioplkjhgfd', 'qwertyuioplkjhgfdc', 'qwertyuioplkjhgfdcv', 'qwertyuioplkjhgfdcvb', 'qwertyuioplkjhgfdcvbn', 'qwertyuioplkjhgfdcvbnn', 'qwertyuioplkjhgfdcvbnm']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['qwe', 'qwerty', 'qwertyu', 'qwertyui', 'qwertyuio', 'qwertyuiop', 'qwertyuiopl', 'qwertyuioplk', 'qwertyuioplkj', 'qwertyuioplkjh', 'qwertyuioplkjhg', 'qwertyuioplkjhgfd', 'qwertyuioplkjhgfdc', 'qwertyuioplkjhgfdcv', 'qwertyuioplkjhgfdcvb', 'qwertyuioplkjhgfdcvbn', 'qwertyuioplkjhgfdcvbnn', 'qwertyuioplkjhgfdcvbnm']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['k', 'a', 'b', 'ka', 'kb', 'abc', 'bcd', 'abcd', 'bcde', 'abcde', 'fgh', 'ghij', 'hijk', 'ijkl', 'jklm', 'klmn', 'lmno', 'mnop', 'nopq', 'opqr', 'pqr', 'pqrs', 'qrst', 'rstu', 'stuv', 'tuvw', 'uvwx', 'vwxy', 'wxyz']) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['k', 'a', 'b', 'ka', 'kb', 'abc', 'bcd', 'abcd', 'bcde', 'abcde', 'fgh', 'ghij', 'hijk', 'ijkl', 'jklm', 'klmn', 'lmno', 'mnop', 'nopq', 'opqr', 'pqr', 'pqrs', 'qrst', 'rstu', 'stuv', 'tuvw', 'uvwx', 'vwxy', 'wxyz']) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcfi', 'abcei', 'abceg', 'abcef', 'abcefj', 'abcefg', 'abcefgk', 'abcefgkl', 'abcefgklm', 'abcefgklmn', 'abcefgklmno', 'abcefgklmnop', 'abcefgklmnopq', 'abcefgklmnopqr', 'abcefgklmnopqrs', 'abcefgklmnopqrst', 'abcefgklmnopqrstu', 'abcefgklmnopqrstuv', 'abcefgklmnopqrstuvw', 'abcefgklmnopqrstuvwx', 'abcefgklmnopqrstuvwxy', 'abcefgklmnopqrstuvwxyz']) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcfi', 'abcei', 'abceg', 'abcef', 'abcefj', 'abcefg', 'abcefgk', 'abcefgkl', 'abcefgklm', 'abcefgklmn', 'abcefgklmno', 'abcefgklmnop', 'abcefgklmnopq', 'abcefgklmnopqr', 'abcefgklmnopqrs', 'abcefgklmnopqrst', 'abcefgklmnopqrstu', 'abcefgklmnopqrstuv', 'abcefgklmnopqrstuvw', 'abcefgklmnopqrstuvwx', 'abcefgklmnopqrstuvwxy', 'abcefgklmnopqrstuvwxyz']) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaab', 'aaab', 'aab', 'ab', 'b', 'ba', 'aba', 'abab', 'ababa', 'ababab', 'abababa', 'abababab', 'ababababa', 'ababababab']) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaab', 'aaab', 'aab', 'ab', 'b', 'ba', 'aba', 'abab', 'ababa', 'ababab', 'abababa', 'abababab', 'ababababa', 'ababababab']) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mnop', 'mno', 'mn', 'mnoq', 'mnopqr', 'mnopqrs', 'mnopqrst', 'mnopqrstu', 'mnopqrstuv', 'mnopqrstuvw', 'mnopqrstuvwx', 'mnopqrstuvwxz']) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mnop', 'mno', 'mn', 'mnoq', 'mnopqr', 'mnopqrs', 'mnopqrst', 'mnopqrstu', 'mnopqrstuv', 'mnopqrstuvw', 'mnopqrstuvwx', 'mnopqrstuvwxz']) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xy', 'xyc', 'xyz', 'xyzq', 'xyzqr', 'xyzqrs', 'xyzqrst', 'xyzqrstuv', 'xyzqrstuvw', 'xyzqrstuvwx', 'xyzqrstuvwxy', 'xyzqrstuvwxyz', 'xyzqrstuvwxys', 'xyzqrstuvwxyt', 'xyzqrstuvwxysu', 'xyzqrstuvwxyts', 'xyzqrstuvwxysut', 'xyzqrstuvwxytus', 'xyzqrstuvwxysutz', 'xyzqrstuvwxytzs', 'xyzqrstuvwxytzsu', 'xyzqrstuvwxytzst', 'xyzqrstuvwxytzstu', 'xyzqrstuvwxytzstuv', 'xyzqrstuvwxytzstuvw', 'xyzqrstuvwxytzstuvwx', 'xyzqrstuvwxytzstuvwxy', 'xyzqrstuvwxytzstuvwxyz', 'xyzqrstuvwxytzstuvwxyzs', 'xyzqrstuvwxytzstuvwxyzst', 'xyzqrstuvwxytzstuvwxyzstu', 'xyzqrstuvwxytzstuvwxyzstuv', 'xyzqrstuvwxytzstuvwxyzstuvw', 'xyzqrstuvwxytzstuvwxyzstuvwx', 'xyzqrstuvwxytzstuvwxyzstuvwxy', 'xyzqrstuvwxytzstuvwxyzstuvwxyz']) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xy', 'xyc', 'xyz', 'xyzq', 'xyzqr', 'xyzqrs', 'xyzqrst', 'xyzqrstuv', 'xyzqrstuvw', 'xyzqrstuvwx', 'xyzqrstuvwxy', 'xyzqrstuvwxyz', 'xyzqrstuvwxys', 'xyzqrstuvwxyt', 'xyzqrstuvwxysu', 'xyzqrstuvwxyts', 'xyzqrstuvwxysut', 'xyzqrstuvwxytus', 'xyzqrstuvwxysutz', 'xyzqrstuvwxytzs', 'xyzqrstuvwxytzsu', 'xyzqrstuvwxytzst', 'xyzqrstuvwxytzstu', 'xyzqrstuvwxytzstuv', 'xyzqrstuvwxytzstuvw', 'xyzqrstuvwxytzstuvwx', 'xyzqrstuvwxytzstuvwxy', 'xyzqrstuvwxytzstuvwxyz', 'xyzqrstuvwxytzstuvwxyzs', 'xyzqrstuvwxytzstuvwxyzst', 'xyzqrstuvwxytzstuvwxyzstu', 'xyzqrstuvwxytzstuvwxyzstuv', 'xyzqrstuvwxytzstuvwxyzstuvw', 'xyzqrstuvwxytzstuvwxyzstuvwx', 'xyzqrstuvwxytzstuvwxyzstuvwxy', 'xyzqrstuvwxytzstuvwxyzstuvwxyz']) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['mno', 'mnop', 'mnop', 'mnopq', 'mnopqr', 'mnopqrs', 'mnopqrst', 'mnopqrstu', 'mnopqrstuv', 'mnopqrstuvw', 'mnopqrstuvwx', 'mnopqrstuvwxy', 'mnopqrstuvwxyz', 'mnopqrstuvwxyza', 'mnopqrstuvwxyzab', 'mnopqrstuvwxyzabc', 'mnopqrstuvwxyzabcd', 'mnopqrstuvwxyzabcde', 'mnopqrstuvwxyzabcdef', 'mnopqrstuvwxyzabcdefg', 'mnopqrstuvwxyzabcdefgh', 'mnopqrstuvwxyzabcdefghi', 'mnopqrstuvwxyzabcdefghij', 'mnopqrstuvwxyzabcdefghijk', 'mnopqrstuvwxyzabcdefghijkl', 'mnopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmn', 'mnopqrstuvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmnop', 'mnopqrstuvwxyzabcdefghijklmnopq', 'mnopqrstuvwxyzabcdefghijklmnopqr', 'mnopqrstuvwxyzabcdefghijklmnopqrs', 'mnopqrstuvwxyzabcdefghijklmnopqrst', 'mnopqrstuvwxyzabcdefghijklmnopqrstu', 'mnopqrstuvwxyzabcdefghijklmnopqrstuv', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvw', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwx', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwxy', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza']) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['mno', 'mnop', 'mnop', 'mnopq', 'mnopqr', 'mnopqrs', 'mnopqrst', 'mnopqrstu', 'mnopqrstuv', 'mnopqrstuvw', 'mnopqrstuvwx', 'mnopqrstuvwxy', 'mnopqrstuvwxyz', 'mnopqrstuvwxyza', 'mnopqrstuvwxyzab', 'mnopqrstuvwxyzabc', 'mnopqrstuvwxyzabcd', 'mnopqrstuvwxyzabcde', 'mnopqrstuvwxyzabcdef', 'mnopqrstuvwxyzabcdefg', 'mnopqrstuvwxyzabcdefgh', 'mnopqrstuvwxyzabcdefghi', 'mnopqrstuvwxyzabcdefghij', 'mnopqrstuvwxyzabcdefghijk', 'mnopqrstuvwxyzabcdefghijkl', 'mnopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmn', 'mnopqrstuvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmnop', 'mnopqrstuvwxyzabcdefghijklmnopq', 'mnopqrstuvwxyzabcdefghijklmnopqr', 'mnopqrstuvwxyzabcdefghijklmnopqrs', 'mnopqrstuvwxyzabcdefghijklmnopqrst', 'mnopqrstuvwxyzabcdefghijklmnopqrstu', 'mnopqrstuvwxyzabcdefghijklmnopqrstuv', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvw', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwx', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwxy', 'mnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza']) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdef', 'abef', 'abcf', 'acdf', 'adef', 'abdf', 'abefg', 'abecf', 'abedf', 'abcef', 'abcdf', 'abdef', 'abcdefg']) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdef', 'abef', 'abcf', 'acdf', 'adef', 'abdf', 'abefg', 'abecf', 'abedf', 'abcef', 'abcdf', 'abdef', 'abcdefg']) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['zyx', 'zyxa', 'zyxb', 'zyxc', 'zyxd', 'zyxe', 'zyxf', 'zyxg', 'zyxh', 'zyxi', 'zyxj', 'zyxk', 'zyxl', 'zyxm', 'zyxn', 'zyxo', 'zyxp', 'zyxq', 'zyxr', 'zyxs', 'zyxt', 'zyxu', 'zyxv', 'zyxw', 'zyxx', 'zyxy', 'zyxz']) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['zyx', 'zyxa', 'zyxb', 'zyxc', 'zyxd', 'zyxe', 'zyxf', 'zyxg', 'zyxh', 'zyxi', 'zyxj', 'zyxk', 'zyxl', 'zyxm', 'zyxn', 'zyxo', 'zyxp', 'zyxq', 'zyxr', 'zyxs', 'zyxt', 'zyxu', 'zyxv', 'zyxw', 'zyxx', 'zyxy', 'zyxz']) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['xyz', 'xz', 'xy', 'x', 'wxyz', 'wxz', 'wxy', 'wx', 'w', 'vxyz', 'vxz', 'vxy', 'vx', 'v', 'uvxyz', 'uvxz', 'uvxy', 'uvx', 'uv', 'tuvsxyz', 'tuvsxz', 'tuvsxy', 'tuvsx', 'tuvs', 'tuvxyz', 'tuvxz', 'tuvxy', 'tuvx', 'tuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv']) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['xyz', 'xz', 'xy', 'x', 'wxyz', 'wxz', 'wxy', 'wx', 'w', 'vxyz', 'vxz', 'vxy', 'vx', 'v', 'uvxyz', 'uvxz', 'uvxy', 'uvx', 'uv', 'tuvsxyz', 'tuvsxz', 'tuvsxy', 'tuvsx', 'tuvs', 'tuvxyz', 'tuvxz', 'tuvxy', 'tuvx', 'tuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv']) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'acbd', 'adcb', 'bacd', 'bcad', 'cabd', 'cbad', 'cdab', 'cdba', 'dcba', 'dcab', 'dbac', 'dbca', 'abcdxyz', 'abcdeyz', 'abcdefz', 'abcdefw']) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'acbd', 'adcb', 'bacd', 'bcad', 'cabd', 'cbad', 'cdab', 'cdba', 'dcba', 'dcab', 'dbac', 'dbca', 'abcdxyz', 'abcdeyz', 'abcdefz', 'abcdefw']) == 1: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(words = ['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc']) == 5
@@ -86,3 +766,5 @@ def check(candidate):
     assert candidate(words = ['zyx', 'zyxa', 'zyxb', 'zyxc', 'zyxd', 'zyxe', 'zyxf', 'zyxg', 'zyxh', 'zyxi', 'zyxj', 'zyxk', 'zyxl', 'zyxm', 'zyxn', 'zyxo', 'zyxp', 'zyxq', 'zyxr', 'zyxs', 'zyxt', 'zyxu', 'zyxv', 'zyxw', 'zyxx', 'zyxy', 'zyxz']) == 2
     assert candidate(words = ['xyz', 'xz', 'xy', 'x', 'wxyz', 'wxz', 'wxy', 'wx', 'w', 'vxyz', 'vxz', 'vxy', 'vx', 'v', 'uvxyz', 'uvxz', 'uvxy', 'uvx', 'uv', 'tuvsxyz', 'tuvsxz', 'tuvsxy', 'tuvsx', 'tuvs', 'tuvxyz', 'tuvxz', 'tuvxy', 'tuvx', 'tuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv', 'stuvxyz', 'stuvxz', 'stuvxy', 'stuvx', 'stuv']) == 7
     assert candidate(words = ['abcd', 'acbd', 'adcb', 'bacd', 'bcad', 'cabd', 'cbad', 'cdab', 'cdba', 'dcba', 'dcab', 'dbac', 'dbca', 'abcdxyz', 'abcdeyz', 'abcdefz', 'abcdefw']) == 1
+
+

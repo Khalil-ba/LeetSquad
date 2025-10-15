@@ -1,5 +1,725 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(text = "ababa",words = ['aba', 'ab']) == [[0, 1], [0, 2], [2, 3], [2, 4]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "ababa",words = ['aba', 'ab']) == [[0, 1], [0, 2], [2, 3], [2, 4]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaa",words = ['aa']) == [[0, 1], [1, 2], [2, 3]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaa",words = ['aa']) == [[0, 1], [1, 2], [2, 3]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thestoryofleetcodeandme",words = ['story', 'fleet', 'leetcode']) == [[3, 7], [9, 13], [10, 17]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thestoryofleetcodeandme",words = ['story', 'fleet', 'leetcode']) == [[3, 7], [9, 13], [10, 17]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "mississippi",words = ['issi', 'issip', 'is', 'ipi']) == [[1, 2], [1, 4], [4, 5], [4, 7], [4, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "mississippi",words = ['issi', 'issip', 'is', 'ipi']) == [[1, 2], [1, 4], [4, 5], [4, 7], [4, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "hello",words = ['ll', 'o']) == [[2, 3], [4, 4]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "hello",words = ['ll', 'o']) == [[2, 3], [4, 4]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyxyxyxyxy",words = ['xyxy', 'xy', 'x', 'y', 'xyxyxyxyxy']) == [[0, 0], [0, 1], [0, 3], [0, 9], [1, 1], [2, 2], [2, 3], [2, 5], [3, 3], [4, 4], [4, 5], [4, 7], [5, 5], [6, 6], [6, 7], [6, 9], [7, 7], [8, 8], [8, 9], [9, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyxyxyxyxy",words = ['xyxy', 'xy', 'x', 'y', 'xyxyxyxyxy']) == [[0, 0], [0, 1], [0, 3], [0, 9], [1, 1], [2, 2], [2, 3], [2, 5], [3, 3], [4, 4], [4, 5], [4, 7], [5, 5], [6, 6], [6, 7], [6, 9], [7, 7], [8, 8], [8, 9], [9, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "consecutivecharacters",words = ['con', 'sec', 'seco', 'consec', 'conse', 'seccon', 'consecutive', 'consecutiv', 'consecuti', 'consecutiv', 'consecut', 'consecu', 'consec', 'conse', 'con', 'sec', 'consecutivecha', 'consecutivechara', 'consecutivecharac', 'consecutivecharact', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte']) == [[0, 2], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 13], [0, 15], [0, 16], [0, 17], [0, 18], [3, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "consecutivecharacters",words = ['con', 'sec', 'seco', 'consec', 'conse', 'seccon', 'consecutive', 'consecutiv', 'consecuti', 'consecutiv', 'consecut', 'consecu', 'consec', 'conse', 'con', 'sec', 'consecutivecha', 'consecutivechara', 'consecutivecharac', 'consecutivecharact', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte', 'consecutivecharacte']) == [[0, 2], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 13], [0, 15], [0, 16], [0, 17], [0, 18], [3, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thisisaverylongtextwithmanyoverlappingwords",words = ['this', 'is', 'a', 'very', 'long', 'text', 'with', 'many', 'overlapping', 'words', 'word', 'ord', 'rdo', 'dor']) == [[0, 3], [2, 3], [4, 5], [6, 6], [7, 10], [11, 14], [15, 18], [19, 22], [23, 26], [24, 24], [27, 37], [32, 32], [38, 41], [38, 42], [39, 41]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thisisaverylongtextwithmanyoverlappingwords",words = ['this', 'is', 'a', 'very', 'long', 'text', 'with', 'many', 'overlapping', 'words', 'word', 'ord', 'rdo', 'dor']) == [[0, 3], [2, 3], [4, 5], [6, 6], [7, 10], [11, 14], [15, 18], [19, 22], [23, 26], [24, 24], [27, 37], [32, 32], [38, 41], [38, 42], [39, 41]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzxyzxyz",words = ['xyz', 'xy', 'yz', 'x', 'y', 'z', 'xyzxyz']) == [[0, 0], [0, 1], [0, 2], [0, 5], [1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [3, 5], [3, 8], [4, 4], [4, 5], [5, 5], [6, 6], [6, 7], [6, 8], [7, 7], [7, 8], [8, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzxyzxyz",words = ['xyz', 'xy', 'yz', 'x', 'y', 'z', 'xyzxyz']) == [[0, 0], [0, 1], [0, 2], [0, 5], [1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [3, 5], [3, 8], [4, 4], [4, 5], [5, 5], [6, 6], [6, 7], [6, 8], [7, 7], [7, 8], [8, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingpatterns",words = ['over', 'lap', 'pat', 'tern', 'lapo', 'patter', 'verlap']) == [[0, 3], [1, 6], [4, 6], [11, 13], [11, 16], [14, 17]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingpatterns",words = ['over', 'lap', 'pat', 'tern', 'lapo', 'patter', 'verlap']) == [[0, 3], [1, 6], [4, 6], [11, 13], [11, 16], [14, 17]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzxyzxyz",words = ['xyz', 'xy', 'yz', 'x', 'y', 'z']) == [[0, 0], [0, 1], [0, 2], [1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5], [6, 6], [6, 7], [6, 8], [7, 7], [7, 8], [8, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzxyzxyz",words = ['xyz', 'xy', 'yz', 'x', 'y', 'z']) == [[0, 0], [0, 1], [0, 2], [1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5], [6, 6], [6, 7], [6, 8], [7, 7], [7, 8], [8, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ana', 'na', 'ban', 'an', 'nana', 'ba']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 5], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ana', 'na', 'ban', 'an', 'nana', 'ba']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 5], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdefghij",words = ['abc', 'def', 'ghi', 'j', 'abcdefghij']) == [[0, 2], [0, 9], [3, 5], [6, 8], [9, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdefghij",words = ['abc', 'def', 'ghi', 'j', 'abcdefghij']) == [[0, 2], [0, 9], [3, 5], [6, 8], [9, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingwords",words = ['lap', 'lapping', 'over', 'lap', 'ping', 'word']) == [[0, 3], [4, 6], [4, 10], [7, 10], [11, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingwords",words = ['lap', 'lapping', 'over', 'lap', 'ping', 'word']) == [[0, 3], [4, 6], [4, 10], [7, 10], [11, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "substringsearch",words = ['sub', 'string', 'str', 'ing', 'search', 'ear', 'sea', 'rching', 'searchin', 'ch', 'hing', 'ingse']) == [[0, 2], [3, 5], [3, 8], [6, 8], [6, 10], [9, 11], [9, 14], [10, 12], [13, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "substringsearch",words = ['sub', 'string', 'str', 'ing', 'search', 'ear', 'sea', 'rching', 'searchin', 'ch', 'hing', 'ingse']) == [[0, 2], [3, 5], [3, 8], [6, 8], [6, 10], [9, 11], [9, 14], [10, 12], [13, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "amazingprogramminglanguage",words = ['pro', 'gram', 'ming', 'lang', 'age']) == [[7, 9], [10, 13], [14, 17], [18, 21], [23, 25]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "amazingprogramminglanguage",words = ['pro', 'gram', 'ming', 'lang', 'age']) == [[7, 9], [10, 13], [14, 17], [18, 21], [23, 25]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "programmingisfun",words = ['gram', 'ing', 'fun', 'is', 'ogram', 'pro']) == [[0, 2], [2, 6], [3, 6], [8, 10], [11, 12], [13, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "programmingisfun",words = ['gram', 'ing', 'fun', 'is', 'ogram', 'pro']) == [[0, 2], [2, 6], [3, 6], [8, 10], [11, 12], [13, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thisisaverylongtextwithseveralwordsofvariouslength",words = ['this', 'is', 'very', 'long', 'text', 'with', 'several', 'words', 'of', 'various', 'length']) == [[0, 3], [2, 3], [4, 5], [7, 10], [11, 14], [15, 18], [19, 22], [23, 29], [30, 34], [35, 36], [37, 43], [44, 49]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thisisaverylongtextwithseveralwordsofvariouslength",words = ['this', 'is', 'very', 'long', 'text', 'with', 'several', 'words', 'of', 'various', 'length']) == [[0, 3], [2, 3], [4, 5], [7, 10], [11, 14], [15, 18], [19, 22], [23, 29], [30, 34], [35, 36], [37, 43], [44, 49]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thisisaverylongtextthatcontainssomerepeatedwords",words = ['this', 'is', 'a', 'very', 'long', 'text', 'that', 'contains', 'some', 'repeated', 'words']) == [[0, 3], [2, 3], [4, 5], [6, 6], [7, 10], [11, 14], [15, 18], [19, 22], [21, 21], [23, 30], [27, 27], [31, 34], [35, 42], [39, 39], [43, 47]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thisisaverylongtextthatcontainssomerepeatedwords",words = ['this', 'is', 'a', 'very', 'long', 'text', 'that', 'contains', 'some', 'repeated', 'words']) == [[0, 3], [2, 3], [4, 5], [6, 6], [7, 10], [11, 14], [15, 18], [19, 22], [21, 21], [23, 30], [27, 27], [31, 34], [35, 42], [39, 39], [43, 47]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzabcxyzabc",words = ['xyz', 'abc', 'xy', 'yz', 'ab', 'bc', 'zabc', 'xyzabc']) == [[0, 1], [0, 2], [0, 5], [1, 2], [2, 5], [3, 4], [3, 5], [4, 5], [6, 7], [6, 8], [6, 11], [7, 8], [8, 11], [9, 10], [9, 11], [10, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzabcxyzabc",words = ['xyz', 'abc', 'xy', 'yz', 'ab', 'bc', 'zabc', 'xyzabc']) == [[0, 1], [0, 2], [0, 5], [1, 2], [2, 5], [3, 4], [3, 5], [4, 5], [6, 7], [6, 8], [6, 11], [7, 8], [8, 11], [9, 10], [9, 11], [10, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "exampleexample",words = ['exa', 'ample', 'amplex', 'example', 'ple', 'le', 'ex', 'xa', 'am', 'mp', 'em', 'examp']) == [[0, 1], [0, 2], [0, 4], [0, 6], [1, 2], [2, 3], [2, 6], [3, 4], [4, 6], [5, 6], [7, 8], [7, 9], [7, 11], [7, 13], [8, 9], [9, 10], [9, 13], [10, 11], [11, 13], [12, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "exampleexample",words = ['exa', 'ample', 'amplex', 'example', 'ple', 'le', 'ex', 'xa', 'am', 'mp', 'em', 'examp']) == [[0, 1], [0, 2], [0, 4], [0, 6], [1, 2], [2, 3], [2, 6], [3, 4], [4, 6], [5, 6], [7, 8], [7, 9], [7, 11], [7, 13], [8, 9], [9, 10], [9, 13], [10, 11], [11, 13], [12, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdeabcdeabcde",words = ['abc', 'bcde', 'cde', 'de', 'eabc', 'ab', 'bcd', 'cd', 'deab', 'bcdea']) == [[0, 1], [0, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [3, 4], [3, 6], [4, 7], [5, 6], [5, 7], [6, 8], [6, 9], [6, 10], [7, 8], [7, 9], [8, 9], [8, 11], [9, 12], [10, 11], [10, 12], [11, 13], [11, 14], [12, 13], [12, 14], [13, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdeabcdeabcde",words = ['abc', 'bcde', 'cde', 'de', 'eabc', 'ab', 'bcd', 'cd', 'deab', 'bcdea']) == [[0, 1], [0, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [3, 4], [3, 6], [4, 7], [5, 6], [5, 7], [6, 8], [6, 9], [6, 10], [7, 8], [7, 9], [8, 9], [8, 11], [9, 12], [10, 11], [10, 12], [11, 13], [11, 14], [12, 13], [12, 14], [13, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdefghij",words = ['abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'abcd', 'bcde', 'cdef', 'defg', 'efgh', 'fghi', 'ghij']) == [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4], [2, 5], [3, 5], [3, 6], [4, 6], [4, 7], [5, 7], [5, 8], [6, 8], [6, 9], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdefghij",words = ['abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij', 'abcd', 'bcde', 'cdef', 'defg', 'efgh', 'fghi', 'ghij']) == [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4], [2, 5], [3, 5], [3, 6], [4, 6], [4, 7], [5, 7], [5, 8], [6, 8], [6, 9], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "complexwordsearch",words = ['comp', 'lex', 'word', 'search', 'exwo', 'wordsearch', 'plex', 'lexw', 'comple', 'plew', 'rwor']) == [[0, 3], [0, 5], [3, 6], [4, 6], [4, 7], [5, 8], [7, 10], [7, 16], [11, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "complexwordsearch",words = ['comp', 'lex', 'word', 'search', 'exwo', 'wordsearch', 'plex', 'lexw', 'comple', 'plew', 'rwor']) == [[0, 3], [0, 5], [3, 6], [4, 6], [4, 7], [5, 8], [7, 10], [7, 16], [11, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdabcdabcd",words = ['abcd', 'abc', 'ab', 'b', 'd', 'cd', 'bcd', 'bcda', 'dabc']) == [[0, 1], [0, 2], [0, 3], [1, 1], [1, 3], [1, 4], [2, 3], [3, 3], [3, 6], [4, 5], [4, 6], [4, 7], [5, 5], [5, 7], [5, 8], [6, 7], [7, 7], [7, 10], [8, 9], [8, 10], [8, 11], [9, 9], [9, 11], [10, 11], [11, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdabcdabcd",words = ['abcd', 'abc', 'ab', 'b', 'd', 'cd', 'bcd', 'bcda', 'dabc']) == [[0, 1], [0, 2], [0, 3], [1, 1], [1, 3], [1, 4], [2, 3], [3, 3], [3, 6], [4, 5], [4, 6], [4, 7], [5, 5], [5, 7], [5, 8], [6, 7], [7, 7], [7, 10], [8, 9], [8, 10], [8, 11], [9, 9], [9, 11], [10, 11], [11, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "zzzzzzzzzz",words = ['zz', 'zzz', 'zzzz', 'zzzzz', 'zzzzzz']) == [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [3, 4], [3, 5], [3, 6], [3, 7], [3, 8], [4, 5], [4, 6], [4, 7], [4, 8], [4, 9], [5, 6], [5, 7], [5, 8], [5, 9], [6, 7], [6, 8], [6, 9], [7, 8], [7, 9], [8, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "zzzzzzzzzz",words = ['zz', 'zzz', 'zzzz', 'zzzzz', 'zzzzzz']) == [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [3, 4], [3, 5], [3, 6], [3, 7], [3, 8], [4, 5], [4, 6], [4, 7], [4, 8], [4, 9], [5, 6], [5, 7], [5, 8], [5, 9], [6, 7], [6, 8], [6, 9], [7, 8], [7, 9], [8, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzxyzxyzxyz",words = ['xy', 'yz', 'zxy', 'xyzxyz', 'xyz']) == [[0, 1], [0, 2], [0, 5], [1, 2], [2, 4], [3, 4], [3, 5], [3, 8], [4, 5], [5, 7], [6, 7], [6, 8], [6, 11], [7, 8], [8, 10], [9, 10], [9, 11], [10, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzxyzxyzxyz",words = ['xy', 'yz', 'zxy', 'xyzxyz', 'xyz']) == [[0, 1], [0, 2], [0, 5], [1, 2], [2, 4], [3, 4], [3, 5], [3, 8], [4, 5], [5, 7], [6, 7], [6, 8], [6, 11], [7, 8], [8, 10], [9, 10], [9, 11], [10, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "qwertyuiopasdfghjklzxcvbnm",words = ['qwe', 'rty', 'uio', 'pas', 'dfg', 'hjk', 'lzx', 'cvb', 'nm', 'vcvn', 'ghjkl', 'poiuytrewq']) == [[0, 2], [3, 5], [6, 8], [9, 11], [12, 14], [14, 18], [15, 17], [18, 20], [21, 23], [24, 25]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "qwertyuiopasdfghjklzxcvbnm",words = ['qwe', 'rty', 'uio', 'pas', 'dfg', 'hjk', 'lzx', 'cvb', 'nm', 'vcvn', 'ghjkl', 'poiuytrewq']) == [[0, 2], [3, 5], [6, 8], [9, 11], [12, 14], [14, 18], [15, 17], [18, 20], [21, 23], [24, 25]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "nestednestnest",words = ['nest', 'sted', 'nested', 'estn', 'stedne', 'nestne', 'nestedn']) == [[0, 3], [0, 5], [0, 6], [2, 5], [2, 7], [6, 9], [6, 11], [7, 10], [10, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "nestednestnest",words = ['nest', 'sted', 'nested', 'estn', 'stedne', 'nestne', 'nestedn']) == [[0, 3], [0, 5], [0, 6], [2, 5], [2, 7], [6, 9], [6, 11], [7, 10], [10, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdabcdabcd",words = ['abcd', 'abc', 'bc', 'cd', 'd', 'ab', 'bc', 'cd', 'abcdabcd']) == [[0, 1], [0, 2], [0, 3], [0, 7], [1, 2], [2, 3], [3, 3], [4, 5], [4, 6], [4, 7], [4, 11], [5, 6], [6, 7], [7, 7], [8, 9], [8, 10], [8, 11], [9, 10], [10, 11], [11, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdabcdabcd",words = ['abcd', 'abc', 'bc', 'cd', 'd', 'ab', 'bc', 'cd', 'abcdabcd']) == [[0, 1], [0, 2], [0, 3], [0, 7], [1, 2], [2, 3], [3, 3], [4, 5], [4, 6], [4, 7], [4, 11], [5, 6], [6, 7], [7, 7], [8, 9], [8, 10], [8, 11], [9, 10], [10, 11], [11, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aabbccddeeffgg",words = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'aabb', 'bbcc', 'ccdd', 'ddeeff', 'eeffgg', 'aabbccddeeffgg']) == [[0, 1], [0, 3], [0, 13], [2, 3], [2, 5], [4, 5], [4, 7], [6, 7], [6, 11], [8, 9], [8, 13], [10, 11], [12, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aabbccddeeffgg",words = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'aabb', 'bbcc', 'ccdd', 'ddeeff', 'eeffgg', 'aabbccddeeffgg']) == [[0, 1], [0, 3], [0, 13], [2, 3], [2, 5], [4, 5], [4, 7], [6, 7], [6, 11], [8, 9], [8, 13], [10, 11], [12, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "mississippiissippi",words = ['issi', 'issip', 'is', 'ipi', 'ippi', 'missi', 'sissippi', 'ippiis']) == [[0, 4], [1, 2], [1, 4], [3, 10], [4, 5], [4, 7], [4, 8], [7, 10], [7, 12], [11, 12], [11, 14], [11, 15], [14, 17]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "mississippiissippi",words = ['issi', 'issip', 'is', 'ipi', 'ippi', 'missi', 'sissippi', 'ippiis']) == [[0, 4], [1, 2], [1, 4], [3, 10], [4, 5], [4, 7], [4, 8], [7, 10], [7, 12], [11, 12], [11, 14], [11, 15], [14, 17]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaaaaaaaaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6], [3, 7], [4, 5], [4, 6], [4, 7], [4, 8], [5, 6], [5, 7], [5, 8], [5, 9], [6, 7], [6, 8], [6, 9], [6, 10], [7, 8], [7, 9], [7, 10], [7, 11], [8, 9], [8, 10], [8, 11], [8, 12], [9, 10], [9, 11], [9, 12], [9, 13], [10, 11], [10, 12], [10, 13], [10, 14], [11, 12], [11, 13], [11, 14], [12, 13], [12, 14], [13, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaaaaaaaaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6], [3, 7], [4, 5], [4, 6], [4, 7], [4, 8], [5, 6], [5, 7], [5, 8], [5, 9], [6, 7], [6, 8], [6, 9], [6, 10], [7, 8], [7, 9], [7, 10], [7, 11], [8, 9], [8, 10], [8, 11], [8, 12], [9, 10], [9, 11], [9, 12], [9, 13], [10, 11], [10, 12], [10, 13], [10, 14], [11, 12], [11, 13], [11, 14], [12, 13], [12, 14], [13, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ana', 'na', 'ban', 'nan', 'ba', 'an']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ana', 'na', 'ban', 'nan', 'ba', 'an']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingmatches",words = ['lap', 'lapping', 'match', 'over', 'ping', 'ing']) == [[0, 3], [4, 6], [4, 10], [7, 10], [8, 10], [11, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingmatches",words = ['lap', 'lapping', 'match', 'over', 'ping', 'ing']) == [[0, 3], [4, 6], [4, 10], [7, 10], [8, 10], [11, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingoverlapping",words = ['lap', 'lapin', 'over', 'lapping', 'overlappingoverlapping']) == [[0, 3], [0, 21], [4, 6], [4, 10], [11, 14], [15, 17], [15, 21]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingoverlapping",words = ['lap', 'lapin', 'over', 'lapping', 'overlappingoverlapping']) == [[0, 3], [0, 21], [4, 6], [4, 10], [11, 14], [15, 17], [15, 21]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyxxyxyxyx",words = ['xy', 'yxy', 'xxy', 'xyx', 'yx']) == [[0, 1], [0, 2], [1, 2], [2, 4], [3, 4], [3, 5], [4, 5], [4, 6], [5, 6], [5, 7], [6, 7], [6, 8], [7, 8], [7, 9], [8, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyxxyxyxyx",words = ['xy', 'yxy', 'xxy', 'xyx', 'yx']) == [[0, 1], [0, 2], [1, 2], [2, 4], [3, 4], [3, 5], [4, 5], [4, 6], [5, 6], [5, 7], [6, 7], [6, 8], [7, 8], [7, 9], [8, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abababa",words = ['aba', 'ab', 'ba', 'baba']) == [[0, 1], [0, 2], [1, 2], [1, 4], [2, 3], [2, 4], [3, 4], [3, 6], [4, 5], [4, 6], [5, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abababa",words = ['aba', 'ab', 'ba', 'baba']) == [[0, 1], [0, 2], [1, 2], [1, 4], [2, 3], [2, 4], [3, 4], [3, 6], [4, 5], [4, 6], [5, 6]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "oneonetwothreefour",words = ['one', 'two', 'three', 'four', 'on', 'ne', 'thr', 'ee', 'fou', 'ur']) == [[0, 1], [0, 2], [1, 2], [3, 4], [3, 5], [4, 5], [6, 8], [9, 11], [9, 13], [12, 13], [14, 16], [14, 17], [16, 17]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "oneonetwothreefour",words = ['one', 'two', 'three', 'four', 'on', 'ne', 'thr', 'ee', 'fou', 'ur']) == [[0, 1], [0, 2], [1, 2], [3, 4], [3, 5], [4, 5], [6, 8], [9, 11], [9, 13], [12, 13], [14, 16], [14, 17], [16, 17]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlapoverlap",words = ['lap', 'lapo', 'over', 'overl', 'overlap', 'lapover']) == [[0, 3], [0, 4], [0, 6], [4, 6], [4, 7], [4, 10], [7, 10], [7, 11], [7, 13], [11, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlapoverlap",words = ['lap', 'lapo', 'over', 'overl', 'overlap', 'lapover']) == [[0, 3], [0, 4], [0, 6], [4, 6], [4, 7], [4, 10], [7, 10], [7, 11], [7, 13], [11, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "complexity",words = ['com', 'plex', 'ity', 'complex', 'ity', 'ex', 'ple']) == [[0, 2], [0, 6], [3, 5], [3, 6], [5, 6], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "complexity",words = ['com', 'plex', 'ity', 'complex', 'ity', 'ex', 'ple']) == [[0, 2], [0, 6], [3, 5], [3, 6], [5, 6], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "mississippiissippi",words = ['issi', 'issip', 'is', 'ipi', 'ippi', 'ississi', 'ississippi', 'issippiissi']) == [[1, 2], [1, 4], [1, 7], [1, 10], [4, 5], [4, 7], [4, 8], [4, 14], [7, 10], [11, 12], [11, 14], [11, 15], [14, 17]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "mississippiissippi",words = ['issi', 'issip', 'is', 'ipi', 'ippi', 'ississi', 'ississippi', 'issippiissi']) == [[1, 2], [1, 4], [1, 7], [1, 10], [4, 5], [4, 7], [4, 8], [4, 14], [7, 10], [11, 12], [11, 14], [11, 15], [14, 17]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "repeatedsubstring",words = ['peat', 'peatd', 'substring', 'repeated', 'peatdsub']) == [[0, 7], [2, 5], [8, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "repeatedsubstring",words = ['peat', 'peatd', 'substring', 'repeated', 'peatdsub']) == [[0, 7], [2, 5], [8, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "programmingisfunandeducational",words = ['gram', 'ing', 'fun', 'and', 'edu', 'cational']) == [[3, 6], [8, 10], [13, 15], [16, 18], [19, 21], [22, 29]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "programmingisfunandeducational",words = ['gram', 'ing', 'fun', 'and', 'edu', 'cational']) == [[3, 6], [8, 10], [13, 15], [16, 18], [19, 21], [22, 29]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xylophone",words = ['xyl', 'phone', 'loph', 'lyph', 'pho']) == [[0, 2], [2, 5], [4, 6], [4, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xylophone",words = ['xyl', 'phone', 'loph', 'lyph', 'pho']) == [[0, 2], [2, 5], [4, 6], [4, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "ababababab",words = ['aba', 'bab', 'aab', 'abb', 'bbb']) == [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "ababababab",words = ['aba', 'bab', 'aab', 'abb', 'bbb']) == [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "repeatedwordsrepeatedwords",words = ['repeat', 'repe', 'ated', 'words', 'word']) == [[0, 3], [0, 5], [4, 7], [8, 11], [8, 12], [13, 16], [13, 18], [17, 20], [21, 24], [21, 25]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "repeatedwordsrepeatedwords",words = ['repeat', 'repe', 'ated', 'words', 'word']) == [[0, 3], [0, 5], [4, 7], [8, 11], [8, 12], [13, 16], [13, 18], [17, 20], [21, 24], [21, 25]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "ababababab",words = ['aba', 'bab', 'ababa', 'abababa']) == [[0, 2], [0, 4], [0, 6], [1, 3], [2, 4], [2, 6], [2, 8], [3, 5], [4, 6], [4, 8], [5, 7], [6, 8], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "ababababab",words = ['aba', 'bab', 'ababa', 'abababa']) == [[0, 2], [0, 4], [0, 6], [1, 3], [2, 4], [2, 6], [2, 8], [3, 5], [4, 6], [4, 8], [5, 7], [6, 8], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzxyzxyzxyzxyz",words = ['xyz', 'yzx', 'zx', 'zxy', 'xyzx']) == [[0, 2], [0, 3], [1, 3], [2, 3], [2, 4], [3, 5], [3, 6], [4, 6], [5, 6], [5, 7], [6, 8], [6, 9], [7, 9], [8, 9], [8, 10], [9, 11], [9, 12], [10, 12], [11, 12], [11, 13], [12, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzxyzxyzxyzxyz",words = ['xyz', 'yzx', 'zx', 'zxy', 'xyzx']) == [[0, 2], [0, 3], [1, 3], [2, 3], [2, 4], [3, 5], [3, 6], [4, 6], [5, 6], [5, 7], [6, 8], [6, 9], [7, 9], [8, 9], [8, 10], [9, 11], [9, 12], [10, 12], [11, 12], [11, 13], [12, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlapoverlap",words = ['over', 'lap', 'lapo', 'overlap', 'verlap', 'ver', 'lapov']) == [[0, 3], [0, 6], [1, 3], [1, 6], [4, 6], [4, 7], [4, 8], [7, 10], [7, 13], [8, 10], [8, 13], [11, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlapoverlap",words = ['over', 'lap', 'lapo', 'overlap', 'verlap', 'ver', 'lapov']) == [[0, 3], [0, 6], [1, 3], [1, 6], [4, 6], [4, 7], [4, 8], [7, 10], [7, 13], [8, 10], [8, 13], [11, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ba', 'an', 'na', 'nan', 'ban', 'ana']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ba', 'an', 'na', 'nan', 'ban', 'ana']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcabcabc",words = ['abc', 'bca', 'cab', 'bcab', 'abcabc']) == [[0, 2], [0, 5], [1, 3], [1, 4], [2, 4], [3, 5], [3, 8], [4, 6], [4, 7], [5, 7], [6, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcabcabc",words = ['abc', 'bca', 'cab', 'bcab', 'abcabc']) == [[0, 2], [0, 5], [1, 3], [1, 4], [2, 4], [3, 5], [3, 8], [4, 6], [4, 7], [5, 7], [6, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "repeatedcharacters",words = ['re', 'pe', 'ep', 'eat', 'ate', 'tea', 'eated', 'ated', 'ted', 'ed', 'd']) == [[0, 1], [1, 2], [2, 3], [3, 5], [3, 7], [4, 6], [4, 7], [5, 7], [6, 7], [7, 7]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "repeatedcharacters",words = ['re', 'pe', 'ep', 'eat', 'ate', 'tea', 'eated', 'ated', 'ted', 'ed', 'd']) == [[0, 1], [1, 2], [2, 3], [3, 5], [3, 7], [4, 6], [4, 7], [5, 7], [6, 7], [7, 7]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "zzzzyyyy",words = ['zz', 'yy', 'zzz', 'yyy', 'zzyy', 'zyyy']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 5], [3, 6], [4, 5], [4, 6], [5, 6], [5, 7], [6, 7]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "zzzzyyyy",words = ['zz', 'yy', 'zzz', 'yyy', 'zzyy', 'zyyy']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 5], [3, 6], [4, 5], [4, 6], [5, 6], [5, 7], [6, 7]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaaa",words = ['a', 'aa', 'aaa', 'aaaa']) == [[0, 0], [0, 1], [0, 2], [0, 3], [1, 1], [1, 2], [1, 3], [1, 4], [2, 2], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaaa",words = ['a', 'aa', 'aaa', 'aaaa']) == [[0, 0], [0, 1], [0, 2], [0, 3], [1, 1], [1, 2], [1, 3], [1, 4], [2, 2], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thisisateststring",words = ['this', 'is', 'test', 'string', 'a', 'at', 'est', 'st', 'ting']) == [[0, 3], [2, 3], [4, 5], [6, 6], [6, 7], [7, 10], [8, 10], [9, 10], [11, 12], [11, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thisisateststring",words = ['this', 'is', 'test', 'string', 'a', 'at', 'est', 'st', 'ting']) == [[0, 3], [2, 3], [4, 5], [6, 6], [6, 7], [7, 10], [8, 10], [9, 10], [11, 12], [11, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "programmingisfun",words = ['gram', 'pro', 'fun', 'ing', 'is']) == [[0, 2], [3, 6], [8, 10], [11, 12], [13, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "programmingisfun",words = ['gram', 'pro', 'fun', 'ing', 'is']) == [[0, 2], [3, 6], [8, 10], [11, 12], [13, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "programmingisfun",words = ['gram', 'ming', 'ing', 'is', 'fun']) == [[3, 6], [7, 10], [8, 10], [11, 12], [13, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "programmingisfun",words = ['gram', 'ming', 'ing', 'is', 'fun']) == [[3, 6], [7, 10], [8, 10], [11, 12], [13, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ba', 'an', 'na', 'ban', 'anan', 'nana', 'banana']) == [[0, 1], [0, 2], [0, 5], [1, 2], [1, 4], [2, 3], [2, 5], [3, 4], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ba', 'an', 'na', 'ban', 'anan', 'nana', 'banana']) == [[0, 1], [0, 2], [0, 5], [1, 2], [1, 4], [2, 3], [2, 5], [3, 4], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaaa",words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa']) == [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 2], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaaa",words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa']) == [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [2, 2], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4], [3, 5], [4, 4], [4, 5], [5, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "hellohellohello",words = ['hel', 'ell', 'llo', 'lohe', 'ohell', 'hello']) == [[0, 2], [0, 4], [1, 3], [2, 4], [3, 6], [4, 8], [5, 7], [5, 9], [6, 8], [7, 9], [8, 11], [9, 13], [10, 12], [10, 14], [11, 13], [12, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "hellohellohello",words = ['hel', 'ell', 'llo', 'lohe', 'ohell', 'hello']) == [[0, 2], [0, 4], [1, 3], [2, 4], [3, 6], [4, 8], [5, 7], [5, 9], [6, 8], [7, 9], [8, 11], [9, 13], [10, 12], [10, 14], [11, 13], [12, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aabbccddeeff",words = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'aabb', 'bbcc', 'ccdd', 'ddeeff']) == [[0, 1], [0, 3], [2, 3], [2, 5], [4, 5], [4, 7], [6, 7], [6, 11], [8, 9], [10, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aabbccddeeff",words = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'aabb', 'bbcc', 'ccdd', 'ddeeff']) == [[0, 1], [0, 3], [2, 3], [2, 5], [4, 5], [4, 7], [6, 7], [6, 11], [8, 9], [10, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abacabadabacaba",words = ['aba', 'aca', 'ada', 'aba', 'abacaba']) == [[0, 2], [0, 6], [2, 4], [4, 6], [6, 8], [8, 10], [8, 14], [10, 12], [12, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abacabadabacaba",words = ['aba', 'aca', 'ada', 'aba', 'abacaba']) == [[0, 2], [0, 6], [2, 4], [4, 6], [6, 8], [8, 10], [8, 14], [10, 12], [12, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingwords",words = ['lap', 'lapping', 'over', 'lap', 'ping', 'word', 'words', 'lappingwo']) == [[0, 3], [4, 6], [4, 10], [4, 12], [7, 10], [11, 14], [11, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingwords",words = ['lap', 'lapping', 'over', 'lap', 'ping', 'word', 'words', 'lappingwo']) == [[0, 3], [4, 6], [4, 10], [4, 12], [7, 10], [11, 14], [11, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "overlappingoverlapping",words = ['over', 'lap', 'lapping', 'overlapping']) == [[0, 3], [0, 10], [4, 6], [4, 10], [11, 14], [11, 21], [15, 17], [15, 21]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "overlappingoverlapping",words = ['over', 'lap', 'lapping', 'overlapping']) == [[0, 3], [0, 10], [4, 6], [4, 10], [11, 14], [11, 21], [15, 17], [15, 21]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "programminginpython",words = ['gram', 'ming', 'in', 'python', 'pro']) == [[0, 2], [3, 6], [7, 10], [8, 9], [11, 12], [13, 18]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "programminginpython",words = ['gram', 'ming', 'in', 'python', 'pro']) == [[0, 2], [3, 6], [7, 10], [8, 9], [11, 12], [13, 18]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "complexity",words = ['com', 'plex', 'complex', 'ity', 'le', 'ity', 'exi']) == [[0, 2], [0, 6], [3, 6], [4, 5], [5, 7], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "complexity",words = ['com', 'plex', 'complex', 'ity', 'le', 'ity', 'exi']) == [[0, 2], [0, 6], [3, 6], [4, 5], [5, 7], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaabbbbbaaaaa",words = ['aa', 'aab', 'bbb', 'aaaaa', 'ab']) == [[0, 1], [0, 4], [1, 2], [2, 3], [3, 4], [3, 5], [4, 5], [5, 7], [6, 8], [7, 9], [10, 11], [10, 14], [11, 12], [12, 13], [13, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaabbbbbaaaaa",words = ['aa', 'aab', 'bbb', 'aaaaa', 'ab']) == [[0, 1], [0, 4], [1, 2], [2, 3], [3, 4], [3, 5], [4, 5], [5, 7], [6, 8], [7, 9], [10, 11], [10, 14], [11, 12], [12, 13], [13, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdabcdabcd",words = ['abcd', 'bcd', 'cd', 'd', 'abc', 'bc', 'c', 'dabc', 'bcdabc', 'cdabcd']) == [[0, 2], [0, 3], [1, 2], [1, 3], [1, 6], [2, 2], [2, 3], [2, 7], [3, 3], [3, 6], [4, 6], [4, 7], [5, 6], [5, 7], [5, 10], [6, 6], [6, 7], [6, 11], [7, 7], [7, 10], [8, 10], [8, 11], [9, 10], [9, 11], [10, 10], [10, 11], [11, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdabcdabcd",words = ['abcd', 'bcd', 'cd', 'd', 'abc', 'bc', 'c', 'dabc', 'bcdabc', 'cdabcd']) == [[0, 2], [0, 3], [1, 2], [1, 3], [1, 6], [2, 2], [2, 3], [2, 7], [3, 3], [3, 6], [4, 6], [4, 7], [5, 6], [5, 7], [5, 10], [6, 6], [6, 7], [6, 11], [7, 7], [7, 10], [8, 10], [8, 11], [9, 10], [9, 11], [10, 10], [10, 11], [11, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "ababababab",words = ['aba', 'bab', 'abab', 'baba', 'ab', 'ba', 'ababab', 'bababa']) == [[0, 1], [0, 2], [0, 3], [0, 5], [1, 2], [1, 3], [1, 4], [1, 6], [2, 3], [2, 4], [2, 5], [2, 7], [3, 4], [3, 5], [3, 6], [3, 8], [4, 5], [4, 6], [4, 7], [4, 9], [5, 6], [5, 7], [5, 8], [6, 7], [6, 8], [6, 9], [7, 8], [7, 9], [8, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "ababababab",words = ['aba', 'bab', 'abab', 'baba', 'ab', 'ba', 'ababab', 'bababa']) == [[0, 1], [0, 2], [0, 3], [0, 5], [1, 2], [1, 3], [1, 4], [1, 6], [2, 3], [2, 4], [2, 5], [2, 7], [3, 4], [3, 5], [3, 6], [3, 8], [4, 5], [4, 6], [4, 7], [4, 9], [5, 6], [5, 7], [5, 8], [6, 7], [6, 8], [6, 9], [7, 8], [7, 9], [8, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aquickbrownfoxjumpsoverthelazydog",words = ['quick', 'brown', 'fox', 'jump', 'lazy', 'dog', 'the', 'over']) == [[1, 5], [6, 10], [11, 13], [14, 17], [19, 22], [23, 25], [26, 29], [30, 32]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aquickbrownfoxjumpsoverthelazydog",words = ['quick', 'brown', 'fox', 'jump', 'lazy', 'dog', 'the', 'over']) == [[1, 5], [6, 10], [11, 13], [14, 17], [19, 22], [23, 25], [26, 29], [30, 32]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "mississippimississippi",words = ['missi', 'issis', 'ssis', 'sis', 'is', 'i', 'ssissippi', 'mississippi']) == [[0, 4], [0, 10], [1, 1], [1, 2], [1, 5], [2, 5], [2, 10], [3, 5], [4, 4], [4, 5], [7, 7], [10, 10], [11, 15], [11, 21], [12, 12], [12, 13], [12, 16], [13, 16], [13, 21], [14, 16], [15, 15], [15, 16], [18, 18], [21, 21]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "mississippimississippi",words = ['missi', 'issis', 'ssis', 'sis', 'is', 'i', 'ssissippi', 'mississippi']) == [[0, 4], [0, 10], [1, 1], [1, 2], [1, 5], [2, 5], [2, 10], [3, 5], [4, 4], [4, 5], [7, 7], [10, 10], [11, 15], [11, 21], [12, 12], [12, 13], [12, 16], [13, 16], [13, 21], [14, 16], [15, 15], [15, 16], [18, 18], [21, 21]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ba', 'ana', 'an', 'na', 'banana', 'nanan']) == [[0, 1], [0, 5], [1, 2], [1, 3], [2, 3], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ba', 'ana', 'an', 'na', 'banana', 'nanan']) == [[0, 1], [0, 5], [1, 2], [1, 3], [2, 3], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "complexwordsearch",words = ['complex', 'word', 'search', 'wordse', 'arch', 'ompl', 'lex']) == [[0, 6], [1, 4], [4, 6], [7, 10], [7, 12], [11, 16], [13, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "complexwordsearch",words = ['complex', 'word', 'search', 'wordse', 'arch', 'ompl', 'lex']) == [[0, 6], [1, 4], [4, 6], [7, 10], [7, 12], [11, 16], [13, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdefghijabcdefghij",words = ['abc', 'cde', 'efg', 'fgh', 'ghij', 'xyz']) == [[0, 2], [2, 4], [4, 6], [5, 7], [6, 9], [10, 12], [12, 14], [14, 16], [15, 17], [16, 19]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdefghijabcdefghij",words = ['abc', 'cde', 'efg', 'fgh', 'ghij', 'xyz']) == [[0, 2], [2, 4], [4, 6], [5, 7], [6, 9], [10, 12], [12, 14], [14, 16], [15, 17], [16, 19]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "repeatedrepeated",words = ['rep', 'eat', 'ated', 'repea', 'eatrep', 'peatrep', 'eatpeat', 'atedrep', 'repated', 'eatated', 'peatated']) == [[0, 2], [0, 4], [3, 5], [4, 7], [4, 10], [8, 10], [8, 12], [11, 13], [12, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "repeatedrepeated",words = ['rep', 'eat', 'ated', 'repea', 'eatrep', 'peatrep', 'eatpeat', 'atedrep', 'repated', 'eatated', 'peatated']) == [[0, 2], [0, 4], [3, 5], [4, 7], [4, 10], [8, 10], [8, 12], [11, 13], [12, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "ababababababab",words = ['aba', 'bab', 'aab', 'baba', 'abab']) == [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4], [2, 5], [3, 5], [3, 6], [4, 6], [4, 7], [5, 7], [5, 8], [6, 8], [6, 9], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [9, 12], [10, 12], [10, 13], [11, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "ababababababab",words = ['aba', 'bab', 'aab', 'baba', 'abab']) == [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4], [2, 5], [3, 5], [3, 6], [4, 6], [4, 7], [5, 7], [5, 8], [6, 8], [6, 9], [7, 9], [7, 10], [8, 10], [8, 11], [9, 11], [9, 12], [10, 12], [10, 13], [11, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "bananaananabananana",words = ['ana', 'nana', 'anana', 'banana', 'na', 'a']) == [[0, 5], [1, 1], [1, 3], [1, 5], [2, 3], [2, 5], [3, 3], [3, 5], [4, 5], [5, 5], [6, 6], [6, 8], [6, 10], [7, 8], [7, 10], [8, 8], [8, 10], [9, 10], [10, 10], [11, 16], [12, 12], [12, 14], [12, 16], [13, 14], [13, 16], [14, 14], [14, 16], [14, 18], [15, 16], [15, 18], [16, 16], [16, 18], [17, 18], [18, 18]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "bananaananabananana",words = ['ana', 'nana', 'anana', 'banana', 'na', 'a']) == [[0, 5], [1, 1], [1, 3], [1, 5], [2, 3], [2, 5], [3, 3], [3, 5], [4, 5], [5, 5], [6, 6], [6, 8], [6, 10], [7, 8], [7, 10], [8, 8], [8, 10], [9, 10], [10, 10], [11, 16], [12, 12], [12, 14], [12, 16], [13, 14], [13, 16], [14, 14], [14, 16], [14, 18], [15, 16], [15, 18], [16, 16], [16, 18], [17, 18], [18, 18]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ba', 'na', 'ban', 'nana', 'an']) == [[0, 1], [0, 2], [1, 2], [2, 3], [2, 5], [3, 4], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ba', 'na', 'ban', 'nana', 'an']) == [[0, 1], [0, 2], [1, 2], [2, 3], [2, 5], [3, 4], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abracadabra",words = ['abra', 'cad', 'bra', 'ra']) == [[0, 3], [1, 3], [2, 3], [4, 6], [7, 10], [8, 10], [9, 10]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abracadabra",words = ['abra', 'cad', 'bra', 'ra']) == [[0, 3], [1, 3], [2, 3], [4, 6], [7, 10], [8, 10], [9, 10]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdefghij",words = ['abc', 'def', 'ghi', 'j', 'abcdefghij', 'efg', 'hij']) == [[0, 2], [0, 9], [3, 5], [4, 6], [6, 8], [7, 9], [9, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdefghij",words = ['abc', 'def', 'ghi', 'j', 'abcdefghij', 'efg', 'hij']) == [[0, 2], [0, 9], [3, 5], [4, 6], [6, 8], [7, 9], [9, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "repeatedrepeatedstring",words = ['repeat', 'repea', 'repeated', 'peat', 'string', 'edstr', 'ing']) == [[0, 4], [0, 5], [0, 7], [2, 5], [8, 12], [8, 13], [8, 15], [10, 13], [14, 18], [16, 21], [19, 21]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "repeatedrepeatedstring",words = ['repeat', 'repea', 'repeated', 'peat', 'string', 'edstr', 'ing']) == [[0, 4], [0, 5], [0, 7], [2, 5], [8, 12], [8, 13], [8, 15], [10, 13], [14, 18], [16, 21], [19, 21]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "xyzxyzxyz",words = ['xy', 'yz', 'zy', 'xyz', 'zxy']) == [[0, 1], [0, 2], [1, 2], [2, 4], [3, 4], [3, 5], [4, 5], [5, 7], [6, 7], [6, 8], [7, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "xyzxyzxyz",words = ['xy', 'yz', 'zy', 'xyz', 'zxy']) == [[0, 1], [0, 2], [1, 2], [2, 4], [3, 4], [3, 5], [4, 5], [5, 7], [6, 7], [6, 8], [7, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "banana",words = ['ana', 'an', 'ba', 'na', 'ban', 'nan']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "banana",words = ['ana', 'an', 'ba', 'na', 'ban', 'nan']) == [[0, 1], [0, 2], [1, 2], [1, 3], [2, 3], [2, 4], [3, 4], [3, 5], [4, 5]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "findthesubstrings",words = ['find', 'the', 'substr', 'string', 'ings', 'thesub', 'substrings', 'sub', 'strin', 'ting']) == [[0, 3], [4, 6], [4, 9], [7, 9], [7, 12], [7, 16], [10, 14], [10, 15], [13, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "findthesubstrings",words = ['find', 'the', 'substr', 'string', 'ings', 'thesub', 'substrings', 'sub', 'strin', 'ting']) == [[0, 3], [4, 6], [4, 9], [7, 9], [7, 12], [7, 16], [10, 14], [10, 15], [13, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "thisisaverylongstringwithmanypatterns",words = ['is', 'long', 'with', 'many', 'patterns', 'string', 'this', 'ver', 'ern']) == [[0, 3], [2, 3], [4, 5], [7, 9], [11, 14], [15, 20], [21, 24], [25, 28], [29, 36], [33, 35]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "thisisaverylongstringwithmanypatterns",words = ['is', 'long', 'with', 'many', 'patterns', 'string', 'this', 'ver', 'ern']) == [[0, 3], [2, 3], [4, 5], [7, 9], [11, 14], [15, 20], [21, 24], [25, 28], [29, 36], [33, 35]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "aaaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6], [4, 5], [4, 6], [5, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "aaaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6], [4, 5], [4, 6], [5, 6]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(text = "abcdabcdabcd",words = ['abcd', 'bcda', 'cdab', 'dabc', 'abcdabcd']) == [[0, 3], [0, 7], [1, 4], [2, 5], [3, 6], [4, 7], [4, 11], [5, 8], [6, 9], [7, 10], [8, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(text = "abcdabcdabcd",words = ['abcd', 'bcda', 'cdab', 'dabc', 'abcdabcd']) == [[0, 3], [0, 7], [1, 4], [2, 5], [3, 6], [4, 7], [4, 11], [5, 8], [6, 9], [7, 10], [8, 11]]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(text = "ababa",words = ['aba', 'ab']) == [[0, 1], [0, 2], [2, 3], [2, 4]]
@@ -91,3 +811,5 @@ def check(candidate):
     assert candidate(text = "thisisaverylongstringwithmanypatterns",words = ['is', 'long', 'with', 'many', 'patterns', 'string', 'this', 'ver', 'ern']) == [[0, 3], [2, 3], [4, 5], [7, 9], [11, 14], [15, 20], [21, 24], [25, 28], [29, 36], [33, 35]]
     assert candidate(text = "aaaaaaa",words = ['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa']) == [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [2, 3], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6], [4, 5], [4, 6], [5, 6]]
     assert candidate(text = "abcdabcdabcd",words = ['abcd', 'bcda', 'cdab', 'dabc', 'abcdabcd']) == [[0, 3], [0, 7], [1, 4], [2, 5], [3, 6], [4, 7], [4, 11], [5, 8], [6, 9], [7, 10], [8, 11]]
+
+

@@ -1,5 +1,725 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2],queries = [[0, 3]]) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2],queries = [[0, 3]]) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 1], [3, 3], [4, 1]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 1], [3, 3], [4, 1]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3]]) == [0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3]]) == [0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [4, 2], [8, 3]]) == [0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [4, 2], [8, 3]]) == [0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 3, 1, 3],queries = [[0, 2], [1, 1], [2, 3], [3, 1], [4, 3]]) == [-1, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 3, 1, 3],queries = [[0, 2], [1, 1], [2, 3], [3, 1], [4, 3]]) == [-1, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [2, 3]]) == [-1, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [2, 3]]) == [-1, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3],queries = [[0, 3], [5, 1], [10, 2]]) == [10, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3],queries = [[0, 3], [5, 1], [10, 2]]) == [10, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1],queries = [[0, 2], [1, 3], [2, 2], [3, 3], [4, 3]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1],queries = [[0, 2], [1, 3], [2, 2], [3, 3], [4, 3]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 3, 3, 3],queries = [[0, 3], [1, 3], [2, 3], [3, 3], [4, 3]]) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 3, 3, 3],queries = [[0, 3], [1, 3], [2, 3], [3, 3], [4, 3]]) == [0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 1, 1, 3, 2, 2, 1, 3, 1],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 3], [5, 2], [6, 1], [7, 2], [8, 3], [9, 1], [10, 3]]) == [1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 1, 1, 3, 2, 2, 1, 3, 1],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 3], [5, 2], [6, 1], [7, 2], [8, 3], [9, 1], [10, 3]]) == [1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 2], [3, 1], [4, 3]]) == [-1, -1, 0, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 2], [3, 1], [4, 3]]) == [-1, -1, 0, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1],queries = [[2, 2], [3, 3], [4, 1]]) == [-1, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1],queries = [[2, 2], [3, 3], [4, 1]]) == [-1, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 2, 1, 3, 2, 2, 3, 3],queries = [[1, 3], [2, 2], [6, 1]]) == [3, 0, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 2, 1, 3, 2, 2, 3, 3],queries = [[1, 3], [2, 2], [6, 1]]) == [3, 0, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1],queries = [[0, 1], [1, 2], [2, 3]]) == [0, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1],queries = [[0, 1], [1, 2], [2, 3]]) == [0, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 3, 3, 2, 1, 1, 1, 2, 3, 3, 2, 1, 2, 1, 3, 3, 3, 2, 1, 1, 2, 3, 3, 2, 1, 2, 1, 3],queries = [[0, 3], [1, 1], [2, 2], [10, 3], [15, 1], [20, 2], [29, 3]]) == [2, 1, 1, 0, 0, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 3, 3, 2, 1, 1, 1, 2, 3, 3, 2, 1, 2, 1, 3, 3, 3, 2, 1, 1, 2, 3, 3, 2, 1, 2, 1, 3],queries = [[0, 3], [1, 1], [2, 2], [10, 3], [15, 1], [20, 2], [29, 3]]) == [2, 1, 1, 0, 0, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3],queries = [[4, 3], [11, 1], [18, 2]]) == [4, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3],queries = [[4, 3], [11, 1], [18, 2]]) == [4, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1],queries = [[1, 2], [3, 3], [5, 1], [7, 2]]) == [2, 3, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1],queries = [[1, 2], [3, 3], [5, 1], [7, 2]]) == [2, 3, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 2, 1, 3, 3, 1, 2, 2, 1, 3, 3, 1, 2, 2, 1, 3, 3],queries = [[0, 3], [1, 3], [2, 1], [3, 2], [4, 3], [5, 1], [6, 2], [7, 3], [8, 1], [9, 2], [10, 3], [11, 1], [12, 2], [13, 3], [14, 1], [15, 2], [16, 3]]) == [4, 3, 1, 1, 0, 1, 1, 2, 1, 1, 0, 1, 1, 2, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 2, 1, 3, 3, 1, 2, 2, 1, 3, 3, 1, 2, 2, 1, 3, 3],queries = [[0, 3], [1, 3], [2, 1], [3, 2], [4, 3], [5, 1], [6, 2], [7, 3], [8, 1], [9, 2], [10, 3], [11, 1], [12, 2], [13, 3], [14, 1], [15, 2], [16, 3]]) == [4, 3, 1, 1, 0, 1, 1, 2, 1, 1, 0, 1, 1, 2, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[1, 3], [6, 2], [10, 1], [22, 3]]) == [0, 1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[1, 3], [6, 2], [10, 1], [22, 3]]) == [0, 1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 1], [13, 3], [14, 1]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [2, 1], [13, 3], [14, 1]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [30, 1], [31, 2], [32, 3]]) == [1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [30, 1], [31, 2], [32, 3]]) == [1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 3, 3, 2, 1, 1, 1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3],queries = [[0, 2], [10, 1], [15, 3], [18, 2]]) == [1, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 3, 3, 2, 1, 1, 1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3],queries = [[0, 2], [10, 1], [15, 3], [18, 2]]) == [1, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 2, 3, 1, 3, 3, 1, 2, 1, 3],queries = [[5, 3], [8, 2], [3, 1], [10, 3]]) == [1, 1, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 2, 3, 1, 3, 3, 1, 2, 1, 3],queries = [[5, 3], [8, 2], [3, 1], [10, 3]]) == [1, 1, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 3, 1, 3, 1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 3], [5, 2], [6, 1], [7, 3], [19, 2]]) == [2, 1, 1, 1, 1, 0, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 3, 1, 3, 1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 3], [5, 2], [6, 1], [7, 3], [19, 2]]) == [2, 1, 1, 1, 1, 0, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 1, 1, 3, 3, 3, 3],queries = [[4, 1], [3, 2], [5, 3], [8, 3], [0, 2]]) == [0, 0, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 1, 1, 3, 3, 3, 3],queries = [[4, 1], [3, 2], [5, 3], [8, 3], [0, 2]]) == [0, 0, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [1, 2], [2, 1], [3, 3], [4, 2], [5, 1], [6, 3], [19, 2]]) == [2, 0, 1, 1, 0, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [1, 2], [2, 1], [3, 3], [4, 2], [5, 1], [6, 3], [19, 2]]) == [2, 0, 1, 1, 0, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 3, 1, 2, 1, 3, 1, 3, 2, 3, 1, 2, 3],queries = [[5, 3], [10, 1], [0, 2]]) == [0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 3, 1, 2, 1, 3, 1, 3, 2, 3, 1, 2, 3],queries = [[5, 3], [10, 1], [0, 2]]) == [0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 2, 3, 1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[5, 3], [10, 1], [15, 2], [2, 1], [17, 3]]) == [2, 1, 1, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 2, 3, 1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[5, 3], [10, 1], [15, 2], [2, 1], [17, 3]]) == [2, 1, 1, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [5, 3], [7, 2], [11, 1], [2, 3]]) == [0, 0, 0, 2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [5, 3], [7, 2], [11, 1], [2, 3]]) == [0, 0, 0, 2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],queries = [[0, 3], [2, 1], [6, 2], [18, 1]]) == [-1, 0, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],queries = [[0, 3], [2, 1], [6, 2], [18, 1]]) == [-1, 0, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],queries = [[0, 1], [10, 3], [20, 2], [29, 1]]) == [29, -1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],queries = [[0, 1], [10, 3], [20, 2], [29, 1]]) == [29, -1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[0, 2], [1, 1], [2, 3], [13, 1], [14, 2]]) == [-1, 0, 0, 0, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[0, 2], [1, 1], [2, 3], [13, 1], [14, 2]]) == [-1, 0, 0, 0, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 3, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[0, 1], [3, 2], [6, 3], [7, 1], [11, 3]]) == [0, 0, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 3, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[0, 1], [3, 2], [6, 3], [7, 1], [11, 3]]) == [0, 0, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 3], [4, 2], [5, 1], [6, 1], [7, 2], [8, 3], [9, 3], [10, 2], [11, 1], [12, 1], [13, 2], [14, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 3], [4, 2], [5, 1], [6, 1], [7, 2], [8, 3], [9, 3], [10, 2], [11, 1], [12, 1], [13, 2], [14, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [11, 2], [12, 3]]) == [1, 1, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [11, 2], [12, 3]]) == [1, 1, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [5, 3], [15, 2], [19, 3]]) == [-1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [5, 3], [15, 2], [19, 3]]) == [-1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 2, 1, 3, 3, 1, 3, 1, 1, 2, 3, 2, 1, 3, 3, 2, 1],queries = [[0, 1], [2, 2], [4, 3], [11, 1], [15, 3], [17, 2]]) == [3, 0, 0, 2, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 2, 1, 3, 3, 1, 3, 1, 1, 2, 3, 2, 1, 3, 3, 2, 1],queries = [[0, 1], [2, 2], [4, 3], [11, 1], [15, 3], [17, 2]]) == [3, 0, 0, 2, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[2, 3], [9, 1], [16, 2], [19, 3]]) == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[2, 3], [9, 1], [16, 2], [19, 3]]) == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 1], [4, 2], [7, 3], [10, 1], [14, 2], [17, 3], [1, 1]]) == [0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 1], [4, 2], [7, 3], [10, 1], [14, 2], [17, 3], [1, 1]]) == [0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3, 1, 2, 3, 2, 1, 3, 1, 2, 3, 2, 1, 3, 1],queries = [[0, 3], [9, 2], [17, 1]]) == [2, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3, 1, 2, 3, 2, 1, 3, 1, 2, 3, 2, 1, 3, 1],queries = [[0, 3], [9, 2], [17, 1]]) == [2, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3], [9, 1], [10, 2], [11, 3], [12, 1], [13, 2], [14, 3], [15, 1], [16, 2], [17, 3], [18, 1], [19, 2], [20, 3], [21, 1], [22, 2], [23, 3]]) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3], [9, 1], [10, 2], [11, 3], [12, 1], [13, 2], [14, 3], [15, 1], [16, 2], [17, 3], [18, 1], [19, 2], [20, 3], [21, 1], [22, 2], [23, 3]]) == [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3],queries = [[0, 1], [4, 2], [8, 3], [12, 1], [16, 2], [20, 3]]) == [0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3],queries = [[0, 1], [4, 2], [8, 3], [12, 1], [16, 2], [20, 3]]) == [0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[1, 2], [3, 1], [15, 3], [19, 2]]) == [-1, 1, 0, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[1, 2], [3, 1], [15, 3], [19, 2]]) == [-1, 1, 0, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 2], [19, 1], [22, 3]]) == [1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 2], [19, 1], [22, 3]]) == [1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[1, 3], [4, 1], [7, 2], [10, 3], [13, 1], [16, 2], [19, 3], [22, 1], [25, 2], [28, 3], [31, 1], [34, 2], [37, 3]]) == [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[1, 3], [4, 1], [7, 2], [10, 3], [13, 1], [16, 2], [19, 3], [22, 1], [25, 2], [28, 3], [31, 1], [34, 2], [37, 3]]) == [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [1, 3], [2, 2], [13, 3], [14, 2]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [1, 3], [2, 2], [13, 3], [14, 2]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 1], [4, 2], [7, 3], [10, 1], [13, 2], [16, 3], [19, 1], [22, 2], [25, 3]]) == [1, 0, 1, 1, 0, 1, 1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 1], [4, 2], [7, 3], [10, 1], [13, 2], [16, 3], [19, 1], [22, 2], [25, 3]]) == [1, 0, 1, 1, 0, 1, 1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3]]) == [0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3]]) == [0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1, 1],queries = [[1, 2], [4, 3], [7, 1]]) == [2, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1, 1],queries = [[1, 2], [4, 3], [7, 1]]) == [2, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3], [2, 1]]) == [0, 0, 0, 1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3], [2, 1]]) == [0, 0, 0, 1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[2, 1], [5, 2], [8, 3], [11, 1], [14, 2], [17, 3], [20, 1], [23, 2], [26, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[2, 1], [5, 2], [8, 3], [11, 1], [14, 2], [17, 3], [20, 1], [23, 2], [26, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 3], [13, 1], [6, 2]]) == [0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 3], [13, 1], [6, 2]]) == [0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 1, 1, 1, 3, 3, 3, 3, 3, 3, 1, 1, 1, 2, 2, 2],queries = [[0, 3], [5, 1], [11, 3], [15, 2], [17, 2], [8, 3]]) == [6, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 1, 1, 1, 3, 3, 3, 3, 3, 3, 1, 1, 1, 2, 2, 2],queries = [[0, 3], [5, 1], [11, 3], [15, 2], [17, 2], [8, 3]]) == [6, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2],queries = [[0, 1], [5, 2], [10, 3], [15, 1], [19, 2]]) == [2, 1, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2],queries = [[0, 1], [5, 2], [10, 3], [15, 1], [19, 2]]) == [2, 1, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 2, 3, 1, 2, 3, 2, 3, 3, 1, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[5, 1], [7, 2], [12, 3], [20, 1]]) == [1, 0, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 2, 3, 1, 2, 3, 2, 3, 3, 1, 1, 1, 2, 2, 3, 3, 1, 1, 2, 2, 3, 3],queries = [[5, 1], [7, 2], [12, 3], [20, 1]]) == [1, 0, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3],queries = [[0, 2], [2, 3], [7, 1], [12, 2]]) == [5, 8, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3],queries = [[0, 2], [2, 3], [7, 1], [12, 2]]) == [5, 8, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 1], [3, 2], [5, 3], [7, 1], [9, 2], [11, 3]]) == [1, 1, 1, 1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[1, 1], [3, 2], [5, 3], [7, 1], [9, 2], [11, 3]]) == [1, 1, 1, 1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [10, 2], [15, 3]]) == [0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [10, 2], [15, 3]]) == [0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[2, 1], [13, 3], [20, 2]]) == [1, 1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],queries = [[2, 1], [13, 3], [20, 2]]) == [1, 1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3],queries = [[3, 1], [11, 2], [7, 3]]) == [1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3],queries = [[3, 1], [11, 2], [7, 3]]) == [1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [5, 1], [10, 2], [15, 3], [20, 1]]) == [2, 1, 0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [5, 1], [10, 2], [15, 3], [20, 1]]) == [2, 1, 0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3, 2, 1, 3],queries = [[0, 2], [4, 3], [8, 1], [10, 2], [12, 3], [14, 1]]) == [1, 1, 1, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3, 2, 1, 3],queries = [[0, 2], [4, 3], [8, 1], [10, 2], [12, 3], [14, 1]]) == [1, 1, 1, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [5, 1], [9, 2], [11, 1]]) == [2, 1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [5, 1], [9, 2], [11, 1]]) == [2, 1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3],queries = [[0, 2], [3, 1], [5, 3], [11, 1]]) == [3, 1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3],queries = [[0, 2], [3, 1], [5, 3], [11, 1]]) == [3, 1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[2, 3], [5, 1], [10, 2], [15, 3], [20, 1], [25, 2], [30, 3], [35, 1], [40, 2]]) == [1, 1, 1, 0, 1, 1, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[2, 3], [5, 1], [10, 2], [15, 3], [20, 1], [25, 2], [30, 3], [35, 1], [40, 2]]) == [1, 1, 1, 0, 1, 1, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3],queries = [[0, 2], [1, 1], [5, 3], [8, 2], [11, 1]]) == [0, 0, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3],queries = [[0, 2], [1, 1], [5, 3], [8, 2], [11, 1]]) == [0, 0, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 1], [5, 2], [10, 3], [15, 1], [20, 2]]) == [2, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 1], [5, 2], [10, 3], [15, 1], [20, 2]]) == [2, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [10, 2], [18, 3]]) == [-1, -1, 0, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],queries = [[0, 1], [1, 3], [10, 2], [18, 3]]) == [-1, -1, 0, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3], [9, 1], [10, 2], [11, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [7, 2], [8, 3], [9, 1], [10, 2], [11, 3]]) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 1, 3, 1, 2, 1, 3, 2, 1],queries = [[1, 3], [4, 1], [7, 2], [10, 3], [13, 1], [16, 2], [19, 1]]) == [2, 0, 1, 1, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 1, 3, 1, 2, 1, 3, 2, 1],queries = [[1, 3], [4, 1], [7, 2], [10, 3], [13, 1], [16, 2], [19, 1]]) == [2, 0, 1, 1, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [14, 1], [6, 2], [9, 3], [13, 1]]) == [2, 2, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[0, 3], [14, 1], [6, 2], [9, 3], [13, 1]]) == [2, 2, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 3], [14, 1], [8, 2], [17, 3]]) == [6, 3, 3, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 3], [14, 1], [8, 2], [17, 3]]) == [6, 3, 3, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[0, 2], [1, 3], [10, 1], [19, 3], [29, 2]]) == [2, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1],queries = [[0, 2], [1, 3], [10, 1], [19, 3], [29, 2]]) == [2, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 3, 1, 3, 1, 2, 3, 1, 2, 3, 2, 3, 1, 2, 1, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[5, 1], [10, 2], [15, 3], [20, 1], [25, 2]]) == [1, 0, 0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 3, 1, 3, 1, 2, 3, 1, 2, 3, 2, 3, 1, 2, 1, 3, 2, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[5, 1], [10, 2], [15, 3], [20, 1], [25, 2]]) == [1, 0, 0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 2, 3, 1, 1, 2, 3, 3, 1],queries = [[0, 3], [1, 1], [4, 2], [9, 2]]) == [3, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 2, 3, 1, 1, 2, 3, 3, 1],queries = [[0, 3], [1, 1], [4, 2], [9, 2]]) == [3, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 3], [2, 1], [4, 2], [6, 3], [8, 1]]) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 3], [2, 1], [4, 2], [6, 3], [8, 1]]) == [0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 2, 1, 2, 1, 3, 3, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 3, 3],queries = [[1, 2], [3, 1], [15, 3], [19, 2], [10, 1]]) == [1, 0, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 2, 1, 2, 1, 3, 3, 3, 2, 2, 3, 1, 1, 1, 1, 2, 2, 3, 3],queries = [[1, 2], [3, 1], [15, 3], [19, 2], [10, 1]]) == [1, 0, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1],queries = [[0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2], [9, 2], [10, 2], [11, 2], [12, 2], [13, 2], [14, 2]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1],queries = [[0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2], [9, 2], [10, 2], [11, 2], [12, 2], [13, 2], [14, 2]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [5, 3], [10, 1], [15, 2], [20, 3], [25, 1], [30, 2], [35, 3]]) == [-1, -1, 0, -1, -1, 0, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 2], [5, 3], [10, 1], [15, 2], [20, 3], [25, 1], [30, 2], [35, 3]]) == [-1, -1, 0, -1, -1, 0, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [9, 3], [10, 1], [11, 2], [18, 3]]) == [-1, -1, 0, -1, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [9, 3], [10, 1], [11, 2], [18, 3]]) == [-1, -1, 0, -1, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3, 3, 2, 1],queries = [[2, 3], [8, 1], [12, 2]]) == [0, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 3, 3, 2, 1, 1, 2, 3, 2, 1, 3, 3, 2, 1],queries = [[2, 3], [8, 1], [12, 2]]) == [0, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 1, 1, 3, 3, 2, 2, 1, 1, 3, 3, 2, 2, 1, 1, 3, 3],queries = [[1, 1], [3, 2], [5, 3], [7, 1], [9, 2], [11, 3], [13, 1], [15, 2], [17, 3]]) == [1, 2, 0, 1, 2, 0, 1, 2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 1, 1, 3, 3, 2, 2, 1, 1, 3, 3, 2, 2, 1, 1, 3, 3],queries = [[1, 1], [3, 2], [5, 3], [7, 1], [9, 2], [11, 3], [13, 1], [15, 2], [17, 3]]) == [1, 2, 0, 1, 2, 0, 1, 2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 2, 1, 3, 2, 1, 3, 2, 1, 3],queries = [[0, 3], [1, 2], [4, 1], [5, 3], [8, 2], [9, 1]]) == [3, 0, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 2, 1, 3, 2, 1, 3, 2, 1, 3],queries = [[0, 3], [1, 2], [4, 1], [5, 3], [8, 2], [9, 1]]) == [3, 0, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 2], [7, 1], [15, 3], [1, 3], [14, 2]]) == [3, 2, 0, 5, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2, 3, 3, 3],queries = [[0, 2], [7, 1], [15, 3], [1, 3], [14, 2]]) == [3, 2, 0, 5, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 2, 1, 1, 2, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[2, 2], [4, 3], [8, 1], [15, 2]]) == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 2, 1, 1, 2, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],queries = [[2, 2], [4, 3], [8, 1], [15, 2]]) == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [1, 3, 2, 1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [19, 3]]) == [0, 1, 1, 0, 0, 0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [1, 3, 2, 1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [19, 3]]) == [0, 1, 1, 0, 0, 0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [2, 1], [13, 2], [14, 1]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [2, 1], [13, 2], [14, 1]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(colors = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3],queries = [[0, 1], [4, 2], [5, 3], [6, 1], [10, 2], [12, 3]]) == [5, 0, 5, 0, 6, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(colors = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3],queries = [[0, 1], [4, 2], [5, 3], [6, 1], [10, 2], [12, 3]]) == [5, 0, 5, 0, 6, 0]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(colors = [1, 2],queries = [[0, 3]]) == [-1]
@@ -91,3 +811,5 @@ def check(candidate):
     assert candidate(colors = [1, 3, 2, 1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],queries = [[0, 1], [1, 2], [2, 3], [3, 1], [4, 2], [5, 3], [6, 1], [19, 3]]) == [0, 1, 1, 0, 0, 0, 1, 2]
     assert candidate(colors = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],queries = [[0, 1], [1, 2], [2, 1], [13, 2], [14, 1]]) == [-1, -1, -1, -1, -1]
     assert candidate(colors = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3],queries = [[0, 1], [4, 2], [5, 3], [6, 1], [10, 2], [12, 3]]) == [5, 0, 5, 0, 6, 0]
+
+

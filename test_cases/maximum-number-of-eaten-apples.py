@@ -1,5 +1,589 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0],days = [0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0],days = [0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 3, 2],days = [3, 5, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 3, 2],days = [3, 5, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 5, 5, 5, 5],days = [1, 2, 3, 4, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 5, 5, 5, 5],days = [1, 2, 3, 4, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 5, 5, 5, 5],days = [1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 5, 5, 5, 5],days = [1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 5, 0, 6],days = [0, 0, 0, 5, 0, 4]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 5, 0, 6],days = [0, 0, 0, 5, 0, 4]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 4, 3, 2, 1],days = [1, 2, 3, 4, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 4, 3, 2, 1],days = [1, 2, 3, 4, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 2, 3, 5, 2],days = [3, 2, 1, 4, 2]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 2, 3, 5, 2],days = [3, 2, 1, 4, 2]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 0, 0, 0, 0, 2],days = [3, 0, 0, 0, 0, 2]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 0, 0, 0, 0, 2],days = [3, 0, 0, 0, 0, 2]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 1, 10],days = [2, 10, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 1, 10],days = [2, 10, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [4, 2, 2, 3, 1],days = [3, 2, 10, 1, 2]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [4, 2, 2, 3, 1],days = [3, 2, 10, 1, 2]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [20, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [20, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 9, 8, 0, 0, 0, 0, 0, 0, 0, 0]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 9, 8, 0, 0, 0, 0, 0, 0, 0, 0]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 20, 30, 40, 50],days = [1, 2, 3, 4, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 20, 30, 40, 50],days = [1, 2, 3, 4, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 2, 1, 0, 4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 0],days = [5, 4, 3, 0, 4, 3, 2, 1, 0, 4, 3, 2, 1, 0, 5]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 2, 1, 0, 4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 0],days = [5, 4, 3, 0, 4, 3, 2, 1, 0, 4, 3, 2, 1, 0, 5]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 20, 0, 30, 0, 40, 0, 50, 0],days = [5, 0, 4, 0, 3, 0, 2, 0, 1, 0]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 20, 0, 30, 0, 40, 0, 50, 0],days = [5, 0, 4, 0, 3, 0, 2, 0, 1, 0]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],days = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],days = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 79
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 79: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 20, 0, 0, 15, 10],days = [5, 5, 0, 0, 3, 3]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 20, 0, 0, 15, 10],days = [5, 5, 0, 0, 3, 3]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1],days = [2, 0, 0, 5, 0, 0, 0, 0, 0, 0, 2, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1],days = [2, 0, 0, 5, 0, 0, 0, 0, 0, 0, 2, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 10, 0, 0, 0, 0, 0, 10, 0],days = [0, 0, 1, 0, 0, 0, 0, 0, 2, 0]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 10, 0, 0, 0, 0, 0, 10, 0],days = [0, 0, 1, 0, 0, 0, 0, 0, 2, 0]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 4, 3, 2, 1],days = [5, 4, 3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 4, 3, 2, 1],days = [5, 4, 3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],days = [20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],days = [20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7],days = [2, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7],days = [2, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 15, 0, 20, 25, 0, 0, 30],days = [3, 4, 0, 5, 6, 0, 0, 7]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 15, 0, 20, 25, 0, 0, 30],days = [3, 4, 0, 5, 6, 0, 0, 7]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10],days = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10]) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10],days = [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10]) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 10, 0, 10, 0, 10],days = [3, 0, 3, 0, 3, 0, 3]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 10, 0, 10, 0, 10],days = [3, 0, 3, 0, 3, 0, 3]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [3, 2, 1, 0, 0, 4, 2, 1, 0, 1],days = [2, 2, 2, 0, 0, 3, 2, 2, 0, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [3, 2, 1, 0, 0, 4, 2, 1, 0, 1],days = [2, 2, 2, 0, 0, 3, 2, 2, 0, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [4, 0, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0],days = [5, 0, 4, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [4, 0, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0],days = [5, 0, 4, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],days = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],days = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 100, 100],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 100, 100],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 4, 6, 8, 10],days = [1, 2, 3, 4, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 4, 6, 8, 10],days = [1, 2, 3, 4, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],days = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],days = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 5, 0, 0, 15],days = [10, 0, 4, 0, 0, 3]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 5, 0, 0, 15],days = [10, 0, 4, 0, 0, 3]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [5, 0, 0, 5, 0, 5, 0, 5, 0, 5],days = [1, 0, 0, 2, 0, 3, 0, 4, 0, 5]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [5, 0, 0, 5, 0, 5, 0, 5, 0, 5],days = [1, 0, 0, 2, 0, 3, 0, 4, 0, 5]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 3, 1, 0, 0, 0, 0, 4, 5, 6, 0, 0, 0, 0, 7],days = [2, 2, 2, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 4]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 3, 1, 0, 0, 0, 0, 4, 5, 6, 0, 0, 0, 0, 7],days = [2, 2, 2, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 4]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],days = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 10, 0, 10, 0, 10, 0, 10, 0],days = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 20, 0, 0, 15, 10, 5],days = [5, 4, 0, 0, 6, 3, 2]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 20, 0, 0, 15, 10, 5],days = [5, 4, 0, 0, 6, 3, 2]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 0, 20, 0, 30, 0, 40, 0, 50, 0, 60, 0, 70, 0, 80, 0, 90, 0, 100, 0],days = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0]) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 0, 20, 0, 30, 0, 40, 0, 50, 0, 60, 0, 70, 0, 80, 0, 90, 0, 100, 0],days = [5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0]) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [1, 2, 0, 4, 5, 0, 0, 6, 7, 0, 0, 8, 9],days = [3, 2, 0, 4, 5, 0, 0, 2, 3, 0, 0, 2, 3]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [1, 2, 0, 4, 5, 0, 0, 6, 7, 0, 0, 8, 9],days = [3, 2, 0, 4, 5, 0, 0, 2, 3, 0, 0, 2, 3]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [100, 100, 100, 100, 100],days = [5, 5, 5, 5, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [100, 100, 100, 100, 100],days = [5, 5, 5, 5, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],days = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [2, 3, 1, 5, 4, 2, 3, 1, 1, 1, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [2, 3, 1, 5, 4, 2, 3, 1, 1, 1, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 1: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(apples = [0, 0, 0, 0],days = [0, 0, 0, 0]) == 0
@@ -74,3 +658,5 @@ def check(candidate):
     assert candidate(apples = [2, 3, 1, 5, 4, 2, 3, 1, 1, 1, 1],days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 17
     assert candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
     assert candidate(apples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100],days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]) == 1
+
+

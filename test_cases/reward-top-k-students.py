@@ -1,5 +1,669 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not'],report = ['this student is studious', 'the student is smart'],student_id = [1, 2],k = 2) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not'],report = ['this student is studious', 'the student is smart'],student_id = [1, 2],k = 2) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good and excellent', 'the student is bad but tries'],student_id = [3, 4],k = 1) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good and excellent', 'the student is bad but tries'],student_id = [3, 4],k = 1) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not'],report = ['this student is not studious', 'the student is smart'],student_id = [1, 2],k = 2) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not'],report = ['this student is not studious', 'the student is smart'],student_id = [1, 2],k = 2) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good', 'the student is excellent', 'the student is bad', 'the student is poor'],student_id = [101, 102, 103, 104],k = 2) == [101, 102]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good', 'the student is excellent', 'the student is bad', 'the student is poor'],student_id = [101, 102, 103, 104],k = 2) == [101, 102]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good and excellent', 'the student is bad'],student_id = [3, 4],k = 1) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['good', 'excellent'],negative_feedback = ['bad', 'poor'],report = ['the student is good and excellent', 'the student is bad'],student_id = [3, 4],k = 1) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding'],negative_feedback = ['poor'],report = ['the student is outstanding', 'the student is poor', 'the student is not poor'],student_id = [100, 200, 300],k = 3) == [100, 200, 300]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding'],negative_feedback = ['poor'],report = ['the student is outstanding', 'the student is poor', 'the student is not poor'],student_id = [100, 200, 300],k = 3) == [100, 200, 300]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['good', 'great'],negative_feedback = ['average', 'terrible'],report = ['average performance', 'good work but could be better', 'terrible experience'],student_id = [301, 302, 303],k = 2) == [302, 301]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['good', 'great'],negative_feedback = ['average', 'terrible'],report = ['average performance', 'good work but could be better', 'terrible experience'],student_id = [301, 302, 303],k = 2) == [302, 301]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['kind', 'friendly'],negative_feedback = ['rude', 'mean'],report = ['the student is kind', 'the student is mean'],student_id = [7, 8],k = 2) == [7, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['kind', 'friendly'],negative_feedback = ['rude', 'mean'],report = ['the student is kind', 'the student is mean'],student_id = [7, 8],k = 2) == [7, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['hardworking', 'diligent'],negative_feedback = ['lazy', 'slacker'],report = ['the student is hardworking', 'the student is diligent', 'the student is lazy', 'the student is slacker'],student_id = [501, 502, 503, 504],k = 3) == [501, 502, 503]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['hardworking', 'diligent'],negative_feedback = ['lazy', 'slacker'],report = ['the student is hardworking', 'the student is diligent', 'the student is lazy', 'the student is slacker'],student_id = [501, 502, 503, 504],k = 3) == [501, 502, 503]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'inattentive'],report = ['the student is hardworking and dedicated', 'the student is lazy'],student_id = [10, 20],k = 1) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'inattentive'],report = ['the student is hardworking and dedicated', 'the student is lazy'],student_id = [10, 20],k = 1) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'efficient'],negative_feedback = ['lazy', 'inefficient'],report = ['the student is helpful', 'the student is lazy'],student_id = [5, 6],k = 2) == [5, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'efficient'],negative_feedback = ['lazy', 'inefficient'],report = ['the student is helpful', 'the student is lazy'],student_id = [5, 6],k = 2) == [5, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding'],negative_feedback = ['poor', 'bad'],report = ['very poor performance', 'outstanding in every aspect'],student_id = [201, 202],k = 2) == [202, 201]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding'],negative_feedback = ['poor', 'bad'],report = ['very poor performance', 'outstanding in every aspect'],student_id = [201, 202],k = 2) == [202, 201]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['adept', 'proficient'],negative_feedback = ['incompetent', 'unskilled'],report = ['the student is adept', 'the student is proficient', 'the student is incompetent', 'the student is unskilled'],student_id = [701, 702, 703, 704],k = 4) == [701, 702, 703, 704]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['adept', 'proficient'],negative_feedback = ['incompetent', 'unskilled'],report = ['the student is adept', 'the student is proficient', 'the student is incompetent', 'the student is unskilled'],student_id = [701, 702, 703, 704],k = 4) == [701, 702, 703, 704]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent'],negative_feedback = ['terrible'],report = ['the student is excellent', 'the student is terrible', 'the student is terrible but excellent'],student_id = [5, 15, 25],k = 2) == [5, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent'],negative_feedback = ['terrible'],report = ['the student is excellent', 'the student is terrible', 'the student is terrible but excellent'],student_id = [5, 15, 25],k = 2) == [5, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding', 'great'],negative_feedback = ['average', 'poor'],report = ['the student is average', 'the student is outstanding'],student_id = [5, 6],k = 2) == [6, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding', 'great'],negative_feedback = ['average', 'poor'],report = ['the student is average', 'the student is outstanding'],student_id = [5, 6],k = 2) == [6, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'slacking'],report = ['the student is lazy', 'the student is dedicated and hardworking'],student_id = [7, 8],k = 2) == [8, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'slacking'],report = ['the student is lazy', 'the student is dedicated and hardworking'],student_id = [7, 8],k = 2) == [8, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'careless'],report = ['the student is hardworking and dedicated', 'the student is lazy but smart'],student_id = [101, 102],k = 1) == [101]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['hardworking', 'dedicated'],negative_feedback = ['lazy', 'careless'],report = ['the student is hardworking and dedicated', 'the student is lazy but smart'],student_id = [101, 102],k = 1) == [101]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'great'],negative_feedback = ['bad', 'poor', 'terrible'],report = ['the student is excellent and great', 'the student is poor', 'the student is excellent but terrible'],student_id = [5, 3, 8],k = 2) == [5, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'great'],negative_feedback = ['bad', 'poor', 'terrible'],report = ['the student is excellent and great', 'the student is poor', 'the student is excellent but terrible'],student_id = [5, 3, 8],k = 2) == [5, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'organized'],negative_feedback = ['disorganized', 'inefficient', 'unproductive'],report = ['the student is efficient and organized', 'the student is disorganized and inefficient', 'the student is productive'],student_id = [3001, 3002, 3003],k = 1) == [3001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'organized'],negative_feedback = ['disorganized', 'inefficient', 'unproductive'],report = ['the student is efficient and organized', 'the student is disorganized and inefficient', 'the student is productive'],student_id = [3001, 3002, 3003],k = 1) == [3001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['knowledgeable', 'informed', 'learned'],negative_feedback = ['ignorant', 'uninformed', 'naive'],report = ['the student is knowledgeable', 'the student is uninformed', 'the student is ignorant and naive'],student_id = [4001, 4002, 4003],k = 2) == [4001, 4002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['knowledgeable', 'informed', 'learned'],negative_feedback = ['ignorant', 'uninformed', 'naive'],report = ['the student is knowledgeable', 'the student is uninformed', 'the student is ignorant and naive'],student_id = [4001, 4002, 4003],k = 2) == [4001, 4002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'impressive'],negative_feedback = ['poor', 'mediocre', 'inadequate'],report = ['the student is excellent and impressive', 'the student is mediocre', 'the student is excellent but also poor'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1003, 1002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'impressive'],negative_feedback = ['poor', 'mediocre', 'inadequate'],report = ['the student is excellent and impressive', 'the student is mediocre', 'the student is excellent but also poor'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1003, 1002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'inspiring'],negative_feedback = ['dull', 'boring', 'unoriginal'],report = ['the student is innovative and creative', 'the student is unoriginal', 'the student is inspiring but also unoriginal'],student_id = [2001, 2002, 2003],k = 2) == [2001, 2003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'inspiring'],negative_feedback = ['dull', 'boring', 'unoriginal'],report = ['the student is innovative and creative', 'the student is unoriginal', 'the student is inspiring but also unoriginal'],student_id = [2001, 2002, 2003],k = 2) == [2001, 2003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'original'],negative_feedback = ['conventional', 'boring', 'predictable'],report = ['the student is conventional and boring', 'the student is creative and innovative', 'the student is original but not always predictable', 'the student is predictable but hardworking'],student_id = [5001, 5002, 5003, 5004],k = 2) == [5002, 5003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'original'],negative_feedback = ['conventional', 'boring', 'predictable'],report = ['the student is conventional and boring', 'the student is creative and innovative', 'the student is original but not always predictable', 'the student is predictable but hardworking'],student_id = [5001, 5002, 5003, 5004],k = 2) == [5002, 5003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['knowledgeable', 'wise', 'informed'],negative_feedback = ['ignorant', 'naive', 'uninformed'],report = ['the student is knowledgeable and wise', 'the student is ignorant and naive', 'the student is informed and smart'],student_id = [4001, 4002, 4003],k = 2) == [4001, 4003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['knowledgeable', 'wise', 'informed'],negative_feedback = ['ignorant', 'naive', 'uninformed'],report = ['the student is knowledgeable and wise', 'the student is ignorant and naive', 'the student is informed and smart'],student_id = [4001, 4002, 4003],k = 2) == [4001, 4003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient', 'the student is productive', 'the student is focused'],student_id = [9001, 9002, 9003],k = 2) == [9001, 9002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient', 'the student is productive', 'the student is focused'],student_id = [9001, 9002, 9003],k = 2) == [9001, 9002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['curious', 'inquisitive', 'investigative'],negative_feedback = ['ignorant', 'uninterested', 'apathetic'],report = ['the student is curious and inquisitive', 'the student is ignorant and uninterested', 'the student is investigative but needs rest'],student_id = [999, 998, 997],k = 3) == [999, 997, 998]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['curious', 'inquisitive', 'investigative'],negative_feedback = ['ignorant', 'uninterested', 'apathetic'],report = ['the student is curious and inquisitive', 'the student is ignorant and uninterested', 'the student is investigative but needs rest'],student_id = [999, 998, 997],k = 3) == [999, 997, 998]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['leader', 'motivator', 'captain'],negative_feedback = ['follower', 'lazy', 'unmotivated'],report = ['the student is leader and motivator', 'the student is follower and lazy', 'the student is captain but tired'],student_id = [777, 778, 779],k = 1) == [777]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['leader', 'motivator', 'captain'],negative_feedback = ['follower', 'lazy', 'unmotivated'],report = ['the student is leader and motivator', 'the student is follower and lazy', 'the student is captain but tired'],student_id = [777, 778, 779],k = 1) == [777]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'remarkable'],negative_feedback = ['poor', 'mediocre', 'inadequate'],report = ['the student was excellent and outstanding', 'the student was not excellent but remarkable', 'the student was poor and mediocre'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1002, 1003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'remarkable'],negative_feedback = ['poor', 'mediocre', 'inadequate'],report = ['the student was excellent and outstanding', 'the student was not excellent but remarkable', 'the student was poor and mediocre'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1002, 1003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding', 'excellent', 'remarkable'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is outstanding and excellent', 'the student is mediocre', 'the student is poor'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding', 'excellent', 'remarkable'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is outstanding and excellent', 'the student is mediocre', 'the student is poor'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['persevering', 'determined', 'resilient'],negative_feedback = ['quitter', 'defeated', 'weak'],report = ['the student is persevering', 'the student is determined', 'the student is resilient', 'the student is a quitter', 'the student is defeated', 'the student is weak'],student_id = [3001, 3002, 3003, 3004, 3005, 3006],k = 4) == [3001, 3002, 3003, 3004]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['persevering', 'determined', 'resilient'],negative_feedback = ['quitter', 'defeated', 'weak'],report = ['the student is persevering', 'the student is determined', 'the student is resilient', 'the student is a quitter', 'the student is defeated', 'the student is weak'],student_id = [3001, 3002, 3003, 3004, 3005, 3006],k = 4) == [3001, 3002, 3003, 3004]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['reliable', 'trustworthy', 'dependable'],negative_feedback = ['unreliable', 'dishonest', 'untrustworthy'],report = ['the student is reliable and dependable', 'the student is unreliable and dishonest', 'the student is trustworthy but late'],student_id = [10, 20, 30],k = 1) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['reliable', 'trustworthy', 'dependable'],negative_feedback = ['unreliable', 'dishonest', 'untrustworthy'],report = ['the student is reliable and dependable', 'the student is unreliable and dishonest', 'the student is trustworthy but late'],student_id = [10, 20, 30],k = 1) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['inspired', 'motivated', 'eager'],negative_feedback = ['disinterested', 'apathetic', 'unmotivated'],report = ['the student is inspired and eager', 'the student is disinterested', 'the student is motivated', 'the student is apathetic', 'the student is unmotivated'],student_id = [6001, 6002, 6003, 6004, 6005],k = 4) == [6001, 6003, 6002, 6004]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['inspired', 'motivated', 'eager'],negative_feedback = ['disinterested', 'apathetic', 'unmotivated'],report = ['the student is inspired and eager', 'the student is disinterested', 'the student is motivated', 'the student is apathetic', 'the student is unmotivated'],student_id = [6001, 6002, 6003, 6004, 6005],k = 4) == [6001, 6003, 6002, 6004]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'resourceful'],negative_feedback = ['lazy', 'disorganized', 'unfocused'],report = ['the student is innovative and creative', 'the student is lazy', 'the student is disorganized', 'the student is resourceful'],student_id = [2001, 2002, 2003, 2004],k = 3) == [2001, 2004, 2002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'resourceful'],negative_feedback = ['lazy', 'disorganized', 'unfocused'],report = ['the student is innovative and creative', 'the student is lazy', 'the student is disorganized', 'the student is resourceful'],student_id = [2001, 2002, 2003, 2004],k = 3) == [2001, 2004, 2002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'cooperative', 'supportive'],negative_feedback = ['unhelpful', 'selfish', 'uncooperative'],report = ['the student is helpful and cooperative', 'the student is selfish and unhelpful', 'the student is supportive but mediocre'],student_id = [201, 202, 203],k = 3) == [201, 203, 202]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'cooperative', 'supportive'],negative_feedback = ['unhelpful', 'selfish', 'uncooperative'],report = ['the student is helpful and cooperative', 'the student is selfish and unhelpful', 'the student is supportive but mediocre'],student_id = [201, 202, 203],k = 3) == [201, 203, 202]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['honest', 'truthful', 'sincere'],negative_feedback = ['liar', 'deceptive', 'dishonest'],report = ['the student is honest and truthful', 'the student is liar and deceptive', 'the student is sincere but sometimes forgetful'],student_id = [888, 887, 886],k = 2) == [888, 886]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['honest', 'truthful', 'sincere'],negative_feedback = ['liar', 'deceptive', 'dishonest'],report = ['the student is honest and truthful', 'the student is liar and deceptive', 'the student is sincere but sometimes forgetful'],student_id = [888, 887, 886],k = 2) == [888, 886]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'inspiring'],negative_feedback = ['unoriginal', 'boring', 'stupid'],report = ['the student is innovative and creative', 'the student is unoriginal and stupid', 'the student is inspiring'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'inspiring'],negative_feedback = ['unoriginal', 'boring', 'stupid'],report = ['the student is innovative and creative', 'the student is unoriginal and stupid', 'the student is inspiring'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['kind', 'polite', 'considerate'],negative_feedback = ['rude', 'impolite'],report = ['the student is kind and polite', 'the student is impolite', 'the student is rude', 'the student is considerate', 'the student is impolite but kind'],student_id = [101, 102, 103, 104, 105],k = 4) == [101, 104, 105, 102]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['kind', 'polite', 'considerate'],negative_feedback = ['rude', 'impolite'],report = ['the student is kind and polite', 'the student is impolite', 'the student is rude', 'the student is considerate', 'the student is impolite but kind'],student_id = [101, 102, 103, 104, 105],k = 4) == [101, 104, 105, 102]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'supportive', 'collaborative'],negative_feedback = ['unfriendly', 'rude', 'impolite'],report = ['helpful and supportive', 'the student is rude', 'collaborative efforts', 'impolite behavior noted', 'supportive actions'],student_id = [4001, 4002, 4003, 4004, 4005],k = 4) == [4001, 4003, 4005, 4002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'supportive', 'collaborative'],negative_feedback = ['unfriendly', 'rude', 'impolite'],report = ['helpful and supportive', 'the student is rude', 'collaborative efforts', 'impolite behavior noted', 'supportive actions'],student_id = [4001, 4002, 4003, 4004, 4005],k = 4) == [4001, 4003, 4005, 4002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'generous', 'compassionate'],negative_feedback = ['selfish', 'greedy', 'harsh'],report = ['the student is generous and helpful', 'the student is harsh', 'the student is greedy'],student_id = [2001, 2002, 2003],k = 3) == [2001, 2002, 2003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'generous', 'compassionate'],negative_feedback = ['selfish', 'greedy', 'harsh'],report = ['the student is generous and helpful', 'the student is harsh', 'the student is greedy'],student_id = [2001, 2002, 2003],k = 3) == [2001, 2002, 2003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'perfect'],negative_feedback = ['bad', 'poor', 'mediocre'],report = ['this is an excellent report', 'the student is poor', 'outstanding performance', 'mediocre work'],student_id = [1001, 1002, 1003, 1004],k = 2) == [1001, 1003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'perfect'],negative_feedback = ['bad', 'poor', 'mediocre'],report = ['this is an excellent report', 'the student is poor', 'outstanding performance', 'mediocre work'],student_id = [1001, 1002, 1003, 1004],k = 2) == [1001, 1003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'exceptional'],negative_feedback = ['poor', 'mediocre', 'bad'],report = ['the student is excellent and outstanding', 'the student is mediocre and bad', 'the student is exceptional'],student_id = [5, 6, 7],k = 2) == [5, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'exceptional'],negative_feedback = ['poor', 'mediocre', 'bad'],report = ['the student is excellent and outstanding', 'the student is mediocre and bad', 'the student is exceptional'],student_id = [5, 6, 7],k = 2) == [5, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient and productive', 'the student is productive and focused', 'the student is productive but inconsistent'],student_id = [6001, 6002, 6003],k = 2) == [6001, 6002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient and productive', 'the student is productive and focused', 'the student is productive but inconsistent'],student_id = [6001, 6002, 6003],k = 2) == [6001, 6002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['excellent', 'outstanding', 'brilliant'],negative_feedback = ['poor', 'bad', 'terrible'],report = ['the student is excellent and outstanding', 'the student is brilliant', 'the student is poor but not bad', 'the student is terrible'],student_id = [10, 20, 30, 40],k = 3) == [10, 20, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['excellent', 'outstanding', 'brilliant'],negative_feedback = ['poor', 'bad', 'terrible'],report = ['the student is excellent and outstanding', 'the student is brilliant', 'the student is poor but not bad', 'the student is terrible'],student_id = [10, 20, 30, 40],k = 3) == [10, 20, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'cooperative'],negative_feedback = ['selfish', 'unhelpful'],report = ['the student is helpful and cooperative', 'the student is selfish', 'the student is unhelpful', 'the student is helpful but unhelpful'],student_id = [100, 101, 102, 103],k = 2) == [100, 103]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'cooperative'],negative_feedback = ['selfish', 'unhelpful'],report = ['the student is helpful and cooperative', 'the student is selfish', 'the student is unhelpful', 'the student is helpful but unhelpful'],student_id = [100, 101, 102, 103],k = 2) == [100, 103]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'resourceful', 'innovative'],negative_feedback = ['inefficient', 'wasteful', 'unproductive'],report = ['the student is inefficient and wasteful', 'the student is resourceful and innovative', 'the student is productive but not very innovative'],student_id = [2001, 2002, 2003],k = 3) == [2002, 2003, 2001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'resourceful', 'innovative'],negative_feedback = ['inefficient', 'wasteful', 'unproductive'],report = ['the student is inefficient and wasteful', 'the student is resourceful and innovative', 'the student is productive but not very innovative'],student_id = [2001, 2002, 2003],k = 3) == [2002, 2003, 2001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['dynamic', 'engaged', 'motivated'],negative_feedback = ['disinterested', 'unmotivated', 'apathetic'],report = ['dynamic performance', 'disinterested in work', 'engaged', 'apathetic attitude', 'motivated', 'dynamic'],student_id = [5001, 5002, 5003, 5004, 5005, 5006],k = 5) == [5001, 5003, 5005, 5006, 5002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['dynamic', 'engaged', 'motivated'],negative_feedback = ['disinterested', 'unmotivated', 'apathetic'],report = ['dynamic performance', 'disinterested in work', 'engaged', 'apathetic attitude', 'motivated', 'dynamic'],student_id = [5001, 5002, 5003, 5004, 5005, 5006],k = 5) == [5001, 5003, 5005, 5006, 5002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding', 'excellent', 'genius'],negative_feedback = ['poor', 'dull', 'lazy'],report = ['the student is brilliant and excellent', 'the student is lazy but smart', 'the student is outstanding'],student_id = [501, 502, 503],k = 3) == [501, 503, 502]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding', 'excellent', 'genius'],negative_feedback = ['poor', 'dull', 'lazy'],report = ['the student is brilliant and excellent', 'the student is lazy but smart', 'the student is outstanding'],student_id = [501, 502, 503],k = 3) == [501, 503, 502]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'effective'],negative_feedback = ['lazy', 'inefficient', 'unproductive'],report = ['the student is lazy and inefficient', 'the student is productive and efficient', 'the student is effective but tired'],student_id = [301, 302, 303],k = 2) == [302, 303]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'effective'],negative_feedback = ['lazy', 'inefficient', 'unproductive'],report = ['the student is lazy and inefficient', 'the student is productive and efficient', 'the student is effective but tired'],student_id = [301, 302, 303],k = 2) == [302, 303]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['creative', 'innovative', 'resourceful'],negative_feedback = ['dull', 'boring', 'stagnant'],report = ['the student is innovative', 'the student is dull', 'the student is resourceful', 'the student is boring'],student_id = [3001, 3002, 3003, 3004],k = 2) == [3001, 3003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['creative', 'innovative', 'resourceful'],negative_feedback = ['dull', 'boring', 'stagnant'],report = ['the student is innovative', 'the student is dull', 'the student is resourceful', 'the student is boring'],student_id = [3001, 3002, 3003, 3004],k = 2) == [3001, 3003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['helpful', 'compassionate', 'generous'],negative_feedback = ['selfish', 'greedy', 'cruel'],report = ['the student is helpful and compassionate', 'the student is generous', 'the student is selfish', 'the student is greedy', 'the student is cruel', 'the student is generous and helpful'],student_id = [4001, 4002, 4003, 4004, 4005, 4006],k = 5) == [4001, 4006, 4002, 4003, 4004]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['helpful', 'compassionate', 'generous'],negative_feedback = ['selfish', 'greedy', 'cruel'],report = ['the student is helpful and compassionate', 'the student is generous', 'the student is selfish', 'the student is greedy', 'the student is cruel', 'the student is generous and helpful'],student_id = [4001, 4002, 4003, 4004, 4005, 4006],k = 5) == [4001, 4006, 4002, 4003, 4004]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient', 'the student is productive and focused', 'the student is unfocused and slow'],student_id = [2001, 2002, 2003],k = 2) == [2002, 2001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient', 'the student is productive and focused', 'the student is unfocused and slow'],student_id = [2001, 2002, 2003],k = 2) == [2002, 2001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['eloquent', 'articulate', 'persuasive'],negative_feedback = ['confused', 'incoherent', 'unclear'],report = ['the student was eloquent and articulate', 'the student was unclear', 'the student was incoherent but tried his best'],student_id = [4001, 4002, 4003],k = 3) == [4001, 4002, 4003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['eloquent', 'articulate', 'persuasive'],negative_feedback = ['confused', 'incoherent', 'unclear'],report = ['the student was eloquent and articulate', 'the student was unclear', 'the student was incoherent but tried his best'],student_id = [4001, 4002, 4003],k = 3) == [4001, 4002, 4003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'effective', 'productive'],negative_feedback = ['unproductive', 'slow', 'ineffective'],report = ['efficiency was very high', 'the work was slow', 'productive', 'ineffective methods used', 'effective results achieved'],student_id = [3001, 3002, 3003, 3004, 3005],k = 3) == [3003, 3005, 3001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'effective', 'productive'],negative_feedback = ['unproductive', 'slow', 'ineffective'],report = ['efficiency was very high', 'the work was slow', 'productive', 'ineffective methods used', 'effective results achieved'],student_id = [3001, 3002, 3003, 3004, 3005],k = 3) == [3003, 3005, 3001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['leader', 'motivator', 'teamplayer'],negative_feedback = ['coward', 'antisocial', 'uncooperative'],report = ['the student is a teamplayer and leader', 'the student is antisocial and coward', 'the student is cooperative and motivator'],student_id = [2001, 2002, 2003],k = 3) == [2001, 2003, 2002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['leader', 'motivator', 'teamplayer'],negative_feedback = ['coward', 'antisocial', 'uncooperative'],report = ['the student is a teamplayer and leader', 'the student is antisocial and coward', 'the student is cooperative and motivator'],student_id = [2001, 2002, 2003],k = 3) == [2001, 2003, 2002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient and productive', 'the student is productive but unfocused', 'the student is productive and focused'],student_id = [8001, 8002, 8003],k = 2) == [8001, 8003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is efficient and productive', 'the student is productive but unfocused', 'the student is productive and focused'],student_id = [8001, 8002, 8003],k = 2) == [8001, 8003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['resilient', 'strong', 'enduring'],negative_feedback = ['fragile', 'weak', 'endless'],report = ['the student is resilient and strong', 'the student is fragile and weak', 'the student is enduring'],student_id = [5001, 5002, 5003],k = 3) == [5001, 5003, 5002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['resilient', 'strong', 'enduring'],negative_feedback = ['fragile', 'weak', 'endless'],report = ['the student is resilient and strong', 'the student is fragile and weak', 'the student is enduring'],student_id = [5001, 5002, 5003],k = 3) == [5001, 5003, 5002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['ambitious', 'aspirational', 'driven'],negative_feedback = ['unambitious', 'disinterested', 'apathetic'],report = ['the student is ambitious', 'the student is disinterested', 'the student is driven but also apathetic'],student_id = [5001, 5002, 5003],k = 2) == [5001, 5003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['ambitious', 'aspirational', 'driven'],negative_feedback = ['unambitious', 'disinterested', 'apathetic'],report = ['the student is ambitious', 'the student is disinterested', 'the student is driven but also apathetic'],student_id = [5001, 5002, 5003],k = 2) == [5001, 5003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['curious', 'inquisitive', 'seeking'],negative_feedback = ['apathetic', 'indifferent', 'uninterested'],report = ['the student was curious and inquisitive', 'the student was uninterested', 'the student was apathetic but showed improvement'],student_id = [5001, 5002, 5003],k = 3) == [5001, 5002, 5003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['curious', 'inquisitive', 'seeking'],negative_feedback = ['apathetic', 'indifferent', 'uninterested'],report = ['the student was curious and inquisitive', 'the student was uninterested', 'the student was apathetic but showed improvement'],student_id = [5001, 5002, 5003],k = 3) == [5001, 5002, 5003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['leader', 'initiative', 'confidence'],negative_feedback = ['follower', 'shy', 'insecure'],report = ['the student is a leader and takes initiative', 'the student is shy and insecure', 'the student is confident and proactive', 'the student is a follower but eager to learn'],student_id = [6001, 6002, 6003, 6004],k = 1) == [6001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['leader', 'initiative', 'confidence'],negative_feedback = ['follower', 'shy', 'insecure'],report = ['the student is a leader and takes initiative', 'the student is shy and insecure', 'the student is confident and proactive', 'the student is a follower but eager to learn'],student_id = [6001, 6002, 6003, 6004],k = 1) == [6001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'brilliant'],negative_feedback = ['incompetent', 'lazy', 'unhelpful'],report = ['the student showed innovative thinking', 'incompetent work was submitted', 'lazy performance', 'creative solutions provided'],student_id = [2001, 2002, 2003, 2004],k = 3) == [2001, 2004, 2002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'brilliant'],negative_feedback = ['incompetent', 'lazy', 'unhelpful'],report = ['the student showed innovative thinking', 'incompetent work was submitted', 'lazy performance', 'creative solutions provided'],student_id = [2001, 2002, 2003, 2004],k = 3) == [2001, 2004, 2002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['disciplined', 'focused', 'organized'],negative_feedback = ['disorganized', 'distracted', 'undisciplined'],report = ['the student is disciplined and organized', 'the student is distracted and disorganized', 'the student is focused but forgetful'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1003, 1002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['disciplined', 'focused', 'organized'],negative_feedback = ['disorganized', 'distracted', 'undisciplined'],report = ['the student is disciplined and organized', 'the student is distracted and disorganized', 'the student is focused but forgetful'],student_id = [1001, 1002, 1003],k = 3) == [1001, 1003, 1002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['compassionate', 'empathetic', 'sympathetic'],negative_feedback = ['cruel', 'heartless', 'unfeeling'],report = ['the student is compassionate and empathetic', 'the student is cruel and heartless', 'the student is sympathetic but needs rest'],student_id = [666, 667, 668],k = 3) == [666, 668, 667]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['compassionate', 'empathetic', 'sympathetic'],negative_feedback = ['cruel', 'heartless', 'unfeeling'],report = ['the student is compassionate and empathetic', 'the student is cruel and heartless', 'the student is sympathetic but needs rest'],student_id = [666, 667, 668],k = 3) == [666, 668, 667]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['proactive', 'initiative', 'leader'],negative_feedback = ['passive', 'follower', 'inactive'],report = ['the student is proactive', 'the student is passive', 'the student is initiative', 'the student is follower', 'the student is leader', 'the student is inactive'],student_id = [8001, 8002, 8003, 8004, 8005, 8006],k = 3) == [8001, 8003, 8005]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['proactive', 'initiative', 'leader'],negative_feedback = ['passive', 'follower', 'inactive'],report = ['the student is proactive', 'the student is passive', 'the student is initiative', 'the student is follower', 'the student is leader', 'the student is inactive'],student_id = [8001, 8002, 8003, 8004, 8005, 8006],k = 3) == [8001, 8003, 8005]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'effective', 'productive'],negative_feedback = ['inefficient', 'lazy', 'slow'],report = ['the student is very efficient', 'the student is lazy and inefficient', 'the student is slow but effective'],student_id = [3001, 3002, 3003],k = 2) == [3001, 3003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'effective', 'productive'],negative_feedback = ['inefficient', 'lazy', 'slow'],report = ['the student is very efficient', 'the student is lazy and inefficient', 'the student is slow but effective'],student_id = [3001, 3002, 3003],k = 2) == [3001, 3003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['friendly', 'helpful'],negative_feedback = ['rude', 'mean', 'unkind'],report = ['the student is friendly and helpful', 'the student is unkind', 'the student is mean', 'the student is rude'],student_id = [15, 20, 25, 30],k = 2) == [15, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['friendly', 'helpful'],negative_feedback = ['rude', 'mean', 'unkind'],report = ['the student is friendly and helpful', 'the student is unkind', 'the student is mean', 'the student is rude'],student_id = [15, 20, 25, 30],k = 2) == [15, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['ambitious', 'determined', 'persistent'],negative_feedback = ['procrastinator', 'inconsistent', 'lazy'],report = ['the student is ambitious and determined', 'the student is persistent', 'the student is a procrastinator', 'the student is inconsistent', 'the student is lazy but persistent'],student_id = [1001, 1002, 1003, 1004, 1005],k = 4) == [1001, 1002, 1005, 1003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['ambitious', 'determined', 'persistent'],negative_feedback = ['procrastinator', 'inconsistent', 'lazy'],report = ['the student is ambitious and determined', 'the student is persistent', 'the student is a procrastinator', 'the student is inconsistent', 'the student is lazy but persistent'],student_id = [1001, 1002, 1003, 1004, 1005],k = 4) == [1001, 1002, 1005, 1003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is productive', 'the student is focused', 'the student is efficient'],student_id = [10001, 10002, 10003],k = 2) == [10001, 10002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'slow', 'inconsistent'],report = ['the student is productive', 'the student is focused', 'the student is efficient'],student_id = [10001, 10002, 10003],k = 2) == [10001, 10002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'resourceful'],negative_feedback = ['mediocre', 'unoriginal', 'unresourceful'],report = ['the student is innovative', 'the student is creative and resourceful', 'the student is mediocre', 'the student is unoriginal', 'the student is unresourceful', 'the student is innovative and unresourceful'],student_id = [5001, 5002, 5003, 5004, 5005, 5006],k = 2) == [5002, 5001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'resourceful'],negative_feedback = ['mediocre', 'unoriginal', 'unresourceful'],report = ['the student is innovative', 'the student is creative and resourceful', 'the student is mediocre', 'the student is unoriginal', 'the student is unresourceful', 'the student is innovative and unresourceful'],student_id = [5001, 5002, 5003, 5004, 5005, 5006],k = 2) == [5002, 5001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'distraught', 'inefficient'],report = ['the student is efficient', 'the student is unfocused', 'the student is productive', 'the student is distracted'],student_id = [5001, 5002, 5003, 5004],k = 3) == [5001, 5003, 5004]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['efficient', 'productive', 'focused'],negative_feedback = ['unfocused', 'distraught', 'inefficient'],report = ['the student is efficient', 'the student is unfocused', 'the student is productive', 'the student is distracted'],student_id = [5001, 5002, 5003, 5004],k = 3) == [5001, 5003, 5004]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['proactive', 'ambitious', 'determined'],negative_feedback = ['lazy', 'apathetic', 'indifferent'],report = ['the student is proactive and ambitious', 'the student is lazy and apathetic', 'the student is determined and works hard', 'the student is indifferent but willing to try'],student_id = [4001, 4002, 4003, 4004],k = 3) == [4001, 4003, 4004]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['proactive', 'ambitious', 'determined'],negative_feedback = ['lazy', 'apathetic', 'indifferent'],report = ['the student is proactive and ambitious', 'the student is lazy and apathetic', 'the student is determined and works hard', 'the student is indifferent but willing to try'],student_id = [4001, 4002, 4003, 4004],k = 3) == [4001, 4003, 4004]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['innovative', 'creative', 'ingenious'],negative_feedback = ['incompetent', 'dull', 'inept'],report = ['the student is incompetent and dull', 'the student is creative and innovative', 'the student is inept but tries hard'],student_id = [150, 151, 152],k = 2) == [151, 152]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['innovative', 'creative', 'ingenious'],negative_feedback = ['incompetent', 'dull', 'inept'],report = ['the student is incompetent and dull', 'the student is creative and innovative', 'the student is inept but tries hard'],student_id = [150, 151, 152],k = 2) == [151, 152]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['ingenious', 'creative', 'resourceful'],negative_feedback = ['uncreative', 'inefficient', 'unproductive'],report = ['the student is ingenious and creative', 'the student is unproductive', 'the student is resourceful but inefficient'],student_id = [3001, 3002, 3003],k = 1) == [3001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['ingenious', 'creative', 'resourceful'],negative_feedback = ['uncreative', 'inefficient', 'unproductive'],report = ['the student is ingenious and creative', 'the student is unproductive', 'the student is resourceful but inefficient'],student_id = [3001, 3002, 3003],k = 1) == [3001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['diligent', 'persevering', 'tenacious'],negative_feedback = ['lazy', 'indolent', 'procrastinating'],report = ['the student is diligent and persevering', 'the student is indolent', 'the student is tenacious but lazy'],student_id = [7001, 7002, 7003],k = 2) == [7001, 7003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['diligent', 'persevering', 'tenacious'],negative_feedback = ['lazy', 'indolent', 'procrastinating'],report = ['the student is diligent and persevering', 'the student is indolent', 'the student is tenacious but lazy'],student_id = [7001, 7002, 7003],k = 2) == [7001, 7003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['hardworking', 'dedicated', 'persistent'],negative_feedback = ['lazy', 'careless', 'unreliable'],report = ['the student is hardworking and dedicated', 'the student is lazy', 'the student is careless', 'the student is unreliable', 'the student is persistent but careless'],student_id = [201, 202, 203, 204, 205],k = 3) == [201, 205, 202]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['hardworking', 'dedicated', 'persistent'],negative_feedback = ['lazy', 'careless', 'unreliable'],report = ['the student is hardworking and dedicated', 'the student is lazy', 'the student is careless', 'the student is unreliable', 'the student is persistent but careless'],student_id = [201, 202, 203, 204, 205],k = 3) == [201, 205, 202]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['motivated', 'driven'],negative_feedback = ['apathetic', 'indifferent'],report = ['the student is motivated', 'the student is driven', 'the student is apathetic', 'the student is indifferent', 'the student is motivated but apathetic', 'the student is driven but indifferent'],student_id = [9001, 9002, 9003, 9004, 9005, 9006],k = 3) == [9001, 9002, 9005]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['motivated', 'driven'],negative_feedback = ['apathetic', 'indifferent'],report = ['the student is motivated', 'the student is driven', 'the student is apathetic', 'the student is indifferent', 'the student is motivated but apathetic', 'the student is driven but indifferent'],student_id = [9001, 9002, 9003, 9004, 9005, 9006],k = 3) == [9001, 9002, 9005]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not', 'lazy', 'careless'],report = ['this student is not studious', 'the student is smart', 'the student is lazy but brilliant', 'the student is careless'],student_id = [1, 2, 3, 4],k = 3) == [2, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not', 'lazy', 'careless'],report = ['this student is not studious', 'the student is smart', 'the student is lazy but brilliant', 'the student is careless'],student_id = [1, 2, 3, 4],k = 3) == [2, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding', 'excellent', 'remarkable'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is outstanding and excellent', 'the student is mediocre', 'the student is poor'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding', 'excellent', 'remarkable'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is outstanding and excellent', 'the student is mediocre', 'the student is poor'],student_id = [1001, 1002, 1003],k = 2) == [1001, 1002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['cooperative', 'collaborative', 'teamplayer'],negative_feedback = ['uncooperative', 'selfish', 'individualistic'],report = ['the student is cooperative', 'the student is uncooperative', 'the student is collaborative', 'the student is selfish', 'the student is teamplayer', 'the student is individualistic'],student_id = [7001, 7002, 7003, 7004, 7005, 7006],k = 2) == [7001, 7003]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['cooperative', 'collaborative', 'teamplayer'],negative_feedback = ['uncooperative', 'selfish', 'individualistic'],report = ['the student is cooperative', 'the student is uncooperative', 'the student is collaborative', 'the student is selfish', 'the student is teamplayer', 'the student is individualistic'],student_id = [7001, 7002, 7003, 7004, 7005, 7006],k = 2) == [7001, 7003]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['attentive', 'focused', 'detail-oriented'],negative_feedback = ['distracted', 'careless', 'negligent'],report = ['the student is attentive and focused', 'the student is negligent but eager to learn', 'the student is attentive and detail-oriented but sometimes careless'],student_id = [3001, 3002, 3003],k = 1) == [3001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['attentive', 'focused', 'detail-oriented'],negative_feedback = ['distracted', 'careless', 'negligent'],report = ['the student is attentive and focused', 'the student is negligent but eager to learn', 'the student is attentive and detail-oriented but sometimes careless'],student_id = [3001, 3002, 3003],k = 1) == [3001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['curious', 'knowledgeable', 'inquisitive'],negative_feedback = ['ignorant', 'naive', 'uninformed'],report = ['the student is curious', 'the student is knowledgeable', 'the student is inquisitive', 'the student is ignorant', 'the student is naive', 'the student is uninformed', 'the student is curious and knowledgeable'],student_id = [5001, 5002, 5003, 5004, 5005, 5006, 5007],k = 3) == [5007, 5001, 5002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['curious', 'knowledgeable', 'inquisitive'],negative_feedback = ['ignorant', 'naive', 'uninformed'],report = ['the student is curious', 'the student is knowledgeable', 'the student is inquisitive', 'the student is ignorant', 'the student is naive', 'the student is uninformed', 'the student is curious and knowledgeable'],student_id = [5001, 5002, 5003, 5004, 5005, 5006, 5007],k = 3) == [5007, 5001, 5002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['perseverant', 'determined', 'ambitious'],negative_feedback = ['lazy', 'indifferent', 'apathetic'],report = ['the student is perseverant and ambitious', 'the student is lazy', 'the student is indifferent', 'the student is apathetic'],student_id = [4001, 4002, 4003, 4004],k = 1) == [4001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['perseverant', 'determined', 'ambitious'],negative_feedback = ['lazy', 'indifferent', 'apathetic'],report = ['the student is perseverant and ambitious', 'the student is lazy', 'the student is indifferent', 'the student is apathetic'],student_id = [4001, 4002, 4003, 4004],k = 1) == [4001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(positive_feedback = ['outstanding', 'excellent', 'impressive'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is poor but trying hard', 'the student is excellent and impressive', 'the student is mediocre but not bad'],student_id = [1001, 1002, 1003],k = 2) == [1002, 1001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(positive_feedback = ['outstanding', 'excellent', 'impressive'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is poor but trying hard', 'the student is excellent and impressive', 'the student is mediocre but not bad'],student_id = [1001, 1002, 1003],k = 2) == [1002, 1001]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(positive_feedback = ['smart', 'brilliant', 'studious'],negative_feedback = ['not'],report = ['this student is studious', 'the student is smart'],student_id = [1, 2],k = 2) == [1, 2]
@@ -84,3 +748,5 @@ def check(candidate):
     assert candidate(positive_feedback = ['curious', 'knowledgeable', 'inquisitive'],negative_feedback = ['ignorant', 'naive', 'uninformed'],report = ['the student is curious', 'the student is knowledgeable', 'the student is inquisitive', 'the student is ignorant', 'the student is naive', 'the student is uninformed', 'the student is curious and knowledgeable'],student_id = [5001, 5002, 5003, 5004, 5005, 5006, 5007],k = 3) == [5007, 5001, 5002]
     assert candidate(positive_feedback = ['perseverant', 'determined', 'ambitious'],negative_feedback = ['lazy', 'indifferent', 'apathetic'],report = ['the student is perseverant and ambitious', 'the student is lazy', 'the student is indifferent', 'the student is apathetic'],student_id = [4001, 4002, 4003, 4004],k = 1) == [4001]
     assert candidate(positive_feedback = ['outstanding', 'excellent', 'impressive'],negative_feedback = ['poor', 'bad', 'mediocre'],report = ['the student is poor but trying hard', 'the student is excellent and impressive', 'the student is mediocre but not bad'],student_id = [1001, 1002, 1003],k = 2) == [1002, 1001]
+
+

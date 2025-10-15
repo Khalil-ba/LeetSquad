@@ -1,5 +1,1573 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b",s2 = "a1b1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b",s2 = "a1b1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab123cd",s2 = "a3bcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab123cd",s2 = "a3bcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab123cd",s2 = "abc5") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab123cd",s2 = "abc5") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123",s2 = "onetwothree") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123",s2 = "onetwothree") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a",s2 = "a") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a",s2 = "a") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b",s2 = "a10b") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b",s2 = "a10b") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1",s2 = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1",s2 = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1a1a1",s2 = "a3a3") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1a1a1",s2 = "a3a3") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1",s2 = "ab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1",s2 = "ab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b",s2 = "c5b") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b",s2 = "c5b") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc",s2 = "3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc",s2 = "3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "h3ll0",s2 = "hello") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "h3ll0",s2 = "hello") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123",s2 = "3") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123",s2 = "3") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3",s2 = "a1b23c") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3",s2 = "a1b23c") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "internationalization",s2 = "i18n") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "internationalization",s2 = "i18n") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b",s2 = "ab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b",s2 = "ab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3",s2 = "a1b5") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3",s2 = "a1b5") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "z1x2c3v",s2 = "zx9") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "z1x2c3v",s2 = "zx9") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4",s2 = "a1b2c34d") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4",s2 = "a1b2c34d") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a1b1c",s2 = "3abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a1b1c",s2 = "3abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a",s2 = "1") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a",s2 = "1") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab1",s2 = "a1b") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab1",s2 = "a1b") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123",s2 = "321") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123",s2 = "321") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab",s2 = "a2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab",s2 = "a2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b",s2 = "aaab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b",s2 = "aaab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1",s2 = "2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1",s2 = "2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3",s2 = "abc6") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3",s2 = "abc6") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc",s2 = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc",s2 = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "hello",s2 = "5") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "hello",s2 = "5") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "l123e",s2 = "44") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "l123e",s2 = "44") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc",s2 = "3abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc",s2 = "3abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b5c5",s2 = "abc15") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b5c5",s2 = "abc15") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b2c2",s2 = "aabbcc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b2c2",s2 = "aabbcc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc12def45",s2 = "abcdef123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc12def45",s2 = "abcdef123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i",s2 = "abcdefghi") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i",s2 = "abcdefghi") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "x9y8z7",s2 = "xyz321") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "x9y8z7",s2 = "xyz321") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3",s2 = "abc123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3",s2 = "abc123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "10abcdefghijklmnopqrstuvwxyz10abcdefghijklmnopqrstuvwxyz10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "10abcdefghijklmnopqrstuvwxyz10abcdefghijklmnopqrstuvwxyz10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc456",s2 = "9abc10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc456",s2 = "9abc10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123456",s2 = "654321") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123456",s2 = "654321") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij123456789012",s2 = "abcdefghij123456789012") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij123456789012",s2 = "abcdefghij123456789012") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d",s2 = "aabbcccdddd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d",s2 = "aabbcccdddd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyza1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyza1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc12def45",s2 = "abcdef19") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc12def45",s2 = "abcdef19") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc1def2ghi3",s2 = "a1b1c1d1e1f1g1h1i1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc1def2ghi3",s2 = "a1b1c1d1e1f1g1h1i1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1",s2 = "abc1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1",s2 = "abc1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d",s2 = "1234abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d",s2 = "1234abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "11a2b",s2 = "aaaaaaaaaab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "11a2b",s2 = "aaaaaaaaaab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j0",s2 = "abcdefghij10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j0",s2 = "abcdefghij10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij1234567891") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij1234567891") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b5c5d5e5",s2 = "abcde25") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b5c5d5e5",s2 = "abcde25") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4d5e6f7g8h9i10",s2 = "abcdefghi10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4d5e6f7g8h9i10",s2 = "abcdefghi10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij1234567890",s2 = "abcdefghij123456789") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij1234567890",s2 = "abcdefghij123456789") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27",s2 = "abcdefghijklmnopqrstuvwxyza27") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27",s2 = "abcdefghijklmnopqrstuvwxyza27") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def",s2 = "abc12def3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def",s2 = "abc12def3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a12b34c56",s2 = "a12b34c56") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a12b34c56",s2 = "a12b34c56") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "l10n",s2 = "leetcode") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "l10n",s2 = "leetcode") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e",s2 = "a1b2c3d4e5") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e",s2 = "a1b2c3d4e5") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc",s2 = "321cba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc",s2 = "321cba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i10j",s2 = "abcdefghij1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i10j",s2 = "abcdefghij1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a4b2c3",s2 = "aaaaabbbccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a4b2c3",s2 = "aaaaabbbccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a3b",s2 = "aaab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a3b",s2 = "aaab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4",s2 = "aaabbbcccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4",s2 = "aaabbbcccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6",s2 = "abcdefghijklmnopqrstuvwxyz123456") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6",s2 = "abcdefghijklmnopqrstuvwxyz123456") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "z1y1x1w1v1u1t1s1r1q1p1o1n1m1l1k1j1i1h1g1f1e1d1c1b1a1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "z1y1x1w1v1u1t1s1r1q1p1o1n1m1l1k1j1i1h1g1f1e1d1c1b1a1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c",s2 = "aabbccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c",s2 = "aabbccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def456ghi789",s2 = "abcdef789ghi123456") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def456ghi789",s2 = "abcdef789ghi123456") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4",s2 = "a9") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4",s2 = "a9") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def",s2 = "abcdef123") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def",s2 = "abcdef123") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc",s2 = "12abc3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc",s2 = "12abc3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z127a1b2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z127a1b2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "111abc222def333",s2 = "333abc222def111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "111abc222def333",s2 = "333abc222def111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij1234567891",s2 = "abcdefghij123456789") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij1234567891",s2 = "abcdefghij123456789") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "12abc",s2 = "a1b2c") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "12abc",s2 = "a1b2c") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "x1y2z3",s2 = "xyz123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "x1y2z3",s2 = "xyz123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a27b28c29d30",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a27b28c29d30",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyza1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyza1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "11abc",s2 = "abcdefghij1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "11abc",s2 = "abcdefghij1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b5c5",s2 = "aaaaabbbbbccccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b5c5",s2 = "aaaaabbbbbccccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b3c2d",s2 = "abc10d") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b3c2d",s2 = "abc10d") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "9z",s2 = "zzzzzzzzz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "9z",s2 = "zzzzzzzzz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5",s2 = "a1b2c3d4e5") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5",s2 = "a1b2c3d4e5") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1",s2 = "a1b1c1d0") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1",s2 = "a1b1c1d0") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a12b",s2 = "aaaaaaaaaaaaab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a12b",s2 = "aaaaaaaaaaaaab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcde123fghi",s2 = "abcdefghi123") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcde123fghi",s2 = "abcdefghi123") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i1j2k3l4m5n6o7p8q9r1s2t3u4v5w6x7y8z9",s2 = "1abcdefghijklmnopqrstuvwxyza2b3c4d5e6f7g8h9i1j2k3l4m5n6o7p8q9r1s2t3u4v5w6x7y8z9") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i1j2k3l4m5n6o7p8q9r1s2t3u4v5w6x7y8z9",s2 = "1abcdefghijklmnopqrstuvwxyza2b3c4d5e6f7g8h9i1j2k3l4m5n6o7p8q9r1s2t3u4v5w6x7y8z9") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def456",s2 = "abcdef123456") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def456",s2 = "abcdef123456") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc123",s2 = "321cba321") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc123",s2 = "321cba321") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij1234567891",s2 = "abcdefghij1234567891") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij1234567891",s2 = "abcdefghij1234567891") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4",s2 = "ab2c3d4") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4",s2 = "ab2c3d4") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc",s2 = "15c") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc",s2 = "15c") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc12def",s2 = "a15f") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc12def",s2 = "a15f") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a28b29c30d31e32f33g34h35i36j37k38l39m40",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a28b29c30d31e32f33g34h35i36j37k38l39m40",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "l123e",s2 = "leetcode") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "l123e",s2 = "leetcode") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27a28b29c30d31e32f33g34h35i36j37k38l39m40",s2 = "abcdefghijklmnopqrstuvwxyz12345678910111213141516171819202122232425262728293031323334353637383940") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27a28b29c30d31e32f33g34h35i36j37k38l39m40",s2 = "abcdefghijklmnopqrstuvwxyz12345678910111213141516171819202122232425262728293031323334353637383940") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc12def",s2 = "abcdefghijkl") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc12def",s2 = "abcdefghijkl") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1234",s2 = "1234") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1234",s2 = "1234") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc12",s2 = "ab11c") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc12",s2 = "ab11c") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i10j",s2 = "abcdefghij10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i10j",s2 = "abcdefghij10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10",s2 = "abcdefghij10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10",s2 = "abcdefghij10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "12ab3c",s2 = "a1b2c3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "12ab3c",s2 = "a1b2c3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc1def2ghi3jkl4mno5pqr6stu7vwx8yz9",s2 = "a1b2c3d4e5f6g7h8i9jklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc1def2ghi3jkl4mno5pqr6stu7vwx8yz9",s2 = "a1b2c3d4e5f6g7h8i9jklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4",s2 = "a111b1111c11111d111111") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4",s2 = "a111b1111c11111d111111") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b8c7d6e5f4g3h2i1",s2 = "abcdefghi123456789") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b8c7d6e5f4g3h2i1",s2 = "abcdefghi123456789") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij1234567890") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij1234567890") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1",s2 = "abcdefghij") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1",s2 = "abcdefghij") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcde1234567890",s2 = "0987654321edcba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcde1234567890",s2 = "0987654321edcba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "9a8b7c6d5e4f3g2h1i0j9k8l7m6n5o4p3q2r1s0t9u8v7w6x5y4z3",s2 = "zyxwvutsrqponmlkjihgfedcba34567890123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "9a8b7c6d5e4f3g2h1i0j9k8l7m6n5o4p3q2r1s0t9u8v7w6x5y4z3",s2 = "zyxwvutsrqponmlkjihgfedcba34567890123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a1b1c",s2 = "abc1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a1b1c",s2 = "abc1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567",s2 = "abcdefghijklmnopqrstu901vwx234yz567jkl012mno345pqr678ghi789def456abc123") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567",s2 = "abcdefghijklmnopqrstu901vwx234yz567jkl012mno345pqr678ghi789def456abc123") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcd1234",s2 = "a3b2cd4") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcd1234",s2 = "a3b2cd4") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "abcdefghijklnmopqrstuvwxyz22") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "abcdefghijklnmopqrstuvwxyz22") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab1cd2ef3",s2 = "a1b1c1d1e1f1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab1cd2ef3",s2 = "a1b1c1d1e1f1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "l10n",s2 = "leet1c2d") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "l10n",s2 = "leet1c2d") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e",s2 = "11111") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e",s2 = "11111") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123456789",s2 = "abcdefghi9") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123456789",s2 = "abcdefghi9") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i10",s2 = "abcdefghij10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i10",s2 = "abcdefghij10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b",s2 = "aaaaaaaaaab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b",s2 = "aaaaaaaaaab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "l10e",s2 = "leetcode") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "l10e",s2 = "leetcode") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "12ab34cd56",s2 = "15abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "12ab34cd56",s2 = "15abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc",s2 = "abc123") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc",s2 = "abc123") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij12345678901234",s2 = "abcdefghij12345678901234") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij12345678901234",s2 = "abcdefghij12345678901234") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "leetcode",s2 = "l2e8") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "leetcode",s2 = "l2e8") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3",s2 = "a12b3c") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3",s2 = "a12b3c") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c",s2 = "6") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c",s2 = "6") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c4d5e6f7g8h9i10j11k12",s2 = "abcdefghijk11lm12") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c4d5e6f7g8h9i10j11k12",s2 = "abcdefghijk11lm12") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z11a2b3c4d5e6f7g8h9i10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z11a2b3c4d5e6f7g8h9i10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc456def789ghi101112",s2 = "123abc456def789ghi101112") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc456def789ghi101112",s2 = "123abc456def789ghi101112") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "1abcdefghijklmnopqrstuvwxyza2b3c4d5e6f7g8h9i10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "1abcdefghijklmnopqrstuvwxyza2b3c4d5e6f7g8h9i10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "123abc456",s2 = "9abc101") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "123abc456",s2 = "9abc101") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2",s2 = "a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2a3a4a5a6a7a8a9a",s2 = "aaaaaaaaaab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2a3a4a5a6a7a8a9a",s2 = "aaaaaaaaaab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij123456789") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij123456789") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4",s2 = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4",s2 = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b9c",s2 = "abcdefghiabcdefghi") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b9c",s2 = "abcdefghiabcdefghi") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123",s2 = "a1b1c123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123",s2 = "a1b1c123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "z25y24x23w22v21u20t19s18r17q16p15o14n13m12l11k10j9i8h7g6f5e4d3c2b1a1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "z25y24x23w22v21u20t19s18r17q16p15o14n13m12l11k10j9i8h7g6f5e4d3c2b1a1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij12345678") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij123456789",s2 = "abcdefghij12345678") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9",s2 = "abcdefghi") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9",s2 = "abcdefghi") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc11",s2 = "abcdefghij1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc11",s2 = "abcdefghij1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij1234567890123",s2 = "abcdefghij1234567890123") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij1234567890123",s2 = "abcdefghij1234567890123") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "abcdefghijklmnopqrst1020") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",s2 = "abcdefghijklmnopqrst1020") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1",s2 = "abcdefghi1") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1",s2 = "abcdefghi1") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b2c3",s2 = "aaaaaaaaabbccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b2c3",s2 = "aaaaaaaaabbccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a5b5c5d5",s2 = "10abcde5") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a5b5c5d5",s2 = "10abcde5") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcde123",s2 = "a4bcd3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcde123",s2 = "a4bcd3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyz1234567891011121314151617181920212223242526") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123",s2 = "123abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123",s2 = "123abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a12b3c4",s2 = "a1b22c4") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a12b3c4",s2 = "a1b22c4") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz2") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz2") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b9c9d9e9f9g9h9i9j9k9l9m9n9o9p9q9r9s9t9u9v9w9x9y9z9",s2 = "aaaaaaaaabbbbbbbbcccccccccddddddddddeeeeeeeeeffffffffggggggggghhhhhhhhiiiiiiiiiijjjjjjjjjkkkkkkkkklllllllllmmmmmmmmmnnnnnnnnnoooooooooopppppppppqqqqqqqqqrrrrrrrrrssssssssstttttttttuuuuuuuuuvvvvvvvvvwwwwwwwwwxxxxxxxxxyyyyyyyyyzzzzzzzzz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b9c9d9e9f9g9h9i9j9k9l9m9n9o9p9q9r9s9t9u9v9w9x9y9z9",s2 = "aaaaaaaaabbbbbbbbcccccccccddddddddddeeeeeeeeeffffffffggggggggghhhhhhhhiiiiiiiiiijjjjjjjjjkkkkkkkkklllllllllmmmmmmmmmnnnnnnnnnoooooooooopppppppppqqqqqqqqqrrrrrrrrrssssssssstttttttttuuuuuuuuuvvvvvvvvvwwwwwwwwwxxxxxxxxxyyyyyyyyyzzzzzzzzz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c",s2 = "a1b2c3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c",s2 = "a1b2c3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123def",s2 = "a1b1c3d4e5f6") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123def",s2 = "a1b1c3d4e5f6") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z127") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20t21u22v23w24x25y26z27",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z127") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "9a9b9c9d",s2 = "81abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "9a9b9c9d",s2 = "81abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "x9y9z9",s2 = "xxxxxxxxxxxyyyyyyyyzzzzzzzzz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "x9y9z9",s2 = "xxxxxxxxxxxyyyyyyyyzzzzzzzzz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15",s2 = "abcdefghijklmnop123456789101112131415") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15",s2 = "abcdefghijklmnop123456789101112131415") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc1def2ghi3",s2 = "abcdefghi") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc1def2ghi3",s2 = "abcdefghi") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a9b9c9",s2 = "aaaaaaaaabbbbbbbbcccccccccc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a9b9c9",s2 = "aaaaaaaaabbbbbbbbcccccccccc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc123",s2 = "a1b2c3123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc123",s2 = "a1b2c3123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1abcdefghijklmnopqrstuvwxyz") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "1abcdefghijklmnopqrstuvwxyz") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c",s2 = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c",s2 = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z126") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4",s2 = "abcd10") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4",s2 = "abcd10") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a2b3c4d5e6f7g8h9i10j11",s2 = "abcdefghij10jk11") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a2b3c4d5e6f7g8h9i10j11",s2 = "abcdefghij10jk11") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz12345678910111213141516171819202122232425261234567891011121314151617181920212223242526") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z26",s2 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz12345678910111213141516171819202122232425261234567891011121314151617181920212223242526") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij12345678901",s2 = "abcdefghij12345678901") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij12345678901",s2 = "abcdefghij12345678901") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5",s2 = "15") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5",s2 = "15") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "1a2b3c",s2 = "abc123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "1a2b3c",s2 = "abc123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "ab3c",s2 = "abc3") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "ab3c",s2 = "abc3") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcde12345",s2 = "abcde54321") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcde12345",s2 = "abcde54321") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abc1def2ghi3",s2 = "abcdefg1h1i") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abc1def2ghi3",s2 = "abcdefg1h1i") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11",s2 = "abcdefghijk11") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11",s2 = "abcdefghijk11") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11",s2 = "abcdefghijk123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b2c3d4e5f6g7h8i9j10k11",s2 = "abcdefghijk123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "abcdefghij1234567890",s2 = "abcdefghij1234567890") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "abcdefghij1234567890",s2 = "abcdefghij1234567890") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz123") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz123") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s1 = "a10b",s2 = "aaaaaaaaaab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s1 = "a10b",s2 = "aaaaaaaaaab") == False: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s1 = "a1b",s2 = "a1b1") == False
@@ -197,3 +1765,5 @@ def check(candidate):
     assert candidate(s1 = "abcdefghij1234567890",s2 = "abcdefghij1234567890") == True
     assert candidate(s1 = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1",s2 = "abcdefghijklmnopqrstuvwxyz123") == False
     assert candidate(s1 = "a10b",s2 = "aaaaaaaaaab") == False
+
+

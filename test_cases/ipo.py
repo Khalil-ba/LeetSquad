@@ -1,5 +1,1061 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 10,profits = [5, 6],capital = [4, 0]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 10,profits = [5, 6],capital = [4, 0]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [5, 4, 3, 2, 1],capital = [1, 2, 3, 4, 5]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [5, 4, 3, 2, 1],capital = [1, 2, 3, 4, 5]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 3,profits = [8, 10, 6],capital = [2, 5, 0]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 3,profits = [8, 10, 6],capital = [2, 5, 0]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 0,profits = [1, 1, 1, 1],capital = [0, 0, 0, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 0,profits = [1, 1, 1, 1],capital = [0, 0, 0, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [10, 20, 30, 40, 50],capital = [0, 0, 0, 0, 0]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [10, 20, 30, 40, 50],capital = [0, 0, 0, 0, 0]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 10,profits = [1, 2, 3],capital = [5, 5, 5]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 10,profits = [1, 2, 3],capital = [5, 5, 5]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 5,profits = [1, 2, 3],capital = [3, 4, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 5,profits = [1, 2, 3],capital = [3, 4, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [1, 2, 3],capital = [0, 1, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [1, 2, 3],capital = [0, 1, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [10, 20, 30],capital = [0, 0, 0]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [10, 20, 30],capital = [0, 0, 0]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 1,profits = [1, 2, 3],capital = [1, 1, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 1,profits = [1, 2, 3],capital = [1, 1, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 100,profits = [1000, 2000, 3000],capital = [1000, 2000, 3000]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 100,profits = [1000, 2000, 3000],capital = [1000, 2000, 3000]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 3,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 3,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 0,profits = [1, 2, 3],capital = [0, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 0,profits = [1, 2, 3],capital = [0, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 1,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 1,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 3,profits = [5, 6, 4, 3, 2],capital = [2, 3, 4, 5, 6]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 3,profits = [5, 6, 4, 3, 2],capital = [2, 3, 4, 5, 6]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 2,profits = [5, 4, 3, 2, 1],capital = [5, 4, 3, 2, 1]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 2,profits = [5, 4, 3, 2, 1],capital = [5, 4, 3, 2, 1]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 5,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 905
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 5,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 905: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 20,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]) == 3720
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 20,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]) == 3720: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 6,w = 1,profits = [1, 2, 3, 4, 5, 6, 7],capital = [0, 1, 2, 3, 4, 5, 6]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 6,w = 1,profits = [1, 2, 3, 4, 5, 6, 7],capital = [0, 1, 2, 3, 4, 5, 6]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [10, 10, 10, 10, 10],capital = [0, 0, 0, 0, 0]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [10, 10, 10, 10, 10],capital = [0, 0, 0, 0, 0]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50],capital = [10, 20, 30, 40, 50]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50],capital = [10, 20, 30, 40, 50]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 0,profits = [100, 200, 300, 400, 500],capital = [0, 1, 2, 3, 4]) == 1300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 0,profits = [100, 200, 300, 400, 500],capital = [0, 1, 2, 3, 4]) == 1300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 1,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 501
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 1,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 501: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 10000,profits = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],capital = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000]) == 65000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 10000,profits = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],capital = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000]) == 65000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 0,profits = [10, 20, 30, 40],capital = [0, 10, 20, 30]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 0,profits = [10, 20, 30, 40],capital = [0, 10, 20, 30]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 20,w = 1000,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 22000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 20,w = 1000,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 22000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 1,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 1,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [1, 10, 100, 1000, 10000],capital = [0, 0, 0, 0, 0]) == 11111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [1, 10, 100, 1000, 10000],capital = [0, 0, 0, 0, 0]) == 11111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [100, 200, 300, 400],capital = [50, 50, 50, 50]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [100, 200, 300, 400],capital = [50, 50, 50, 50]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 50,profits = [100, 200, 300, 400, 500],capital = [50, 50, 50, 50, 50]) == 1250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 50,profits = [100, 200, 300, 400, 500],capital = [50, 50, 50, 50, 50]) == 1250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 50,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 540
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 50,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 540: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 5,profits = [5, 10, 15, 20, 25, 30, 35, 40],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 5,profits = [5, 10, 15, 20, 25, 30, 35, 40],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 50000,profits = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],capital = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 600000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 50000,profits = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],capital = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 600000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 3,profits = [1, 1, 1, 1, 1],capital = [0, 1, 2, 3, 4]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 3,profits = [1, 1, 1, 1, 1],capital = [0, 1, 2, 3, 4]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 405
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 405: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 0,profits = [10000, 9000, 8000, 7000, 6000],capital = [0, 1000, 2000, 3000, 4000]) == 10000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 0,profits = [10000, 9000, 8000, 7000, 6000],capital = [0, 1000, 2000, 3000, 4000]) == 10000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 1500,profits = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500],capital = [1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600]) == 15000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 1500,profits = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500],capital = [1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600]) == 15000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 1,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5501
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 1,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5501: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 1,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 1,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 1,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 1,profits = [1, 2, 3, 4, 5],capital = [0, 1, 2, 3, 4]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 100,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 5600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 100,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 5600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 5,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 5,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 280
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 280: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 15,profits = [5, 10, 15, 20, 25],capital = [5, 10, 15, 20, 25]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 15,profits = [5, 10, 15, 20, 25],capital = [5, 10, 15, 20, 25]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 20,profits = [10, 10, 10, 10, 10],capital = [15, 15, 15, 15, 15]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 20,profits = [10, 10, 10, 10, 10],capital = [15, 15, 15, 15, 15]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 1000,profits = [5000, 1000, 2000, 1500, 3000, 4000, 6000, 7000, 8000, 9000],capital = [0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]) == 36000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 1000,profits = [5000, 1000, 2000, 1500, 3000, 4000, 6000, 7000, 8000, 9000],capital = [0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]) == 36000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 15,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == 1210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 15,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == 1210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [500, 400, 300, 200, 100],capital = [100, 200, 300, 400, 500]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [500, 400, 300, 200, 100],capital = [100, 200, 300, 400, 500]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [5, 2, 10, 8, 1],capital = [3, 4, 1, 10, 5]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [5, 2, 10, 8, 1],capital = [3, 4, 1, 10, 5]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 1,profits = [5, 4, 3, 2, 1],capital = [0, 1, 2, 3, 4]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 1,profits = [5, 4, 3, 2, 1],capital = [0, 1, 2, 3, 4]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 0,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 0,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 1000,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 1000,profits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],capital = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [10, 20, 30, 40, 50],capital = [0, 0, 0, 0, 0]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [10, 20, 30, 40, 50],capital = [0, 0, 0, 0, 0]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [10, 15, 20, 25, 30],capital = [0, 0, 0, 0, 0]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [10, 15, 20, 25, 30],capital = [0, 0, 0, 0, 0]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 100,profits = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],capital = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 1450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 100,profits = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],capital = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 1450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 0,profits = [10000, 20000, 30000],capital = [10000, 20000, 30000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 0,profits = [10000, 20000, 30000],capital = [10000, 20000, 30000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 1000,profits = [500, 750, 1000, 1250, 1500],capital = [250, 500, 750, 1000, 1250]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 1000,profits = [500, 750, 1000, 1250, 1500],capital = [250, 500, 750, 1000, 1250]) == 6000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [5, 5, 5, 5, 5, 5],capital = [0, 0, 0, 0, 0, 0]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [5, 5, 5, 5, 5, 5],capital = [0, 0, 0, 0, 0, 0]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 20,profits = [100, 200, 300, 400, 500],capital = [10, 20, 30, 40, 50]) == 1120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 20,profits = [100, 200, 300, 400, 500],capital = [10, 20, 30, 40, 50]) == 1120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 100,profits = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capital = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]) == 375
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 100,profits = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capital = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]) == 375: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 10,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [5, 8, 7, 10, 9, 12],capital = [0, 5, 4, 9, 8, 10]) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [5, 8, 7, 10, 9, 12],capital = [0, 5, 4, 9, 8, 10]) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [50, 40, 30, 20, 10],capital = [5, 10, 15, 20, 25]) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [50, 40, 30, 20, 10],capital = [5, 10, 15, 20, 25]) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 20,profits = [100, 200, 300, 400, 500, 600],capital = [150, 250, 350, 450, 550, 650]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 20,profits = [100, 200, 300, 400, 500, 600],capital = [150, 250, 350, 450, 550, 650]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 0,profits = [5, 5, 5, 5, 5, 5],capital = [1, 2, 3, 4, 5, 6]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 0,profits = [5, 5, 5, 5, 5, 5],capital = [1, 2, 3, 4, 5, 6]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [1, 3, 2, 5, 4],capital = [0, 2, 3, 6, 4]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [1, 3, 2, 5, 4],capital = [0, 2, 3, 6, 4]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [5, 4, 3, 2, 1],capital = [10, 20, 30, 40, 50]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [5, 4, 3, 2, 1],capital = [10, 20, 30, 40, 50]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 6,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 6,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]) == 475
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 5,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]) == 475: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [6, 7, 8, 9, 10, 11],capital = [0, 1, 2, 3, 4, 5]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [6, 7, 8, 9, 10, 11],capital = [0, 1, 2, 3, 4, 5]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 10,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 10,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 100,profits = [50, 75, 25, 100, 125],capital = [0, 100, 50, 200, 150]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 100,profits = [50, 75, 25, 100, 125],capital = [0, 100, 50, 200, 150]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 5,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 5,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 3,profits = [1, 2, 3, 4, 5],capital = [2, 3, 4, 5, 6]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 3,profits = [1, 2, 3, 4, 5],capital = [2, 3, 4, 5, 6]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50],capital = [50, 50, 50, 50, 50]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50],capital = [50, 50, 50, 50, 50]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 50,profits = [100, 200, 300, 400, 500],capital = [50, 100, 150, 200, 250]) == 950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 50,profits = [100, 200, 300, 400, 500],capital = [50, 100, 150, 200, 250]) == 950: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [100, 200, 300, 400, 500],capital = [50, 100, 150, 200, 250]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [100, 200, 300, 400, 500],capital = [50, 100, 150, 200, 250]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 1210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 1210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 500,profits = [150, 250, 350, 450, 550],capital = [50, 150, 250, 350, 450]) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 500,profits = [150, 250, 350, 450, 550],capital = [50, 150, 250, 350, 450]) == 1500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [5, 6, 7, 8, 9],capital = [2, 3, 4, 5, 6]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [5, 6, 7, 8, 9],capital = [2, 3, 4, 5, 6]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 7,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 7,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8],capital = [0, 1, 2, 3, 4, 5, 6, 7]) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 6,w = 3,profits = [1, 2, 3, 4, 5, 6, 7],capital = [1, 2, 3, 4, 5, 6, 7]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 6,w = 3,profits = [1, 2, 3, 4, 5, 6, 7],capital = [1, 2, 3, 4, 5, 6, 7]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 5,profits = [3, 4, 5, 1, 2],capital = [1, 2, 3, 4, 5]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 5,profits = [3, 4, 5, 1, 2],capital = [1, 2, 3, 4, 5]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [10, 20, 30, 40, 50],capital = [0, 1, 2, 3, 4]) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [10, 20, 30, 40, 50],capital = [0, 1, 2, 3, 4]) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 100,profits = [200, 300, 400, 500, 600],capital = [50, 100, 150, 200, 250]) == 2100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 100,profits = [200, 300, 400, 500, 600],capital = [50, 100, 150, 200, 250]) == 2100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 100,w = 0,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 100,w = 0,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 20,profits = [10, 20, 30, 40, 50],capital = [5, 10, 15, 20, 25]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 20,profits = [10, 20, 30, 40, 50],capital = [5, 10, 15, 20, 25]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 1,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 1,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 1000000000,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000]) == 1000000001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 1000000000,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000]) == 1000000001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 1,w = 100,profits = [1, 2, 3, 4, 5],capital = [0, 0, 0, 0, 0]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 1,w = 100,profits = [1, 2, 3, 4, 5],capital = [0, 0, 0, 0, 0]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [2, 3, 5, 6, 8],capital = [1, 2, 3, 5, 6]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [2, 3, 5, 6, 8],capital = [1, 2, 3, 5, 6]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capital = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 100,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 100,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 2,profits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],capital = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 500,profits = [100, 200, 300, 400, 500, 600, 700, 800],capital = [0, 100, 200, 300, 400, 500, 600, 700]) == 2600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 500,profits = [100, 200, 300, 400, 500, 600, 700, 800],capital = [0, 100, 200, 300, 400, 500, 600, 700]) == 2600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [100, 200, 300, 400, 500],capital = [1, 2, 3, 4, 5]) == 1510
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [100, 200, 300, 400, 500],capital = [1, 2, 3, 4, 5]) == 1510: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 5,profits = [10, 15, 20, 25, 30],capital = [0, 5, 10, 15, 20]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 5,profits = [10, 15, 20, 25, 30],capital = [0, 5, 10, 15, 20]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [10, 20, 30, 40, 50],capital = [100, 50, 200, 300, 400]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [10, 20, 30, 40, 50],capital = [100, 50, 200, 300, 400]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 5,profits = [10, 10, 10, 10, 10],capital = [0, 0, 0, 0, 0]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 5,profits = [10, 10, 10, 10, 10],capital = [0, 0, 0, 0, 0]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 0,profits = [1, 2, 3, 4, 5, 6],capital = [0, 1, 1, 2, 2, 3]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 0,profits = [1, 2, 3, 4, 5, 6],capital = [0, 1, 1, 2, 2, 3]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 500,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 500,profits = [100, 200, 300, 400, 500],capital = [0, 0, 0, 0, 0]) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 6,w = 10,profits = [1, 2, 3, 4, 5, 6],capital = [0, 2, 4, 6, 8, 10]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 6,w = 10,profits = [1, 2, 3, 4, 5, 6],capital = [0, 2, 4, 6, 8, 10]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 3,profits = [10, 2, 11, 1, 4],capital = [3, 1, 5, 0, 2]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 3,profits = [10, 2, 11, 1, 4],capital = [3, 1, 5, 0, 2]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 0,profits = [100, 200, 300, 400],capital = [50, 150, 250, 350]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 0,profits = [100, 200, 300, 400],capital = [50, 150, 250, 350]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 50,profits = [10, 20, 30, 40, 50],capital = [10, 20, 30, 40, 50]) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 50,profits = [10, 20, 30, 40, 50],capital = [10, 20, 30, 40, 50]) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 50,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 50,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capital = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 5,profits = [6, 7, 8, 9, 10],capital = [0, 5, 10, 15, 20]) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 5,profits = [6, 7, 8, 9, 10],capital = [0, 5, 10, 15, 20]) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [1, 3, 5, 7, 9],capital = [0, 2, 3, 5, 8]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [1, 3, 5, 7, 9],capital = [0, 2, 3, 5, 8]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 5,profits = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],capital = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [10, 20, 30, 40, 50],capital = [0, 10, 20, 30, 40]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [10, 20, 30, 40, 50],capital = [0, 10, 20, 30, 40]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 10,profits = [15, 25, 35, 45, 55, 65, 75, 85, 95],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0]) == 265
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 10,profits = [15, 25, 35, 45, 55, 65, 75, 85, 95],capital = [0, 0, 0, 0, 0, 0, 0, 0, 0]) == 265: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 1000,profits = [1000, 1000, 1000, 1000, 1000],capital = [0, 100, 200, 300, 400]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 1000,profits = [1000, 1000, 1000, 1000, 1000],capital = [0, 100, 200, 300, 400]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 1,profits = [4, 5, 6, 7, 8, 9],capital = [2, 3, 4, 5, 6, 7]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 1,profits = [4, 5, 6, 7, 8, 9],capital = [2, 3, 4, 5, 6, 7]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 10,profits = [1, 5, 7, 10, 12],capital = [3, 7, 10, 14, 17]) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 10,profits = [1, 5, 7, 10, 12],capital = [3, 7, 10, 14, 17]) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capital = [50, 40, 30, 20, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 100,profits = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capital = [50, 40, 30, 20, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 1000,profits = [300, 500, 700, 100, 200, 400, 600, 800],capital = [0, 500, 1000, 1500, 2000, 2500, 3000, 3500]) == 2500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 1000,profits = [300, 500, 700, 100, 200, 400, 600, 800],capital = [0, 500, 1000, 1500, 2000, 2500, 3000, 3500]) == 2500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 4,w = 1000,profits = [900, 800, 700, 600, 500],capital = [500, 600, 700, 800, 900]) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 4,w = 1000,profits = [900, 800, 700, 600, 500],capital = [500, 600, 700, 800, 900]) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 3,w = 0,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 3,w = 0,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 15,w = 500,profits = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750],capital = [200, 150, 100, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 6500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 15,w = 500,profits = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750],capital = [200, 150, 100, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 6500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 2,w = 5,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 2,w = 5,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(k = 5,w = 10,profits = [10, 20, 30, 40, 50],capital = [5, 15, 25, 35, 45]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(k = 5,w = 10,profits = [10, 20, 30, 40, 50],capital = [5, 15, 25, 35, 45]) == 160: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(k = 1,w = 10,profits = [5, 6],capital = [4, 0]) == 16
@@ -133,3 +1189,5 @@ def check(candidate):
     assert candidate(k = 15,w = 500,profits = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750],capital = [200, 150, 100, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 6500
     assert candidate(k = 2,w = 5,profits = [10, 20, 30, 40, 50],capital = [1, 2, 3, 4, 5]) == 95
     assert candidate(k = 5,w = 10,profits = [10, 20, 30, 40, 50],capital = [5, 15, 25, 35, 45]) == 160
+
+

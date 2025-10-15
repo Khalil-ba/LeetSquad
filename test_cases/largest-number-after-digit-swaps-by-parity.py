@@ -1,5 +1,637 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(num = 24680) == 86420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 24680) == 86420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 987654321) == 987654321
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 987654321) == 987654321: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 13524687) == 75386421
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 13524687) == 75386421: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1000000) == 1000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1000000) == 1000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2222) == 2222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2222) == 2222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 222222) == 222222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 222222) == 222222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111111) == 111111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111111) == 111111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1111) == 1111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1111) == 1111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 975318642) == 975318642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 975318642) == 975318642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 13579) == 97531
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 13579) == 97531: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2468) == 8642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2468) == 8642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 135246) == 531642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 135246) == 531642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111) == 111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111) == 111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1234) == 3412
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1234) == 3412: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 65875) == 87655
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 65875) == 87655: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1919191919) == 9999911111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1919191919) == 9999911111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9753186420) == 9753186420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9753186420) == 9753186420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1234567890123456789) == 9898767654543232101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1234567890123456789) == 9898767654543232101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 8642086420) == 8866442200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 8642086420) == 8866442200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 5432109876) == 9876543210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 5432109876) == 9876543210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 31415926535) == 95655342311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 31415926535) == 95655342311: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1111111111) == 1111111111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1111111111) == 1111111111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 13579246801357924680) == 99775886645331142200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 13579246801357924680) == 99775886645331142200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2222222222) == 2222222222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2222222222) == 2222222222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1928374655) == 9786554231
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1928374655) == 9786554231: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999) == 999999999988888888887777777777666666666655555555554444444444333333333322222222221111111111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999) == 999999999988888888887777777777666666666655555555554444444444333333333322222222221111111111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1010101010) == 1010101010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1010101010) == 1010101010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 198765432) == 978563412
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 198765432) == 978563412: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1357913579) == 9977553311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1357913579) == 9977553311: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 10203040506070809) == 98647200500030001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 10203040506070809) == 98647200500030001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1000000000) == 1000000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1000000000) == 1000000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 123456789) == 987654321
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 123456789) == 987654321: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9876543210) == 9876543210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9876543210) == 9876543210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111333555777) == 777555333111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111333555777) == 777555333111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 333111555777) == 777555333111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 333111555777) == 777555333111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 222444666888) == 888666444222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 222444666888) == 888666444222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 973518642) == 975318642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 973518642) == 975318642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 8282828282) == 8888822222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 8282828282) == 8888822222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1000000001) == 1000000001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1000000001) == 1000000001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1234567890987654321) == 9898767654543232101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1234567890987654321) == 9898767654543232101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 999888777666555444333222111000) == 999888777666555444333222111000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 999888777666555444333222111000) == 999888777666555444333222111000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 8246035791) == 8642097531
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 8246035791) == 8642097531: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 5656565656565656565) == 5656565656565656565
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 5656565656565656565) == 5656565656565656565: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 973159731) == 997753311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 973159731) == 997753311: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1234567890) == 9876543210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1234567890) == 9876543210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111333555777999) == 999777555333111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111333555777999) == 999777555333111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 543210987654321) == 987654543232101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 543210987654321) == 987654543232101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 908070605040302010) == 986472005000300010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 908070605040302010) == 986472005000300010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 8642097531) == 8642097531
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 8642097531) == 8642097531: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 191928283737) == 997788223311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 191928283737) == 997788223311: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1098765432) == 9876543210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1098765432) == 9876543210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 100200400600800) == 186420000000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 100200400600800) == 186420000000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 102030405060708090) == 986472005000300010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 102030405060708090) == 986472005000300010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2468024680) == 8866442200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2468024680) == 8866442200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 987654321987654321) == 989876765543432121
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 987654321987654321) == 989876765543432121: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 59876543210) == 97856543210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 59876543210) == 97856543210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2040608000) == 8642000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2040608000) == 8642000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 555444333222111) == 555444333222111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 555444333222111) == 555444333222111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 5555555555) == 5555555555
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 5555555555) == 5555555555: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 99887766554433221100) == 99887766554433221100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 99887766554433221100) == 99887766554433221100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2468135790) == 8642975310
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2468135790) == 8642975310: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1133557799) == 9977553311
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1133557799) == 9977553311: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111222333444555666777888999) == 999888777666555444333222111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111222333444555666777888999) == 999888777666555444333222111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111222333444) == 333444111222
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111222333444) == 333444111222: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 7777777777) == 7777777777
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 7777777777) == 7777777777: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 98765432101234567890) == 98987676545432321010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 98765432101234567890) == 98987676545432321010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9999999999) == 9999999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9999999999) == 9999999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9876543211111) == 9876543211111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9876543211111) == 9876543211111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1357924680) == 9753186420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1357924680) == 9753186420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 111122223333444455556666777788889999) == 999988887777666655554444333322221111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 111122223333444455556666777788889999) == 999988887777666655554444333322221111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 1938765420) == 9758361420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 1938765420) == 9758361420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9735186420) == 9753186420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9735186420) == 9753186420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 987654321098765432109876543210) == 989898767676545454323232101010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 987654321098765432109876543210) == 989898767676545454323232101010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 9999999999888888888877777777776666666666555555555544444444443333333333222222222211111111110000000000) == 9999999999888888888877777777776666666666555555555544444444443333333333222222222211111111110000000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 9999999999888888888877777777776666666666555555555544444444443333333333222222222211111111110000000000) == 9999999999888888888877777777776666666666555555555544444444443333333333222222222211111111110000000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2244668800) == 8866442200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2244668800) == 8866442200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 112233445566778899) == 998877665544332211
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 112233445566778899) == 998877665544332211: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 2468013579) == 8642097531
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 2468013579) == 8642097531: {e}')
+    
+    total += 1
+    try:
+        result = candidate(num = 8080808080) == 8888800000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(num = 8080808080) == 8888800000: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(num = 24680) == 86420
@@ -80,3 +712,5 @@ def check(candidate):
     assert candidate(num = 112233445566778899) == 998877665544332211
     assert candidate(num = 2468013579) == 8642097531
     assert candidate(num = 8080808080) == 8888800000
+
+

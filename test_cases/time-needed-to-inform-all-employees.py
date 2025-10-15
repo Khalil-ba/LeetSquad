@@ -1,5 +1,357 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 6,headID = 2,manager = [2, 2, -1, 2, 2, 2],informTime = [0, 0, 1, 0, 0, 0]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,headID = 2,manager = [2, 2, -1, 2, 2, 2],informTime = [0, 0, 1, 0, 0, 0]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],informTime = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],informTime = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1,headID = 0,manager = [-1],informTime = [0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1,headID = 0,manager = [-1],informTime = [0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 954]) == 1116
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 954]) == 1116: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,headID = 6,manager = [1, 2, 3, 4, 5, 6, -1],informTime = [0, 6, 5, 4, 3, 2, 1]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,headID = 6,manager = [1, 2, 3, 4, 5, 6, -1],informTime = [0, 6, 5, 4, 3, 2, 1]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 956]) == 1118
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 956]) == 1118: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 914]) == 1076
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,headID = 2,manager = [3, 3, -1, 2],informTime = [0, 0, 162, 914]) == 1076: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 10,manager = [-1, 10, 10, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 10,manager = [-1, 10, 10, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 33, 12, 45, 78, 12, 34, 56, 23]) == 112
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 33, 12, 45, 78, 12, 34, 56, 23]) == 112: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,headID = 5,manager = [2, 2, 3, 4, 5, -1, 3, 5, 3, 5, 5, 4],informTime = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,headID = 5,manager = [2, 2, 3, 4, 5, -1, 3, 5, 3, 5, 5, 4],informTime = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 30,headID = 29,manager = [28, 28, 28, 28, 29, 29, 29, 29, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 8],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 30,headID = 29,manager = [28, 28, 28, 28, 29, 29, 29, 29, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 8],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,headID = 3,manager = [5, 5, 5, 5, 6, 6, -1, 7, 7, 8, 8, 9],informTime = [0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,headID = 3,manager = [5, 5, 5, 5, 6, 6, -1, 7, 7, 8, 8, 9],informTime = [0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8],informTime = [0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8],informTime = [0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 19,manager = [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1],informTime = [0, 6, 5, 4, 3, 2, 1, 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 19,manager = [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1],informTime = [0, 6, 5, 4, 3, 2, 1, 0, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 7,manager = [6, 6, 6, 7, 7, 7, 7, -1, 8, 8, 8, 9, 9, 10, 10],informTime = [1, 1, 1, 2, 2, 2, 3, 0, 1, 1, 1, 1, 1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 7,manager = [6, 6, 6, 7, 7, 7, 7, -1, 8, 8, 8, 9, 9, 10, 10],informTime = [1, 1, 1, 2, 2, 2, 3, 0, 1, 1, 1, 1, 1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,headID = 9,manager = [9, 9, 9, 9, 9, 9, 9, 9, 9, -1, 10, 10, 11, 11, 12, 12, 13, 13],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,headID = 9,manager = [9, 9, 9, 9, 9, 9, 9, 9, 9, -1, 10, 10, 11, 11, 12, 12, 13, 13],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 2, 2, 1, 1, 3, 3, 4, 4, 5]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 2, 2, 1, 1, 3, 3, 4, 4, 5]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 5,manager = [5, 5, 5, 5, 5, -1, 6, 6, 7, 7, 8, 8, 9, 9, 10],informTime = [0, 12, 34, 56, 78, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 5,manager = [5, 5, 5, 5, 5, -1, 6, 6, 7, 7, 8, 8, 9, 9, 10],informTime = [0, 12, 34, 56, 78, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 7,manager = [7, 7, 7, 7, 7, 7, 7, -1, 8, 8, 9, 9, 10, 10, 11],informTime = [0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0]) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 7,manager = [7, 7, 7, 7, 7, 7, 7, -1, 8, 8, 9, 9, 10, 10, 11],informTime = [0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0]) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24],informTime = [0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24],informTime = [0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 7,manager = [10, 9, 9, 9, 10, 10, 7, -1, 6, 6, 6, 4, 4, 3, 3],informTime = [0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 1, 1, 2, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 7,manager = [10, 9, 9, 9, 10, 10, 7, -1, 6, 6, 6, 4, 4, 3, 3],informTime = [0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 1, 1, 2, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 17,headID = 10,manager = [10, 10, 10, 11, 11, 12, 12, 13, 13, 14, -1, 15, 15, 16, 16, 16, 16],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 50, 50, 20, 20, 10, 10]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 17,headID = 10,manager = [10, 10, 10, 11, 11, 12, 12, 13, 13, 14, -1, 15, 15, 16, 16, 16, 16],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 50, 50, 20, 20, 10, 10]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 34, 23, 56, 45, 12, 89, 34, 12]) == 123
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 34, 23, 56, 45, 12, 89, 34, 12]) == 123: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 13, 10, 15, 20, 8, 5, 7, 12]) == 82
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 13, 10, 15, 20, 8, 5, 7, 12]) == 82: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,headID = 50,manager = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, -1],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,headID = 50,manager = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, -1],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,headID = 50,manager = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, -1, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,headID = 50,manager = [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, -1, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 2, 1, 1, 3, 1, 1, 0, 0, 0]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 2, 1, 1, 3, 1, 1, 0, 0, 0]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 0,manager = [-1, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],informTime = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 0,manager = [-1, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],informTime = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,headID = 24,manager = [19, 19, 19, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, -1],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 0]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,headID = 24,manager = [19, 19, 19, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, -1],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 0]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 34, 0, 0, 0, 0, 0, 0, 0]) == 67
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4],informTime = [0, 67, 34, 0, 0, 0, 0, 0, 0, 0]) == 67: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,headID = 3,manager = [3, 3, 3, -1, 4, 4, 5, 5, 6, 6, 7, 7],informTime = [0, 0, 0, 100, 50, 50, 25, 25, 10, 10, 5, 5]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,headID = 3,manager = [3, 3, 3, -1, 4, 4, 5, 5, 6, 6, 7, 7],informTime = [0, 0, 0, 100, 50, 50, 25, 25, 10, 10, 5, 5]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,headID = 0,manager = [-1, 0, 0, 0, 1, 1, 2, 2, 3, 3],informTime = [0, 6, 5, 4, 3, 2, 1, 7, 8, 9]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,headID = 0,manager = [-1, 0, 0, 0, 1, 1, 2, 2, 3, 3],informTime = [0, 6, 5, 4, 3, 2, 1, 7, 8, 9]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 7,manager = [10, 9, 9, 10, 8, 8, 7, -1, 10, 10, 10, 11, 11, 12, 12],informTime = [0, 6, 5, 4, 3, 2, 1, 0, 7, 8, 9, 10, 11, 12, 13]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 7,manager = [10, 9, 9, 10, 8, 8, 7, -1, 10, 10, 10, 11, 11, 12, 12],informTime = [0, 6, 5, 4, 3, 2, 1, 0, 7, 8, 9, 10, 11, 12, 13]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,headID = 25,manager = [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, -1, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,headID = 25,manager = [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, -1, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 14,manager = [10, 9, 12, 5, 5, 14, 6, 6, 8, 9, 9, 12, 12, 13, -1],informTime = [0, 23, 34, 0, 0, 18, 19, 12, 21, 13, 18, 28, 35, 0, 0]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 14,manager = [10, 9, 12, 5, 5, 14, 6, 6, 8, 9, 9, 12, 12, 13, -1],informTime = [0, 23, 34, 0, 0, 18, 19, 12, 21, 13, 18, 28, 35, 0, 0]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 15,manager = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, -1, 16, 16, 16, 16],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 15,manager = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, -1, 16, 16, 16, 16],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,headID = 19,manager = [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, -1],informTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,headID = 19,manager = [19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, -1],informTime = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2],informTime = [0, 30, 40, 50, 60, 70, 80, 90, 100]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,headID = 0,manager = [-1, 0, 0, 0, 0, 1, 1, 2, 2],informTime = [0, 30, 40, 50, 60, 70, 80, 90, 100]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,headID = 4,manager = [4, 4, 4, 4, -1, 12, 13, 12, 13, 12, 13, 4, 14, 14, 4, 15, 16, 15],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 18, 0, 0, 0]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,headID = 4,manager = [4, 4, 4, 4, -1, 12, 13, 12, 13, 12, 13, 4, 14, 14, 4, 15, 16, 15],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 18, 0, 0, 0]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,headID = 4,manager = [2, 2, 4, 2, 7, 5, 5, -1],informTime = [0, 0, 4, 0, 0, 0, 6, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,headID = 4,manager = [2, 2, 4, 2, 7, 5, 5, -1],informTime = [0, 0, 4, 0, 0, 0, 6, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],informTime = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],informTime = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,headID = 12,manager = [12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, -1, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,headID = 12,manager = [12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, -1, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,headID = 0,manager = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],informTime = [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 88
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,headID = 0,manager = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],informTime = [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 88: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 6,headID = 2,manager = [2, 2, -1, 2, 2, 2],informTime = [0, 0, 1, 0, 0, 0]) == 1
@@ -45,3 +397,5 @@ def check(candidate):
     assert candidate(n = 15,headID = 0,manager = [-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],informTime = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 2
     assert candidate(n = 25,headID = 12,manager = [12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, -1, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20],informTime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
     assert candidate(n = 13,headID = 0,manager = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],informTime = [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 88
+
+

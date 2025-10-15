@@ -1,5 +1,685 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 6, 12, 7, 3, 5]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 6, 12, 7, 3, 5]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 200, 300, 400, 500]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 200, 300, 400, 500]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [8, 8]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [8, 8]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 4, 3, 2, 1, 10, 9, 8, 7, 6]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 4, 3, 2, 1, 10, 9, 8, 7, 6]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [9, 5, 1, 3, 7, 4, 2, 8, 6, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [9, 5, 1, 3, 7, 4, 2, 8, 6, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990, 99989, 99988, 99987, 99986, 99985, 99984, 99983, 99982, 99981, 99980, 99979, 99978, 99977, 99976, 99975, 99974, 99973, 99972, 99971, 99970, 99969, 99968, 99967, 99966, 99965, 99964, 99963, 99962, 99961, 99960, 99959, 99958, 99957, 99956, 99955, 99954, 99953, 99952, 99951, 99950, 99949, 99948, 99947, 99946, 99945, 99944, 99943, 99942, 99941, 99940, 99939, 99938, 99937, 99936, 99935, 99934, 99933, 99932, 99931, 99930, 99929, 99928, 99927, 99926, 99925, 99924, 99923, 99922, 99921, 99920, 99919, 99918, 99917, 99916, 99915, 99914, 99913, 99912, 99911, 99910, 99909, 99908, 99907, 99906, 99905, 99904, 99903, 99902, 99901]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990, 99989, 99988, 99987, 99986, 99985, 99984, 99983, 99982, 99981, 99980, 99979, 99978, 99977, 99976, 99975, 99974, 99973, 99972, 99971, 99970, 99969, 99968, 99967, 99966, 99965, 99964, 99963, 99962, 99961, 99960, 99959, 99958, 99957, 99956, 99955, 99954, 99953, 99952, 99951, 99950, 99949, 99948, 99947, 99946, 99945, 99944, 99943, 99942, 99941, 99940, 99939, 99938, 99937, 99936, 99935, 99934, 99933, 99932, 99931, 99930, 99929, 99928, 99927, 99926, 99925, 99924, 99923, 99922, 99921, 99920, 99919, 99918, 99917, 99916, 99915, 99914, 99913, 99912, 99911, 99910, 99909, 99908, 99907, 99906, 99905, 99904, 99903, 99902, 99901]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 1, 4, 3, 2, 6, 7, 8, 9, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 1, 4, 3, 2, 6, 7, 8, 9, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [2, 1, 3, 1, 2, 3, 4, 3, 2, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [2, 1, 3, 1, 2, 3, 4, 3, 2, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [9, 3, 5, 7, 2, 8, 6, 4, 1, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [9, 3, 5, 7, 2, 8, 6, 4, 1, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [30, 25, 20, 15, 10, 5, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [30, 25, 20, 15, 10, 5, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205, 215]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205, 215]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990, 99989, 99988, 99987, 99986, 99985, 99984, 99983, 99982, 99981]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990, 99989, 99988, 99987, 99986, 99985, 99984, 99983, 99982, 99981]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(grades = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6, 11, 20, 12, 19, 13, 18, 14, 17, 15, 16, 21, 30, 22, 29, 23, 28, 24, 27, 25, 26]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(grades = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6, 11, 20, 12, 19, 13, 18, 14, 17, 15, 16, 21, 30, 22, 29, 23, 28, 24, 27, 25, 26]) == 7: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(grades = [10, 6, 12, 7, 3, 5]) == 3
@@ -86,3 +766,5 @@ def check(candidate):
     assert candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 5
     assert candidate(grades = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25]) == 9
     assert candidate(grades = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6, 11, 20, 12, 19, 13, 18, 14, 17, 15, 16, 21, 30, 22, 29, 23, 28, 24, 27, 25, 26]) == 7
+
+

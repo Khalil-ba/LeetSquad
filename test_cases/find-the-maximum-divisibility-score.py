@@ -1,5 +1,1061 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [20, 14, 21, 10],divisors = [10, 16, 20]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [20, 14, 21, 10],divisors = [10, 16, 20]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 14, 28, 35],divisors = [7, 14, 28, 35]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 14, 28, 35],divisors = [7, 14, 28, 35]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48],divisors = [3, 6, 12, 24]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48],divisors = [3, 6, 12, 24]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [15, 30, 45, 60, 75],divisors = [5, 10, 15, 20, 25]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [15, 30, 45, 60, 75],divisors = [5, 10, 15, 20, 25]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300],divisors = [10, 20, 50]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300],divisors = [10, 20, 50]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 18, 27, 36, 45],divisors = [9, 18, 27]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 18, 27, 36, 45],divisors = [9, 18, 27]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11, 22, 33, 44, 55],divisors = [11, 22, 33, 44, 55]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11, 22, 33, 44, 55],divisors = [11, 22, 33, 44, 55]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 18, 27, 36],divisors = [3, 6, 9, 18]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 18, 27, 36],divisors = [3, 6, 9, 18]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 6, 9, 12],divisors = [3, 6, 9]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 6, 9, 12],divisors = [3, 6, 9]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 14, 21, 28],divisors = [7, 14]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 14, 21, 28],divisors = [7, 14]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 14, 21, 28, 35],divisors = [7, 14]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 14, 21, 28, 35],divisors = [7, 14]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48, 60],divisors = [2, 3, 4, 5, 6]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48, 60],divisors = [2, 3, 4, 5, 6]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 16, 24, 32, 40],divisors = [2, 4, 8, 16, 32]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 16, 24, 32, 40],divisors = [2, 4, 8, 16, 32]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],divisors = [1, 2, 3, 4, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],divisors = [1, 2, 3, 4, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6],divisors = [1, 2, 3, 4, 5, 6]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6],divisors = [1, 2, 3, 4, 5, 6]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11, 22, 33, 44, 55],divisors = [11, 22, 33]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11, 22, 33, 44, 55],divisors = [11, 22, 33]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25],divisors = [5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25],divisors = [5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25],divisors = [5, 10, 15, 20, 25]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25],divisors = [5, 10, 15, 20, 25]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 30, 40, 50]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 30, 40, 50]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1],divisors = [1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1],divisors = [1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 17, 19, 23, 29],divisors = [13, 17, 19, 23, 29]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 17, 19, 23, 29],divisors = [13, 17, 19, 23, 29]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [15, 30, 45, 60],divisors = [5, 10, 15, 30]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [15, 30, 45, 60],divisors = [5, 10, 15, 30]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300],divisors = [10, 20, 30, 40]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300],divisors = [10, 20, 30, 40]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400],divisors = [10, 20, 30, 40]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400],divisors = [10, 20, 30, 40]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5],divisors = [1, 2, 3, 4, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5],divisors = [1, 2, 3, 4, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 14, 21, 28],divisors = [7, 14, 28]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 14, 21, 28],divisors = [7, 14, 28]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 9, 15, 50],divisors = [5, 3, 7, 2]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 9, 15, 50],divisors = [5, 3, 7, 2]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 16, 24, 32, 40],divisors = [4, 8, 16, 24, 32]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 16, 24, 32, 40],divisors = [4, 8, 16, 24, 32]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 16, 24, 32],divisors = [2, 4, 8, 16]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 16, 24, 32],divisors = [2, 4, 8, 16]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 6, 9, 12],divisors = [2, 3, 4]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 6, 9, 12],divisors = [2, 3, 4]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 17, 19],divisors = [2, 3, 5, 7, 11]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 17, 19],divisors = [2, 3, 5, 7, 11]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 7, 7, 7, 7],divisors = [2, 3, 5, 7, 11]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 7, 7, 7, 7],divisors = [2, 3, 5, 7, 11]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 7, 9, 3, 9],divisors = [5, 2, 3]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 7, 9, 3, 9],divisors = [5, 2, 3]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36],divisors = [2, 3, 4, 6, 8]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36],divisors = [2, 3, 4, 6, 8]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 2, 3, 4, 5, 101]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 2, 3, 4, 5, 101]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 101, 202, 303, 404]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 101, 202, 303, 404]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 30, 40, 50, 100]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 30, 40, 50, 100]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 10123, 11234, 12345, 13456, 14567, 15678, 16789, 17890, 18901, 19012, 20123],divisors = [123, 234, 345, 456, 567, 678, 789, 890, 901, 1012]) == 234
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901, 9012, 10123, 11234, 12345, 13456, 14567, 15678, 16789, 17890, 18901, 19012, 20123],divisors = [123, 234, 345, 456, 567, 678, 789, 890, 901, 1012]) == 234: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],divisors = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],divisors = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],divisors = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],divisors = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555],divisors = [11, 22, 33, 44, 55, 111111111]) == 111111111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555],divisors = [11, 22, 33, 44, 55, 111111111]) == 111111111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 18, 24, 30, 36, 42, 48, 54],divisors = [2, 3, 4, 6, 9, 12, 18, 24, 36]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 18, 24, 30, 36, 42, 48, 54],divisors = [2, 3, 4, 6, 9, 12, 18, 24, 36]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 500000000, 250000000, 125000000],divisors = [100000000, 50000000, 25000000, 12500000]) == 12500000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 500000000, 250000000, 125000000],divisors = [100000000, 50000000, 25000000, 12500000]) == 12500000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [29, 58, 87, 116, 145],divisors = [1, 29, 58, 87, 116, 145, 5, 11, 19, 23]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [29, 58, 87, 116, 145],divisors = [1, 29, 58, 87, 116, 145, 5, 11, 19, 23]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [13, 26, 39, 52, 65]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [13, 26, 39, 52, 65]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049],divisors = [3, 9, 27, 81, 243, 729]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049],divisors = [3, 9, 27, 81, 243, 729]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987, 654, 321, 654, 987],divisors = [13, 29, 37, 53, 17]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987, 654, 321, 654, 987],divisors = [13, 29, 37, 53, 17]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 2, 3, 4, 5, 10, 20, 50]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505],divisors = [1, 2, 3, 4, 5, 10, 20, 50]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [98, 196, 294, 392, 490],divisors = [7, 14, 28, 49, 98]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [98, 196, 294, 392, 490],divisors = [7, 14, 28, 49, 98]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000099],divisors = [1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000099]) == 1000000007
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000099],divisors = [1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000099]) == 1000000007: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 15, 24, 35, 48, 63, 80, 99, 120, 143, 168, 195, 224, 253, 288, 325, 364, 405, 448, 495],divisors = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 15, 24, 35, 48, 63, 80, 99, 120, 143, 168, 195, 224, 253, 288, 325, 364, 405, 448, 495],divisors = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000001, 2000000002, 3000000003, 4000000004],divisors = [1, 2, 3, 4, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000001, 2000000002, 3000000003, 4000000004],divisors = [1, 2, 3, 4, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 2000000000, 3000000000, 4000000000, 5000000000],divisors = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 2000000000, 3000000000, 4000000000, 5000000000],divisors = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 246813579, 864209753],divisors = [3, 9, 27, 81, 243]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 246813579, 864209753],divisors = [3, 9, 27, 81, 243]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [23, 46, 69, 92, 115, 138, 161, 184, 207],divisors = [23, 46, 69, 92, 115, 138, 161, 184, 207]) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [23, 46, 69, 92, 115, 138, 161, 184, 207],divisors = [23, 46, 69, 92, 115, 138, 161, 184, 207]) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [30, 60, 90, 120, 150, 180, 210, 240, 270, 300]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [30, 60, 90, 120, 150, 180, 210, 240, 270, 300]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 110, 220, 440, 880, 1760, 3520, 7040, 14080, 28160],divisors = [10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 110, 220, 440, 880, 1760, 3520, 7040, 14080, 28160],divisors = [10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 876543210, 765432109, 654321098, 543210987, 432109876, 321098765, 210987654, 109876543],divisors = [98765, 87654, 76543, 65432, 54321, 43210, 32109, 21098, 10987]) == 10987
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 876543210, 765432109, 654321098, 543210987, 432109876, 321098765, 210987654, 109876543],divisors = [98765, 87654, 76543, 65432, 54321, 43210, 32109, 21098, 10987]) == 10987: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000],divisors = [2, 4, 5, 8, 10, 20, 25, 40, 50, 100]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000],divisors = [2, 4, 5, 8, 10, 20, 25, 40, 50, 100]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456, 234567, 345678, 456789, 567890],divisors = [123, 234, 345, 456, 567]) == 123
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456, 234567, 345678, 456789, 567890],divisors = [123, 234, 345, 456, 567]) == 123: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 246913578, 370370370, 493827162],divisors = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 246913578, 370370370, 493827162],divisors = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 19, 23, 29, 31, 37, 41, 43, 47, 53],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 19, 23, 29, 31, 37, 41, 43, 47, 53],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000, 2000000, 3000000, 4000000, 5000000],divisors = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000, 2000000, 3000000, 4000000, 5000000],divisors = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456, 789012, 345678, 901234, 567890],divisors = [123, 456, 789, 101112, 131415]) == 123
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456, 789012, 345678, 901234, 567890],divisors = [123, 456, 789, 101112, 131415]) == 123: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [29, 29, 29, 29, 29],divisors = [29, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [29, 29, 29, 29, 29],divisors = [29, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [777777777, 888888888, 999999999, 1111111111, 2222222222, 3333333333],divisors = [7, 8, 9, 11, 13, 17, 19]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [777777777, 888888888, 999999999, 1111111111, 2222222222, 3333333333],divisors = [7, 8, 9, 11, 13, 17, 19]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],divisors = [3, 5, 6, 9, 10]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],divisors = [3, 5, 6, 9, 10]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [1, 2, 3, 4, 5, 10, 20, 50, 100, 101]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [1, 2, 3, 4, 5, 10, 20, 50, 100, 101]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 81, 729, 6561, 59049],divisors = [3, 9, 27, 81, 243]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 81, 729, 6561, 59049],divisors = [3, 9, 27, 81, 243]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [17, 19, 23, 29, 31],divisors = [2, 3, 5, 7, 11, 13, 17]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [17, 19, 23, 29, 31],divisors = [2, 3, 5, 7, 11, 13, 17]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 25, 50, 100]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500],divisors = [10, 20, 25, 50, 100]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [2, 3, 4, 6, 8, 12, 16, 24, 32, 48]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [2, 3, 4, 6, 8, 12, 16, 24, 32, 48]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333],divisors = [1, 3, 9, 27, 81, 243, 729]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333],divisors = [1, 3, 9, 27, 81, 243, 729]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [1, 2, 3, 4, 5, 10, 13, 26, 52, 65, 130]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [1, 2, 3, 4, 5, 10, 13, 26, 52, 65, 130]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60],divisors = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 2, 3, 4, 5]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60],divisors = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 2, 3, 4, 5]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],divisors = [101, 202, 303, 404, 505]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 12345, 12345, 12345, 12345],divisors = [1, 2, 3, 5, 15, 30, 4115, 12345]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 12345, 12345, 12345, 12345],divisors = [1, 2, 3, 5, 15, 30, 4115, 12345]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [81, 162, 243, 324, 405, 486, 567, 648, 729, 810],divisors = [3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 810]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [81, 162, 243, 324, 405, 486, 567, 648, 729, 810],divisors = [3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 810]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 888888888, 777777777, 666666666],divisors = [3, 9, 27, 81]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 888888888, 777777777, 666666666],divisors = [3, 9, 27, 81]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [42, 84, 126, 168, 210, 252],divisors = [6, 12, 18, 24, 30, 36]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [42, 84, 126, 168, 210, 252],divisors = [6, 12, 18, 24, 30, 36]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 135792468, 246813579],divisors = [123, 456, 789, 1234, 5678, 9876]) == 123
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 135792468, 246813579],divisors = [123, 456, 789, 1234, 5678, 9876]) == 123: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130, 143, 156, 169, 182, 195, 208, 221, 234, 247, 260],divisors = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130, 143, 156, 169, 182, 195, 208, 221, 234, 247, 260],divisors = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999, 888888, 777777, 666666, 555555, 444444, 333333, 222222, 111111],divisors = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == 111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999, 888888, 777777, 666666, 555555, 444444, 333333, 222222, 111111],divisors = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == 111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 1122334455, 2233445566, 3344556677, 4455667788],divisors = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666]) == 111111111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 1122334455, 2233445566, 3344556677, 4455667788],divisors = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666]) == 111111111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 876543210, 765432109, 654321098, 543210987],divisors = [98765432, 87654321, 76543210, 65432109, 54321098]) == 87654321
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 876543210, 765432109, 654321098, 543210987],divisors = [98765432, 87654321, 76543210, 65432109, 54321098]) == 87654321: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [3, 4, 6, 8, 12, 15, 20, 24, 30, 40]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [3, 4, 6, 8, 12, 15, 20, 24, 30, 40]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555],divisors = [99999999, 88888888, 77777777, 66666666, 55555555]) == 55555555
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555],divisors = [99999999, 88888888, 77777777, 66666666, 55555555]) == 55555555: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],divisors = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],divisors = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],divisors = [11, 13, 17, 19, 23, 29, 31, 37, 41, 43]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],divisors = [11, 13, 17, 19, 23, 29, 31, 37, 41, 43]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000, 2000, 3000, 4000, 5000],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000, 2000, 3000, 4000, 5000],divisors = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],divisors = [11, 22, 33, 44, 55]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],divisors = [11, 22, 33, 44, 55]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909],divisors = [101, 202, 303, 404]) == 101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909],divisors = [101, 202, 303, 404]) == 101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [49, 98, 147, 196, 245, 294, 343, 392, 441, 490],divisors = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [49, 98, 147, 196, 245, 294, 343, 392, 441, 490],divisors = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [97, 89, 83, 79, 73, 67, 61, 59, 53, 47, 43, 41, 37, 31, 29, 23, 19, 17, 13, 11, 7, 5, 3, 2],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 73, 79, 83, 89, 97]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [97, 89, 83, 79, 73, 67, 61, 59, 53, 47, 43, 41, 37, 31, 29, 23, 19, 17, 13, 11, 7, 5, 3, 2],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 73, 79, 83, 89, 97]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 500000000, 250000000, 125000000],divisors = [125000000, 250000000, 500000000, 1000000000]) == 125000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 500000000, 250000000, 125000000],divisors = [125000000, 250000000, 500000000, 1000000000]) == 125000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [42, 84, 126, 168, 210, 252, 294, 336, 378],divisors = [6, 12, 18, 24]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [42, 84, 126, 168, 210, 252, 294, 336, 378],divisors = [6, 12, 18, 24]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],divisors = [1, 2, 3, 4, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],divisors = [1, 2, 3, 4, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [37, 74, 111, 148, 185],divisors = [37, 74, 111, 148, 185, 35, 142, 194, 226, 370]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [37, 74, 111, 148, 185],divisors = [37, 74, 111, 148, 185, 35, 142, 194, 226, 370]) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000007, 2000000014, 3000000021],divisors = [1, 1000000007, 2000000014, 3000000021]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000007, 2000000014, 3000000021],divisors = [1, 1000000007, 2000000014, 3000000021]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555],divisors = [111, 222, 333, 444, 555]) == 111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555],divisors = [111, 222, 333, 444, 555]) == 111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 888888888, 777777777, 666666666],divisors = [1000000000, 999999999, 500000000, 250000000, 100000000]) == 100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 888888888, 777777777, 666666666],divisors = [1000000000, 999999999, 500000000, 250000000, 100000000]) == 100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [2, 3, 5, 7, 11]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],divisors = [2, 3, 5, 7, 11]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],divisors = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],divisors = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000007, 2000000014, 3000000021, 4000000028, 5000000035],divisors = [1000000007, 2000000014, 3000000021, 4000000028, 5000000035]) == 1000000007
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000007, 2000000014, 3000000021, 4000000028, 5000000035],divisors = [1000000007, 2000000014, 3000000021, 4000000028, 5000000035]) == 1000000007: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [1, 13, 26, 39, 52, 65, 78, 91, 104, 117, 130]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130],divisors = [1, 13, 26, 39, 52, 65, 78, 91, 104, 117, 130]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [33, 66, 99, 132, 165],divisors = [11, 22, 33, 44, 55]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [33, 66, 99, 132, 165],divisors = [11, 22, 33, 44, 55]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4294967295, 2147483647, 1073741823, 536870911],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4294967295, 2147483647, 1073741823, 536870911],divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [17, 19, 23, 29, 31, 37, 41, 43, 47],divisors = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [17, 19, 23, 29, 31, 37, 41, 43, 47],divisors = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120],divisors = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 1122334455, 5544332211, 9988776655],divisors = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 1122334455, 5544332211, 9988776655],divisors = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [77, 77, 77, 77, 77, 77, 77, 77, 77, 77],divisors = [7, 11, 13, 17, 19, 23, 29, 31, 37, 41]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [77, 77, 77, 77, 77, 77, 77, 77, 77, 77],divisors = [7, 11, 13, 17, 19, 23, 29, 31, 37, 41]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220],divisors = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220],divisors = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 1012345],divisors = [11111, 22222, 33333, 44444, 55555]) == 11111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 1012345],divisors = [11111, 22222, 33333, 44444, 55555]) == 11111: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(nums = [20, 14, 21, 10],divisors = [10, 16, 20]) == 10
@@ -133,3 +1189,5 @@ def check(candidate):
     assert candidate(nums = [77, 77, 77, 77, 77, 77, 77, 77, 77, 77],divisors = [7, 11, 13, 17, 19, 23, 29, 31, 37, 41]) == 7
     assert candidate(nums = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220],divisors = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]) == 11
     assert candidate(nums = [123456, 234567, 345678, 456789, 567890, 678901, 789012, 890123, 901234, 1012345],divisors = [11111, 22222, 33333, 44444, 55555]) == 11111
+
+

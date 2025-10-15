@@ -1,5 +1,605 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(left = 100,right = 105) == "1158727752e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 100,right = 105) == "1158727752e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1,right = 10000) == "28462...79008e2499"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1,right = 10000) == "28462...79008e2499": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 10,right = 20) == "6704425728e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 10,right = 20) == "6704425728e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 371,right = 375) == "7219856259e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 371,right = 375) == "7219856259e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 1010) == "10563...82688e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 1010) == "10563...82688e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5000,right = 5010) == "49367...34144e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5000,right = 5010) == "49367...34144e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1234,right = 1238) == "28846...40584e1"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1234,right = 1238) == "28846...40584e1": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 999,right = 1000) == "999e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 999,right = 1000) == "999e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1,right = 10) == "36288e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1,right = 10) == "36288e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1234,right = 1240) == "44318...63424e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1234,right = 1240) == "44318...63424e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5,right = 5) == "5e0"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5,right = 5) == "5e0": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 1000) == "1e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 1000) == "1e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 10,right = 15) == "36036e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 10,right = 15) == "36036e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 1004) == "10100...50024e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 1004) == "10100...50024e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 500,right = 510) == "54464...59744e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 500,right = 510) == "54464...59744e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1,right = 100) == "93326...16864e24"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1,right = 100) == "93326...16864e24": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 995,right = 1000) == "98508...27388e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 995,right = 1000) == "98508...27388e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9995,right = 10000) == "99850...73988e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9995,right = 10000) == "99850...73988e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1,right = 4) == "24e0"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1,right = 4) == "24e0": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 2,right = 11) == "399168e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 2,right = 11) == "399168e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 500,right = 505) == "16099...69356e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 500,right = 505) == "16099...69356e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5000,right = 5005) == "15671...18506e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5000,right = 5005) == "15671...18506e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5,right = 10) == "1512e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5,right = 10) == "1512e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 8000,right = 8003) == "40990...04048e3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 8000,right = 8003) == "40990...04048e3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5555,right = 6666) == "28137...34688e279"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5555,right = 6666) == "28137...34688e279": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9000,right = 9005) == "53232...19508e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9000,right = 9005) == "53232...19508e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 100,right = 150) == "61219...44768e15"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 100,right = 150) == "61219...44768e15": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5,right = 20) == "10137...00736e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5,right = 20) == "10137...00736e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 3000,right = 3100) == "81710...90592e27"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 3000,right = 3100) == "81710...90592e27": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1234,right = 1244) == "10562...94176e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1234,right = 1244) == "10562...94176e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1,right = 5000) == "42285...33472e1249"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1,right = 5000) == "42285...33472e1249": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9000,right = 9050) == "53429...51328e15"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9000,right = 9050) == "53429...51328e15": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 100,right = 1000) == "43116...46048e227"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 100,right = 1000) == "43116...46048e227": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 6000,right = 6005) == "46772...86472e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 6000,right = 6005) == "46772...86472e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 7000,right = 7020) == "57553...63648e7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 7000,right = 7020) == "57553...63648e7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 100,right = 200) == "84505...02048e27"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 100,right = 200) == "84505...02048e27": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1234,right = 1250) == "39811...24736e7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1234,right = 1250) == "39811...24736e7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 4000,right = 4100) == "22481...83456e27"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 4000,right = 4100) == "22481...83456e27": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 1050) == "35045...20832e15"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 1050) == "35045...20832e15": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 4995,right = 5000) == "15578...18494e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 4995,right = 5000) == "15578...18494e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9500,right = 10000) == "29333...52864e128"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9500,right = 10000) == "29333...52864e128": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 2000,right = 3000) == "25024...18624e252"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 2000,right = 3000) == "25024...18624e252": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 6000,right = 6100) == "90528...09184e27"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 6000,right = 6100) == "90528...09184e27": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9995,right = 10005) == "99999...99856e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9995,right = 10005) == "99999...99856e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 100,right = 2000) == "35534...18272e477"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 100,right = 2000) == "35534...18272e477": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 7000,right = 7050) == "15097...01664e15"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 7000,right = 7050) == "15097...01664e15": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5500,right = 5510) == "14071...33184e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5500,right = 5510) == "14071...33184e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9999,right = 10000) == "9999e4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9999,right = 10000) == "9999e4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 8000,right = 8010) == "86491...39904e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 8000,right = 8010) == "86491...39904e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5,right = 50) == "12672...06688e12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5,right = 50) == "12672...06688e12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5000,right = 6000) == "31736...43584e253"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5000,right = 6000) == "31736...43584e253": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 8000,right = 8020) == "94684...81312e7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 8000,right = 8020) == "94684...81312e7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 8000,right = 9000) == "12498...67872e253"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 8000,right = 9000) == "12498...67872e253": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 6500,right = 6530) == "17034...07232e10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 6500,right = 6530) == "17034...07232e10": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 3000,right = 3010) == "18042...06464e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 3000,right = 3010) == "18042...06464e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 9999) == "70734...94464e2249"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 9999) == "70734...94464e2249": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5000,right = 5015) == "15629...41184e7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5000,right = 5015) == "15629...41184e7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 3000,right = 3025) == "28318...52192e9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 3000,right = 3025) == "28318...52192e9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1234,right = 5678) == "11390...64288e1112"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1234,right = 5678) == "11390...64288e1112": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 2000) == "82415...74464e253"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 2000) == "82415...74464e253": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9000,right = 9999) == "31626...93632e250"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9000,right = 9999) == "31626...93632e250": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 4321,right = 4325) == "15098...31038e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 4321,right = 4325) == "15098...31038e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 8765,right = 8780) == "12301...69504e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 8765,right = 8780) == "12301...69504e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 10000,right = 10010) == "10055...00288e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 10000,right = 10010) == "10055...00288e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9990,right = 10000) == "99451...72288e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9990,right = 10000) == "99451...72288e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 2000,right = 2010) == "21050...98176e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 2000,right = 2010) == "21050...98176e5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9990,right = 9999) == "99451...72288e2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9990,right = 9999) == "99451...72288e2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 5000,right = 5050) == "57259...77056e16"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 5000,right = 5050) == "57259...77056e16": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 2500,right = 2600) == "11420...49216e28"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 2500,right = 2600) == "11420...49216e28": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 2500,right = 2510) == "24371...13072e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 2500,right = 2510) == "24371...13072e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 3000,right = 4000) == "13222...08128e254"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 3000,right = 4000) == "13222...08128e254": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 1000,right = 10000) == "70734...94464e2253"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 1000,right = 10000) == "70734...94464e2253": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 7500,right = 7510) == "42545...13216e6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 7500,right = 7510) == "42545...13216e6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(left = 9000,right = 9010) == "31573...64992e5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(left = 9000,right = 9010) == "31573...64992e5": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(left = 100,right = 105) == "1158727752e3"
@@ -76,3 +676,5 @@ def check(candidate):
     assert candidate(left = 1000,right = 10000) == "70734...94464e2253"
     assert candidate(left = 7500,right = 7510) == "42545...13216e6"
     assert candidate(left = 9000,right = 9010) == "31573...64992e5"
+
+

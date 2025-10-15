@@ -1,5 +1,901 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 1, 1]),list2 = list_node([1, 1, 1])), list_node([1, 1, 1, 1, 1, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 1, 1]),list2 = list_node([1, 1, 1])), list_node([1, 1, 1, 1, 1, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35])), list_node([5, 10, 15, 20, 25, 30, 35]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35])), list_node([5, 10, 15, 20, 25, 30, 35])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 0, 2]),list2 = list_node([-2, -1, 0])), list_node([-2, -1, -1, 0, 0, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 0, 2]),list2 = list_node([-2, -1, 0])), list_node([-2, -1, -1, 0, 0, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10]),list2 = list_node([10])), list_node([10, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10]),list2 = list_node([10])), list_node([10, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100]),list2 = list_node([50, 75, 100])), list_node([50, 75, 100, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100]),list2 = list_node([50, 75, 100])), list_node([50, 75, 100, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, 0, 100]),list2 = list_node([-50, 50])), list_node([-100, -50, 0, 50, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, 0, 100]),list2 = list_node([-50, 50])), list_node([-100, -50, 0, 50, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([5]),list2 = list_node([4])), list_node([4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([5]),list2 = list_node([4])), list_node([4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7]),list2 = list_node([2, 4, 6, 8])), list_node([1, 2, 3, 4, 5, 6, 7, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7]),list2 = list_node([2, 4, 6, 8])), list_node([1, 2, 3, 4, 5, 6, 7, 8])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(list1 = list_node([]),list2 = list_node([])) == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(list1 = list_node([]),list2 = list_node([])) == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([5]),list2 = list_node([1, 2, 3])), list_node([1, 2, 3, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([5]),list2 = list_node([1, 2, 3])), list_node([1, 2, 3, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, 0, 100]),list2 = list_node([-50, 50])), list_node([-100, -50, 0, 50, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, 0, 100]),list2 = list_node([-50, 50])), list_node([-100, -50, 0, 50, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([]),list2 = list_node([0])), list_node([0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([]),list2 = list_node([0])), list_node([0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0]),list2 = list_node([-20, -15, -10])), list_node([-20, -15, -10, -10, -5, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0]),list2 = list_node([-20, -15, -10])), list_node([-20, -15, -10, -10, -5, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 1, 1, 1]),list2 = list_node([1, 1, 1, 1])), list_node([1, 1, 1, 1, 1, 1, 1, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 1, 1, 1]),list2 = list_node([1, 1, 1, 1])), list_node([1, 1, 1, 1, 1, 1, 1, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, -2, -3]),list2 = list_node([-4, -5, -6])), list_node([-4, -5, -6, -1, -2, -3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, -2, -3]),list2 = list_node([-4, -5, -6])), list_node([-4, -5, -6, -1, -2, -3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 4]),list2 = list_node([1, 3, 4])), list_node([1, 1, 2, 3, 4, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 4]),list2 = list_node([1, 3, 4])), list_node([1, 1, 2, 3, 4, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([4, 5, 6])), list_node([1, 2, 3, 4, 5, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([4, 5, 6])), list_node([1, 2, 3, 4, 5, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([-200, -150, -100, -50, 0])), list_node([-200, -150, -100, -100, -50, -50, 0, 0, 50, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([-200, -150, -100, -50, 0])), list_node([-200, -150, -100, -100, -50, -50, 0, 0, 50, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -98, -97]),list2 = list_node([-96, -95, -94])), list_node([-99, -98, -97, -96, -95, -94]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -98, -97]),list2 = list_node([-96, -95, -94])), list_node([-99, -98, -97, -96, -95, -94])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, -99, -98]),list2 = list_node([-100, -99, -98])), list_node([-100, -100, -99, -99, -98, -98]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, -99, -98]),list2 = list_node([-100, -99, -98])), list_node([-100, -100, -99, -99, -98, -98])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, -5, 0])), list_node([-20, -15, -10, -10, -5, -5, 0, 0, 5, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, -5, 0])), list_node([-20, -15, -10, -10, -5, -5, 0, 0, 5, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([30, 40, 50]),list2 = list_node([10, 20, 30, 40, 50, 60])), list_node([10, 20, 30, 30, 40, 40, 50, 50, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([30, 40, 50]),list2 = list_node([10, 20, 30, 40, 50, 60])), list_node([10, 20, 30, 30, 40, 40, 50, 50, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([2, 4, 6, 8]),list2 = list_node([1, 3, 5, 7, 9, 11, 13, 15])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([2, 4, 6, 8]),list2 = list_node([1, 3, 5, 7, 9, 11, 13, 15])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -50, -20, 0, 20, 50]),list2 = list_node([-98, -49, -19, -1, 19, 49])), list_node([-99, -98, -50, -49, -20, -19, -1, 0, 19, 20, 49, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -50, -20, 0, 20, 50]),list2 = list_node([-98, -49, -19, -1, 19, 49])), list_node([-99, -98, -50, -49, -20, -19, -1, 0, 19, 20, 49, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-11, -6, -1, 6, 11])), list_node([-11, -10, -6, -5, -1, 0, 5, 6, 10, 11]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-11, -6, -1, 6, 11])), list_node([-11, -10, -6, -5, -1, 0, 5, 6, 10, 11])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1]),list2 = list_node([2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1]),list2 = list_node([2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 1, 2, 3, 4]),list2 = list_node([-4, -3, -2, -1, 0])), list_node([-4, -3, -2, -1, 0, 0, 1, 2, 3, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 1, 2, 3, 4]),list2 = list_node([-4, -3, -2, -1, 0])), list_node([-4, -3, -2, -1, 0, 0, 1, 2, 3, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13]),list2 = list_node([2, 4, 6, 8, 10, 12, 14])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13]),list2 = list_node([2, 4, 6, 8, 10, 12, 14])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([50, 100, 150, 200, 250, 300]),list2 = list_node([25, 75, 125, 175, 225, 275, 325])), list_node([25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([50, 100, 150, 200, 250, 300]),list2 = list_node([25, 75, 125, 175, 225, 275, 325])), list_node([25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([50, 45, 40, 35, 30]),list2 = list_node([25, 20, 15, 10, 5, 0])), list_node([25, 20, 15, 10, 5, 0, 50, 45, 40, 35, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([50, 45, 40, 35, 30]),list2 = list_node([25, 20, 15, 10, 5, 0])), list_node([25, 20, 15, 10, 5, 0, 50, 45, 40, 35, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 2, 4, 6, 8]),list2 = list_node([0, 3, 5, 7, 9])), list_node([-1, 0, 2, 3, 4, 5, 6, 7, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 2, 4, 6, 8]),list2 = list_node([0, 3, 5, 7, 9])), list_node([-1, 0, 2, 3, 4, 5, 6, 7, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([2, 4, 6, 8, 10, 10, 12, 14, 16, 18, 20, 20, 30, 40, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([2, 4, 6, 8, 10, 10, 12, 14, 16, 18, 20, 20, 30, 40, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 2, 4, 6, 8, 10]),list2 = list_node([1, 3, 5, 7, 9])), list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 2, 4, 6, 8, 10]),list2 = list_node([1, 3, 5, 7, 9])), list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, -2, -3, -4, -5]),list2 = list_node([-5, -4, -3, -2, -1])), list_node([-5, -4, -3, -2, -1, -2, -3, -4, -5, -1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, -2, -3, -4, -5]),list2 = list_node([-5, -4, -3, -2, -1])), list_node([-5, -4, -3, -2, -1, -2, -3, -4, -5, -1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -98, -97, -96]),list2 = list_node([-95, -94, -93, -92])), list_node([-99, -98, -97, -96, -95, -94, -93, -92]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -98, -97, -96]),list2 = list_node([-95, -94, -93, -92])), list_node([-99, -98, -97, -96, -95, -94, -93, -92])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([0, -1, -2, -3, -4, -5])), list_node([0, -1, -2, -3, -4, -5, 1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([0, -1, -2, -3, -4, -5])), list_node([0, -1, -2, -3, -4, -5, 1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-5, -4, -3, -2, -1]),list2 = list_node([0, 1, 2, 3, 4, 5])), list_node([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-5, -4, -3, -2, -1]),list2 = list_node([0, 1, 2, 3, 4, 5])), list_node([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 2, -3, 4, -5]),list2 = list_node([1, -2, 3, -4, 5])), list_node([-1, 1, -2, 2, -3, 3, -4, 4, -5, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 2, -3, 4, -5]),list2 = list_node([1, -2, 3, -4, 5])), list_node([-1, 1, -2, 2, -3, 3, -4, 4, -5, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]),list2 = list_node([5, 15, 25, 35, 45, 55, 65, 75, 85, 95])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]),list2 = list_node([5, 15, 25, 35, 45, 55, 65, 75, 85, 95])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([10, 20, 30, 40, 50])), list_node([1, 3, 5, 7, 9, 10, 20, 30, 40, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([10, 20, 30, 40, 50])), list_node([1, 3, 5, 7, 9, 10, 20, 30, 40, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 2, 4, 6, 8]),list2 = list_node([1, 3, 5, 7, 9])), list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 2, 4, 6, 8]),list2 = list_node([1, 3, 5, 7, 9])), list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([])), list_node([-100, -50, 0, 50, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([])), list_node([-100, -50, 0, 50, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -8, -6, -4, -2]),list2 = list_node([-9, -7, -5, -3, -1])), list_node([-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -8, -6, -4, -2]),list2 = list_node([-9, -7, -5, -3, -1])), list_node([-10, -9, -8, -7, -6, -5, -4, -3, -2, -1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([-75, -25, 25, 75])), list_node([-100, -75, -50, -25, 0, 25, 50, 75, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, -50, 0, 50, 100]),list2 = list_node([-75, -25, 25, 75])), list_node([-100, -75, -50, -25, 0, 25, 50, 75, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1]),list2 = list_node([2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1]),list2 = list_node([2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([1, 3, 5, 7, 9])), list_node([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([1, 3, 5, 7, 9])), list_node([1, 1, 3, 3, 5, 5, 7, 7, 9, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-50, -40, -30]),list2 = list_node([-20, -10, 0, 10, 20, 30])), list_node([-50, -40, -30, -20, -10, 0, 10, 20, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-50, -40, -30]),list2 = list_node([-20, -10, 0, 10, 20, 30])), list_node([-50, -40, -30, -20, -10, 0, 10, 20, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10, 12, 14])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10, 12, 14])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100, 101, 102, 103]),list2 = list_node([104, 105, 106, 107])), list_node([100, 101, 102, 103, 104, 105, 106, 107]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100, 101, 102, 103]),list2 = list_node([104, 105, 106, 107])), list_node([100, 101, 102, 103, 104, 105, 106, 107])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-100, -50, -10]),list2 = list_node([-200, -150, -100, -50, -10])), list_node([-200, -150, -100, -100, -50, -50, -10, -10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-100, -50, -10]),list2 = list_node([-200, -150, -100, -50, -10])), list_node([-200, -150, -100, -100, -50, -50, -10, -10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1]),list2 = list_node([1, 2, 3, 4, 5])), list_node([1, 1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1]),list2 = list_node([1, 2, 3, 4, 5])), list_node([1, 1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35, 45, 55, 65])), list_node([5, 10, 15, 20, 25, 30, 35, 45, 55, 65]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35, 45, 55, 65])), list_node([5, 10, 15, 20, 25, 30, 35, 45, 55, 65])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100, 90, 80, 70, 60]),list2 = list_node([50, 40, 30, 20, 10])), list_node([50, 40, 30, 20, 10, 100, 90, 80, 70, 60]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100, 90, 80, 70, 60]),list2 = list_node([50, 40, 30, 20, 10])), list_node([50, 40, 30, 20, 10, 100, 90, 80, 70, 60])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 25, 35, 45]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 25, 35, 45])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100, 200, 300]),list2 = list_node([50, 150, 250, 350])), list_node([50, 100, 150, 200, 250, 300, 350]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100, 200, 300]),list2 = list_node([50, 150, 250, 350])), list_node([50, 100, 150, 200, 250, 300, 350])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([5])), list_node([1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([5])), list_node([1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -50, 0, 25, 75, 100]),list2 = list_node([-100, -75, -25, -1, 50, 100])), list_node([-100, -99, -75, -50, -25, -1, 0, 25, 50, 75, 100, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -50, 0, 25, 75, 100]),list2 = list_node([-100, -75, -25, -1, 50, 100])), list_node([-100, -99, -75, -50, -25, -1, 0, 25, 50, 75, 100, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([2, 4, 6, 8, 10]),list2 = list_node([1, 3, 5, 7, 9])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([2, 4, 6, 8, 10]),list2 = list_node([1, 3, 5, 7, 9])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100]),list2 = list_node([-100, -50, 0, 50, 75])), list_node([-100, -50, 0, 50, 75, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100]),list2 = list_node([-100, -50, 0, 50, 75])), list_node([-100, -50, 0, 50, 75, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([4, 5, 6, 7, 8, 9, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([])), list_node([1, 2, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([])), list_node([1, 2, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 0, 1, 2, 3]),list2 = list_node([-3, -2, -1, 0, 1])), list_node([-3, -2, -1, -1, 0, 0, 1, 1, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 0, 1, 2, 3]),list2 = list_node([-3, -2, -1, 0, 1])), list_node([-3, -2, -1, -1, 0, 0, 1, 1, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, -3, -5, -7, -9]),list2 = list_node([-2, -4, -6, -8, -10])), list_node([-2, -4, -6, -8, -10, -1, -3, -5, -7, -9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, -3, -5, -7, -9]),list2 = list_node([-2, -4, -6, -8, -10])), list_node([-2, -4, -6, -8, -10, -1, -3, -5, -7, -9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 45]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 45])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 0, 1]),list2 = list_node([-2, -1, 0, 1, 2])), list_node([-2, -1, -1, 0, 0, 1, 1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 0, 1]),list2 = list_node([-2, -1, 0, 1, 2])), list_node([-2, -1, -1, 0, 0, 1, 1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([50]),list2 = list_node([50, 50, 50, 50, 50])), list_node([50, 50, 50, 50, 50, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([50]),list2 = list_node([50, 50, 50, 50, 50])), list_node([50, 50, 50, 50, 50, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([1, 2, 3, 4, 5])), list_node([1, 1, 2, 2, 3, 3, 4, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3]),list2 = list_node([1, 2, 3, 4, 5])), list_node([1, 1, 2, 2, 3, 3, 4, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([50]),list2 = list_node([-50, 0, 50, 100])), list_node([-50, 0, 50, 50, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([50]),list2 = list_node([-50, 0, 50, 100])), list_node([-50, 0, 50, 50, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-5, -3, -1]),list2 = list_node([-4, -2, 0, 2, 4])), list_node([-5, -4, -3, -2, -1, 0, 2, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-5, -3, -1]),list2 = list_node([-4, -2, 0, 2, 4])), list_node([-5, -4, -3, -2, -1, 0, 2, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([5, 10, 15, 20]),list2 = list_node([25, 30, 35, 40, 45, 50])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([5, 10, 15, 20]),list2 = list_node([25, 30, 35, 40, 45, 50])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -50, 0, 25, 75]),list2 = list_node([-100, -25, -1, 50, 100])), list_node([-100, -99, -50, -25, -1, 0, 25, 50, 75, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -50, 0, 25, 75]),list2 = list_node([-100, -25, -1, 50, 100])), list_node([-100, -99, -50, -25, -1, 0, 25, 50, 75, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, 0, 15, 20])), list_node([-20, -15, -10, -10, -5, 0, 0, 5, 10, 15, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, 0, 15, 20])), list_node([-20, -15, -10, -10, -5, 0, 0, 5, 10, 15, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),list2 = list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),list2 = list_node([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 0, 0, 0, 0]),list2 = list_node([0, 0, 0, 0, 0])), list_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 0, 0, 0, 0]),list2 = list_node([0, 0, 0, 0, 0])), list_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10, 11, 12])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9]),list2 = list_node([2, 4, 6, 8, 10, 11, 12])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-50, -40, -30, -20, -10]),list2 = list_node([-60, -55, -45, -35, -25])), list_node([-60, -55, -50, -45, -40, -35, -30, -25, -20, -10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-50, -40, -30, -20, -10]),list2 = list_node([-60, -55, -45, -35, -25])), list_node([-60, -55, -50, -45, -40, -35, -30, -25, -20, -10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-3, -2, -1, 0, 1, 2, 3]),list2 = list_node([-4, -3, -2, -1, 0, 1, 2, 3, 4])), list_node([-4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-3, -2, -1, 0, 1, 2, 3]),list2 = list_node([-4, -3, -2, -1, 0, 1, 2, 3, 4])), list_node([-4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([0, 0, 0, 0]),list2 = list_node([-1, -2, -3, -4])), list_node([-1, -2, -3, -4, 0, 0, 0, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([0, 0, 0, 0]),list2 = list_node([-1, -2, -3, -4])), list_node([-1, -2, -3, -4, 0, 0, 0, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, -5, 0, 5, 10])), list_node([-20, -15, -10, -10, -5, -5, 0, 0, 5, 5, 10, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-20, -15, -10, -5, 0, 5, 10])), list_node([-20, -15, -10, -10, -5, -5, 0, 0, 5, 5, 10, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-15, -10, -5, 0, 5])), list_node([-15, -10, -10, -5, -5, 0, 0, 5, 5, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -5, 0, 5, 10]),list2 = list_node([-15, -10, -5, 0, 5])), list_node([-15, -10, -10, -5, -5, 0, 0, 5, 5, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([]),list2 = list_node([-50, -25, 0, 25, 50, 75])), list_node([-50, -25, 0, 25, 50, 75]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([]),list2 = list_node([-50, -25, 0, 25, 50, 75])), list_node([-50, -25, 0, 25, 50, 75])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([5, 6, 7, 8, 9])), list_node([1, 2, 3, 4, 5, 5, 6, 7, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5]),list2 = list_node([5, 6, 7, 8, 9])), list_node([1, 2, 3, 4, 5, 5, 6, 7, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100, 200, 300]),list2 = list_node([50, 150, 250, 350])), list_node([50, 100, 150, 200, 250, 300, 350]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100, 200, 300]),list2 = list_node([50, 150, 250, 350])), list_node([50, 100, 150, 200, 250, 300, 350])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 0, 3, 10, 20, 30, 40, 50]),list2 = list_node([1, 2, 4, 5, 8, 13, 21, 25, 35, 45, 55])), list_node([-1, 0, 1, 2, 3, 4, 5, 8, 10, 13, 20, 21, 25, 30, 35, 40, 45, 50, 55]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 0, 3, 10, 20, 30, 40, 50]),list2 = list_node([1, 2, 4, 5, 8, 13, 21, 25, 35, 45, 55])), list_node([-1, 0, 1, 2, 3, 4, 5, 8, 10, 13, 20, 21, 25, 30, 35, 40, 45, 50, 55])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-20, -10, 0, 10, 20]),list2 = list_node([-15, -5, 5, 15, 25])), list_node([-20, -15, -10, -5, 0, 5, 10, 15, 20, 25]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-20, -10, 0, 10, 20]),list2 = list_node([-15, -5, 5, 15, 25])), list_node([-20, -15, -10, -5, 0, 5, 10, 15, 20, 25])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11]),list2 = list_node([2, 4, 6, 8, 10, 12])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11]),list2 = list_node([2, 4, 6, 8, 10, 12])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45, 55])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([5, 15, 25, 35, 45, 55])), list_node([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])), list_node([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]),list2 = list_node([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),list2 = list_node([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])), list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-99, -98, -97, -96, -95]),list2 = list_node([-94, -93, -92, -91, -90])), list_node([-99, -98, -97, -96, -95, -94, -93, -92, -91, -90]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-99, -98, -97, -96, -95]),list2 = list_node([-94, -93, -92, -91, -90])), list_node([-99, -98, -97, -96, -95, -94, -93, -92, -91, -90])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([25, 35, 45, 55, 65])), list_node([10, 20, 25, 30, 35, 40, 45, 50, 55, 65]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([10, 20, 30, 40, 50]),list2 = list_node([25, 35, 45, 55, 65])), list_node([10, 20, 25, 30, 35, 40, 45, 50, 55, 65])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([100]),list2 = list_node([-100])), list_node([-100, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([100]),list2 = list_node([-100])), list_node([-100, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([1, 4, 7, 10]),list2 = list_node([2, 5, 8, 11])), list_node([1, 2, 4, 5, 7, 8, 10, 11]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([1, 4, 7, 10]),list2 = list_node([2, 5, 8, 11])), list_node([1, 2, 4, 5, 7, 8, 10, 11])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, 0, 1]),list2 = list_node([-2, -3, -4, -5, -6, -7, -8, -9, -10])), list_node([-2, -3, -4, -5, -6, -7, -8, -9, -10, -1, 0, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, 0, 1]),list2 = list_node([-2, -3, -4, -5, -6, -7, -8, -9, -10])), list_node([-2, -3, -4, -5, -6, -7, -8, -9, -10, -1, 0, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([50, 60, 70, 80, 90]),list2 = list_node([40, 55, 65, 75, 85])), list_node([40, 50, 55, 60, 65, 70, 75, 80, 85, 90]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([50, 60, 70, 80, 90]),list2 = list_node([40, 55, 65, 75, 85])), list_node([40, 50, 55, 60, 65, 70, 75, 80, 85, 90])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([5, 10, 15, 20, 25]),list2 = list_node([3, 8, 13, 18, 23])), list_node([3, 5, 8, 10, 13, 15, 18, 20, 23, 25]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([5, 10, 15, 20, 25]),list2 = list_node([3, 8, 13, 18, 23])), list_node([3, 5, 8, 10, 13, 15, 18, 20, 23, 25])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-1, -2, -3, -4, -5]),list2 = list_node([-1, -2, -3, -4, -5])), list_node([-1, -2, -3, -4, -5, -1, -2, -3, -4, -5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-1, -2, -3, -4, -5]),list2 = list_node([-1, -2, -3, -4, -5])), list_node([-1, -2, -3, -4, -5, -1, -2, -3, -4, -5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-50, -40, -30, -20, -10]),list2 = list_node([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])), list_node([-50, -40, -30, -20, -10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-50, -40, -30, -20, -10]),list2 = list_node([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])), list_node([-50, -40, -30, -20, -10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_list(candidate(list1 = list_node([-10, -20, -30, -40, -50]),list2 = list_node([-5, -15, -25, -35, -45])), list_node([-10, -20, -30, -40, -50, -5, -15, -25, -35, -45]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_list(candidate(list1 = list_node([-10, -20, -30, -40, -50]),list2 = list_node([-5, -15, -25, -35, -45])), list_node([-10, -20, -30, -40, -50, -5, -15, -25, -35, -45])): {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert is_same_list(candidate(list1 = list_node([1, 1, 1]),list2 = list_node([1, 1, 1])), list_node([1, 1, 1, 1, 1, 1]))
@@ -113,3 +1009,5 @@ def check(candidate):
     assert is_same_list(candidate(list1 = list_node([-1, -2, -3, -4, -5]),list2 = list_node([-1, -2, -3, -4, -5])), list_node([-1, -2, -3, -4, -5, -1, -2, -3, -4, -5]))
     assert is_same_list(candidate(list1 = list_node([-50, -40, -30, -20, -10]),list2 = list_node([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])), list_node([-50, -40, -30, -20, -10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
     assert is_same_list(candidate(list1 = list_node([-10, -20, -30, -40, -50]),list2 = list_node([-5, -15, -25, -35, -45])), list_node([-10, -20, -30, -40, -50, -5, -15, -25, -35, -45]))
+
+

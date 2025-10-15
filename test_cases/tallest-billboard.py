@@ -1,5 +1,797 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40, 50]) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40, 50]) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 3, 5, 7, 9]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 3, 5, 7, 9]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 10500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 10500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 6]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 6]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 10, 10, 10, 10, 10, 10, 10]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 10, 10, 10, 10, 10, 10, 10]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [3, 9, 7, 3, 5, 1, 100]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [3, 9, 7, 3, 5, 1, 100]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 5, 5, 5, 5, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 5, 5, 5, 5, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]) == 10000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]) == 10000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 4, 5, 6]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 4, 5, 6]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73]) == 355
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73]) == 355: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 21, 32, 43, 54, 65, 76, 87, 98]) == 238
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 21, 32, 43, 54, 65, 76, 87, 98]) == 238: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [500, 1500, 1000, 2000, 2500, 3000, 3500, 4000, 4500, 5000]) == 13500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [500, 1500, 1000, 2000, 2500, 3000, 3500, 4000, 4500, 5000]) == 13500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 232
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 232: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 150, 200, 250, 300, 350, 400]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 150, 200, 250, 300, 350, 400]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500]) == 31850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500]) == 31850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250]) == 2500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250]) == 2500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946]) == 14326
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946]) == 14326: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [8, 15, 30, 10, 20, 25, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170]) == 785
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [8, 15, 30, 10, 20, 25, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170]) == 785: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96]) == 396
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96]) == 396: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [999, 1000, 1001, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982]) == 9915
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [999, 1000, 1001, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982]) == 9915: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105]) == 420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105]) == 420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 162
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 162: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185, 205, 225, 245, 265, 285, 305, 325, 345, 365, 385]) == 1950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185, 205, 225, 245, 265, 285, 305, 325, 345, 365, 385]) == 1950: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 6000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 1, 2, 3, 4, 5]) == 3588
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 1, 2, 3, 4, 5]) == 3588: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154, 161, 168, 175, 182, 189, 196, 203, 210, 217, 224, 231, 238, 245, 252, 259, 266, 273, 280, 287, 294, 301, 308, 315]) == 3619
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154, 161, 168, 175, 182, 189, 196, 203, 210, 217, 224, 231, 238, 245, 252, 259, 266, 273, 280, 287, 294, 301, 308, 315]) == 3619: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 10500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 10500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 9895
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 9895: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 5, 10, 20, 25]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 5, 10, 20, 25]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 150, 300, 400, 500, 600, 700]) == 1400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 150, 300, 400, 500, 600, 700]) == 1400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 10, 100, 1000, 10, 100, 1, 1000, 100, 10]) == 1111
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 10, 100, 1000, 10, 100, 1, 1000, 100, 10]) == 1111: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131, 142, 153, 164, 175, 186, 197, 208, 219]) == 1145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131, 142, 153, 164, 175, 186, 197, 208, 219]) == 1145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [33, 66, 99, 132, 165, 198, 231, 264, 297, 330, 363, 396, 429, 462, 495]) == 1980
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [33, 66, 99, 132, 165, 198, 231, 264, 297, 330, 363, 396, 429, 462, 495]) == 1980: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519]) == 5095
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519]) == 5095: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 150, 200, 250, 300, 350, 400, 450, 500]) == 1350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 150, 200, 250, 300, 350, 400, 450, 500]) == 1350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200]) == 12500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200]) == 12500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367]) == 5453
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367]) == 5453: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 15, 10, 20, 25, 30, 35, 40, 45, 50]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 15, 10, 20, 25, 30, 35, 40, 45, 50]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [23, 37, 41, 53, 67, 89, 97, 101, 113, 131, 139, 149, 151, 163, 173, 181, 191, 193, 197, 199]) == 1244
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [23, 37, 41, 53, 67, 89, 97, 101, 113, 131, 139, 149, 151, 163, 173, 181, 191, 193, 197, 199]) == 1244: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010, 1111, 1212, 1313, 1414, 1515, 1616, 1717, 1818, 1919, 2020]) == 10605
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010, 1111, 1212, 1313, 1414, 1515, 1616, 1717, 1818, 1919, 2020]) == 10605: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 270
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 270: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 112
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 112: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [999, 1000, 998, 1001, 997, 1002, 996, 1003, 995, 1004, 994, 1005, 993, 1006, 992, 1007, 991, 1008, 990, 1009]) == 9995
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [999, 1000, 998, 1001, 997, 1002, 996, 1003, 995, 1004, 994, 1005, 993, 1006, 992, 1007, 991, 1008, 990, 1009]) == 9995: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 15, 20, 25, 30, 35, 40]) == 85
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 15, 20, 25, 30, 35, 40]) == 85: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 150, 50, 300, 400, 250, 100, 50, 150, 400, 300, 200, 100, 50, 150, 250, 300, 400, 100]) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 150, 50, 300, 400, 250, 100, 50, 150, 400, 300, 200, 100, 50, 150, 250, 300, 400, 100]) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]) == 195
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]) == 195: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 306, 323, 340]) == 1785
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 306, 323, 340]) == 1785: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500]) == 2575
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500]) == 2575: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) == 195
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) == 195: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 15, 20, 25, 30, 35, 40, 45, 50]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [5, 5, 10, 10, 20, 20, 30, 30, 40, 40]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [5, 5, 10, 10, 20, 20, 30, 30, 40, 40]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220]) == 1155
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220]) == 1155: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [3, 9, 1, 4, 7, 2, 5, 6, 8, 10]) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [3, 9, 1, 4, 7, 2, 5, 6, 8, 10]) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [123, 456, 789, 1011, 1213, 1415, 1617, 1819, 2021, 2223, 2425, 2627, 2829, 3031, 3233, 3435, 3637, 3839, 4041, 4243]) == 21824
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [123, 456, 789, 1011, 1213, 1415, 1617, 1819, 2021, 2223, 2425, 2627, 2829, 3031, 3233, 3435, 3637, 3839, 4041, 4243]) == 21824: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77]) == 390
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77]) == 390: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 270
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 270: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]) == 318
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]) == 318: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 50, 75, 125, 150, 175, 225, 250, 275, 325, 350]) == 3750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 50, 75, 125, 150, 175, 225, 250, 275, 325, 350]) == 3750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220]) == 1155
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220]) == 1155: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == 735
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == 735: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rods = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600]) == 1950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rods = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600]) == 1950: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(rods = [10, 20, 30, 40]) == 50
@@ -100,3 +892,5 @@ def check(candidate):
     assert candidate(rods = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220]) == 1155
     assert candidate(rods = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == 735
     assert candidate(rods = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600]) == 1950
+
+

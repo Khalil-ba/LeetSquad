@@ -1,5 +1,501 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(x = 1221) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1221) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123421) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123421) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -121) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -121) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12345678987654321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12345678987654321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123456) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123456) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -2147483648) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -2147483648) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1111111111) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1111111111) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000021) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000021) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -1000021) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -1000021) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1234321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1234321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -12321) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -12321) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 121) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 121) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -1221) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -1221) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 999999999999999999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 999999999999999999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123456789987654321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123456789987654321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10000000000000000000000000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10000000000000000000000000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1100110011) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1100110011) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12210000221) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12210000221) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12345678987654322) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12345678987654322) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 987656789) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 987656789) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1234567890987654321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1234567890987654321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100000000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100000000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101010101) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101010101) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1001001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1001001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12300321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12300321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147447412) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147447412) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12345677654321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12345677654321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 98765432112345678) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 98765432112345678) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10000000000000000000) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10000000000000000000) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12345654321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12345654321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 999999999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 999999999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 987898789) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 987898789) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000000000000000000000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000000000000000000000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = -1000000001) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = -1000000001) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2121212121) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2121212121) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123321000) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123321000) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1234567899876543210) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1234567899876543210) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1230321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1230321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 12211221) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 12211221) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1002001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1002001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10000200001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10000200001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 98789) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 98789) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123454321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123454321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 98765432123456789) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 98765432123456789) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100000000000000000000000000000000000000000000000001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100000000000000000000000000000000000000000000000001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100000000000000000000000000000000000000) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100000000000000000000000000000000000000) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123321123321) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123321123321) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1111111111111111111) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1111111111111111111) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000000) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000000) == False: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(x = 1221) == True
@@ -63,3 +559,5 @@ def check(candidate):
     assert candidate(x = 123321123321) == True
     assert candidate(x = 1111111111111111111) == True
     assert candidate(x = 1000000000) == False
+
+

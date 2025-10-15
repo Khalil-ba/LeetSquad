@@ -1,5 +1,533 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 2,edges = [[0, 1]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2,edges = [[0, 1]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4], [5, 6], [5, 7], [8, 5], [8, 9]]) == [4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4], [5, 6], [5, 7], [8, 5], [8, 9]]) == [4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,edges = [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]) == [3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,edges = [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]) == [3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,edges = [[0, 1], [1, 2], [0, 3], [3, 4]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,edges = [[0, 1], [1, 2], [0, 3], [3, 4]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4], [5, 6], [5, 7], [8, 5], [9, 5]]) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4], [5, 6], [5, 7], [8, 5], [9, 5]]) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1,edges = []) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1,edges = []) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,edges = [[1, 0], [1, 2], [1, 3]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,edges = [[1, 0], [1, 2], [1, 3]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [3, 8]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [3, 8]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [8, 9]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [8, 9]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == [5, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == [5, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [3, 8], [3, 9]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7], [3, 8], [3, 9]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [5, 7], [5, 8]]) == [0, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [5, 7], [5, 8]]) == [0, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [5, 11], [6, 12]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [5, 11], [6, 12]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 0]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 0]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15], [10, 16], [10, 17]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15], [10, 16], [10, 17]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [5, 7]]) == [0, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [5, 7]]) == [0, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [6, 8], [6, 9], [7, 10], [7, 11]]) == [1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [6, 8], [6, 9], [7, 10], [7, 11]]) == [1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [2, 9], [3, 10], [3, 11], [3, 12], [4, 13], [4, 14], [5, 15], [5, 16], [6, 17], [6, 18], [7, 19]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [2, 9], [3, 10], [3, 11], [3, 12], [4, 13], [4, 14], [5, 15], [5, 16], [6, 17], [6, 18], [7, 19]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 11]]) == [4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 11]]) == [4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15], [9, 16], [10, 17]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [4, 9], [5, 10], [5, 11], [6, 12], [6, 13], [7, 14], [7, 15], [9, 16], [10, 17]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [6, 8], [6, 9], [9, 10]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [6, 8], [6, 9], [9, 10]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [3, 7]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [4, 10]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17]]) == [8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17]]) == [8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [8, 16], [9, 17]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [8, 16], [9, 17]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11], [5, 12]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11], [5, 12]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [2, 9], [3, 10], [3, 11], [3, 12], [4, 13], [4, 14], [5, 15], [5, 16], [6, 17], [6, 18], [6, 19], [7, 20], [7, 21], [8, 22], [9, 23], [9, 24]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [2, 9], [3, 10], [3, 11], [3, 12], [4, 13], [4, 14], [5, 15], [5, 16], [6, 17], [6, 18], [6, 19], [7, 20], [7, 21], [8, 22], [9, 23], [9, 24]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 10], [11, 12]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 10], [11, 12]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 16,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 16,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [1, 6], [1, 7], [1, 8], [2, 9], [2, 10], [2, 11], [2, 12], [3, 13], [3, 14], [3, 15], [3, 16], [4, 17], [4, 18], [4, 19]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [1, 6], [1, 7], [1, 8], [2, 9], [2, 10], [2, 11], [2, 12], [3, 13], [3, 14], [3, 15], [3, 16], [4, 17], [4, 18], [4, 19]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [3, 9], [3, 10], [3, 11], [4, 12], [4, 13], [5, 14], [5, 15], [6, 16], [6, 17], [7, 18], [8, 19]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [1, 6], [2, 7], [2, 8], [3, 9], [3, 10], [3, 11], [4, 12], [4, 13], [5, 14], [5, 15], [6, 16], [6, 17], [7, 18], [8, 19]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [4, 9]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [4, 8], [4, 9]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19]]) == [9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19]]) == [9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [7, 16], [8, 17], [8, 18], [9, 19]]) == [0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [7, 16], [8, 17], [8, 18], [9, 19]]) == [0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [4, 6], [6, 7], [6, 8]]) == [2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [4, 6], [6, 7], [6, 8]]) == [2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [7, 16], [8, 17], [8, 18], [9, 19], [9, 20], [10, 21], [10, 22], [11, 23], [11, 24]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6], [3, 7], [3, 8], [4, 9], [4, 10], [5, 11], [5, 12], [6, 13], [6, 14], [7, 15], [7, 16], [8, 17], [8, 18], [9, 19], [9, 20], [10, 21], [10, 22], [11, 23], [11, 24]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11], [5, 12], [7, 13], [7, 14]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9], [3, 10], [4, 11], [5, 12], [7, 13], [7, 14]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9]]) == [0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,edges = [[0, 1], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [3, 8], [3, 9]]) == [0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [0, 11]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [0, 11]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == [6, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == [6, 7]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 2,edges = [[0, 1]]) == [0, 1]
@@ -67,3 +595,5 @@ def check(candidate):
     assert candidate(n = 15,edges = [[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [1, 2]
     assert candidate(n = 12,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [0, 11]]) == []
     assert candidate(n = 14,edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == [6, 7]
+
+

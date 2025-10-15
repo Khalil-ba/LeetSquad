@@ -1,5 +1,701 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'],n = 3) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'],n = 3) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D'],n = 0) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D'],n = 0) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 2) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 2) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A'],n = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A'],n = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D'],n = 2) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D'],n = 2) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'B', 'B'],n = 0) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'B', 'B'],n = 0) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 0) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 0) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A'],n = 0) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A'],n = 0) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B'],n = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B'],n = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B'],n = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B'],n = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F'],n = 0) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F'],n = 0) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C'],n = 2) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C'],n = 2) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B'],n = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B'],n = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'C', 'A', 'B', 'D', 'B'],n = 1) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'C', 'A', 'B', 'D', 'B'],n = 1) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'],n = 4) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'],n = 4) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 2) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],n = 2) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D'],n = 2) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D'],n = 2) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 6) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 6) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z'],n = 3) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z'],n = 3) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 10) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 10) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E'],n = 3) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E'],n = 3) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L', 'M', 'M', 'N', 'N', 'O', 'O', 'P', 'P', 'Q', 'Q', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 1) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L', 'M', 'M', 'N', 'N', 'O', 'O', 'P', 'P', 'Q', 'Q', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 1) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L'],n = 10) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L'],n = 10) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 5) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 5) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E'],n = 4) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E'],n = 4) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E'],n = 4) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E'],n = 4) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 5) == 58
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 5) == 58: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W', 'V', 'V', 'V', 'V', 'V'],n = 5) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W', 'V', 'V', 'V', 'V', 'V'],n = 5) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],n = 2) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],n = 2) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 0) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 0) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z'],n = 2) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z'],n = 2) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L', 'M', 'M', 'M', 'N', 'N', 'N', 'O', 'O', 'O', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'S', 'T', 'T', 'T', 'U', 'U', 'U', 'V', 'V', 'V', 'W', 'W', 'W', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z'],n = 10) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L', 'M', 'M', 'M', 'N', 'N', 'N', 'O', 'O', 'O', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'S', 'T', 'T', 'T', 'U', 'U', 'U', 'V', 'V', 'V', 'W', 'W', 'W', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z'],n = 10) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G'],n = 3) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G'],n = 3) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['P', 'P', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 'T', 'T', 'T', 'T', 'U', 'U', 'U', 'U'],n = 4) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['P', 'P', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 'T', 'T', 'T', 'T', 'U', 'U', 'U', 'U'],n = 4) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W', 'W'],n = 6) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W', 'W'],n = 6) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],n = 2) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],n = 2) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W'],n = 5) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W'],n = 5) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z'],n = 5) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z'],n = 5) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J'],n = 7) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J'],n = 7) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K'],n = 2) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K'],n = 2) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],n = 7) == 64
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],n = 7) == 64: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 7) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 7) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C'],n = 5) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C'],n = 5) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E'],n = 5) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E'],n = 5) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D'],n = 4) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D'],n = 4) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'Y', 'X', 'Y', 'X', 'Y', 'X', 'Y', 'X', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W'],n = 3) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'Y', 'X', 'Y', 'X', 'Y', 'X', 'Y', 'X', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'W', 'W', 'W', 'W', 'W'],n = 3) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'],n = 1) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'],n = 1) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H'],n = 2) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H', 'F', 'G', 'H'],n = 2) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L', 'M', 'M', 'N', 'N', 'O', 'O', 'P', 'P', 'Q', 'Q', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 10) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L', 'M', 'M', 'N', 'N', 'O', 'O', 'P', 'P', 'Q', 'Q', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 10) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K'],n = 4) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K'],n = 4) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 7) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'T', 'T', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'X', 'Y', 'Y', 'Z', 'Z'],n = 7) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'],n = 25) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'],n = 25) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 8) == 58
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 8) == 58: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],n = 0) == 68
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],n = 0) == 68: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'],n = 15) == 119
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'],n = 15) == 119: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],n = 1) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],n = 1) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F'],n = 3) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F'],n = 3) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'A', 'C', 'A', 'D', 'A', 'E', 'A', 'F', 'A', 'G', 'A', 'H', 'A', 'I', 'A', 'J', 'A'],n = 5) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'A', 'C', 'A', 'D', 'A', 'E', 'A', 'F', 'A', 'G', 'A', 'H', 'A', 'I', 'A', 'J', 'A'],n = 5) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'E'],n = 4) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'E'],n = 4) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C'],n = 5) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C'],n = 5) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L', 'M', 'M', 'M', 'N', 'N', 'N', 'O', 'O', 'O', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'S', 'T', 'T', 'T', 'U', 'U', 'U', 'V', 'V', 'V', 'W', 'W', 'W', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z'],n = 2) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J', 'K', 'K', 'K', 'L', 'L', 'L', 'M', 'M', 'M', 'N', 'N', 'N', 'O', 'O', 'O', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'S', 'S', 'S', 'T', 'T', 'T', 'U', 'U', 'U', 'V', 'V', 'V', 'W', 'W', 'W', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z'],n = 2) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 1) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 1) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 6) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 6) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z'],n = 6) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z', 'Z'],n = 6) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J'],n = 2) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H', 'I', 'I', 'I', 'J', 'J', 'J'],n = 2) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C'],n = 4) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C'],n = 4) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['M', 'M', 'M', 'M', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'N', 'O', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'P', 'P', 'P', 'P'],n = 6) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['M', 'M', 'M', 'M', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'N', 'O', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'P', 'P', 'P', 'P'],n = 6) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['M', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'Q', 'Q', 'Q', 'Q'],n = 5) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['M', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'Q', 'Q', 'Q', 'Q', 'Q', 'Q', 'Q'],n = 5) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],n = 6) == 59
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],n = 6) == 59: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 3) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 3) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H'],n = 7) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H'],n = 7) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H'],n = 2) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E', 'E', 'F', 'F', 'F', 'G', 'G', 'G', 'H', 'H', 'H'],n = 2) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D'],n = 5) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D'],n = 5) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['Q', 'Q', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 'S', 'T', 'T', 'T', 'T', 'T'],n = 5) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['Q', 'Q', 'Q', 'Q', 'Q', 'R', 'R', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 'S', 'T', 'T', 'T', 'T', 'T'],n = 5) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 10) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 10) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 6) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 6) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H'],n = 8) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H'],n = 8) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'I', 'I', 'I', 'I'],n = 10) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F', 'G', 'G', 'G', 'G', 'H', 'H', 'H', 'H', 'I', 'I', 'I', 'I'],n = 10) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 25) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],n = 25) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'E', 'E', 'F', 'F', 'F'],n = 4) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'D', 'E', 'E', 'F', 'F', 'F'],n = 4) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E'],n = 4) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E', 'E'],n = 4) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F'],n = 3) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'F', 'F', 'F', 'F'],n = 3) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 5) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],n = 5) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'],n = 0) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'],n = 0) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 6) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 6) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 3) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 3) == 25: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(tasks = ['A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'],n = 3) == 13
@@ -88,3 +784,5 @@ def check(candidate):
     assert candidate(tasks = ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'],n = 0) == 20
     assert candidate(tasks = ['A', 'A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 6) == 50
     assert candidate(tasks = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],n = 3) == 25
+
+

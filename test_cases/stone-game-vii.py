@@ -1,5 +1,885 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 10]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 10]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [2, 3, 4, 1, 5, 6, 7, 8, 9, 10]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [2, 3, 4, 1, 5, 6, 7, 8, 9, 10]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [7, 90, 5, 1, 100, 10, 10, 2]) == 122
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [7, 90, 5, 1, 100, 10, 10, 2]) == 122: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 100, 4, 5, 6, 7, 8, 9]) == 123
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 100, 4, 5, 6, 7, 8, 9]) == 123: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 100, 1, 100, 1, 100]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 100, 1, 100, 1, 100]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1]) == 5000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1]) == 5000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [3, 9, 4, 2, 10, 3, 2, 5]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [3, 9, 4, 2, 10, 3, 2, 5]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 3, 1, 4, 2]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 3, 1, 4, 2]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 10, 20, 30, 40, 50, 10, 20, 30, 40, 50]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 10, 20, 30, 40, 50, 10, 20, 30, 40, 50]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 250, 750, 1000, 125, 375, 875, 625, 300, 700, 150, 450, 900, 550, 200, 600, 800, 400, 950, 100]) == 5950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 250, 750, 1000, 125, 375, 875, 625, 300, 700, 150, 450, 900, 550, 200, 600, 800, 400, 950, 100]) == 5950: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 156
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 156: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10]) == 5500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10]) == 5500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14]) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14]) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 2, 100, 400, 3, 800, 7, 600, 9, 50]) == 1852
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 2, 100, 400, 3, 800, 7, 600, 9, 50]) == 1852: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 9900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 9900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993]) == 7972
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993]) == 7972: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200]) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200]) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 650
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 650: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 2, 9, 4, 6, 3, 8, 1, 7, 10]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 2, 9, 4, 6, 3, 8, 1, 7, 10]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980, 979, 978, 977, 976, 975]) == 11844
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980, 979, 978, 977, 976, 975]) == 11844: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10, 1100, 11, 1200, 12, 1300, 13, 1400, 14, 1500, 15]) == 12000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10, 1100, 11, 1200, 12, 1300, 13, 1400, 14, 1500, 15]) == 12000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 136
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 136: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1010101010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1010101010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 400, 300, 200, 100, 50, 40, 30, 20, 10, 1, 2, 3, 4, 5]) == 696
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 400, 300, 200, 100, 50, 40, 30, 20, 10, 1, 2, 3, 4, 5]) == 696: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 650
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 650: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 650
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 650: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [2, 1, 3, 4, 1, 5, 7, 8, 1, 9, 6, 10, 12, 11, 13, 14, 15, 16, 17, 18]) == 96
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [2, 1, 3, 4, 1, 5, 7, 8, 1, 9, 6, 10, 12, 11, 13, 14, 15, 16, 17, 18]) == 96: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1000]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1000]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 250, 750, 125, 625, 375, 875, 125, 625, 375, 875, 125, 625, 375, 875, 125, 625, 375, 875, 125]) == 7250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 250, 750, 125, 625, 375, 875, 125, 625, 375, 875, 125, 625, 375, 875, 125, 625, 375, 875, 125]) == 7250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 250, 750, 200, 1000, 150, 300, 850, 600, 400]) == 3150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 250, 750, 200, 1000, 150, 300, 850, 600, 400]) == 3150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]) == 7200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]) == 7200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1]) == 9990
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1, 999, 1]) == 9990: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [200, 300, 100, 400, 500, 150, 250, 350, 450, 550]) == 1850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [200, 300, 100, 400, 500, 150, 250, 350, 450, 550]) == 1850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [50, 20, 30, 10, 40, 60, 70, 80, 90, 100]) == 280
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [50, 20, 30, 10, 40, 60, 70, 80, 90, 100]) == 280: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 10, 100, 1000, 10, 1, 1000, 100, 10, 1, 10, 100, 1000, 10, 1, 100, 100, 10, 1, 10, 100]) == 1342
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 10, 100, 1000, 10, 1, 1000, 100, 10, 1, 10, 100, 1000, 10, 1, 100, 100, 10, 1, 10, 100]) == 1342: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]) == 830
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]) == 830: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 1, 3, 2, 4, 6, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15]) == 72
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 1, 3, 2, 4, 6, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15]) == 72: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 1]) == 1010101010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 1]) == 1010101010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5, 25, 5]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 50, 25, 12, 6, 3, 1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]) == 5526
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 50, 25, 12, 6, 3, 1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]) == 5526: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 699050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 699050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 400, 300, 200, 100, 50, 40, 30, 20, 10, 1]) == 1090
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 400, 300, 200, 100, 50, 40, 30, 20, 10, 1]) == 1090: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993, 9, 992, 10, 991, 11, 990, 12, 989, 13, 988, 14, 987, 15, 986]) == 14895
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993, 9, 992, 10, 991, 11, 990, 12, 989, 13, 988, 14, 987, 15, 986]) == 14895: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [500, 400, 300, 200, 100, 50, 25, 12, 6, 3, 1, 1, 3, 6, 12, 25, 50, 100, 200, 300, 400, 500]) == 1597
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [500, 400, 300, 200, 100, 50, 25, 12, 6, 3, 1, 1, 3, 6, 12, 25, 50, 100, 200, 300, 400, 500]) == 1597: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [50, 10, 50, 10, 50, 10, 50, 10, 50, 10]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [50, 10, 50, 10, 50, 10, 50, 10, 50, 10]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 550
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 550: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996]) == 4990
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996]) == 4990: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 4500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 4500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96]) == 490
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96]) == 490: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946]) == 17710
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946]) == 17710: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993, 9, 992, 10, 991]) == 9955
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1000, 2, 999, 3, 998, 4, 997, 5, 996, 6, 995, 7, 994, 8, 993, 9, 992, 10, 991]) == 9955: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 50, 25, 12, 6, 3, 1, 0, 1, 3, 6, 12, 25, 50, 100]) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 50, 25, 12, 6, 3, 1, 0, 1, 3, 6, 12, 25, 50, 100]) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1000, 1, 999, 2, 998, 3, 997, 4, 996, 5, 995, 6, 994, 7, 993, 8, 992, 9, 991, 10]) == 9955
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1000, 1, 999, 2, 998, 3, 997, 4, 996, 5, 995, 6, 994, 7, 993, 8, 992, 9, 991, 10]) == 9955: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000]) == 10000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000, 1, 1000]) == 10000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5, 994, 6, 993, 7, 8]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5, 994, 6, 993, 7, 8]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [300, 100, 250, 150, 200, 50, 100, 300, 250, 150, 200, 50, 100]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [300, 100, 250, 150, 200, 50, 100, 300, 250, 150, 200, 50, 100]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100]) == 350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100, 50, 100]) == 350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2]) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2]) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1000, 1, 2, 1000, 3, 1000, 4, 1000, 5, 1000, 6, 1000, 7, 1000, 8, 1000, 9, 1000, 10, 1000]) == 9001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1000, 1, 2, 1000, 3, 1000, 4, 1000, 5, 1000, 6, 1000, 7, 1000, 8, 1000, 9, 1000, 10, 1000]) == 9001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 10, 100, 1000, 10, 100, 1000, 10, 100, 1000, 10, 100, 1000, 10, 100]) == 2230
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 10, 100, 1000, 10, 100, 1000, 10, 100, 1000, 10, 100, 1000, 10, 100]) == 2230: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 3030
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 3030: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [145, 135, 125, 115, 105, 95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [145, 135, 125, 115, 105, 95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 200, 300, 400, 500, 1, 2, 3, 4, 5, 1000, 2000, 3000, 4000, 5000]) == 6609
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 200, 300, 400, 500, 1, 2, 3, 4, 5, 1000, 2000, 3000, 4000, 5000]) == 6609: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5]) == 4985
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5]) == 4985: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000]) == 10101010
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000]) == 10101010: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [100, 50, 200, 150, 250, 100, 300, 50, 200, 150, 250, 100, 300]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [100, 50, 200, 150, 250, 100, 300, 50, 200, 150, 250, 100, 300]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [700, 100, 500, 200, 600, 300, 400, 800, 900, 100, 200, 300, 400, 500, 600]) == 2300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [700, 100, 500, 200, 600, 300, 400, 800, 900, 100, 200, 300, 400, 500, 600]) == 2300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 410
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 410: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5, 994, 6, 993, 7, 992]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [999, 1, 998, 2, 997, 3, 996, 4, 995, 5, 994, 6, 993, 7, 992]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 141
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 141: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145]) == 525
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145]) == 525: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1500, 1400, 1300, 1200, 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 5600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1500, 1400, 1300, 1200, 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 5600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 2, 3, 4, 5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 2, 3, 4, 5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [314, 159, 265, 358, 979, 323, 846, 264, 338, 327, 950, 288, 419, 716, 939]) == 2435
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [314, 159, 265, 358, 979, 323, 846, 264, 338, 327, 950, 288, 419, 716, 939]) == 2435: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 105
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 105: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(stones = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1, 1, 2, 4, 8, 16]) == 674
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stones = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1, 1, 2, 4, 8, 16]) == 674: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(stones = [9, 8, 7, 6, 5, 4, 3, 2, 1, 10]) == 30
@@ -111,3 +991,5 @@ def check(candidate):
     assert candidate(stones = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 105
     assert candidate(stones = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) == 29
     assert candidate(stones = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1, 1, 2, 4, 8, 16]) == 674
+
+

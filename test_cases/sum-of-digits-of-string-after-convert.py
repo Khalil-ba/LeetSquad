@@ -1,5 +1,757 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzz",k = 1) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzz",k = 1) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzz",k = 10) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzz",k = 10) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",k = 1) == 68
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",k = 1) == 68: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abz",k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abz",k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a",k = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a",k = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaa",k = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaa",k = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "challenge",k = 2) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "challenge",k = 2) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "iiii",k = 1) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "iiii",k = 1) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 1) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 1) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hello",k = 1) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hello",k = 1) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "python",k = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "python",k = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc",k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc",k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zbax",k = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zbax",k = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcxyz",k = 3) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcxyz",k = 3) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "leetcode",k = 2) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "leetcode",k = 2) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzz",k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzz",k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",k = 1) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",k = 1) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithms",k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithms",k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatthisoverandover",k = 7) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatthisoverandover",k = 7) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",k = 6) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",k = 6) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "interview",k = 5) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "interview",k = 5) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "artificialintelligence",k = 7) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "artificialintelligence",k = 7) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzyxwvutsrqponmlkjihgfedcba",k = 4) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzyxwvutsrqponmlkjihgfedcba",k = 4) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "singleletterx",k = 10) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "singleletterx",k = 10) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongstringwhichshouldbeconverted",k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongstringwhichshouldbeconverted",k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hippopotamus",k = 10) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hippopotamus",k = 10) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwen",k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwen",k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "datastructure",k = 4) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "datastructure",k = 4) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedlettersqqqq",k = 6) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedlettersqqqq",k = 6) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 2) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 2) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "unbelievable",k = 9) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "unbelievable",k = 9) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",k = 7) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",k = 7) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zebra",k = 6) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zebra",k = 6) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",k = 10) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",k = 10) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyz",k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyz",k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "supercalifragilisticexpialidocious",k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "supercalifragilisticexpialidocious",k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "onetwothreefourfivesixseveneightnine",k = 5) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "onetwothreefourfivesixseveneightnine",k = 5) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "generateadditionalinputs",k = 8) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "generateadditionalinputs",k = 8) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 4) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 4) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "multifarious",k = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "multifarious",k = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "consecutivesimilar",k = 8) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "consecutivesimilar",k = 8) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "neuralnetwork",k = 8) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "neuralnetwork",k = 8) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "developerslovepython",k = 9) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "developerslovepython",k = 9) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithm",k = 1) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithm",k = 1) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "wearethebestprogrammers",k = 7) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "wearethebestprogrammers",k = 7) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xylophone",k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xylophone",k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "alibabacloud",k = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "alibabacloud",k = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaaaaa",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaaaaa",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 5) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 5) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "elephant",k = 8) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "elephant",k = 8) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "supercalifragilisticexpialidocious",k = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "supercalifragilisticexpialidocious",k = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "repeatedletters",k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "repeatedletters",k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "datastructures",k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "datastructures",k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 3) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 3) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "facetious",k = 8) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "facetious",k = 8) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "numericalsum",k = 7) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "numericalsum",k = 7) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "expertise",k = 2) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "expertise",k = 2) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "codingcontest",k = 6) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "codingcontest",k = 6) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zyxwvutsrqponmlkjihgfedcba",k = 4) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zyxwvutsrqponmlkjihgfedcba",k = 4) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "alibabacloud",k = 2) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "alibabacloud",k = 2) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "manytimesk",k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "manytimesk",k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 6) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 6) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "giraffe",k = 9) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "giraffe",k = 9) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwen",k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwen",k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",k = 8) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",k = 8) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 10) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",k = 10) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 10) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 10) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "solution",k = 7) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "solution",k = 7) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacaxabacax",k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacaxabacax",k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithms",k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithms",k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",k = 5) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",k = 5) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "transform",k = 8) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "transform",k = 8) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "congratulations",k = 5) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "congratulations",k = 5) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xylophone",k = 4) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xylophone",k = 4) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 2) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "quickbrownfoxjumpsoverthelazydog",k = 2) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "qwen",k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "qwen",k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "leetcodeisfun",k = 9) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "leetcodeisfun",k = 9) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programmingisfun",k = 3) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programmingisfun",k = 3) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "machinelearning",k = 6) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "machinelearning",k = 6) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thequickbrownfoxjumpsoverthelazydog",k = 6) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thequickbrownfoxjumpsoverthelazydog",k = 6) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisaverylongandcomplexstring",k = 6) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisaverylongandcomplexstring",k = 6) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xylophone",k = 5) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xylophone",k = 5) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisanexampletocheckthecomplexity",k = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisanexampletocheckthecomplexity",k = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "datastructure",k = 5) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "datastructure",k = 5) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abacaxi",k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abacaxi",k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdabcdabcd",k = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdabcdabcd",k = 4) == 3: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "zzzz",k = 1) == 32
@@ -95,3 +847,5 @@ def check(candidate):
     assert candidate(s = "datastructure",k = 5) == 9
     assert candidate(s = "abacaxi",k = 3) == 5
     assert candidate(s = "abcdabcdabcd",k = 4) == 3
+
+

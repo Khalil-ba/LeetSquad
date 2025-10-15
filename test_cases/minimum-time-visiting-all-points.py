@@ -1,5 +1,973 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [0, 0], [1, 1]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [0, 0], [1, 1]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [5, 5], [5, 5], [5, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [5, 5], [5, 5], [5, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-5, -5], [-4, -4], [-3, -3], [-2, -2]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-5, -5], [-4, -4], [-3, -3], [-2, -2]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 1], [0, 2], [0, 3]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 1], [0, 2], [0, 3]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, -1000], [1000, 1000], [-1000, 1000], [1000, -1000]]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, -1000], [1000, 1000], [-1000, 1000], [1000, -1000]]) == 6000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [2, 3], [3, 4], [4, 5]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [2, 3], [3, 4], [4, 5]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[3, 2], [-2, 2]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[3, 2], [-2, 2]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [1, 1], [-1, -1], [1, 1]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [1, 1], [-1, -1], [1, 1]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [1, 0], [0, 1]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [1, 0], [0, 1]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 1], [1, 1], [1, 0], [0, 0]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 1], [1, 1], [1, 0], [0, 0]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [-2, -2], [-3, -3], [-4, -4]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [-2, -2], [-3, -3], [-4, -4]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [3, 4], [-1, 0]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [3, 4], [-1, 0]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, -1000], [1000, 1000]]) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, -1000], [1000, 1000]]) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [2, 2], [2, 1], [1, 2], [0, 0]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [2, 2], [2, 1], [1, 2], [0, 0]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [5, 5], [10, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [5, 5], [10, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 0], [2, 0], [3, 0]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 0], [2, 0], [3, 0]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1000, 1000]]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1000, 1000]]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[10, 10], [0, 0], [5, 5]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[10, 10], [0, 0], [5, 5]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [1, 1], [-2, -2], [2, 2]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [1, 1], [-2, -2], [2, 2]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[10, 10], [5, 5], [0, 0], [-5, -5], [-10, -10]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[10, 10], [5, 5], [0, 0], [-5, -5], [-10, -10]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1000, 1000], [-1000, -1000], [1000, -1000], [-1000, 1000]]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1000, 1000], [-1000, -1000], [1000, -1000], [-1000, 1000]]) == 6000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1000, 1000], [-1000, -1000], [0, 0]]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1000, 1000], [-1000, -1000], [0, 0]]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, 0], [1000, 0], [0, -1000], [0, 1000]]) == 5000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, 0], [1000, 0], [0, -1000], [0, 1000]]) == 5000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[999, 999], [1000, 1000], [999, 1000], [1000, 999], [999, 999], [0, 0], [-1, -1], [-1000, -1000]]) == 2003
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[999, 999], [1000, 1000], [999, 1000], [1000, 999], [999, 999], [0, 0], [-1, -1], [-1000, -1000]]) == 2003: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, 500], [500, -500], [-500, -500], [500, 500], [-1, 1], [1, -1]]) == 3503
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, 500], [500, -500], [-500, -500], [500, 500], [-1, 1], [1, -1]]) == 3503: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, -100], [-90, -90], [-80, -80], [-70, -70], [-60, -60], [-50, -50], [-40, -40]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, -100], [-90, -90], [-80, -80], [-70, -70], [-60, -60], [-50, -50], [-40, -40]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [1, 1], [-1, 1], [1, -1], [-2, -2], [2, 2], [-2, 2], [2, -2]]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [1, 1], [-1, 1], [1, -1], [-2, -2], [2, 2], [-2, 2], [2, -2]]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [2, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [2, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 0], [1, 1], [0, 1], [0, 2], [1, 2], [1, 3], [0, 3], [0, 4], [1, 4], [1, 5], [0, 5], [0, 6], [1, 6], [1, 7], [0, 7], [0, 8], [1, 8], [1, 9], [0, 9]]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 0], [1, 1], [0, 1], [0, 2], [1, 2], [1, 3], [0, 3], [0, 4], [1, 4], [1, 5], [0, 5], [0, 6], [1, 6], [1, 7], [0, 7], [0, 8], [1, 8], [1, 9], [0, 9]]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [5, 15], [15, 15], [15, 5], [5, 5], [10, 10], [15, 5], [5, 15]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [5, 15], [15, 15], [15, 5], [5, 5], [10, 10], [15, 5], [5, 15]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-2, -2], [-2, 2], [2, 2], [2, -2], [-2, -2], [1, 1], [0, 0], [-1, -1]]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-2, -2], [-2, 2], [2, 2], [2, -2], [-2, -2], [1, 1], [0, 0], [-1, -1]]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700], [700, 800]]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 200], [200, 300], [300, 400], [400, 500], [500, 600], [600, 700], [700, 800]]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [1, 1], [-3, -3], [-5, -5], [0, 0], [5, 5], [10, 10], [5, 5]]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [1, 1], [-3, -3], [-5, -5], [0, 0], [5, 5], [10, 10], [5, 5]]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 2], [2, 2], [2, 0], [0, 0], [2, 0], [0, 2], [2, 2], [0, 0], [2, 2]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 2], [2, 2], [2, 0], [0, 0], [2, 0], [0, 2], [2, 2], [0, 0], [2, 2]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-10, 10], [0, 0], [10, -10], [0, 0], [-10, 10], [0, 0], [10, -10]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-10, 10], [0, 0], [10, -10], [0, 0], [-10, 10], [0, 0], [10, -10]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[10, 10], [10, 11], [11, 11], [12, 12], [12, 13], [13, 13], [13, 14], [14, 14]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[10, 10], [10, 11], [11, 11], [12, 12], [12, 13], [13, 13], [13, 14], [14, 14]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-999, -999], [-998, -998], [-997, -997], [-996, -996], [-995, -995], [-994, -994], [-993, -993]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-999, -999], [-998, -998], [-997, -997], [-996, -996], [-995, -995], [-994, -994], [-993, -993]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1000, 0], [0, 1000], [1000, 1000], [500, 500], [0, 0], [1000, 0], [0, 1000]]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1000, 0], [0, 1000], [1000, 1000], [500, 500], [0, 0], [1000, 0], [0, 1000]]) == 6000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 0], [1, -1], [0, 0], [-1, -1], [-2, 0], [-1, 1]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 0], [1, -1], [0, 0], [-1, -1], [-2, 0], [-1, 1]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, -1000], [-999, -999], [-998, -998], [-997, -997], [-996, -996], [-995, -995], [-994, -994], [-993, -993]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, -1000], [-999, -999], [-998, -998], [-997, -997], [-996, -996], [-995, -995], [-994, -994], [-993, -993]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 0], [0, 100], [100, 100], [0, 0], [50, 50], [50, 0], [0, 50]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 0], [0, 100], [100, 100], [0, 0], [50, 50], [50, 0], [0, 50]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 1], [1, 0], [0, -1], [-1, 0], [0, 1], [1, 0], [0, -1], [-1, 0], [0, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 1], [1, 0], [0, -1], [-1, 0], [0, 1], [1, 0], [0, -1], [-1, 0], [0, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, -100], [-99, -101], [-98, -102], [-97, -103], [-96, -104], [-95, -105], [-94, -106]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, -100], [-99, -101], [-98, -102], [-97, -103], [-96, -104], [-95, -105], [-94, -106]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 100], [200, 150], [300, 200], [350, 250], [400, 300], [500, 350], [600, 400]]) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 100], [200, 150], [300, 200], [350, 250], [400, 300], [500, 350], [600, 400]]) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 200], [200, 300], [300, 200], [200, 100], [100, 200], [200, 300], [300, 400], [400, 300]]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 200], [200, 300], [300, 200], [200, 100], [100, 200], [200, 300], [300, 400], [400, 300]]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [4, 4], [5, 5], [5, 6], [6, 6], [7, 7], [7, 8], [8, 8], [9, 9], [9, 10], [10, 10]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [1, 2], [2, 2], [3, 3], [3, 4], [4, 4], [5, 5], [5, 6], [6, 6], [7, 7], [7, 8], [8, 8], [9, 9], [9, 10], [10, 10]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-900, 0], [-800, -100], [-700, -200], [-600, -300], [-500, -400], [-400, -500], [-300, -600], [-200, -700], [-100, -800], [0, -900]]) == 900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-900, 0], [-800, -100], [-700, -200], [-600, -300], [-500, -400], [-400, -500], [-300, -600], [-200, -700], [-100, -800], [0, -900]]) == 900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[10, 10], [20, 20], [15, 25], [25, 15], [30, 30], [40, 40], [35, 35], [45, 45]]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[10, 10], [20, 20], [15, 25], [25, 15], [30, 30], [40, 40], [35, 35], [45, 45]]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [999, 999], [1, 1], [998, 998], [2, 2], [997, 997], [3, 3], [996, 996], [4, 4]]) == 7964
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [999, 999], [1, 1], [998, 998], [2, 2], [997, 997], [3, 3], [996, 996], [4, 4]]) == 7964: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [5, 15], [15, 15], [15, 5], [5, 5], [5, 25], [25, 25], [25, 5], [5, 5]]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [5, 15], [15, 15], [15, 5], [5, 5], [5, 25], [25, 25], [25, 5], [5, 5]]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 0], [0, 1], [2, 0], [0, 2], [3, 0], [0, 3], [4, 0], [0, 4], [5, 0], [0, 5]]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 0], [0, 1], [2, 0], [0, 2], [3, 0], [0, 3], [4, 0], [0, 4], [5, 0], [0, 5]]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[5, 5], [10, 5], [15, 5], [20, 5], [25, 5], [30, 5], [35, 5], [40, 5], [45, 5], [50, 5]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[5, 5], [10, 5], [15, 5], [20, 5], [25, 5], [30, 5], [35, 5], [40, 5], [45, 5], [50, 5]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [2, 5], [5, 4], [7, 8], [10, 10], [5, 5], [3, 3], [2, 2], [1, 1]]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [2, 5], [5, 4], [7, 8], [10, 10], [5, 5], [3, 3], [2, 2], [1, 1]]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, 500], [500, -500], [-500, -500], [500, 500], [0, 0], [-1000, 1000], [1000, -1000]]) == 6500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, 500], [500, -500], [-500, -500], [500, 500], [0, 0], [-1000, 1000], [1000, -1000]]) == 6500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [1000, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 2005
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [1000, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 2005: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 100], [200, 200], [300, 100], [200, 0], [100, 100]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 100], [200, 200], [300, 100], [200, 0], [100, 100]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0], [50, 0], [60, 0], [70, 0], [80, 0], [90, 0], [100, 0]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [10, 0], [20, 0], [30, 0], [40, 0], [50, 0], [60, 0], [70, 0], [80, 0], [90, 0], [100, 0]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1000, 0], [0, 1000], [1000, 1000], [0, 0], [500, 500], [250, 250], [750, 750]]) == 4250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1000, 0], [0, 1000], [1000, 1000], [0, 0], [500, 500], [250, 250], [750, 750]]) == 4250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, -100], [-50, -100], [0, -100], [50, -100], [100, -100], [100, -50], [100, 0], [100, 50], [100, 100], [50, 100], [0, 100], [-50, 100], [-100, 100], [-100, 50], [-100, 0], [-100, -50]]) == 750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, -100], [-50, -100], [0, -100], [50, -100], [100, -100], [100, -50], [100, 0], [100, 50], [100, 100], [50, 100], [0, 100], [-50, 100], [-100, 100], [-100, 50], [-100, 0], [-100, -50]]) == 750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [2, 2], [1, 1], [0, 0], [-1, -1]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [0, 0], [1, 1], [2, 2], [3, 3], [2, 2], [1, 1], [0, 0], [-1, -1]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [0, 0], [1, 1], [0, 0], [-1, -1], [1, 1], [0, 0], [-1, -1], [1, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [0, 0], [1, 1], [0, 0], [-1, -1], [1, 1], [0, 0], [-1, -1], [1, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, 100], [100, -100], [-100, -100], [100, 100], [-100, 100]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, 100], [100, -100], [-100, -100], [100, 100], [-100, 100]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-10, 10], [20, -20], [30, 30], [-40, -40], [50, 50], [0, 0], [-50, -50]]) == 340
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-10, 10], [20, -20], [30, 30], [-40, -40], [50, 50], [0, 0], [-50, -50]]) == 340: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10], [-11, -12], [-13, -14], [-15, -16], [-17, -18]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10], [-11, -12], [-13, -14], [-15, -16], [-17, -18]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-999, 999], [0, 0], [999, -999], [0, 0], [-999, 999]]) == 3996
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-999, 999], [0, 0], [999, -999], [0, 0], [-999, 999]]) == 3996: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, 0], [0, -100], [100, 0], [0, 100], [0, 0], [-100, 0], [0, -100], [100, 0], [0, 100]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, 0], [0, -100], [100, 0], [0, 100], [0, 0], [-100, 0], [0, -100], [100, 0], [0, 100]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, -500], [500, 500], [-500, 500], [500, -500], [-500, -500], [0, 0], [500, 500], [0, 0]]) == 5500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, -500], [500, 500], [-500, 500], [500, -500], [-500, -500], [0, 0], [500, 500], [0, 0]]) == 5500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, -100], [0, 0], [100, 100], [0, 0], [-100, -100]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, -100], [0, 0], [100, 100], [0, 0], [-100, -100]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 500], [500, 0], [1000, 500], [500, 1000], [0, 500], [500, 0]]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 500], [500, 0], [1000, 500], [500, 1000], [0, 500], [500, 0]]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[10, 10], [5, 5], [0, 0], [-5, -5], [-10, -10], [-5, -5], [0, 0], [5, 5], [10, 10]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[10, 10], [5, 5], [0, 0], [-5, -5], [-10, -10], [-5, -5], [0, 0], [5, 5], [10, 10]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, 0], [0, -1], [1, 0], [0, 1], [-1, 0]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, 0], [0, -1], [1, 0], [0, 1], [-1, 0]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, 0], [0, 1000], [1000, 0], [0, -1000], [-1000, -1000]]) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, 0], [0, 1000], [1000, 0], [0, -1000], [-1000, -1000]]) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 0], [2, 1], [2, 2], [3, 3], [3, 4], [4, 4]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 0], [2, 1], [2, 2], [3, 3], [3, 4], [4, 4]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [2, 3], [3, 5], [4, 7], [5, 9], [6, 11], [7, 13], [8, 15], [9, 17], [10, 19]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [2, 3], [3, 5], [4, 7], [5, 9], [6, 11], [7, 13], [8, 15], [9, 17], [10, 19]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 1], [1, 1], [1, 0], [0, 0], [0, -1], [-1, -1], [-1, 0], [0, 0]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 1], [1, 1], [1, 0], [0, 0], [0, -1], [-1, -1], [-1, 0], [0, 0]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 0], [1, 0], [0, 1], [0, 2], [1, 1]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 0], [1, 0], [0, 1], [0, 2], [1, 1]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-300, -300], [-200, -200], [-100, -100], [0, 0], [100, 100], [200, 200], [300, 300]]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-300, -300], [-200, -200], [-100, -100], [0, 0], [100, 100], [200, 200], [300, 300]]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 0], [90, 10], [80, 20], [70, 30], [60, 40], [50, 50], [40, 60], [30, 70], [20, 80], [10, 90], [0, 100]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 0], [90, 10], [80, 20], [70, 30], [60, 40], [50, 50], [40, 60], [30, 70], [20, 80], [10, 90], [0, 100]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-999, 999], [999, -999], [-999, -999], [999, 999], [0, 0], [-100, 100], [100, -100]]) == 7293
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-999, 999], [999, -999], [-999, -999], [999, 999], [0, 0], [-100, 100], [100, -100]]) == 7293: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [100, 0], [100, 100], [0, 100], [0, 0], [100, 100], [100, 0], [0, 0]]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [100, 0], [100, 100], [0, 100], [0, 0], [100, 100], [100, 0], [0, 0]]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[500, 500], [0, 0], [500, 0], [0, 500], [500, 500], [250, 250], [750, 750], [250, 750], [750, 250]]) == 3750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[500, 500], [0, 0], [500, 0], [0, 500], [500, 500], [250, 250], [750, 750], [250, 750], [750, 250]]) == 3750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 0], [50, 50], [0, 100], [-50, 50], [-100, 0], [-50, -50], [0, -100], [50, -50]]) == 350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 0], [50, 50], [0, 100], [-50, 50], [-100, 0], [-50, -50], [0, -100], [50, -50]]) == 350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, 0], [0, -1000], [1000, 0], [0, 1000]]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, 0], [0, -1000], [1000, 0], [0, 1000]]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7], [-8, -8], [-9, -9], [-10, -10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -1], [-2, -2], [-3, -3], [-4, -4], [-5, -5], [-6, -6], [-7, -7], [-8, -8], [-9, -9], [-10, -10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-10, -10], [10, 10], [-5, 5], [5, -5], [0, 0], [-5, -5], [5, 5], [-10, -10], [10, 10]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-10, -10], [10, 10], [-5, 5], [5, -5], [0, 0], [-5, -5], [5, 5], [-10, -10], [10, 10]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, -500], [-400, -400], [-300, -300], [-200, -200], [-100, -100], [0, 0], [100, 100], [200, 200], [300, 300], [400, 400], [500, 500]]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, -500], [-400, -400], [-300, -300], [-200, -200], [-100, -100], [0, 0], [100, 100], [200, 200], [300, 300], [400, 400], [500, 500]]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [0, 0]]) == 900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[100, 100], [200, 200], [300, 300], [400, 400], [500, 500], [0, 0]]) == 900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-300, -400], [400, 300], [-200, 100], [200, -200], [0, 0]]) == 1900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-300, -400], [400, 300], [-200, 100], [200, -200], [0, 0]]) == 1900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[500, 500], [450, 550], [400, 600], [350, 650], [300, 700], [250, 750], [200, 800]]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[500, 500], [450, 550], [400, 600], [350, 650], [300, 700], [250, 750], [200, 800]]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [100, 100], [200, 0], [300, 100], [400, 0], [500, 100], [600, 0], [700, 100], [800, 0], [900, 100]]) == 900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [100, 100], [200, 0], [300, 100], [400, 0], [500, 100], [600, 0], [700, 100], [800, 0], [900, 100]]) == 900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7], [-8, 8], [-9, 9]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7], [-8, 8], [-9, 9]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, 0], [0, 500], [500, 0], [0, -500], [-500, 0], [0, 0], [500, 500], [-500, -500]]) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, 0], [0, 500], [500, 0], [0, -500], [-500, 0], [0, 0], [500, 500], [-500, -500]]) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [10, 10], [1, 10], [10, 1], [1, 1], [10, 10], [1, 10], [10, 1], [1, 1]]) == 72
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [10, 10], [1, 10], [10, 1], [1, 1], [10, 10], [1, 10], [10, 1], [1, 1]]) == 72: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10], [-11, -12], [-13, -14], [-15, -16], [-17, -18], [-19, -20]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, -2], [-3, -4], [-5, -6], [-7, -8], [-9, -10], [-11, -12], [-13, -14], [-15, -16], [-17, -18], [-19, -20]]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1000, 0], [0, 1000], [1000, 1000], [500, 500], [0, 0]]) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1000, 0], [0, 1000], [1000, 1000], [500, 500], [0, 0]]) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, 2], [3, -4], [5, 6], [-7, 8], [9, -10], [-11, 12], [13, -14], [-15, 16], [0, 0]]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, 2], [3, -4], [5, 6], [-7, 8], [9, -10], [-11, 12], [13, -14], [-15, 16], [0, 0]]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1, 1], [2, 0], [3, 1], [4, 0], [5, 1], [6, 0], [7, 1], [8, 0], [9, 1]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1, 1], [2, 0], [3, 1], [4, 0], [5, 1], [6, 0], [7, 1], [8, 0], [9, 1]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1, 1], [1, -1], [-2, 2], [2, -2], [-3, 3], [3, -3], [-4, 4], [4, -4], [-5, 5], [5, -5]]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1, 1], [1, -1], [-2, 2], [2, -2], [-3, 3], [3, -3], [-4, 4], [4, -4], [-5, 5], [5, -5]]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-100, -100], [-90, -90], [-80, -80], [-70, -70], [-60, -60], [-50, -50], [-40, -40], [-30, -30], [-20, -20], [-10, -10]]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-100, -100], [-90, -90], [-80, -80], [-70, -70], [-60, -60], [-50, -50], [-40, -40], [-30, -30], [-20, -20], [-10, -10]]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-500, 500], [0, 0], [500, -500], [0, 0], [-500, 500], [0, 0], [500, -500], [0, 0]]) == 3500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-500, 500], [0, 0], [500, -500], [0, 0], [-500, 500], [0, 0], [500, -500], [0, 0]]) == 3500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[0, 0], [1000, 1000], [-1000, -1000], [500, 500], [-500, -500], [1, -1], [0, 0]]) == 6002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[0, 0], [1000, 1000], [-1000, -1000], [500, 500], [-500, -500], [1, -1], [0, 0]]) == 6002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[1, 1], [2, 3], [3, 2], [4, 5], [5, 4], [6, 6], [7, 5], [8, 7], [9, 8], [10, 10]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[1, 1], [2, 3], [3, 2], [4, 5], [5, 4], [6, 6], [7, 5], [8, 7], [9, 8], [10, 10]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(points = [[-1000, 1000], [1000, 0], [0, 1000], [1000, -1000], [0, 0]]) == 6000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(points = [[-1000, 1000], [1000, 0], [0, 1000], [1000, -1000], [0, 0]]) == 6000: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(points = [[0, 0], [1, 1], [0, 0], [1, 1]]) == 3
@@ -122,3 +1090,5 @@ def check(candidate):
     assert candidate(points = [[0, 0], [1000, 1000], [-1000, -1000], [500, 500], [-500, -500], [1, -1], [0, 0]]) == 6002
     assert candidate(points = [[1, 1], [2, 3], [3, 2], [4, 5], [5, 4], [6, 6], [7, 5], [8, 7], [9, 8], [10, 10]]) == 15
     assert candidate(points = [[-1000, 1000], [1000, 0], [0, 1000], [1000, -1000], [0, 0]]) == 6000
+
+

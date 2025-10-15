@@ -1,5 +1,781 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [10, 20, 30, 40, 50]]) == [10, 20, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [10, 20, 30, 40, 50]]) == [10, 20, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 10], [2, 5, 10], [5, 10, 15]]) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 10], [2, 5, 10], [5, 10, 15]]) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 4], [1, 4, 7, 9]]) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 4], [1, 4, 7, 9]]) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[2, 3, 6, 8], [1, 2, 3, 5, 6, 7, 10], [2, 3, 4, 6, 9]]) == [2, 3, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[2, 3, 6, 8], [1, 2, 3, 5, 6, 7, 10], [2, 3, 4, 6, 9]]) == [2, 3, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[2, 3, 6, 8], [1, 2, 3, 5, 6, 7, 10], [2, 3, 4, 6, 9]]) == [2, 3, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[2, 3, 6, 8], [1, 2, 3, 5, 6, 7, 10], [2, 3, 4, 6, 9]]) == [2, 3, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 10], [2, 5, 10], [3, 5, 10]]) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 10], [2, 5, 10], [3, 5, 10]]) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30], [10, 20, 30], [10, 20, 30, 40]]) == [10, 20, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30], [10, 20, 30], [10, 20, 30, 40]]) == [10, 20, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1], [1], [1], [1]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1], [1], [1], [1]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 9], [1, 2, 3, 5, 9], [1, 5, 7, 9]]) == [1, 5, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 9], [1, 2, 3, 5, 9], [1, 5, 7, 9]]) == [1, 5, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]) == [1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]) == [1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]]) == [3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]]) == [3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 4], [1, 4, 7, 9]]) == [1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 4], [1, 4, 7, 9]]) == [1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 6, 9, 12, 15, 18], [3, 6, 9, 12, 15, 18, 21], [6, 9, 12, 15, 18, 21, 24]]) == [6, 9, 12, 15, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 6, 9, 12, 15, 18], [3, 6, 9, 12, 15, 18, 21], [6, 9, 12, 15, 18, 21, 24]]) == [6, 9, 12, 15, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49], [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 53], [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 59]]) == [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49], [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 53], [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 59]]) == [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 5, 7, 9], [1, 3, 5, 7, 9, 11, 13]]) == [3, 5, 7, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 5, 7, 9], [1, 3, 5, 7, 9, 11, 13]]) == [3, 5, 7, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30], [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30], [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10], [2, 4, 7, 11], [3, 4, 7, 12]]) == [4, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10], [2, 4, 7, 11], [3, 4, 7, 12]]) == [4, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 6, 11, 16, 21], [2, 7, 12, 17, 22], [3, 8, 13, 18, 23], [4, 9, 14, 19, 24], [5, 10, 15, 20, 25]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 6, 11, 16, 21], [2, 7, 12, 17, 22], [3, 8, 13, 18, 23], [4, 9, 14, 19, 24], [5, 10, 15, 20, 25]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 3, 5, 7, 9, 10]]) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 3, 5, 7, 9, 10]]) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 6, 8, 10], [2, 4, 6, 8, 12], [3, 4, 6, 8, 14], [4, 6, 8, 10, 12, 14]]) == [4, 6, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 6, 8, 10], [2, 4, 6, 8, 12], [3, 4, 6, 8, 14], [4, 6, 8, 10, 12, 14]]) == [4, 6, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 4, 6, 8, 10, 12, 14], [2, 4, 6, 8, 10, 12, 14, 16], [1, 3, 5, 7, 9, 11, 13, 15], [2, 5, 8, 11, 14, 17]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 2, 4, 6, 8, 10, 12, 14], [2, 4, 6, 8, 10, 12, 14, 16], [1, 3, 5, 7, 9, 11, 13, 15], [2, 5, 8, 11, 14, 17]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[3, 6, 9, 12, 15, 18, 21], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [3, 6, 9, 12, 15, 18, 21, 24], [3, 6, 9, 12, 15, 18, 21, 24, 27]]) == [3, 9, 15, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[3, 6, 9, 12, 15, 18, 21], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [3, 6, 9, 12, 15, 18, 21, 24], [3, 6, 9, 12, 15, 18, 21, 24, 27]]) == [3, 9, 15, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [5, 15, 25, 35, 45, 55], [10, 20, 30, 40, 50, 60, 70], [5, 10, 15, 20, 25, 35, 45, 55, 65], [15, 25, 35, 45, 55, 65, 75, 85]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [5, 15, 25, 35, 45, 55], [10, 20, 30, 40, 50, 60, 70], [5, 10, 15, 20, 25, 35, 45, 55, 65], [15, 25, 35, 45, 55, 65, 75, 85]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 3, 6, 7, 10, 11, 14, 15], [1, 3, 7, 11, 15, 19, 23]]) == [3, 7, 11, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 3, 6, 7, 10, 11, 14, 15], [1, 3, 7, 11, 15, 19, 23]]) == [3, 7, 11, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25, 30], [5, 10, 15, 20, 25], [5, 10, 15, 20, 30], [5, 10, 15, 25, 30], [10, 15, 20, 25, 30]]) == [10, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25, 30], [5, 10, 15, 20, 25], [5, 10, 15, 20, 30], [5, 10, 15, 25, 30], [10, 15, 20, 25, 30]]) == [10, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]]) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]]) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [1, 2, 4, 6, 8, 10, 12, 14]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [1, 2, 4, 6, 8, 10, 12, 14]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25], [5, 15, 25, 30, 35], [5, 10, 20, 30, 40], [10, 15, 25, 35, 45]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25], [5, 15, 25, 30, 35], [5, 10, 20, 30, 40], [10, 15, 25, 35, 45]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 8, 10], [1, 3, 5, 7, 9, 11], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [3, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 8, 10], [1, 3, 5, 7, 9, 11], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [3, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[2, 5, 8, 11, 14, 17], [2, 5, 8, 11, 14, 17, 20], [2, 5, 8, 11, 14, 17, 23], [2, 5, 8, 11, 14, 17, 29], [2, 5, 8, 11, 14, 17]]) == [2, 5, 8, 11, 14, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[2, 5, 8, 11, 14, 17], [2, 5, 8, 11, 14, 17, 20], [2, 5, 8, 11, 14, 17, 23], [2, 5, 8, 11, 14, 17, 29], [2, 5, 8, 11, 14, 17]]) == [2, 5, 8, 11, 14, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40], [5, 10, 15, 20, 25, 30, 45, 50], [5, 10, 15, 20, 25, 30, 55, 60]]) == [5, 10, 15, 20, 25, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40], [5, 10, 15, 20, 25, 30, 45, 50], [5, 10, 15, 20, 25, 30, 55, 60]]) == [5, 10, 15, 20, 25, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 15, 25, 35, 45], [10, 15, 25, 35, 50], [15, 20, 25, 30, 35], [15, 25, 35, 45, 55]]) == [15, 25, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 15, 25, 35, 45], [10, 15, 25, 35, 50], [15, 20, 25, 30, 35], [15, 25, 35, 45, 55]]) == [15, 25, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 6, 11, 16, 21], [1, 6, 11, 16, 21, 26], [1, 6, 11, 16, 21, 31], [1, 6, 11, 16, 21, 41], [1, 6, 11, 16, 21]]) == [1, 6, 11, 16, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 6, 11, 16, 21], [1, 6, 11, 16, 21, 26], [1, 6, 11, 16, 21, 31], [1, 6, 11, 16, 21, 41], [1, 6, 11, 16, 21]]) == [1, 6, 11, 16, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[7, 14, 21, 28, 35], [5, 7, 10, 14, 15, 20, 21, 25, 28, 30, 35], [7, 14, 21, 28, 35, 40, 45]]) == [7, 14, 21, 28, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[7, 14, 21, 28, 35], [5, 7, 10, 14, 15, 20, 21, 25, 28, 30, 35], [7, 14, 21, 28, 35, 40, 45]]) == [7, 14, 21, 28, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[3, 6, 9, 12, 15, 18, 21, 24, 27, 30], [3, 7, 11, 15, 19, 23, 27, 31], [3, 8, 13, 18, 23, 28, 33], [3, 9, 14, 19, 24, 29, 34], [3, 10, 15, 20, 25, 30, 35]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[3, 6, 9, 12, 15, 18, 21, 24, 27, 30], [3, 7, 11, 15, 19, 23, 27, 31], [3, 8, 13, 18, 23, 28, 33], [3, 9, 14, 19, 24, 29, 34], [3, 10, 15, 20, 25, 30, 35]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [2, 5, 8, 11, 14]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [2, 4, 6, 8, 10, 12, 14], [1, 3, 5, 7, 9, 11, 13, 15], [2, 5, 8, 11, 14]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 3, 5, 7, 11, 13, 17, 19, 23, 29], [3, 5, 7, 11, 13, 17, 19, 23, 29, 31], [3, 7, 11, 13, 17, 19, 23, 29, 31, 37]]) == [3, 7, 11, 13, 17, 19]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 3, 5, 7, 11, 13, 17, 19, 23, 29], [3, 5, 7, 11, 13, 17, 19, 23, 29, 31], [3, 7, 11, 13, 17, 19, 23, 29, 31, 37]]) == [3, 7, 11, 13, 17, 19]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 4, 7, 10, 13, 16, 19], [2, 5, 8, 11, 14, 17, 20]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 4, 7, 10, 13, 16, 19], [2, 5, 8, 11, 14, 17, 20]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25], [10, 20, 30, 40, 50], [15, 20, 25, 30, 35], [20, 25, 30, 35, 40]]) == [20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25], [10, 20, 30, 40, 50], [15, 20, 25, 30, 35], [20, 25, 30, 35, 40]]) == [20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25], [5, 10, 15, 25, 30], [5, 10, 15, 20, 30], [5, 10, 20, 25, 30]]) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25], [5, 10, 15, 25, 30], [5, 10, 15, 20, 30], [5, 10, 20, 25, 30]]) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13, 16], [1, 4, 7, 10, 13, 18], [1, 4, 7, 10, 13, 20]]) == [1, 4, 7, 10, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13, 16], [1, 4, 7, 10, 13, 18], [1, 4, 7, 10, 13, 20]]) == [1, 4, 7, 10, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [15, 20, 25, 30, 35, 40, 45, 50, 55, 60], [20, 25, 30, 35, 40, 45, 50, 55, 60, 65]]) == [20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [15, 20, 25, 30, 35, 40, 45, 50, 55, 60], [20, 25, 30, 35, 40, 45, 50, 55, 60, 65]]) == [20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25], [5, 15, 20, 25, 30], [5, 10, 20, 25, 35]]) == [5, 20, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25], [5, 15, 20, 25, 30], [5, 10, 20, 25, 35]]) == [5, 20, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90], [10, 20, 30, 40, 50, 60, 70, 80], [10, 20, 30, 40, 50, 60, 70], [10, 20, 30, 40, 50]]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90], [10, 20, 30, 40, 50, 60, 70, 80], [10, 20, 30, 40, 50, 60, 70], [10, 20, 30, 40, 50]]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 3, 5, 7, 9], [1, 2, 3, 4, 5], [5, 6, 7, 8, 9, 10]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 3, 5, 7, 9], [1, 2, 3, 4, 5], [5, 6, 7, 8, 9, 10]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 9, 13, 17, 21], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [1, 4, 7, 10, 13, 16, 19, 22], [1, 5, 9, 13, 17, 21, 25]]) == [1, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 9, 13, 17, 21], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [1, 4, 7, 10, 13, 16, 19, 22], [1, 5, 9, 13, 17, 21, 25]]) == [1, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [1, 4, 7, 10, 13, 16, 19, 22, 25]]) == [1, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [1, 4, 7, 10, 13, 16, 19, 22, 25]]) == [1, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]]) == [4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]]) == [4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[7, 14, 21, 28, 35], [7, 14, 21, 28, 35, 42], [7, 14, 21, 28, 35], [7, 14, 21, 28, 35, 56], [7, 14, 21, 28, 35]]) == [7, 14, 21, 28, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[7, 14, 21, 28, 35], [7, 14, 21, 28, 35, 42], [7, 14, 21, 28, 35], [7, 14, 21, 28, 35, 56], [7, 14, 21, 28, 35]]) == [7, 14, 21, 28, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 3, 5, 6, 7, 9, 11, 13, 15], [3, 5, 7, 9, 11, 13, 15, 17]]) == [3, 5, 7, 9, 11, 13, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 3, 5, 6, 7, 9, 11, 13, 15], [3, 5, 7, 9, 11, 13, 15, 17]]) == [3, 5, 7, 9, 11, 13, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [1, 4, 7, 10, 13, 16], [1, 5, 9, 13, 17]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [1, 4, 7, 10, 13, 16], [1, 5, 9, 13, 17]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]]) == [1, 7, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]]) == [1, 7, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 6, 7, 8], [3, 4, 5, 6, 9], [3, 5, 7, 9, 11]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 6, 7, 8], [3, 4, 5, 6, 9], [3, 5, 7, 9, 11]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[2, 5, 8, 11, 14, 17, 20], [3, 5, 8, 11, 14, 17, 20, 23], [2, 4, 5, 8, 11, 14, 17, 20, 22]]) == [5, 8, 11, 14, 17, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[2, 5, 8, 11, 14, 17, 20], [3, 5, 8, 11, 14, 17, 20, 23], [2, 4, 5, 8, 11, 14, 17, 20, 22]]) == [5, 8, 11, 14, 17, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30, 40, 50], [10, 20, 40, 50], [10, 30, 40, 50], [10, 20, 30, 40], [10, 40, 50]]) == [10, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30, 40, 50], [10, 20, 40, 50], [10, 30, 40, 50], [10, 20, 30, 40], [10, 40, 50]]) == [10, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [1, 3, 5, 7, 9], [1, 4, 5, 6, 7], [1, 5, 9, 11, 13], [1, 2, 5, 8, 10]]) == [1, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [1, 3, 5, 7, 9], [1, 4, 5, 6, 7], [1, 5, 9, 11, 13], [1, 2, 5, 8, 10]]) == [1, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[3, 6, 9, 12, 15], [3, 6, 9, 12, 15, 18, 21, 24, 27], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]]) == [3, 6, 9, 12, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[3, 6, 9, 12, 15], [3, 6, 9, 12, 15, 18, 21, 24, 27], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]]) == [3, 6, 9, 12, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[3, 6, 9, 12, 15, 18, 21, 24], [3, 6, 9, 12, 15, 27, 30, 33], [3, 6, 9, 12, 15, 36, 39, 42]]) == [3, 6, 9, 12, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[3, 6, 9, 12, 15, 18, 21, 24], [3, 6, 9, 12, 15, 27, 30, 33], [3, 6, 9, 12, 15, 36, 39, 42]]) == [3, 6, 9, 12, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 9, 13, 17], [1, 6, 10, 14, 18], [1, 7, 11, 15, 19], [1, 8, 12, 16, 20]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 9, 13, 17], [1, 6, 10, 14, 18], [1, 7, 11, 15, 19], [1, 8, 12, 16, 20]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13, 16, 19], [1, 4, 5, 7, 8, 10, 13, 15, 16, 18, 19], [1, 3, 4, 7, 10, 13, 16, 20]]) == [1, 4, 7, 10, 13, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13, 16, 19], [1, 4, 5, 7, 8, 10, 13, 15, 16, 18, 19], [1, 3, 4, 7, 10, 13, 16, 20]]) == [1, 4, 7, 10, 13, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13], [1, 4, 7, 10, 13, 16], [1, 4, 7, 10, 13], [1, 4, 7, 10, 13, 14]]) == [1, 4, 7, 10, 13]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13], [1, 4, 7, 10, 13, 16], [1, 4, 7, 10, 13], [1, 4, 7, 10, 13, 14]]) == [1, 4, 7, 10, 13]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 4, 7, 10]]) == [1, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 4, 7, 10]]) == [1, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5], [1, 2, 3], [1, 2], [1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5], [1, 2, 3], [1, 2], [1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 55], [5, 10, 15, 20, 25, 30, 35, 40, 45, 60], [5, 10, 15, 20, 25, 30, 35, 40, 45, 65]]) == [5, 10, 15, 20, 25, 30, 35, 40, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 55], [5, 10, 15, 20, 25, 30, 35, 40, 45, 60], [5, 10, 15, 20, 25, 30, 35, 40, 45, 65]]) == [5, 10, 15, 20, 25, 30, 35, 40, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[2, 5, 8, 11, 14, 17, 20], [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20], [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]]) == [2, 5, 8, 11, 14, 17, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[2, 5, 8, 11, 14, 17, 20], [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20], [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]]) == [2, 5, 8, 11, 14, 17, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13, 16], [1, 3, 4, 7, 10, 14], [1, 4, 5, 7, 10, 16]]) == [1, 4, 7, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13, 16], [1, 3, 4, 7, 10, 14], [1, 4, 5, 7, 10, 16]]) == [1, 4, 7, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30, 40, 50], [10, 15, 20, 25, 30, 35, 40], [10, 20, 25, 30, 35, 45, 50]]) == [10, 20, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30, 40, 50], [10, 15, 20, 25, 30, 35, 40], [10, 20, 25, 30, 35, 45, 50]]) == [10, 20, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 4, 7, 10, 13], [2, 4, 8, 10, 14], [3, 4, 9, 10, 15], [4, 10, 16, 18, 20]]) == [4, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 4, 7, 10, 13], [2, 4, 8, 10, 14], [3, 4, 9, 10, 15], [4, 10, 16, 18, 20]]) == [4, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [3, 6, 9], [4, 8], [5, 10]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [3, 6, 9], [4, 8], [5, 10]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[11, 22, 33, 44, 55], [11, 23, 34, 45, 56], [11, 24, 35, 46, 57], [11, 25, 36, 47, 58], [11, 26, 37, 48, 59]]) == [11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[11, 22, 33, 44, 55], [11, 23, 34, 45, 56], [11, 24, 35, 46, 57], [11, 25, 36, 47, 58], [11, 26, 37, 48, 59]]) == [11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 2, 4, 5, 6, 7, 8, 9, 10]]) == [2, 4, 6, 8, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10], [1, 2, 4, 5, 6, 7, 8, 9, 10]]) == [2, 4, 6, 8, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 7, 11], [1, 3, 5, 7, 13], [1, 2, 3, 5, 7, 17]]) == [3, 5, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 7, 11], [1, 3, 5, 7, 13], [1, 2, 3, 5, 7, 17]]) == [3, 5, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30, 40, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70]]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30, 40, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70]]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[10, 20, 30, 40, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60]]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[10, 20, 30, 40, 50], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60]]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[5, 15, 25, 35], [5, 20, 25, 30], [5, 15, 20, 25, 35, 40]]) == [5, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[5, 15, 25, 35], [5, 20, 25, 30], [5, 15, 20, 25, 35, 40]]) == [5, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 5, 9, 13, 17, 21, 25, 29], [2, 5, 8, 11, 14, 17, 20, 23, 26], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]]) == [5, 17]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 5, 9, 13, 17, 21, 25, 29], [2, 5, 8, 11, 14, 17, 20, 23, 26], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]]) == [5, 17]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 7, 11], [3, 5, 7, 9, 13], [3, 6, 7, 9, 12], [3, 5, 8, 9, 15]]) == [3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 7, 11], [3, 5, 7, 9, 13], [3, 6, 7, 9, 12], [3, 5, 8, 9, 15]]) == [3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arrays = [[1, 3, 5, 7, 9, 11, 13], [2, 3, 6, 7, 10, 11, 14], [3, 5, 7, 8, 11, 13, 15], [3, 4, 7, 9, 11, 14, 16], [3, 6, 7, 10, 12, 13, 17]]) == [3, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arrays = [[1, 3, 5, 7, 9, 11, 13], [2, 3, 6, 7, 10, 11, 14], [3, 5, 7, 8, 11, 13, 15], [3, 4, 7, 9, 11, 14, 16], [3, 6, 7, 10, 12, 13, 17]]) == [3, 7]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(arrays = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [10, 20, 30, 40, 50]]) == [10, 20, 30]
@@ -98,3 +874,5 @@ def check(candidate):
     assert candidate(arrays = [[1, 5, 9, 13, 17, 21, 25, 29], [2, 5, 8, 11, 14, 17, 20, 23, 26], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]]) == [5, 17]
     assert candidate(arrays = [[1, 3, 5, 7, 9], [2, 3, 5, 7, 11], [3, 5, 7, 9, 13], [3, 6, 7, 9, 12], [3, 5, 8, 9, 15]]) == [3]
     assert candidate(arrays = [[1, 3, 5, 7, 9, 11, 13], [2, 3, 6, 7, 10, 11, 14], [3, 5, 7, 8, 11, 13, 15], [3, 4, 7, 9, 11, 14, 16], [3, 6, 7, 10, 12, 13, 17]]) == [3, 7]
+
+

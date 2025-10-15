@@ -1,5 +1,645 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 3,k = 2,row = 0,column = 0) == 0.0625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,k = 2,row = 0,column = 0) == 0.0625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,k = 3,row = 2,column = 2) == 0.25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,k = 3,row = 2,column = 2) == 0.25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1,k = 0,row = 0,column = 0) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1,k = 0,row = 0,column = 0) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 10,row = 5,column = 5) == 0.6104710195213556
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 10,row = 5,column = 5) == 0.6104710195213556: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,k = 5,row = 3,column = 3) == 0.35565185546875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,k = 5,row = 3,column = 3) == 0.35565185546875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 16,k = 4,row = 8,column = 8) == 0.9921875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 16,k = 4,row = 8,column = 8) == 0.9921875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 50,row = 0,column = 0) == 0.004271113933844097
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 50,row = 0,column = 0) == 0.004271113933844097: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 10,row = 3,column = 7) == 0.16516215726733208
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 10,row = 3,column = 7) == 0.16516215726733208: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,k = 18,row = 9,column = 9) == 0.4891442786281308
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,k = 18,row = 9,column = 9) == 0.4891442786281308: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,k = 3,row = 3,column = 0) == 0.2578125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,k = 3,row = 3,column = 0) == 0.2578125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 30,row = 5,column = 5) == 0.20150920194594582
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 30,row = 5,column = 5) == 0.20150920194594582: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 30,row = 10,column = 10) == 0.3188507083330616
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 30,row = 10,column = 10) == 0.3188507083330616: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 16,k = 10,row = 15,column = 0) == 0.04366329871118069
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 16,k = 10,row = 15,column = 0) == 0.04366329871118069: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 24,k = 8,row = 0,column = 23) == 0.054056644439697266
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 24,k = 8,row = 0,column = 23) == 0.054056644439697266: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,k = 40,row = 9,column = 9) == 0.11635625115510018
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,k = 40,row = 9,column = 9) == 0.11635625115510018: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,k = 7,row = 3,column = 3) == 0.1180572509765625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,k = 7,row = 3,column = 3) == 0.1180572509765625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 100,row = 12,column = 12) == 0.04742876069380138
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 100,row = 12,column = 12) == 0.04742876069380138: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 25,row = 6,column = 6) == 0.04940514803013356
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 25,row = 6,column = 6) == 0.04940514803013356: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 10,row = 2,column = 2) == 0.1920044720172882
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 10,row = 2,column = 2) == 0.1920044720172882: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 5,row = 19,column = 19) == 0.0821533203125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 5,row = 19,column = 19) == 0.0821533203125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 5,row = 7,column = 7) == 0.9296875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 5,row = 7,column = 7) == 0.9296875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 20,row = 7,column = 7) == 0.25474967076243493
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 20,row = 7,column = 7) == 0.25474967076243493: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,k = 40,row = 8,column = 8) == 0.11635625115510018
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,k = 40,row = 8,column = 8) == 0.11635625115510018: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 5,row = 10,column = 10) == 0.998046875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 5,row = 10,column = 10) == 0.998046875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 20,row = 14,column = 0) == 0.016829922789494044
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 20,row = 14,column = 0) == 0.016829922789494044: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 15,row = 5,column = 5) == 0.08643433569193348
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 15,row = 5,column = 5) == 0.08643433569193348: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 20,row = 10,column = 10) == 0.5426220046393063
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 20,row = 10,column = 10) == 0.5426220046393063: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 5,row = 7,column = 3) == 0.432373046875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 5,row = 7,column = 3) == 0.432373046875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 3,row = 0,column = 0) == 0.125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 3,row = 0,column = 0) == 0.125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 10,row = 0,column = 0) == 0.04390144161880016
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 10,row = 0,column = 0) == 0.04390144161880016: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 4,row = 6,column = 6) == 0.86083984375
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 4,row = 6,column = 6) == 0.86083984375: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 30,row = 15,column = 15) == 0.1555184742490744
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 30,row = 15,column = 15) == 0.1555184742490744: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 40,row = 3,column = 3) == 0.004399547953837918
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 40,row = 3,column = 3) == 0.004399547953837918: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 22,k = 80,row = 11,column = 11) == 0.044116795483744795
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 22,k = 80,row = 11,column = 11) == 0.044116795483744795: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 75,row = 20,column = 20) == 0.03918538196240853
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 75,row = 20,column = 20) == 0.03918538196240853: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,k = 60,row = 8,column = 8) == 0.03143644403748678
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,k = 60,row = 8,column = 8) == 0.03143644403748678: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,k = 10,row = 3,column = 3) == 0.2401371169835329
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,k = 10,row = 3,column = 3) == 0.2401371169835329: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 50,row = 12,column = 12) == 0.2764224343078947
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 50,row = 12,column = 12) == 0.2764224343078947: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 5,row = 19,column = 0) == 0.0821533203125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 5,row = 19,column = 0) == 0.0821533203125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 10,row = 10,column = 10) == 0.9512526337057352
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 10,row = 10,column = 10) == 0.9512526337057352: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 5,row = 0,column = 0) == 0.08154296875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 5,row = 0,column = 0) == 0.08154296875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 0,row = 24,column = 24) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 0,row = 24,column = 24) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,k = 15,row = 4,column = 4) == 0.04816485046694652
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,k = 15,row = 4,column = 4) == 0.04816485046694652: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 10,row = 4,column = 5) == 0.22588835656642914
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 10,row = 4,column = 5) == 0.22588835656642914: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 1,row = 0,column = 0) == 0.25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 1,row = 0,column = 0) == 0.25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 25,row = 7,column = 7) == 0.16093826349037266
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 25,row = 7,column = 7) == 0.16093826349037266: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 1,row = 24,column = 24) == 0.25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 1,row = 24,column = 24) == 0.25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 5,row = 14,column = 14) == 0.0821533203125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 5,row = 14,column = 14) == 0.0821533203125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 2,row = 19,column = 0) == 0.1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 2,row = 19,column = 0) == 0.1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 1,row = 11,column = 11) == 0.25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 1,row = 11,column = 11) == 0.25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 18,k = 15,row = 9,column = 9) == 0.5923417936583064
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 18,k = 15,row = 9,column = 9) == 0.5923417936583064: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 5,row = 9,column = 9) == 0.08154296875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 5,row = 9,column = 9) == 0.08154296875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 2,row = 19,column = 19) == 0.1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 2,row = 19,column = 19) == 0.1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 10,row = 7,column = 7) == 0.6320731192827225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 10,row = 7,column = 7) == 0.6320731192827225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 25,row = 5,column = 5) == 0.2637784288176317
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 25,row = 5,column = 5) == 0.2637784288176317: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 25,k = 50,row = 10,column = 10) == 0.26126116581179654
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 25,k = 50,row = 10,column = 10) == 0.26126116581179654: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 5,row = 9,column = 0) == 0.08154296875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 5,row = 9,column = 0) == 0.08154296875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 10,row = 5,column = 5) == 0.22588835656642914
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 10,row = 5,column = 5) == 0.22588835656642914: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 22,k = 25,row = 11,column = 11) == 0.5187071674337155
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 22,k = 25,row = 11,column = 11) == 0.5187071674337155: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 20,row = 0,column = 14) == 0.016829922789494044
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 20,row = 0,column = 14) == 0.016829922789494044: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 50,row = 0,column = 0) == 1.4257173418698251e-05
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 50,row = 0,column = 0) == 1.4257173418698251e-05: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 15,row = 14,column = 0) == 0.026700135945247894
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 15,row = 14,column = 0) == 0.026700135945247894: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 7,row = 19,column = 19) == 0.060955047607421875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 7,row = 19,column = 19) == 0.060955047607421875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 8,row = 9,column = 9) == 0.04556155204772949
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 8,row = 9,column = 9) == 0.04556155204772949: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 10,row = 0,column = 0) == 0.04390097223222256
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 10,row = 0,column = 0) == 0.04390097223222256: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 3,row = 11,column = 11) == 0.125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 3,row = 11,column = 11) == 0.125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 16,k = 8,row = 8,column = 8) == 0.8006306886672974
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 16,k = 8,row = 8,column = 8) == 0.8006306886672974: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 14,k = 25,row = 6,column = 6) == 0.11653890928316238
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 14,k = 25,row = 6,column = 6) == 0.11653890928316238: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 5,row = 0,column = 9) == 0.08154296875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 5,row = 0,column = 9) == 0.08154296875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,k = 4,row = 1,column = 1) == 0.232421875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,k = 4,row = 1,column = 1) == 0.232421875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 23,k = 2,row = 22,column = 22) == 0.1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 23,k = 2,row = 22,column = 22) == 0.1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 15,row = 3,column = 4) == 0.1568282853916969
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 15,row = 3,column = 4) == 0.1568282853916969: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 30,row = 6,column = 6) == 0.02475891397334001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 30,row = 6,column = 6) == 0.02475891397334001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,k = 6,row = 1,column = 1) == 0.121978759765625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,k = 6,row = 1,column = 1) == 0.121978759765625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,k = 25,row = 3,column = 3) == 0.0001764740896717054
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,k = 25,row = 3,column = 3) == 0.0001764740896717054: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,k = 2,row = 0,column = 19) == 0.1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,k = 2,row = 0,column = 19) == 0.1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,k = 7,row = 7,column = 7) == 0.811187744140625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,k = 7,row = 7,column = 7) == 0.811187744140625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,k = 0,row = 5,column = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,k = 0,row = 5,column = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,k = 3,row = 0,column = 11) == 0.125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,k = 3,row = 0,column = 11) == 0.125: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(n = 3,k = 2,row = 0,column = 0) == 0.0625
@@ -81,3 +721,5 @@ def check(candidate):
     assert candidate(n = 15,k = 7,row = 7,column = 7) == 0.811187744140625
     assert candidate(n = 10,k = 0,row = 5,column = 5) == 1
     assert candidate(n = 12,k = 3,row = 0,column = 11) == 0.125
+
+

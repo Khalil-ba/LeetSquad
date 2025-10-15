@@ -1,5 +1,677 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)', 'root/d 4.txt(abcd)']) == [['root/a/1.txt', 'root/d/4.txt'], ['root/b/2.txt', 'root/c/3.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)', 'root/d 4.txt(abcd)']) == [['root/a/1.txt', 'root/d/4.txt'], ['root/b/2.txt', 'root/c/3.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root/e 5.txt(efgh)']) == [['root/1.txt', 'root/c/3.txt'], ['root/2.txt', 'root/c/d/4.txt', 'root/e/5.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root/e 5.txt(efgh)']) == [['root/1.txt', 'root/c/3.txt'], ['root/2.txt', 'root/c/d/4.txt', 'root/e/5.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)', 'root/d 4.txt(efgh)']) == [['root/b/2.txt', 'root/c/3.txt', 'root/d/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)', 'root/d 4.txt(efgh)']) == [['root/b/2.txt', 'root/c/3.txt', 'root/d/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt', 'root/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt', 'root/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd)', 'root/c 2.txt(efgh)', 'root/c/d 3.txt(ghij)', 'root/c/d/e 4.txt(klmn)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd)', 'root/c 2.txt(efgh)', 'root/c/d 3.txt(ghij)', 'root/c/d/e 4.txt(klmn)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efsfgh)', 'root/c 3.txt(abdfcd)', 'root/c/d 4.txt(efggdfh)', 'root 4.txt(efggdfh)']) == [['root/c/d/4.txt', 'root/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efsfgh)', 'root/c 3.txt(abdfcd)', 'root/c/d 4.txt(efggdfh)', 'root 4.txt(efggdfh)']) == [['root/c/d/4.txt', 'root/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(a) 2.txt(ab) 3.txt(abc) 4.txt(abcd)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(a) 2.txt(ab) 3.txt(abc) 4.txt(abcd)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efsfgh)', 'root/b 3.txt(efsfgh) 4.txt(efgh)']) == [['root/a/2.txt', 'root/b/3.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efsfgh)', 'root/b 3.txt(efsfgh) 4.txt(efgh)']) == [['root/a/2.txt', 'root/b/3.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd)', 'root/b 4.txt(efgh) 5.txt(abcd)']) == [['root/a/1.txt', 'root/a/3.txt', 'root/b/5.txt'], ['root/a/2.txt', 'root/b/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd)', 'root/b 4.txt(efgh) 5.txt(abcd)']) == [['root/a/1.txt', 'root/a/3.txt', 'root/b/5.txt'], ['root/a/2.txt', 'root/b/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root 3.txt(abcd)', 'root 4.txt(efgh)', 'root 5.txt(abcd)', 'root 6.txt(efgh)']) == [['root/1.txt', 'root/3.txt', 'root/5.txt'], ['root/2.txt', 'root/4.txt', 'root/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root 3.txt(abcd)', 'root 4.txt(efgh)', 'root 5.txt(abcd)', 'root 6.txt(efgh)']) == [['root/1.txt', 'root/3.txt', 'root/5.txt'], ['root/2.txt', 'root/4.txt', 'root/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt', 'root/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt', 'root/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd) 4.txt(efgh)']) == [['root/a/1.txt', 'root/a/3.txt'], ['root/a/2.txt', 'root/a/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd) 4.txt(efgh)']) == [['root/a/1.txt', 'root/a/3.txt'], ['root/a/2.txt', 'root/a/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd) 2.txt(efsfgh)', 'root/c 3.txt(abdfcd)', 'root/c/d 4.txt(efggdfh)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd) 2.txt(efsfgh)', 'root/c 3.txt(abdfcd)', 'root/c/d 4.txt(efggdfh)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abc)', 'root/c 2.txt(abc)', 'root/c/d 3.txt(abc)', 'root/c/d/e 4.txt(abc)']) == [['root/1.txt', 'root/c/2.txt', 'root/c/d/3.txt', 'root/c/d/e/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abc)', 'root/c 2.txt(abc)', 'root/c/d 3.txt(abc)', 'root/c/d/e 4.txt(abc)']) == [['root/1.txt', 'root/c/2.txt', 'root/c/d/3.txt', 'root/c/d/e/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efasdfgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd)', 'root/c/d 4.txt(efgh)', 'root 4.txt(efasdfgh)']) == [['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)']) == [['root/b/2.txt', 'root/c/3.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)']) == [['root/b/2.txt', 'root/c/3.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd)', 'root/b 1.txt(efgh)', 'root/c 1.txt(abcd)']) == [['root/a/1.txt', 'root/c/1.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd)', 'root/b 1.txt(efgh)', 'root/c 1.txt(abcd)']) == [['root/a/1.txt', 'root/c/1.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['dir1 1.txt(xyz) 2.txt(abc)', 'dir1/subdir1 3.txt(abc)', 'dir1/subdir2 4.txt(xyz) 5.txt(ghi)', 'dir1/subdir2/subsubdir 6.txt(ghi) 7.txt(jkl)']) == [['dir1/1.txt', 'dir1/subdir2/4.txt'], ['dir1/2.txt', 'dir1/subdir1/3.txt'], ['dir1/subdir2/5.txt', 'dir1/subdir2/subsubdir/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['dir1 1.txt(xyz) 2.txt(abc)', 'dir1/subdir1 3.txt(abc)', 'dir1/subdir2 4.txt(xyz) 5.txt(ghi)', 'dir1/subdir2/subsubdir 6.txt(ghi) 7.txt(jkl)']) == [['dir1/1.txt', 'dir1/subdir2/4.txt'], ['dir1/2.txt', 'dir1/subdir1/3.txt'], ['dir1/subdir2/5.txt', 'dir1/subdir2/subsubdir/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/source/file1.txt(largeContentX)', 'root/source/file2.txt(largeContentY)', 'root/source/file3.txt(largeContentZ)', 'root/source/file4.txt(largeContentX)', 'root/source/file5.txt(largeContentY)', 'root/source/file6.txt(largeContentZ)', 'root/source/file7.txt(largeContentW)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/source/file1.txt(largeContentX)', 'root/source/file2.txt(largeContentY)', 'root/source/file3.txt(largeContentZ)', 'root/source/file4.txt(largeContentX)', 'root/source/file5.txt(largeContentY)', 'root/source/file6.txt(largeContentZ)', 'root/source/file7.txt(largeContentW)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c/d/e/f/g 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c/d/e/f 3.txt(abcd)', 'root/a/b/c/d/e 4.txt(efgh)', 'root/a/b/c/d 5.txt(efgh)', 'root/a/b/c 6.txt(abcd)']) == [['root/a/b/c/d/e/f/g/1.txt', 'root/a/b/c/d/e/f/3.txt', 'root/a/b/c/6.txt'], ['root/a/b/c/d/e/f/g/2.txt', 'root/a/b/c/d/e/4.txt', 'root/a/b/c/d/5.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c/d/e/f/g 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c/d/e/f 3.txt(abcd)', 'root/a/b/c/d/e 4.txt(efgh)', 'root/a/b/c/d 5.txt(efgh)', 'root/a/b/c 6.txt(abcd)']) == [['root/a/b/c/d/e/f/g/1.txt', 'root/a/b/c/d/e/f/3.txt', 'root/a/b/c/6.txt'], ['root/a/b/c/d/e/f/g/2.txt', 'root/a/b/c/d/e/4.txt', 'root/a/b/c/d/5.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/user/docs 1.pdf(abcdef)', 'root/user/downloads 2.pdf(abcdef)', 'root/user/music 3.mp3(ghijkl)', 'root/user/music 4.mp3(ghijkl)', 'root/user/photos 5.jpg(mnopqr)', 'root/user/photos 6.jpg(mnopqr)']) == [['root/user/docs/1.pdf', 'root/user/downloads/2.pdf'], ['root/user/music/3.mp3', 'root/user/music/4.mp3'], ['root/user/photos/5.jpg', 'root/user/photos/6.jpg']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/user/docs 1.pdf(abcdef)', 'root/user/downloads 2.pdf(abcdef)', 'root/user/music 3.mp3(ghijkl)', 'root/user/music 4.mp3(ghijkl)', 'root/user/photos 5.jpg(mnopqr)', 'root/user/photos 6.jpg(mnopqr)']) == [['root/user/docs/1.pdf', 'root/user/downloads/2.pdf'], ['root/user/music/3.mp3', 'root/user/music/4.mp3'], ['root/user/photos/5.jpg', 'root/user/photos/6.jpg']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['app/assets 1.css(abc) 2.js(def)', 'app/assets/css 3.css(abc)', 'app/assets/js 4.js(def) 5.js(ghi)', 'app/assets/js/libs 6.js(ghi)', 'app/assets/images 7.png(xyz)', 'app/assets/images/icons 8.png(xyz) 9.png(wxyz)']) == [['app/assets/1.css', 'app/assets/css/3.css'], ['app/assets/2.js', 'app/assets/js/4.js'], ['app/assets/js/5.js', 'app/assets/js/libs/6.js'], ['app/assets/images/7.png', 'app/assets/images/icons/8.png']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['app/assets 1.css(abc) 2.js(def)', 'app/assets/css 3.css(abc)', 'app/assets/js 4.js(def) 5.js(ghi)', 'app/assets/js/libs 6.js(ghi)', 'app/assets/images 7.png(xyz)', 'app/assets/images/icons 8.png(xyz) 9.png(wxyz)']) == [['app/assets/1.css', 'app/assets/css/3.css'], ['app/assets/2.js', 'app/assets/js/4.js'], ['app/assets/js/5.js', 'app/assets/js/libs/6.js'], ['app/assets/images/7.png', 'app/assets/images/icons/8.png']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/user1/docs/file1.txt(contentA)', 'root/user1/docs/file2.txt(contentB)', 'root/user2/docs/file1.txt(contentA)', 'root/user2/docs/file3.txt(contentC)', 'root/user3/docs/file4.txt(contentB)', 'root/user3/docs/file5.txt(contentD)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/user1/docs/file1.txt(contentA)', 'root/user1/docs/file2.txt(contentB)', 'root/user2/docs/file1.txt(contentA)', 'root/user2/docs/file3.txt(contentC)', 'root/user3/docs/file4.txt(contentB)', 'root/user3/docs/file5.txt(contentD)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123) 4.txt(efgh456)', 'root/e/f/g 5.txt(abcd123) 6.txt(efgh456)', 'root/h/i/j 7.txt(abcd123) 8.txt(efgh456)', 'root/k/l/m/n/o 9.txt(abcd123) 10.txt(efgh456)', 'root/p/q/r/s/t/u/v/w 11.txt(abcd123) 12.txt(efgh456)', 'root/x/y/z 13.txt(abcd123) 14.txt(efgh456)', 'root 15.txt(abcd123) 16.txt(efgh456)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/e/f/g/5.txt', 'root/h/i/j/7.txt', 'root/k/l/m/n/o/9.txt', 'root/p/q/r/s/t/u/v/w/11.txt', 'root/x/y/z/13.txt', 'root/15.txt'], ['root/a/b/c/2.txt', 'root/a/b/d/4.txt', 'root/e/f/g/6.txt', 'root/h/i/j/8.txt', 'root/k/l/m/n/o/10.txt', 'root/p/q/r/s/t/u/v/w/12.txt', 'root/x/y/z/14.txt', 'root/16.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123) 4.txt(efgh456)', 'root/e/f/g 5.txt(abcd123) 6.txt(efgh456)', 'root/h/i/j 7.txt(abcd123) 8.txt(efgh456)', 'root/k/l/m/n/o 9.txt(abcd123) 10.txt(efgh456)', 'root/p/q/r/s/t/u/v/w 11.txt(abcd123) 12.txt(efgh456)', 'root/x/y/z 13.txt(abcd123) 14.txt(efgh456)', 'root 15.txt(abcd123) 16.txt(efgh456)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/e/f/g/5.txt', 'root/h/i/j/7.txt', 'root/k/l/m/n/o/9.txt', 'root/p/q/r/s/t/u/v/w/11.txt', 'root/x/y/z/13.txt', 'root/15.txt'], ['root/a/b/c/2.txt', 'root/a/b/d/4.txt', 'root/e/f/g/6.txt', 'root/h/i/j/8.txt', 'root/k/l/m/n/o/10.txt', 'root/p/q/r/s/t/u/v/w/12.txt', 'root/x/y/z/14.txt', 'root/16.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/x 6.txt(ijkl) 7.txt(mnop)', 'root/y 8.txt(ijkl)', 'root/z 9.txt(mnop) 10.txt(ijkl)', 'root/a 11.txt(mnop)']) == [['root/x/6.txt', 'root/y/8.txt', 'root/z/10.txt'], ['root/x/7.txt', 'root/z/9.txt', 'root/a/11.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/x 6.txt(ijkl) 7.txt(mnop)', 'root/y 8.txt(ijkl)', 'root/z 9.txt(mnop) 10.txt(ijkl)', 'root/a 11.txt(mnop)']) == [['root/x/6.txt', 'root/y/8.txt', 'root/z/10.txt'], ['root/x/7.txt', 'root/z/9.txt', 'root/a/11.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['deep/nested/folder1/1.txt(x)', 'deep/nested/folder1/2.txt(y)', 'deep/nested/folder2/3.txt(x)', 'deep/nested/folder2/4.txt(z)', 'deep/nested/folder3/5.txt(y)', 'deep/nested/folder3/6.txt(x)', 'deep/nested/folder4/7.txt(z)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['deep/nested/folder1/1.txt(x)', 'deep/nested/folder1/2.txt(y)', 'deep/nested/folder2/3.txt(x)', 'deep/nested/folder2/4.txt(z)', 'deep/nested/folder3/5.txt(y)', 'deep/nested/folder3/6.txt(x)', 'deep/nested/folder4/7.txt(z)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/1/2/3 1.file(a)', 'root/1/2 2.file(a)', 'root/1 3.file(a)', 'root/1/2/3/4 4.file(a)', 'root/5 5.file(b)', 'root/5/6 6.file(b)', 'root/5/6/7 7.file(b)']) == [['root/1/2/3/1.file', 'root/1/2/2.file', 'root/1/3.file', 'root/1/2/3/4/4.file'], ['root/5/5.file', 'root/5/6/6.file', 'root/5/6/7/7.file']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/1/2/3 1.file(a)', 'root/1/2 2.file(a)', 'root/1 3.file(a)', 'root/1/2/3/4 4.file(a)', 'root/5 5.file(b)', 'root/5/6 6.file(b)', 'root/5/6/7 7.file(b)']) == [['root/1/2/3/1.file', 'root/1/2/2.file', 'root/1/3.file', 'root/1/2/3/4/4.file'], ['root/5/5.file', 'root/5/6/6.file', 'root/5/6/7/7.file']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/dir1/file1.txt(abc) file2.txt(def)', 'root/dir2/file3.txt(ghi)', 'root/dir3/file4.txt(abc) file5.txt(def)', 'root/dir4/file6.txt(ghi) file7.txt(jkl)', 'root/dir5/file8.txt(abc)']) == [['root/dir1/file1.txt(abc)/file2.txt', 'root/dir3/file4.txt(abc)/file5.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/dir1/file1.txt(abc) file2.txt(def)', 'root/dir2/file3.txt(ghi)', 'root/dir3/file4.txt(abc) file5.txt(def)', 'root/dir4/file6.txt(ghi) file7.txt(jkl)', 'root/dir5/file8.txt(abc)']) == [['root/dir1/file1.txt(abc)/file2.txt', 'root/dir3/file4.txt(abc)/file5.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['folder1/subfolder1/1.txt(xyz) folder1/subfolder1/2.txt(abc)', 'folder1/subfolder2/3.txt(xyz) folder1/subfolder2/4.txt(def)', 'folder2/subfolder1/5.txt(abc) folder2/subfolder1/6.txt(xyz)', 'folder2/subfolder2/7.txt(def) folder2/subfolder2/8.txt(ghi)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['folder1/subfolder1/1.txt(xyz) folder1/subfolder1/2.txt(abc)', 'folder1/subfolder2/3.txt(xyz) folder1/subfolder2/4.txt(def)', 'folder2/subfolder1/5.txt(abc) folder2/subfolder1/6.txt(xyz)', 'folder2/subfolder2/7.txt(def) folder2/subfolder2/8.txt(ghi)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/subdir1/subsubdir1/0.txt(aaaaa) subsubdir2/b.txt(aaaaa)', 'root/subdir1/subsubdir2/c.txt(bbbbb)', 'root/subdir2/1.txt(bbbbb)', 'root/subdir3/2.txt(ccccc)', 'root/subdir4/3.txt(ddddd)', 'root/subdir5/4.txt(ccccc)', 'root/subdir6/5.txt(ddddd)', 'root/subdir7/6.txt(aaaaa)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/subdir1/subsubdir1/0.txt(aaaaa) subsubdir2/b.txt(aaaaa)', 'root/subdir1/subsubdir2/c.txt(bbbbb)', 'root/subdir2/1.txt(bbbbb)', 'root/subdir3/2.txt(ccccc)', 'root/subdir4/3.txt(ddddd)', 'root/subdir5/4.txt(ccccc)', 'root/subdir6/5.txt(ddddd)', 'root/subdir7/6.txt(aaaaa)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(xyz) 2.txt(abc) 3.txt(def)', 'root/x 4.txt(xyz)', 'root/y 5.txt(abc)', 'root/z 6.txt(def)', 'root/a/b 7.txt(xyz) 8.txt(abc)', 'root/c/d 9.txt(def)', 'root/e/f 10.txt(xyz)', 'root/g/h 11.txt(abc)', 'root/i/j 12.txt(def)']) == [['root/1.txt', 'root/x/4.txt', 'root/a/b/7.txt', 'root/e/f/10.txt'], ['root/2.txt', 'root/y/5.txt', 'root/a/b/8.txt', 'root/g/h/11.txt'], ['root/3.txt', 'root/z/6.txt', 'root/c/d/9.txt', 'root/i/j/12.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(xyz) 2.txt(abc) 3.txt(def)', 'root/x 4.txt(xyz)', 'root/y 5.txt(abc)', 'root/z 6.txt(def)', 'root/a/b 7.txt(xyz) 8.txt(abc)', 'root/c/d 9.txt(def)', 'root/e/f 10.txt(xyz)', 'root/g/h 11.txt(abc)', 'root/i/j 12.txt(def)']) == [['root/1.txt', 'root/x/4.txt', 'root/a/b/7.txt', 'root/e/f/10.txt'], ['root/2.txt', 'root/y/5.txt', 'root/a/b/8.txt', 'root/g/h/11.txt'], ['root/3.txt', 'root/z/6.txt', 'root/c/d/9.txt', 'root/i/j/12.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['base 20.txt(stu) 21.txt(vwx)', 'base/sub1 22.txt(yza) 23.txt(stu)', 'base/sub2 24.txt(vwx) 25.txt(yza)', 'base/sub3 26.txt(yza)']) == [['base/20.txt', 'base/sub1/23.txt'], ['base/21.txt', 'base/sub2/24.txt'], ['base/sub1/22.txt', 'base/sub2/25.txt', 'base/sub3/26.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['base 20.txt(stu) 21.txt(vwx)', 'base/sub1 22.txt(yza) 23.txt(stu)', 'base/sub2 24.txt(vwx) 25.txt(yza)', 'base/sub3 26.txt(yza)']) == [['base/20.txt', 'base/sub1/23.txt'], ['base/21.txt', 'base/sub2/24.txt'], ['base/sub1/22.txt', 'base/sub2/25.txt', 'base/sub3/26.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123)', 'root/a/b/e 4.txt(efgh456)', 'root/a/b/f 5.txt(abcd123)', 'root/a/b/g 6.txt(efgh456)', 'root/a/b/h 7.txt(abcd123)', 'root/a/b/i 8.txt(efgh456)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/a/b/f/5.txt', 'root/a/b/h/7.txt'], ['root/a/b/c/2.txt', 'root/a/b/e/4.txt', 'root/a/b/g/6.txt', 'root/a/b/i/8.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123)', 'root/a/b/e 4.txt(efgh456)', 'root/a/b/f 5.txt(abcd123)', 'root/a/b/g 6.txt(efgh456)', 'root/a/b/h 7.txt(abcd123)', 'root/a/b/i 8.txt(efgh456)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/a/b/f/5.txt', 'root/a/b/h/7.txt'], ['root/a/b/c/2.txt', 'root/a/b/e/4.txt', 'root/a/b/g/6.txt', 'root/a/b/i/8.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(abcd)', 'root/c 3.txt(abcd)', 'root/d 4.txt(abcd)', 'root/e 5.txt(abcd)', 'root/f 6.txt(abcd)', 'root/g 7.txt(abcd)', 'root/h 8.txt(abcd)', 'root/i 9.txt(abcd)', 'root/j 10.txt(abcd)', 'root/k 11.txt(abcd)', 'root/l 12.txt(abcd)', 'root/m 13.txt(abcd)', 'root/n 14.txt(abcd)', 'root/o 15.txt(abcd)', 'root/p 16.txt(abcd)', 'root/q 17.txt(abcd)', 'root/r 18.txt(abcd)', 'root/s 19.txt(abcd)', 'root/t 20.txt(abcd)']) == [['root/a/1.txt', 'root/b/2.txt', 'root/c/3.txt', 'root/d/4.txt', 'root/e/5.txt', 'root/f/6.txt', 'root/g/7.txt', 'root/h/8.txt', 'root/i/9.txt', 'root/j/10.txt', 'root/k/11.txt', 'root/l/12.txt', 'root/m/13.txt', 'root/n/14.txt', 'root/o/15.txt', 'root/p/16.txt', 'root/q/17.txt', 'root/r/18.txt', 'root/s/19.txt', 'root/t/20.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(abcd)', 'root/c 3.txt(abcd)', 'root/d 4.txt(abcd)', 'root/e 5.txt(abcd)', 'root/f 6.txt(abcd)', 'root/g 7.txt(abcd)', 'root/h 8.txt(abcd)', 'root/i 9.txt(abcd)', 'root/j 10.txt(abcd)', 'root/k 11.txt(abcd)', 'root/l 12.txt(abcd)', 'root/m 13.txt(abcd)', 'root/n 14.txt(abcd)', 'root/o 15.txt(abcd)', 'root/p 16.txt(abcd)', 'root/q 17.txt(abcd)', 'root/r 18.txt(abcd)', 'root/s 19.txt(abcd)', 'root/t 20.txt(abcd)']) == [['root/a/1.txt', 'root/b/2.txt', 'root/c/3.txt', 'root/d/4.txt', 'root/e/5.txt', 'root/f/6.txt', 'root/g/7.txt', 'root/h/8.txt', 'root/i/9.txt', 'root/j/10.txt', 'root/k/11.txt', 'root/l/12.txt', 'root/m/13.txt', 'root/n/14.txt', 'root/o/15.txt', 'root/p/16.txt', 'root/q/17.txt', 'root/r/18.txt', 'root/s/19.txt', 'root/t/20.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/d 4.txt(efgh) 5.txt(mnop)', 'root/e 6.txt(abcd) 7.txt(efgh)', 'root/f 8.txt(mnop)']) == [['root/1.txt', 'root/e/6.txt'], ['root/2.txt', 'root/d/4.txt', 'root/e/7.txt'], ['root/d/5.txt', 'root/f/8.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/d 4.txt(efgh) 5.txt(mnop)', 'root/e 6.txt(abcd) 7.txt(efgh)', 'root/f 8.txt(mnop)']) == [['root/1.txt', 'root/e/6.txt'], ['root/2.txt', 'root/d/4.txt', 'root/e/7.txt'], ['root/d/5.txt', 'root/f/8.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/data/logs/error.log(log1)', 'root/data/logs/access.log(log2)', 'root/data/backup/error.log(log1)', 'root/data/backup/access.log(log2)', 'root/data/temp/error.log(log1)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/data/logs/error.log(log1)', 'root/data/logs/access.log(log2)', 'root/data/backup/error.log(log1)', 'root/data/backup/access.log(log2)', 'root/data/temp/error.log(log1)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abc) 2.txt(def) 3.txt(ghi)', 'root 4.txt(abc) 5.txt(jkl)', 'root 6.txt(mno) 7.txt(def)', 'root 8.txt(pqr) 9.txt(ghi)', 'root 10.txt(stu) 11.txt(vwx)', 'root 12.txt(yza) 13.txt(abc)', 'root 14.txt(mno) 15.txt(def)', 'root 16.txt(ghi) 17.txt(jkl)', 'root 18.txt(stu) 19.txt(vwx)', 'root 20.txt(yza) 21.txt(abc)', 'root 22.txt(mno) 23.txt(def)', 'root 24.txt(ghi) 25.txt(jkl)', 'root 26.txt(stu) 27.txt(vwx)', 'root 28.txt(yza) 29.txt(abc)', 'root 30.txt(mno) 31.txt(def)']) == [['root/1.txt', 'root/4.txt', 'root/13.txt', 'root/21.txt', 'root/29.txt'], ['root/2.txt', 'root/7.txt', 'root/15.txt', 'root/23.txt', 'root/31.txt'], ['root/3.txt', 'root/9.txt', 'root/16.txt', 'root/24.txt'], ['root/5.txt', 'root/17.txt', 'root/25.txt'], ['root/6.txt', 'root/14.txt', 'root/22.txt', 'root/30.txt'], ['root/10.txt', 'root/18.txt', 'root/26.txt'], ['root/11.txt', 'root/19.txt', 'root/27.txt'], ['root/12.txt', 'root/20.txt', 'root/28.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abc) 2.txt(def) 3.txt(ghi)', 'root 4.txt(abc) 5.txt(jkl)', 'root 6.txt(mno) 7.txt(def)', 'root 8.txt(pqr) 9.txt(ghi)', 'root 10.txt(stu) 11.txt(vwx)', 'root 12.txt(yza) 13.txt(abc)', 'root 14.txt(mno) 15.txt(def)', 'root 16.txt(ghi) 17.txt(jkl)', 'root 18.txt(stu) 19.txt(vwx)', 'root 20.txt(yza) 21.txt(abc)', 'root 22.txt(mno) 23.txt(def)', 'root 24.txt(ghi) 25.txt(jkl)', 'root 26.txt(stu) 27.txt(vwx)', 'root 28.txt(yza) 29.txt(abc)', 'root 30.txt(mno) 31.txt(def)']) == [['root/1.txt', 'root/4.txt', 'root/13.txt', 'root/21.txt', 'root/29.txt'], ['root/2.txt', 'root/7.txt', 'root/15.txt', 'root/23.txt', 'root/31.txt'], ['root/3.txt', 'root/9.txt', 'root/16.txt', 'root/24.txt'], ['root/5.txt', 'root/17.txt', 'root/25.txt'], ['root/6.txt', 'root/14.txt', 'root/22.txt', 'root/30.txt'], ['root/10.txt', 'root/18.txt', 'root/26.txt'], ['root/11.txt', 'root/19.txt', 'root/27.txt'], ['root/12.txt', 'root/20.txt', 'root/28.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/project1/src/main.py(code123)', 'root/project2/src/main.py(code456)', 'root/project3/src/main.py(code123)', 'root/project4/src/main.py(code789)', 'root/project5/src/main.py(code456)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/project1/src/main.py(code123)', 'root/project2/src/main.py(code456)', 'root/project3/src/main.py(code123)', 'root/project4/src/main.py(code789)', 'root/project5/src/main.py(code456)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c 3.txt(abcd)', 'root/a/b/c/d 4.txt(efgh)', 'root/a/b/e 5.txt(efgh)', 'root/f/g 6.txt(abcd)']) == [['root/a/b/1.txt', 'root/a/b/c/3.txt', 'root/f/g/6.txt'], ['root/a/b/2.txt', 'root/a/b/c/d/4.txt', 'root/a/b/e/5.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c 3.txt(abcd)', 'root/a/b/c/d 4.txt(efgh)', 'root/a/b/e 5.txt(efgh)', 'root/f/g 6.txt(abcd)']) == [['root/a/b/1.txt', 'root/a/b/c/3.txt', 'root/f/g/6.txt'], ['root/a/b/2.txt', 'root/a/b/c/d/4.txt', 'root/a/b/e/5.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/complex/structure/with/different/contents/1.txt(abc)', 'root/complex/structure/with/different/contents/2.txt(def)', 'root/complex/structure/with/3.txt(ghi)', 'root/complex/structure/with/4.txt(jkl)', 'root/complex/structure/5.txt(mno)', 'root/complex/structure/with/different/contents/6.txt(abc)', 'root/complex/structure/with/different/contents/7.txt(def)', 'root/complex/structure/with/different/contents/8.txt(ghi)', 'root/complex/structure/with/different/contents/9.txt(jkl)', 'root/complex/structure/with/different/contents/10.txt(mno)', 'root/complex/structure/with/different/contents/11.txt(abc)', 'root/complex/structure/with/different/contents/12.txt(def)', 'root/complex/structure/with/different/contents/13.txt(ghi)', 'root/complex/structure/with/different/contents/14.txt(jkl)', 'root/complex/structure/with/different/contents/15.txt(mno)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/complex/structure/with/different/contents/1.txt(abc)', 'root/complex/structure/with/different/contents/2.txt(def)', 'root/complex/structure/with/3.txt(ghi)', 'root/complex/structure/with/4.txt(jkl)', 'root/complex/structure/5.txt(mno)', 'root/complex/structure/with/different/contents/6.txt(abc)', 'root/complex/structure/with/different/contents/7.txt(def)', 'root/complex/structure/with/different/contents/8.txt(ghi)', 'root/complex/structure/with/different/contents/9.txt(jkl)', 'root/complex/structure/with/different/contents/10.txt(mno)', 'root/complex/structure/with/different/contents/11.txt(abc)', 'root/complex/structure/with/different/contents/12.txt(def)', 'root/complex/structure/with/different/contents/13.txt(ghi)', 'root/complex/structure/with/different/contents/14.txt(jkl)', 'root/complex/structure/with/different/contents/15.txt(mno)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/d/e/f 4.txt(abcd) 5.txt(mnop) 6.txt(ijkl)', 'root/g/h 7.txt(efgh) 8.txt(mnop) 9.txt(pqrs)', 'root/i/j/k/l 10.txt(abcd) 11.txt(ijkl) 12.txt(mnop)']) == [['root/a/b/c/1.txt', 'root/d/e/f/4.txt', 'root/i/j/k/l/10.txt'], ['root/a/b/c/2.txt', 'root/g/h/7.txt'], ['root/a/b/c/3.txt', 'root/d/e/f/6.txt', 'root/i/j/k/l/11.txt'], ['root/d/e/f/5.txt', 'root/g/h/8.txt', 'root/i/j/k/l/12.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/d/e/f 4.txt(abcd) 5.txt(mnop) 6.txt(ijkl)', 'root/g/h 7.txt(efgh) 8.txt(mnop) 9.txt(pqrs)', 'root/i/j/k/l 10.txt(abcd) 11.txt(ijkl) 12.txt(mnop)']) == [['root/a/b/c/1.txt', 'root/d/e/f/4.txt', 'root/i/j/k/l/10.txt'], ['root/a/b/c/2.txt', 'root/g/h/7.txt'], ['root/a/b/c/3.txt', 'root/d/e/f/6.txt', 'root/i/j/k/l/11.txt'], ['root/d/e/f/5.txt', 'root/g/h/8.txt', 'root/i/j/k/l/12.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['dir1 12.txt(abc) 13.txt(def)', 'dir2 14.txt(ghi) 15.txt(jkl)', 'dir3 16.txt(mno) 17.txt(pqr)', 'dir4 18.txt(abc) 19.txt(def)']) == [['dir1/12.txt', 'dir4/18.txt'], ['dir1/13.txt', 'dir4/19.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['dir1 12.txt(abc) 13.txt(def)', 'dir2 14.txt(ghi) 15.txt(jkl)', 'dir3 16.txt(mno) 17.txt(pqr)', 'dir4 18.txt(abc) 19.txt(def)']) == [['dir1/12.txt', 'dir4/18.txt'], ['dir1/13.txt', 'dir4/19.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/logs/2023/01/01/log1.log(logdata1)', 'root/logs/2023/01/02/log2.log(logdata2)', 'root/logs/2023/01/03/log3.log(logdata1)', 'root/logs/2023/01/04/log4.log(logdata2)', 'root/logs/2023/01/05/log5.log(logdata3)', 'root/logs/2023/01/06/log6.log(logdata1)', 'root/logs/2023/01/07/log7.log(logdata2)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/logs/2023/01/01/log1.log(logdata1)', 'root/logs/2023/01/02/log2.log(logdata2)', 'root/logs/2023/01/03/log3.log(logdata1)', 'root/logs/2023/01/04/log4.log(logdata2)', 'root/logs/2023/01/05/log5.log(logdata3)', 'root/logs/2023/01/06/log6.log(logdata1)', 'root/logs/2023/01/07/log7.log(logdata2)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123)', 'root/e/f/g 4.txt(efgh456)', 'root/h 5.txt(abcd123)', 'root/i/j 6.txt(efgh456)', 'root/k/l/m 7.txt(abcd123)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/h/5.txt', 'root/k/l/m/7.txt'], ['root/a/b/c/2.txt', 'root/e/f/g/4.txt', 'root/i/j/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd123) 2.txt(efgh456)', 'root/a/b/d 3.txt(abcd123)', 'root/e/f/g 4.txt(efgh456)', 'root/h 5.txt(abcd123)', 'root/i/j 6.txt(efgh456)', 'root/k/l/m 7.txt(abcd123)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/h/5.txt', 'root/k/l/m/7.txt'], ['root/a/b/c/2.txt', 'root/e/f/g/4.txt', 'root/i/j/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/project/src/main.java(code1)', 'root/project/src/test.java(code2)', 'root/project/docs/requirements.txt(code1)', 'root/project/docs/design.txt(code2)', 'root/project/bin/main.java(code1)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/project/src/main.java(code1)', 'root/project/src/test.java(code2)', 'root/project/docs/requirements.txt(code1)', 'root/project/docs/design.txt(code2)', 'root/project/bin/main.java(code1)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c 3.txt(abcd)', 'root/a/b/d 4.txt(efgh)', 'root/e/f/g 5.txt(efgh)', 'root/e/f/g 6.txt(abcd)']) == [['root/a/b/1.txt', 'root/a/b/c/3.txt', 'root/e/f/g/6.txt'], ['root/a/b/2.txt', 'root/a/b/d/4.txt', 'root/e/f/g/5.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b 1.txt(abcd) 2.txt(efgh)', 'root/a/b/c 3.txt(abcd)', 'root/a/b/d 4.txt(efgh)', 'root/e/f/g 5.txt(efgh)', 'root/e/f/g 6.txt(abcd)']) == [['root/a/b/1.txt', 'root/a/b/c/3.txt', 'root/e/f/g/6.txt'], ['root/a/b/2.txt', 'root/a/b/d/4.txt', 'root/e/f/g/5.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/d1 1.txt(abcd123) 2.txt(efgh456)', 'root/d2 3.txt(abcd123)', 'root/d3 4.txt(efgh456)', 'root/d4 5.txt(abcd123)', 'root/d5 6.txt(efgh456)']) == [['root/d1/1.txt', 'root/d2/3.txt', 'root/d4/5.txt'], ['root/d1/2.txt', 'root/d3/4.txt', 'root/d5/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/d1 1.txt(abcd123) 2.txt(efgh456)', 'root/d2 3.txt(abcd123)', 'root/d3 4.txt(efgh456)', 'root/d4 5.txt(abcd123)', 'root/d5 6.txt(efgh456)']) == [['root/d1/1.txt', 'root/d2/3.txt', 'root/d4/5.txt'], ['root/d1/2.txt', 'root/d3/4.txt', 'root/d5/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(12345678901234567890)', 'root/a 2.txt(12345678901234567890)', 'root/b 3.txt(09876543210987654321)', 'root/b/c 4.txt(09876543210987654321)', 'root/d 5.txt(12345678901234567890)']) == [['root/1.txt', 'root/a/2.txt', 'root/d/5.txt'], ['root/b/3.txt', 'root/b/c/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(12345678901234567890)', 'root/a 2.txt(12345678901234567890)', 'root/b 3.txt(09876543210987654321)', 'root/b/c 4.txt(09876543210987654321)', 'root/d 5.txt(12345678901234567890)']) == [['root/1.txt', 'root/a/2.txt', 'root/d/5.txt'], ['root/b/3.txt', 'root/b/c/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(a)', 'root 2.txt(a)', 'root 3.txt(a)', 'root 4.txt(a)', 'root 5.txt(a)', 'root 6.txt(a)', 'root 7.txt(a)', 'root 8.txt(a)', 'root 9.txt(a)', 'root 10.txt(a)', 'root 11.txt(a)', 'root 12.txt(a)', 'root 13.txt(a)', 'root 14.txt(a)', 'root 15.txt(a)']) == [['root/1.txt', 'root/2.txt', 'root/3.txt', 'root/4.txt', 'root/5.txt', 'root/6.txt', 'root/7.txt', 'root/8.txt', 'root/9.txt', 'root/10.txt', 'root/11.txt', 'root/12.txt', 'root/13.txt', 'root/14.txt', 'root/15.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(a)', 'root 2.txt(a)', 'root 3.txt(a)', 'root 4.txt(a)', 'root 5.txt(a)', 'root 6.txt(a)', 'root 7.txt(a)', 'root 8.txt(a)', 'root 9.txt(a)', 'root 10.txt(a)', 'root 11.txt(a)', 'root 12.txt(a)', 'root 13.txt(a)', 'root 14.txt(a)', 'root 15.txt(a)']) == [['root/1.txt', 'root/2.txt', 'root/3.txt', 'root/4.txt', 'root/5.txt', 'root/6.txt', 'root/7.txt', 'root/8.txt', 'root/9.txt', 'root/10.txt', 'root/11.txt', 'root/12.txt', 'root/13.txt', 'root/14.txt', 'root/15.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['home/user/documents 1.docx(abcdefg) 2.txt(hijklm)', 'home/user/downloads 3.txt(abcdefg)', 'home/user/pictures 4.txt(hijklm) 5.txt(opqrstu)', 'home/user/videos 6.txt(opqrstu) 7.txt(vwxyz)']) == [['home/user/documents/1.docx', 'home/user/downloads/3.txt'], ['home/user/documents/2.txt', 'home/user/pictures/4.txt'], ['home/user/pictures/5.txt', 'home/user/videos/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['home/user/documents 1.docx(abcdefg) 2.txt(hijklm)', 'home/user/downloads 3.txt(abcdefg)', 'home/user/pictures 4.txt(hijklm) 5.txt(opqrstu)', 'home/user/videos 6.txt(opqrstu) 7.txt(vwxyz)']) == [['home/user/documents/1.docx', 'home/user/downloads/3.txt'], ['home/user/documents/2.txt', 'home/user/pictures/4.txt'], ['home/user/pictures/5.txt', 'home/user/videos/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/user/documents/report.txt(data123) notes.txt(data123)', 'root/user/photos/vacation.jpg(data456)', 'root/user/backup/report.txt(data123)', 'root/user/music/song.mp3(data789)', 'root/user/videos/trip.mp4(data456)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/user/documents/report.txt(data123) notes.txt(data123)', 'root/user/photos/vacation.jpg(data456)', 'root/user/backup/report.txt(data123)', 'root/user/music/song.mp3(data789)', 'root/user/videos/trip.mp4(data456)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/level1/level2/level3/1.txt(a)', 'root/level1/level2/2.txt(b)', 'root/level1/3.txt(a)', 'root/level1/4.txt(b)', 'root/5.txt(a)', 'root/6.txt(b)', 'root/7.txt(c)', 'root/8.txt(d)', 'root/level2/9.txt(c)', 'root/level2/level3/10.txt(d)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/level1/level2/level3/1.txt(a)', 'root/level1/level2/2.txt(b)', 'root/level1/3.txt(a)', 'root/level1/4.txt(b)', 'root/5.txt(a)', 'root/6.txt(b)', 'root/7.txt(c)', 'root/8.txt(d)', 'root/level2/9.txt(c)', 'root/level2/level3/10.txt(d)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/folder1/subfolder1/file1.txt(data123)', 'root/folder2/subfolder2/file2.txt(data456)', 'root/folder1/subfolder1/file3.txt(data789)', 'root/folder2/subfolder2/file4.txt(data123)', 'root/folder1/subfolder1/file5.txt(data456)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/folder1/subfolder1/file1.txt(data123)', 'root/folder2/subfolder2/file2.txt(data456)', 'root/folder1/subfolder1/file3.txt(data789)', 'root/folder2/subfolder2/file4.txt(data123)', 'root/folder1/subfolder1/file5.txt(data456)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd) 4.txt(efgh)', 'root/c/d 5.txt(abcd) 6.txt(efgh)', 'root/e 7.txt(abcd) 8.txt(efgh)', 'root/e/f 9.txt(abcd) 10.txt(efgh)', 'root/e/f/g 11.txt(abcd) 12.txt(efgh)', 'root/e/f/g/h 13.txt(abcd) 14.txt(efgh)', 'root/e/f/g/h/i 15.txt(abcd) 16.txt(efgh)']) == [['root/1.txt', 'root/c/3.txt', 'root/c/d/5.txt', 'root/e/7.txt', 'root/e/f/9.txt', 'root/e/f/g/11.txt', 'root/e/f/g/h/13.txt', 'root/e/f/g/h/i/15.txt'], ['root/2.txt', 'root/c/4.txt', 'root/c/d/6.txt', 'root/e/8.txt', 'root/e/f/10.txt', 'root/e/f/g/12.txt', 'root/e/f/g/h/14.txt', 'root/e/f/g/h/i/16.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(abcd) 2.txt(efgh)', 'root/c 3.txt(abcd) 4.txt(efgh)', 'root/c/d 5.txt(abcd) 6.txt(efgh)', 'root/e 7.txt(abcd) 8.txt(efgh)', 'root/e/f 9.txt(abcd) 10.txt(efgh)', 'root/e/f/g 11.txt(abcd) 12.txt(efgh)', 'root/e/f/g/h 13.txt(abcd) 14.txt(efgh)', 'root/e/f/g/h/i 15.txt(abcd) 16.txt(efgh)']) == [['root/1.txt', 'root/c/3.txt', 'root/c/d/5.txt', 'root/e/7.txt', 'root/e/f/9.txt', 'root/e/f/g/11.txt', 'root/e/f/g/h/13.txt', 'root/e/f/g/h/i/15.txt'], ['root/2.txt', 'root/c/4.txt', 'root/c/d/6.txt', 'root/e/8.txt', 'root/e/f/10.txt', 'root/e/f/g/12.txt', 'root/e/f/g/h/14.txt', 'root/e/f/g/h/i/16.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh)', 'root/a/b/d 3.txt(abcd)', 'root/a/b/e 4.txt(efgh) 5.txt(abcd)', 'root/a/b/f 6.txt(ghij)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/a/b/e/5.txt'], ['root/a/b/c/2.txt', 'root/a/b/e/4.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh)', 'root/a/b/d 3.txt(abcd)', 'root/a/b/e 4.txt(efgh) 5.txt(abcd)', 'root/a/b/f 6.txt(ghij)']) == [['root/a/b/c/1.txt', 'root/a/b/d/3.txt', 'root/a/b/e/5.txt'], ['root/a/b/c/2.txt', 'root/a/b/e/4.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/b 4.txt(mnop) 5.txt(abcd)', 'root/c 6.txt(efgh) 7.txt(mnop)', 'root/d 8.txt(ijkl)']) == [['root/a/1.txt', 'root/b/5.txt'], ['root/a/2.txt', 'root/c/6.txt'], ['root/a/3.txt', 'root/d/8.txt'], ['root/b/4.txt', 'root/c/7.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh) 3.txt(ijkl)', 'root/b 4.txt(mnop) 5.txt(abcd)', 'root/c 6.txt(efgh) 7.txt(mnop)', 'root/d 8.txt(ijkl)']) == [['root/a/1.txt', 'root/b/5.txt'], ['root/a/2.txt', 'root/c/6.txt'], ['root/a/3.txt', 'root/d/8.txt'], ['root/b/4.txt', 'root/c/7.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['server/logs 1.log(err) 2.log(warn)', 'server/data 3.log(info) 4.log(err)', 'server/data/cache 5.log(warn) 6.log(info)', 'server/data/cache/temp 7.log(err) 8.log(info) 9.log(warn)']) == [['server/logs/1.log', 'server/data/4.log', 'server/data/cache/temp/7.log'], ['server/logs/2.log', 'server/data/cache/5.log', 'server/data/cache/temp/9.log'], ['server/data/3.log', 'server/data/cache/6.log', 'server/data/cache/temp/8.log']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['server/logs 1.log(err) 2.log(warn)', 'server/data 3.log(info) 4.log(err)', 'server/data/cache 5.log(warn) 6.log(info)', 'server/data/cache/temp 7.log(err) 8.log(info) 9.log(warn)']) == [['server/logs/1.log', 'server/data/4.log', 'server/data/cache/temp/7.log'], ['server/logs/2.log', 'server/data/cache/5.log', 'server/data/cache/temp/9.log'], ['server/data/3.log', 'server/data/cache/6.log', 'server/data/cache/temp/8.log']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['customer/profiles 1.json(abc) 2.json(def)', 'customer/orders 3.json(abc) 4.json(ghi)', 'customer/orders/2022 5.json(def)', 'customer/orders/2022/01 6.json(ghi) 7.json(jkl)', 'customer/orders/2022/02 8.json(abc) 9.json(jkl)']) == [['customer/profiles/1.json', 'customer/orders/3.json', 'customer/orders/2022/02/8.json'], ['customer/profiles/2.json', 'customer/orders/2022/5.json'], ['customer/orders/4.json', 'customer/orders/2022/01/6.json'], ['customer/orders/2022/01/7.json', 'customer/orders/2022/02/9.json']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['customer/profiles 1.json(abc) 2.json(def)', 'customer/orders 3.json(abc) 4.json(ghi)', 'customer/orders/2022 5.json(def)', 'customer/orders/2022/01 6.json(ghi) 7.json(jkl)', 'customer/orders/2022/02 8.json(abc) 9.json(jkl)']) == [['customer/profiles/1.json', 'customer/orders/3.json', 'customer/orders/2022/02/8.json'], ['customer/profiles/2.json', 'customer/orders/2022/5.json'], ['customer/orders/4.json', 'customer/orders/2022/01/6.json'], ['customer/orders/2022/01/7.json', 'customer/orders/2022/02/9.json']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['projects/code 1.py(def) 2.py(abc)', 'projects/docs 3.txt(abc)', 'projects/tests 4.py(def) 5.py(ghi)', 'projects/tests/unit 6.py(ghi)', 'projects/tests/integration 7.py(ghi)']) == [['projects/code/1.py', 'projects/tests/4.py'], ['projects/code/2.py', 'projects/docs/3.txt'], ['projects/tests/5.py', 'projects/tests/unit/6.py', 'projects/tests/integration/7.py']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['projects/code 1.py(def) 2.py(abc)', 'projects/docs 3.txt(abc)', 'projects/tests 4.py(def) 5.py(ghi)', 'projects/tests/unit 6.py(ghi)', 'projects/tests/integration 7.py(ghi)']) == [['projects/code/1.py', 'projects/tests/4.py'], ['projects/code/2.py', 'projects/docs/3.txt'], ['projects/tests/5.py', 'projects/tests/unit/6.py', 'projects/tests/integration/7.py']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['dir1/subdir1/file1.txt(aaa) dir1/subdir2/file2.txt(bbb)', 'dir2/subdir1/file3.txt(aaa) dir2/subdir2/file4.txt(ccc)', 'dir3/subdir1/file5.txt(bbb) dir3/subdir2/file6.txt(aaa)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['dir1/subdir1/file1.txt(aaa) dir1/subdir2/file2.txt(bbb)', 'dir2/subdir1/file3.txt(aaa) dir2/subdir2/file4.txt(ccc)', 'dir3/subdir1/file5.txt(bbb) dir3/subdir2/file6.txt(aaa)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/user/john/docs/report.docx(abc123def456)', 'root/user/jane/docs/report.docx(abc123def456)', 'root/user/john/pics/photo.png(gif789)', 'root/user/jane/pics/photo.png(gif789)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/user/john/docs/report.docx(abc123def456)', 'root/user/jane/docs/report.docx(abc123def456)', 'root/user/john/pics/photo.png(gif789)', 'root/user/jane/pics/photo.png(gif789)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['projects/1/src/main.java(code)', 'projects/2/src/main.java(code)', 'projects/1/docs/report.pdf(doc)', 'projects/3/src/main.java(code)', 'projects/3/docs/report.pdf(doc)', 'projects/4/src/main.java(code)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['projects/1/src/main.java(code)', 'projects/2/src/main.java(code)', 'projects/1/docs/report.pdf(doc)', 'projects/3/src/main.java(code)', 'projects/3/docs/report.pdf(doc)', 'projects/4/src/main.java(code)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/test/folder1/file1.txt(a)', 'root/test/folder1/file2.txt(b)', 'root/test/folder2/file3.txt(a)', 'root/test/folder2/file4.txt(b)', 'root/test/folder3/file5.txt(a)', 'root/test/folder3/file6.txt(b)', 'root/test/folder4/file7.txt(a)', 'root/test/folder4/file8.txt(b)', 'root/test/folder5/file9.txt(a)', 'root/test/folder5/file10.txt(b)', 'root/test/folder6/file11.txt(a)', 'root/test/folder6/file12.txt(b)', 'root/test/folder7/file13.txt(a)', 'root/test/folder7/file14.txt(b)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/test/folder1/file1.txt(a)', 'root/test/folder1/file2.txt(b)', 'root/test/folder2/file3.txt(a)', 'root/test/folder2/file4.txt(b)', 'root/test/folder3/file5.txt(a)', 'root/test/folder3/file6.txt(b)', 'root/test/folder4/file7.txt(a)', 'root/test/folder4/file8.txt(b)', 'root/test/folder5/file9.txt(a)', 'root/test/folder5/file10.txt(b)', 'root/test/folder6/file11.txt(a)', 'root/test/folder6/file12.txt(b)', 'root/test/folder7/file13.txt(a)', 'root/test/folder7/file14.txt(b)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/x/y/z 1.txt(1234) 2.txt(5678)', 'root/x/y/z 3.txt(1234)', 'root/x/y 4.txt(5678)', 'root/w 5.txt(1234)', 'root/v 6.txt(5678)', 'root/u 7.txt(9012)']) == [['root/x/y/z/1.txt', 'root/x/y/z/3.txt', 'root/w/5.txt'], ['root/x/y/z/2.txt', 'root/x/y/4.txt', 'root/v/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/x/y/z 1.txt(1234) 2.txt(5678)', 'root/x/y/z 3.txt(1234)', 'root/x/y 4.txt(5678)', 'root/w 5.txt(1234)', 'root/v 6.txt(5678)', 'root/u 7.txt(9012)']) == [['root/x/y/z/1.txt', 'root/x/y/z/3.txt', 'root/w/5.txt'], ['root/x/y/z/2.txt', 'root/x/y/4.txt', 'root/v/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/2023/01/01/file1.txt(content1)', 'root/2023/01/02/file2.txt(content2)', 'root/2023/01/03/file3.txt(content1)', 'root/2023/01/04/file4.txt(content2)', 'root/2023/01/05/file5.txt(content3)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/2023/01/01/file1.txt(content1)', 'root/2023/01/02/file2.txt(content2)', 'root/2023/01/03/file3.txt(content1)', 'root/2023/01/04/file4.txt(content2)', 'root/2023/01/05/file5.txt(content3)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/subdir1 0001.txt(a)', 'root/subdir1 0002.txt(b)', 'root/subdir1 0003.txt(c)', 'root/subdir2 0001.txt(d)', 'root/subdir3 0001.txt(a)', 'root/subdir5 0001.txt(e)', 'root/subdir5 0002.txt(f)', 'root/subdir5 0003.txt(g)', 'root/subdir5 0004.txt(a)']) == [['root/subdir1/0001.txt', 'root/subdir3/0001.txt', 'root/subdir5/0004.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/subdir1 0001.txt(a)', 'root/subdir1 0002.txt(b)', 'root/subdir1 0003.txt(c)', 'root/subdir2 0001.txt(d)', 'root/subdir3 0001.txt(a)', 'root/subdir5 0001.txt(e)', 'root/subdir5 0002.txt(f)', 'root/subdir5 0003.txt(g)', 'root/subdir5 0004.txt(a)']) == [['root/subdir1/0001.txt', 'root/subdir3/0001.txt', 'root/subdir5/0004.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(a) 2.txt(b) 3.txt(c)', 'root 4.txt(a) 5.txt(b) 6.txt(c)', 'root 7.txt(d) 8.txt(e) 9.txt(f)', 'root 10.txt(d) 11.txt(e) 12.txt(f)']) == [['root/1.txt', 'root/4.txt'], ['root/2.txt', 'root/5.txt'], ['root/3.txt', 'root/6.txt'], ['root/7.txt', 'root/10.txt'], ['root/8.txt', 'root/11.txt'], ['root/9.txt', 'root/12.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(a) 2.txt(b) 3.txt(c)', 'root 4.txt(a) 5.txt(b) 6.txt(c)', 'root 7.txt(d) 8.txt(e) 9.txt(f)', 'root 10.txt(d) 11.txt(e) 12.txt(f)']) == [['root/1.txt', 'root/4.txt'], ['root/2.txt', 'root/5.txt'], ['root/3.txt', 'root/6.txt'], ['root/7.txt', 'root/10.txt'], ['root/8.txt', 'root/11.txt'], ['root/9.txt', 'root/12.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['user/documents/1.txt(A)', 'user/documents/2.txt(B)', 'user/downloads/3.txt(A)', 'user/photos/4.txt(C)', 'user/photos/5.txt(A)', 'user/videos/6.txt(B)', 'user/videos/7.txt(A)', 'user/music/8.txt(C)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['user/documents/1.txt(A)', 'user/documents/2.txt(B)', 'user/downloads/3.txt(A)', 'user/photos/4.txt(C)', 'user/photos/5.txt(A)', 'user/videos/6.txt(B)', 'user/videos/7.txt(A)', 'user/music/8.txt(C)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/0 0.file(a)', 'root/1 1.file(b)', 'root/2 2.file(c)', 'root/3 3.file(d)', 'root/4 4.file(e)', 'root/5 5.file(f)', 'root/6 6.file(g)', 'root/7 7.file(h)', 'root/8 8.file(i)', 'root/9 9.file(j)', 'root/0/1 01.file(a)', 'root/0/1/2 012.file(b)', 'root/0/1/2/3 0123.file(c)']) == [['root/0/0.file', 'root/0/1/01.file'], ['root/1/1.file', 'root/0/1/2/012.file'], ['root/2/2.file', 'root/0/1/2/3/0123.file']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/0 0.file(a)', 'root/1 1.file(b)', 'root/2 2.file(c)', 'root/3 3.file(d)', 'root/4 4.file(e)', 'root/5 5.file(f)', 'root/6 6.file(g)', 'root/7 7.file(h)', 'root/8 8.file(i)', 'root/9 9.file(j)', 'root/0/1 01.file(a)', 'root/0/1/2 012.file(b)', 'root/0/1/2/3 0123.file(c)']) == [['root/0/0.file', 'root/0/1/01.file'], ['root/1/1.file', 'root/0/1/2/012.file'], ['root/2/2.file', 'root/0/1/2/3/0123.file']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/folder1/1.txt(abcdefg) 2.txt(hijklmno)', 'root/folder1/3.txt(abcdefg)', 'root/folder2/4.txt(hijklmno)', 'root/folder3/5.txt(pqrst)', 'root/folder3/6.txt(pqrst)', 'root/folder3/7.txt(abcdefg)', 'root/folder4/8.txt(hijklmno)', 'root/folder4/9.txt(pqrst)', 'root/folder5/10.txt(pqrst)', 'root/folder5/11.txt(hijklmno)', 'root/folder5/12.txt(abcdefg)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/folder1/1.txt(abcdefg) 2.txt(hijklmno)', 'root/folder1/3.txt(abcdefg)', 'root/folder2/4.txt(hijklmno)', 'root/folder3/5.txt(pqrst)', 'root/folder3/6.txt(pqrst)', 'root/folder3/7.txt(abcdefg)', 'root/folder4/8.txt(hijklmno)', 'root/folder4/9.txt(pqrst)', 'root/folder5/10.txt(pqrst)', 'root/folder5/11.txt(hijklmno)', 'root/folder5/12.txt(abcdefg)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh)', 'root/d/e/f 3.txt(abcd) 4.txt(efgh)', 'root/g/h/i 5.txt(abcd) 6.txt(efgh)', 'root/j/k/l 7.txt(abcd) 8.txt(efgh)', 'root/m/n/o 9.txt(abcd) 10.txt(efgh)', 'root/p/q/r 11.txt(abcd) 12.txt(efgh)', 'root/s/t/u 13.txt(abcd) 14.txt(efgh)', 'root/v/w/x 15.txt(abcd) 16.txt(efgh)', 'root/y/z 17.txt(abcd) 18.txt(efgh)', 'root 19.txt(abcd) 20.txt(efgh)', 'root/a 21.txt(abcd)', 'root/a/b 22.txt(abcd)', 'root/a/b/c/d 23.txt(abcd)', 'root/d 24.txt(abcd)', 'root/d/e 25.txt(abcd)', 'root/d/e/f/g 26.txt(abcd)', 'root/g 27.txt(abcd)', 'root/g/h 28.txt(abcd)', 'root/g/h/i/j 29.txt(abcd)', 'root/j 30.txt(abcd)', 'root/j/k 31.txt(abcd)', 'root/j/k/l/m 32.txt(abcd)', 'root/m 33.txt(abcd)', 'root/m/n 34.txt(abcd)', 'root/m/n/o/p 35.txt(abcd)', 'root/p 36.txt(abcd)', 'root/p/q 37.txt(abcd)', 'root/p/q/r/s 38.txt(abcd)', 'root/s 39.txt(abcd)', 'root/s/t 40.txt(abcd)', 'root/s/t/u/v 41.txt(abcd)', 'root/v 42.txt(abcd)', 'root/v/w 43.txt(abcd)', 'root/v/w/x/y 44.txt(abcd)', 'root/y 45.txt(abcd)', 'root/y/z/a 46.txt(abcd)']) == [['root/a/b/c/1.txt', 'root/d/e/f/3.txt', 'root/g/h/i/5.txt', 'root/j/k/l/7.txt', 'root/m/n/o/9.txt', 'root/p/q/r/11.txt', 'root/s/t/u/13.txt', 'root/v/w/x/15.txt', 'root/y/z/17.txt', 'root/19.txt', 'root/a/21.txt', 'root/a/b/22.txt', 'root/a/b/c/d/23.txt', 'root/d/24.txt', 'root/d/e/25.txt', 'root/d/e/f/g/26.txt', 'root/g/27.txt', 'root/g/h/28.txt', 'root/g/h/i/j/29.txt', 'root/j/30.txt', 'root/j/k/31.txt', 'root/j/k/l/m/32.txt', 'root/m/33.txt', 'root/m/n/34.txt', 'root/m/n/o/p/35.txt', 'root/p/36.txt', 'root/p/q/37.txt', 'root/p/q/r/s/38.txt', 'root/s/39.txt', 'root/s/t/40.txt', 'root/s/t/u/v/41.txt', 'root/v/42.txt', 'root/v/w/43.txt', 'root/v/w/x/y/44.txt', 'root/y/45.txt', 'root/y/z/a/46.txt'], ['root/a/b/c/2.txt', 'root/d/e/f/4.txt', 'root/g/h/i/6.txt', 'root/j/k/l/8.txt', 'root/m/n/o/10.txt', 'root/p/q/r/12.txt', 'root/s/t/u/14.txt', 'root/v/w/x/16.txt', 'root/y/z/18.txt', 'root/20.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c 1.txt(abcd) 2.txt(efgh)', 'root/d/e/f 3.txt(abcd) 4.txt(efgh)', 'root/g/h/i 5.txt(abcd) 6.txt(efgh)', 'root/j/k/l 7.txt(abcd) 8.txt(efgh)', 'root/m/n/o 9.txt(abcd) 10.txt(efgh)', 'root/p/q/r 11.txt(abcd) 12.txt(efgh)', 'root/s/t/u 13.txt(abcd) 14.txt(efgh)', 'root/v/w/x 15.txt(abcd) 16.txt(efgh)', 'root/y/z 17.txt(abcd) 18.txt(efgh)', 'root 19.txt(abcd) 20.txt(efgh)', 'root/a 21.txt(abcd)', 'root/a/b 22.txt(abcd)', 'root/a/b/c/d 23.txt(abcd)', 'root/d 24.txt(abcd)', 'root/d/e 25.txt(abcd)', 'root/d/e/f/g 26.txt(abcd)', 'root/g 27.txt(abcd)', 'root/g/h 28.txt(abcd)', 'root/g/h/i/j 29.txt(abcd)', 'root/j 30.txt(abcd)', 'root/j/k 31.txt(abcd)', 'root/j/k/l/m 32.txt(abcd)', 'root/m 33.txt(abcd)', 'root/m/n 34.txt(abcd)', 'root/m/n/o/p 35.txt(abcd)', 'root/p 36.txt(abcd)', 'root/p/q 37.txt(abcd)', 'root/p/q/r/s 38.txt(abcd)', 'root/s 39.txt(abcd)', 'root/s/t 40.txt(abcd)', 'root/s/t/u/v 41.txt(abcd)', 'root/v 42.txt(abcd)', 'root/v/w 43.txt(abcd)', 'root/v/w/x/y 44.txt(abcd)', 'root/y 45.txt(abcd)', 'root/y/z/a 46.txt(abcd)']) == [['root/a/b/c/1.txt', 'root/d/e/f/3.txt', 'root/g/h/i/5.txt', 'root/j/k/l/7.txt', 'root/m/n/o/9.txt', 'root/p/q/r/11.txt', 'root/s/t/u/13.txt', 'root/v/w/x/15.txt', 'root/y/z/17.txt', 'root/19.txt', 'root/a/21.txt', 'root/a/b/22.txt', 'root/a/b/c/d/23.txt', 'root/d/24.txt', 'root/d/e/25.txt', 'root/d/e/f/g/26.txt', 'root/g/27.txt', 'root/g/h/28.txt', 'root/g/h/i/j/29.txt', 'root/j/30.txt', 'root/j/k/31.txt', 'root/j/k/l/m/32.txt', 'root/m/33.txt', 'root/m/n/34.txt', 'root/m/n/o/p/35.txt', 'root/p/36.txt', 'root/p/q/37.txt', 'root/p/q/r/s/38.txt', 'root/s/39.txt', 'root/s/t/40.txt', 'root/s/t/u/v/41.txt', 'root/v/42.txt', 'root/v/w/43.txt', 'root/v/w/x/y/44.txt', 'root/y/45.txt', 'root/y/z/a/46.txt'], ['root/a/b/c/2.txt', 'root/d/e/f/4.txt', 'root/g/h/i/6.txt', 'root/j/k/l/8.txt', 'root/m/n/o/10.txt', 'root/p/q/r/12.txt', 'root/s/t/u/14.txt', 'root/v/w/x/16.txt', 'root/y/z/18.txt', 'root/20.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a/b/c/d 1.txt(xyz) 2.txt(mnop)', 'root/a/b/c 3.txt(xyz)', 'root/a/b 4.txt(mnop)', 'root/a 5.txt(pqrs)', 'root 6.txt(pqrs)']) == [['root/a/b/c/d/1.txt', 'root/a/b/c/3.txt'], ['root/a/b/c/d/2.txt', 'root/a/b/4.txt'], ['root/a/5.txt', 'root/6.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a/b/c/d 1.txt(xyz) 2.txt(mnop)', 'root/a/b/c 3.txt(xyz)', 'root/a/b 4.txt(mnop)', 'root/a 5.txt(pqrs)', 'root 6.txt(pqrs)']) == [['root/a/b/c/d/1.txt', 'root/a/b/c/3.txt'], ['root/a/b/c/d/2.txt', 'root/a/b/4.txt'], ['root/a/5.txt', 'root/6.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/x/y/z 1.txt(abcd) 2.txt(efgh)', 'root/x/y/z 3.txt(abcd) 4.txt(efgh)', 'root/x/y 5.txt(abcd)', 'root/x 6.txt(efgh)', 'root 7.txt(abcd) 8.txt(efgh)', 'root/a/b/c 9.txt(efgh)', 'root/a/b 10.txt(abcd)', 'root/a 11.txt(efgh)']) == [['root/x/y/z/1.txt', 'root/x/y/z/3.txt', 'root/x/y/5.txt', 'root/7.txt', 'root/a/b/10.txt'], ['root/x/y/z/2.txt', 'root/x/y/z/4.txt', 'root/x/6.txt', 'root/8.txt', 'root/a/b/c/9.txt', 'root/a/11.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/x/y/z 1.txt(abcd) 2.txt(efgh)', 'root/x/y/z 3.txt(abcd) 4.txt(efgh)', 'root/x/y 5.txt(abcd)', 'root/x 6.txt(efgh)', 'root 7.txt(abcd) 8.txt(efgh)', 'root/a/b/c 9.txt(efgh)', 'root/a/b 10.txt(abcd)', 'root/a 11.txt(efgh)']) == [['root/x/y/z/1.txt', 'root/x/y/z/3.txt', 'root/x/y/5.txt', 'root/7.txt', 'root/a/b/10.txt'], ['root/x/y/z/2.txt', 'root/x/y/z/4.txt', 'root/x/6.txt', 'root/8.txt', 'root/a/b/c/9.txt', 'root/a/11.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root 1.txt(a) 2.txt(b) 3.txt(c)', 'root/a 4.txt(a) 5.txt(b)', 'root/a/b 6.txt(c) 7.txt(d)', 'root/a/b/c 8.txt(e) 9.txt(f)', 'root/a/b/c/d 10.txt(e)']) == [['root/1.txt', 'root/a/4.txt'], ['root/2.txt', 'root/a/5.txt'], ['root/3.txt', 'root/a/b/6.txt'], ['root/a/b/c/8.txt', 'root/a/b/c/d/10.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root 1.txt(a) 2.txt(b) 3.txt(c)', 'root/a 4.txt(a) 5.txt(b)', 'root/a/b 6.txt(c) 7.txt(d)', 'root/a/b/c 8.txt(e) 9.txt(f)', 'root/a/b/c/d 10.txt(e)']) == [['root/1.txt', 'root/a/4.txt'], ['root/2.txt', 'root/a/5.txt'], ['root/3.txt', 'root/a/b/6.txt'], ['root/a/b/c/8.txt', 'root/a/b/c/d/10.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['home/user/documents/report.txt(secret) home/user/backup/report.txt(secret)', 'home/user/photos/photo1.jpg(data) home/user/album/photo2.jpg(data)', 'home/user/downloads/photo3.jpg(data) home/user/trash/photo4.jpg(data)', 'home/user/videos/video1.mp4(movie) home/user/backup/video2.mp4(movie)']) == [['home/user/photos/photo1.jpg(data)/home/user/album/photo2.jpg', 'home/user/downloads/photo3.jpg(data)/home/user/trash/photo4.jpg']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['home/user/documents/report.txt(secret) home/user/backup/report.txt(secret)', 'home/user/photos/photo1.jpg(data) home/user/album/photo2.jpg(data)', 'home/user/downloads/photo3.jpg(data) home/user/trash/photo4.jpg(data)', 'home/user/videos/video1.mp4(movie) home/user/backup/video2.mp4(movie)']) == [['home/user/photos/photo1.jpg(data)/home/user/album/photo2.jpg', 'home/user/downloads/photo3.jpg(data)/home/user/trash/photo4.jpg']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd) 4.txt(efgh)', 'root/b 5.txt(abcd) 6.txt(efgh)', 'root/c 7.txt(abcd) 8.txt(efgh)', 'root/d 9.txt(abcd) 10.txt(efgh)']) == [['root/a/1.txt', 'root/a/3.txt', 'root/b/5.txt', 'root/c/7.txt', 'root/d/9.txt'], ['root/a/2.txt', 'root/a/4.txt', 'root/b/6.txt', 'root/c/8.txt', 'root/d/10.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/a 1.txt(abcd) 2.txt(efgh)', 'root/a 3.txt(abcd) 4.txt(efgh)', 'root/b 5.txt(abcd) 6.txt(efgh)', 'root/c 7.txt(abcd) 8.txt(efgh)', 'root/d 9.txt(abcd) 10.txt(efgh)']) == [['root/a/1.txt', 'root/a/3.txt', 'root/b/5.txt', 'root/c/7.txt', 'root/d/9.txt'], ['root/a/2.txt', 'root/a/4.txt', 'root/b/6.txt', 'root/c/8.txt', 'root/d/10.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['/ 36.txt(ab) 37.txt(cd)', '/a 38.txt(cd) 39.txt(ab)', '/b 40.txt(ab) 41.txt(cd)', '/c 42.txt(cd) 43.txt(ab) 44.txt(ab)', '/d 45.txt(cd) 46.txt(cd)']) == [['//36.txt', '/a/39.txt', '/b/40.txt', '/c/43.txt', '/c/44.txt'], ['//37.txt', '/a/38.txt', '/b/41.txt', '/c/42.txt', '/d/45.txt', '/d/46.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['/ 36.txt(ab) 37.txt(cd)', '/a 38.txt(cd) 39.txt(ab)', '/b 40.txt(ab) 41.txt(cd)', '/c 42.txt(cd) 43.txt(ab) 44.txt(ab)', '/d 45.txt(cd) 46.txt(cd)']) == [['//36.txt', '/a/39.txt', '/b/40.txt', '/c/43.txt', '/c/44.txt'], ['//37.txt', '/a/38.txt', '/b/41.txt', '/c/42.txt', '/d/45.txt', '/d/46.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['a/b/c 27.txt(pqr) 28.txt(stu)', 'a/b 29.txt(pqr)', 'a/b/d 30.txt(stu) 31.txt(vwx)', 'a/b/e 32.txt(vwx) 33.txt(yza)', 'a/b/f 34.txt(yza) 35.txt(pqr)']) == [['a/b/c/27.txt', 'a/b/29.txt', 'a/b/f/35.txt'], ['a/b/c/28.txt', 'a/b/d/30.txt'], ['a/b/d/31.txt', 'a/b/e/32.txt'], ['a/b/e/33.txt', 'a/b/f/34.txt']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['a/b/c 27.txt(pqr) 28.txt(stu)', 'a/b 29.txt(pqr)', 'a/b/d 30.txt(stu) 31.txt(vwx)', 'a/b/e 32.txt(vwx) 33.txt(yza)', 'a/b/f 34.txt(yza) 35.txt(pqr)']) == [['a/b/c/27.txt', 'a/b/29.txt', 'a/b/f/35.txt'], ['a/b/c/28.txt', 'a/b/d/30.txt'], ['a/b/d/31.txt', 'a/b/e/32.txt'], ['a/b/e/33.txt', 'a/b/f/34.txt']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/very/deep/folder/structure/here/and/now/1.txt(xyz)', 'root/very/deep/folder/structure/here/and/now/2.txt(xyz)', 'root/very/deep/folder/structure/here/and/3.txt(xyz)', 'root/very/deep/folder/structure/here/4.txt(xyz)', 'root/very/deep/folder/structure/5.txt(xyz)', 'root/very/deep/folder/6.txt(xyz)', 'root/very/deep/folder/7.txt(xyz)', 'root/very/deep/folder/8.txt(xyz)', 'root/very/deep/folder/9.txt(xyz)', 'root/very/deep/folder/10.txt(xyz)', 'root/very/deep/11.txt(xyz)', 'root/very/deep/12.txt(xyz)', 'root/very/13.txt(xyz)', 'root/14.txt(xyz)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/very/deep/folder/structure/here/and/now/1.txt(xyz)', 'root/very/deep/folder/structure/here/and/now/2.txt(xyz)', 'root/very/deep/folder/structure/here/and/3.txt(xyz)', 'root/very/deep/folder/structure/here/4.txt(xyz)', 'root/very/deep/folder/structure/5.txt(xyz)', 'root/very/deep/folder/6.txt(xyz)', 'root/very/deep/folder/7.txt(xyz)', 'root/very/deep/folder/8.txt(xyz)', 'root/very/deep/folder/9.txt(xyz)', 'root/very/deep/folder/10.txt(xyz)', 'root/very/deep/11.txt(xyz)', 'root/very/deep/12.txt(xyz)', 'root/very/13.txt(xyz)', 'root/14.txt(xyz)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/data/batch1/data1.csv(csvdata1)', 'root/data/batch1/data2.csv(csvdata2)', 'root/data/batch1/data3.csv(csvdata1)', 'root/data/batch2/data4.csv(csvdata2)', 'root/data/batch2/data5.csv(csvdata3)', 'root/data/batch2/data6.csv(csvdata1)']) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/data/batch1/data1.csv(csvdata1)', 'root/data/batch1/data2.csv(csvdata2)', 'root/data/batch1/data3.csv(csvdata1)', 'root/data/batch2/data4.csv(csvdata2)', 'root/data/batch2/data5.csv(csvdata3)', 'root/data/batch2/data6.csv(csvdata1)']) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = ['root/project/src 1.java(abcd)', 'root/project/src 2.java(abcd)', 'root/project/src 3.java(abcd)', 'root/project/tests 4.java(abcd)', 'root/project/tests 5.java(efgh)', 'root/project/tests 6.java(efgh)', 'root/project/docs 7.java(efgh)', 'root/project/docs 8.java(ijkl)']) == [['root/project/src/1.java', 'root/project/src/2.java', 'root/project/src/3.java', 'root/project/tests/4.java'], ['root/project/tests/5.java', 'root/project/tests/6.java', 'root/project/docs/7.java']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = ['root/project/src 1.java(abcd)', 'root/project/src 2.java(abcd)', 'root/project/src 3.java(abcd)', 'root/project/tests 4.java(abcd)', 'root/project/tests 5.java(efgh)', 'root/project/tests 6.java(efgh)', 'root/project/docs 7.java(efgh)', 'root/project/docs 8.java(ijkl)']) == [['root/project/src/1.java', 'root/project/src/2.java', 'root/project/src/3.java', 'root/project/tests/4.java'], ['root/project/tests/5.java', 'root/project/tests/6.java', 'root/project/docs/7.java']]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(paths = ['root/a 1.txt(abcd)', 'root/b 2.txt(efgh)', 'root/c 3.txt(efgh)', 'root/d 4.txt(abcd)']) == [['root/a/1.txt', 'root/d/4.txt'], ['root/b/2.txt', 'root/c/3.txt']]
@@ -85,3 +757,5 @@ def check(candidate):
     assert candidate(paths = ['root/very/deep/folder/structure/here/and/now/1.txt(xyz)', 'root/very/deep/folder/structure/here/and/now/2.txt(xyz)', 'root/very/deep/folder/structure/here/and/3.txt(xyz)', 'root/very/deep/folder/structure/here/4.txt(xyz)', 'root/very/deep/folder/structure/5.txt(xyz)', 'root/very/deep/folder/6.txt(xyz)', 'root/very/deep/folder/7.txt(xyz)', 'root/very/deep/folder/8.txt(xyz)', 'root/very/deep/folder/9.txt(xyz)', 'root/very/deep/folder/10.txt(xyz)', 'root/very/deep/11.txt(xyz)', 'root/very/deep/12.txt(xyz)', 'root/very/13.txt(xyz)', 'root/14.txt(xyz)']) == []
     assert candidate(paths = ['root/data/batch1/data1.csv(csvdata1)', 'root/data/batch1/data2.csv(csvdata2)', 'root/data/batch1/data3.csv(csvdata1)', 'root/data/batch2/data4.csv(csvdata2)', 'root/data/batch2/data5.csv(csvdata3)', 'root/data/batch2/data6.csv(csvdata1)']) == []
     assert candidate(paths = ['root/project/src 1.java(abcd)', 'root/project/src 2.java(abcd)', 'root/project/src 3.java(abcd)', 'root/project/tests 4.java(abcd)', 'root/project/tests 5.java(efgh)', 'root/project/tests 6.java(efgh)', 'root/project/docs 7.java(efgh)', 'root/project/docs 8.java(ijkl)']) == [['root/project/src/1.java', 'root/project/src/2.java', 'root/project/src/3.java', 'root/project/tests/4.java'], ['root/project/tests/5.java', 'root/project/tests/6.java', 'root/project/docs/7.java']]
+
+

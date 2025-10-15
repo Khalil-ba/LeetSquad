@@ -1,5 +1,869 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [4, 1, 6, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [4, 1, 6, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 100000]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 100000]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 10, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 10, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 99999, 99998, 99997, 99996]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 99999, 99998, 99997, 99996]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 1, 100000, 1, 100000]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 1, 100000, 1, 100000]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 5, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 5, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [99999, 99999, 99999, 99999, 99999]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [99999, 99999, 99999, 99999, 99999]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [2, 10, 3, 2]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [2, 10, 3, 2]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 4, 3, 2, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 4, 3, 2, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 1, 100000, 1, 100000]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 1, 100000, 1, 100000]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 100000, 100000, 100000, 100000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 100000, 100000, 100000, 100000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 100000, 1, 100000]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 100000, 1, 100000]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 1, 10, 1, 10]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 1, 10, 1, 10]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100000]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100000]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100000]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100000]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [9, 7, 3, 8, 6, 4]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [9, 7, 3, 8, 6, 4]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100, 50, 150, 200, 250, 300]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100, 50, 150, 200, 250, 300]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 100000, 2, 99999, 3, 99998, 4, 99997, 5, 99996]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 100000, 2, 99999, 3, 99998, 4, 99997, 5, 99996]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 1]) == 313
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 1]) == 313: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 2500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195]) == 99803
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195]) == 99803: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 3, 1]) == 259
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 3, 1]) == 259: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 99999, 2, 99998, 3, 99997, 4, 99996]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 99999, 2, 99998, 3, 99997, 4, 99996]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50, 50, 50, 50, 50, 1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50, 50, 50, 50, 50, 1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50000, 50000, 50000, 50000, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50000, 50000, 50000, 50000, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 190
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 190: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 190
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 190: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 78
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 78: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 20, 30, 40, 50]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 20, 30, 40, 50]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 10, 20, 20, 20, 30, 30, 30, 40, 40, 40, 50, 50, 50]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 10, 20, 20, 20, 30, 30, 30, 40, 40, 40, 50, 50, 50]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [210, 190, 171, 153, 136, 120, 105, 91, 78, 66, 55, 45, 36, 28, 21, 15, 10, 6, 3, 1]) == 805
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [210, 190, 171, 153, 136, 120, 105, 91, 78, 66, 55, 45, 36, 28, 21, 15, 10, 6, 3, 1]) == 805: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 7, 8, 9, 9, 10, 10, 10, 10, 10]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 7, 8, 9, 9, 10, 10, 10, 10, 10]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50000, 50000, 50000, 50000, 50000, 1, 2, 3, 4, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50000, 50000, 50000, 50000, 50000, 1, 2, 3, 4, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100, 100, 200, 200, 300, 300, 400, 400, 500, 500]) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100, 100, 200, 200, 300, 300, 400, 400, 500, 500]) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 524287
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == 524287: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 20, 10, 30, 20, 40, 30, 50, 40, 60]) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 20, 10, 30, 20, 40, 30, 50, 40, 60]) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [99999, 100000, 99998, 100000, 99997, 100000]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [99999, 100000, 99998, 100000, 99997, 100000]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [2, 4, 6, 8, 10, 8, 6, 4, 2]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [2, 4, 6, 8, 10, 8, 6, 4, 2]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 10, 100, 1000, 10000, 100000, 100000, 10000, 1000, 100]) == 22211
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 10, 100, 1000, 10000, 100000, 100000, 10000, 1000, 100]) == 22211: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [20000, 20000, 20000, 20000, 20000, 10000, 10000, 10000, 10000, 10000, 10000]) == 50000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [20000, 20000, 20000, 20000, 20000, 10000, 10000, 10000, 10000, 10000, 10000]) == 50000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210]) == 805
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210]) == 805: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 10, 100, 1000, 10000, 100000, 1, 10, 100, 1000, 10000, 100000, 1, 10, 100, 1000, 10000, 100000, 1, 10]) == 33344
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 10, 100, 1000, 10000, 100000, 1, 10, 100, 1000, 10000, 100000, 1, 10, 100, 1000, 10000, 100000, 1, 10]) == 33344: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [99999, 99999, 99999, 99999, 99999, 1, 2, 3, 4, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [99999, 99999, 99999, 99999, 99999, 1, 2, 3, 4, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [99999, 99998, 99997, 99996, 99995]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [99999, 99998, 99997, 99996, 99995]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [33, 33, 33, 33, 33, 1, 2, 3, 4, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [33, 33, 33, 33, 33, 1, 2, 3, 4, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 250000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000]) == 250000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496]) == 2915
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496]) == 2915: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 1, 1, 1, 5, 5, 5, 1, 5, 1, 1, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 1, 1, 1, 5, 5, 5, 1, 5, 1, 1, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 5600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [7, 5, 9, 3, 6, 2, 8, 1, 4, 10]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [7, 5, 9, 3, 6, 2, 8, 1, 4, 10]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 2500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 2500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50000, 50000, 50000, 50000, 50000, 1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50000, 50000, 50000, 50000, 50000, 1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 25000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000]) == 25000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [3, 6, 1, 9, 4, 2, 8, 7, 5]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [3, 6, 1, 9, 4, 2, 8, 7, 5]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [50, 40, 30, 20, 10, 50, 40, 30, 20, 10, 50, 40, 30, 20, 10, 50, 40, 30, 20, 10]) == 240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [50, 40, 30, 20, 10, 50, 40, 30, 20, 10, 50, 40, 30, 20, 10, 50, 40, 30, 20, 10]) == 240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]) == 312
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]) == 312: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 100, 1000, 10000, 100000]) == 11101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 100, 1000, 10000, 100000]) == 11101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [10, 10, 20, 20, 30, 30, 40, 40]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [10, 10, 20, 20, 30, 30, 40, 40]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6]) == 31: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(beans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
@@ -109,3 +973,5 @@ def check(candidate):
     assert candidate(beans = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]) == 24
     assert candidate(beans = [10, 10, 20, 20, 30, 30, 40, 40]) == 80
     assert candidate(beans = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6]) == 31
+
+

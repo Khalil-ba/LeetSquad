@@ -1,5 +1,661 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "(((())(((())",locked = "111111010111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((())(((())",locked = "111111010111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()))()",locked = "010100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()))()",locked = "010100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()",locked = "0000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()",locked = "0000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")",locked = "0") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")",locked = "0") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()()()()()()()",locked = "0000000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()()()()()()()",locked = "0000000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")()(()()(()()()())",locked = "10010101010101") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")()(()()(()()()())",locked = "10010101010101") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((((((((((()))))))))())(((())))))",locked = "1111111111111100000000001000001001") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((((((((((()))))))))())(((())))))",locked = "1111111111111100000000001000001001") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((())))))",locked = "000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((())))))",locked = "000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((()))))))",locked = "000111000111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((()))))))",locked = "000111000111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()())",locked = "100101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()())",locked = "100101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")(((((()()()()(())))))",locked = "10000100100001000010") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")(((((()()()()(())))))",locked = "10000100100001000010") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((()()(()))",locked = "10000000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((()()(()))",locked = "10000000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((())))()()",locked = "000010000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((())))()()",locked = "000010000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()((()))()((()))",locked = "0011110000111100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()((()))()((()))",locked = "0011110000111100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()))(((()))",locked = "010011100") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()))(((()))",locked = "010011100") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()())",locked = "000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()())",locked = "000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()(()))(()(()))",locked = "100101100101") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()(()))(()(()))",locked = "100101100101") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()))",locked = "00101000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()))",locked = "00101000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((()))((())()))",locked = "111111010110100100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((()))((())()))",locked = "111111010110100100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((()()(())))",locked = "010000101001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((()()(())))",locked = "010000101001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((((()))))",locked = "000000000001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((((()))))",locked = "000000000001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()))(",locked = "101010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()))(",locked = "101010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((((((((((()))))))))))",locked = "111111111111110000000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((((((((((()))))))))))",locked = "111111111111110000000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((())))()())",locked = "010010000001000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((())))()())",locked = "010010000001000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()(()(()(()))",locked = "010001000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()(()(()(()))",locked = "010001000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())())",locked = "10010010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())())",locked = "10010010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()(()))",locked = "000000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()(()))",locked = "000000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())())()",locked = "001010000001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())())()",locked = "001010000001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((()))))((((()))))",locked = "11111111111111111111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((()))))((((()))))",locked = "11111111111111111111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((()))))()()()()",locked = "11111100000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((()))))()()()()",locked = "11111100000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((()))))(((())())))",locked = "1111111111110101010101010101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((()))))(((())())))",locked = "1111111111110101010101010101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()(()(()))",locked = "000001100100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()(()(()))",locked = "000001100100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((()))(()(()))))()()",locked = "1111110100101000001000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((()))(()(()))))()()",locked = "1111110100101000001000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "())(((()))",locked = "01100100") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "())(((()))",locked = "01100100") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()(()(()))))",locked = "1010101010101010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()(()(()))))",locked = "1010101010101010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")(()(()))",locked = "0000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")(()(()))",locked = "0000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((((()))))))",locked = "01010101010101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((((()))))))",locked = "01010101010101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((())))(((())))",locked = "1111111111111111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((())))(((())))",locked = "1111111111111111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "())(()",locked = "001010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "())(()",locked = "001010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((())))",locked = "11111111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((())))",locked = "11111111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((()))",locked = "000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((()))",locked = "000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")(((((()(()))())(((()))))",locked = "11100101001001001001") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")(((((()(()))())(((()))))",locked = "11100101001001001001") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())()(()))",locked = "110101001101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())()(()))",locked = "110101001101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((())))))",locked = "111111100001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((())))))",locked = "111111100001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()(()(()(()))))",locked = "01001010100010") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()(()(()(()))))",locked = "01001010100010") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())()(()))",locked = "101010101010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())()(()))",locked = "101010101010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((((((()))))))",locked = "000000000000000001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((((((()))))))",locked = "000000000000000001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((()(())))",locked = "110100110110") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((()(())))",locked = "110100110110") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()(()))(()(()))",locked = "01010101010101") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()(()))(()(()))",locked = "01010101010101") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((())))))",locked = "111100001111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((())))))",locked = "111100001111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((((())))))))",locked = "0101010101010101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((((())))))))",locked = "0101010101010101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()()()",locked = "11111111") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()()()",locked = "11111111") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((()))(()(()))(()))())",locked = "1111110100101010010010101001") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((()))(()(()))(()))())",locked = "1111110100101010010010101001") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")((((()(()))))",locked = "110001010010") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")((((()(()))))",locked = "110001010010") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((((((()))(()))))))))",locked = "1111111111100010010000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((((((()))(()))))))))",locked = "1111111111100010010000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")()(()(()))(",locked = "010101010100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")()(()(()))(",locked = "010101010100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()()()()()()()()()",locked = "00000000000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()()()()()()()()()",locked = "00000000000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()))()()",locked = "010100101000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()))()()",locked = "010100101000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((()(()))(()(()))))",locked = "010101010101010101010101") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((()(()))(()(()))))",locked = "010101010101010101010101") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()))(()))",locked = "100110010010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()))(()))",locked = "100110010010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()(()))((()(())))",locked = "010010010010110010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()(()))((()(())))",locked = "010010010010110010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((()))))",locked = "101010101010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((()))))",locked = "101010101010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()(()())",locked = "10010010") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()(()())",locked = "10010010") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()))(()))(()))",locked = "100110010010001100") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()))(()))(()))",locked = "100110010010001100") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((((())))(()()(()(())))",locked = "1110000010010101010") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((((())))(()()(()(())))",locked = "1110000010010101010") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()())((()))",locked = "000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()())((()))",locked = "000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()))(()))(()))(()))",locked = "100110010010001100100110") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()))(()))(()))(()))",locked = "100110010010001100100110") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "())(()))((())",locked = "000010001000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "())(()))((())",locked = "000010001000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())()(()))",locked = "101001010100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())()(()))",locked = "101001010100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((()((())())(()(())))",locked = "101010101010101010") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((()((())())(()(())))",locked = "101010101010101010") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()(((()())))()",locked = "0000100010000001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()(((()())))()",locked = "0000100010000001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()))(()))",locked = "010010100100") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()))(()))",locked = "010010100100") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")()()()()()()()()()()()()()()()()()()()()()",locked = "100000000000000000000000000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")()()()()()()()()()()()()()()()()()()()()()",locked = "100000000000000000000000000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "((())()(()))",locked = "000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "((())()(()))",locked = "000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()((()))",locked = "1011001") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()((()))",locked = "1011001") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")))))))((((((",locked = "000000000000") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")))))))((((((",locked = "000000000000") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "()()()()",locked = "00000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "()()()()",locked = "00000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(((((())))))",locked = "011100111001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(((((())))))",locked = "011100111001") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "())(((()))",locked = "001101010110") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "())(((()))",locked = "001101010110") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "(()())()()()",locked = "000000000000") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "(()())()()()",locked = "000000000000") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ")(()(()(()))",locked = "011001101001") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ")(()(()(()))",locked = "011001101001") == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "(((())(((())",locked = "111111010111") == True
@@ -83,3 +739,5 @@ def check(candidate):
     assert candidate(s = "())(((()))",locked = "001101010110") == True
     assert candidate(s = "(()())()()()",locked = "000000000000") == True
     assert candidate(s = ")(()(()(()))",locked = "011001101001") == True
+
+

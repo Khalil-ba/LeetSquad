@@ -1,5 +1,845 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "PAYPALISHIRING",numRows = 4) == "PINALSIGYAHRPI"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PAYPALISHIRING",numRows = 4) == "PINALSIGYAHRPI": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHI",numRows = 3) == "AEIBDFHCG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHI",numRows = 3) == "AEIBDFHCG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z",numRows = 5) == "AEIMQUY,,,,,,,,,,,,,BDFHJLNPRTVXZ,,,,,,,,,,,,CGKOSW"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z",numRows = 5) == "AEIMQUY,,,,,,,,,,,,,BDFHJLNPRTVXZ,,,,,,,,,,,,CGKOSW": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PAYPALISHIRING",numRows = 3) == "PAHNAPLSIIGYIR"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PAYPALISHIRING",numRows = 3) == "PAHNAPLSIIGYIR": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A",numRows = 1) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A",numRows = 1) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO",numRows = 5) == "HELLO"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO",numRows = 5) == "HELLO": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEF",numRows = 2) == "ACEBDF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEF",numRows = 2) == "ACEBDF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO WORLD",numRows = 5) == "HREOLLWDL O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO WORLD",numRows = 5) == "HREOLLWDL O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z",numRows = 20) == "atM,,,,,bsuLN,,,,,crvKO,,,,,dqwJP,,,,,epxIQ,,,,,foyHR,,,,,gnzGSZ,,,,,,hmAFTY,,,,,,ilBEUX,,,,,,jkCDVW,,,"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z",numRows = 20) == "atM,,,,,bsuLN,,,,,crvKO,,,,,dqwJP,,,,,epxIQ,,,,,foyHR,,,,,gnzGSZ,,,,,,hmAFTY,,,,,,ilBEUX,,,,,,jkCDVW,,,": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AB",numRows = 1) == "AB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AB",numRows = 1) == "AB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 5) == "AIQYBHJPRXZCGKOSWDFLNTVEMU"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 5) == "AIQYBHJPRXZCGKOSWDFLNTVEMU": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCD",numRows = 2) == "ACBD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCD",numRows = 2) == "ACBD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKL",numRows = 4) == "AGBFHLCEIKDJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKL",numRows = 4) == "AGBFHLCEIKDJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO.WORLD.",numRows = 3) == "HOREL.OL.LWD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO.WORLD.",numRows = 3) == "HOREL.OL.LWD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABC",numRows = 2) == "ACB"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABC",numRows = 2) == "ACB": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFG",numRows = 1) == "ABCDEFG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFG",numRows = 1) == "ABCDEFG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A,B.C",numRows = 3) == "AC,.B"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A,B.C",numRows = 3) == "AC,.B": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A,B,C,D,E,F,G",numRows = 3) == "ACEG,,,,,,BDF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A,B,C,D,E,F,G",numRows = 3) == "ACEG,,,,,,BDF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKL",numRows = 3) == "AEIBDFHJLCGK"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKL",numRows = 3) == "AEIBDFHJLCGK": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "",numRows = 1) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "",numRows = 1) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "COMPLEX.EXAMPLE",numRows = 6) == "CAOXMMEPP.LLXEE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "COMPLEX.EXAMPLE",numRows = 6) == "CAOXMMEPP.LLXEE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A,B,C.,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.",numRows = 7) == "A,,,,,FGLMRSXYB,,,,,,,,,EHKNQTWZC,,,,,,,..DIJOPUV,,,,"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A,B,C.,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.",numRows = 7) == "A,,,,,FGLMRSXYB,,,,,,,,,EHKNQTWZC,,,,,,,..DIJOPUV,,,,": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "..............................",numRows = 10) == ".............................."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "..............................",numRows = 10) == "..............................": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZIGZAG",numRows = 6) == "ZIGZAG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZIGZAG",numRows = 6) == "ZIGZAG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ThisIsATestOfTheEmergencyBroadcastSystem",numRows = 10) == "TeshmrytiEgSeseetmIhnssTcaAfycTOBdetraso"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ThisIsATestOfTheEmergencyBroadcastSystem",numRows = 10) == "TeshmrytiEgSeseetmIhnssTcaAfycTOBdetraso": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "The quick brown fox jumps over the lazy dog.",numRows = 3) == "Tqkofjsehadh uc rw o up vrtelz o.eibnxmo  yg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "The quick brown fox jumps over the lazy dog.",numRows = 3) == "Tqkofjsehadh uc rw o up vrtelz o.eibnxmo  yg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "WithSpecialCharacters!@#$%^&*()",numRows = 5) == "Wic$icaat#%telre@^)hpCar!&(Shs*"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "WithSpecialCharacters!@#$%^&*()",numRows = 5) == "Wic$icaat#%telre@^)hpCar!&(Shs*": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "The quick brown fox jumps over the lazy dog.",numRows = 8) == "Tneghw vro.eofo d ro t qbxshyu  pezikjm acul"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "The quick brown fox jumps over the lazy dog.",numRows = 8) == "Tneghw vro.eofo d ro t qbxshyu  pezikjm acul": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "This,is,a,longer,string,with,punctuation!",numRows = 7) == "Tnwthog,iaiilegtuos,rnhtn,a,i,c!i,srpnstu"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "This,is,a,longer,string,with,punctuation!",numRows = 7) == "Tnwthog,iaiilegtuos,rnhtn,a,i,c!i,srpnstu": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "",numRows = 5) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "",numRows = 5) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Short",numRows = 1) == "Short"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Short",numRows = 1) == "Short": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Lorem.ipsum.dolor.sit.amet.consectetur.adipiscing.elit",numRows = 12) == "Laso.micrtepieitinms.dg..ca.iro.eponrlslsuiuoettmdce.t"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Lorem.ipsum.dolor.sit.amet.consectetur.adipiscing.elit",numRows = 12) == "Laso.micrtepieitinms.dg..ca.iro.eponrlslsuiuoettmdce.t": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCD",numRows = 1) == "ABCD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCD",numRows = 1) == "ABCD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZigzagPatternConversionIsCool.",numRows = 7) == "ZnsirCICgeonoztnooatvilgaes.Pr"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZigzagPatternConversionIsCool.",numRows = 7) == "ZnsirCICgeonoztnooatvilgaes.Pr": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZIGZAGCONVERSION",numRows = 6) == "ZEIVRGNSZOIACOGN"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZIGZAGCONVERSION",numRows = 6) == "ZEIVRGNSZOIACOGN": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = ".,,..,.",numRows = 3) == "..,.,,."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = ".,,..,.",numRows = 3) == "..,.,,.": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890",numRows = 2) == "1357924680"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890",numRows = 2) == "1357924680": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.",numRows = 12) == "alw.....bkmvx.....cjnuy.....diotz.....ehps....fgqr.."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.",numRows = 12) == "alw.....bkmvx.....cjnuy.....diotz.....ehps....fgqr..": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLOALLOHELLOALLOHELLOALLO",numRows = 2) == "HLOLOELALHLOLOELALHLOLOELAL"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLOALLOHELLOALLOHELLOALLO",numRows = 2) == "HLOLOELALHLOLOELALHLOLOELAL": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 10) == "asKbrtJLcquIMdpvHNZeowGOYfnxFPXgmyEQWhlzDRVikACSUjBT"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 10) == "asKbrtJLcquIMdpvHNZeowGOYfnxFPXgmyEQWhlzDRVikACSUjBT": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AnotherExampleWithALongerStringThatShouldBeChallengingToFormatCorrectly",numRows = 8) == "AWieFyneirnBCoololttgdhTrttphSTlagmchmArhulnaeeaLeaolitrrxogthegCrEnSno"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AnotherExampleWithALongerStringThatShouldBeChallengingToFormatCorrectly",numRows = 8) == "AWieFyneirnBCoololttgdhTrttphSTlagmchmArhulnaeeaLeaolitrrxogthegCrEnSno": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A",numRows = 5) == "A"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A",numRows = 5) == "A": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "SHORT",numRows = 25) == "SHORT"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "SHORT",numRows = 25) == "SHORT": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Zigzag.patters.are.pretty.cool.and.fascinating",numRows = 10) == "Z.aiepfsgrr.czaedia.tnngstaa.ry.tpe.liatcontog"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Zigzag.patters.are.pretty.cool.and.fascinating",numRows = 10) == "Z.aiepfsgrr.czaedia.tnngstaa.ry.tpe.liatcontog": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZigZagConversion",numRows = 6) == "ZeivrgnsZoiaCogn"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZigZagConversion",numRows = 6) == "ZeivrgnsZoiaCogn": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PYTHONISAWESOMELANGUAGEFORTACKLINGCOMPLEXPROBLEMS",numRows = 6) == "PEALXYWSUGKIEPTAOGECNLRSHSMNFAGPOMOIEAOTCMBENLROL"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PYTHONISAWESOMELANGUAGEFORTACKLINGCOMPLEXPROBLEMS",numRows = 6) == "PEALXYWSUGKIEPTAOGECNLRSHSMNFAGPOMOIEAOTCMBENLROL": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PYTHONPROGRAMMING",numRows = 5) == "POGYRGNTPRIHNAMOM"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PYTHONPROGRAMMING",numRows = 5) == "POGYRGNTPRIHNAMOM": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "BUTTERTOOMELON",numRows = 3) == "BEOOUTROMLNTTE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "BUTTERTOOMELON",numRows = 3) == "BEOOUTROMLNTTE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz",numRows = 7) == "1co2bdnpz3aemqy40flrx59gksw68hjtv7iu"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz",numRows = 7) == "1co2bdnpz3aemqy40flrx59gksw68hjtv7iu": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ZIGZAGCONVERSION",numRows = 8) == "ZOIINGSZRAEGVCNO"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ZIGZAGCONVERSION",numRows = 8) == "ZOIINGSZRAEGVCNO": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLOPYTHONHELLOPYTHONHELLOPYTHONHELLOPYTHON",numRows = 8) == "HLYOELOPTHNLEPOHTLHYLOYONTLNPPOHEHOYHOHELTNL"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLOPYTHONHELLOPYTHONHELLOPYTHONHELLOPYTHON",numRows = 8) == "HLYOELOPTHNLEPOHTLHYLOYONTLNPPOHEHOYHOHELTNL": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 5) == "AEIMQUY.............BDFHJLNPRTVXZ.............CGKOSW"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 5) == "AEIMQUY.............BDFHJLNPRTVXZ.............CGKOSW": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ALGORITHMSANDDATASTRUCTURES",numRows = 8) == "AALDTGDASONSERATRISRUTMUTHC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ALGORITHMSANDDATASTRUCTURES",numRows = 8) == "AALDTGDASONSERATRISRUTMUTHC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 10) == "AJS.....BIKRT......CHLQUZ......DGMPVY......EFNOWX..."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 10) == "AJS.....BIKRT......CHLQUZ......DGMPVY......EFNOWX...": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 6) == "AFKPUZ...........BEGJLOQTVY..........CDHIMNRSWX....."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "A.B.C.D.E.F.G.H.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.X.Y.Z.",numRows = 6) == "AFKPUZ...........BEGJLOQTVY..........CDHIMNRSWX.....": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ToCodeOrNotToCode.",numRows = 2) == "TCdONtooeooeroTCd."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ToCodeOrNotToCode.",numRows = 2) == "TCdONtooeooeroTCd.": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 11) == "auObtvNPcswMQdrxLReqyKSfpzJTgoAIUhnBHVimCGWjlDFXZkEY"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 11) == "auObtvNPcswMQdrxLReqyKSfpzJTgoAIUhnBHVimCGWjlDFXZkEY": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO.WORLD.THIS.IS.A.TEST",numRows = 8) == "HIEHSLT.L.ITODSS.L.EWRATO."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO.WORLD.THIS.IS.A.TEST",numRows = 8) == "HIEHSLT.L.ITODSS.L.EWRATO.": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",numRows = 6) == "Lmtna ou i os dgersdsacerinlepo m cupiimilre,ttict otes."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",numRows = 6) == "Lmtna ou i os dgersdsacerinlepo m cupiimilre,ttict otes.": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Longer.string.for.testing.the.zigzag.conversion",numRows = 2) == "Lne.tigfrtsigtezga.ovrinogrsrn.o.etn.h.izgcneso"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Longer.string.for.testing.the.zigzag.conversion",numRows = 2) == "Lne.tigfrtsigtezga.ovrinogrsrn.o.etn.h.izgcneso": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "THISISAMUCHLONGERSTRINGTHANTHEPREVIOUSONES",numRows = 9) == "TREHESRVIGTPISNREOIOIHUSLNTSAHGNOMCTANSUHE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "THISISAMUCHLONGERSTRINGTHANTHEPREVIOUSONES",numRows = 9) == "TREHESRVIGTPISNREOIOIHUSLNTSAHGNOMCTANSUHE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "REPEATEREPEATEREPEATEREPEATEREPEAT",numRows = 15) == "RREEEPTPEAEAEATPTEERREEPTEAAETPEER"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "REPEATEREPEATEREPEATEREPEATEREPEAT",numRows = 15) == "RREEEPTPEAEAEATPTEERREEPTEAAETPEER": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",numRows = 12) == "1Mi2LNhj3KOgk4JPfl5IQem6HRdnz7GScoy8FTbpx9EUaqw0DVZrvACWYsuBXt"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",numRows = 12) == "1Mi2LNhj3KOgk4JPfl5IQem6HRdnz7GScoy8FTbpx9EUaqw0DVZrvACWYsuBXt": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLOWORLDTHISISATEST",numRows = 7) == "HIEHSLTILDSOLATWRTSOE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLOWORLDTHISISATEST",numRows = 7) == "HIEHSLTILDSOLATWRTSOE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AQuickBrownFoxJumpsOverTheLazyDog",numRows = 11) == "AvQOeusripTcmhkueBJLrxaoozgwFyonD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AQuickBrownFoxJumpsOverTheLazyDog",numRows = 11) == "AvQOeusripTcmhkueBJLrxaoozgwFyonD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789012345678901234567890",numRows = 5) == "197528068463715937462402805319"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789012345678901234567890",numRows = 5) == "197528068463715937462402805319": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "........................................",numRows = 4) == "........................................"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "........................................",numRows = 4) == "........................................": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ThisIsALongStringToTestTheFunctionalityOfTheZigZagConversion",numRows = 7) == "TthiahSrTeltZgnigitFaygCosnnsunOioiIogenofZnssLTTciTevrAothe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ThisIsALongStringToTestTheFunctionalityOfTheZigZagConversion",numRows = 7) == "TthiahSrTeltZgnigitFaygCosnnsunOioiIogenofZnssLTTciTevrAothe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 8) == "AOBNPCMQDLRZEKSYFJTXGIUWHV"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 8) == "AOBNPCMQDLRZEKSYFJTXGIUWHV": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO.,WORLD.,HELLO.,WORLD.,HELLO.,WORLD.",numRows = 10) == "HOOEL.WRLL,,LLEW.DOHOO..,RL,.LLWDDEOL.HR,"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO.,WORLD.,HELLO.,WORLD.,HELLO.,WORLD.",numRows = 10) == "HOOEL.WRLL,,LLEW.DOHOO..,RL,.LLWDDEOL.HR,": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Short.string",numRows = 1) == "Short.string"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Short.string",numRows = 1) == "Short.string": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "THISISALONGSTRINGFORTHETESTCASE",numRows = 7) == "TTEHSRTSIGIETSNNHCIOGTASLFRSAOE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "THISISALONGSTRINGFORTHETESTCASE",numRows = 7) == "TTEHSRTSIGIETSNNHCIOGTASLFRSAOE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678901234567890",numRows = 10) == "19280374655647382910"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678901234567890",numRows = 10) == "19280374655647382910": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",numRows = 7) == "AMYBLNXZ9CKOW08DJPV17EIQU26FHRT35GS4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",numRows = 7) == "AMYBLNXZ9CKOW08DJPV17EIQU26FHRT35GS4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ONETWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN",numRows = 12) == "O,TNES,EEVIENTIXNWF,IO,SN,RE,TUVTHOEHRFNGE,,IEE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ONETWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN",numRows = 12) == "O,TNES,EEVIENTIXNWF,IO,SN,RE,TUVTHOEHRFNGE,,IEE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "THEQUICK.BROWN.FOX.JUMPS.OVER.THE.LAZY.DOG.",numRows = 5) == "T.O.EOHKBFXSOH.DGECR..PVTL..QIONJME.AYUWURZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "THEQUICK.BROWN.FOX.JUMPS.OVER.THE.LAZY.DOG.",numRows = 5) == "T.O.EOHKBFXSOH.DGECR..PVTL..QIONJME.AYUWURZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ALGORITHMSAREFUN",numRows = 6) == "AALSRGMEOHFRTUIN"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ALGORITHMSAREFUN",numRows = 6) == "AALSRGMEOHFRTUIN": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789012345678901234567890",numRows = 6) == "111202020393939484848575757666"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789012345678901234567890",numRows = 6) == "111202020393939484848575757666": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "This.is.a.test.string",numRows = 5) == "Tath..srist.isietn.sg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "This.is.a.test.string",numRows = 5) == "Tath..srist.isietn.sg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 12) == "AWSBVXRTCUYQUDTZPVESAOWFRBNXGQCMYHPDLZIOEKJNFJKMGILH"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 12) == "AWSBVXRTCUYQUDTZPVESAOWFRBNXGQCMYHPDLZIOEKJNFJKMGILH": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AQUICKMOVEMENTOFTHEBROWNFOX",numRows = 9) == "ATQFHUOEITBCNRKEOMMWXOENOVF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AQUICKMOVEMENTOFTHEBROWNFOX",numRows = 9) == "ATQFHUOEITBCNRKEOMMWXOENOVF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "OneTwoThreeFourFiveSixSevenEightNineTenElevenTwelveThirteenFourteenFifteen",numRows = 9) == "OiNlenFvtievteerehnwernTuSgeTTuFwoiiTnhoioFxEeeiFfTeSnnvrntheeeEeteenrvlee"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "OneTwoThreeFourFiveSixSevenEightNineTenElevenTwelveThirteenFourteenFifteen",numRows = 9) == "OiNlenFvtievteerehnwernTuSgeTTuFwoiiTnhoioFxEeeiFfTeSnnvrntheeeEeteenrvlee": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",numRows = 13) == "aybxzcwdveuftgshriqjpkolnm"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",numRows = 13) == "aybxzcwdveuftgshriqjpkolnm": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AVERYLONGSTRINGTHATWILLBETESTEDTOENSURETHECORRECTNESSOFTHETEST",numRows = 20) == "AEVRTEUHRSEYNCLEOOORNTRGDESECTTTRSNIEENTSGESTBOTHLFSALTETIHTWE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AVERYLONGSTRINGTHATWILLBETESTEDTOENSURETHECORRECTNESSOFTHETEST",numRows = 20) == "AEVRTEUHRSEYNCLEOOORNTRGDESECTTTRSNIEENTSGESTBOTHLFSALTETIHTWE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Python.is.awesome.and.fun",numRows = 9) == "Peym.toahsnoednw..afi.usn"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Python.is.awesome.and.fun",numRows = 9) == "Peym.toahsnoednw..afi.usn": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "",numRows = 3) == ""
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "",numRows = 3) == "": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.,",numRows = 5) == "AIQYBHJPRXZCGKOSW.DFLNTV,EMU"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.,",numRows = 5) == "AIQYBHJPRXZCGKOSW.DFLNTV,EMU": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PythonIsFun",numRows = 5) == "PFysutInhno"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PythonIsFun",numRows = 5) == "PFysutInhno": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "COMPLEXTESTCASEWITHVARYINGCHARS,.,",numRows = 9) == "CI.OWT,,MEHSPSVRLAAAECRHXTYCTSIGEN"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "COMPLEXTESTCASEWITHVARYINGCHARS,.,",numRows = 9) == "CI.OWT,,MEHSPSVRLAAAECRHXTYCTSIGEN": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "Mississippi",numRows = 2) == "Msispiissip"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "Mississippi",numRows = 2) == "Msispiissip": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PythonProgrammingIsFunAndEducational!",numRows = 7) == "Pmd!yamnEltriAdahgnnunooguconrIFaiPst"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PythonProgrammingIsFunAndEducational!",numRows = 7) == "Pmd!yamnEltriAdahgnnunooguconrIFaiPst": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 10) == "ASBRTCQUDPVEOWFNXGMYHLZIKJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",numRows = 10) == "ASBRTCQUDPVEOWFNXGMYHLZIKJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zigzagzigzagzigzagzigzagzigzagzigzagzigzag",numRows = 4) == "zzzzzzzigigigigigigiggagagagagagagazzzzzzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zigzagzigzagzigzagzigzagzigzagzigzagzigzag",numRows = 4) == "zzzzzzzigigigigigigiggagagagagagagazzzzzzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "SOMETIMESGOODPROGRAMSMAKEYOUCRY",numRows = 2) == "SMTMSODRGASAEOCYOEIEGOPORMMKYUR"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "SOMETIMESGOODPROGRAMSMAKEYOUCRY",numRows = 2) == "SMTMSODRGASAEOCYOEIEGOPORMMKYUR": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "REPEATEDCHARACTERSTESTCASEEEEEEEEEEEEEEEEEEEEEE",numRows = 15) == "REEEEPEEEEEASETAEECEDTECSEHEEATEERSEEAREECEEETE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "REPEATEDCHARACTERSTESTCASEEEEEEEEEEEEEEEEEEEEEE",numRows = 15) == "REEEEPEEEEEASETAEECEDTECSEHEEATEERSEEAREECEEETE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "TheQuickBrownFoxJumpsOverTheLazyDog",numRows = 6) == "ToszhrwpOayeBnmvLDQkFueeoucoJrhgixT"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "TheQuickBrownFoxJumpsOverTheLazyDog",numRows = 6) == "ToszhrwpOayeBnmvLDQkFueeoucoJrhgixT": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "HELLO.,WORLD.,HELLO.,WORLD.",numRows = 5) == "HOLLEWRELRDL,LHOO.L.D,.WO.,"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "HELLO.,WORLD.,HELLO.,WORLD.",numRows = 5) == "HOLLEWRELRDL,LHOO.L.D,.WO.,": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "AABBAABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ",numRows = 12) == "AJUAIJTUBIKTVBHKSVAHLSWAGLRWBGMRXBFMQXCFNQYCENPYDEOPZDOZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "AABBAABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ",numRows = 12) == "AJUAIJTUBIKTVBHKSVAHLSWAGLRWBGMRXBFMQXCFNQYCENPYDEOPZDOZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PYTHON.IS.A.GREAT.LANGUAGE.",numRows = 4) == "P.GLGYNI.R.AAETOSAETNU.H.AG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PYTHON.IS.A.GREAT.LANGUAGE.",numRows = 4) == "P.GLGYNI.R.AAETOSAETNU.H.AG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "MULTIPLELINESAREHERE.FIXEDFONTISNEAT.",numRows = 15) == "MNUOTLFITDSIENPXELIAEFTL..IENREESHAER"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "MULTIPLELINESAREHERE.FIXEDFONTISNEAT.",numRows = 15) == "MNUOTLFITDSIENPXELIAEFTL..IENREESHAER": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "MixedCASEAndNumbers123",numRows = 4) == "MANsiCSdur1xdEnme2eAb3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "MixedCASEAndNumbers123",numRows = 4) == "MANsiCSdur1xdEnme2eAb3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "PythonIsFunAndChallenging",numRows = 5) == "PFagysuhlntInClihnAdegonn"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "PythonIsFunAndChallenging",numRows = 5) == "PFagysuhlntInClihnAdegonn": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "S.P.E.C.I.A.L.,C.H.A.R.A.C.T.E.R.S.",numRows = 9) == "S...CHRSP,.....AEEL....RTCA....ACI."
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "S.P.E.C.I.A.L.,C.H.A.R.A.C.T.E.R.S.",numRows = 9) == "S...CHRSP,.....AEEL....RTCA....ACI.": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "OneMoreExampleHere",numRows = 10) == "OneerMeoHreelEpxma"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "OneMoreExampleHere",numRows = 10) == "OneerMeoHreelEpxma": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(s = "PAYPALISHIRING",numRows = 4) == "PINALSIGYAHRPI"
@@ -106,3 +946,5 @@ def check(candidate):
     assert candidate(s = "PythonIsFunAndChallenging",numRows = 5) == "PFagysuhlntInClihnAdegonn"
     assert candidate(s = "S.P.E.C.I.A.L.,C.H.A.R.A.C.T.E.R.S.",numRows = 9) == "S...CHRSP,.....AEEL....RTCA....ACI."
     assert candidate(s = "OneMoreExampleHere",numRows = 10) == "OneerMeoHreelEpxma"
+
+

@@ -1,5 +1,925 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(length = 100000,width = 100000,height = 100000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100000,width = 100000,height = 100000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10,height = 10,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10,height = 10,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 2000,height = 1000,mass = 50) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 2000,height = 1000,mass = 50) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 2000,height = 1000,mass = 200) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 2000,height = 1000,mass = 200) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 200,width = 50,height = 800,mass = 50) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 200,width = 50,height = 800,mass = 50) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10,height = 10,mass = 10) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10,height = 10,mass = 10) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 9999,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 9999,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 35,height = 700,mass = 300) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 35,height = 700,mass = 300) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 10,height = 10,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 10,height = 10,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 5000,height = 5000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 5000,height = 5000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 1,mass = 1) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 1,mass = 1) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 10000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 10000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 9999,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 9999,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 10,mass = 1000) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 10,mass = 1000) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 2000,height = 1,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 2000,height = 1,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10,height = 10,mass = 5) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10,height = 10,mass = 5) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 999) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 999) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 100000,height = 1,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 100000,height = 1,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 2,height = 50000,mass = 500) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 2,height = 50000,mass = 500) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 1000,height = 1000,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 1000,height = 1000,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 10000,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 10000,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 10000,height = 10000,mass = 1000000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 10000,height = 10000,mass = 1000000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 100000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 100000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100000,width = 10,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100000,width = 10,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 100000,height = 10,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 100000,height = 10,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 10000000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 10000000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1,mass = 999) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1,mass = 999) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 9999,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 9999,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 100000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 100000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1000,mass = 1000000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1000,mass = 1000000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 500,width = 500,height = 500,mass = 500) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 500,width = 500,height = 500,mass = 500) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 9999,mass = 101) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 9999,mass = 101) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 101) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 101) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 10,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 10,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 10,height = 1000,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 10,height = 1000,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 10000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 10000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 2,width = 50000,height = 10,mass = 500) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 2,width = 50000,height = 10,mass = 500) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 103,width = 103,height = 103,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 103,width = 103,height = 103,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 1000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 1000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 1000000000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 1000000000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100000,width = 1,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100000,width = 1,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 10000,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 10000,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 500,width = 2000,height = 1000,mass = 300) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 500,width = 2000,height = 1000,mass = 300) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100,width = 100,height = 100,mass = 1000000) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100,width = 100,height = 100,mass = 1000000) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 10000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 10000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 10000,height = 10000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 10000,height = 10000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 100000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 100000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 9999,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 9999,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 1000000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 1000000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1000,height = 1000,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1000,height = 1000,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 10000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 10000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 500,width = 500,height = 500,mass = 150) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 500,width = 500,height = 500,mass = 150) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 10000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 10000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100000,width = 1,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100000,width = 1,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 1000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 1000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 2000,height = 1000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 2000,height = 1000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 10000,height = 10000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 10000,height = 10000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100,width = 100000,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100,width = 100000,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 50000,width = 2,height = 10,mass = 500) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 50000,width = 2,height = 10,mass = 500) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1000,height = 10,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1000,height = 10,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 1,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 1,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 1,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 1,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 1,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 1,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1,height = 1,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1,height = 1,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 100,height = 10,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 100,height = 10,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 50000,width = 1,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 50000,width = 1,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 10,height = 10,mass = 1000) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 10,height = 10,mass = 1000) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 5000,height = 5000,mass = 50) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 5000,height = 5000,mass = 50) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 1,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 1,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 10000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 10000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1000,height = 10000,mass = 1000000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1000,height = 10000,mass = 1000000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100,width = 100,height = 100,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100,width = 100,height = 100,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 5000,width = 5000,height = 5000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 5000,width = 5000,height = 5000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 100000,height = 1,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 100000,height = 1,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 10000,height = 10000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 10000,height = 10000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 100000,width = 1,height = 1,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 100000,width = 1,height = 1,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10,height = 10,mass = 50) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10,height = 10,mass = 50) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 9999,mass = 9999) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 9999,mass = 9999) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1000,width = 1,height = 1000,mass = 99) == "Neither"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1000,width = 1,height = 1000,mass = 99) == "Neither": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 1,mass = 1000) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 1,mass = 1000) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 9999,height = 9999,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 9999,height = 9999,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 100000,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 100000,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 1000,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 1000,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10,width = 1,height = 100000,mass = 100) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10,width = 1,height = 100000,mass = 100) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 100000,height = 1,mass = 1) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 100000,height = 1,mass = 1) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 500,width = 500,height = 500,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 500,width = 500,height = 500,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 1000,mass = 999) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 1000,mass = 999) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 10000,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 10000,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10000,height = 10000,mass = 101) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10000,height = 10000,mass = 101) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 1,width = 1,height = 1,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 1,width = 1,height = 1,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 9999,height = 1,mass = 100) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 9999,height = 1,mass = 100) == "Heavy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 9999,width = 10000,height = 9999,mass = 99) == "Bulky"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 9999,width = 10000,height = 9999,mass = 99) == "Bulky": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 10000,width = 10,height = 10000,mass = 1000) == "Both"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 10000,width = 10,height = 10000,mass = 1000) == "Both": {e}')
+    
+    total += 1
+    try:
+        result = candidate(length = 999,width = 999,height = 999,mass = 999) == "Heavy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(length = 999,width = 999,height = 999,mass = 999) == "Heavy": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(length = 100000,width = 100000,height = 100000,mass = 1000) == "Both"
@@ -116,3 +1036,5 @@ def check(candidate):
     assert candidate(length = 9999,width = 10000,height = 9999,mass = 99) == "Bulky"
     assert candidate(length = 10000,width = 10,height = 10000,mass = 1000) == "Both"
     assert candidate(length = 999,width = 999,height = 999,mass = 999) == "Heavy"
+
+

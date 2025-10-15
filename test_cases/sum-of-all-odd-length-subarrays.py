@@ -1,5 +1,845 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 8760
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 8760: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [2, 4, 6, 8, 10]) == 114
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [2, 4, 6, 8, 10]) == 114: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]) == 614
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]) == 614: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 5, 5, 5, 5]) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 5, 5, 5, 5]) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500]) == 5700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500]) == 5700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 11, 12]) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 11, 12]) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 605
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 605: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300]) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300]) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5]) == 57
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5]) == 57: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 5, 5, 5, 5, 5, 5, 5, 5]) == 425
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 5, 5, 5, 5, 5, 5, 5, 5]) == 425: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13]) == 308
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13]) == 308: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 425
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 425: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 4, 2, 5, 3]) == 58
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 4, 2, 5, 3]) == 58: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9]) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9]) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [2, 4, 6, 8, 10, 12, 14, 16]) == 540
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [2, 4, 6, 8, 10, 12, 14, 16]) == 540: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7, 1, 14, 11]) == 81
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7, 1, 14, 11]) == 81: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75]) == 127803
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75]) == 127803: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 281775
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 281775: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 281775
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 281775: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 3003
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 3003: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120]) == 153760
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120]) == 153760: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 15400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 15400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 2752
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 2752: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 19097
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 19097: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 19540
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 19540: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [999, 1000, 999, 1000, 999, 1000, 999, 1000, 999, 1000]) == 109945
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [999, 1000, 999, 1000, 999, 1000, 999, 1000, 999, 1000]) == 109945: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [23, 45, 12, 67, 89, 34, 56, 78, 90, 11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 311940
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [23, 45, 12, 67, 89, 34, 56, 78, 90, 11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 311940: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == 13760
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == 13760: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41]) == 18711
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41]) == 18711: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 27520
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 27520: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 8208
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 8208: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [250, 240, 230, 220, 210, 200, 190, 180, 170, 160, 150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 190970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [250, 240, 230, 220, 210, 200, 190, 180, 170, 160, 150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 190970: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 15400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == 15400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59]) == 74400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59]) == 74400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160]) == 64680
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160]) == 64680: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51]) == 13203
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51]) == 13203: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700]) == 440100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700]) == 440100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 38440
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 38440: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]) == 60792
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]) == 60792: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 13860
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 13860: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231, 242, 253, 264, 275, 286, 297, 308, 319, 330]) == 422840
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231, 242, 253, 264, 275, 286, 297, 308, 319, 330]) == 422840: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7590
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7590: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9224
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9224: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85]) == 31648
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85]) == 31648: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130]) == 110565
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130]) == 110565: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 6050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 6050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 3003
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]) == 3003: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123]) == 20384
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123]) == 20384: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]) == 388680
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]) == 388680: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144]) == 43320
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144]) == 43320: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96]) == 65000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96]) == 65000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205]) == 93555
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205]) == 93555: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 190970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250]) == 190970: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 2752
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 2752: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 80850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 80850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 2736
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 2736: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]) == 36725
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]) == 36725: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 40425
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 40425: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 275200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 275200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125]) == 95485
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125]) == 95485: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 40425
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 40425: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 19097
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 19097: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420, 440, 460, 480, 500]) == 381940
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420, 440, 460, 480, 500]) == 381940: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]) == 60792
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]) == 60792: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 808500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]) == 808500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77]) == 101728
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77]) == 101728: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120]) == 81250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120]) == 81250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 3850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 3850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170]) == 142560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170]) == 142560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154]) == 81466
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154]) == 81466: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75]) == 57291
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75]) == 57291: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129]) == 39560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129]) == 39560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 24050
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 24050: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168]) == 176610
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168]) == 176610: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 25, 75, 100, 200, 150, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]) == 438225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 25, 75, 100, 200, 150, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]) == 438225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 275200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500]) == 275200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 761915
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981, 980]) == 761915: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154, 161, 168, 175]) == 133679
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140, 147, 154, 161, 168, 175]) == 133679: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 31570
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 31570: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [21, 34, 41, 53, 67, 71, 82, 95, 100, 121, 134, 141, 153, 167, 171, 182, 195]) == 52492
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [21, 34, 41, 53, 67, 71, 82, 95, 100, 121, 134, 141, 153, 167, 171, 182, 195]) == 52492: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231, 242, 253, 264, 275, 286, 297]) == 282436
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231, 242, 253, 264, 275, 286, 297]) == 282436: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 4480
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 4480: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 57040
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 57040: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 51000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 51000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [33, 66, 99, 132, 165, 198, 231, 264, 297, 330, 363, 396, 429, 462, 495, 528, 561, 594, 627, 660, 693, 726, 759, 792, 825]) == 630201
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [33, 66, 99, 132, 165, 198, 231, 264, 297, 330, 363, 396, 429, 462, 495, 528, 561, 594, 627, 660, 693, 726, 759, 792, 825]) == 630201: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195]) == 70350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195]) == 70350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300]) == 161700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300]) == 161700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 117670
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 117670: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 8085
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 8085: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 60500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 60500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]) == 5848
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]) == 5848: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 12770
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 40, 30, 20, 10, 5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 12770: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 5500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 5500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [300, 200, 100, 50, 25, 12, 6, 3, 1]) == 5364
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [300, 200, 100, 50, 25, 12, 6, 3, 1]) == 5364: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99, 109]) == 8614
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99, 109]) == 8614: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98]) == 14700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98]) == 14700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270]) == 184960
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270]) == 184960: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 60500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 60500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr = [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80]) == 46970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr = [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80]) == 46970: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 8760
@@ -106,3 +946,5 @@ def check(candidate):
     assert candidate(arr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270]) == 184960
     assert candidate(arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 60500
     assert candidate(arr = [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80]) == 46970
+
+

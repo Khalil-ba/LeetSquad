@@ -1,5 +1,877 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50",discount = 0) == "$10.00 $20.00 $30.00 $40.00 $50.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50",discount = 0) == "$10.00 $20.00 $30.00 $40.00 $50.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300",discount = 25) == "$75.00 $150.00 $225.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300",discount = 25) == "$75.00 $150.00 $225.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "no prices here",discount = 20) == "no prices here"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "no prices here",discount = 20) == "no prices here": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "1 2 $3 4 $5 $6 7 8$ $9 $10$",discount = 100) == "1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10$"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "1 2 $3 4 $5 $6 7 8$ $9 $10$",discount = 100) == "1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10$": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "there are $1 $2 and 5$ candies in the shop",discount = 50) == "there are $0.50 $1.00 and 5$ candies in the shop"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "there are $1 $2 and 5$ candies in the shop",discount = 50) == "there are $0.50 $1.00 and 5$ candies in the shop": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "no prices here",discount = 10) == "no prices here"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "no prices here",discount = 10) == "no prices here": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $1",discount = 99) == "$99999999.99 $0.01"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $1",discount = 99) == "$99999999.99 $0.01": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $10000000000 $11111111111",discount = 10) == "$8999999999.10 $9000000000.00 $9999999999.90"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $10000000000 $11111111111",discount = 10) == "$8999999999.10 $9000000000.00 $9999999999.90": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999 $888 $777 $666 $555 $444 $333 $222 $111 $000",discount = 90) == "$99.90 $88.80 $77.70 $66.60 $55.50 $44.40 $33.30 $22.20 $11.10 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999 $888 $777 $666 $555 $444 $333 $222 $111 $000",discount = 90) == "$99.90 $88.80 $77.70 $66.60 $55.50 $44.40 $33.30 $22.20 $11.10 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 15) == "$85.00 $170.00 $255.00 $340.00 $425.00 $510.00 $595.00 $680.00 $765.00 $850.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 15) == "$85.00 $170.00 $255.00 $340.00 $425.00 $510.00 $595.00 $680.00 $765.00 $850.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0 $00 $000 $0000 $00000",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0 $00 $000 $0000 $00000",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123.45 $678.90 $456.78 $901.23",discount = 15) == "$123.45 $678.90 $456.78 $901.23"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123.45 $678.90 $456.78 $901.23",discount = 15) == "$123.45 $678.90 $456.78 $901.23": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 $999999999 $1111111111 $2222222222 $3333333333",discount = 75) == "$250000000.00 $249999999.75 $277777777.75 $555555555.50 $833333333.25"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 $999999999 $1111111111 $2222222222 $3333333333",discount = 75) == "$250000000.00 $249999999.75 $277777777.75 $555555555.50 $833333333.25": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $0",discount = 75) == "$0.25 $0.50 $0.75 $1.00 $1.25 $1.50 $1.75 $2.00 $2.25 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $0",discount = 75) == "$0.25 $0.50 $0.75 $1.00 $1.25 $1.50 $1.75 $2.00 $2.25 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123456 $654321 $111111 $222222",discount = 75) == "$30864.00 $163580.25 $27777.75 $55555.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123456 $654321 $111111 $222222",discount = 75) == "$30864.00 $163580.25 $27777.75 $55555.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1.50 $2.50 $3.50 $4.50 $5.50",discount = 50) == "$1.50 $2.50 $3.50 $4.50 $5.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1.50 $2.50 $3.50 $4.50 $5.50",discount = 50) == "$1.50 $2.50 $3.50 $4.50 $5.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 20) == "$0.80 $1.60 $2.40 $3.20 $4.00 $4.80 $5.60 $6.40 $7.20 $8.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 20) == "$0.80 $1.60 $2.40 $3.20 $4.00 $4.80 $5.60 $6.40 $7.20 $8.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9",discount = 10) == "$0.00 $0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9",discount = 10) == "$0.00 $0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000 $1100 $1200 $1300 $1400 $1500",discount = 10) == "$90.00 $180.00 $270.00 $360.00 $450.00 $540.00 $630.00 $720.00 $810.00 $900.00 $990.00 $1080.00 $1170.00 $1260.00 $1350.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000 $1100 $1200 $1300 $1400 $1500",discount = 10) == "$90.00 $180.00 $270.00 $360.00 $450.00 $540.00 $630.00 $720.00 $810.00 $900.00 $990.00 $1080.00 $1170.00 $1260.00 $1350.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1.23 $4.56 $7.89 $10.11 $12.13",discount = 50) == "$1.23 $4.56 $7.89 $10.11 $12.13"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1.23 $4.56 $7.89 $10.11 $12.13",discount = 50) == "$1.23 $4.56 $7.89 $10.11 $12.13": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100.00 $200.00 $300.00",discount = 50) == "$100.00 $200.00 $300.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100.00 $200.00 $300.00",discount = 50) == "$100.00 $200.00 $300.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999999999 $111111111 $222222222 $333333333 $444444444",discount = 90) == "$99999999.90 $11111111.10 $22222222.20 $33333333.30 $44444444.40"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999999999 $111111111 $222222222 $333333333 $444444444",discount = 90) == "$99999999.90 $11111111.10 $22222222.20 $33333333.30 $44444444.40": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111",discount = 1) == "$990000000.00 $989999999.01 $879999999.12 $769999999.23 $659999999.34 $549999999.45 $439999999.56 $329999999.67 $219999999.78 $109999999.89"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111",discount = 1) == "$990000000.00 $989999999.01 $879999999.12 $769999999.23 $659999999.34 $549999999.45 $439999999.56 $329999999.67 $219999999.78 $109999999.89": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$12345678901234567890 $98765432109876543210 $10000000001000000000",discount = 50) == "$6172839450617283584.00 $49382716054938271744.00 $5000000000499999744.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$12345678901234567890 $98765432109876543210 $10000000001000000000",discount = 50) == "$6172839450617283584.00 $49382716054938271744.00 $5000000000499999744.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 99) == "$1.00 $2.00 $3.00 $4.00 $5.00 $6.00 $7.00 $8.00 $9.00 $10.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 99) == "$1.00 $2.00 $3.00 $4.00 $5.00 $6.00 $7.00 $8.00 $9.00 $10.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 this is a very long sentence with many $100 prices $500 and $1000",discount = 20) == "$7999999999.20 this is a very long sentence with many $80.00 prices $400.00 and $800.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 this is a very long sentence with many $100 prices $500 and $1000",discount = 20) == "$7999999999.20 this is a very long sentence with many $80.00 prices $400.00 and $800.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1million $1billion $1trillion",discount = 50) == "$1million $1billion $1trillion"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1million $1billion $1trillion",discount = 50) == "$1million $1billion $1trillion": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000 $2000000 $3000000 $4000000",discount = 30) == "$700000.00 $1400000.00 $2100000.00 $2800000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000 $2000000 $3000000 $4000000",discount = 30) == "$700000.00 $1400000.00 $2100000.00 $2800000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$500 $1000 $1500 $2000",discount = 20) == "$400.00 $800.00 $1200.00 $1600.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$500 $1000 $1500 $2000",discount = 20) == "$400.00 $800.00 $1200.00 $1600.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1.5 $2.5 $3.5 $4.5 $5.5",discount = 10) == "$1.5 $2.5 $3.5 $4.5 $5.5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1.5 $2.5 $3.5 $4.5 $5.5",discount = 10) == "$1.5 $2.5 $3.5 $4.5 $5.5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 10) == "$0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10 $9.00 $9.90 $10.80 $11.70 $12.60 $13.50 $14.40 $15.30 $16.20 $17.10 $18.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 10) == "$0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10 $9.00 $9.90 $10.80 $11.70 $12.60 $13.50 $14.40 $15.30 $16.20 $17.10 $18.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $1000000000 $123456789",discount = 5) == "$9499999999.05 $950000000.00 $117283949.55"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $1000000000 $123456789",discount = 5) == "$9499999999.05 $950000000.00 $117283949.55": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555",discount = 20) == "$799999999.20 $711111110.40 $622222221.60 $533333332.80 $444444444.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555",discount = 20) == "$799999999.20 $711111110.40 $622222221.60 $533333332.80 $444444444.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $123456789 $12345678 $1234567 $123456 $12345 $1234 $123 $12 $1",discount = 10) == "$1111111101.00 $111111110.10 $11111110.20 $1111110.30 $111110.40 $11110.50 $1110.60 $110.70 $10.80 $0.90"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $123456789 $12345678 $1234567 $123456 $12345 $1234 $123 $12 $1",discount = 10) == "$1111111101.00 $111111110.10 $11111110.20 $1111110.30 $111110.40 $11110.50 $1110.60 $110.70 $10.80 $0.90": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000",discount = 99) == "$0.01 $0.10 $1.00 $10.00 $100.00 $1000.00 $10000.00 $100000.00 $1000000.00 $10000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000",discount = 99) == "$0.01 $0.10 $1.00 $10.00 $100.00 $1000.00 $10000.00 $100000.00 $1000000.00 $10000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$12345 $67890 $54321 $98760 $13579 $24680",discount = 30) == "$8641.50 $47523.00 $38024.70 $69132.00 $9505.30 $17276.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$12345 $67890 $54321 $98760 $13579 $24680",discount = 30) == "$8641.50 $47523.00 $38024.70 $69132.00 $9505.30 $17276.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 95) == "$0.05 $0.10 $0.15 $0.20 $0.25 $0.30 $0.35 $0.40 $0.45 $0.50 $0.55 $0.60 $0.65 $0.70 $0.75 $0.80 $0.85 $0.90 $0.95 $1.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 95) == "$0.05 $0.10 $0.15 $0.20 $0.25 $0.30 $0.35 $0.40 $0.45 $0.50 $0.55 $0.60 $0.65 $0.70 $0.75 $0.80 $0.85 $0.90 $0.95 $1.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 5) == "$9.50 $19.00 $28.50 $38.00 $47.50 $57.00 $66.50 $76.00 $85.50 $95.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 5) == "$9.50 $19.00 $28.50 $38.00 $47.50 $57.00 $66.50 $76.00 $85.50 $95.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 20) == "$8.00 $16.00 $24.00 $32.00 $40.00 $48.00 $56.00 $64.00 $72.00 $80.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 20) == "$8.00 $16.00 $24.00 $32.00 $40.00 $48.00 $56.00 $64.00 $72.00 $80.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999",discount = 1) == "$9899999999.01"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999",discount = 1) == "$9899999999.01": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100abc $abc100 $100$ $100 $200",discount = 10) == "$100abc $abc100 $100$ $90.00 $180.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100abc $abc100 $100$ $100 $200",discount = 10) == "$100abc $abc100 $100$ $90.00 $180.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 is the max price and $1 is the min price in this sentence",discount = 5) == "$9499999999.05 is the max price and $0.95 is the min price in this sentence"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 is the max price and $1 is the min price in this sentence",discount = 5) == "$9499999999.05 is the max price and $0.95 is the min price in this sentence": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $0",discount = 50) == "$0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $0.00 $0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $0",discount = 50) == "$0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $0.00 $0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10000000000 $20000000000 $30000000000",discount = 50) == "$5000000000.00 $10000000000.00 $15000000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10000000000 $20000000000 $30000000000",discount = 50) == "$5000000000.00 $10000000000.00 $15000000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000 $1100 $1200 $1300 $1400 $1500 $1600 $1700 $1800 $1900 $2000",discount = 75) == "$25.00 $50.00 $75.00 $100.00 $125.00 $150.00 $175.00 $200.00 $225.00 $250.00 $275.00 $300.00 $325.00 $350.00 $375.00 $400.00 $425.00 $450.00 $475.00 $500.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000 $1100 $1200 $1300 $1400 $1500 $1600 $1700 $1800 $1900 $2000",discount = 75) == "$25.00 $50.00 $75.00 $100.00 $125.00 $150.00 $175.00 $200.00 $225.00 $250.00 $275.00 $300.00 $325.00 $350.00 $375.00 $400.00 $425.00 $450.00 $475.00 $500.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$12345 $67890 $54321 $98765 $13579 $24680",discount = 30) == "$8641.50 $47523.00 $38024.70 $69135.50 $9505.30 $17276.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$12345 $67890 $54321 $98765 $13579 $24680",discount = 30) == "$8641.50 $47523.00 $38024.70 $69135.50 $9505.30 $17276.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0",discount = 100) == "$0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0",discount = 100) == "$0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $987654321 $1000000000",discount = 10) == "$1111111101.00 $888888888.90 $900000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $987654321 $1000000000",discount = 10) == "$1111111101.00 $888888888.90 $900000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9 $99 $999 $9999 $99999 $999999 $9999999 $99999999 $999999999 $9999999999",discount = 90) == "$0.90 $9.90 $99.90 $999.90 $9999.90 $99999.90 $999999.90 $9999999.90 $99999999.90 $999999999.90"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9 $99 $999 $9999 $99999 $999999 $9999999 $99999999 $999999999 $9999999999",discount = 90) == "$0.90 $9.90 $99.90 $999.90 $9999.90 $99999.90 $999999.90 $9999999.90 $99999999.90 $999999999.90": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $9876543210 $1111111111 $2222222222 $3333333333 $4444444444 $5555555555 $6666666666 $7777777777 $8888888888",discount = 10) == "$1111111101.00 $8888888889.00 $999999999.90 $1999999999.80 $2999999999.70 $3999999999.60 $4999999999.50 $5999999999.40 $6999999999.30 $7999999999.20"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $9876543210 $1111111111 $2222222222 $3333333333 $4444444444 $5555555555 $6666666666 $7777777777 $8888888888",discount = 10) == "$1111111101.00 $8888888889.00 $999999999.90 $1999999999.80 $2999999999.70 $3999999999.60 $4999999999.50 $5999999999.40 $6999999999.30 $7999999999.20": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $1000000000 $123456789",discount = 10) == "$8999999999.10 $900000000.00 $111111110.10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $1000000000 $123456789",discount = 10) == "$8999999999.10 $900000000.00 $111111110.10": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000 $2000000 $3000000 $4000000 $5000000",discount = 0) == "$1000000.00 $2000000.00 $3000000.00 $4000000.00 $5000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000 $2000000 $3000000 $4000000 $5000000",discount = 0) == "$1000000.00 $2000000.00 $3000000.00 $4000000.00 $5000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 0) == "$10.00 $20.00 $30.00 $40.00 $50.00 $60.00 $70.00 $80.00 $90.00 $100.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100",discount = 0) == "$10.00 $20.00 $30.00 $40.00 $50.00 $60.00 $70.00 $80.00 $90.00 $100.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100 $110 $120 $130 $140 $150",discount = 30) == "$7.00 $14.00 $21.00 $28.00 $35.00 $42.00 $49.00 $56.00 $63.00 $70.00 $77.00 $84.00 $91.00 $98.00 $105.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100 $110 $120 $130 $140 $150",discount = 30) == "$7.00 $14.00 $21.00 $28.00 $35.00 $42.00 $49.00 $56.00 $63.00 $70.00 $77.00 $84.00 $91.00 $98.00 $105.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 99) == "$0.01 $0.02 $0.03 $0.04 $0.05 $0.06 $0.07 $0.08 $0.09 $0.10 $0.11 $0.12 $0.13 $0.14 $0.15 $0.16 $0.17 $0.18 $0.19 $0.20"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 99) == "$0.01 $0.02 $0.03 $0.04 $0.05 $0.06 $0.07 $0.08 $0.09 $0.10 $0.11 $0.12 $0.13 $0.14 $0.15 $0.16 $0.17 $0.18 $0.19 $0.20": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000 $2000 $3000",discount = 95) == "$50.00 $100.00 $150.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000 $2000 $3000",discount = 95) == "$50.00 $100.00 $150.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555",discount = 0) == "$9999999999.00 $8888888888.00 $7777777777.00 $6666666666.00 $5555555555.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555",discount = 0) == "$9999999999.00 $8888888888.00 $7777777777.00 $6666666666.00 $5555555555.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 0) == "$100.00 $200.00 $300.00 $400.00 $500.00 $600.00 $700.00 $800.00 $900.00 $1000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 0) == "$100.00 $200.00 $300.00 $400.00 $500.00 $600.00 $700.00 $800.00 $900.00 $1000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111",discount = 15) == "$850000000.00 $849999999.15 $755555554.80 $661111110.45 $566666666.10 $472222221.75 $377777777.40 $283333333.05 $188888888.70 $94444444.35"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111",discount = 15) == "$850000000.00 $849999999.15 $755555554.80 $661111110.45 $566666666.10 $472222221.75 $377777777.40 $283333333.05 $188888888.70 $94444444.35": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100000 $200000 $300000 $400000 $500000",discount = 20) == "$80000.00 $160000.00 $240000.00 $320000.00 $400000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100000 $200000 $300000 $400000 $500000",discount = 20) == "$80000.00 $160000.00 $240000.00 $320000.00 $400000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123abc $456def $789ghi $0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 15) == "$123abc $456def $789ghi $0.00 $0.85 $1.70 $2.55 $3.40 $4.25 $5.10 $5.95 $6.80 $7.65 $8.50 $9.35 $10.20 $11.05 $11.90 $12.75 $13.60 $14.45 $15.30 $16.15 $17.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123abc $456def $789ghi $0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 15) == "$123abc $456def $789ghi $0.00 $0.85 $1.70 $2.55 $3.40 $4.25 $5.10 $5.95 $6.80 $7.65 $8.50 $9.35 $10.20 $11.05 $11.90 $12.75 $13.60 $14.45 $15.30 $16.15 $17.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $1000000000 $100000000 $10000000 $1000000 $100000 $10000 $1000 $100 $10 $1",discount = 5) == "$9499999999.05 $950000000.00 $95000000.00 $9500000.00 $950000.00 $95000.00 $9500.00 $950.00 $95.00 $9.50 $0.95"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $1000000000 $100000000 $10000000 $1000000 $100000 $10000 $1000 $100 $10 $1",discount = 5) == "$9499999999.05 $950000000.00 $95000000.00 $9500000.00 $950000.00 $95000.00 $9500.00 $950.00 $95.00 $9.50 $0.95": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123.45 $67.89 $10.11 $0.01 $1000000000.99",discount = 10) == "$123.45 $67.89 $10.11 $0.01 $1000000000.99"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123.45 $67.89 $10.11 $0.01 $1000000000.99",discount = 10) == "$123.45 $67.89 $10.11 $0.01 $1000000000.99": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123 $456 $789 $012 $345 $678 $901 $234 $567 $890 $123456789 $987654321 $111111111 $222222222 $333333333 $444444444 $555555555 $666666666 $777777777 $888888888 $999999999 $1000000000 $2000000000 $3000000000",discount = 30) == "$86.10 $319.20 $552.30 $8.40 $241.50 $474.60 $630.70 $163.80 $396.90 $623.00 $86419752.30 $691358024.70 $77777777.70 $155555555.40 $233333333.10 $311111110.80 $388888888.50 $466666666.20 $544444443.90 $622222221.60 $699999999.30 $700000000.00 $1400000000.00 $2100000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123 $456 $789 $012 $345 $678 $901 $234 $567 $890 $123456789 $987654321 $111111111 $222222222 $333333333 $444444444 $555555555 $666666666 $777777777 $888888888 $999999999 $1000000000 $2000000000 $3000000000",discount = 30) == "$86.10 $319.20 $552.30 $8.40 $241.50 $474.60 $630.70 $163.80 $396.90 $623.00 $86419752.30 $691358024.70 $77777777.70 $155555555.40 $233333333.10 $311111110.80 $388888888.50 $466666666.20 $544444443.90 $622222221.60 $699999999.30 $700000000.00 $1400000000.00 $2100000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$5 $15 $25 $35 $45 $55 $65 $75 $85 $95",discount = 75) == "$1.25 $3.75 $6.25 $8.75 $11.25 $13.75 $16.25 $18.75 $21.25 $23.75"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$5 $15 $25 $35 $45 $55 $65 $75 $85 $95",discount = 75) == "$1.25 $3.75 $6.25 $8.75 $11.25 $13.75 $16.25 $18.75 $21.25 $23.75": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$50 apples $20 oranges $30 bananas $10 grapes",discount = 30) == "$35.00 apples $14.00 oranges $21.00 bananas $7.00 grapes"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$50 apples $20 oranges $30 bananas $10 grapes",discount = 30) == "$35.00 apples $14.00 oranges $21.00 bananas $7.00 grapes": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $123456789 $9876543210 $1000000000 $500000000",discount = 15) == "$8499999999.15 $104938270.65 $8395061728.50 $850000000.00 $425000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $123456789 $9876543210 $1000000000 $500000000",discount = 15) == "$8499999999.15 $104938270.65 $8395061728.50 $850000000.00 $425000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0 $00 $000 $0000 $00000",discount = 20) == "$0.00 $0.00 $0.00 $0.00 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0 $00 $000 $0000 $00000",discount = 20) == "$0.00 $0.00 $0.00 $0.00 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15",discount = 0) == "$1.00 $2.00 $3.00 $4.00 $5.00 $6.00 $7.00 $8.00 $9.00 $10.00 $11.00 $12.00 $13.00 $14.00 $15.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15",discount = 0) == "$1.00 $2.00 $3.00 $4.00 $5.00 $6.00 $7.00 $8.00 $9.00 $10.00 $11.00 $12.00 $13.00 $14.00 $15.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 5) == "$0.95 $1.90 $2.85 $3.80 $4.75 $5.70 $6.65 $7.60 $8.55 $9.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 5) == "$0.95 $1.90 $2.85 $3.80 $4.75 $5.70 $6.65 $7.60 $8.55 $9.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $9876543210 $1000000000",discount = 5) == "$1172839495.50 $9382716049.50 $950000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $9876543210 $1000000000",discount = 5) == "$1172839495.50 $9382716049.50 $950000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 $999999999 $888888888 $777777777",discount = 50) == "$500000000.00 $499999999.50 $444444444.00 $388888888.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 $999999999 $888888888 $777777777",discount = 50) == "$500000000.00 $499999999.50 $444444444.00 $388888888.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $9876543210 $1000000000",discount = 15) == "$1049382706.50 $8395061728.50 $850000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $9876543210 $1000000000",discount = 15) == "$1049382706.50 $8395061728.50 $850000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1",discount = 99) == "$99999999.99 $88888888.88 $77777777.77 $66666666.66 $55555555.55 $44444444.44 $33333333.33 $22222222.22 $11111111.11 $0.01"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1",discount = 99) == "$99999999.99 $88888888.88 $77777777.77 $66666666.66 $55555555.55 $44444444.44 $33333333.33 $22222222.22 $11111111.11 $0.01": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123 $456 $789 $101112 $131415 $161718 $192021 $222324 $252627 $282930",discount = 25) == "$92.25 $342.00 $591.75 $75834.00 $98561.25 $121288.50 $144015.75 $166743.00 $189470.25 $212197.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123 $456 $789 $101112 $131415 $161718 $192021 $222324 $252627 $282930",discount = 25) == "$92.25 $342.00 $591.75 $75834.00 $98561.25 $121288.50 $144015.75 $166743.00 $189470.25 $212197.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000 $2000 $3000 $4000 $5000 $6000 $7000 $8000 $9000 $10000",discount = 75) == "$250.00 $500.00 $750.00 $1000.00 $1250.00 $1500.00 $1750.00 $2000.00 $2250.00 $2500.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000 $2000 $3000 $4000 $5000 $6000 $7000 $8000 $9000 $10000",discount = 75) == "$250.00 $500.00 $750.00 $1000.00 $1250.00 $1500.00 $1750.00 $2000.00 $2250.00 $2500.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 50) == "$0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $5.00 $5.50 $6.00 $6.50 $7.00 $7.50 $8.00 $8.50 $9.00 $9.50 $10.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 50) == "$0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $5.00 $5.50 $6.00 $6.50 $7.00 $7.50 $8.00 $8.50 $9.00 $9.50 $10.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 20) == "$80.00 $160.00 $240.00 $320.00 $400.00 $480.00 $560.00 $640.00 $720.00 $800.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 $200 $300 $400 $500 $600 $700 $800 $900 $1000",discount = 20) == "$80.00 $160.00 $240.00 $320.00 $400.00 $480.00 $560.00 $640.00 $720.00 $800.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555",discount = 30) == "$699999999.30 $622222221.60 $544444443.90 $466666666.20 $388888888.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555",discount = 30) == "$699999999.30 $622222221.60 $544444443.90 $466666666.20 $388888888.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777",discount = 5) == "$9499999999.05 $8444444443.60 $7388888888.15"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777",discount = 5) == "$9499999999.05 $8444444443.60 $7388888888.15": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 $100000000 $10000000 $1000000 $100000 $10000 $1000 $100 $10 $1",discount = 5) == "$950000000.00 $95000000.00 $9500000.00 $950000.00 $95000.00 $9500.00 $950.00 $95.00 $9.50 $0.95"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 $100000000 $10000000 $1000000 $100000 $10000 $1000 $100 $10 $1",discount = 5) == "$950000000.00 $95000000.00 $9500000.00 $950000.00 $95000.00 $9500.00 $950.00 $95.00 $9.50 $0.95": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 15) == "$0.85 $1.70 $2.55 $3.40 $4.25 $5.10 $5.95 $6.80 $7.65 $8.50 $9.35 $10.20 $11.05 $11.90 $12.75 $13.60 $14.45 $15.30 $16.15 $17.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 15) == "$0.85 $1.70 $2.55 $3.40 $4.25 $5.10 $5.95 $6.80 $7.65 $8.50 $9.35 $10.20 $11.05 $11.90 $12.75 $13.60 $14.45 $15.30 $16.15 $17.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111 $100000000 $99999999 $88888888 $77777777 $66666666 $55555555 $44444444 $33333333 $22222222 $11111111 $10000000 $9999999 $8888888 $7777777 $6666666 $5555555 $4444444 $3333333 $2222222 $1111111 $1000000 $999999 $888888 $777777 $666666 $555555 $444444 $333333 $222222 $111111 $100000 $99999 $88888 $77777 $66666 $55555 $44444 $33333 $22222 $11111 $10000 $9999 $8888 $7777 $6666 $5555 $4444 $3333 $2222 $1111 $1000 $999 $888 $777 $666 $555 $444 $333 $222 $111 $100 $99 $88 $77 $66 $55 $44 $33 $22 $11 $1",discount = 10) == "$8999999999.10 $7999999999.20 $6999999999.30 $5999999999.40 $4999999999.50 $3999999999.60 $2999999999.70 $1999999999.80 $999999999.90 $900000000.00 $899999999.10 $799999999.20 $699999999.30 $599999999.40 $499999999.50 $399999999.60 $299999999.70 $199999999.80 $99999999.90 $90000000.00 $89999999.10 $79999999.20 $69999999.30 $59999999.40 $49999999.50 $39999999.60 $29999999.70 $19999999.80 $9999999.90 $9000000.00 $8999999.10 $7999999.20 $6999999.30 $5999999.40 $4999999.50 $3999999.60 $2999999.70 $1999999.80 $999999.90 $900000.00 $899999.10 $799999.20 $699999.30 $599999.40 $499999.50 $399999.60 $299999.70 $199999.80 $99999.90 $90000.00 $89999.10 $79999.20 $69999.30 $59999.40 $49999.50 $39999.60 $29999.70 $19999.80 $9999.90 $9000.00 $8999.10 $7999.20 $6999.30 $5999.40 $4999.50 $3999.60 $2999.70 $1999.80 $999.90 $900.00 $899.10 $799.20 $699.30 $599.40 $499.50 $399.60 $299.70 $199.80 $99.90 $90.00 $89.10 $79.20 $69.30 $59.40 $49.50 $39.60 $29.70 $19.80 $9.90 $0.90"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1000000000 $999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111 $100000000 $99999999 $88888888 $77777777 $66666666 $55555555 $44444444 $33333333 $22222222 $11111111 $10000000 $9999999 $8888888 $7777777 $6666666 $5555555 $4444444 $3333333 $2222222 $1111111 $1000000 $999999 $888888 $777777 $666666 $555555 $444444 $333333 $222222 $111111 $100000 $99999 $88888 $77777 $66666 $55555 $44444 $33333 $22222 $11111 $10000 $9999 $8888 $7777 $6666 $5555 $4444 $3333 $2222 $1111 $1000 $999 $888 $777 $666 $555 $444 $333 $222 $111 $100 $99 $88 $77 $66 $55 $44 $33 $22 $11 $1",discount = 10) == "$8999999999.10 $7999999999.20 $6999999999.30 $5999999999.40 $4999999999.50 $3999999999.60 $2999999999.70 $1999999999.80 $999999999.90 $900000000.00 $899999999.10 $799999999.20 $699999999.30 $599999999.40 $499999999.50 $399999999.60 $299999999.70 $199999999.80 $99999999.90 $90000000.00 $89999999.10 $79999999.20 $69999999.30 $59999999.40 $49999999.50 $39999999.60 $29999999.70 $19999999.80 $9999999.90 $9000000.00 $8999999.10 $7999999.20 $6999999.30 $5999999.40 $4999999.50 $3999999.60 $2999999.70 $1999999.80 $999999.90 $900000.00 $899999.10 $799999.20 $699999.30 $599999.40 $499999.50 $399999.60 $299999.70 $199999.80 $99999.90 $90000.00 $89999.10 $79999.20 $69999.30 $59999.40 $49999.50 $39999.60 $29999.70 $19999.80 $9999.90 $9000.00 $8999.10 $7999.20 $6999.30 $5999.40 $4999.50 $3999.60 $2999.70 $1999.80 $999.90 $900.00 $899.10 $799.20 $699.30 $599.40 $499.50 $399.60 $299.70 $199.80 $99.90 $90.00 $89.10 $79.20 $69.30 $59.40 $49.50 $39.60 $29.70 $19.80 $9.90 $0.90": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$100 abc $200 def $300 ghi $400 jkl $500 mno",discount = 75) == "$25.00 abc $50.00 def $75.00 ghi $100.00 jkl $125.00 mno"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$100 abc $200 def $300 ghi $400 jkl $500 mno",discount = 75) == "$25.00 abc $50.00 def $75.00 ghi $100.00 jkl $125.00 mno": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234 $5678 $91011 $121314 $151617 $181920 $212223 $242526 $272829 $303132",discount = 20) == "$987.20 $4542.40 $72808.80 $97051.20 $121293.60 $145536.00 $169778.40 $194020.80 $218263.20 $242505.60"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234 $5678 $91011 $121314 $151617 $181920 $212223 $242526 $272829 $303132",discount = 20) == "$987.20 $4542.40 $72808.80 $97051.20 $121293.60 $145536.00 $169778.40 $194020.80 $218263.20 $242505.60": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20 $21 $22 $23 $24 $25 $26 $27 $28 $29 $30",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20 $21 $22 $23 $24 $25 $26 $27 $28 $29 $30",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234567890 $987654321 $1000000000 $500000000 $250000000 $125000000 $62500000 $31250000 $15625000 $7812500 $3906250 $1953125 $976562 $488281 $244140 $122070 $61035 $30517 $15258 $7629 $3814 $1907 $953 $476 $238 $119 $59 $29 $14 $7 $3 $1",discount = 10) == "$1111111101.00 $888888888.90 $900000000.00 $450000000.00 $225000000.00 $112500000.00 $56250000.00 $28125000.00 $14062500.00 $7031250.00 $3515625.00 $1757812.50 $878905.80 $439452.90 $219726.00 $109863.00 $54931.50 $27465.30 $13732.20 $6866.10 $3432.60 $1716.30 $857.70 $428.40 $214.20 $107.10 $53.10 $26.10 $12.60 $6.30 $2.70 $0.90"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234567890 $987654321 $1000000000 $500000000 $250000000 $125000000 $62500000 $31250000 $15625000 $7812500 $3906250 $1953125 $976562 $488281 $244140 $122070 $61035 $30517 $15258 $7629 $3814 $1907 $953 $476 $238 $119 $59 $29 $14 $7 $3 $1",discount = 10) == "$1111111101.00 $888888888.90 $900000000.00 $450000000.00 $225000000.00 $112500000.00 $56250000.00 $28125000.00 $14062500.00 $7031250.00 $3515625.00 $1757812.50 $878905.80 $439452.90 $219726.00 $109863.00 $54931.50 $27465.30 $13732.20 $6866.10 $3432.60 $1716.30 $857.70 $428.40 $214.20 $107.10 $53.10 $26.10 $12.60 $6.30 $2.70 $0.90": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123.45 $678.90 $100.00",discount = 15) == "$123.45 $678.90 $100.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123.45 $678.90 $100.00",discount = 15) == "$123.45 $678.90 $100.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123 $456 $789 $1011 $1213 $1415 $1617 $1819 $2021 $2223 $2425 $2627 $2829 $3031 $3233",discount = 25) == "$92.25 $342.00 $591.75 $758.25 $909.75 $1061.25 $1212.75 $1364.25 $1515.75 $1667.25 $1818.75 $1970.25 $2121.75 $2273.25 $2424.75"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123 $456 $789 $1011 $1213 $1415 $1617 $1819 $2021 $2223 $2425 $2627 $2829 $3031 $3233",discount = 25) == "$92.25 $342.00 $591.75 $758.25 $909.75 $1061.25 $1212.75 $1364.25 $1515.75 $1667.25 $1818.75 $1970.25 $2121.75 $2273.25 $2424.75": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 90) == "$0.10 $0.20 $0.30 $0.40 $0.50 $0.60 $0.70 $0.80 $0.90 $1.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 90) == "$0.10 $0.20 $0.30 $0.40 $0.50 $0.60 $0.70 $0.80 $0.90 $1.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10.50 $20.25 $30.75",discount = 50) == "$10.50 $20.25 $30.75"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10.50 $20.25 $30.75",discount = 50) == "$10.50 $20.25 $30.75": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15",discount = 5) == "$0.95 $1.90 $2.85 $3.80 $4.75 $5.70 $6.65 $7.60 $8.55 $9.50 $10.45 $11.40 $12.35 $13.30 $14.25"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15",discount = 5) == "$0.95 $1.90 $2.85 $3.80 $4.75 $5.70 $6.65 $7.60 $8.55 $9.50 $10.45 $11.40 $12.35 $13.30 $14.25": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9 $8 $7 $6 $5 $4 $3 $2 $1 $0",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9 $8 $7 $6 $5 $4 $3 $2 $1 $0",discount = 100) == "$0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00 $0.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$123 $456 $789 $101112 $131415 $161718",discount = 75) == "$30.75 $114.00 $197.25 $25278.00 $32853.75 $40429.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$123 $456 $789 $101112 $131415 $161718",discount = 75) == "$30.75 $114.00 $197.25 $25278.00 $32853.75 $40429.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000",discount = 50) == "$0.50 $5.00 $50.00 $500.00 $5000.00 $50000.00 $500000.00 $5000000.00 $50000000.00 $500000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000",discount = 50) == "$0.50 $5.00 $50.00 $500.00 $5000.00 $50000.00 $500000.00 $5000000.00 $50000000.00 $500000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1234.56 $789.01 $456.78 $123.45 $678.90 $901.23 $234.56 $567.89 $890.12 $123.45",discount = 20) == "$1234.56 $789.01 $456.78 $123.45 $678.90 $901.23 $234.56 $567.89 $890.12 $123.45"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1234.56 $789.01 $456.78 $123.45 $678.90 $901.23 $234.56 $567.89 $890.12 $123.45",discount = 20) == "$1234.56 $789.01 $456.78 $123.45 $678.90 $901.23 $234.56 $567.89 $890.12 $123.45": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100 $110 $120 $130 $140 $150",discount = 75) == "$2.50 $5.00 $7.50 $10.00 $12.50 $15.00 $17.50 $20.00 $22.50 $25.00 $27.50 $30.00 $32.50 $35.00 $37.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$10 $20 $30 $40 $50 $60 $70 $80 $90 $100 $110 $120 $130 $140 $150",discount = 75) == "$2.50 $5.00 $7.50 $10.00 $12.50 $15.00 $17.50 $20.00 $22.50 $25.00 $27.50 $30.00 $32.50 $35.00 $37.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1000000000 this is a test with one big $9999999999 price and a small $1",discount = 1) == "$990000000.00 this is a test with one big $9899999999.01 price and a small $0.99"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1000000000 this is a test with one big $9999999999 price and a small $1",discount = 1) == "$990000000.00 this is a test with one big $9899999999.01 price and a small $0.99": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 50) == "$0.00 $0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $5.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10",discount = 50) == "$0.00 $0.50 $1.00 $1.50 $2.00 $2.50 $3.00 $3.50 $4.00 $4.50 $5.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555",discount = 1) == "$9899999999.01 $8799999999.12 $7699999999.23 $6599999999.34 $5499999999.45"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555",discount = 1) == "$9899999999.01 $8799999999.12 $7699999999.23 $6599999999.34 $5499999999.45": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000 $10000000000",discount = 5) == "$0.95 $9.50 $95.00 $950.00 $9500.00 $95000.00 $950000.00 $9500000.00 $95000000.00 $950000000.00 $9500000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$1 $10 $100 $1000 $10000 $100000 $1000000 $10000000 $100000000 $1000000000 $10000000000",discount = 5) == "$0.95 $9.50 $95.00 $950.00 $9500.00 $95000.00 $950000.00 $9500000.00 $95000000.00 $950000000.00 $9500000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1000000000",discount = 50) == "$4999999999.50 $4444444444.00 $3888888888.50 $3333333333.00 $2777777777.50 $2222222222.00 $1666666666.50 $1111111111.00 $555555555.50 $500000000.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $8888888888 $7777777777 $6666666666 $5555555555 $4444444444 $3333333333 $2222222222 $1111111111 $1000000000",discount = 50) == "$4999999999.50 $4444444444.00 $3888888888.50 $3333333333.00 $2777777777.50 $2222222222.00 $1666666666.50 $1111111111.00 $555555555.50 $500000000.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$50 apples and $30 bananas, $20 oranges",discount = 20) == "$40.00 apples and $24.00 bananas, $16.00 oranges"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$50 apples and $30 bananas, $20 oranges",discount = 20) == "$40.00 apples and $24.00 bananas, $16.00 oranges": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$9999999999 $999999999 $99999999 $9999999 $999999 $99999 $9999 $999 $99 $9",discount = 0) == "$9999999999.00 $999999999.00 $99999999.00 $9999999.00 $999999.00 $99999.00 $9999.00 $999.00 $99.00 $9.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$9999999999 $999999999 $99999999 $9999999 $999999 $99999 $9999 $999 $99 $9",discount = 0) == "$9999999999.00 $999999999.00 $99999999.00 $9999999.00 $999999.00 $99999.00 $9999.00 $999.00 $99.00 $9.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111 $1",discount = 50) == "$499999999.50 $444444444.00 $388888888.50 $333333333.00 $277777777.50 $222222222.00 $166666666.50 $111111111.00 $55555555.50 $0.50"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111 $1",discount = 50) == "$499999999.50 $444444444.00 $388888888.50 $333333333.00 $277777777.50 $222222222.00 $166666666.50 $111111111.00 $55555555.50 $0.50": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 10) == "$0.00 $0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10 $9.00 $9.90 $10.80 $11.70 $12.60 $13.50 $14.40 $15.30 $16.20 $17.10 $18.00"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 10) == "$0.00 $0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10 $9.00 $9.90 $10.80 $11.70 $12.60 $13.50 $14.40 $15.30 $16.20 $17.10 $18.00": {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence = "$999 $888 $777 $666 $555 $444 $333 $222 $111 $10",discount = 99) == "$9.99 $8.88 $7.77 $6.66 $5.55 $4.44 $3.33 $2.22 $1.11 $0.10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence = "$999 $888 $777 $666 $555 $444 $333 $222 $111 $10",discount = 99) == "$9.99 $8.88 $7.77 $6.66 $5.55 $4.44 $3.33 $2.22 $1.11 $0.10": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(sentence = "$10 $20 $30 $40 $50",discount = 0) == "$10.00 $20.00 $30.00 $40.00 $50.00"
@@ -110,3 +982,5 @@ def check(candidate):
     assert candidate(sentence = "$999999999 $888888888 $777777777 $666666666 $555555555 $444444444 $333333333 $222222222 $111111111 $1",discount = 50) == "$499999999.50 $444444444.00 $388888888.50 $333333333.00 $277777777.50 $222222222.00 $166666666.50 $111111111.00 $55555555.50 $0.50"
     assert candidate(sentence = "$0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20",discount = 10) == "$0.00 $0.90 $1.80 $2.70 $3.60 $4.50 $5.40 $6.30 $7.20 $8.10 $9.00 $9.90 $10.80 $11.70 $12.60 $13.50 $14.40 $15.30 $16.20 $17.10 $18.00"
     assert candidate(sentence = "$999 $888 $777 $666 $555 $444 $333 $222 $111 $10",discount = 99) == "$9.99 $8.88 $7.77 $6.66 $5.55 $4.44 $3.33 $2.22 $1.11 $0.10"
+
+

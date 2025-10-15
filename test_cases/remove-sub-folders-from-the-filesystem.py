@@ -1,5 +1,789 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a', '/a/b', '/c/d', '/c/d/e', '/c/f']) == ['/a', '/c/d', '/c/f']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a', '/a/b', '/c/d', '/c/d/e', '/c/f']) == ['/a', '/c/d', '/c/f']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a', '/a/b/c', '/a/b/d']) == ['/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a', '/a/b/c', '/a/b/d']) == ['/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/m', '/m/n/o', '/m/n', '/p/q', '/p/q/r/s', '/p/q/t']) == ['/m', '/p/q']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/m', '/m/n/o', '/m/n', '/p/q', '/p/q/r/s', '/p/q/t']) == ['/m', '/p/q']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/one', '/one/two', '/three', '/three/four', '/three/four/five']) == ['/one', '/three']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/one', '/one/two', '/three', '/three/four', '/three/four/five']) == ['/one', '/three']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c', '/a/b/ca', '/a/b/d']) == ['/a/b/c', '/a/b/ca', '/a/b/d']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c', '/a/b/ca', '/a/b/d']) == ['/a/b/c', '/a/b/ca', '/a/b/d']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x', '/x/y/z', '/x/y', '/z/a', '/z/a/b']) == ['/x', '/z/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x', '/x/y/z', '/x/y', '/z/a', '/z/a/b']) == ['/x', '/z/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x', '/x/y', '/x/y/z', '/x/y/za', '/w']) == ['/w', '/x']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x', '/x/y', '/x/y/z', '/x/y/za', '/w']) == ['/w', '/x']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a', '/a/b/c', '/a/b/d']) == ['/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a', '/a/b/c', '/a/b/d']) == ['/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x', '/x/y/z', '/x/y', '/z', '/z/w']) == ['/x', '/z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x', '/x/y/z', '/x/y', '/z', '/z/w']) == ['/x', '/z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x', '/x/y/z', '/x/y', '/w']) == ['/w', '/x']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x', '/x/y/z', '/x/y', '/w']) == ['/w', '/x']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c', '/a/b/ca', '/a/b/d']) == ['/a/b/c', '/a/b/ca', '/a/b/d']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c', '/a/b/ca', '/a/b/d']) == ['/a/b/c', '/a/b/ca', '/a/b/d']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/one/two/three', '/one/two/three/four', '/one', '/two/three']) == ['/one', '/two/three']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/one/two/three', '/one/two/three/four', '/one', '/two/three']) == ['/one', '/two/three']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/m/n', '/m/no', '/m/no/p', '/m/no/qr', '/m/ns']) == ['/m/n', '/m/no', '/m/ns']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/m/n', '/m/no', '/m/no/p', '/m/no/qr', '/m/ns']) == ['/m/n', '/m/no', '/m/ns']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a', '/a/b', '/c/d', '/c/d/e', '/c/f']) == ['/a', '/c/d', '/c/f']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a', '/a/b', '/c/d', '/c/d/e', '/c/f']) == ['/a', '/c/d', '/c/f']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/z/alpha', '/x/y/z/beta', '/x/y/z/gamma/delta', '/x/y/z/gamma/epsilon']) == ['/x/y/z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/z/alpha', '/x/y/z/beta', '/x/y/z/gamma/delta', '/x/y/z/gamma/epsilon']) == ['/x/y/z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/z1', '/x/y1/z', '/x1/y/z']) == ['/x/y/z', '/x/y/z1', '/x/y1/z', '/x1/y/z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/z1', '/x/y1/z', '/x1/y/z']) == ['/x/y/z', '/x/y/z1', '/x/y1/z', '/x1/y/z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/syslog', '/var/log/auth.log', '/var/log/dpkg.log']) == ['/var/log/auth.log', '/var/log/dpkg.log', '/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/syslog']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/syslog', '/var/log/auth.log', '/var/log/dpkg.log']) == ['/var/log/auth.log', '/var/log/dpkg.log', '/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/syslog']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/home', '/home/user', '/home/user/projects', '/home/user/projects/work', '/home/user/projects/personal', '/home/user/projects/work/client_a', '/home/user/projects/work/client_b', '/home/user/downloads']) == ['/home']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/home', '/home/user', '/home/user/projects', '/home/user/projects/work', '/home/user/projects/personal', '/home/user/projects/work/client_a', '/home/user/projects/work/client_b', '/home/user/downloads']) == ['/home']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y', '/x/y/z/a', '/x/y/z/b/c', '/w/x/y/z', '/w/x/y']) == ['/w/x/y', '/x/y']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y', '/x/y/z/a', '/x/y/z/b/c', '/w/x/y/z', '/w/x/y']) == ['/w/x/y', '/x/y']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50']) == ['/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26', '/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/49/50']) == ['/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/lib/modules/5.4.0-generic', '/lib/modules/5.4.0-generic/kernel', '/lib/modules/5.4.0-generic/kernel/net', '/lib/modules/5.4.0-generic/kernel/net/core', '/lib/modules/5.4.0-generic/kernel/net/ipv4']) == ['/lib/modules/5.4.0-generic']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/lib/modules/5.4.0-generic', '/lib/modules/5.4.0-generic/kernel', '/lib/modules/5.4.0-generic/kernel/net', '/lib/modules/5.4.0-generic/kernel/net/core', '/lib/modules/5.4.0-generic/kernel/net/ipv4']) == ['/lib/modules/5.4.0-generic']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2/level3/level5', '/level1/level2/other']) == ['/level1/level2/level3', '/level1/level2/other']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2/level3/level5', '/level1/level2/other']) == ['/level1/level2/level3', '/level1/level2/other']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/documents', '/root/user/documents/reports', '/root/user/images', '/root/user/images/profile']) == ['/root/user/documents', '/root/user/images']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/documents', '/root/user/documents/reports', '/root/user/images', '/root/user/images/profile']) == ['/root/user/documents', '/root/user/images']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n', '/a/b/c/d/e/f/g/h/i/j/k/l/m', '/a/b/c/d/e/f/g/h/i/j/k/l', '/a/b/c/d/e/f/g/h/i/j/k', '/a/b/c/d/e/f/g/h/i/j', '/a/b/c/d/e/f/g/h/i', '/a/b/c/d/e/f/g/h', '/a/b/c/d/e/f/g', '/a/b/c/d/e/f', '/a/b/c/d/e', '/a/b/c/d', '/a/b/c', '/a/b', '/a']) == ['/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n', '/a/b/c/d/e/f/g/h/i/j/k/l/m', '/a/b/c/d/e/f/g/h/i/j/k/l', '/a/b/c/d/e/f/g/h/i/j/k', '/a/b/c/d/e/f/g/h/i/j', '/a/b/c/d/e/f/g/h/i', '/a/b/c/d/e/f/g/h', '/a/b/c/d/e/f/g', '/a/b/c/d/e/f', '/a/b/c/d/e', '/a/b/c/d', '/a/b/c', '/a/b', '/a']) == ['/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/var/log', '/var/log/syslog', '/var/log/user.log', '/var/log/nginx', '/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/audit', '/var/log/audit/audit.log']) == ['/var/log']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/var/log', '/var/log/syslog', '/var/log/user.log', '/var/log/nginx', '/var/log/nginx/access.log', '/var/log/nginx/error.log', '/var/log/audit', '/var/log/audit/audit.log']) == ['/var/log']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/home/user/projects/website/client', '/home/user/projects/website/server', '/home/user/projects/website', '/home/user/projects/api', '/home/user/projects/api/v1', '/home/user/projects/api/v2', '/home/user']) == ['/home/user']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/home/user/projects/website/client', '/home/user/projects/website/server', '/home/user/projects/website', '/home/user/projects/api', '/home/user/projects/api/v1', '/home/user/projects/api/v2', '/home/user']) == ['/home/user']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/library/books', '/library/books/fiction', '/library/books/fiction/scifi', '/library/books/fiction/scifi/fantasy', '/library/books/fiction/romance', '/library/books/nonfiction', '/library/books/nonfiction/biography', '/library/books/nonfiction/history']) == ['/library/books']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/library/books', '/library/books/fiction', '/library/books/fiction/scifi', '/library/books/fiction/scifi/fantasy', '/library/books/fiction/romance', '/library/books/nonfiction', '/library/books/nonfiction/biography', '/library/books/nonfiction/history']) == ['/library/books']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/1/2/3', '/a/1/2/3/4', '/a/1/2/3/4/5', '/a/1/2/3/4/5/6', '/a/1/2/3/7']) == ['/a/1/2/3']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/1/2/3', '/a/1/2/3/4', '/a/1/2/3/4/5', '/a/1/2/3/4/5/6', '/a/1/2/3/7']) == ['/a/1/2/3']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/folder1/folder2/folder3', '/folder1/folder2/folder3/folder4', '/folder1/folder2/folder3/folder4/folder5', '/folder1/folder2/folder3a', '/folder1/folder2a/folder3']) == ['/folder1/folder2/folder3', '/folder1/folder2/folder3a', '/folder1/folder2a/folder3']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/folder1/folder2/folder3', '/folder1/folder2/folder3/folder4', '/folder1/folder2/folder3/folder4/folder5', '/folder1/folder2/folder3a', '/folder1/folder2a/folder3']) == ['/folder1/folder2/folder3', '/folder1/folder2/folder3a', '/folder1/folder2a/folder3']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/m/n/o/p/q/r/s/t/u/v', '/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/m/n/o/p/q/r/s/t/u', '/m/n/o/p', '/m/n/o/p/q']) == ['/m/n/o/p']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/m/n/o/p/q/r/s/t/u/v', '/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/m/n/o/p/q/r/s/t/u', '/m/n/o/p', '/m/n/o/p/q']) == ['/m/n/o/p']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/books/science', '/books/science/physics', '/books/science/chemistry', '/books/science/biology', '/books/history', '/books/history/europe', '/books/history/asia']) == ['/books/history', '/books/science']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/books/science', '/books/science/physics', '/books/science/chemistry', '/books/science/biology', '/books/history', '/books/history/europe', '/books/history/asia']) == ['/books/history', '/books/science']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/alpha/beta/gamma/delta/epsilon/phi/chi', '/alpha/beta/gamma/delta/epsilon/phi/chi/psi', '/alpha/beta/gamma/delta/epsilon/phi/chi/psi/omega', '/alpha/beta/gamma/delta/epsilon/phi/theta']) == ['/alpha/beta/gamma/delta/epsilon/phi/chi', '/alpha/beta/gamma/delta/epsilon/phi/theta']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/alpha/beta/gamma/delta/epsilon/phi/chi', '/alpha/beta/gamma/delta/epsilon/phi/chi/psi', '/alpha/beta/gamma/delta/epsilon/phi/chi/psi/omega', '/alpha/beta/gamma/delta/epsilon/phi/theta']) == ['/alpha/beta/gamma/delta/epsilon/phi/chi', '/alpha/beta/gamma/delta/epsilon/phi/theta']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/system/logs/2023/01/01', '/system/logs/2023/01', '/system/logs/2023/02/01', '/system/logs/2023/02', '/system/logs/2023', '/system/config']) == ['/system/config', '/system/logs/2023']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/system/logs/2023/01/01', '/system/logs/2023/01', '/system/logs/2023/02/01', '/system/logs/2023/02', '/system/logs/2023', '/system/config']) == ['/system/config', '/system/logs/2023']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2/b2', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2/b2/c2']) == ['/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2/b2', '/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1/a2/b2/c2']) == ['/a1/b1/c1/d1/e1/f1/g1/h1/i1/j1/k1/l1/m1/n1/o1/p1/q1/r1/s1/t1/u1/v1/w1/x1/y1/z1']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/home/user/data/2020', '/home/user/data/2020/01', '/home/user/data/2020/02', '/home/user/data/2019', '/home/user/data/2020/01/report1', '/home/user/data/2020/01/report2']) == ['/home/user/data/2019', '/home/user/data/2020']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/home/user/data/2020', '/home/user/data/2020/01', '/home/user/data/2020/02', '/home/user/data/2019', '/home/user/data/2020/01/report1', '/home/user/data/2020/01/report2']) == ['/home/user/data/2019', '/home/user/data/2020']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/documents', '/root/user/documents/projects', '/root/user/downloads', '/root/user/downloads/archive', '/root/user/downloads/archive/old']) == ['/root/user/documents', '/root/user/downloads']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/documents', '/root/user/documents/projects', '/root/user/downloads', '/root/user/downloads/archive', '/root/user/downloads/archive/old']) == ['/root/user/documents', '/root/user/downloads']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/home/user1', '/home/user1/projects', '/home/user1/projects/python', '/home/user1/projects/java', '/home/user2', '/home/user2/music', '/home/user2/music/genres', '/home/user2/music/genres/classic']) == ['/home/user1', '/home/user2']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/home/user1', '/home/user1/projects', '/home/user1/projects/python', '/home/user1/projects/java', '/home/user2', '/home/user2/music', '/home/user2/music/genres', '/home/user2/music/genres/classic']) == ['/home/user1', '/home/user2']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/level1/level2/level3/level4', '/root/level1/level2/level3', '/root/level1/level2', '/root/level1', '/root']) == ['/root']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/level1/level2/level3/level4', '/root/level1/level2/level3', '/root/level1/level2', '/root/level1', '/root']) == ['/root']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8/dir9/dir10', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8/dir9', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7', '/dir1/dir2/dir3/dir4/dir5/dir6', '/dir1/dir2/dir3/dir4/dir5', '/dir1/dir2/dir3/dir4', '/dir1/dir2/dir3', '/dir1/dir2', '/dir1']) == ['/dir1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8/dir9/dir10', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8/dir9', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7/dir8', '/dir1/dir2/dir3/dir4/dir5/dir6/dir7', '/dir1/dir2/dir3/dir4/dir5/dir6', '/dir1/dir2/dir3/dir4/dir5', '/dir1/dir2/dir3/dir4', '/dir1/dir2/dir3', '/dir1/dir2', '/dir1']) == ['/dir1']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/docs', '/root/user/docs/2020', '/root/user/docs/2021', '/root/user/docs/2020/financials', '/root/user/docs/2020/financials/quarter1']) == ['/root/user/docs']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/docs', '/root/user/docs/2020', '/root/user/docs/2021', '/root/user/docs/2020/financials', '/root/user/docs/2020/financials/quarter1']) == ['/root/user/docs']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/deep/nested/folder/structure/here', '/deep/nested/folder/structure/here/is', '/deep/nested/folder/structure/here/is/a', '/deep/nested/folder/structure/here/is/a/test', '/deep/nested/folder/structure/here/is/a/test/file']) == ['/deep/nested/folder/structure/here']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/deep/nested/folder/structure/here', '/deep/nested/folder/structure/here/is', '/deep/nested/folder/structure/here/is/a', '/deep/nested/folder/structure/here/is/a/test', '/deep/nested/folder/structure/here/is/a/test/file']) == ['/deep/nested/folder/structure/here']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/projects', '/root/user/projects/phase1', '/root/user/projects/phase2', '/root/user/docs', '/root/user/docs/specifications']) == ['/root/user/docs', '/root/user/projects']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/projects', '/root/user/projects/phase1', '/root/user/projects/phase2', '/root/user/docs', '/root/user/docs/specifications']) == ['/root/user/docs', '/root/user/projects']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/z/w', '/x/y/z/w/x', '/x/y/z/w/x/y', '/x/y/z/w/x/y/z', '/x/y/z/w/x/y/z/a']) == ['/x/y/z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/z/w', '/x/y/z/w/x', '/x/y/z/w/x/y', '/x/y/z/w/x/y/z', '/x/y/z/w/x/y/z/a']) == ['/x/y/z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/user/home/documents', '/user/home/documents/reports/2020', '/user/home/documents/reports/2021', '/user/home/photos/vacation/2020', '/user/home/photos/vacation/2021/europe']) == ['/user/home/documents', '/user/home/photos/vacation/2020', '/user/home/photos/vacation/2021/europe']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/user/home/documents', '/user/home/documents/reports/2020', '/user/home/documents/reports/2021', '/user/home/photos/vacation/2020', '/user/home/photos/vacation/2021/europe']) == ['/user/home/documents', '/user/home/photos/vacation/2020', '/user/home/photos/vacation/2021/europe']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/abc/def/ghi/jkl', '/abc/def/ghi/jkl/mno', '/abc/def/ghi/jkl/mno/pqr', '/abc/def/ghi/jkl/mno/pqr/stu', '/abc/def/ghi/jkl/mno/pqr/vwx', '/abc/def/ghi/jkl/mno/pqr/vwx/yz']) == ['/abc/def/ghi/jkl']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/abc/def/ghi/jkl', '/abc/def/ghi/jkl/mno', '/abc/def/ghi/jkl/mno/pqr', '/abc/def/ghi/jkl/mno/pqr/stu', '/abc/def/ghi/jkl/mno/pqr/vwx', '/abc/def/ghi/jkl/mno/pqr/vwx/yz']) == ['/abc/def/ghi/jkl']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/z/w', '/x/y/zx', '/x/y/z/xy']) == ['/x/y/z', '/x/y/zx']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/z/w', '/x/y/zx', '/x/y/z/xy']) == ['/x/y/z', '/x/y/zx']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/project/src/main/java/com/example', '/root/project/src', '/root/project/tests/unit', '/root/project']) == ['/root/project']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/project/src/main/java/com/example', '/root/project/src', '/root/project/tests/unit', '/root/project']) == ['/root/project']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/child/grandchild', '/root/child', '/root/child2', '/root/child2/grandchild2']) == ['/root/child', '/root/child2']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/child/grandchild', '/root/child', '/root/child2', '/root/child2/grandchild2']) == ['/root/child', '/root/child2']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/system/core/libs', '/system/core/libs/graphics', '/system/core/libs/graphics/opengl', '/system/core/libs/graphics/opengl/gl32', '/system/core/libs/graphics/opengl/gl32/shaders', '/system/core/libs/graphics/opengl/gl32/shaders/vertex', '/system/core/libs/graphics/opengl/gl32/shaders/fragment']) == ['/system/core/libs']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/system/core/libs', '/system/core/libs/graphics', '/system/core/libs/graphics/opengl', '/system/core/libs/graphics/opengl/gl32', '/system/core/libs/graphics/opengl/gl32/shaders', '/system/core/libs/graphics/opengl/gl32/shaders/vertex', '/system/core/libs/graphics/opengl/gl32/shaders/fragment']) == ['/system/core/libs']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service', '/project/src/main/java/com/example/model/User', '/project/src/main/java/com/example/service/UserService', '/project/src/main/java/com/example/service/UserServiceImpl']) == ['/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service', '/project/src/main/java/com/example/model/User', '/project/src/main/java/com/example/service/UserService', '/project/src/main/java/com/example/service/UserServiceImpl']) == ['/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/alpha/beta/gamma/delta', '/alpha/beta/gamma/delta/epsilon', '/alpha/beta/gamma/delta/epsilon/zeta', '/alpha/beta/gamma/delta/eta', '/alpha/beta/gamma/delta/eta/theta', '/alpha/beta/gamma/delta/eta/theta/iota']) == ['/alpha/beta/gamma/delta']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/alpha/beta/gamma/delta', '/alpha/beta/gamma/delta/epsilon', '/alpha/beta/gamma/delta/epsilon/zeta', '/alpha/beta/gamma/delta/eta', '/alpha/beta/gamma/delta/eta/theta', '/alpha/beta/gamma/delta/eta/theta/iota']) == ['/alpha/beta/gamma/delta']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/alpha/bravo/charlie/delta', '/alpha/bravo/charlie/delta/echo', '/alpha/bravo/charlie/delta/echo/foxtrot', '/alpha/bravo/charlie/delta/echo/foxtrot/golf']) == ['/alpha/bravo/charlie/delta']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/alpha/bravo/charlie/delta', '/alpha/bravo/charlie/delta/echo', '/alpha/bravo/charlie/delta/echo/foxtrot', '/alpha/bravo/charlie/delta/echo/foxtrot/golf']) == ['/alpha/bravo/charlie/delta']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/a/b/c/d/e/f/g/h/i', '/root/a/b/c/d/e/f/g', '/root/a/b/c/d/e', '/root/a/b/c']) == ['/root/a/b/c']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/a/b/c/d/e/f/g/h/i', '/root/a/b/c/d/e/f/g', '/root/a/b/c/d/e', '/root/a/b/c']) == ['/root/a/b/c']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/one/two/three/four/five/six/seven', '/one/two/three/four/five/six/seven/eight', '/one/two/three/four/five/six/seven/eight/nine', '/one/two/three/four/five/six/seven/eight/ten']) == ['/one/two/three/four/five/six/seven']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/one/two/three/four/five/six/seven', '/one/two/three/four/five/six/seven/eight', '/one/two/three/four/five/six/seven/eight/nine', '/one/two/three/four/five/six/seven/eight/ten']) == ['/one/two/three/four/five/six/seven']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w']) == ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w']) == ['/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/nested/folder1', '/nested/folder1/folder2', '/nested/folder1/folder2/folder3', '/nested/folder1/folder2/folder3/folder4', '/nested/folder1/folder2/folder3/folder4/folder5']) == ['/nested/folder1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/nested/folder1', '/nested/folder1/folder2', '/nested/folder1/folder2/folder3', '/nested/folder1/folder2/folder3/folder4', '/nested/folder1/folder2/folder3/folder4/folder5']) == ['/nested/folder1']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/documents/2023/january', '/documents/2023/february/reports', '/documents/2023/february/presentations', '/documents/2023/march', '/documents/2023/april/meetings', '/documents/2023/april/holidays']) == ['/documents/2023/april/holidays', '/documents/2023/april/meetings', '/documents/2023/february/presentations', '/documents/2023/february/reports', '/documents/2023/january', '/documents/2023/march']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/documents/2023/january', '/documents/2023/february/reports', '/documents/2023/february/presentations', '/documents/2023/march', '/documents/2023/april/meetings', '/documents/2023/april/holidays']) == ['/documents/2023/april/holidays', '/documents/2023/april/meetings', '/documents/2023/february/presentations', '/documents/2023/february/reports', '/documents/2023/january', '/documents/2023/march']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/complex/folder/structure/with/deep/nesting/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10/level11/level12/level13/level14/level15/level16/level17/level18/level19/level20']) == ['/complex/folder/structure/with/deep/nesting/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10/level11/level12/level13/level14/level15/level16/level17/level18/level19/level20']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/complex/folder/structure/with/deep/nesting/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10/level11/level12/level13/level14/level15/level16/level17/level18/level19/level20']) == ['/complex/folder/structure/with/deep/nesting/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10/level11/level12/level13/level14/level15/level16/level17/level18/level19/level20']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d/e', '/a/b/c/d', '/a/b/c/d/f', '/a/b/c/d/f/g', '/a/b/c/d/f/h']) == ['/a/b/c/d']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d/e', '/a/b/c/d', '/a/b/c/d/f', '/a/b/c/d/f/g', '/a/b/c/d/f/h']) == ['/a/b/c/d']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/base/a', '/base/a/b', '/base/a/b/c', '/base/a/b/d', '/base/a/b/e/f', '/base/a/b/e/g', '/base/a/b/h/i/j/k', '/base/a/b/h/i/l', '/base/a/b/h/i/m/n/o/p']) == ['/base/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/base/a', '/base/a/b', '/base/a/b/c', '/base/a/b/d', '/base/a/b/e/f', '/base/a/b/e/g', '/base/a/b/h/i/j/k', '/base/a/b/h/i/l', '/base/a/b/h/i/m/n/o/p']) == ['/base/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/project/src/module1', '/project/src/module2', '/project/src/module1/submodule1', '/project/src/module2/submodule1', '/project/src/module1/submodule1/subsubmodule1', '/project/docs', '/project/docs/user_guide']) == ['/project/docs', '/project/src/module1', '/project/src/module2']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/project/src/module1', '/project/src/module2', '/project/src/module1/submodule1', '/project/src/module2/submodule1', '/project/src/module1/submodule1/subsubmodule1', '/project/docs', '/project/docs/user_guide']) == ['/project/docs', '/project/src/module1', '/project/src/module2']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/documents/projects/python', '/root/user/documents/projects/java', '/root/user/documents/music', '/root/user/downloads', '/root/user/pictures/vacation/2020', '/root/user/pictures/vacation/2021']) == ['/root/user/documents/music', '/root/user/documents/projects/java', '/root/user/documents/projects/python', '/root/user/downloads', '/root/user/pictures/vacation/2020', '/root/user/pictures/vacation/2021']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/documents/projects/python', '/root/user/documents/projects/java', '/root/user/documents/music', '/root/user/downloads', '/root/user/pictures/vacation/2020', '/root/user/pictures/vacation/2021']) == ['/root/user/documents/music', '/root/user/documents/projects/java', '/root/user/documents/projects/python', '/root/user/downloads', '/root/user/pictures/vacation/2020', '/root/user/pictures/vacation/2021']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/zoo/animals/mammals/carnivores/lions', '/zoo/animals/mammals/carnivores/tigers', '/zoo/animals/mammals/herbivores/elephants', '/zoo/animals/mammals/herbivores/giraffes', '/zoo/animals/birds/flying/eagles', '/zoo/animals/birds/flying/penguins', '/zoo/animals/birds/nonflying/ostriches', '/zoo/animals/birds/nonflying/emus']) == ['/zoo/animals/birds/flying/eagles', '/zoo/animals/birds/flying/penguins', '/zoo/animals/birds/nonflying/emus', '/zoo/animals/birds/nonflying/ostriches', '/zoo/animals/mammals/carnivores/lions', '/zoo/animals/mammals/carnivores/tigers', '/zoo/animals/mammals/herbivores/elephants', '/zoo/animals/mammals/herbivores/giraffes']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/zoo/animals/mammals/carnivores/lions', '/zoo/animals/mammals/carnivores/tigers', '/zoo/animals/mammals/herbivores/elephants', '/zoo/animals/mammals/herbivores/giraffes', '/zoo/animals/birds/flying/eagles', '/zoo/animals/birds/flying/penguins', '/zoo/animals/birds/nonflying/ostriches', '/zoo/animals/birds/nonflying/emus']) == ['/zoo/animals/birds/flying/eagles', '/zoo/animals/birds/flying/penguins', '/zoo/animals/birds/nonflying/emus', '/zoo/animals/birds/nonflying/ostriches', '/zoo/animals/mammals/carnivores/lions', '/zoo/animals/mammals/carnivores/tigers', '/zoo/animals/mammals/herbivores/elephants', '/zoo/animals/mammals/herbivores/giraffes']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10', '/level1/level2/level3/level4/level5/level6/level7/level8/level9', '/level1/level2/level3/level4/level5/level6/level7/level8', '/level1/level2/level3/level4/level5/level6/level7', '/level1/level2/level3/level4/level5/level6', '/level1/level2/level3/level4/level5', '/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2', '/level1']) == ['/level1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/level1/level2/level3/level4/level5/level6/level7/level8/level9/level10', '/level1/level2/level3/level4/level5/level6/level7/level8/level9', '/level1/level2/level3/level4/level5/level6/level7/level8', '/level1/level2/level3/level4/level5/level6/level7', '/level1/level2/level3/level4/level5/level6', '/level1/level2/level3/level4/level5', '/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2', '/level1']) == ['/level1']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/a', '/root/a/b', '/root/a/b/c', '/root/a/b/d', '/root/a/b/e/f', '/root/a/b/e/g', '/root/a/b/e', '/root/a/b/e/g/h']) == ['/root/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/a', '/root/a/b', '/root/a/b/c', '/root/a/b/d', '/root/a/b/e/f', '/root/a/b/e/g', '/root/a/b/e', '/root/a/b/e/g/h']) == ['/root/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/data/warehouse/logs', '/data/warehouse/logs/2021', '/data/warehouse/logs/2021/01', '/data/warehouse/logs/2021/02', '/data/warehouse/data', '/data/warehouse/data/raw', '/data/warehouse/data/processed']) == ['/data/warehouse/data', '/data/warehouse/logs']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/data/warehouse/logs', '/data/warehouse/logs/2021', '/data/warehouse/logs/2021/01', '/data/warehouse/logs/2021/02', '/data/warehouse/data', '/data/warehouse/data/raw', '/data/warehouse/data/processed']) == ['/data/warehouse/data', '/data/warehouse/logs']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d', '/a/b/c/d/e', '/a/b/c/d/f', '/a/b/c/d/g', '/a/b/c/d/h/i']) == ['/a/b/c/d']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d', '/a/b/c/d/e', '/a/b/c/d/f', '/a/b/c/d/g', '/a/b/c/d/h/i']) == ['/a/b/c/d']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/database/backups/2023/01', '/database/backups/2023/01/01', '/database/backups/2023/01/02', '/database/backups/2023/02', '/database/backups/2023/02/01', '/database/backups/2023/02/02', '/database/backups/2023', '/database/backups']) == ['/database/backups']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/database/backups/2023/01', '/database/backups/2023/01/01', '/database/backups/2023/01/02', '/database/backups/2023/02', '/database/backups/2023/02/01', '/database/backups/2023/02/02', '/database/backups/2023', '/database/backups']) == ['/database/backups']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/user/documents/report2021', '/user/documents/report2021/financials', '/user/documents/report2022', '/user/pictures/vacation2021', '/user/pictures/vacation2021/europe', '/user/pictures/vacation2022']) == ['/user/documents/report2021', '/user/documents/report2022', '/user/pictures/vacation2021', '/user/pictures/vacation2022']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/user/documents/report2021', '/user/documents/report2021/financials', '/user/documents/report2022', '/user/pictures/vacation2021', '/user/pictures/vacation2021/europe', '/user/pictures/vacation2022']) == ['/user/documents/report2021', '/user/documents/report2022', '/user/pictures/vacation2021', '/user/pictures/vacation2022']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/projects/alpha/beta/gamma/delta/epsilon/zeta', '/projects/alpha/beta/gamma/delta/epsilon/eta', '/projects/alpha/beta/gamma/delta', '/projects/alpha/beta/gamma', '/projects/alpha/beta']) == ['/projects/alpha/beta']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/projects/alpha/beta/gamma/delta/epsilon/zeta', '/projects/alpha/beta/gamma/delta/epsilon/eta', '/projects/alpha/beta/gamma/delta', '/projects/alpha/beta/gamma', '/projects/alpha/beta']) == ['/projects/alpha/beta']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2', '/level1/level2/level3/level4/level5', '/level1/level2/level3/level6', '/level1/level7']) == ['/level1/level2', '/level1/level7']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/level1/level2/level3/level4', '/level1/level2/level3', '/level1/level2', '/level1/level2/level3/level4/level5', '/level1/level2/level3/level6', '/level1/level7']) == ['/level1/level2', '/level1/level7']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/base/folder1/folder2/folder3', '/base/folder1/folder2/folder3/folder4', '/base/folder5', '/base/folder5/folder6', '/base/folder5/folder6/folder7', '/base/folder5/folder6/folder7/folder8']) == ['/base/folder1/folder2/folder3', '/base/folder5']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/base/folder1/folder2/folder3', '/base/folder1/folder2/folder3/folder4', '/base/folder5', '/base/folder5/folder6', '/base/folder5/folder6/folder7', '/base/folder5/folder6/folder7/folder8']) == ['/base/folder1/folder2/folder3', '/base/folder5']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y', '/x/y/z/w', '/x/y/v', '/x/y/z/v', '/x/y/v/w', '/x/u/v']) == ['/x/u/v', '/x/y']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y', '/x/y/z/w', '/x/y/v', '/x/y/z/v', '/x/y/v/w', '/x/u/v']) == ['/x/u/v', '/x/y']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/za', '/x/ya', '/x/yb', '/x/yc/zc', '/x/yc/zb']) == ['/x/y/z', '/x/y/za', '/x/ya', '/x/yb', '/x/yc/zb', '/x/yc/zc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/za', '/x/ya', '/x/yb', '/x/yc/zc', '/x/yc/zb']) == ['/x/y/z', '/x/y/za', '/x/ya', '/x/yb', '/x/yc/zb', '/x/yc/zc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d', '/a/b/c', '/a/b', '/a', '/a/b/c/d/e', '/a/b/c/f', '/a/g', '/a/g/h', '/a/g/i/j', '/a/g/i/j/k']) == ['/a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d', '/a/b/c', '/a/b', '/a', '/a/b/c/d/e', '/a/b/c/f', '/a/g', '/a/g/h', '/a/g/i/j', '/a/g/i/j/k']) == ['/a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/projects/webapp/client', '/projects/webapp/client/src', '/projects/webapp/client/src/components', '/projects/webapp/server', '/projects/webapp/server/routes', '/projects/webapp/server/models']) == ['/projects/webapp/client', '/projects/webapp/server']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/projects/webapp/client', '/projects/webapp/client/src', '/projects/webapp/client/src/components', '/projects/webapp/server', '/projects/webapp/server/routes', '/projects/webapp/server/models']) == ['/projects/webapp/client', '/projects/webapp/server']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/deep/path/to/file1', '/deep/path/to/file2', '/deep/path/to/another/deep/path/to/file3', '/deep/path/to/another/deep/path/to/file4', '/deep/path/to/another/deep/path/to/another/deep/path/to/file5']) == ['/deep/path/to/another/deep/path/to/another/deep/path/to/file5', '/deep/path/to/another/deep/path/to/file3', '/deep/path/to/another/deep/path/to/file4', '/deep/path/to/file1', '/deep/path/to/file2']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/deep/path/to/file1', '/deep/path/to/file2', '/deep/path/to/another/deep/path/to/file3', '/deep/path/to/another/deep/path/to/file4', '/deep/path/to/another/deep/path/to/another/deep/path/to/file5']) == ['/deep/path/to/another/deep/path/to/another/deep/path/to/file5', '/deep/path/to/another/deep/path/to/file3', '/deep/path/to/another/deep/path/to/file4', '/deep/path/to/file1', '/deep/path/to/file2']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/home/user1', '/home/user1/documents', '/home/user1/downloads', '/home/user1/downloads/software', '/home/user1/downloads/music', '/home/user2', '/home/user2/photos', '/home/user2/photos/vacation', '/home/user2/photos/vacation/beach']) == ['/home/user1', '/home/user2']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/home/user1', '/home/user1/documents', '/home/user1/downloads', '/home/user1/downloads/software', '/home/user1/downloads/music', '/home/user2', '/home/user2/photos', '/home/user2/photos/vacation', '/home/user2/photos/vacation/beach']) == ['/home/user1', '/home/user2']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/photos/travel/2022', '/photos/travel/2022/summer', '/photos/travel/2022/winter', '/photos/travel/2023', '/photos/travel/2023/spring', '/photos/travel/2023/autumn']) == ['/photos/travel/2022', '/photos/travel/2023']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/photos/travel/2022', '/photos/travel/2022/summer', '/photos/travel/2022/winter', '/photos/travel/2023', '/photos/travel/2023/spring', '/photos/travel/2023/autumn']) == ['/photos/travel/2022', '/photos/travel/2023']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/root/user/documents', '/root/user/documents/reports', '/root/user/pictures', '/root/user/pictures/vacation', '/root/user/pictures/vacation/2021']) == ['/root/user/documents', '/root/user/pictures']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/root/user/documents', '/root/user/documents/reports', '/root/user/pictures', '/root/user/pictures/vacation', '/root/user/pictures/vacation/2021']) == ['/root/user/documents', '/root/user/pictures']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/project/src/main/java/com/example', '/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service', '/project/src/test/java/com/example/service', '/project/src/test/resources', '/project/src/main/resources']) == ['/project/src/main/java/com/example', '/project/src/main/resources', '/project/src/test/java/com/example/service', '/project/src/test/resources']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/project/src/main/java/com/example', '/project/src/main/java/com/example/model', '/project/src/main/java/com/example/service', '/project/src/test/java/com/example/service', '/project/src/test/resources', '/project/src/main/resources']) == ['/project/src/main/java/com/example', '/project/src/main/resources', '/project/src/test/java/com/example/service', '/project/src/test/resources']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/x/y/z', '/x/y/za', '/x/y', '/x/y/z/zzz', '/x/y/z/zza']) == ['/x/y']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/x/y/z', '/x/y/za', '/x/y', '/x/y/z/zzz', '/x/y/z/zza']) == ['/x/y']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/code/base', '/code/base/core', '/code/base/core/utils', '/code/base/core/utils/a', '/code/base/core/utils/b', '/code/base/core/models', '/code/base/core/models/user', '/code/base/core/models/group']) == ['/code/base']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/code/base', '/code/base/core', '/code/base/core/utils', '/code/base/core/utils/a', '/code/base/core/utils/b', '/code/base/core/models', '/code/base/core/models/user', '/code/base/core/models/group']) == ['/code/base']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b', '/a/b/c', '/a/b/c/d', '/a/b/c/d/e', '/a/b/c/d/e/f', '/a/b/c/d/e/f/g', '/a/b/c/d/e/f/g/h', '/a/b/c/d/e/f/g/h/i', '/a/b/c/d/e/f/g/h/i/j', '/a/b/c/d/e/f/g/h/i/j/k', '/a/b/c/d/e/f/g/h/i/j/k/l', '/a/b/c/d/e/f/g/h/i/j/k/l/m', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q']) == ['/a/b']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b', '/a/b/c', '/a/b/c/d', '/a/b/c/d/e', '/a/b/c/d/e/f', '/a/b/c/d/e/f/g', '/a/b/c/d/e/f/g/h', '/a/b/c/d/e/f/g/h/i', '/a/b/c/d/e/f/g/h/i/j', '/a/b/c/d/e/f/g/h/i/j/k', '/a/b/c/d/e/f/g/h/i/j/k/l', '/a/b/c/d/e/f/g/h/i/j/k/l/m', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p', '/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q']) == ['/a/b']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/m/n/o/p/q/r', '/m/n/o/p/q/r/s', '/m/n/o/p/q/r/s/t', '/m/n/o/p/q/r/u', '/m/n/o/p/v', '/m/n/o/p/v/w', '/m/n/o/p/v/w/x']) == ['/m/n/o/p/q/r', '/m/n/o/p/v']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/m/n/o/p/q/r', '/m/n/o/p/q/r/s', '/m/n/o/p/q/r/s/t', '/m/n/o/p/q/r/u', '/m/n/o/p/v', '/m/n/o/p/v/w', '/m/n/o/p/v/w/x']) == ['/m/n/o/p/q/r', '/m/n/o/p/v']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/folder1/subfolder1/subsubfolder1', '/folder1/subfolder1/subsubfolder2', '/folder1/subfolder2', '/folder2', '/folder2/subfolder1', '/folder2/subfolder2', '/folder3/subfolder1/subsubfolder1']) == ['/folder1/subfolder1/subsubfolder1', '/folder1/subfolder1/subsubfolder2', '/folder1/subfolder2', '/folder2', '/folder3/subfolder1/subsubfolder1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/folder1/subfolder1/subsubfolder1', '/folder1/subfolder1/subsubfolder2', '/folder1/subfolder2', '/folder2', '/folder2/subfolder1', '/folder2/subfolder2', '/folder3/subfolder1/subsubfolder1']) == ['/folder1/subfolder1/subsubfolder1', '/folder1/subfolder1/subsubfolder2', '/folder1/subfolder2', '/folder2', '/folder3/subfolder1/subsubfolder1']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/mnt/external/storage', '/mnt/external/storage/backup', '/mnt/external/storage/photos', '/mnt/external/storage/photos/vacation', '/mnt/external/storage/photos/wedding', '/mnt/external/storage/videos', '/mnt/external/storage/videos/home', '/mnt/external/storage/videos/travel']) == ['/mnt/external/storage']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/mnt/external/storage', '/mnt/external/storage/backup', '/mnt/external/storage/photos', '/mnt/external/storage/photos/vacation', '/mnt/external/storage/photos/wedding', '/mnt/external/storage/videos', '/mnt/external/storage/videos/home', '/mnt/external/storage/videos/travel']) == ['/mnt/external/storage']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/server/logs', '/server/logs/2020', '/server/logs/2020/01', '/server/logs/2020/01/01', '/server/logs/2020/01/02', '/server/logs/2020/02', '/server/logs/2020/02/01', '/server/logs/2020/02/02', '/server/logs/2020/03', '/server/logs/2020/03/01', '/server/logs/2020/03/02']) == ['/server/logs']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/server/logs', '/server/logs/2020', '/server/logs/2020/01', '/server/logs/2020/01/01', '/server/logs/2020/01/02', '/server/logs/2020/02', '/server/logs/2020/02/01', '/server/logs/2020/02/02', '/server/logs/2020/03', '/server/logs/2020/03/01', '/server/logs/2020/03/02']) == ['/server/logs']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/user/home', '/user/home/settings', '/user/home/settings/preferences', '/user/home/settings/notifications', '/user/home/documents', '/user/home/documents/work', '/user/home/documents/personal']) == ['/user/home']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/user/home', '/user/home/settings', '/user/home/settings/preferences', '/user/home/settings/notifications', '/user/home/documents', '/user/home/documents/work', '/user/home/documents/personal']) == ['/user/home']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/data/warehouse/sales/2020/january', '/data/warehouse/sales/2020/february', '/data/warehouse/sales/2020', '/data/warehouse/marketing/2020/january', '/data/warehouse/marketing/2020', '/data/warehouse']) == ['/data/warehouse']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/data/warehouse/sales/2020/january', '/data/warehouse/sales/2020/february', '/data/warehouse/sales/2020', '/data/warehouse/marketing/2020/january', '/data/warehouse/marketing/2020', '/data/warehouse']) == ['/data/warehouse']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/p/q/r', '/p/q/r/s', '/p/q/r/s/t', '/p/q/r/s/u', '/p/q/v', '/p/q/v/w', '/p/q/v/w/x', '/p/q/v/w/y']) == ['/p/q/r', '/p/q/v']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/p/q/r', '/p/q/r/s', '/p/q/r/s/t', '/p/q/r/s/u', '/p/q/v', '/p/q/v/w', '/p/q/v/w/x', '/p/q/v/w/y']) == ['/p/q/r', '/p/q/v']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/nested/folder1/subfolder1', '/nested/folder1/subfolder2/subsubfolder1', '/nested/folder1/subfolder2/subsubfolder2', '/nested/folder2/subfolder1', '/nested/folder2/subfolder2', '/nested/folder3']) == ['/nested/folder1/subfolder1', '/nested/folder1/subfolder2/subsubfolder1', '/nested/folder1/subfolder2/subsubfolder2', '/nested/folder2/subfolder1', '/nested/folder2/subfolder2', '/nested/folder3']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/nested/folder1/subfolder1', '/nested/folder1/subfolder2/subsubfolder1', '/nested/folder1/subfolder2/subsubfolder2', '/nested/folder2/subfolder1', '/nested/folder2/subfolder2', '/nested/folder3']) == ['/nested/folder1/subfolder1', '/nested/folder1/subfolder2/subsubfolder1', '/nested/folder1/subfolder2/subsubfolder2', '/nested/folder2/subfolder1', '/nested/folder2/subfolder2', '/nested/folder3']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/data/backups', '/data/backups/weekly', '/data/backups/monthly', '/data/backups/yearly', '/data/backups/weekly/2021-01-01', '/data/backups/weekly/2021-02-01', '/data/backups/monthly/2021-01', '/data/backups/yearly/2020']) == ['/data/backups']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/data/backups', '/data/backups/weekly', '/data/backups/monthly', '/data/backups/yearly', '/data/backups/weekly/2021-01-01', '/data/backups/weekly/2021-02-01', '/data/backups/monthly/2021-01', '/data/backups/yearly/2020']) == ['/data/backups']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/project/src', '/project/src/components', '/project/src/components/button', '/project/src/components/input', '/project/src/utils', '/project/src/utils/helpers', '/project/src/utils/api', '/project/src/assets', '/project/src/assets/images', '/project/src/assets/fonts', '/project/src/assets/icons']) == ['/project/src']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/project/src', '/project/src/components', '/project/src/components/button', '/project/src/components/input', '/project/src/utils', '/project/src/utils/helpers', '/project/src/utils/api', '/project/src/assets', '/project/src/assets/images', '/project/src/assets/fonts', '/project/src/assets/icons']) == ['/project/src']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/a/b/c/d/e/f', '/a/b/c/d', '/a/b/c', '/a/b', '/a', '/z/y/x', '/z/y', '/z']) == ['/a', '/z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/a/b/c/d/e/f', '/a/b/c/d', '/a/b/c', '/a/b', '/a', '/z/y/x', '/z/y', '/z']) == ['/a', '/z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/folder1/folder2/folder3/folder4/folder5', '/folder1/folder2/folder3/folder4/folder5/folder6', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder/deeper/subfolder']) == ['/folder1/folder2/folder3/folder4/folder5']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/folder1/folder2/folder3/folder4/folder5', '/folder1/folder2/folder3/folder4/folder5/folder6', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder/deeper/subfolder']) == ['/folder1/folder2/folder3/folder4/folder5']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(folder = ['/apps/production/app1', '/apps/production/app1/v1', '/apps/production/app1/v2', '/apps/staging/app1', '/apps/staging/app1/v1']) == ['/apps/production/app1', '/apps/staging/app1']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(folder = ['/apps/production/app1', '/apps/production/app1/v1', '/apps/production/app1/v2', '/apps/staging/app1', '/apps/staging/app1/v1']) == ['/apps/production/app1', '/apps/staging/app1']: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(folder = ['/a', '/a/b', '/c/d', '/c/d/e', '/c/f']) == ['/a', '/c/d', '/c/f']
@@ -99,3 +883,5 @@ def check(candidate):
     assert candidate(folder = ['/a/b/c/d/e/f', '/a/b/c/d', '/a/b/c', '/a/b', '/a', '/z/y/x', '/z/y', '/z']) == ['/a', '/z']
     assert candidate(folder = ['/folder1/folder2/folder3/folder4/folder5', '/folder1/folder2/folder3/folder4/folder5/folder6', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder', '/folder1/folder2/folder3/folder4/folder5/folder7/subfolder/deeper/subfolder']) == ['/folder1/folder2/folder3/folder4/folder5']
     assert candidate(folder = ['/apps/production/app1', '/apps/production/app1/v1', '/apps/production/app1/v2', '/apps/staging/app1', '/apps/staging/app1/v1']) == ['/apps/production/app1', '/apps/staging/app1']
+
+

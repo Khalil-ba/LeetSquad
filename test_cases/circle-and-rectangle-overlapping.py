@@ -1,5 +1,925 @@
-# Import the utils module for prompts
-from utils import *
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = -3,yCenter = -4,x1 = -6,y1 = -6,x2 = -2,y2 = -2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = -3,yCenter = -4,x1 = -6,y1 = -6,x2 = -2,y2 = -2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -2,yCenter = -2,x1 = -5,y1 = -5,x2 = -3,y2 = -3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -2,yCenter = -2,x1 = -5,y1 = -5,x2 = -3,y2 = -3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 0,yCenter = 0,x1 = -5,y1 = -5,x2 = 5,y2 = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 0,yCenter = 0,x1 = -5,y1 = -5,x2 = 5,y2 = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = -1,x2 = 3,y2 = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = -1,x2 = 3,y2 = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = 0,x2 = 0,y2 = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = 0,x2 = 0,y2 = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 3,yCenter = 4,x1 = 0,y1 = 0,x2 = 2,y2 = 2) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 3,yCenter = 4,x1 = 0,y1 = 0,x2 = 2,y2 = 2) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = -3,yCenter = 4,x1 = -5,y1 = 1,x2 = -1,y2 = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = -3,yCenter = 4,x1 = -5,y1 = 1,x2 = -1,y2 = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -2,yCenter = -2,x1 = -4,y1 = -4,x2 = 0,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -2,yCenter = -2,x1 = -4,y1 = -4,x2 = 0,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 1,yCenter = 1,x1 = 1,y1 = -3,x2 = 2,y2 = -1) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 1,yCenter = 1,x1 = 1,y1 = -3,x2 = 2,y2 = -1) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 5,yCenter = 5,x1 = 0,y1 = 0,x2 = 10,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 5,yCenter = 5,x1 = 0,y1 = 0,x2 = 10,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = -10,yCenter = -10,x1 = -20,y1 = -20,x2 = -5,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = -10,yCenter = -10,x1 = -20,y1 = -20,x2 = -5,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 8,xCenter = -20,yCenter = -20,x1 = -25,y1 = -25,x2 = -15,y2 = -15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 8,xCenter = -20,yCenter = -20,x1 = -25,y1 = -25,x2 = -15,y2 = -15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = -1,x2 = 1,y2 = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = -1,x2 = 1,y2 = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 25,xCenter = -30,yCenter = 30,x1 = -50,y1 = 10,x2 = -10,y2 = 50) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 25,xCenter = -30,yCenter = 30,x1 = -50,y1 = 10,x2 = -10,y2 = 50) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 100,xCenter = 1000,yCenter = 1000,x1 = 900,y1 = 900,x2 = 1050,y2 = 1050) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 100,xCenter = 1000,yCenter = 1000,x1 = 900,y1 = 900,x2 = 1050,y2 = 1050) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = 1,yCenter = 1,x1 = -2,y1 = -2,x2 = 2,y2 = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = 1,yCenter = 1,x1 = -2,y1 = -2,x2 = 2,y2 = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = 0,yCenter = 0,x1 = -3,y1 = -3,x2 = 3,y2 = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = 0,yCenter = 0,x1 = -3,y1 = -3,x2 = 3,y2 = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 10,yCenter = 10,x1 = 11,y1 = 11,x2 = 13,y2 = 13) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 10,yCenter = 10,x1 = 11,y1 = 11,x2 = 13,y2 = 13) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = -4,yCenter = -4,x1 = -5,y1 = -5,x2 = -3,y2 = -3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = -4,yCenter = -4,x1 = -5,y1 = -5,x2 = -3,y2 = -3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 20,xCenter = 50,yCenter = 50,x1 = 20,y1 = 20,x2 = 80,y2 = 80) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 20,xCenter = 50,yCenter = 50,x1 = 20,y1 = 20,x2 = 80,y2 = 80) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = 2500,yCenter = -2500,x1 = 2490,y1 = -2510,x2 = 2510,y2 = -2490) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = 2500,yCenter = -2500,x1 = 2490,y1 = -2510,x2 = 2510,y2 = -2490) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 12,xCenter = 18,yCenter = 18,x1 = 10,y1 = 10,x2 = 26,y2 = 26) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 12,xCenter = 18,yCenter = 18,x1 = 10,y1 = 10,x2 = 26,y2 = 26) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -20,y1 = -20,x2 = 20,y2 = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -20,y1 = -20,x2 = 20,y2 = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = -10000,yCenter = -10000,x1 = -10001,y1 = -10001,x2 = -9999,y2 = -9999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = -10000,yCenter = -10000,x1 = -10001,y1 = -10001,x2 = -9999,y2 = -9999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = 0,yCenter = 0,x1 = -8,y1 = -8,x2 = 8,y2 = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = 0,yCenter = 0,x1 = -8,y1 = -8,x2 = 8,y2 = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 2,yCenter = 3,x1 = 1,y1 = 2,x2 = 3,y2 = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 2,yCenter = 3,x1 = 1,y1 = 2,x2 = 3,y2 = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 9,xCenter = 0,yCenter = -1,x1 = -5,y1 = -10,x2 = 5,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 9,xCenter = 0,yCenter = -1,x1 = -5,y1 = -10,x2 = 5,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = 25,yCenter = -25,x1 = 15,y1 = -35,x2 = 35,y2 = -15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = 25,yCenter = -25,x1 = 15,y1 = -35,x2 = 35,y2 = -15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = -15,yCenter = -15,x1 = -25,y1 = -25,x2 = -5,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = -15,yCenter = -15,x1 = -25,y1 = -25,x2 = -5,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1000,xCenter = 10000,yCenter = 10000,x1 = 9999,y1 = 9999,x2 = 10001,y2 = 10001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1000,xCenter = 10000,yCenter = 10000,x1 = 9999,y1 = 9999,x2 = 10001,y2 = 10001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 3,yCenter = 4,x1 = 2,y1 = 3,x2 = 4,y2 = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 3,yCenter = 4,x1 = 2,y1 = 3,x2 = 4,y2 = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 5,yCenter = 0,x1 = 4,y1 = -1,x2 = 6,y2 = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 5,yCenter = 0,x1 = 4,y1 = -1,x2 = 6,y2 = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 12,xCenter = -200,yCenter = 200,x1 = -220,y1 = 180,x2 = -180,y2 = 220) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 12,xCenter = -200,yCenter = 200,x1 = -220,y1 = 180,x2 = -180,y2 = 220) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = -1,x2 = 0,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -1,y1 = -1,x2 = 0,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 100,xCenter = -500,yCenter = 500,x1 = -600,y1 = 400,x2 = -400,y2 = 600) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 100,xCenter = -500,yCenter = 500,x1 = -600,y1 = 400,x2 = -400,y2 = 600) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = 0,yCenter = 0,x1 = 4,y1 = 4,x2 = 5,y2 = 5) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = 0,yCenter = 0,x1 = 4,y1 = 4,x2 = 5,y2 = 5) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = -10,yCenter = -10,x1 = -20,y1 = -20,x2 = 0,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = -10,yCenter = -10,x1 = -20,y1 = -20,x2 = 0,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = -10000,yCenter = -10000,x1 = -10001,y1 = -10001,x2 = -9999,y2 = -9999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = -10000,yCenter = -10000,x1 = -10001,y1 = -10001,x2 = -9999,y2 = -9999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -5,y1 = -5,x2 = 5,y2 = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -5,y1 = -5,x2 = 5,y2 = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 9,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 9,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 6,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = 0,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 6,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = 0,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 5,yCenter = 5,x1 = 3,y1 = 3,x2 = 7,y2 = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 5,yCenter = 5,x1 = 3,y1 = 3,x2 = 7,y2 = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 10000,yCenter = 10000,x1 = 9990,y1 = 9990,x2 = 10010,y2 = 10010) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 10000,yCenter = 10000,x1 = 9990,y1 = 9990,x2 = 10010,y2 = 10010) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -2001,y1 = -2001,x2 = 2001,y2 = 2001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -2001,y1 = -2001,x2 = 2001,y2 = 2001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 2,y1 = 2,x2 = 3,y2 = 3) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 2,y1 = 2,x2 = 3,y2 = 3) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 500,xCenter = 5000,yCenter = 5000,x1 = 4500,y1 = 4500,x2 = 5500,y2 = 5500) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 500,xCenter = 5000,yCenter = 5000,x1 = 4500,y1 = 4500,x2 = 5500,y2 = 5500) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -100,yCenter = 100,x1 = -110,y1 = 90,x2 = -90,y2 = 110) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -100,yCenter = 100,x1 = -110,y1 = 90,x2 = -90,y2 = 110) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = -10,yCenter = 10,x1 = -15,y1 = 5,x2 = -5,y2 = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = -10,yCenter = 10,x1 = -15,y1 = 5,x2 = -5,y2 = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 500,yCenter = 500,x1 = 499,y1 = 499,x2 = 501,y2 = 501) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 500,yCenter = 500,x1 = 499,y1 = 499,x2 = 501,y2 = 501) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = -10000,yCenter = 10000,x1 = -10010,y1 = 9990,x2 = -9990,y2 = 10010) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = -10000,yCenter = 10000,x1 = -10010,y1 = 9990,x2 = -9990,y2 = 10010) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 20,xCenter = 0,yCenter = 0,x1 = -30,y1 = -30,x2 = 30,y2 = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 20,xCenter = 0,yCenter = 0,x1 = -30,y1 = -30,x2 = 30,y2 = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -2,y1 = -2,x2 = -1,y2 = -1) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = -2,y1 = -2,x2 = -1,y2 = -1) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 0,yCenter = 0,x1 = 0,y1 = 0,x2 = 4,y2 = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 0,yCenter = 0,x1 = 0,y1 = 0,x2 = 4,y2 = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 10000,yCenter = 10000,x1 = 9999,y1 = 9999,x2 = 10001,y2 = 10001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 10000,yCenter = 10000,x1 = 9999,y1 = 9999,x2 = 10001,y2 = 10001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 20,yCenter = 20,x1 = 15,y1 = 15,x2 = 25,y2 = 25) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 20,yCenter = 20,x1 = 15,y1 = 15,x2 = 25,y2 = 25) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -6,yCenter = -6,x1 = -10,y1 = -10,x2 = -5,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -6,yCenter = -6,x1 = -10,y1 = -10,x2 = -5,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 12,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 12,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = -10,yCenter = -10,x1 = -13,y1 = -13,x2 = -11,y2 = -11) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = -10,yCenter = -10,x1 = -13,y1 = -13,x2 = -11,y2 = -11) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = 1,x2 = 2,y2 = 2) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = 1,x2 = 2,y2 = 2) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 6,xCenter = -2,yCenter = 4,x1 = -6,y1 = 0,x2 = 0,y2 = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 6,xCenter = -2,yCenter = 4,x1 = -6,y1 = 0,x2 = 0,y2 = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 25,yCenter = 25,x1 = 20,y1 = 20,x2 = 30,y2 = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 25,yCenter = 25,x1 = 20,y1 = 20,x2 = 30,y2 = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = 15,yCenter = 15,x1 = 20,y1 = 20,x2 = 30,y2 = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = 15,yCenter = 15,x1 = 20,y1 = 20,x2 = 30,y2 = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -2,yCenter = -3,x1 = -4,y1 = -5,x2 = -3,y2 = -4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -2,yCenter = -3,x1 = -4,y1 = -5,x2 = -3,y2 = -4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -10000,y1 = -10000,x2 = 10000,y2 = 10000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -10000,y1 = -10000,x2 = 10000,y2 = 10000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 8,xCenter = 12,yCenter = 12,x1 = 8,y1 = 8,x2 = 16,y2 = 16) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 8,xCenter = 12,yCenter = 12,x1 = 8,y1 = 8,x2 = 16,y2 = 16) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = -10,yCenter = 10,x1 = -20,y1 = -10,x2 = 0,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = -10,yCenter = 10,x1 = -20,y1 = -10,x2 = 0,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 300,xCenter = -750,yCenter = 750,x1 = -1000,y1 = 500,x2 = -500,y2 = 1000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 300,xCenter = -750,yCenter = 750,x1 = -1000,y1 = 500,x2 = -500,y2 = 1000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = 20,yCenter = -20,x1 = 15,y1 = -25,x2 = 25,y2 = -15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = 20,yCenter = -20,x1 = 15,y1 = -25,x2 = 25,y2 = -15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = 50,yCenter = 50,x1 = 40,y1 = 40,x2 = 60,y2 = 60) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = 50,yCenter = 50,x1 = 40,y1 = 40,x2 = 60,y2 = 60) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = 5000,yCenter = 5000,x1 = 0,y1 = 0,x2 = 10000,y2 = 10000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = 5000,yCenter = 5000,x1 = 0,y1 = 0,x2 = 10000,y2 = 10000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 10,yCenter = 10,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = -4,yCenter = -4,x1 = -6,y1 = -6,x2 = -2,y2 = -2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = -4,yCenter = -4,x1 = -6,y1 = -6,x2 = -2,y2 = -2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = -3,yCenter = 3,x1 = -6,y1 = 0,x2 = 0,y2 = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = -3,yCenter = 3,x1 = -6,y1 = 0,x2 = 0,y2 = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 10000,yCenter = -10000,x1 = 9999,y1 = -10001,x2 = 10001,y2 = -9999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 10000,yCenter = -10000,x1 = 9999,y1 = -10001,x2 = 10001,y2 = -9999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 8,xCenter = 100,yCenter = -100,x1 = 90,y1 = -110,x2 = 110,y2 = -90) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 8,xCenter = 100,yCenter = -100,x1 = 90,y1 = -110,x2 = 110,y2 = -90) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -3000,y1 = -3000,x2 = 3000,y2 = 3000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = 0,yCenter = 0,x1 = -3000,y1 = -3000,x2 = 3000,y2 = 3000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 5,yCenter = 5,x1 = 0,y1 = 0,x2 = 10,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 5,yCenter = 5,x1 = 0,y1 = 0,x2 = 10,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1500,xCenter = 5000,yCenter = 5000,x1 = 4500,y1 = 4500,x2 = 5500,y2 = 5500) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1500,xCenter = 5000,yCenter = 5000,x1 = 4500,y1 = 4500,x2 = 5500,y2 = 5500) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 0,y1 = 0,x2 = 2,y2 = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 0,y1 = 0,x2 = 2,y2 = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = -2,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = -2,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = 0,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = -5,yCenter = 5,x1 = -10,y1 = 0,x2 = 0,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = -5,yCenter = -5,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = -5,yCenter = -5,x1 = 5,y1 = 5,x2 = 15,y2 = 15) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 500,xCenter = 2500,yCenter = -2500,x1 = 2000,y1 = -3000,x2 = 3000,y2 = -2000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 500,xCenter = 2500,yCenter = -2500,x1 = 2000,y1 = -3000,x2 = 3000,y2 = -2000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 1,yCenter = 1,x1 = -3,y1 = -3,x2 = 3,y2 = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 1,yCenter = 1,x1 = -3,y1 = -3,x2 = 3,y2 = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = 1000,yCenter = 1000,x1 = 900,y1 = 900,x2 = 1100,y2 = 1100) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = 1000,yCenter = 1000,x1 = 900,y1 = 900,x2 = 1100,y2 = 1100) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 150,xCenter = 0,yCenter = 0,x1 = -200,y1 = -200,x2 = 200,y2 = 200) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 150,xCenter = 0,yCenter = 0,x1 = -200,y1 = -200,x2 = 200,y2 = 200) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 6,xCenter = -15,yCenter = -15,x1 = -20,y1 = -20,x2 = -10,y2 = -10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 6,xCenter = -15,yCenter = -15,x1 = -20,y1 = -20,x2 = -10,y2 = -10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = 2,yCenter = 2,x1 = -1,y1 = -1,x2 = 3,y2 = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = 2,yCenter = 2,x1 = -1,y1 = -1,x2 = 3,y2 = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 100,yCenter = 100,x1 = 101,y1 = 101,x2 = 103,y2 = 103) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 100,yCenter = 100,x1 = 101,y1 = 101,x2 = 103,y2 = 103) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 3,xCenter = 5,yCenter = 5,x1 = 8,y1 = 8,x2 = 12,y2 = 12) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 3,xCenter = 5,yCenter = 5,x1 = 8,y1 = 8,x2 = 12,y2 = 12) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = -10,yCenter = -10,x1 = -15,y1 = -15,x2 = -5,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = -10,yCenter = -10,x1 = -15,y1 = -15,x2 = -5,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 2,yCenter = 2,x1 = 1,y1 = 1,x2 = 3,y2 = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 2,yCenter = 2,x1 = 1,y1 = 1,x2 = 3,y2 = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 2,yCenter = 2,x1 = 3,y1 = 3,x2 = 5,y2 = 5) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 2,yCenter = 2,x1 = 3,y1 = 3,x2 = 5,y2 = 5) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = -5,yCenter = -5,x1 = -10,y1 = -10,x2 = -2,y2 = -2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = -5,yCenter = -5,x1 = -10,y1 = -10,x2 = -2,y2 = -2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = -5,yCenter = -5,x1 = -10,y1 = -10,x2 = -2,y2 = -2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = -5,yCenter = -5,x1 = -10,y1 = -10,x2 = -2,y2 = -2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = -100,yCenter = -100,x1 = -120,y1 = -120,x2 = -80,y2 = -80) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = -100,yCenter = -100,x1 = -120,y1 = -120,x2 = -80,y2 = -80) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 8,xCenter = 10,yCenter = -10,x1 = 5,y1 = -15,x2 = 15,y2 = -5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 8,xCenter = 10,yCenter = -10,x1 = 5,y1 = -15,x2 = 15,y2 = -5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 20,xCenter = -30,yCenter = 30,x1 = -40,y1 = 20,x2 = -20,y2 = 40) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 20,xCenter = -30,yCenter = 30,x1 = -40,y1 = 20,x2 = -20,y2 = 40) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = -10000,yCenter = 10000,x1 = -10010,y1 = 9990,x2 = -9990,y2 = 10010) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = -10000,yCenter = 10000,x1 = -10010,y1 = 9990,x2 = -9990,y2 = 10010) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 6,yCenter = 6,x1 = 0,y1 = 0,x2 = 5,y2 = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 6,yCenter = 6,x1 = 0,y1 = 0,x2 = 5,y2 = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 15,xCenter = -10,yCenter = 10,x1 = -20,y1 = -20,x2 = 0,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 15,xCenter = -10,yCenter = 10,x1 = -20,y1 = -20,x2 = 0,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = 5,yCenter = -5,x1 = 0,y1 = -10,x2 = 10,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = 5,yCenter = -5,x1 = 0,y1 = -10,x2 = 10,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2,xCenter = 0,yCenter = 0,x1 = -3,y1 = -3,x2 = -2,y2 = -2) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2,xCenter = 0,yCenter = 0,x1 = -3,y1 = -3,x2 = -2,y2 = -2) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 7,xCenter = 3,yCenter = -3,x1 = 1,y1 = -5,x2 = 5,y2 = -1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 7,xCenter = 3,yCenter = -3,x1 = 1,y1 = -5,x2 = 5,y2 = -1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 5,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 5,xCenter = 0,yCenter = 0,x1 = -10,y1 = -10,x2 = 10,y2 = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -15,y1 = -15,x2 = 15,y2 = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 10,xCenter = 0,yCenter = 0,x1 = -15,y1 = -15,x2 = 15,y2 = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = 0,x2 = 2,y2 = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 1,xCenter = 0,yCenter = 0,x1 = 1,y1 = 0,x2 = 2,y2 = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 2000,xCenter = -5000,yCenter = -5000,x1 = -10000,y1 = -10000,x2 = 0,y2 = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 2000,xCenter = -5000,yCenter = -5000,x1 = -10000,y1 = -10000,x2 = 0,y2 = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 4,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 4,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(radius = 50,xCenter = -100,yCenter = 100,x1 = -150,y1 = 50,x2 = -50,y2 = 150) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(radius = 50,xCenter = -100,yCenter = 100,x1 = -150,y1 = 50,x2 = -50,y2 = 150) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
 
 def check(candidate):
     assert candidate(radius = 3,xCenter = -3,yCenter = -4,x1 = -6,y1 = -6,x2 = -2,y2 = -2) == True
@@ -116,3 +1036,5 @@ def check(candidate):
     assert candidate(radius = 2000,xCenter = -5000,yCenter = -5000,x1 = -10000,y1 = -10000,x2 = 0,y2 = 0) == True
     assert candidate(radius = 4,xCenter = 15,yCenter = 15,x1 = 10,y1 = 10,x2 = 20,y2 = 20) == True
     assert candidate(radius = 50,xCenter = -100,yCenter = 100,x1 = -150,y1 = 50,x2 = -50,y2 = 150) == True
+
+
