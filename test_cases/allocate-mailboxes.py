@@ -1,0 +1,986 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 5, 17, 1, 18, 2, 12, 9],k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 5, 17, 1, 18, 2, 12, 9],k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25],k = 2) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25],k = 2) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 6, 14, 10],k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 6, 14, 10],k = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 6, 14, 16, 25, 28, 30],k = 2) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 6, 14, 16, 25, 28, 30],k = 2) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 4, 8, 10, 20],k = 3) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 4, 8, 10, 20],k = 3) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10000],k = 1) == 9999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10000],k = 1) == 9999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5],k = 1) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5],k = 1) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 3, 5, 12, 18],k = 2) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 3, 5, 12, 18],k = 2) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [7, 4, 6, 1],k = 1) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [7, 4, 6, 1],k = 1) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 7, 10, 11, 12, 16],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 7, 10, 11, 12, 16],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30],k = 2) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30],k = 2) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [8, 5, 2, 9, 6],k = 2) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [8, 5, 2, 9, 6],k = 2) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50],k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50],k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 5) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 5) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 6, 9, 12, 17, 23, 30],k = 4) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 6, 9, 12, 17, 23, 30],k = 4) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 5, 7, 12, 16, 22, 26, 30, 35],k = 3) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 5, 7, 12, 16, 22, 26, 30, 35],k = 3) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22],k = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22],k = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125],k = 6) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125],k = 6) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 6, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 5) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 6, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 5) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29],k = 4) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29],k = 4) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50],k = 5) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50],k = 5) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22, 25, 28, 30, 33, 36, 39, 42, 45, 48],k = 6) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22, 25, 28, 30, 33, 36, 39, 42, 45, 48],k = 6) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 15) == 159
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 15) == 159: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990],k = 15) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990],k = 15) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 5) == 599
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 5) == 599: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10, 100, 1000, 10000],k = 2) == 1089
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10, 100, 1000, 10000],k = 2) == 1089: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 5) == 65025
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 5) == 65025: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 2) == 111098889
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 2) == 111098889: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 5) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 5) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 3) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 3) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 3) == 999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 3) == 999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85, 91, 97, 103, 109, 115, 121, 127, 133, 139, 145, 151, 157, 163, 169, 175],k = 15) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85, 91, 97, 103, 109, 115, 121, 127, 133, 139, 145, 151, 157, 163, 169, 175],k = 15) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 89
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 89: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 25, 62, 155, 387, 967, 2417, 6042, 15105, 37762, 94405, 236012],k = 6) == 3674
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 25, 62, 155, 387, 967, 2417, 6042, 15105, 37762, 94405, 236012],k = 6) == 3674: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 2) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 2) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],k = 4) == 8001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],k = 4) == 8001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 15) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 15) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 10) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 10) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145, 160, 175, 190, 200],k = 8) == 85
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145, 160, 175, 190, 200],k = 8) == 85: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946],k = 8) == 701
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946],k = 8) == 701: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 16) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 16) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 9, 12, 15, 18, 21, 24, 27],k = 3) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 9, 12, 15, 18, 21, 24, 27],k = 3) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200],k = 8) == 5871
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200],k = 8) == 5871: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 8, 14, 20, 26, 32, 38, 44, 50, 56],k = 5) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 8, 14, 20, 26, 32, 38, 44, 50, 56],k = 5) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961],k = 12) == 539
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961],k = 12) == 539: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205],k = 5) == 220
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205],k = 5) == 220: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 109
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 109: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],k = 10) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],k = 10) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],k = 5) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],k = 5) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 11) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 11) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80],k = 8) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80],k = 8) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],k = 3) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],k = 3) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],k = 10) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],k = 10) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205, 215, 225],k = 13) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205, 215, 225],k = 13) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],k = 10) == 3969
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],k = 10) == 3969: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 45, 135, 405, 1215, 3645, 10935, 32805, 98415],k = 5) == 1690
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 45, 135, 405, 1215, 3645, 10935, 32805, 98415],k = 5) == 1690: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 8) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 8) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],k = 5) == 199
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],k = 5) == 199: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],k = 5) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],k = 5) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 6) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 6) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 10, 20, 35, 55, 80, 110, 145, 185, 230],k = 3) == 189
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 10, 20, 35, 55, 80, 110, 145, 185, 230],k = 3) == 189: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 7) == 139
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 7) == 139: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 3) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 3) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 4) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 4) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],k = 15) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],k = 15) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 5) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 5) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],k = 2) == 131
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],k = 2) == 131: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70],k = 6) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70],k = 6) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],k = 7) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],k = 7) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987],k = 6) == 154
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987],k = 6) == 154: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 8, 14, 15, 20, 25],k = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 8, 14, 15, 20, 25],k = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 4) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 4) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45],k = 4) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45],k = 4) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 8, 24, 64, 160, 416, 1040, 2608, 6528, 16384, 40960, 102400],k = 8) == 214
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 8, 24, 64, 160, 416, 1040, 2608, 6528, 16384, 40960, 102400],k = 8) == 214: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 8, 15, 20, 26, 32, 40, 45, 50],k = 4) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 8, 15, 20, 26, 32, 40, 45, 50],k = 4) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77],k = 3) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77],k = 3) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],k = 20) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],k = 20) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 8) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 8) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 7) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 7) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 4) == 1697
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 4) == 1697: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55],k = 4) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55],k = 4) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [3, 7, 11, 15, 19, 23, 27, 31],k = 3) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [3, 7, 11, 15, 19, 23, 27, 31],k = 3) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 5, 9, 14, 20, 27, 35, 44, 54, 65, 77, 90],k = 6) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 5, 9, 14, 20, 27, 35, 44, 54, 65, 77, 90],k = 6) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],k = 25) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],k = 25) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 6) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 6) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],k = 10) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],k = 10) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(houses = [1, 5, 9, 14, 20, 25, 30, 35, 40],k = 4) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(houses = [1, 5, 9, 14, 20, 25, 30, 35, 40],k = 4) == 23: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(houses = [10, 5, 17, 1, 18, 2, 12, 9],k = 3) == 8
+    assert candidate(houses = [5, 10, 15, 20, 25],k = 2) == 15
+    assert candidate(houses = [3, 6, 14, 10],k = 4) == 0
+    assert candidate(houses = [3, 6, 14, 16, 25, 28, 30],k = 2) == 26
+    assert candidate(houses = [1, 4, 8, 10, 20],k = 3) == 5
+    assert candidate(houses = [1, 10000],k = 1) == 9999
+    assert candidate(houses = [1, 2, 3, 4, 5],k = 1) == 6
+    assert candidate(houses = [2, 3, 5, 12, 18],k = 2) == 9
+    assert candidate(houses = [7, 4, 6, 1],k = 1) == 8
+    assert candidate(houses = [5, 7, 10, 11, 12, 16],k = 3) == 4
+    assert candidate(houses = [5, 10, 15, 20, 25, 30],k = 2) == 20
+    assert candidate(houses = [8, 5, 2, 9, 6],k = 2) == 5
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5
+    assert candidate(houses = [10, 20, 30, 40, 50],k = 5) == 0
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 5) == 200
+    assert candidate(houses = [1, 6, 9, 12, 17, 23, 30],k = 4) == 12
+    assert candidate(houses = [2, 5, 7, 12, 16, 22, 26, 30, 35],k = 3) == 24
+    assert candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22],k = 4) == 10
+    assert candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125],k = 6) == 70
+    assert candidate(houses = [2, 6, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 5) == 28
+    assert candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29],k = 4) == 18
+    assert candidate(houses = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50],k = 5) == 42
+    assert candidate(houses = [1, 3, 6, 8, 12, 15, 18, 22, 25, 28, 30, 33, 36, 39, 42, 45, 48],k = 6) == 32
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465
+    assert candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 15) == 159
+    assert candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990],k = 15) == 633
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 5) == 10
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 20) == 0
+    assert candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 5) == 599
+    assert candidate(houses = [1, 10, 100, 1000, 10000],k = 2) == 1089
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 5) == 65025
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1) == 100
+    assert candidate(houses = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 2) == 111098889
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 10
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 5) == 20
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 3) == 225
+    assert candidate(houses = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 3) == 999
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 100
+    assert candidate(houses = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85, 91, 97, 103, 109, 115, 121, 127, 133, 139, 145, 151, 157, 163, 169, 175],k = 15) == 90
+    assert candidate(houses = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 89
+    assert candidate(houses = [10, 25, 62, 155, 387, 967, 2417, 6042, 15105, 37762, 94405, 236012],k = 6) == 3674
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 2) == 60
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],k = 4) == 8001
+    assert candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 15) == 45
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50
+    assert candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90],k = 10) == 60
+    assert candidate(houses = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145, 160, 175, 190, 200],k = 8) == 85
+    assert candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946],k = 8) == 701
+    assert candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 16) == 40
+    assert candidate(houses = [1, 3, 6, 9, 12, 15, 18, 21, 24, 27],k = 3) == 23
+    assert candidate(houses = [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200],k = 8) == 5871
+    assert candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10
+    assert candidate(houses = [2, 8, 14, 20, 26, 32, 38, 44, 50, 56],k = 5) == 30
+    assert candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961],k = 12) == 539
+    assert candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205],k = 5) == 220
+    assert candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 109
+    assert candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],k = 5) == 10
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],k = 10) == 100
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 10) == 100
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50
+    assert candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],k = 5) == 16
+    assert candidate(houses = [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 11) == 48
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 10) == 50
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80],k = 8) == 40
+    assert candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],k = 3) == 36
+    assert candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],k = 10) == 30
+    assert candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195, 205, 215, 225],k = 13) == 100
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],k = 10) == 3969
+    assert candidate(houses = [5, 15, 45, 135, 405, 1215, 3645, 10935, 32805, 98415],k = 5) == 1690
+    assert candidate(houses = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101],k = 8) == 80
+    assert candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],k = 5) == 199
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 50
+    assert candidate(houses = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],k = 5) == 35
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 6) == 90
+    assert candidate(houses = [1, 5, 10, 20, 35, 55, 80, 110, 145, 185, 230],k = 3) == 189
+    assert candidate(houses = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 7) == 139
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 3) == 80
+    assert candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 4) == 34
+    assert candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 5) == 10
+    assert candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],k = 15) == 20
+    assert candidate(houses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 5) == 100
+    assert candidate(houses = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],k = 2) == 131
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 7) == 80
+    assert candidate(houses = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70],k = 6) == 44
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 5
+    assert candidate(houses = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],k = 7) == 24
+    assert candidate(houses = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987],k = 6) == 154
+    assert candidate(houses = [1, 3, 6, 8, 14, 15, 20, 25],k = 4) == 10
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 60
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 4) == 24
+    assert candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45],k = 4) == 24
+    assert candidate(houses = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],k = 7) == 465
+    assert candidate(houses = [2, 8, 24, 64, 160, 416, 1040, 2608, 6528, 16384, 40960, 102400],k = 8) == 214
+    assert candidate(houses = [2, 8, 15, 20, 26, 32, 40, 45, 50],k = 4) == 27
+    assert candidate(houses = [7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77],k = 3) == 90
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 8
+    assert candidate(houses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],k = 20) == 300
+    assert candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 8) == 120
+    assert candidate(houses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195],k = 7) == 130
+    assert candidate(houses = [1, 2, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 4) == 1697
+    assert candidate(houses = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55],k = 4) == 33
+    assert candidate(houses = [3, 7, 11, 15, 19, 23, 27, 31],k = 3) == 20
+    assert candidate(houses = [2, 5, 9, 14, 20, 27, 35, 44, 54, 65, 77, 90],k = 6) == 39
+    assert candidate(houses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],k = 25) == 50
+    assert candidate(houses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 6) == 9
+    assert candidate(houses = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],k = 10) == 20
+    assert candidate(houses = [1, 5, 9, 14, 20, 25, 30, 35, 40],k = 4) == 23
+
+

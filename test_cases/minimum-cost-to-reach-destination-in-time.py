@@ -1,0 +1,896 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 5,edges = [[0, 1, 5], [0, 2, 5], [1, 3, 5], [2, 3, 5], [3, 4, 5]],passingFees = [10, 10, 10, 10, 10]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 5,edges = [[0, 1, 5], [0, 2, 5], [1, 3, 5], [2, 3, 5], [3, 4, 5]],passingFees = [10, 10, 10, 10, 10]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 1, 1, 10]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 1, 1, 10]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 20,edges = [[0, 1, 10], [1, 0, 10], [0, 2, 5], [2, 0, 5], [1, 3, 10], [3, 1, 10], [2, 3, 10], [3, 2, 10]],passingFees = [1, 2, 3, 4]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 20,edges = [[0, 1, 10], [1, 0, 10], [0, 2, 5], [2, 0, 5], [1, 3, 10], [3, 1, 10], [2, 3, 10], [3, 2, 10]],passingFees = [1, 2, 3, 4]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 15,edges = [[0, 1, 10], [1, 2, 10], [0, 2, 1]],passingFees = [3, 1, 2]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 15,edges = [[0, 1, 10], [1, 2, 10], [0, 2, 1]],passingFees = [3, 1, 2]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 29,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 29,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 1], [0, 2, 1], [1, 2, 1], [1, 3, 1], [2, 3, 1]],passingFees = [1, 1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 1], [0, 2, 1], [1, 2, 1], [1, 3, 1], [2, 3, 1]],passingFees = [1, 1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 1, 1, 1, 1, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 1, 1, 1, 1, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 5,edges = [[0, 1, 6], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 5,edges = [[0, 1, 6], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 10,edges = [[0, 1, 3], [1, 2, 3], [0, 2, 5]],passingFees = [1, 2, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 10,edges = [[0, 1, 3], [1, 2, 3], [0, 2, 5]],passingFees = [1, 2, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 20, 30, 40]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 20, 30, 40]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 20,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 2, 5], [1, 3, 6]],passingFees = [1, 2, 3, 4]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 20,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 2, 5], [1, 3, 6]],passingFees = [1, 2, 3, 4]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 1,edges = [[0, 1, 1]],passingFees = [1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 1,edges = [[0, 1, 1]],passingFees = [1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 45,edges = [[0, 1, 10], [1, 2, 15], [2, 3, 20], [0, 2, 25], [1, 3, 30], [2, 4, 10], [3, 5, 15], [0, 3, 35], [1, 4, 40], [2, 5, 20], [0, 4, 50], [1, 5, 55]],passingFees = [5, 4, 3, 2, 1, 6]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 45,edges = [[0, 1, 10], [1, 2, 15], [2, 3, 20], [0, 2, 25], [1, 3, 30], [2, 4, 10], [3, 5, 15], [0, 3, 35], [1, 4, 40], [2, 5, 20], [0, 4, 50], [1, 5, 55]],passingFees = [5, 4, 3, 2, 1, 6]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 150,edges = [[0, 1, 20], [1, 2, 30], [0, 2, 40], [2, 3, 10], [3, 4, 50], [0, 3, 10], [1, 4, 30], [4, 5, 20], [5, 6, 40], [6, 7, 30], [7, 5, 15], [6, 8, 10], [8, 9, 50], [9, 0, 20], [9, 1, 10], [1, 3, 25]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 150,edges = [[0, 1, 20], [1, 2, 30], [0, 2, 40], [2, 3, 10], [3, 4, 50], [0, 3, 10], [1, 4, 30], [4, 5, 20], [5, 6, 40], [6, 7, 30], [7, 5, 15], [6, 8, 10], [8, 9, 50], [9, 0, 20], [9, 1, 10], [1, 3, 25]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 500,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 15], [1, 3, 20], [2, 3, 25], [2, 4, 30], [3, 4, 35], [3, 5, 40], [4, 5, 45], [4, 6, 50], [5, 6, 55], [5, 7, 60], [6, 7, 65], [6, 8, 70], [7, 8, 75], [7, 9, 80], [8, 9, 85], [0, 3, 30], [0, 4, 40], [0, 5, 50], [1, 4, 45], [1, 5, 55], [1, 6, 65], [2, 5, 50], [2, 6, 60], [2, 7, 70], [3, 6, 65], [3, 7, 75], [3, 8, 80], [4, 7, 70], [4, 8, 80], [4, 9, 85], [5, 8, 80], [5, 9, 85], [6, 9, 85]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 500,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 15], [1, 3, 20], [2, 3, 25], [2, 4, 30], [3, 4, 35], [3, 5, 40], [4, 5, 45], [4, 6, 50], [5, 6, 55], [5, 7, 60], [6, 7, 65], [6, 8, 70], [7, 8, 75], [7, 9, 80], [8, 9, 85], [0, 3, 30], [0, 4, 40], [0, 5, 50], [1, 4, 45], [1, 5, 55], [1, 6, 65], [2, 5, 50], [2, 6, 60], [2, 7, 70], [3, 6, 65], [3, 7, 75], [3, 8, 80], [4, 7, 70], [4, 8, 80], [4, 9, 85], [5, 8, 80], [5, 9, 85], [6, 9, 85]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5], [0, 10, 10], [1, 9, 15], [2, 8, 20], [3, 7, 25], [4, 6, 30]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5], [0, 10, 10], [1, 9, 15], [2, 8, 20], [3, 7, 25], [4, 6, 30]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 30], [2, 3, 10], [3, 4, 50], [0, 2, 40], [1, 3, 10], [2, 4, 20]],passingFees = [10, 5, 15, 20, 25]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 30], [2, 3, 10], [3, 4, 50], [0, 2, 40], [1, 3, 10], [2, 4, 20]],passingFees = [10, 5, 15, 20, 25]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 300,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [9, 0, 10], [0, 9, 9], [1, 0, 1], [2, 1, 2], [3, 2, 3], [4, 3, 4], [5, 4, 5], [6, 5, 6], [7, 6, 7], [8, 7, 8], [9, 8, 9]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 300,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [9, 0, 10], [0, 9, 9], [1, 0, 1], [2, 1, 2], [3, 2, 3], [4, 3, 4], [5, 4, 5], [6, 5, 6], [7, 6, 7], [8, 7, 8], [9, 8, 9]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 15,edges = [[0, 1, 4], [1, 2, 3], [0, 2, 6], [2, 3, 5], [3, 4, 7], [0, 3, 8], [1, 3, 2]],passingFees = [2, 3, 4, 1, 5]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 15,edges = [[0, 1, 4], [1, 2, 3], [0, 2, 6], [2, 3, 5], [3, 4, 7], [0, 3, 8], [1, 3, 2]],passingFees = [2, 3, 4, 1, 5]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 50], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 10], [0, 5, 90], [1, 3, 25], [2, 4, 15]],passingFees = [10, 20, 30, 40, 50, 60]) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 50], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 10], [0, 5, 90], [1, 3, 25], [2, 4, 15]],passingFees = [10, 20, 30, 40, 50, 60]) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 25,edges = [[0, 1, 2], [1, 2, 2], [2, 3, 2], [3, 4, 2], [4, 5, 2], [0, 5, 10], [1, 3, 5], [2, 4, 5], [0, 3, 7], [0, 4, 8], [1, 4, 4], [2, 5, 3]],passingFees = [1, 2, 3, 4, 5, 6]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 25,edges = [[0, 1, 2], [1, 2, 2], [2, 3, 2], [3, 4, 2], [4, 5, 2], [0, 5, 10], [1, 3, 5], [2, 4, 5], [0, 3, 7], [0, 4, 8], [1, 4, 4], [2, 5, 3]],passingFees = [1, 2, 3, 4, 5, 6]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 600,edges = [[0, 1, 15], [0, 5, 15], [1, 2, 25], [1, 6, 25], [2, 3, 35], [2, 7, 35], [3, 4, 45], [3, 8, 45], [4, 9, 55], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 6, 25], [1, 7, 35], [2, 8, 45], [3, 9, 55], [0, 7, 35], [1, 8, 45], [2, 9, 55], [0, 8, 45], [1, 9, 55], [0, 9, 55], [5, 10, 5], [10, 6, 5], [6, 10, 5], [7, 10, 5], [10, 8, 5], [8, 10, 5], [9, 10, 5]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 600,edges = [[0, 1, 15], [0, 5, 15], [1, 2, 25], [1, 6, 25], [2, 3, 35], [2, 7, 35], [3, 4, 45], [3, 8, 45], [4, 9, 55], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 6, 25], [1, 7, 35], [2, 8, 45], [3, 9, 55], [0, 7, 35], [1, 8, 45], [2, 9, 55], [0, 8, 45], [1, 9, 55], [0, 9, 55], [5, 10, 5], [10, 6, 5], [6, 10, 5], [7, 10, 5], [10, 8, 5], [8, 10, 5], [9, 10, 5]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 60,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15], [0, 2, 10], [1, 3, 10], [3, 4, 10], [2, 4, 10], [0, 4, 20]],passingFees = [3, 2, 1, 2, 3]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 60,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15], [0, 2, 10], [1, 3, 10], [3, 4, 10], [2, 4, 10], [0, 4, 20]],passingFees = [3, 2, 1, 2, 3]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 10,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [0, 3, 5], [0, 2, 1], [1, 3, 1]],passingFees = [1, 2, 3, 4]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 10,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [0, 3, 5], [0, 2, 1], [1, 3, 1]],passingFees = [1, 2, 3, 4]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5]],passingFees = [1, 1, 1, 1, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5]],passingFees = [1, 1, 1, 1, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 220,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40], [0, 4, 50], [3, 2, 40]],passingFees = [1, 1, 1, 1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 220,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40], [0, 4, 50], [3, 2, 40]],passingFees = [1, 1, 1, 1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 300,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [0, 2, 60], [1, 3, 60], [2, 4, 60], [0, 3, 70], [1, 4, 70], [0, 4, 80]],passingFees = [10, 20, 30, 40, 50]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 300,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [0, 2, 60], [1, 3, 60], [2, 4, 60], [0, 3, 70], [1, 4, 70], [0, 4, 80]],passingFees = [10, 20, 30, 40, 50]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 40], [1, 2, 5]],passingFees = [10, 15, 20, 25, 30]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 40], [1, 2, 5]],passingFees = [10, 15, 20, 25, 30]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [0, 3, 50], [3, 5, 50]],passingFees = [5, 10, 15, 20, 25, 30]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [0, 3, 50], [3, 5, 50]],passingFees = [5, 10, 15, 20, 25, 30]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40]],passingFees = [100, 200, 150, 50, 300]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40]],passingFees = [100, 200, 150, 50, 300]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 250,edges = [[0, 1, 5], [1, 2, 15], [2, 3, 25], [3, 4, 35], [4, 5, 45], [0, 5, 55], [1, 3, 25], [2, 4, 35], [0, 4, 45], [1, 4, 15]],passingFees = [5, 5, 5, 5, 5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 250,edges = [[0, 1, 5], [1, 2, 15], [2, 3, 25], [3, 4, 35], [4, 5, 45], [0, 5, 55], [1, 3, 25], [2, 4, 35], [0, 4, 45], [1, 4, 15]],passingFees = [5, 5, 5, 5, 5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 600,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 600,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 5, 5], [1, 6, 5], [2, 7, 5], [3, 8, 5], [4, 9, 5]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 5, 5], [1, 6, 5], [2, 7, 5], [3, 8, 5], [4, 9, 5]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 25], [1, 4, 40], [3, 4, 15], [4, 5, 5], [5, 6, 30], [6, 1, 25], [2, 6, 10]],passingFees = [10, 15, 20, 25, 30, 35, 40]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 25], [1, 4, 40], [3, 4, 15], [4, 5, 5], [5, 6, 30], [6, 1, 25], [2, 6, 10]],passingFees = [10, 15, 20, 25, 30, 35, 40]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [5, 1, 2, 20, 20, 3, 5, 1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [5, 1, 2, 20, 20, 3, 5, 1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 120,edges = [[0, 1, 20], [0, 2, 30], [0, 3, 10], [1, 2, 15], [1, 3, 20], [1, 4, 10], [2, 3, 25], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5], [0, 5, 20]],passingFees = [15, 25, 35, 45, 55, 65]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 120,edges = [[0, 1, 20], [0, 2, 30], [0, 3, 10], [1, 2, 15], [1, 3, 20], [1, 4, 10], [2, 3, 25], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5], [0, 5, 20]],passingFees = [15, 25, 35, 45, 55, 65]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 30], [0, 2, 20], [1, 2, 10], [1, 3, 40], [2, 4, 20], [3, 4, 10], [3, 5, 50], [4, 5, 30], [2, 5, 25], [5, 6, 10], [6, 7, 20], [6, 8, 15], [7, 8, 5], [8, 9, 10], [9, 0, 10]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 30], [0, 2, 20], [1, 2, 10], [1, 3, 40], [2, 4, 20], [3, 4, 10], [3, 5, 50], [4, 5, 30], [2, 5, 25], [5, 6, 10], [6, 7, 20], [6, 8, 15], [7, 8, 5], [8, 9, 10], [9, 0, 10]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 10], [0, 3, 15], [3, 4, 20], [2, 4, 25], [4, 5, 30]],passingFees = [5, 10, 15, 20, 25, 30]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 10], [0, 3, 15], [3, 4, 20], [2, 4, 25], [4, 5, 30]],passingFees = [5, 10, 15, 20, 25, 30]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 10], [4, 5, 10], [0, 3, 25], [1, 4, 20]],passingFees = [10, 20, 30, 40, 50, 60]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 10], [4, 5, 10], [0, 3, 25], [1, 4, 20]],passingFees = [10, 20, 30, 40, 50, 60]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 60,edges = [[0, 1, 10], [0, 2, 15], [0, 3, 20], [1, 2, 5], [1, 3, 10], [2, 3, 25], [1, 4, 10], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5]],passingFees = [10, 20, 30, 40, 50, 60]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 60,edges = [[0, 1, 10], [0, 2, 15], [0, 3, 20], [1, 2, 5], [1, 3, 10], [2, 3, 25], [1, 4, 10], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5]],passingFees = [10, 20, 30, 40, 50, 60]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 0, 5], [0, 2, 10], [1, 3, 10], [2, 4, 10]],passingFees = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 0, 5], [0, 2, 10], [1, 3, 10], [2, 4, 10]],passingFees = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 80,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 40], [0, 3, 50], [3, 4, 60], [0, 4, 70]],passingFees = [5, 5, 5, 5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 80,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 40], [0, 3, 50], [3, 4, 60], [0, 4, 70]],passingFees = [5, 5, 5, 5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [0, 2, 4], [1, 3, 3], [2, 4, 2], [3, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [0, 2, 4], [1, 3, 3], [2, 4, 2], [3, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 120,edges = [[0, 1, 15], [1, 2, 25], [2, 3, 35], [3, 4, 45], [0, 3, 65], [1, 4, 75], [2, 4, 85], [0, 4, 95], [3, 1, 105], [4, 2, 115]],passingFees = [50, 20, 30, 40, 60]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 120,edges = [[0, 1, 15], [1, 2, 25], [2, 3, 35], [3, 4, 45], [0, 3, 65], [1, 4, 75], [2, 4, 85], [0, 4, 95], [3, 1, 105], [4, 2, 115]],passingFees = [50, 20, 30, 40, 60]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 20,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6], [0, 5, 10]],passingFees = [5, 10, 15, 20, 25, 30]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 20,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6], [0, 5, 10]],passingFees = [5, 10, 15, 20, 25, 30]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 500,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 500,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 3, 30], [1, 3, 30], [2, 4, 30], [3, 4, 30], [0, 4, 50]],passingFees = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 3, 30], [1, 3, 30], [2, 4, 30], [3, 4, 30], [0, 4, 50]],passingFees = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 550,edges = [[0, 1, 20], [0, 5, 20], [1, 2, 30], [1, 6, 30], [2, 3, 40], [2, 7, 40], [3, 4, 50], [3, 8, 50], [4, 9, 60], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [0, 6, 40], [1, 7, 50], [2, 8, 60], [3, 9, 70], [0, 7, 50], [1, 8, 60], [2, 9, 70], [0, 8, 60], [1, 9, 70], [0, 9, 70]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 550,edges = [[0, 1, 20], [0, 5, 20], [1, 2, 30], [1, 6, 30], [2, 3, 40], [2, 7, 40], [3, 4, 50], [3, 8, 50], [4, 9, 60], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [0, 6, 40], [1, 7, 50], [2, 8, 60], [3, 9, 70], [0, 7, 50], [1, 8, 60], [2, 9, 70], [0, 8, 60], [1, 9, 70], [0, 9, 70]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 400,edges = [[0, 1, 30], [1, 2, 30], [2, 3, 30], [3, 4, 30], [0, 2, 50], [1, 3, 50], [2, 4, 50], [0, 3, 70], [1, 4, 70], [0, 4, 90], [0, 5, 40], [5, 4, 10], [4, 6, 60], [6, 5, 10], [5, 3, 20]],passingFees = [5, 15, 25, 35, 45, 55, 65]) == 115
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 400,edges = [[0, 1, 30], [1, 2, 30], [2, 3, 30], [3, 4, 30], [0, 2, 50], [1, 3, 50], [2, 4, 50], [0, 3, 70], [1, 4, 70], [0, 4, 90], [0, 5, 40], [5, 4, 10], [4, 6, 60], [6, 5, 10], [5, 3, 20]],passingFees = [5, 15, 25, 35, 45, 55, 65]) == 115: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 350,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 20], [3, 4, 40], [0, 3, 30], [1, 2, 20], [0, 4, 50], [1, 4, 30], [2, 4, 40]],passingFees = [10, 20, 30, 40, 50]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 350,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 20], [3, 4, 40], [0, 3, 30], [1, 2, 20], [0, 4, 50], [1, 4, 30], [2, 4, 40]],passingFees = [10, 20, 30, 40, 50]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 350,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [3, 4, 200], [4, 5, 250], [5, 6, 300], [6, 7, 350], [7, 8, 400], [8, 9, 450], [0, 9, 500]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 350,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [3, 4, 200], [4, 5, 250], [5, 6, 300], [6, 7, 350], [7, 8, 400], [8, 9, 450], [0, 9, 500]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 30,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 3], [1, 3, 15], [2, 3, 20], [3, 4, 25]],passingFees = [1, 2, 3, 4, 5]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 30,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 3], [1, 3, 15], [2, 3, 20], [3, 4, 25]],passingFees = [1, 2, 3, 4, 5]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 180,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 40], [2, 3, 20], [3, 4, 50], [0, 3, 30], [1, 2, 30], [0, 4, 60], [1, 4, 40]],passingFees = [10, 10, 10, 10, 10]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 180,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 40], [2, 3, 20], [3, 4, 50], [0, 3, 30], [1, 2, 30], [0, 4, 60], [1, 4, 40]],passingFees = [10, 10, 10, 10, 10]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5], [0, 3, 10], [1, 4, 10], [2, 5, 10], [3, 6, 10], [4, 7, 10], [5, 8, 10], [6, 9, 10], [7, 0, 10], [8, 1, 10], [9, 2, 10]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5], [0, 3, 10], [1, 4, 10], [2, 5, 10], [3, 6, 10], [4, 7, 10], [5, 8, 10], [6, 9, 10], [7, 0, 10], [8, 1, 10], [9, 2, 10]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 5, 50], [0, 2, 40], [1, 3, 30], [2, 4, 20], [3, 5, 10], [0, 4, 60], [1, 5, 50]],passingFees = [5, 1, 2, 3, 4, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 5, 50], [0, 2, 40], [1, 3, 30], [2, 4, 20], [3, 5, 10], [0, 4, 60], [1, 5, 50]],passingFees = [5, 1, 2, 3, 4, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 15], [1, 2, 10], [1, 3, 20], [2, 4, 15], [3, 4, 20], [4, 5, 30], [3, 5, 40]],passingFees = [5, 1, 2, 3, 4, 5]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 15], [1, 2, 10], [1, 3, 20], [2, 4, 15], [3, 4, 20], [4, 5, 30], [3, 5, 40]],passingFees = [5, 1, 2, 3, 4, 5]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 35,edges = [[0, 1, 5], [1, 2, 3], [0, 2, 9], [1, 3, 7], [2, 4, 4], [0, 3, 6], [1, 4, 8], [3, 4, 2], [0, 4, 12]],passingFees = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 35,edges = [[0, 1, 5], [1, 2, 3], [0, 2, 9], [1, 3, 7], [2, 4, 4], [0, 3, 6], [1, 4, 8], [3, 4, 2], [0, 4, 12]],passingFees = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 15], [0, 2, 20], [2, 3, 5], [3, 4, 10], [4, 5, 15], [5, 6, 20], [6, 7, 25], [7, 8, 30], [8, 9, 10], [0, 9, 35]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 15], [0, 2, 20], [2, 3, 5], [3, 4, 10], [4, 5, 15], [5, 6, 20], [6, 7, 25], [7, 8, 30], [8, 9, 10], [0, 9, 35]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 3, 60], [1, 4, 70], [2, 5, 80], [0, 2, 90], [3, 5, 100]],passingFees = [10, 20, 30, 40, 50, 60]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 3, 60], [1, 4, 70], [2, 5, 80], [0, 2, 90], [3, 5, 100]],passingFees = [10, 20, 30, 40, 50, 60]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 30,edges = [[0, 1, 5], [1, 2, 7], [2, 3, 6], [0, 3, 10], [1, 3, 2], [2, 4, 5], [3, 4, 3], [0, 4, 8]],passingFees = [10, 20, 15, 25, 30]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 30,edges = [[0, 1, 5], [1, 2, 7], [2, 3, 6], [0, 3, 10], [1, 3, 2], [2, 4, 5], [3, 4, 3], [0, 4, 8]],passingFees = [10, 20, 15, 25, 30]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 400,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 5, 100], [0, 2, 100], [1, 3, 100], [2, 4, 100], [3, 5, 100]],passingFees = [5, 5, 5, 5, 5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 400,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 5, 100], [0, 2, 100], [1, 3, 100], [2, 4, 100], [3, 5, 100]],passingFees = [5, 5, 5, 5, 5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 2, 20], [1, 3, 20], [2, 4, 20], [3, 5, 20], [4, 6, 20], [5, 7, 20], [6, 8, 20], [7, 9, 20], [8, 1, 20], [9, 2, 20], [0, 3, 30], [1, 4, 30], [2, 5, 30], [3, 6, 30], [4, 7, 30], [5, 8, 30], [6, 9, 30], [7, 0, 30], [8, 1, 30], [9, 2, 30], [0, 4, 40], [1, 5, 40], [2, 6, 40], [3, 7, 40], [4, 8, 40], [5, 9, 40], [6, 0, 40], [7, 1, 40], [8, 2, 40], [9, 3, 40]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 2, 20], [1, 3, 20], [2, 4, 20], [3, 5, 20], [4, 6, 20], [5, 7, 20], [6, 8, 20], [7, 9, 20], [8, 1, 20], [9, 2, 20], [0, 3, 30], [1, 4, 30], [2, 5, 30], [3, 6, 30], [4, 7, 30], [5, 8, 30], [6, 9, 30], [7, 0, 30], [8, 1, 30], [9, 2, 30], [0, 4, 40], [1, 5, 40], [2, 6, 40], [3, 7, 40], [4, 8, 40], [5, 9, 40], [6, 0, 40], [7, 1, 40], [8, 2, 40], [9, 3, 40]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 2, 5], [1, 3, 5], [0, 3, 2], [2, 4, 20], [3, 4, 10]],passingFees = [10, 5, 3, 20, 1]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 2, 5], [1, 3, 5], [0, 3, 2], [2, 4, 20], [3, 4, 10]],passingFees = [10, 5, 3, 20, 1]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15], [1, 3, 1], [2, 4, 5]],passingFees = [5, 1, 2, 20, 20, 3]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15], [1, 3, 1], [2, 4, 5]],passingFees = [5, 1, 2, 20, 20, 3]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 9, 40]],passingFees = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 9, 40]],passingFees = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 700,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [0, 4, 200], [4, 5, 250], [1, 5, 300], [2, 6, 350], [3, 6, 400], [4, 7, 450], [5, 8, 500], [6, 8, 550], [0, 7, 600], [0, 3, 650], [1, 6, 700], [2, 7, 750], [3, 8, 800], [4, 6, 850], [5, 7, 900], [6, 7, 950], [0, 8, 1000], [2, 5, 1050]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 700,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [0, 4, 200], [4, 5, 250], [1, 5, 300], [2, 6, 350], [3, 6, 400], [4, 7, 450], [5, 8, 500], [6, 8, 550], [0, 7, 600], [0, 3, 650], [1, 6, 700], [2, 7, 750], [3, 8, 800], [4, 6, 850], [5, 7, 900], [6, 7, 950], [0, 8, 1000], [2, 5, 1050]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 15], [0, 2, 20], [1, 3, 25], [2, 3, 15], [3, 4, 30], [0, 3, 15], [1, 2, 10]],passingFees = [10, 20, 30, 40, 50]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 15], [0, 2, 20], [1, 3, 25], [2, 3, 15], [3, 4, 30], [0, 3, 15], [1, 2, 10]],passingFees = [10, 20, 30, 40, 50]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 180,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [0, 4, 50], [0, 2, 60], [1, 3, 70], [2, 4, 80], [3, 1, 90], [4, 0, 100]],passingFees = [50, 40, 30, 20, 10]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 180,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [0, 4, 50], [0, 2, 60], [1, 3, 70], [2, 4, 80], [3, 1, 90], [4, 0, 100]],passingFees = [50, 40, 30, 20, 10]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [0, 3, 30], [3, 4, 40], [4, 5, 50], [0, 2, 60], [2, 3, 70], [1, 4, 80], [2, 5, 90]],passingFees = [5, 10, 15, 20, 25, 30]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [0, 3, 30], [3, 4, 40], [4, 5, 50], [0, 2, 60], [2, 3, 70], [1, 4, 80], [2, 5, 90]],passingFees = [5, 10, 15, 20, 25, 30]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [0, 5, 50], [1, 3, 20], [2, 4, 25]],passingFees = [1, 1, 1, 1, 1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [0, 5, 50], [1, 3, 20], [2, 4, 25]],passingFees = [1, 1, 1, 1, 1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 220,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 20], [2, 3, 15], [3, 4, 25], [0, 3, 25], [1, 2, 15], [0, 4, 40], [1, 4, 25], [2, 4, 35]],passingFees = [5, 15, 25, 35, 45]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 220,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 20], [2, 3, 15], [3, 4, 25], [0, 3, 25], [1, 2, 15], [0, 4, 40], [1, 4, 25], [2, 4, 35]],passingFees = [5, 15, 25, 35, 45]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 15,edges = [[0, 1, 2], [0, 2, 3], [1, 2, 1], [1, 3, 4], [2, 3, 5], [0, 3, 1]],passingFees = [10, 20, 30, 40]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 15,edges = [[0, 1, 2], [0, 2, 3], [1, 2, 1], [1, 3, 4], [2, 3, 5], [0, 3, 1]],passingFees = [10, 20, 30, 40]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 40,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 5], [4, 5, 5], [5, 6, 5], [0, 2, 25], [1, 3, 15], [2, 4, 25], [3, 5, 15], [0, 4, 40], [1, 5, 25]],passingFees = [3, 2, 1, 4, 2, 5, 3]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 40,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 5], [4, 5, 5], [5, 6, 5], [0, 2, 25], [1, 3, 15], [2, 4, 25], [3, 5, 15], [0, 4, 40], [1, 5, 25]],passingFees = [3, 2, 1, 4, 2, 5, 3]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 3, 1], [3, 4, 1], [4, 5, 1], [0, 2, 1], [2, 4, 1]],passingFees = [5, 1, 2, 20, 20, 3]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 3, 1], [3, 4, 1], [4, 5, 1], [0, 2, 1], [2, 4, 1]],passingFees = [5, 1, 2, 20, 20, 3]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 40,edges = [[0, 1, 3], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 6], [2, 4, 1], [3, 4, 7], [0, 4, 8], [1, 4, 3]],passingFees = [1, 2, 3, 4, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 40,edges = [[0, 1, 3], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 6], [2, 4, 1], [3, 4, 7], [0, 4, 8], [1, 4, 3]],passingFees = [1, 2, 3, 4, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 150,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 10], [3, 0, 20], [1, 3, 10], [0, 3, 50], [1, 0, 20], [2, 1, 30], [3, 2, 40]],passingFees = [5, 15, 25, 35]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 150,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 10], [3, 0, 20], [1, 3, 10], [0, 3, 50], [1, 0, 20], [2, 1, 30], [3, 2, 40]],passingFees = [5, 15, 25, 35]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 10, 10], [10, 11, 10], [11, 12, 10], [12, 13, 10], [13, 14, 10], [0, 14, 60]],passingFees = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 10, 10], [10, 11, 10], [11, 12, 10], [12, 13, 10], [13, 14, 10], [0, 14, 60]],passingFees = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 250,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [5, 6, 60], [6, 7, 70], [7, 8, 80], [8, 9, 90], [0, 9, 100]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 250,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [5, 6, 60], [6, 7, 70], [7, 8, 80], [8, 9, 90], [0, 9, 100]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 500,edges = [[0, 1, 25], [1, 2, 25], [2, 3, 25], [3, 4, 25], [4, 5, 25], [5, 6, 25], [6, 7, 25], [7, 8, 25], [8, 9, 25], [9, 10, 25], [0, 9, 200], [9, 1, 200], [1, 10, 200], [10, 0, 200], [0, 10, 100], [1, 9, 100], [9, 2, 100], [2, 0, 100], [0, 8, 150], [8, 3, 150], [3, 1, 150], [1, 6, 150], [6, 4, 150], [4, 2, 150], [2, 7, 150], [7, 5, 150], [5, 8, 150]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 500,edges = [[0, 1, 25], [1, 2, 25], [2, 3, 25], [3, 4, 25], [4, 5, 25], [5, 6, 25], [6, 7, 25], [7, 8, 25], [8, 9, 25], [9, 10, 25], [0, 9, 200], [9, 1, 200], [1, 10, 200], [10, 0, 200], [0, 10, 100], [1, 9, 100], [9, 2, 100], [2, 0, 100], [0, 8, 150], [8, 3, 150], [3, 1, 150], [1, 6, 150], [6, 4, 150], [4, 2, 150], [2, 7, 150], [7, 5, 150], [5, 8, 150]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 400,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 4, 40], [3, 5, 50], [4, 6, 60], [1, 2, 70], [3, 4, 80], [2, 5, 90], [4, 5, 100]],passingFees = [5, 10, 15, 20, 25, 30, 35]) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 400,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 4, 40], [3, 5, 50], [4, 6, 60], [1, 2, 70], [3, 4, 80], [2, 5, 90], [4, 5, 100]],passingFees = [5, 10, 15, 20, 25, 30, 35]) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [5, 6, 20], [6, 7, 20], [7, 8, 20], [8, 9, 20], [9, 10, 20], [10, 11, 20], [11, 12, 20], [12, 13, 20], [13, 14, 20], [14, 15, 20], [15, 16, 20], [16, 17, 20], [17, 18, 20], [18, 19, 20], [0, 19, 90]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [5, 6, 20], [6, 7, 20], [7, 8, 20], [8, 9, 20], [9, 10, 20], [10, 11, 20], [11, 12, 20], [12, 13, 20], [13, 14, 20], [14, 15, 20], [15, 16, 20], [16, 17, 20], [17, 18, 20], [18, 19, 20], [0, 19, 90]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 80,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 10], [2, 3, 10], [3, 4, 20], [0, 3, 10]],passingFees = [5, 5, 5, 5, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 80,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 10], [2, 3, 10], [3, 4, 20], [0, 3, 10]],passingFees = [5, 5, 5, 5, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 70,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5]],passingFees = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 70,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5]],passingFees = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 60,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [0, 2, 10], [1, 3, 10], [2, 4, 10], [0, 3, 30], [1, 4, 30]],passingFees = [5, 15, 25, 35, 45]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 60,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [0, 2, 10], [1, 3, 10], [2, 4, 10], [0, 3, 30], [1, 4, 30]],passingFees = [5, 15, 25, 35, 45]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 120,edges = [[0, 1, 10], [0, 2, 20], [1, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 10], [0, 3, 20], [1, 2, 30]],passingFees = [5, 5, 5, 5, 5]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 120,edges = [[0, 1, 10], [0, 2, 20], [1, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 10], [0, 3, 20], [1, 2, 30]],passingFees = [5, 5, 5, 5, 5]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 800,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190], [1, 3, 200], [2, 4, 210], [3, 5, 220], [4, 8, 230], [5, 6, 240], [0, 8, 250], [1, 7, 260], [2, 8, 270], [3, 7, 280], [4, 7, 290], [0, 6, 300], [1, 8, 310], [2, 5, 320], [3, 4, 330]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 800,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190], [1, 3, 200], [2, 4, 210], [3, 5, 220], [4, 8, 230], [5, 6, 240], [0, 8, 250], [1, 7, 260], [2, 8, 270], [3, 7, 280], [4, 7, 290], [0, 6, 300], [1, 8, 310], [2, 5, 320], [3, 4, 330]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 3], [2, 3, 7], [0, 3, 12], [3, 4, 10], [2, 4, 2], [0, 4, 8]],passingFees = [4, 1, 2, 3, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 3], [2, 3, 7], [0, 3, 12], [3, 4, 10], [2, 4, 2], [0, 4, 8]],passingFees = [4, 1, 2, 3, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [4, 5, 50], [0, 3, 60], [2, 4, 70]],passingFees = [10, 20, 30, 40, 50, 60]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [4, 5, 50], [0, 3, 60], [2, 4, 70]],passingFees = [10, 20, 30, 40, 50, 60]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(maxTime = 300,edges = [[0, 1, 50], [0, 2, 100], [1, 3, 200], [2, 3, 150], [3, 4, 250], [0, 3, 200], [1, 2, 100], [0, 4, 300], [1, 4, 150]],passingFees = [10, 20, 30, 40, 50]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(maxTime = 300,edges = [[0, 1, 50], [0, 2, 100], [1, 3, 200], [2, 3, 150], [3, 4, 250], [0, 3, 200], [1, 2, 100], [0, 4, 300], [1, 4, 150]],passingFees = [10, 20, 30, 40, 50]) == 60: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 21
+    assert candidate(maxTime = 5,edges = [[0, 1, 5], [0, 2, 5], [1, 3, 5], [2, 3, 5], [3, 4, 5]],passingFees = [10, 10, 10, 10, 10]) == -1
+    assert candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 1, 1, 10]) == -1
+    assert candidate(maxTime = 20,edges = [[0, 1, 10], [1, 0, 10], [0, 2, 5], [2, 0, 5], [1, 3, 10], [3, 1, 10], [2, 3, 10], [3, 2, 10]],passingFees = [1, 2, 3, 4]) == 7
+    assert candidate(maxTime = 15,edges = [[0, 1, 10], [1, 2, 10], [0, 2, 1]],passingFees = [3, 1, 2]) == 5
+    assert candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == 4
+    assert candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1
+    assert candidate(maxTime = 29,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 48
+    assert candidate(maxTime = 50,edges = [[0, 1, 1], [0, 2, 1], [1, 2, 1], [1, 3, 1], [2, 3, 1]],passingFees = [1, 1, 1, 1]) == 3
+    assert candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 1], [4, 5, 1]],passingFees = [1, 1, 1, 1, 1, 1]) == 6
+    assert candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [3, 2, 1]) == -1
+    assert candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == 11
+    assert candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15]],passingFees = [5, 1, 2, 20, 20, 3]) == -1
+    assert candidate(maxTime = 5,edges = [[0, 1, 6], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == -1
+    assert candidate(maxTime = 10,edges = [[0, 1, 3], [1, 2, 3], [0, 2, 5]],passingFees = [1, 2, 3]) == 4
+    assert candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15]],passingFees = [10, 20, 30, 40]) == 50
+    assert candidate(maxTime = 20,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [0, 2, 5], [1, 3, 6]],passingFees = [1, 2, 3, 4]) == 7
+    assert candidate(maxTime = 10,edges = [[0, 1, 5], [1, 2, 5], [0, 2, 10]],passingFees = [1, 2, 3]) == 4
+    assert candidate(maxTime = 1,edges = [[0, 1, 1]],passingFees = [1, 1]) == 2
+    assert candidate(maxTime = 45,edges = [[0, 1, 10], [1, 2, 15], [2, 3, 20], [0, 2, 25], [1, 3, 30], [2, 4, 10], [3, 5, 15], [0, 3, 35], [1, 4, 40], [2, 5, 20], [0, 4, 50], [1, 5, 55]],passingFees = [5, 4, 3, 2, 1, 6]) == 14
+    assert candidate(maxTime = 150,edges = [[0, 1, 20], [1, 2, 30], [0, 2, 40], [2, 3, 10], [3, 4, 50], [0, 3, 10], [1, 4, 30], [4, 5, 20], [5, 6, 40], [6, 7, 30], [7, 5, 15], [6, 8, 10], [8, 9, 50], [9, 0, 20], [9, 1, 10], [1, 3, 25]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+    assert candidate(maxTime = 500,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 15], [1, 3, 20], [2, 3, 25], [2, 4, 30], [3, 4, 35], [3, 5, 40], [4, 5, 45], [4, 6, 50], [5, 6, 55], [5, 7, 60], [6, 7, 65], [6, 8, 70], [7, 8, 75], [7, 9, 80], [8, 9, 85], [0, 3, 30], [0, 4, 40], [0, 5, 50], [1, 4, 45], [1, 5, 55], [1, 6, 65], [2, 5, 50], [2, 6, 60], [2, 7, 70], [3, 6, 65], [3, 7, 75], [3, 8, 80], [4, 7, 70], [4, 8, 80], [4, 9, 85], [5, 8, 80], [5, 9, 85], [6, 9, 85]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 160
+    assert candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5], [0, 10, 10], [1, 9, 15], [2, 8, 20], [3, 7, 25], [4, 6, 30]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) == 60
+    assert candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 30], [2, 3, 10], [3, 4, 50], [0, 2, 40], [1, 3, 10], [2, 4, 20]],passingFees = [10, 5, 15, 20, 25]) == 50
+    assert candidate(maxTime = 300,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [5, 6, 6], [6, 7, 7], [7, 8, 8], [8, 9, 9], [9, 0, 10], [0, 9, 9], [1, 0, 1], [2, 1, 2], [3, 2, 3], [4, 3, 4], [5, 4, 5], [6, 5, 6], [7, 6, 7], [8, 7, 8], [9, 8, 9]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+    assert candidate(maxTime = 15,edges = [[0, 1, 4], [1, 2, 3], [0, 2, 6], [2, 3, 5], [3, 4, 7], [0, 3, 8], [1, 3, 2]],passingFees = [2, 3, 4, 1, 5]) == 8
+    assert candidate(maxTime = 100,edges = [[0, 1, 50], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 10], [0, 5, 90], [1, 3, 25], [2, 4, 15]],passingFees = [10, 20, 30, 40, 50, 60]) == 70
+    assert candidate(maxTime = 25,edges = [[0, 1, 2], [1, 2, 2], [2, 3, 2], [3, 4, 2], [4, 5, 2], [0, 5, 10], [1, 3, 5], [2, 4, 5], [0, 3, 7], [0, 4, 8], [1, 4, 4], [2, 5, 3]],passingFees = [1, 2, 3, 4, 5, 6]) == 7
+    assert candidate(maxTime = 600,edges = [[0, 1, 15], [0, 5, 15], [1, 2, 25], [1, 6, 25], [2, 3, 35], [2, 7, 35], [3, 4, 45], [3, 8, 45], [4, 9, 55], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 6, 25], [1, 7, 35], [2, 8, 45], [3, 9, 55], [0, 7, 35], [1, 8, 45], [2, 9, 55], [0, 8, 45], [1, 9, 55], [0, 9, 55], [5, 10, 5], [10, 6, 5], [6, 10, 5], [7, 10, 5], [10, 8, 5], [8, 10, 5], [9, 10, 5]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 180
+    assert candidate(maxTime = 60,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [0, 3, 15], [0, 2, 10], [1, 3, 10], [3, 4, 10], [2, 4, 10], [0, 4, 20]],passingFees = [3, 2, 1, 2, 3]) == 6
+    assert candidate(maxTime = 10,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [0, 3, 5], [0, 2, 1], [1, 3, 1]],passingFees = [1, 2, 3, 4]) == 5
+    assert candidate(maxTime = 5,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5]],passingFees = [1, 1, 1, 1, 1]) == -1
+    assert candidate(maxTime = 220,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40], [0, 4, 50], [3, 2, 40]],passingFees = [1, 1, 1, 1, 1]) == 2
+    assert candidate(maxTime = 300,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [0, 2, 60], [1, 3, 60], [2, 4, 60], [0, 3, 70], [1, 4, 70], [0, 4, 80]],passingFees = [10, 20, 30, 40, 50]) == 60
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 40], [1, 2, 5]],passingFees = [10, 15, 20, 25, 30]) == 80
+    assert candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [0, 3, 50], [3, 5, 50]],passingFees = [5, 10, 15, 20, 25, 30]) == 55
+    assert candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 40], [2, 3, 30], [3, 4, 20], [4, 0, 10], [0, 2, 60], [1, 3, 50], [2, 4, 40]],passingFees = [100, 200, 150, 50, 300]) == 400
+    assert candidate(maxTime = 250,edges = [[0, 1, 5], [1, 2, 15], [2, 3, 25], [3, 4, 35], [4, 5, 45], [0, 5, 55], [1, 3, 25], [2, 4, 35], [0, 4, 45], [1, 4, 15]],passingFees = [5, 5, 5, 5, 5, 5]) == 10
+    assert candidate(maxTime = 600,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 140
+    assert candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 10, 5]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 11
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 5, 5], [1, 6, 5], [2, 7, 5], [3, 8, 5], [4, 9, 5]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 25], [1, 4, 40], [3, 4, 15], [4, 5, 5], [5, 6, 30], [6, 1, 25], [2, 6, 10]],passingFees = [10, 15, 20, 25, 30, 35, 40]) == 65
+    assert candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [5, 1, 2, 20, 20, 3, 5, 1, 2, 3]) == -1
+    assert candidate(maxTime = 120,edges = [[0, 1, 20], [0, 2, 30], [0, 3, 10], [1, 2, 15], [1, 3, 20], [1, 4, 10], [2, 3, 25], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5], [0, 5, 20]],passingFees = [15, 25, 35, 45, 55, 65]) == 80
+    assert candidate(maxTime = 200,edges = [[0, 1, 30], [0, 2, 20], [1, 2, 10], [1, 3, 40], [2, 4, 20], [3, 4, 10], [3, 5, 50], [4, 5, 30], [2, 5, 25], [5, 6, 10], [6, 7, 20], [6, 8, 15], [7, 8, 5], [8, 9, 10], [9, 0, 10]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+    assert candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 10], [0, 3, 15], [3, 4, 20], [2, 4, 25], [4, 5, 30]],passingFees = [5, 10, 15, 20, 25, 30]) == -1
+    assert candidate(maxTime = 50,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 10], [4, 5, 10], [0, 3, 25], [1, 4, 20]],passingFees = [10, 20, 30, 40, 50, 60]) == 140
+    assert candidate(maxTime = 60,edges = [[0, 1, 10], [0, 2, 15], [0, 3, 20], [1, 2, 5], [1, 3, 10], [2, 3, 25], [1, 4, 10], [2, 4, 5], [3, 4, 15], [2, 5, 10], [3, 5, 20], [4, 5, 5]],passingFees = [10, 20, 30, 40, 50, 60]) == 100
+    assert candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 0, 5], [0, 2, 10], [1, 3, 10], [2, 4, 10]],passingFees = [1, 2, 3, 4, 5]) == 6
+    assert candidate(maxTime = 80,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 40], [0, 3, 50], [3, 4, 60], [0, 4, 70]],passingFees = [5, 5, 5, 5, 5]) == 10
+    assert candidate(maxTime = 50,edges = [[0, 1, 1], [1, 2, 2], [2, 3, 3], [3, 4, 4], [4, 5, 5], [0, 2, 4], [1, 3, 3], [2, 4, 2], [3, 5, 1]],passingFees = [1, 2, 3, 4, 5, 6]) == 13
+    assert candidate(maxTime = 120,edges = [[0, 1, 15], [1, 2, 25], [2, 3, 35], [3, 4, 45], [0, 3, 65], [1, 4, 75], [2, 4, 85], [0, 4, 95], [3, 1, 105], [4, 2, 115]],passingFees = [50, 20, 30, 40, 60]) == 110
+    assert candidate(maxTime = 20,edges = [[0, 1, 2], [1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6], [0, 5, 10]],passingFees = [5, 10, 15, 20, 25, 30]) == 35
+    assert candidate(maxTime = 500,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 18
+    assert candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 3, 30], [1, 3, 30], [2, 4, 30], [3, 4, 30], [0, 4, 50]],passingFees = [1, 2, 3, 4, 5]) == 6
+    assert candidate(maxTime = 550,edges = [[0, 1, 20], [0, 5, 20], [1, 2, 30], [1, 6, 30], [2, 3, 40], [2, 7, 40], [3, 4, 50], [3, 8, 50], [4, 9, 60], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [0, 6, 40], [1, 7, 50], [2, 8, 60], [3, 9, 70], [0, 7, 50], [1, 8, 60], [2, 9, 70], [0, 8, 60], [1, 9, 70], [0, 9, 70]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+    assert candidate(maxTime = 400,edges = [[0, 1, 30], [1, 2, 30], [2, 3, 30], [3, 4, 30], [0, 2, 50], [1, 3, 50], [2, 4, 50], [0, 3, 70], [1, 4, 70], [0, 4, 90], [0, 5, 40], [5, 4, 10], [4, 6, 60], [6, 5, 10], [5, 3, 20]],passingFees = [5, 15, 25, 35, 45, 55, 65]) == 115
+    assert candidate(maxTime = 350,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 3, 20], [3, 4, 40], [0, 3, 30], [1, 2, 20], [0, 4, 50], [1, 4, 30], [2, 4, 40]],passingFees = [10, 20, 30, 40, 50]) == 60
+    assert candidate(maxTime = 350,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [3, 4, 200], [4, 5, 250], [5, 6, 300], [6, 7, 350], [7, 8, 400], [8, 9, 450], [0, 9, 500]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == -1
+    assert candidate(maxTime = 30,edges = [[0, 1, 5], [0, 2, 10], [1, 2, 3], [1, 3, 15], [2, 3, 20], [3, 4, 25]],passingFees = [1, 2, 3, 4, 5]) == -1
+    assert candidate(maxTime = 180,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 40], [2, 3, 20], [3, 4, 50], [0, 3, 30], [1, 2, 30], [0, 4, 60], [1, 4, 40]],passingFees = [10, 10, 10, 10, 10]) == 20
+    assert candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5], [0, 3, 10], [1, 4, 10], [2, 5, 10], [3, 6, 10], [4, 7, 10], [5, 8, 10], [6, 9, 10], [7, 0, 10], [8, 1, 10], [9, 2, 10]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 5, 50], [0, 2, 40], [1, 3, 30], [2, 4, 20], [3, 5, 10], [0, 4, 60], [1, 5, 50]],passingFees = [5, 1, 2, 3, 4, 5]) == 10
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [0, 2, 15], [1, 2, 10], [1, 3, 20], [2, 4, 15], [3, 4, 20], [4, 5, 30], [3, 5, 40]],passingFees = [5, 1, 2, 3, 4, 5]) == 14
+    assert candidate(maxTime = 35,edges = [[0, 1, 5], [1, 2, 3], [0, 2, 9], [1, 3, 7], [2, 4, 4], [0, 3, 6], [1, 4, 8], [3, 4, 2], [0, 4, 12]],passingFees = [1, 2, 3, 4, 5]) == 6
+    assert candidate(maxTime = 25,edges = [[0, 1, 10], [1, 2, 15], [0, 2, 20], [2, 3, 5], [3, 4, 10], [4, 5, 15], [5, 6, 20], [6, 7, 25], [7, 8, 30], [8, 9, 10], [0, 9, 35]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+    assert candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [0, 3, 60], [1, 4, 70], [2, 5, 80], [0, 2, 90], [3, 5, 100]],passingFees = [10, 20, 30, 40, 50, 60]) == 100
+    assert candidate(maxTime = 30,edges = [[0, 1, 5], [1, 2, 7], [2, 3, 6], [0, 3, 10], [1, 3, 2], [2, 4, 5], [3, 4, 3], [0, 4, 8]],passingFees = [10, 20, 15, 25, 30]) == 40
+    assert candidate(maxTime = 400,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 5, 100], [0, 2, 100], [1, 3, 100], [2, 4, 100], [3, 5, 100]],passingFees = [5, 5, 5, 5, 5, 5]) == 10
+    assert candidate(maxTime = 200,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 0, 10], [0, 2, 20], [1, 3, 20], [2, 4, 20], [3, 5, 20], [4, 6, 20], [5, 7, 20], [6, 8, 20], [7, 9, 20], [8, 1, 20], [9, 2, 20], [0, 3, 30], [1, 4, 30], [2, 5, 30], [3, 6, 30], [4, 7, 30], [5, 8, 30], [6, 9, 30], [7, 0, 30], [8, 1, 30], [9, 2, 30], [0, 4, 40], [1, 5, 40], [2, 6, 40], [3, 7, 40], [4, 8, 40], [5, 9, 40], [6, 0, 40], [7, 1, 40], [8, 2, 40], [9, 3, 40]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == 55
+    assert candidate(maxTime = 100,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [0, 2, 5], [1, 3, 5], [0, 3, 2], [2, 4, 20], [3, 4, 10]],passingFees = [10, 5, 3, 20, 1]) == 14
+    assert candidate(maxTime = 30,edges = [[0, 1, 10], [1, 2, 10], [2, 5, 10], [0, 3, 1], [3, 4, 10], [4, 5, 15], [1, 3, 1], [2, 4, 5]],passingFees = [5, 1, 2, 20, 20, 3]) == 11
+    assert candidate(maxTime = 50,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [0, 9, 40]],passingFees = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) == 19
+    assert candidate(maxTime = 700,edges = [[0, 1, 50], [1, 2, 100], [2, 3, 150], [0, 4, 200], [4, 5, 250], [1, 5, 300], [2, 6, 350], [3, 6, 400], [4, 7, 450], [5, 8, 500], [6, 8, 550], [0, 7, 600], [0, 3, 650], [1, 6, 700], [2, 7, 750], [3, 8, 800], [4, 6, 850], [5, 7, 900], [6, 7, 950], [0, 8, 1000], [2, 5, 1050]],passingFees = [5, 10, 15, 20, 25, 30, 35, 40, 45]) == -1
+    assert candidate(maxTime = 200,edges = [[0, 1, 15], [0, 2, 20], [1, 3, 25], [2, 3, 15], [3, 4, 30], [0, 3, 15], [1, 2, 10]],passingFees = [10, 20, 30, 40, 50]) == 100
+    assert candidate(maxTime = 180,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [0, 4, 50], [0, 2, 60], [1, 3, 70], [2, 4, 80], [3, 1, 90], [4, 0, 100]],passingFees = [50, 40, 30, 20, 10]) == 60
+    assert candidate(maxTime = 300,edges = [[0, 1, 10], [1, 2, 20], [0, 3, 30], [3, 4, 40], [4, 5, 50], [0, 2, 60], [2, 3, 70], [1, 4, 80], [2, 5, 90]],passingFees = [5, 10, 15, 20, 25, 30]) == 50
+    assert candidate(maxTime = 150,edges = [[0, 1, 5], [1, 2, 10], [2, 3, 15], [3, 4, 20], [4, 5, 25], [0, 5, 50], [1, 3, 20], [2, 4, 25]],passingFees = [1, 1, 1, 1, 1, 1]) == 2
+    assert candidate(maxTime = 220,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 20], [2, 3, 15], [3, 4, 25], [0, 3, 25], [1, 2, 15], [0, 4, 40], [1, 4, 25], [2, 4, 35]],passingFees = [5, 15, 25, 35, 45]) == 50
+    assert candidate(maxTime = 15,edges = [[0, 1, 2], [0, 2, 3], [1, 2, 1], [1, 3, 4], [2, 3, 5], [0, 3, 1]],passingFees = [10, 20, 30, 40]) == 50
+    assert candidate(maxTime = 40,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 15], [3, 4, 5], [4, 5, 5], [5, 6, 5], [0, 2, 25], [1, 3, 15], [2, 4, 25], [3, 5, 15], [0, 4, 40], [1, 5, 25]],passingFees = [3, 2, 1, 4, 2, 5, 3]) == 13
+    assert candidate(maxTime = 200,edges = [[0, 1, 100], [1, 2, 100], [2, 3, 100], [3, 4, 100], [4, 5, 100], [0, 3, 1], [3, 4, 1], [4, 5, 1], [0, 2, 1], [2, 4, 1]],passingFees = [5, 1, 2, 20, 20, 3]) == 30
+    assert candidate(maxTime = 40,edges = [[0, 1, 3], [0, 2, 4], [1, 2, 2], [1, 3, 5], [2, 3, 6], [2, 4, 1], [3, 4, 7], [0, 4, 8], [1, 4, 3]],passingFees = [1, 2, 3, 4, 5]) == 6
+    assert candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10]],passingFees = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+    assert candidate(maxTime = 150,edges = [[0, 1, 10], [1, 2, 20], [0, 2, 30], [2, 3, 10], [3, 0, 20], [1, 3, 10], [0, 3, 50], [1, 0, 20], [2, 1, 30], [3, 2, 40]],passingFees = [5, 15, 25, 35]) == 40
+    assert candidate(maxTime = 60,edges = [[0, 1, 10], [1, 2, 10], [2, 3, 10], [3, 4, 10], [4, 5, 10], [5, 6, 10], [6, 7, 10], [7, 8, 10], [8, 9, 10], [9, 10, 10], [10, 11, 10], [11, 12, 10], [12, 13, 10], [13, 14, 10], [0, 14, 60]],passingFees = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]) == 18
+    assert candidate(maxTime = 250,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [3, 4, 40], [4, 5, 50], [5, 6, 60], [6, 7, 70], [7, 8, 80], [8, 9, 90], [0, 9, 100]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 110
+    assert candidate(maxTime = 500,edges = [[0, 1, 25], [1, 2, 25], [2, 3, 25], [3, 4, 25], [4, 5, 25], [5, 6, 25], [6, 7, 25], [7, 8, 25], [8, 9, 25], [9, 10, 25], [0, 9, 200], [9, 1, 200], [1, 10, 200], [10, 0, 200], [0, 10, 100], [1, 9, 100], [9, 2, 100], [2, 0, 100], [0, 8, 150], [8, 3, 150], [3, 1, 150], [1, 6, 150], [6, 4, 150], [4, 2, 150], [2, 7, 150], [7, 5, 150], [5, 8, 150]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]) == 120
+    assert candidate(maxTime = 400,edges = [[0, 1, 10], [0, 2, 20], [1, 3, 30], [2, 4, 40], [3, 5, 50], [4, 6, 60], [1, 2, 70], [3, 4, 80], [2, 5, 90], [4, 5, 100]],passingFees = [5, 10, 15, 20, 25, 30, 35]) == 80
+    assert candidate(maxTime = 100,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [4, 5, 20], [5, 6, 20], [6, 7, 20], [7, 8, 20], [8, 9, 20], [9, 10, 20], [10, 11, 20], [11, 12, 20], [12, 13, 20], [13, 14, 20], [14, 15, 20], [15, 16, 20], [16, 17, 20], [17, 18, 20], [18, 19, 20], [0, 19, 90]],passingFees = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 21
+    assert candidate(maxTime = 80,edges = [[0, 1, 20], [0, 2, 30], [1, 3, 10], [2, 3, 10], [3, 4, 20], [0, 3, 10]],passingFees = [5, 5, 5, 5, 5]) == 15
+    assert candidate(maxTime = 70,edges = [[0, 1, 5], [1, 2, 5], [2, 3, 5], [3, 4, 5], [4, 5, 5], [5, 6, 5], [6, 7, 5], [7, 8, 5], [8, 9, 5], [9, 0, 5]],passingFees = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 20
+    assert candidate(maxTime = 60,edges = [[0, 1, 20], [1, 2, 20], [2, 3, 20], [3, 4, 20], [0, 2, 10], [1, 3, 10], [2, 4, 10], [0, 3, 30], [1, 4, 30]],passingFees = [5, 15, 25, 35, 45]) == 65
+    assert candidate(maxTime = 120,edges = [[0, 1, 10], [0, 2, 20], [1, 2, 30], [1, 3, 20], [2, 3, 10], [3, 4, 10], [0, 3, 20], [1, 2, 30]],passingFees = [5, 5, 5, 5, 5]) == 15
+    assert candidate(maxTime = 800,edges = [[0, 1, 10], [1, 2, 20], [2, 3, 30], [0, 4, 40], [4, 5, 50], [1, 5, 60], [2, 6, 70], [3, 6, 80], [4, 7, 90], [5, 8, 100], [6, 8, 110], [0, 7, 120], [0, 3, 130], [1, 6, 140], [2, 7, 150], [3, 8, 160], [4, 6, 170], [5, 7, 180], [6, 7, 190], [1, 3, 200], [2, 4, 210], [3, 5, 220], [4, 8, 230], [5, 6, 240], [0, 8, 250], [1, 7, 260], [2, 8, 270], [3, 7, 280], [4, 7, 290], [0, 6, 300], [1, 8, 310], [2, 5, 320], [3, 4, 330]],passingFees = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100
+    assert candidate(maxTime = 20,edges = [[0, 1, 5], [1, 2, 3], [2, 3, 7], [0, 3, 12], [3, 4, 10], [2, 4, 2], [0, 4, 8]],passingFees = [4, 1, 2, 3, 5]) == 9
+    assert candidate(maxTime = 200,edges = [[0, 1, 50], [1, 2, 50], [2, 3, 50], [3, 4, 50], [4, 5, 50], [0, 3, 60], [2, 4, 70]],passingFees = [10, 20, 30, 40, 50, 60]) == 160
+    assert candidate(maxTime = 300,edges = [[0, 1, 50], [0, 2, 100], [1, 3, 200], [2, 3, 150], [3, 4, 250], [0, 3, 200], [1, 2, 100], [0, 4, 300], [1, 4, 150]],passingFees = [10, 20, 30, 40, 50]) == 60
+
+

@@ -1,0 +1,1571 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)3PO4") == "H12N3O4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)3PO4") == "H12N3O4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2SO4") == "H8N2O4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2SO4") == "H8N2O4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Be32(Al2(SiO3)4)3") == "Al6Be32O36Si12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Be32(Al2(SiO3)4)3") == "Al6Be32O36Si12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Mg(OH)2") == "H2MgO2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Mg(OH)2") == "H2MgO2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Be3Al2(SiO3)6") == "Al2Be3O18Si6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Be3Al2(SiO3)6") == "Al2Be3O18Si6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((H2O)2)3") == "H12O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((H2O)2)3") == "H12O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3)2CO") == "C3H6O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3)2CO") == "C3H6O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H5)3N") == "C6H15N"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H5)3N") == "C6H15N": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3(PO4)2") == "Fe3O8P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3(PO4)2") == "Fe3O8P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CO2)3(PO3)2") == "C3O12P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CO2)3(PO3)2") == "C3O12P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "SiO2") == "O2Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "SiO2") == "O2Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Si(C3H5(NO3)3)4") == "C12H20N12O36Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Si(C3H5(NO3)3)4") == "C12H20N12O36Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H3O2)2") == "C4H6O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H3O2)2") == "C4H6O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CuSO4") == "CuO4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CuSO4") == "CuO4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C6H12O6") == "C6H12O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C6H12O6") == "C6H12O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Al2(SO4)3") == "Al2O12S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Al2(SO4)3") == "Al2O12S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K4(ON(SO3)2)2") == "K4N2O14S4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K4(ON(SO3)2)2") == "K4N2O14S4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CO(NH2)2)2") == "C2H8N4O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CO(NH2)2)2") == "C2H8N4O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(HCO3)3") == "C3H3O9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(HCO3)3") == "C3H3O9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(H2O2)3") == "H6O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(H2O2)3") == "H6O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "H2O") == "H2O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "H2O") == "H2O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ca(CO3)2") == "C2CaO6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ca(CO3)2") == "C2CaO6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Si(C3H5O3)2") == "C6H10O6Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Si(C3H5O3)2") == "C6H10O6Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(NO3)3") == "FeN3O9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(NO3)3") == "FeN3O9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "NaCl") == "ClNa"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "NaCl") == "ClNa": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "He") == "He"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "He") == "He": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "P2O7") == "O7P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "P2O7") == "O7P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2C2O4") == "C2H8N2O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2C2O4") == "C2H8N2O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CN)6") == "C6FeN6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CN)6") == "C6FeN6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Si(C3H5O3H)3") == "C9H18O9Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Si(C3H5O3H)3") == "C9H18O9Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe6(PO4)3") == "Fe6O12P3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe6(PO4)3") == "Fe6O12P3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C12H22O11") == "C12H22O11"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C12H22O11") == "C12H22O11": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3)2O") == "C2H6O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3)2O") == "C2H6O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3(Fe(H2O)2)2") == "Fe5H8O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3(Fe(H2O)2)2") == "Fe5H8O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "HCl") == "ClH"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "HCl") == "ClH": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3)3COOH") == "C4H10O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3)3COOH") == "C4H10O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH3)2SO4") == "H6N2O4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH3)2SO4") == "H6N2O4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe2(CO)9") == "C9Fe2O9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe2(CO)9") == "C9Fe2O9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Pb(SO4)2") == "O8PbS2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Pb(SO4)2") == "O8PbS2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe2(CO)4") == "C4Fe2O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe2(CO)4") == "C4Fe2O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Mg3(PO4)2") == "Mg3O8P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Mg3(PO4)2") == "Mg3O8P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C6H5OH)2") == "C12H12O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C6H5OH)2") == "C12H12O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C4H10O4)2") == "C8H20O8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C4H10O4)2") == "C8H20O8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2Cr2O7(K2Cr2O7)2") == "Cr6H8K4N2O21"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2Cr2O7(K2Cr2O7)2") == "Cr6H8K4N2O21": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(SiO2)3(CuSiO3)2") == "Cu2O12Si5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(SiO2)3(CuSiO3)2") == "Cu2O12Si5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K3PO4") == "K3O4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K3PO4") == "K3O4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2(C2H3O2)2Fe(H2O)4") == "C4FeH22N2O8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2(C2H3O2)2Fe(H2O)4") == "C4FeH22N2O8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Cu(CuSO4)5(H2O)10") == "Cu6H20O30S5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Cu(CuSO4)5(H2O)10") == "Cu6H20O30S5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Mg2(PO4)3") == "Mg2O12P3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Mg2(PO4)3") == "Mg2O12P3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((CH3COOH)2)3") == "C12H24O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((CH3COOH)2)3") == "C12H24O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(FeSO4)2") == "Fe2O8S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(FeSO4)2") == "Fe2O8S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C3H6O") == "C3H6O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C3H6O") == "C3H6O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((H2O)3)4") == "H24O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((H2O)3)4") == "H24O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)4") == "C4FeO4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)4") == "C4FeO4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "FeSO4((NH4)2S)2") == "FeH16N4O4S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "FeSO4((NH4)2S)2") == "FeH16N4O4S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "FeCl3") == "Cl3Fe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "FeCl3") == "Cl3Fe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((C2H5OH)3SiO3)2") == "C12H36O12Si2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((C2H5OH)3SiO3)2") == "C12H36O12Si2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)4(Fe(OH)2)2") == "C4Fe3H4O8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)4(Fe(OH)2)2") == "C4Fe3H4O8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C6H5(CH3COOH)3") == "C12H17O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C6H5(CH3COOH)3") == "C12H17O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K2Cr2O7") == "Cr2K2O7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K2Cr2O7") == "Cr2K2O7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3COO)2Cu") == "C4CuH6O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3COO)2Cu") == "C4CuH6O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NaCl)3(MgSO4)2") == "Cl3Mg2Na3O8S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NaCl)3(MgSO4)2") == "Cl3Mg2Na3O8S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(H2O)10") == "H20O10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(H2O)10") == "H20O10": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Si(C3H5O3)3Na3") == "C9H15Na3O9Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Si(C3H5O3)3Na3") == "C9H15Na3O9Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((N2)3H)2") == "H2N12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((N2)3H)2") == "H2N12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2Cr2O7") == "Cr2H8N2O7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2Cr2O7") == "Cr2H8N2O7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2CO3") == "CH8N2O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2CO3") == "CH8N2O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Al2(SO4)3(CaCO3)4") == "Al2C4Ca4O24S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Al2(SO4)3(CaCO3)4") == "Al2C4Ca4O24S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "SiC") == "CSi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "SiC") == "CSi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(Fe(CN)6)2Fe(CN)6") == "C18Fe3N18"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(Fe(CN)6)2Fe(CN)6") == "C18Fe3N18": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H5OH)3(CH3COOH)2") == "C10H26O7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H5OH)3(CH3COOH)2") == "C10H26O7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe((OH)2)3") == "FeH6O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe((OH)2)3") == "FeH6O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)3PO4(CrO4)2") == "Cr2H12N3O12P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)3PO4(CrO4)2") == "Cr2H12N3O12P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3O4(Fe(OH)2)2(SO4)3") == "Fe5H4O20S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3O4(Fe(OH)2)2(SO4)3") == "Fe5H4O20S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(KAl(SO4)2)2") == "Al2K2O16S4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(KAl(SO4)2)2") == "Al2K2O16S4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)5") == "C5FeO5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)5") == "C5FeO5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C6H10O5") == "C6H10O5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C6H10O5") == "C6H10O5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na3PO4") == "Na3O4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na3PO4") == "Na3O4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Zn(C4H9NH)3SO4") == "C12H30N3O4SZn"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Zn(C4H9NH)3SO4") == "C12H30N3O4SZn": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "MgSO4") == "MgO4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "MgSO4") == "MgO4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C2H5OH") == "C2H6O"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C2H5OH") == "C2H6O": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2HPO4") == "H9N2O4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2HPO4") == "H9N2O4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CaSO4") == "CaO4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CaSO4") == "CaO4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C2H5OH(CH3CH2OH)2") == "C6H18O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C2H5OH(CH3CH2OH)2") == "C6H18O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H5OH)2(CO2H)2") == "C6H14O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H5OH)2(CO2H)2") == "C6H14O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((C2H5OH)2)3") == "C12H36O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((C2H5OH)2)3") == "C12H36O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((CH3COOH)2Cu(CN)2)3") == "C18Cu3H24N6O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((CH3COOH)2Cu(CN)2)3") == "C18Cu3H24N6O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "BaCO3") == "BaCO3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "BaCO3") == "BaCO3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K2CO3") == "CK2O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K2CO3") == "CK2O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na2SiO3(Fe2(SO4)3)2") == "Fe4Na2O27S6Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na2SiO3(Fe2(SO4)3)2") == "Fe4Na2O27S6Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Al2(SO4)3(PO4)2") == "Al2O20P2S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Al2(SO4)3(PO4)2") == "Al2O20P2S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((C6H12O6)2H2O)4") == "C48H104O52"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((C6H12O6)2H2O)4") == "C48H104O52": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na2SiO3(Al(OH)4)2") == "Al2H8Na2O11Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na2SiO3(Al(OH)4)2") == "Al2H8Na2O11Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(Fe(OH)2)2(SO4)3") == "Fe3H4O16S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(Fe(OH)2)2(SO4)3") == "Fe3H4O16S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((H2O)2SiO2)3") == "H12O12Si3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((H2O)2SiO2)3") == "H12O12Si3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ag(NH3)2Cl") == "AgClH6N2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ag(NH3)2Cl") == "AgClH6N2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(K4(ON(SO3)2)2)2") == "K8N4O28S8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(K4(ON(SO3)2)2)2") == "K8N4O28S8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(H2SO4)3") == "H6O12S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(H2SO4)3") == "H6O12S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3COOH)2") == "C4H8O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3COOH)2") == "C4H8O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Cu3(PO4)2(F2)3") == "Cu3F6O8P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Cu3(PO4)2(F2)3") == "Cu3F6O8P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(Fe(NO3)3)3") == "Fe3N9O27"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(Fe(NO3)3)3") == "Fe3N9O27": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "FePO4") == "FeO4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "FePO4") == "FeO4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C6H12O6)2") == "C12H24O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C6H12O6)2") == "C12H24O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)4(Fe(OH)2)2(SO4)3") == "C4Fe3H4O20S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)4(Fe(OH)2)2(SO4)3") == "C4Fe3H4O20S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H5OH)3") == "C6H18O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H5OH)3") == "C6H18O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C5H8O2") == "C5H8O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C5H8O2") == "C5H8O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(MgSO4)2") == "Mg2O8S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(MgSO4)2") == "Mg2O8S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C9H8O4") == "C9H8O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C9H8O4") == "C9H8O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C5H12O)2") == "C10H24O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C5H12O)2") == "C10H24O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Si2(H2O)3(PO4)2") == "H6O11P2Si2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Si2(H2O)3(PO4)2") == "H6O11P2Si2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3(PO4)2(CaCO3)3") == "C3Ca3Fe3O17P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3(PO4)2(CaCO3)3") == "C3Ca3Fe3O17P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na2SO4") == "Na2O4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na2SO4") == "Na2O4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Hg2(NO3)2") == "Hg2N2O6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Hg2(NO3)2") == "Hg2N2O6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K2Cr2O7((NH4)2SO4)3(CuSO4)5") == "Cr2Cu5H24K2N6O39S8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K2Cr2O7((NH4)2SO4)3(CuSO4)5") == "Cr2Cu5H24K2N6O39S8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na2S2O3") == "Na2O3S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na2S2O3") == "Na2O3S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(K2Cr2O7)2") == "Cr4K4O14"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(K2Cr2O7)2") == "Cr4K4O14": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "K2(CrO4)2(H2O)2") == "Cr2H4K2O10"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "K2(CrO4)2(H2O)2") == "Cr2H4K2O10": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3O4(Fe(OH)2)2") == "Fe5H4O8"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3O4(Fe(OH)2)2") == "Fe5H4O8": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Na2CO3") == "CNa2O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Na2CO3") == "CNa2O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe2(SO4)3") == "Fe2O12S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe2(SO4)3") == "Fe2O12S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ni(CO)4") == "C4NiO4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ni(CO)4") == "C4NiO4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Pb3O4") == "O4Pb3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Pb3O4") == "O4Pb3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((CO3)2Ca)3") == "C6Ca3O18"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((CO3)2Ca)3") == "C6Ca3O18": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(SiO2)3(Al(OH)4)2") == "Al2H8O14Si3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(SiO2)3(Al(OH)4)2") == "Al2H8O14Si3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CuSO4((NH4)2S)2") == "CuH16N4O4S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CuSO4((NH4)2S)2") == "CuH16N4O4S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((C2H5)2O)4") == "C16H40O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((C2H5)2O)4") == "C16H40O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3(CH2)4CH3)3") == "C18H42"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3(CH2)4CH3)3") == "C18H42": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((H2O)2SiO2)2") == "H8O8Si2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((H2O)2SiO2)2") == "H8O8Si2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CuSO4(Fe(CN)6)2") == "C12CuFe2N12O4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CuSO4(Fe(CN)6)2") == "C12CuFe2N12O4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ca3(PO4)2(H2O)12") == "Ca3H24O20P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ca3(PO4)2(H2O)12") == "Ca3H24O20P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH3)3PO4") == "H9N3O4P"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH3)3PO4") == "H9N3O4P": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "FeS") == "FeS"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "FeS") == "FeS": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3O4(SO4)3") == "Fe3O16S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3O4(SO4)3") == "Fe3O16S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CaCO3)3") == "C3Ca3O9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CaCO3)3") == "C3Ca3O9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3O4") == "Fe3O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3O4") == "Fe3O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H3O2)2Mg") == "C4H6MgO4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H3O2)2Mg") == "C4H6MgO4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C6H10O4)3Na3") == "C18H30Na3O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C6H10O4)3Na3") == "C18H30Na3O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ca(ClO)2") == "CaCl2O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ca(ClO)2") == "CaCl2O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C2H5OH)2") == "C4H12O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C2H5OH)2") == "C4H12O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO3)3(Cu(NO3)2)4") == "C3Cu4FeN8O33"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO3)3(Cu(NO3)2)4") == "C3Cu4FeN8O33": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(H2O)6(SO4)3") == "FeH12O18S3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(H2O)6(SO4)3") == "FeH12O18S3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ag(NH3)2(NO3)3") == "AgH6N5O9"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ag(NH3)2(NO3)3") == "AgH6N5O9": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(CH3CH2OH)2") == "C4H12O2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(CH3CH2OH)2") == "C4H12O2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "SrTiO3") == "O3SrTi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "SrTiO3") == "O3SrTi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)5(CN)2") == "C7FeN2O5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)5(CN)2") == "C7FeN2O5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe2O3") == "Fe2O3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe2O3") == "Fe2O3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((CO2)2)3") == "C6O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((CO2)2)3") == "C6O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(SiO2)3") == "O6Si3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(SiO2)3") == "O6Si3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(Fe(CN)6)3") == "C18Fe3N18"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(Fe(CN)6)3") == "C18Fe3N18": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C6H8O7") == "C6H8O7"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C6H8O7") == "C6H8O7": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2S") == "H8N2S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2S") == "H8N2S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C6H10O5)6") == "C36H60O30"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C6H10O5)6") == "C36H60O30": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Pb(NO3)4") == "N4O12Pb"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Pb(NO3)4") == "N4O12Pb": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((NH3)2)3") == "H18N6"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((NH3)2)3") == "H18N6": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CaCO3(MgCO3)2(SiO2)4") == "C3CaMg2O17Si4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CaCO3(MgCO3)2(SiO2)4") == "C3CaMg2O17Si4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(Fe(CN)6)2Fe(CO)5") == "C17Fe3N12O5"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(Fe(CN)6)2Fe(CO)5") == "C17Fe3N12O5": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "C3H6(CO2)2") == "C5H6O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "C3H6(CO2)2") == "C5H6O4": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2SO4(Fe(CN)6)2") == "C12Fe2H8N14O4S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2SO4(Fe(CN)6)2") == "C12Fe2H8N14O4S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((H2CO3)2)2") == "C4H8O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((H2CO3)2)2") == "C4H8O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(K2(Ca(CO3)2)3)4") == "C24Ca12K8O72"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(K2(Ca(CO3)2)3)4") == "C24Ca12K8O72": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(CO)3(PO4)2") == "C3FeO11P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(CO)3(PO4)2") == "C3FeO11P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(NO3)3(PO4)2") == "FeN3O17P2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(NO3)3(PO4)2") == "FeN3O17P2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((CH3)3CO)2Si(CH3)2") == "C10H24O2Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((CH3)3CO)2Si(CH3)2") == "C10H24O2Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CaO") == "CaO"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CaO") == "CaO": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CaCO3") == "CCaO3"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CaCO3") == "CCaO3": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(NH4)2SO4Fe3(PO4)2") == "Fe3H8N2O12P2S"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(NH4)2SO4Fe3(PO4)2") == "Fe3H8N2O12P2S": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe(NO3)2(MgSO4)2") == "FeMg2N2O14S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe(NO3)2(MgSO4)2") == "FeMg2N2O14S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "FeCl2") == "Cl2Fe"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "FeCl2") == "Cl2Fe": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Fe3O4(NiO2)2Fe2O3") == "Fe5Ni2O11"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Fe3O4(NiO2)2Fe2O3") == "Fe5Ni2O11": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "((NH4)2SO4)2") == "H16N4O8S2"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "((NH4)2SO4)2") == "H16N4O8S2": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "CaSiO3") == "CaO3Si"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "CaSiO3") == "CaO3Si": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "Ag(Ag(BrO3)2)2") == "Ag3Br4O12"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "Ag(Ag(BrO3)2)2") == "Ag3Br4O12": {e}')
+    
+    total += 1
+    try:
+        result = candidate(formula = "(C6H5COOH)2Fe") == "C14FeH12O4"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(formula = "(C6H5COOH)2Fe") == "C14FeH12O4": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(formula = "(NH4)3PO4") == "H12N3O4P"
+    assert candidate(formula = "(NH4)2SO4") == "H8N2O4S"
+    assert candidate(formula = "Be32(Al2(SiO3)4)3") == "Al6Be32O36Si12"
+    assert candidate(formula = "Mg(OH)2") == "H2MgO2"
+    assert candidate(formula = "Be3Al2(SiO3)6") == "Al2Be3O18Si6"
+    assert candidate(formula = "((H2O)2)3") == "H12O6"
+    assert candidate(formula = "(CH3)2CO") == "C3H6O"
+    assert candidate(formula = "(C2H5)3N") == "C6H15N"
+    assert candidate(formula = "Fe3(PO4)2") == "Fe3O8P2"
+    assert candidate(formula = "(CO2)3(PO3)2") == "C3O12P2"
+    assert candidate(formula = "SiO2") == "O2Si"
+    assert candidate(formula = "Si(C3H5(NO3)3)4") == "C12H20N12O36Si"
+    assert candidate(formula = "(C2H3O2)2") == "C4H6O4"
+    assert candidate(formula = "CuSO4") == "CuO4S"
+    assert candidate(formula = "C6H12O6") == "C6H12O6"
+    assert candidate(formula = "Al2(SO4)3") == "Al2O12S3"
+    assert candidate(formula = "K4(ON(SO3)2)2") == "K4N2O14S4"
+    assert candidate(formula = "(CO(NH2)2)2") == "C2H8N4O2"
+    assert candidate(formula = "(HCO3)3") == "C3H3O9"
+    assert candidate(formula = "(H2O2)3") == "H6O6"
+    assert candidate(formula = "H2O") == "H2O"
+    assert candidate(formula = "Ca(CO3)2") == "C2CaO6"
+    assert candidate(formula = "Si(C3H5O3)2") == "C6H10O6Si"
+    assert candidate(formula = "Fe(NO3)3") == "FeN3O9"
+    assert candidate(formula = "NaCl") == "ClNa"
+    assert candidate(formula = "He") == "He"
+    assert candidate(formula = "P2O7") == "O7P2"
+    assert candidate(formula = "(NH4)2C2O4") == "C2H8N2O4"
+    assert candidate(formula = "Fe(CN)6") == "C6FeN6"
+    assert candidate(formula = "Si(C3H5O3H)3") == "C9H18O9Si"
+    assert candidate(formula = "Fe6(PO4)3") == "Fe6O12P3"
+    assert candidate(formula = "C12H22O11") == "C12H22O11"
+    assert candidate(formula = "(CH3)2O") == "C2H6O"
+    assert candidate(formula = "Fe3(Fe(H2O)2)2") == "Fe5H8O4"
+    assert candidate(formula = "HCl") == "ClH"
+    assert candidate(formula = "(CH3)3COOH") == "C4H10O2"
+    assert candidate(formula = "(NH3)2SO4") == "H6N2O4S"
+    assert candidate(formula = "Fe2(CO)9") == "C9Fe2O9"
+    assert candidate(formula = "Pb(SO4)2") == "O8PbS2"
+    assert candidate(formula = "Fe2(CO)4") == "C4Fe2O4"
+    assert candidate(formula = "Mg3(PO4)2") == "Mg3O8P2"
+    assert candidate(formula = "(C6H5OH)2") == "C12H12O2"
+    assert candidate(formula = "(C4H10O4)2") == "C8H20O8"
+    assert candidate(formula = "(NH4)2Cr2O7(K2Cr2O7)2") == "Cr6H8K4N2O21"
+    assert candidate(formula = "(SiO2)3(CuSiO3)2") == "Cu2O12Si5"
+    assert candidate(formula = "K3PO4") == "K3O4P"
+    assert candidate(formula = "(NH4)2(C2H3O2)2Fe(H2O)4") == "C4FeH22N2O8"
+    assert candidate(formula = "Cu(CuSO4)5(H2O)10") == "Cu6H20O30S5"
+    assert candidate(formula = "Mg2(PO4)3") == "Mg2O12P3"
+    assert candidate(formula = "((CH3COOH)2)3") == "C12H24O12"
+    assert candidate(formula = "(FeSO4)2") == "Fe2O8S2"
+    assert candidate(formula = "C3H6O") == "C3H6O"
+    assert candidate(formula = "((H2O)3)4") == "H24O12"
+    assert candidate(formula = "Fe(CO)4") == "C4FeO4"
+    assert candidate(formula = "FeSO4((NH4)2S)2") == "FeH16N4O4S3"
+    assert candidate(formula = "FeCl3") == "Cl3Fe"
+    assert candidate(formula = "((C2H5OH)3SiO3)2") == "C12H36O12Si2"
+    assert candidate(formula = "Fe(CO)4(Fe(OH)2)2") == "C4Fe3H4O8"
+    assert candidate(formula = "C6H5(CH3COOH)3") == "C12H17O6"
+    assert candidate(formula = "K2Cr2O7") == "Cr2K2O7"
+    assert candidate(formula = "(CH3COO)2Cu") == "C4CuH6O4"
+    assert candidate(formula = "(NaCl)3(MgSO4)2") == "Cl3Mg2Na3O8S2"
+    assert candidate(formula = "(H2O)10") == "H20O10"
+    assert candidate(formula = "Si(C3H5O3)3Na3") == "C9H15Na3O9Si"
+    assert candidate(formula = "((N2)3H)2") == "H2N12"
+    assert candidate(formula = "(NH4)2Cr2O7") == "Cr2H8N2O7"
+    assert candidate(formula = "(NH4)2CO3") == "CH8N2O3"
+    assert candidate(formula = "Al2(SO4)3(CaCO3)4") == "Al2C4Ca4O24S3"
+    assert candidate(formula = "SiC") == "CSi"
+    assert candidate(formula = "(Fe(CN)6)2Fe(CN)6") == "C18Fe3N18"
+    assert candidate(formula = "(C2H5OH)3(CH3COOH)2") == "C10H26O7"
+    assert candidate(formula = "Fe((OH)2)3") == "FeH6O6"
+    assert candidate(formula = "(NH4)3PO4(CrO4)2") == "Cr2H12N3O12P"
+    assert candidate(formula = "Fe3O4(Fe(OH)2)2(SO4)3") == "Fe5H4O20S3"
+    assert candidate(formula = "(KAl(SO4)2)2") == "Al2K2O16S4"
+    assert candidate(formula = "Fe(CO)5") == "C5FeO5"
+    assert candidate(formula = "C6H10O5") == "C6H10O5"
+    assert candidate(formula = "Na3PO4") == "Na3O4P"
+    assert candidate(formula = "Zn(C4H9NH)3SO4") == "C12H30N3O4SZn"
+    assert candidate(formula = "MgSO4") == "MgO4S"
+    assert candidate(formula = "C2H5OH") == "C2H6O"
+    assert candidate(formula = "(NH4)2HPO4") == "H9N2O4P"
+    assert candidate(formula = "CaSO4") == "CaO4S"
+    assert candidate(formula = "C2H5OH(CH3CH2OH)2") == "C6H18O3"
+    assert candidate(formula = "(C2H5OH)2(CO2H)2") == "C6H14O6"
+    assert candidate(formula = "((C2H5OH)2)3") == "C12H36O6"
+    assert candidate(formula = "((CH3COOH)2Cu(CN)2)3") == "C18Cu3H24N6O12"
+    assert candidate(formula = "BaCO3") == "BaCO3"
+    assert candidate(formula = "K2CO3") == "CK2O3"
+    assert candidate(formula = "Na2SiO3(Fe2(SO4)3)2") == "Fe4Na2O27S6Si"
+    assert candidate(formula = "Al2(SO4)3(PO4)2") == "Al2O20P2S3"
+    assert candidate(formula = "((C6H12O6)2H2O)4") == "C48H104O52"
+    assert candidate(formula = "Na2SiO3(Al(OH)4)2") == "Al2H8Na2O11Si"
+    assert candidate(formula = "Fe(Fe(OH)2)2(SO4)3") == "Fe3H4O16S3"
+    assert candidate(formula = "((H2O)2SiO2)3") == "H12O12Si3"
+    assert candidate(formula = "Ag(NH3)2Cl") == "AgClH6N2"
+    assert candidate(formula = "(K4(ON(SO3)2)2)2") == "K8N4O28S8"
+    assert candidate(formula = "(H2SO4)3") == "H6O12S3"
+    assert candidate(formula = "(CH3COOH)2") == "C4H8O4"
+    assert candidate(formula = "Cu3(PO4)2(F2)3") == "Cu3F6O8P2"
+    assert candidate(formula = "(Fe(NO3)3)3") == "Fe3N9O27"
+    assert candidate(formula = "FePO4") == "FeO4P"
+    assert candidate(formula = "(C6H12O6)2") == "C12H24O12"
+    assert candidate(formula = "Fe(CO)4(Fe(OH)2)2(SO4)3") == "C4Fe3H4O20S3"
+    assert candidate(formula = "(C2H5OH)3") == "C6H18O3"
+    assert candidate(formula = "C5H8O2") == "C5H8O2"
+    assert candidate(formula = "(MgSO4)2") == "Mg2O8S2"
+    assert candidate(formula = "C9H8O4") == "C9H8O4"
+    assert candidate(formula = "(C5H12O)2") == "C10H24O2"
+    assert candidate(formula = "Si2(H2O)3(PO4)2") == "H6O11P2Si2"
+    assert candidate(formula = "Fe3(PO4)2(CaCO3)3") == "C3Ca3Fe3O17P2"
+    assert candidate(formula = "Na2SO4") == "Na2O4S"
+    assert candidate(formula = "Hg2(NO3)2") == "Hg2N2O6"
+    assert candidate(formula = "K2Cr2O7((NH4)2SO4)3(CuSO4)5") == "Cr2Cu5H24K2N6O39S8"
+    assert candidate(formula = "Na2S2O3") == "Na2O3S2"
+    assert candidate(formula = "(K2Cr2O7)2") == "Cr4K4O14"
+    assert candidate(formula = "K2(CrO4)2(H2O)2") == "Cr2H4K2O10"
+    assert candidate(formula = "Fe3O4(Fe(OH)2)2") == "Fe5H4O8"
+    assert candidate(formula = "Na2CO3") == "CNa2O3"
+    assert candidate(formula = "Fe2(SO4)3") == "Fe2O12S3"
+    assert candidate(formula = "Ni(CO)4") == "C4NiO4"
+    assert candidate(formula = "Pb3O4") == "O4Pb3"
+    assert candidate(formula = "((CO3)2Ca)3") == "C6Ca3O18"
+    assert candidate(formula = "(SiO2)3(Al(OH)4)2") == "Al2H8O14Si3"
+    assert candidate(formula = "CuSO4((NH4)2S)2") == "CuH16N4O4S3"
+    assert candidate(formula = "((C2H5)2O)4") == "C16H40O4"
+    assert candidate(formula = "(CH3(CH2)4CH3)3") == "C18H42"
+    assert candidate(formula = "((H2O)2SiO2)2") == "H8O8Si2"
+    assert candidate(formula = "CuSO4(Fe(CN)6)2") == "C12CuFe2N12O4S"
+    assert candidate(formula = "Ca3(PO4)2(H2O)12") == "Ca3H24O20P2"
+    assert candidate(formula = "(NH3)3PO4") == "H9N3O4P"
+    assert candidate(formula = "FeS") == "FeS"
+    assert candidate(formula = "Fe3O4(SO4)3") == "Fe3O16S3"
+    assert candidate(formula = "(CaCO3)3") == "C3Ca3O9"
+    assert candidate(formula = "Fe3O4") == "Fe3O4"
+    assert candidate(formula = "(C2H3O2)2Mg") == "C4H6MgO4"
+    assert candidate(formula = "(C6H10O4)3Na3") == "C18H30Na3O12"
+    assert candidate(formula = "Ca(ClO)2") == "CaCl2O2"
+    assert candidate(formula = "(C2H5OH)2") == "C4H12O2"
+    assert candidate(formula = "Fe(CO3)3(Cu(NO3)2)4") == "C3Cu4FeN8O33"
+    assert candidate(formula = "Fe(H2O)6(SO4)3") == "FeH12O18S3"
+    assert candidate(formula = "Ag(NH3)2(NO3)3") == "AgH6N5O9"
+    assert candidate(formula = "(CH3CH2OH)2") == "C4H12O2"
+    assert candidate(formula = "SrTiO3") == "O3SrTi"
+    assert candidate(formula = "Fe(CO)5(CN)2") == "C7FeN2O5"
+    assert candidate(formula = "Fe2O3") == "Fe2O3"
+    assert candidate(formula = "((CO2)2)3") == "C6O12"
+    assert candidate(formula = "(SiO2)3") == "O6Si3"
+    assert candidate(formula = "(Fe(CN)6)3") == "C18Fe3N18"
+    assert candidate(formula = "C6H8O7") == "C6H8O7"
+    assert candidate(formula = "(NH4)2S") == "H8N2S"
+    assert candidate(formula = "(C6H10O5)6") == "C36H60O30"
+    assert candidate(formula = "Pb(NO3)4") == "N4O12Pb"
+    assert candidate(formula = "((NH3)2)3") == "H18N6"
+    assert candidate(formula = "CaCO3(MgCO3)2(SiO2)4") == "C3CaMg2O17Si4"
+    assert candidate(formula = "(Fe(CN)6)2Fe(CO)5") == "C17Fe3N12O5"
+    assert candidate(formula = "C3H6(CO2)2") == "C5H6O4"
+    assert candidate(formula = "(NH4)2SO4(Fe(CN)6)2") == "C12Fe2H8N14O4S"
+    assert candidate(formula = "((H2CO3)2)2") == "C4H8O12"
+    assert candidate(formula = "(K2(Ca(CO3)2)3)4") == "C24Ca12K8O72"
+    assert candidate(formula = "Fe(CO)3(PO4)2") == "C3FeO11P2"
+    assert candidate(formula = "Fe(NO3)3(PO4)2") == "FeN3O17P2"
+    assert candidate(formula = "((CH3)3CO)2Si(CH3)2") == "C10H24O2Si"
+    assert candidate(formula = "CaO") == "CaO"
+    assert candidate(formula = "CaCO3") == "CCaO3"
+    assert candidate(formula = "(NH4)2SO4Fe3(PO4)2") == "Fe3H8N2O12P2S"
+    assert candidate(formula = "Fe(NO3)2(MgSO4)2") == "FeMg2N2O14S2"
+    assert candidate(formula = "FeCl2") == "Cl2Fe"
+    assert candidate(formula = "Fe3O4(NiO2)2Fe2O3") == "Fe5Ni2O11"
+    assert candidate(formula = "((NH4)2SO4)2") == "H16N4O8S2"
+    assert candidate(formula = "CaSiO3") == "CaO3Si"
+    assert candidate(formula = "Ag(Ag(BrO3)2)2") == "Ag3Br4O12"
+    assert candidate(formula = "(C6H5COOH)2Fe") == "C14FeH12O4"
+
+

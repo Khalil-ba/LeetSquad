@@ -1,0 +1,761 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 2, 2, 2],queries = [[0, 4]]) == [False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 2, 2, 2],queries = [[0, 4]]) == [False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 0], [1, 2], [2, 4]]) == [True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 0], [1, 2], [2, 4]]) == [True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 4, 1, 2, 6],queries = [[0, 4]]) == [False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 4, 1, 2, 6],queries = [[0, 4]]) == [False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 4]]) == [False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 4]]) == [False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 3, 1, 6],queries = [[0, 2], [2, 3]]) == [False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 3, 1, 6],queries = [[0, 2], [2, 3]]) == [False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 15, 20, 25, 30],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 4]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 15, 20, 25, 30],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 4]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 2, 2],queries = [[0, 1], [1, 2], [2, 3]]) == [False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 2, 2],queries = [[0, 1], [1, 2], [2, 3]]) == [False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 4]]) == [False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 4]]) == [False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 1, 2, 1],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 1, 2, 1],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131, 142, 153, 164, 175, 186, 197, 208, 219],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131, 142, 153, 164, 175, 186, 197, 208, 219],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 2, 5, 4, 7, 6, 9, 8, 11],queries = [[0, 9], [2, 7], [4, 5], [1, 8], [3, 6]]) == [False, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 2, 5, 4, 7, 6, 9, 8, 11],queries = [[0, 9], [2, 7], [4, 5], [1, 8], [3, 6]]) == [False, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [42, 23, 17, 34, 19, 28, 39, 44, 27, 56, 65, 74, 83, 92, 101],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [False, False, True, True, True, True, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [42, 23, 17, 34, 19, 28, 39, 44, 27, 56, 65, 74, 83, 92, 101],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [False, False, True, True, True, True, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15], [16, 16], [17, 17], [18, 18], [19, 19], [0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15], [16, 16], [17, 17], [18, 18], [19, 19], [0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 13], [2, 5], [6, 8], [10, 12]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 13], [2, 5], [6, 8], [10, 12]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115],queries = [[0, 15], [0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [7, 7], [0, 0], [15, 15]]) == [True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115],queries = [[0, 15], [0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [7, 7], [0, 0], [15, 15]]) == [True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1],queries = [[0, 4], [5, 9], [10, 14], [2, 8]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1],queries = [[0, 4], [5, 9], [10, 14], [2, 8]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 8, 10, 13, 17, 20, 22, 25],queries = [[0, 9], [1, 3], [5, 7], [8, 9]]) == [False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 8, 10, 13, 17, 20, 22, 25],queries = [[0, 9], [1, 3], [5, 7], [8, 9]]) == [False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [0, 15], [1, 4], [2, 9]]) == [False, False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [0, 15], [1, 4], [2, 9]]) == [False, False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [0, 29]]) == [True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [0, 29]]) == [True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 10, 12, 14, 16, 18, 20, 22, 24],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 8], [1, 6]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 10, 12, 14, 16, 18, 20, 22, 24],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 8], [1, 6]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 11, 10, 11, 10, 11, 10, 11, 10, 11],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 11, 10, 11, 10, 11, 10, 11, 10, 11],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 5, 8, 3, 6, 7, 9, 10],queries = [[0, 3], [1, 5], [4, 7], [0, 7]]) == [True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 5, 8, 3, 6, 7, 9, 10],queries = [[0, 3], [1, 5], [4, 7], [0, 7]]) == [True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999],queries = [[0, 4], [5, 9], [0, 9]]) == [True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999],queries = [[0, 4], [5, 9], [0, 9]]) == [True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 1, 3, 5, 7, 9],queries = [[0, 9], [0, 2], [4, 5], [6, 8]]) == [False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 1, 3, 5, 7, 9],queries = [[0, 9], [0, 2], [4, 5], [6, 8]]) == [False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10], [0, 1], [1, 0], [18, 19], [0, 19], [1, 18]]) == [False, False, False, False, False, False, False, False, False, False, False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10], [0, 1], [1, 0], [18, 19], [0, 19], [1, 18]]) == [False, False, False, False, False, False, False, False, False, False, False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13],queries = [[0, 5], [1, 4], [2, 3], [0, 1], [3, 5]]) == [False, False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13],queries = [[0, 5], [1, 4], [2, 3], [0, 1], [3, 5]]) == [False, False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [5, 15], [10, 14], [0, 0], [19, 19]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [5, 15], [10, 14], [0, 0], [19, 19]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 12, 12, 13, 14],queries = [[0, 19], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 12, 12, 13, 14],queries = [[0, 19], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 8], [1, 7], [2, 6], [3, 5], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]) == [True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 8], [1, 7], [2, 6], [3, 5], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]) == [True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32],queries = [[0, 15], [1, 14], [2, 13], [3, 12], [4, 11], [5, 10], [6, 9], [7, 8], [0, 7], [7, 14], [1, 6], [8, 15]]) == [False, False, False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32],queries = [[0, 15], [1, 14], [2, 13], [3, 12], [4, 11], [5, 10], [6, 9], [7, 8], [0, 7], [7, 14], [1, 6], [8, 15]]) == [False, False, False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 21], [1, 20], [2, 19], [3, 18], [4, 17]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 21], [1, 20], [2, 19], [3, 18], [4, 17]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99999, 1, 99998, 2, 99997, 3, 99996, 4, 99995, 5],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 4], [5, 9]]) == [False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99999, 1, 99998, 2, 99997, 3, 99996, 4, 99995, 5],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 4], [5, 9]]) == [False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 4, 3, 2, 3, 4, 3, 2, 3],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 4, 3, 2, 3, 4, 3, 2, 3],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],queries = [[0, 9], [1, 8], [3, 7], [5, 9]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],queries = [[0, 9], [1, 8], [3, 7], [5, 9]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19],queries = [[0, 1], [1, 2], [0, 3], [3, 7], [0, 7]]) == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19],queries = [[0, 1], [1, 2], [0, 3], [3, 7], [0, 7]]) == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 201, 102, 203, 104, 205, 106, 207, 108, 209, 110],queries = [[0, 10], [1, 9], [2, 8], [3, 7], [4, 6], [0, 1], [5, 5]]) == [True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 201, 102, 203, 104, 205, 106, 207, 108, 209, 110],queries = [[0, 10], [1, 9], [2, 8], [3, 7], [4, 6], [0, 1], [5, 5]]) == [True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [0, 7]]) == [True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [0, 7]]) == [True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 3], [2, 5], [3, 7], [4, 9]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 3], [2, 5], [3, 7], [4, 9]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [0, 9]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [0, 9]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195],queries = [[0, 9], [1, 3], [4, 7], [6, 8]]) == [False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195],queries = [[0, 9], [1, 3], [4, 7], [6, 8]]) == [False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],queries = [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == [False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],queries = [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == [False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[0, 9], [9, 18], [0, 18], [8, 10], [1, 17], [2, 16], [3, 15], [4, 14], [5, 13], [6, 12], [7, 11], [0, 1], [1, 0], [17, 18], [0, 18]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[0, 9], [9, 18], [0, 18], [8, 10], [1, 17], [2, 16], [3, 15], [4, 14], [5, 13], [6, 12], [7, 11], [0, 1], [1, 0], [17, 18], [0, 18]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 29], [10, 29], [1, 28], [2, 27], [3, 26]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 29], [10, 29], [1, 28], [2, 27], [3, 26]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 5], [5, 9]]) == [True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 5], [5, 9]]) == [True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 2, 1, 2, 3, 2, 1, 2],queries = [[0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 2, 1, 2, 3, 2, 1, 2],queries = [[0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 2, 3, 4, 3, 4, 5, 4, 5, 6, 5, 6, 7],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 2, 3, 4, 3, 4, 5, 4, 5, 6, 5, 6, 7],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = [2, 2, 2, 2, 2],queries = [[0, 4]]) == [False]
+    assert candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]
+    assert candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [False, False, False, False]
+    assert candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, False]
+    assert candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 1], [1, 2], [2, 3], [3, 4]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5],queries = [[0, 0], [1, 2], [2, 4]]) == [True, True, True]
+    assert candidate(nums = [3, 4, 1, 2, 6],queries = [[0, 4]]) == [False]
+    assert candidate(nums = [1, 3, 5, 7, 9],queries = [[0, 4]]) == [False]
+    assert candidate(nums = [4, 3, 1, 6],queries = [[0, 2], [2, 3]]) == [False, True]
+    assert candidate(nums = [10, 15, 20, 25, 30],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 4]]) == [True, True, True, True, True]
+    assert candidate(nums = [2, 2, 2, 2],queries = [[0, 1], [1, 2], [2, 3]]) == [False, False, False]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10],queries = [[0, 4]]) == [False]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == [True, True, True, True, True]
+    assert candidate(nums = [1, 2, 1, 2, 1],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [0, 4]]) == [True, True, True, True, True, True]
+    assert candidate(nums = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131, 142, 153, 164, 175, 186, 197, 208, 219],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+    assert candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [1, 3, 2, 5, 4, 7, 6, 9, 8, 11],queries = [[0, 9], [2, 7], [4, 5], [1, 8], [3, 6]]) == [False, True, True, True, True]
+    assert candidate(nums = [42, 23, 17, 34, 19, 28, 39, 44, 27, 56, 65, 74, 83, 92, 101],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [False, False, True, True, True, True, True, False, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15], [16, 16], [17, 17], [18, 18], [19, 19], [0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 13], [2, 5], [6, 8], [10, 12]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115],queries = [[0, 15], [0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [7, 7], [0, 0], [15, 15]]) == [True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1],queries = [[0, 4], [5, 9], [10, 14], [2, 8]]) == [False, False, False, False]
+    assert candidate(nums = [2, 3, 5, 8, 10, 13, 17, 20, 22, 25],queries = [[0, 9], [1, 3], [5, 7], [8, 9]]) == [False, False, False, True]
+    assert candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [0, 15], [1, 4], [2, 9]]) == [False, False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [0, 29]]) == [True, True, True, True, True, True]
+    assert candidate(nums = [8, 10, 12, 14, 16, 18, 20, 22, 24],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 8], [1, 6]]) == [False, False, False, False, False, False]
+    assert candidate(nums = [10, 11, 10, 11, 10, 11, 10, 11, 10, 11],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, True]
+    assert candidate(nums = [2, 5, 8, 3, 6, 7, 9, 10],queries = [[0, 3], [1, 5], [4, 7], [0, 7]]) == [True, True, False, False]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]
+    assert candidate(nums = [100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999, 100000, 99999],queries = [[0, 4], [5, 9], [0, 9]]) == [True, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10, 1, 3, 5, 7, 9],queries = [[0, 9], [0, 2], [4, 5], [6, 8]]) == [False, False, True, False]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14]]) == [False, False, False, False, False, False]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10], [0, 1], [1, 0], [18, 19], [0, 19], [1, 18]]) == [False, False, False, False, False, False, False, False, False, False, False, True, False, False, False]
+    assert candidate(nums = [2, 3, 5, 7, 11, 13],queries = [[0, 5], [1, 4], [2, 3], [0, 1], [3, 5]]) == [False, False, False, True, False]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 19], [5, 15], [10, 14], [0, 0], [19, 19]]) == [True, True, True, True, True]
+    assert candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 12, 12, 13, 14],queries = [[0, 19], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]]) == [False, False, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True]
+    assert candidate(nums = [2, 3, 4, 5, 6, 7, 8, 9, 10],queries = [[0, 8], [1, 7], [2, 6], [3, 5], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]) == [True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32],queries = [[0, 15], [1, 14], [2, 13], [3, 12], [4, 11], [5, 10], [6, 9], [7, 8], [0, 7], [7, 14], [1, 6], [8, 15]]) == [False, False, False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 21], [1, 20], [2, 19], [3, 18], [4, 17]]) == [False, False, False, False, False]
+    assert candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]
+    assert candidate(nums = [99999, 1, 99998, 2, 99997, 3, 99996, 4, 99995, 5],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 4], [5, 9]]) == [False, False, False, False, False, False, False]
+    assert candidate(nums = [2, 3, 4, 3, 2, 3, 4, 3, 2, 3],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [0, 7], [8, 14]]) == [True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],queries = [[0, 9], [1, 8], [3, 7], [5, 9]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25], [5, 24], [6, 23], [7, 22], [8, 21], [9, 20]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9]]) == [False, False, False, False, False, False]
+    assert candidate(nums = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],queries = [[0, 19], [1, 18], [2, 17], [3, 16], [4, 15]]) == [True, True, True, True, True]
+    assert candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19],queries = [[0, 1], [1, 2], [0, 3], [3, 7], [0, 7]]) == [True, False, False, False, False]
+    assert candidate(nums = [100, 201, 102, 203, 104, 205, 106, 207, 108, 209, 110],queries = [[0, 10], [1, 9], [2, 8], [3, 7], [4, 6], [0, 1], [5, 5]]) == [True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],queries = [[0, 29], [1, 28], [2, 27], [3, 26], [4, 25]]) == [True, True, True, True, True]
+    assert candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [0, 7]]) == [True, True, True, True, True, True, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 3], [2, 5], [3, 7], [4, 9]]) == [False, False, False, False, False]
+    assert candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],queries = [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [0, 9]]) == [False, False, False, False, False, False]
+    assert candidate(nums = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195],queries = [[0, 9], [1, 3], [4, 7], [6, 8]]) == [False, False, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [False, False, False, False, False]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]
+    assert candidate(nums = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]
+    assert candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],queries = [[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == [False, False, False, False, False, False, False, False]
+    assert candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909, 1010],queries = [[0, 9], [2, 7], [4, 5], [1, 8]]) == [True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],queries = [[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]]) == [True, True, True, True, True, True, True]
+    assert candidate(nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],queries = [[0, 9], [9, 18], [0, 18], [8, 10], [1, 17], [2, 16], [3, 15], [4, 14], [5, 13], [6, 12], [7, 11], [0, 1], [1, 0], [17, 18], [0, 18]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],queries = [[0, 29], [10, 29], [1, 28], [2, 27], [3, 26]]) == [True, True, True, True, True]
+    assert candidate(nums = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],queries = [[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [0, 5], [5, 9]]) == [True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 2, 3, 2, 1, 2, 3, 2, 1, 2],queries = [[0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9]]) == [True, True, True, True, True, True]
+    assert candidate(nums = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],queries = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [False, False, False, False, False, False, False, False, False]
+    assert candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [False, False, False, False, False, False, False]
+    assert candidate(nums = [1, 2, 3, 2, 3, 4, 3, 4, 5, 4, 5, 6, 5, 6, 7],queries = [[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14]]) == [True, True, True, True, True, True, True]
+    assert candidate(nums = [2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],queries = [[0, 9], [5, 14], [10, 19], [0, 19], [1, 18]]) == [True, True, True, True, True]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],queries = [[0, 3], [4, 7], [5, 9], [1, 8]]) == [False, False, False, False]
+
+

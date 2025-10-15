@@ -1,0 +1,1202 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(word1 = "park",word2 = "spake") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "park",word2 = "spake") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "algorithm",word2 = "altruistic") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "algorithm",word2 = "altruistic") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abc",word2 = "") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abc",word2 = "") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "horse",word2 = "ros") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "horse",word2 = "ros") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "a",word2 = "b") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "a",word2 = "b") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "kitten",word2 = "sitting") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "kitten",word2 = "sitting") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "a",word2 = "a") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "a",word2 = "a") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "a",word2 = "") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "a",word2 = "") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcdefghij",word2 = "jihgfedcba") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcdefghij",word2 = "jihgfedcba") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "",word2 = "a") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "",word2 = "a") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "",word2 = "abc") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "",word2 = "abc") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abc",word2 = "abc") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abc",word2 = "abc") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "intention",word2 = "execution") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "intention",word2 = "execution") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcd",word2 = "dcba") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcd",word2 = "dcba") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "",word2 = "") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "",word2 = "") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abc",word2 = "def") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abc",word2 = "def") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "flaw",word2 = "lawn") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "flaw",word2 = "lawn") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "example",word2 = "samples") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "example",word2 = "samples") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abbreviation",word2 = "acceleration") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abbreviation",word2 = "acceleration") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcdefghijklmnopqrstuvwxyz",word2 = "zyxwvutsrqponmlkjihgfedcba") == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcdefghijklmnopqrstuvwxyz",word2 = "zyxwvutsrqponmlkjihgfedcba") == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "acknowledgment",word2 = "acknowledge") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "acknowledgment",word2 = "acknowledge") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "xylophone",word2 = "xylophone") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "xylophone",word2 = "xylophone") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "dynamic",word2 = "programming") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "dynamic",word2 = "programming") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "embarrassing",word2 = "aberration") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "embarrassing",word2 = "aberration") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "supercalifragilisticexpialidocious",word2 = "supercalifragilisticexpialidociousness") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "supercalifragilisticexpialidocious",word2 = "supercalifragilisticexpialidociousness") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "sequential",word2 = "sequentialization") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "sequential",word2 = "sequentialization") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "algorithm",word2 = "alligator") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "algorithm",word2 = "alligator") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "distance",word2 = "distinction") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "distance",word2 = "distinction") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "irreversible",word2 = "reversible") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "irreversible",word2 = "reversible") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "serendipity",word2 = "inspiration") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "serendipity",word2 = "inspiration") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "karolin",word2 = "kathrin") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "karolin",word2 = "kathrin") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "representative",word2 = "reproductive") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "representative",word2 = "reproductive") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "congratulations",word2 = "congratulate") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "congratulations",word2 = "congratulate") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pseudopseudohypoparathyroidism") == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pseudopseudohypoparathyroidism") == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "qwerty",word2 = "azerty") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "qwerty",word2 = "azerty") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "mississippi",word2 = "mispelling") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "mississippi",word2 = "mispelling") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "levenshtein",word2 = "levenshtein") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "levenshtein",word2 = "levenshtein") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "sequential",word2 = "concurrent") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "sequential",word2 = "concurrent") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "psychological",word2 = "psychologist") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "psychological",word2 = "psychologist") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interpretation",word2 = "interpretive") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interpretation",word2 = "interpretive") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transient",word2 = "transitory") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transient",word2 = "transitory") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcdefgh",word2 = "xyz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcdefgh",word2 = "xyz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "algorithmic",word2 = "algebraic") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "algorithmic",word2 = "algebraic") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transfiguration") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transfiguration") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "edit",word2 = "editing") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "edit",word2 = "editing") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "levenshtein",word2 = "levenschtein") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "levenshtein",word2 = "levenschtein") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abracadabra",word2 = "barbarian") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abracadabra",word2 = "barbarian") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "encyclopedia",word2 = "encyclopedic") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "encyclopedia",word2 = "encyclopedic") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transmogrification") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transmogrification") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "complexity",word2 = "simplicity") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "complexity",word2 = "simplicity") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transformation") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transformation") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transform") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transform") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcdexyz",word2 = "abcd") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcdexyz",word2 = "abcd") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "zoology",word2 = "botany") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "zoology",word2 = "botany") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "computation",word2 = "computational") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "computation",word2 = "computational") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "pharmaceuticals",word2 = "pharmacology") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "pharmaceuticals",word2 = "pharmacology") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "distance",word2 = "difference") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "distance",word2 = "difference") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "reciprocal",word2 = "perpendicular") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "reciprocal",word2 = "perpendicular") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "development",word2 = "evolution") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "development",word2 = "evolution") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "amplification",word2 = "attenuation") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "amplification",word2 = "attenuation") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "thermodynamics",word2 = "thermodynamic") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "thermodynamics",word2 = "thermodynamic") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "metamorphosis",word2 = "metaphysics") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "metamorphosis",word2 = "metaphysics") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "quantum",word2 = "quark") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "quantum",word2 = "quark") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "repetition",word2 = "repetitions") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "repetition",word2 = "repetitions") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transform",word2 = "transformation") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transform",word2 = "transformation") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "sequence",word2 = "consequence") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "sequence",word2 = "consequence") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abbreviation",word2 = "contraction") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abbreviation",word2 = "contraction") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "development",word2 = "independently") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "development",word2 = "independently") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "distance",word2 = "distant") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "distance",word2 = "distant") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "mississippi",word2 = "mississipi") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "mississippi",word2 = "mississipi") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "biographical",word2 = "biographies") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "biographical",word2 = "biographies") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "optimization",word2 = "maximization") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "optimization",word2 = "maximization") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "photosynthesis",word2 = "photosynthetic") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "photosynthesis",word2 = "photosynthetic") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pneumonoultramicroscopicsilicovolcanoconiosis") == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pneumonoultramicroscopicsilicovolcanoconiosis") == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "algorithm",word2 = "altruism") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "algorithm",word2 = "altruism") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "representation",word2 = "representative") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "representation",word2 = "representative") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "reptile",word2 = "reptilian") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "reptile",word2 = "reptilian") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abacaxi",word2 = "abacax") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abacaxi",word2 = "abacax") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "mississippi",word2 = "misisippi") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "mississippi",word2 = "misisippi") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "electrical",word2 = "electronic") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "electrical",word2 = "electronic") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "photograph",word2 = "photography") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "photograph",word2 = "photography") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "python",word2 = "typhon") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "python",word2 = "typhon") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "kayak",word2 = "racecar") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "kayak",word2 = "racecar") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "optimization",word2 = "minimization") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "optimization",word2 = "minimization") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "biological",word2 = "biographic") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "biological",word2 = "biographic") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "congratulations",word2 = "congratulations") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "congratulations",word2 = "congratulations") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "photography",word2 = "photomontage") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "photography",word2 = "photomontage") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "babble",word2 = "bubble") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "babble",word2 = "bubble") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transmute") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transmute") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "supercalifragilisticexpialidocious",word2 = "antidisestablishmentarianism") == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "supercalifragilisticexpialidocious",word2 = "antidisestablishmentarianism") == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "semantically",word2 = "syntactically") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "semantically",word2 = "syntactically") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "synchronous",word2 = "asynchronous") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "synchronous",word2 = "asynchronous") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "evolution",word2 = "revolution") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "evolution",word2 = "revolution") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcdefghij",word2 = "zyxwvutsrqponmlkjihgfedcba") == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcdefghij",word2 = "zyxwvutsrqponmlkjihgfedcba") == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "misunderstanding",word2 = "understanding") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "misunderstanding",word2 = "understanding") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "combinatorics",word2 = "computation") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "combinatorics",word2 = "computation") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "electromagnetic",word2 = "electroencephalography") == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "electromagnetic",word2 = "electroencephalography") == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "permutation",word2 = "combination") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "permutation",word2 = "combination") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "subsequence",word2 = "supersequence") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "subsequence",word2 = "supersequence") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "lumberjack",word2 = "lumbersome") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "lumberjack",word2 = "lumbersome") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "optimization",word2 = "information") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "optimization",word2 = "information") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interpolation",word2 = "interpretation") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interpolation",word2 = "interpretation") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "magnificent",word2 = "magnanimous") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "magnificent",word2 = "magnanimous") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "xylophone",word2 = "xylography") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "xylophone",word2 = "xylography") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "biochemistry",word2 = "bioinformatics") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "biochemistry",word2 = "bioinformatics") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "exaggeration",word2 = "aggrandizement") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "exaggeration",word2 = "aggrandizement") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abcde",word2 = "fghij") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abcde",word2 = "fghij") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "mississippi",word2 = "mispell") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "mississippi",word2 = "mispell") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interpolation",word2 = "internationalization") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interpolation",word2 = "internationalization") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "entomology",word2 = "herpetology") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "entomology",word2 = "herpetology") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interference",word2 = "interferometer") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interference",word2 = "interferometer") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "communication",word2 = "communism") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "communication",word2 = "communism") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "characterization",word2 = "categorization") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "characterization",word2 = "categorization") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abracadabra",word2 = "cabracadabara") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abracadabra",word2 = "cabracadabara") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "transformation",word2 = "transference") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "transformation",word2 = "transference") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "decomposition",word2 = "discombobulation") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "decomposition",word2 = "discombobulation") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "intermediate",word2 = "interim") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "intermediate",word2 = "interim") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interpolation",word2 = "intrapolation") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interpolation",word2 = "intrapolation") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "visualization",word2 = "representation") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "visualization",word2 = "representation") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abbreviation",word2 = "elision") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abbreviation",word2 = "elision") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "metamorphism",word2 = "metempsychosis") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "metamorphism",word2 = "metempsychosis") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "encyclopedia",word2 = "encyclopedia") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "encyclopedia",word2 = "encyclopedia") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "interdisciplinary",word2 = "transdisciplinary") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "interdisciplinary",word2 = "transdisciplinary") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "unbelievable",word2 = "believable") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "unbelievable",word2 = "believable") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "abracadabra",word2 = "cadabra") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "abracadabra",word2 = "cadabra") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "hydrostatic",word2 = "hydrodynamics") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "hydrostatic",word2 = "hydrodynamics") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "parallel",word2 = "perpendicular") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "parallel",word2 = "perpendicular") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "administration",word2 = "administrative") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "administration",word2 = "administrative") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "cosmology",word2 = "cosmonautics") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "cosmology",word2 = "cosmonautics") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "development",word2 = "develpoment") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "development",word2 = "develpoment") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "photosynthesis",word2 = "photography") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "photosynthesis",word2 = "photography") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word1 = "biochemistry",word2 = "biological") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word1 = "biochemistry",word2 = "biological") == 8: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(word1 = "park",word2 = "spake") == 3
+    assert candidate(word1 = "algorithm",word2 = "altruistic") == 6
+    assert candidate(word1 = "abc",word2 = "") == 3
+    assert candidate(word1 = "horse",word2 = "ros") == 3
+    assert candidate(word1 = "a",word2 = "b") == 1
+    assert candidate(word1 = "kitten",word2 = "sitting") == 3
+    assert candidate(word1 = "a",word2 = "a") == 0
+    assert candidate(word1 = "a",word2 = "") == 1
+    assert candidate(word1 = "abcdefghij",word2 = "jihgfedcba") == 10
+    assert candidate(word1 = "",word2 = "a") == 1
+    assert candidate(word1 = "",word2 = "abc") == 3
+    assert candidate(word1 = "abc",word2 = "abc") == 0
+    assert candidate(word1 = "intention",word2 = "execution") == 5
+    assert candidate(word1 = "abcd",word2 = "dcba") == 4
+    assert candidate(word1 = "",word2 = "") == 0
+    assert candidate(word1 = "abc",word2 = "def") == 3
+    assert candidate(word1 = "flaw",word2 = "lawn") == 2
+    assert candidate(word1 = "example",word2 = "samples") == 3
+    assert candidate(word1 = "abbreviation",word2 = "acceleration") == 6
+    assert candidate(word1 = "abcdefghijklmnopqrstuvwxyz",word2 = "zyxwvutsrqponmlkjihgfedcba") == 26
+    assert candidate(word1 = "acknowledgment",word2 = "acknowledge") == 3
+    assert candidate(word1 = "xylophone",word2 = "xylophone") == 0
+    assert candidate(word1 = "dynamic",word2 = "programming") == 8
+    assert candidate(word1 = "embarrassing",word2 = "aberration") == 7
+    assert candidate(word1 = "supercalifragilisticexpialidocious",word2 = "supercalifragilisticexpialidociousness") == 4
+    assert candidate(word1 = "sequential",word2 = "sequentialization") == 7
+    assert candidate(word1 = "algorithm",word2 = "alligator") == 6
+    assert candidate(word1 = "distance",word2 = "distinction") == 5
+    assert candidate(word1 = "irreversible",word2 = "reversible") == 2
+    assert candidate(word1 = "serendipity",word2 = "inspiration") == 10
+    assert candidate(word1 = "karolin",word2 = "kathrin") == 3
+    assert candidate(word1 = "representative",word2 = "reproductive") == 6
+    assert candidate(word1 = "congratulations",word2 = "congratulate") == 4
+    assert candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pseudopseudohypoparathyroidism") == 30
+    assert candidate(word1 = "qwerty",word2 = "azerty") == 2
+    assert candidate(word1 = "mississippi",word2 = "mispelling") == 7
+    assert candidate(word1 = "levenshtein",word2 = "levenshtein") == 0
+    assert candidate(word1 = "sequential",word2 = "concurrent") == 9
+    assert candidate(word1 = "psychological",word2 = "psychologist") == 3
+    assert candidate(word1 = "interpretation",word2 = "interpretive") == 4
+    assert candidate(word1 = "transient",word2 = "transitory") == 4
+    assert candidate(word1 = "abcdefgh",word2 = "xyz") == 8
+    assert candidate(word1 = "algorithmic",word2 = "algebraic") == 6
+    assert candidate(word1 = "transformation",word2 = "transfiguration") == 4
+    assert candidate(word1 = "edit",word2 = "editing") == 3
+    assert candidate(word1 = "levenshtein",word2 = "levenschtein") == 1
+    assert candidate(word1 = "abracadabra",word2 = "barbarian") == 8
+    assert candidate(word1 = "encyclopedia",word2 = "encyclopedic") == 1
+    assert candidate(word1 = "transformation",word2 = "transmogrification") == 6
+    assert candidate(word1 = "complexity",word2 = "simplicity") == 4
+    assert candidate(word1 = "transformation",word2 = "transformation") == 0
+    assert candidate(word1 = "transformation",word2 = "transform") == 5
+    assert candidate(word1 = "abcdexyz",word2 = "abcd") == 4
+    assert candidate(word1 = "zoology",word2 = "botany") == 5
+    assert candidate(word1 = "computation",word2 = "computational") == 2
+    assert candidate(word1 = "pharmaceuticals",word2 = "pharmacology") == 8
+    assert candidate(word1 = "distance",word2 = "difference") == 5
+    assert candidate(word1 = "reciprocal",word2 = "perpendicular") == 10
+    assert candidate(word1 = "development",word2 = "evolution") == 7
+    assert candidate(word1 = "amplification",word2 = "attenuation") == 7
+    assert candidate(word1 = "thermodynamics",word2 = "thermodynamic") == 1
+    assert candidate(word1 = "metamorphosis",word2 = "metaphysics") == 5
+    assert candidate(word1 = "quantum",word2 = "quark") == 4
+    assert candidate(word1 = "repetition",word2 = "repetitions") == 1
+    assert candidate(word1 = "transform",word2 = "transformation") == 5
+    assert candidate(word1 = "sequence",word2 = "consequence") == 3
+    assert candidate(word1 = "abbreviation",word2 = "contraction") == 8
+    assert candidate(word1 = "development",word2 = "independently") == 9
+    assert candidate(word1 = "distance",word2 = "distant") == 2
+    assert candidate(word1 = "mississippi",word2 = "mississipi") == 1
+    assert candidate(word1 = "biographical",word2 = "biographies") == 3
+    assert candidate(word1 = "optimization",word2 = "maximization") == 3
+    assert candidate(word1 = "photosynthesis",word2 = "photosynthetic") == 2
+    assert candidate(word1 = "supercalifragilisticexpialidocious",word2 = "pneumonoultramicroscopicsilicovolcanoconiosis") == 31
+    assert candidate(word1 = "algorithm",word2 = "altruism") == 5
+    assert candidate(word1 = "representation",word2 = "representative") == 2
+    assert candidate(word1 = "reptile",word2 = "reptilian") == 3
+    assert candidate(word1 = "abacaxi",word2 = "abacax") == 1
+    assert candidate(word1 = "mississippi",word2 = "misisippi") == 2
+    assert candidate(word1 = "electrical",word2 = "electronic") == 4
+    assert candidate(word1 = "photograph",word2 = "photography") == 1
+    assert candidate(word1 = "python",word2 = "typhon") == 2
+    assert candidate(word1 = "kayak",word2 = "racecar") == 5
+    assert candidate(word1 = "optimization",word2 = "minimization") == 3
+    assert candidate(word1 = "biological",word2 = "biographic") == 7
+    assert candidate(word1 = "congratulations",word2 = "congratulations") == 0
+    assert candidate(word1 = "photography",word2 = "photomontage") == 7
+    assert candidate(word1 = "babble",word2 = "bubble") == 1
+    assert candidate(word1 = "transformation",word2 = "transmute") == 7
+    assert candidate(word1 = "supercalifragilisticexpialidocious",word2 = "antidisestablishmentarianism") == 26
+    assert candidate(word1 = "semantically",word2 = "syntactically") == 4
+    assert candidate(word1 = "synchronous",word2 = "asynchronous") == 1
+    assert candidate(word1 = "evolution",word2 = "revolution") == 1
+    assert candidate(word1 = "abcdefghij",word2 = "zyxwvutsrqponmlkjihgfedcba") == 25
+    assert candidate(word1 = "misunderstanding",word2 = "understanding") == 3
+    assert candidate(word1 = "combinatorics",word2 = "computation") == 7
+    assert candidate(word1 = "electromagnetic",word2 = "electroencephalography") == 13
+    assert candidate(word1 = "permutation",word2 = "combination") == 6
+    assert candidate(word1 = "subsequence",word2 = "supersequence") == 3
+    assert candidate(word1 = "lumberjack",word2 = "lumbersome") == 4
+    assert candidate(word1 = "optimization",word2 = "information") == 7
+    assert candidate(word1 = "interpolation",word2 = "interpretation") == 3
+    assert candidate(word1 = "magnificent",word2 = "magnanimous") == 6
+    assert candidate(word1 = "xylophone",word2 = "xylography") == 6
+    assert candidate(word1 = "biochemistry",word2 = "bioinformatics") == 10
+    assert candidate(word1 = "exaggeration",word2 = "aggrandizement") == 10
+    assert candidate(word1 = "abcde",word2 = "fghij") == 5
+    assert candidate(word1 = "mississippi",word2 = "mispell") == 8
+    assert candidate(word1 = "interpolation",word2 = "internationalization") == 8
+    assert candidate(word1 = "entomology",word2 = "herpetology") == 5
+    assert candidate(word1 = "interference",word2 = "interferometer") == 5
+    assert candidate(word1 = "communication",word2 = "communism") == 6
+    assert candidate(word1 = "characterization",word2 = "categorization") == 6
+    assert candidate(word1 = "abracadabra",word2 = "cabracadabara") == 2
+    assert candidate(word1 = "transformation",word2 = "transference") == 7
+    assert candidate(word1 = "decomposition",word2 = "discombobulation") == 7
+    assert candidate(word1 = "intermediate",word2 = "interim") == 6
+    assert candidate(word1 = "interpolation",word2 = "intrapolation") == 2
+    assert candidate(word1 = "visualization",word2 = "representation") == 9
+    assert candidate(word1 = "abbreviation",word2 = "elision") == 7
+    assert candidate(word1 = "metamorphism",word2 = "metempsychosis") == 8
+    assert candidate(word1 = "encyclopedia",word2 = "encyclopedia") == 0
+    assert candidate(word1 = "interdisciplinary",word2 = "transdisciplinary") == 5
+    assert candidate(word1 = "unbelievable",word2 = "believable") == 2
+    assert candidate(word1 = "abracadabra",word2 = "cadabra") == 4
+    assert candidate(word1 = "hydrostatic",word2 = "hydrodynamics") == 5
+    assert candidate(word1 = "parallel",word2 = "perpendicular") == 10
+    assert candidate(word1 = "administration",word2 = "administrative") == 2
+    assert candidate(word1 = "cosmology",word2 = "cosmonautics") == 7
+    assert candidate(word1 = "development",word2 = "develpoment") == 2
+    assert candidate(word1 = "photosynthesis",word2 = "photography") == 8
+    assert candidate(word1 = "biochemistry",word2 = "biological") == 8
+
+

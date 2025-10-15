@@ -1,0 +1,1067 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16],target = 31) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16],target = 31) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [32, 16, 8, 4, 2, 1],target = 63) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [32, 16, 8, 4, 2, 1],target = 63) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1],target = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1],target = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [128, 64, 32, 16, 8, 4, 2, 1],target = 255) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [128, 64, 32, 16, 8, 4, 2, 1],target = 255) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 32, 1, 2],target = 12) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 32, 1, 2],target = 12) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [64],target = 32) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [64],target = 32) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024],target = 512) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024],target = 512) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 8],target = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 8],target = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1],target = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1],target = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],target = 1048575) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],target = 1048575) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16],target = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16],target = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 32, 1],target = 35) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 32, 1],target = 35) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64],target = 63) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64],target = 63) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024],target = 1) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024],target = 1) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1073741824],target = 1073741824) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1073741824],target = 1073741824) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 2, 2],target = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 2, 2],target = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 16) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 16) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [16, 8, 4, 2, 1],target = 31) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [16, 8, 4, 2, 1],target = 31) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1],target = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1],target = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144],target = 524287) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144],target = 524287) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 512, 256, 256, 128, 128, 64, 64, 32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 512, 256, 256, 128, 128, 64, 64, 32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1535) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1535) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 16, 32, 64, 128, 256, 512],target = 1015) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 16, 32, 64, 128, 256, 512],target = 1015) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],target = 100) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],target = 100) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 100) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 100) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024],target = 4095) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024],target = 4095) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1025) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1025) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 511) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 511) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [256, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 512) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [256, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 512) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128],target = 1023) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128],target = 1023) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2],target = 1000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2],target = 1000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [16, 8, 4, 2, 1, 1, 1],target = 31) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [16, 8, 4, 2, 1, 1, 1],target = 31) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [256, 128, 64, 32, 16, 8, 4, 2, 1],target = 448) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [256, 128, 64, 32, 16, 8, 4, 2, 1],target = 448) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384],target = 12345) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384],target = 12345) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 4095) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 4095) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1536) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1536) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [16, 16, 16, 16, 8, 8, 8, 8, 4, 4, 4, 4, 2, 2, 2, 2, 1, 1, 1, 1],target = 63) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [16, 16, 16, 16, 8, 8, 8, 8, 4, 4, 4, 4, 2, 2, 2, 2, 1, 1, 1, 1],target = 63) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 1024) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 1024) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 4, 16, 64, 256, 1024, 4096],target = 2047) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 4, 16, 64, 256, 1024, 4096],target = 2047) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128],target = 1023) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128],target = 1023) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64],target = 127) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64],target = 127) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1073741823) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1073741823) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1, 1, 1, 1],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1, 1, 1, 1],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16],target = 31) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16],target = 31) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 4, 2, 1, 1, 1, 1, 1],target = 13) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 4, 2, 1, 1, 1, 1, 1],target = 13) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512, 1024, 1024, 1024],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512, 1024, 1024, 1024],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 1023) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 1023) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 32767) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 32767) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 512, 512, 512],target = 1024) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 512, 512, 512],target = 1024) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 4, 16, 64, 256],target = 255) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 4, 16, 64, 256],target = 255) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256],target = 255) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256],target = 255) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1024) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1024) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],target = 524287) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],target = 524287) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 1073741823) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 1073741823) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 15000) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 15000) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512],target = 1023) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512],target = 1023) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128, 256, 256, 256, 256, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 4096, 4096, 4096, 4096, 8192, 8192, 8192, 8192, 16384, 16384, 16384, 16384, 32768, 32768, 32768, 32768, 65536, 65536, 65536, 65536, 131072, 131072, 131072, 131072, 262144, 262144, 262144, 262144, 524288, 524288, 524288, 524288, 1048576, 1048576, 1048576, 1048576, 2097152, 2097152, 2097152, 2097152, 4194304, 4194304, 4194304, 4194304, 8388608, 8388608, 8388608, 8388608, 16777216, 16777216, 16777216, 16777216, 33554432, 33554432, 33554432, 33554432, 67108864, 67108864, 67108864, 67108864, 134217728, 134217728, 134217728, 134217728, 268435456, 268435456, 268435456, 268435456, 536870912, 536870912, 536870912, 536870912, 1073741824, 1073741824, 1073741824, 1073741824],target = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128, 256, 256, 256, 256, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 4096, 4096, 4096, 4096, 8192, 8192, 8192, 8192, 16384, 16384, 16384, 16384, 32768, 32768, 32768, 32768, 65536, 65536, 65536, 65536, 131072, 131072, 131072, 131072, 262144, 262144, 262144, 262144, 524288, 524288, 524288, 524288, 1048576, 1048576, 1048576, 1048576, 2097152, 2097152, 2097152, 2097152, 4194304, 4194304, 4194304, 4194304, 8388608, 8388608, 8388608, 8388608, 16777216, 16777216, 16777216, 16777216, 33554432, 33554432, 33554432, 33554432, 67108864, 67108864, 67108864, 67108864, 134217728, 134217728, 134217728, 134217728, 268435456, 268435456, 268435456, 268435456, 536870912, 536870912, 536870912, 536870912, 1073741824, 1073741824, 1073741824, 1073741824],target = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 1024) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 1024) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 48) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 48) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 16, 64, 256],target = 317) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 16, 64, 256],target = 317) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2097151) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2097151) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1048575) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1048575) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 16],target = 15) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 16],target = 15) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],target = 1048575) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],target = 1048575) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 4294967295) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 4294967295) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 0) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 0) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 8191) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 8191) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 31) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 31) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [512, 512, 512, 512, 512, 512, 512, 512, 512, 512],target = 2048) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [512, 512, 512, 512, 512, 512, 512, 512, 512, 512],target = 2048) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 8, 16, 32, 64],target = 100) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 8, 16, 32, 64],target = 100) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = [2, 4, 8, 16],target = 31) == -1
+    assert candidate(nums = [32, 16, 8, 4, 2, 1],target = 63) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1],target = 4) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0
+    assert candidate(nums = [128, 64, 32, 16, 8, 4, 2, 1],target = 255) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0
+    assert candidate(nums = [1, 32, 1, 2],target = 12) == 2
+    assert candidate(nums = [64],target = 32) == 1
+    assert candidate(nums = [1024],target = 512) == 1
+    assert candidate(nums = [1, 2, 8],target = 7) == 1
+    assert candidate(nums = [1],target = 1) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],target = 1048575) == 0
+    assert candidate(nums = [2, 4, 8, 16],target = 30) == 0
+    assert candidate(nums = [1, 32, 1],target = 35) == -1
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64],target = 63) == 6
+    assert candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+    assert candidate(nums = [1024],target = 1) == 10
+    assert candidate(nums = [1073741824],target = 1073741824) == 0
+    assert candidate(nums = [2, 2, 2, 2],target = 8) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 16) == 0
+    assert candidate(nums = [16, 8, 4, 2, 1],target = 31) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+    assert candidate(nums = [1, 1, 1, 1],target = 1) == 0
+    assert candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144],target = 524287) == -1
+    assert candidate(nums = [512, 512, 256, 256, 128, 128, 64, 64, 32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 1023) == 0
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1535) == 0
+    assert candidate(nums = [2, 16, 32, 64, 128, 256, 512],target = 1015) == -1
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 20) == 0
+    assert candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0
+    assert candidate(nums = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],target = 100) == 1
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1) == 1
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 100) == -1
+    assert candidate(nums = [1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024],target = 4095) == 10
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768],target = 65535) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1025) == 0
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 511) == 0
+    assert candidate(nums = [256, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 512) == 0
+    assert candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128],target = 1023) == -1
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2],target = 1000) == 0
+    assert candidate(nums = [16, 8, 4, 2, 1, 1, 1],target = 31) == 0
+    assert candidate(nums = [256, 128, 64, 32, 16, 8, 4, 2, 1],target = 448) == 0
+    assert candidate(nums = [1, 4, 16, 64, 256, 1024, 4096, 16384],target = 12345) == 4
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 4095) == -1
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1536) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 15) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0
+    assert candidate(nums = [16, 16, 16, 16, 8, 8, 8, 8, 4, 4, 4, 4, 2, 2, 2, 2, 1, 1, 1, 1],target = 63) == 0
+    assert candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1
+    assert candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 1024) == -1
+    assert candidate(nums = [1, 4, 16, 64, 256, 1024, 4096],target = 2047) == 11
+    assert candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128],target = 1023) == -1
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 10) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 5) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 30) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10
+    assert candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64],target = 127) == -1
+    assert candidate(nums = [32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == -1
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 1073741823) == 0
+    assert candidate(nums = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+    assert candidate(nums = [1024, 512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1, 1, 1, 1],target = 2047) == 0
+    assert candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16],target = 31) == 0
+    assert candidate(nums = [8, 4, 2, 1, 1, 1, 1, 1],target = 13) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+    assert candidate(nums = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512, 1024, 1024, 1024],target = 2047) == 0
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 15) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 1023) == -1
+    assert candidate(nums = [16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 32767) == 0
+    assert candidate(nums = [512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+    assert candidate(nums = [512, 512, 512, 512],target = 1024) == 0
+    assert candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2147483647) == 0
+    assert candidate(nums = [1, 4, 16, 64, 256],target = 255) == 7
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256],target = 255) == 8
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1024) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384],target = 32767) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 10
+    assert candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],target = 524287) == -1
+    assert candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 1073741823) == 0
+    assert candidate(nums = [1, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+    assert candidate(nums = [1, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2147483647) == -1
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == 0
+    assert candidate(nums = [1073741824, 536870912, 268435456, 134217728, 67108864, 33554432, 16777216, 8388608, 4194304, 2097152, 1048576, 524288, 262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == 0
+    assert candidate(nums = [4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 15000) == 0
+    assert candidate(nums = [2, 4, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512],target = 1023) == 2
+    assert candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024],target = 2047) == 0
+    assert candidate(nums = [512, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+    assert candidate(nums = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128, 256, 256, 256, 256, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 4096, 4096, 4096, 4096, 8192, 8192, 8192, 8192, 16384, 16384, 16384, 16384, 32768, 32768, 32768, 32768, 65536, 65536, 65536, 65536, 131072, 131072, 131072, 131072, 262144, 262144, 262144, 262144, 524288, 524288, 524288, 524288, 1048576, 1048576, 1048576, 1048576, 2097152, 2097152, 2097152, 2097152, 4194304, 4194304, 4194304, 4194304, 8388608, 8388608, 8388608, 8388608, 16777216, 16777216, 16777216, 16777216, 33554432, 33554432, 33554432, 33554432, 67108864, 67108864, 67108864, 67108864, 134217728, 134217728, 134217728, 134217728, 268435456, 268435456, 268435456, 268435456, 536870912, 536870912, 536870912, 536870912, 1073741824, 1073741824, 1073741824, 1073741824],target = 2147483647) == 0
+    assert candidate(nums = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 1024) == 0
+    assert candidate(nums = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384, 32768, 32768, 65536, 65536, 131072, 131072, 262144, 262144, 524288, 524288, 1048576, 1048576, 2097152, 2097152, 4194304, 4194304, 8388608, 8388608, 16777216, 16777216, 33554432, 33554432, 67108864, 67108864, 134217728, 134217728, 268435456, 268435456, 536870912, 536870912, 1073741824, 1073741824],target = 2147483647) == 0
+    assert candidate(nums = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],target = 8) == 0
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 2047) == 0
+    assert candidate(nums = [32, 32, 16, 16, 8, 8, 4, 4, 2, 2, 1, 1],target = 48) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == 0
+    assert candidate(nums = [4, 16, 64, 256],target = 317) == 6
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 2047) == -1
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 2097151) == 21
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],target = 4095) == -1
+    assert candidate(nums = [262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1048575) == -1
+    assert candidate(nums = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+    assert candidate(nums = [1, 1, 1, 1, 16],target = 15) == 2
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576],target = 1048575) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 4294967295) == -1
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],target = 8191) == -1
+    assert candidate(nums = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1],target = 1023) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, 33554432, 67108864, 134217728, 268435456, 536870912, 1073741824],target = 0) == 0
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],target = 1023) == 0
+    assert candidate(nums = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192],target = 8191) == 13
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],target = 31) == -1
+    assert candidate(nums = [512, 512, 512, 512, 512, 512, 512, 512, 512, 512],target = 2048) == 0
+    assert candidate(nums = [4, 8, 16, 32, 64],target = 100) == 0
+
+

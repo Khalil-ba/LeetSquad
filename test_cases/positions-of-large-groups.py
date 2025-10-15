@@ -1,0 +1,500 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbbccccdddd") == [[2, 4], [5, 8], [9, 12]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbbccccdddd") == [[2, 4], [5, 8], [9, 12]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbbccccddeee") == [[2, 4], [5, 8], [11, 13]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbbccccddeee") == [[2, 4], [5, 8], [11, 13]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbaa") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbaa") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccccaaaabbccccaaaabbcccc") == [[4, 7], [8, 11], [14, 17], [18, 21], [24, 27]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccccaaaabbccccaaaabbcccc") == [[4, 7], [8, 11], [14, 17], [18, 21], [24, 27]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abbxxxxzzy") == [[3, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abbxxxxzzy") == [[3, 6]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzyyyyy") == [[0, 3], [4, 8]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzyyyyy") == [[0, 3], [4, 8]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aa") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aa") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 69]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 69]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaa") == [[0, 2]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaa") == [[0, 2]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "pppppqqqppppppqqqqqqqqq") == [[0, 4], [5, 7], [8, 13], [14, 22]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "pppppqqqppppppqqqqqqqqq") == [[0, 4], [5, 7], [8, 13], [14, 22]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz") == [[0, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz") == [[0, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeeeffffgggghhhhiiiijjjjkkkkllllmmmmnnnnooopppqqqrrrsttuuvvvwwwwxxxxyyyyzzzz") == [[8, 11], [12, 15], [16, 19], [20, 23], [24, 27], [28, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 50], [51, 53], [54, 56], [57, 59], [65, 67], [68, 71], [72, 75], [76, 79], [80, 83]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeeeffffgggghhhhiiiijjjjkkkkllllmmmmnnnnooopppqqqrrrsttuuvvvwwwwxxxxyyyyzzzz") == [[8, 11], [12, 15], [16, 19], [20, 23], [24, 27], [28, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 50], [51, 53], [54, 56], [57, 59], [65, 67], [68, 71], [72, 75], [76, 79], [80, 83]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbbccddddeeeee") == [[2, 4], [7, 10], [11, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbbccddddeeeee") == [[2, 4], [7, 10], [11, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabaaa") == [[0, 2], [4, 6]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabaaa") == [[0, 2], [4, 6]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdddeeeeaabbbcd") == [[3, 5], [6, 9], [12, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdddeeeeaabbbcd") == [[3, 5], [6, 9], [12, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzz") == [[0, 4]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzz") == [[0, 4]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeee") == [[8, 10]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeee") == [[8, 10]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabbbcccddd") == [[0, 2], [3, 5], [6, 8], [9, 11]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabbbcccddd") == [[0, 2], [3, 5], [6, 8], [9, 11]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabbbbbcccccc") == [[0, 4], [5, 9], [10, 15]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabbbbbcccccc") == [[0, 4], [5, 9], [10, 15]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbcccddd") == [[4, 6], [7, 9]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbcccddd") == [[4, 6], [7, 9]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgggghhiijjjkkkllmmnnnooopppqqqqrrrrssss") == [[12, 15], [20, 22], [23, 25], [30, 32], [33, 35], [36, 38], [39, 42], [43, 46], [47, 50]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgggghhiijjjkkkllmmnnnooopppqqqqrrrrssss") == [[12, 15], [20, 22], [23, 25], [30, 32], [33, 35], [36, 38], [39, 42], [43, 46], [47, 50]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzyyyyaaaabbcccc") == [[0, 5], [6, 9], [10, 13], [16, 19]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzyyyyaaaabbcccc") == [[0, 5], [6, 9], [10, 13], [16, 19]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzz") == [[50, 59]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzz") == [[50, 59]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 101]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 101]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 100]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 100]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababababababababababababababababababababababababababababababababababababababababab") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababababababababababababababababababababababababababababababababababababababababab") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzyyyyyxxxxwwwwvvvvuuuuttttsrrrqqqpooooonnnnmmmmmlllllkkkkjjjjjiiiihhhhhgggggfffffeeee") == [[0, 4], [5, 9], [10, 13], [14, 17], [18, 21], [22, 25], [26, 29], [31, 33], [34, 36], [38, 42], [43, 46], [47, 51], [52, 56], [57, 60], [61, 65], [66, 69], [70, 74], [75, 79], [80, 84], [85, 88]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzyyyyyxxxxwwwwvvvvuuuuttttsrrrqqqpooooonnnnmmmmmlllllkkkkjjjjjiiiihhhhhgggggfffffeeee") == [[0, 4], [5, 9], [10, 13], [14, 17], [18, 21], [22, 25], [26, 29], [31, 33], [34, 36], [38, 42], [43, 46], [47, 51], [52, 56], [57, 60], [61, 65], [66, 69], [70, 74], [75, 79], [80, 84], [85, 88]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabcccccaaaaabbbcccc") == [[3, 7], [8, 12], [13, 15], [16, 19]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabcccccaaaaabbbcccc") == [[3, 7], [8, 12], [13, 15], [16, 19]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijkllllmnopqrstuvwxyz") == [[11, 14]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijkllllmnopqrstuvwxyz") == [[11, 14]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyzzyxwvutsrqponmlkjihgfedcbaaaa") == [[51, 54]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyzzyxwvutsrqponmlkjihgfedcbaaaa") == [[51, 54]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb") == [[0, 84], [85, 166]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb") == [[0, 84], [85, 166]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaabbbbbcccccdddddeeeeeeaaaaaaaaabbbbcccccddeeeeefffff") == [[0, 6], [7, 11], [12, 16], [17, 21], [22, 27], [28, 36], [37, 40], [41, 45], [48, 52], [53, 57]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaabbbbbcccccdddddeeeeeeaaaaaaaaabbbbcccccddeeeeefffff") == [[0, 6], [7, 11], [12, 16], [17, 21], [22, 27], [28, 36], [37, 40], [41, 45], [48, 52], [53, 57]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccd") == [[2, 65]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccd") == [[2, 65]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "tttttttttttttttttttttttttttttttttttttt") == [[0, 37]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "tttttttttttttttttttttttttttttttttttttt") == [[0, 37]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeeffffggggghhhhhiiiiijjjjjj") == [[8, 10], [11, 14], [15, 19], [20, 24], [25, 29], [30, 35]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeeffffggggghhhhhiiiiijjjjjj") == [[8, 10], [11, 14], [15, 19], [20, 24], [25, 29], [30, 35]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[2, 47]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[2, 47]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 101]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 101]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghiiiiijkllllmmnopqqqrrr") == [[8, 12], [15, 18], [24, 26], [27, 29]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghiiiiijkllllmmnopqqqrrr") == [[8, 12], [15, 18], [24, 26], [27, 29]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwwxyzzaaabbbccc") == [[28, 30], [31, 33], [34, 36]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwwxyzzaaabbbccc") == [[28, 30], [31, 33], [34, 36]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "kkkkkklllllmmmmmnnnnnoooooopppppqqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwxxyyyyyzzzzz") == [[0, 5], [6, 10], [11, 15], [16, 20], [21, 26], [27, 31], [32, 37], [38, 42], [43, 47], [48, 52], [53, 57], [58, 62], [63, 67], [70, 74], [75, 79]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "kkkkkklllllmmmmmnnnnnoooooopppppqqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwxxyyyyyzzzzz") == [[0, 5], [6, 10], [11, 15], [16, 20], [21, 26], [27, 31], [32, 37], [38, 42], [43, 47], [48, 52], [53, 57], [58, 62], [63, 67], [70, 74], [75, 79]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccccddddeeeffffffgggghhhiiiiijjjkkllmmnnnooppqqrrssttuuvvwxxxwwvvuuttssrrqponmlkjihgfedcba") == [[4, 7], [8, 11], [12, 14], [15, 20], [21, 24], [25, 27], [28, 32], [33, 35], [42, 44], [62, 64]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccccddddeeeffffffgggghhhiiiiijjjkkllmmnnnooppqqrrssttuuvvwxxxwwvvuuttssrrqponmlkjihgfedcba") == [[4, 7], [8, 11], [12, 14], [15, 20], [21, 24], [25, 27], [28, 32], [33, 35], [42, 44], [62, 64]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabbbbccccdddd") == [[0, 4], [5, 8], [9, 12], [13, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabbbbccccdddd") == [[0, 4], [5, 8], [9, 12], [13, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ppppqqqqrrrsssttttuuuuvvvvwxxx") == [[0, 3], [4, 7], [8, 10], [11, 13], [14, 17], [18, 21], [22, 25], [27, 29]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ppppqqqqrrrsssttttuuuuvvvvwxxx") == [[0, 3], [4, 7], [8, 10], [11, 13], [14, 17], [18, 21], [22, 25], [27, 29]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaaaaaabbbbbbbbbbbbbbccccccccccccccccccccccccdddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefffffffffffffffggggggggggggggggg") == [[0, 9], [10, 23], [24, 47], [48, 84], [85, 116], [117, 131], [132, 148]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaaaaaabbbbbbbbbbbbbbccccccccccccccccccccccccdddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefffffffffffffffggggggggggggggggg") == [[0, 9], [10, 23], [24, 47], [48, 84], [85, 116], [117, 131], [132, 148]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnmmmm") == [[0, 47], [48, 51]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnmmmm") == [[0, 47], [48, 51]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzzyxwwwwwzzzzzz") == [[6, 10], [11, 16]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzzyxwwwwwzzzzzz") == [[6, 10], [11, 16]]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffggccddeeffggccddeeffggccddeeffggccddeeffgg") == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffggccddeeffggccddeeffggccddeeffggccddeeffgg") == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaabbbcccddddeeefff ggghhhhiiiiijjjjkkkkllllmmmmnnnnooopppqqqqrrrrssttttuuuuvvvvwwwwxxxxxyyyyyzzzzz") == [[0, 2], [3, 5], [6, 8], [9, 12], [13, 15], [16, 18], [20, 22], [23, 26], [27, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 51], [52, 54], [55, 57], [58, 61], [62, 65], [68, 71], [72, 75], [76, 79], [80, 83], [84, 88], [89, 93], [94, 98]]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaabbbcccddddeeefff ggghhhhiiiiijjjjkkkkllllmmmmnnnnooopppqqqqrrrrssttttuuuuvvvvwwwwxxxxxyyyyyzzzzz") == [[0, 2], [3, 5], [6, 8], [9, 12], [13, 15], [16, 18], [20, 22], [23, 26], [27, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 51], [52, 54], [55, 57], [58, 61], [62, 65], [68, 71], [72, 75], [76, 79], [80, 83], [84, 88], [89, 93], [94, 98]]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(s = "aabbbccccdddd") == [[2, 4], [5, 8], [9, 12]]
+    assert candidate(s = "aabbbccccddeee") == [[2, 4], [5, 8], [11, 13]]
+    assert candidate(s = "abcdefghijk") == []
+    assert candidate(s = "aabbaa") == []
+    assert candidate(s = "aabbccccaaaabbccccaaaabbcccc") == [[4, 7], [8, 11], [14, 17], [18, 21], [24, 27]]
+    assert candidate(s = "a") == []
+    assert candidate(s = "abbxxxxzzy") == [[3, 6]]
+    assert candidate(s = "zzzzyyyyy") == [[0, 3], [4, 8]]
+    assert candidate(s = "aa") == []
+    assert candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 69]]
+    assert candidate(s = "aaa") == [[0, 2]]
+    assert candidate(s = "pppppqqqppppppqqqqqqqqq") == [[0, 4], [5, 7], [8, 13], [14, 22]]
+    assert candidate(s = "zzzzzzzzzz") == [[0, 9]]
+    assert candidate(s = "aabbccddeeeeffffgggghhhhiiiijjjjkkkkllllmmmmnnnnooopppqqqrrrsttuuvvvwwwwxxxxyyyyzzzz") == [[8, 11], [12, 15], [16, 19], [20, 23], [24, 27], [28, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 50], [51, 53], [54, 56], [57, 59], [65, 67], [68, 71], [72, 75], [76, 79], [80, 83]]
+    assert candidate(s = "abc") == []
+    assert candidate(s = "abcd") == []
+    assert candidate(s = "aabbbccddddeeeee") == [[2, 4], [7, 10], [11, 15]]
+    assert candidate(s = "aaabaaa") == [[0, 2], [4, 6]]
+    assert candidate(s = "abcdddeeeeaabbbcd") == [[3, 5], [6, 9], [12, 14]]
+    assert candidate(s = "zzzzz") == [[0, 4]]
+    assert candidate(s = "aabbccddeee") == [[8, 10]]
+    assert candidate(s = "aaabbbcccddd") == [[0, 2], [3, 5], [6, 8], [9, 11]]
+    assert candidate(s = "aaaaabbbbbcccccc") == [[0, 4], [5, 9], [10, 15]]
+    assert candidate(s = "aabbcccddd") == [[4, 6], [7, 9]]
+    assert candidate(s = "aabbccddeeffgggghhiijjjkkkllmmnnnooopppqqqqrrrrssss") == [[12, 15], [20, 22], [23, 25], [30, 32], [33, 35], [36, 38], [39, 42], [43, 46], [47, 50]]
+    assert candidate(s = "zzzzzzyyyyaaaabbcccc") == [[0, 5], [6, 9], [10, 13], [16, 19]]
+    assert candidate(s = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc") == []
+    assert candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzz") == [[50, 59]]
+    assert candidate(s = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[0, 101]]
+    assert candidate(s = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz") == []
+    assert candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 100]]
+    assert candidate(s = "ababababababababababababababababababababababababababababababababababababababababababab") == []
+    assert candidate(s = "zzzzzyyyyyxxxxwwwwvvvvuuuuttttsrrrqqqpooooonnnnmmmmmlllllkkkkjjjjjiiiihhhhhgggggfffffeeee") == [[0, 4], [5, 9], [10, 13], [14, 17], [18, 21], [22, 25], [26, 29], [31, 33], [34, 36], [38, 42], [43, 46], [47, 51], [52, 56], [57, 60], [61, 65], [66, 69], [70, 74], [75, 79], [80, 84], [85, 88]]
+    assert candidate(s = "aabcccccaaaaabbbcccc") == [[3, 7], [8, 12], [13, 15], [16, 19]]
+    assert candidate(s = "abcdefghijkllllmnopqrstuvwxyz") == [[11, 14]]
+    assert candidate(s = "abcdefghijklmnopqrstuvwxyzzyxwvutsrqponmlkjihgfedcbaaaa") == [[51, 54]]
+    assert candidate(s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb") == [[0, 84], [85, 166]]
+    assert candidate(s = "aaaaaaabbbbbcccccdddddeeeeeeaaaaaaaaabbbbcccccddeeeeefffff") == [[0, 6], [7, 11], [12, 16], [17, 21], [22, 27], [28, 36], [37, 40], [41, 45], [48, 52], [53, 57]]
+    assert candidate(s = "abccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccd") == [[2, 65]]
+    assert candidate(s = "tttttttttttttttttttttttttttttttttttttt") == [[0, 37]]
+    assert candidate(s = "aabbccddeeeffffggggghhhhhiiiiijjjjjj") == [[8, 10], [11, 14], [15, 19], [20, 24], [25, 29], [30, 35]]
+    assert candidate(s = "xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz") == [[2, 47]]
+    assert candidate(s = "aabbccccddeeeffffggggghhhhhiiiiijjjjjjkkkklllllmmmmmnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxyyyyzzzzz") == [[4, 7], [10, 12], [13, 16], [17, 21], [22, 26], [27, 31], [32, 37], [38, 41], [42, 46], [47, 51], [54, 57], [58, 61], [62, 65], [66, 69], [70, 73], [74, 77], [78, 81], [82, 85], [86, 89], [90, 92], [93, 96], [97, 101]]
+    assert candidate(s = "abcdefghiiiiijkllllmmnopqqqrrr") == [[8, 12], [15, 18], [24, 26], [27, 29]]
+    assert candidate(s = "abcdefghijklmnopqrstuvwwxyzzaaabbbccc") == [[28, 30], [31, 33], [34, 36]]
+    assert candidate(s = "kkkkkklllllmmmmmnnnnnoooooopppppqqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwxxyyyyyzzzzz") == [[0, 5], [6, 10], [11, 15], [16, 20], [21, 26], [27, 31], [32, 37], [38, 42], [43, 47], [48, 52], [53, 57], [58, 62], [63, 67], [70, 74], [75, 79]]
+    assert candidate(s = "aabbccccddddeeeffffffgggghhhiiiiijjjkkllmmnnnooppqqrrssttuuvvwxxxwwvvuuttssrrqponmlkjihgfedcba") == [[4, 7], [8, 11], [12, 14], [15, 20], [21, 24], [25, 27], [28, 32], [33, 35], [42, 44], [62, 64]]
+    assert candidate(s = "aaaaabbbbccccdddd") == [[0, 4], [5, 8], [9, 12], [13, 16]]
+    assert candidate(s = "ppppqqqqrrrsssttttuuuuvvvvwxxx") == [[0, 3], [4, 7], [8, 10], [11, 13], [14, 17], [18, 21], [22, 25], [27, 29]]
+    assert candidate(s = "aaaaaaaaaabbbbbbbbbbbbbbccccccccccccccccccccccccdddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefffffffffffffffggggggggggggggggg") == [[0, 9], [10, 23], [24, 47], [48, 84], [85, 116], [117, 131], [132, 148]]
+    assert candidate(s = "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnmmmm") == [[0, 47], [48, 51]]
+    assert candidate(s = "xyzzyxwwwwwzzzzzz") == [[6, 10], [11, 16]]
+    assert candidate(s = "aabbccddeeffggccddeeffggccddeeffggccddeeffggccddeeffgg") == []
+    assert candidate(s = "aaabbbcccddddeeefff ggghhhhiiiiijjjjkkkkllllmmmmnnnnooopppqqqqrrrrssttttuuuuvvvvwwwwxxxxxyyyyyzzzzz") == [[0, 2], [3, 5], [6, 8], [9, 12], [13, 15], [16, 18], [20, 22], [23, 26], [27, 31], [32, 35], [36, 39], [40, 43], [44, 47], [48, 51], [52, 54], [55, 57], [58, 61], [62, 65], [68, 71], [72, 75], [76, 79], [80, 83], [84, 88], [89, 93], [94, 98]]
+
+

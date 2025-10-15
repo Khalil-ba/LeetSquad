@@ -1,0 +1,743 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(candies = [4, 2, 1, 1, 2],extraCandies = 1) == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [4, 2, 1, 1, 2],extraCandies = 1) == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [12, 1, 12],extraCandies = 10) == [True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [12, 1, 12],extraCandies = 10) == [True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 50, 50, 50, 50],extraCandies = 50) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 50, 50, 50, 50],extraCandies = 50) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5],extraCandies = 2) == [False, False, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5],extraCandies = 2) == [False, False, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [2, 3, 5, 1, 3],extraCandies = 3) == [True, True, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [2, 3, 5, 1, 3],extraCandies = 3) == [True, True, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5],extraCandies = 0) == [False, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5],extraCandies = 0) == [False, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [5, 8, 7],extraCandies = 5) == [True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [5, 8, 7],extraCandies = 5) == [True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10, 0],extraCandies = 15) == [True, True, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10, 0],extraCandies = 15) == [True, True, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [98, 99, 100, 101, 102],extraCandies = 3) == [False, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [98, 99, 100, 101, 102],extraCandies = 3) == [False, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 40, 30, 20, 10],extraCandies = 20) == [True, True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 40, 30, 20, 10],extraCandies = 20) == [True, True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 5) == [False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 5) == [False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [5, 5, 5, 5, 5],extraCandies = 5) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [5, 5, 5, 5, 5],extraCandies = 5) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [5, 5, 5, 5, 5],extraCandies = 1) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [5, 5, 5, 5, 5],extraCandies = 1) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],extraCandies = 50) == [False, True, False, True, False, True, False, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],extraCandies = 50) == [False, True, False, True, False, True, False, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50],extraCandies = 20) == [False, False, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50],extraCandies = 20) == [False, False, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 24) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 24) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 50) == [False, False, False, False, False, False, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 50) == [False, False, False, False, False, False, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 50, 50, 50, 50],extraCandies = 10) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 50, 50, 50, 50],extraCandies = 10) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 10) == [False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 10) == [False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 40, 30, 20, 10, 0],extraCandies = 10) == [True, True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 40, 30, 20, 10, 0],extraCandies = 10) == [True, True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 40) == [False, False, False, False, False, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 40) == [False, False, False, False, False, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [23, 45, 12, 67, 34, 89, 10, 56],extraCandies = 20) == [False, False, False, False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [23, 45, 12, 67, 34, 89, 10, 56],extraCandies = 20) == [False, False, False, False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 9) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 9) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],extraCandies = 5) == [False, False, False, False, False, False, False, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],extraCandies = 5) == [False, False, False, False, False, False, False, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],extraCandies = 25) == [False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],extraCandies = 25) == [False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],extraCandies = 5) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],extraCandies = 5) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50],extraCandies = 15) == [False, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50],extraCandies = 15) == [False, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],extraCandies = 255) == [False, False, False, False, False, False, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],extraCandies = 255) == [False, False, False, False, False, False, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 15) == [True, True, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 15) == [True, True, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [30, 40, 20, 50, 10],extraCandies = 10) == [False, True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [30, 40, 20, 50, 10],extraCandies = 10) == [False, True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 50, 25, 75, 35],extraCandies = 25) == [False, True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 50, 25, 75, 35],extraCandies = 25) == [False, True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 2, 6, 5],extraCandies = 7) == [True, False, True, False, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 2, 6, 5],extraCandies = 7) == [True, False, True, False, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 50) == [True, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 50) == [True, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 20, 20, 10, 30],extraCandies = 20) == [True, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 20, 20, 10, 30],extraCandies = 20) == [True, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50],extraCandies = 25) == [False, False, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50],extraCandies = 25) == [False, False, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],extraCandies = 80) == [False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],extraCandies = 80) == [False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 25, 75, 25, 50, 100, 75, 50, 25, 75],extraCandies = 25) == [False, False, True, False, False, True, True, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 25, 75, 25, 50, 100, 75, 50, 25, 75],extraCandies = 25) == [False, False, True, False, False, True, True, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 9) == [False, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 9) == [False, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 40, 30, 20, 10],extraCandies = 25) == [True, True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 40, 30, 20, 10],extraCandies = 25) == [True, True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 25) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 25) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 10, 20, 30, 40],extraCandies = 20) == [True, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 10, 20, 30, 40],extraCandies = 20) == [True, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [80, 80, 80, 80, 80],extraCandies = 20) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [80, 80, 80, 80, 80],extraCandies = 20) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 90) == [True, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 90) == [True, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 4) == [False, False, False, False, False, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 4) == [False, False, False, False, False, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 0) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 0) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 40, 30, 20, 10],extraCandies = 30) == [True, True, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 40, 30, 20, 10],extraCandies = 30) == [True, True, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],extraCandies = 15) == [False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],extraCandies = 15) == [False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 10) == [False, False, False, False, False, False, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 10) == [False, False, False, False, False, False, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [3, 3, 3, 3, 3],extraCandies = 3) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [3, 3, 3, 3, 3],extraCandies = 3) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [7, 5, 9, 10, 2],extraCandies = 5) == [True, True, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [7, 5, 9, 10, 2],extraCandies = 5) == [True, True, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 49) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 49) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 45) == [False, False, False, False, False, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 45) == [False, False, False, False, False, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 1) == [True, True, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 1) == [True, True, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [20, 15, 20, 10, 30],extraCandies = 10) == [True, False, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [20, 15, 20, 10, 30],extraCandies = 10) == [True, False, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [10, 10, 10, 10, 10],extraCandies = 1) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [10, 10, 10, 10, 10],extraCandies = 1) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 8) == [False, False, False, False, False, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 8) == [False, False, False, False, False, True, True, True, True, True]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(candies = [4, 2, 1, 1, 2],extraCandies = 1) == [True, False, False, False, False]
+    assert candidate(candies = [12, 1, 12],extraCandies = 10) == [True, False, True]
+    assert candidate(candies = [50, 50, 50, 50, 50],extraCandies = 50) == [True, True, True, True, True]
+    assert candidate(candies = [1, 2, 3, 4, 5],extraCandies = 2) == [False, False, True, True, True]
+    assert candidate(candies = [2, 3, 5, 1, 3],extraCandies = 3) == [True, True, True, False, True]
+    assert candidate(candies = [1, 2, 3, 4, 5],extraCandies = 0) == [False, False, False, False, True]
+    assert candidate(candies = [5, 8, 7],extraCandies = 5) == [True, True, True]
+    assert candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10, 0],extraCandies = 15) == [True, True, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [98, 99, 100, 101, 102],extraCandies = 3) == [False, True, True, True, True]
+    assert candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],extraCandies = 10) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [50, 40, 30, 20, 10],extraCandies = 20) == [True, True, True, False, False]
+    assert candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 5) == [False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [5, 5, 5, 5, 5],extraCandies = 5) == [True, True, True, True, True]
+    assert candidate(candies = [5, 5, 5, 5, 5],extraCandies = 1) == [True, True, True, True, True]
+    assert candidate(candies = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],extraCandies = 50) == [False, True, False, True, False, True, False, True, False, True]
+    assert candidate(candies = [10, 20, 30, 40, 50],extraCandies = 20) == [False, False, True, True, True]
+    assert candidate(candies = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 24) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 50) == [False, False, False, False, False, False, False, False, False, True]
+    assert candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [50, 50, 50, 50, 50],extraCandies = 10) == [True, True, True, True, True]
+    assert candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False, False, False, False, False]
+    assert candidate(candies = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]
+    assert candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 10) == [False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [50, 40, 30, 20, 10, 0],extraCandies = 10) == [True, True, False, False, False, False]
+    assert candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 40) == [False, False, False, False, False, True, True, True, True, True]
+    assert candidate(candies = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [23, 45, 12, 67, 34, 89, 10, 56],extraCandies = 20) == [False, False, False, False, False, True, False, False]
+    assert candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],extraCandies = 9) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [1, 1, 1, 1, 1, 1, 1, 1, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]
+    assert candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],extraCandies = 5) == [False, False, False, False, False, False, False, True, True, True]
+    assert candidate(candies = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],extraCandies = 25) == [False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],extraCandies = 5) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [10, 20, 30, 40, 50],extraCandies = 15) == [False, False, False, True, True]
+    assert candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 25) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],extraCandies = 255) == [False, False, False, False, False, False, False, False, False, True]
+    assert candidate(candies = [90, 80, 70, 60, 50, 40, 30, 20, 10],extraCandies = 15) == [True, True, False, False, False, False, False, False, False]
+    assert candidate(candies = [30, 40, 20, 50, 10],extraCandies = 10) == [False, True, False, True, False]
+    assert candidate(candies = [1, 50, 25, 75, 35],extraCandies = 25) == [False, True, False, True, False]
+    assert candidate(candies = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 2, 6, 5],extraCandies = 7) == [True, False, True, False, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 50) == [True, False, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [50, 20, 20, 10, 30],extraCandies = 20) == [True, False, False, False, True]
+    assert candidate(candies = [10, 20, 30, 40, 50],extraCandies = 25) == [False, False, True, True, True]
+    assert candidate(candies = [50, 40, 30, 20, 10],extraCandies = 10) == [True, True, False, False, False]
+    assert candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],extraCandies = 80) == [False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [50, 25, 75, 25, 50, 100, 75, 50, 25, 75],extraCandies = 25) == [False, False, True, False, False, True, True, False, False, True]
+    assert candidate(candies = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 9) == [False, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],extraCandies = 99) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 1) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [50, 40, 30, 20, 10],extraCandies = 25) == [True, True, True, False, False]
+    assert candidate(candies = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],extraCandies = 25) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [50, 10, 20, 30, 40],extraCandies = 20) == [True, False, False, True, True]
+    assert candidate(candies = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],extraCandies = 5) == [True, True, True, True, True, True, False, False, False, False]
+    assert candidate(candies = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5],extraCandies = 50) == [True, False, True, False, True, False, True, False, True, False]
+    assert candidate(candies = [80, 80, 80, 80, 80],extraCandies = 20) == [True, True, True, True, True]
+    assert candidate(candies = [100, 1, 2, 3, 4, 5, 6, 7, 8, 9],extraCandies = 90) == [True, False, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 4) == [False, False, False, False, False, True, True, True, True, True]
+    assert candidate(candies = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],extraCandies = 0) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [50, 40, 30, 20, 10],extraCandies = 30) == [True, True, True, True, False]
+    assert candidate(candies = [100, 100, 100, 100, 100],extraCandies = 50) == [True, True, True, True, True]
+    assert candidate(candies = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40],extraCandies = 15) == [False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 10) == [False, False, False, False, False, False, False, False, True, True]
+    assert candidate(candies = [3, 3, 3, 3, 3],extraCandies = 3) == [True, True, True, True, True]
+    assert candidate(candies = [7, 5, 9, 10, 2],extraCandies = 5) == [True, True, True, True, False]
+    assert candidate(candies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],extraCandies = 50) == [False, False, False, False, True, True, True, True, True, True]
+    assert candidate(candies = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],extraCandies = 49) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],extraCandies = 45) == [False, False, False, False, False, True, True, True, True, True]
+    assert candidate(candies = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],extraCandies = 1) == [True, True, False, False, False, False, False, False, False, False]
+    assert candidate(candies = [20, 15, 20, 10, 30],extraCandies = 10) == [True, False, True, False, True]
+    assert candidate(candies = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91],extraCandies = 10) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(candies = [10, 10, 10, 10, 10],extraCandies = 1) == [True, True, True, True, True]
+    assert candidate(candies = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],extraCandies = 8) == [False, False, False, False, False, True, True, True, True, True]
+
+

@@ -1,0 +1,959 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(word = "xyzxyzxyzxyzxyzxyz",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyzxyzxyzxyzxyzxyz",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "xyzxyzxyzxyz",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyzxyzxyzxyz",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijabcdefghij",k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijabcdefghij",k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaaaa",k = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaaaa",k = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaa",k = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaa",k = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "xyzxyzxyzxyzxyzxyz",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyzxyzxyzxyzxyzxyz",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdabcdabcd",k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdabcdabcd",k = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrsmnopqrsmnopqrs",k = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrsmnopqrsmnopqrs",k = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "leetcodeleet",k = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "leetcodeleet",k = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abababab",k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abababab",k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzz",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzz",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdef",k = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdef",k = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "leetcoleet",k = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "leetcoleet",k = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdabcdabcdabcd",k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdabcdabcdabcd",k = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abababababab",k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abababababab",k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 16) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 16) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaabbbbccccddddeeeeffff",k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaabbbbccccddddeeeeffff",k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "hellohellohellohellohellohellohellohello",k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "hellohellohellohellohellohellohellohello",k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyqwertyqwertyqwertyqwertyqwerty",k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyqwertyqwertyqwertyqwertyqwerty",k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdef",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdef",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefgh",k = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefgh",k = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrstuqponmlkjihgfedcbamnopqrstuqponmlkjihgfedcba",k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrstuqponmlkjihgfedcbamnopqrstuqponmlkjihgfedcba",k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefgabcdefgabcdefgabcdefgabcdefg",k = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefgabcdefgabcdefgabcdefgabcdefg",k = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnop",k = 10) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnop",k = 10) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghabcdefghabcdefgh",k = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghabcdefghabcdefgh",k = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "racecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecar",k = 7) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "racecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecar",k = 7) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 2) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 2) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrs",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrs",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaaaaaaabbbbbbbbbbcccccccccc",k = 9) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaaaaaaabbbbbbbbbbcccccccccc",k = 9) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopasdfghjklzxcvbnm",k = 1) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopasdfghjklzxcvbnm",k = 1) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 12) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 12) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",k = 26) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",k = 26) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abacabadabacabadabacabadabacaba",k = 3) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abacabadabacabadabacabadabacaba",k = 3) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "racecaracecaracecaracecaracecar",k = 7) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "racecaracecaracecaracecaracecar",k = 7) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeaabbccddee",k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeaabbccddee",k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zyxwvutrsrqponmlkjihgfedcba",k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zyxwvutrsrqponmlkjihgfedcba",k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzz",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzz",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 9) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 9) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 10) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 10) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijklmnopqrstabcdefghijklmnopqrst",k = 5) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijklmnopqrstabcdefghijklmnopqrst",k = 5) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnop",k = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnop",k = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abracadabraabracadabraabracadabra",k = 9) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abracadabraabracadabraabracadabra",k = 9) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrsmnopqrs",k = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrsmnopqrs",k = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abacabadabacabadabacaba",k = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abacabadabacabadabacaba",k = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 20) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 20) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",k = 9) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",k = 9) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 12) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 12) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabc",k = 9) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabc",k = 9) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyz",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyz",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mississippimississippimississippimississippi",k = 4) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mississippimississippimississippimississippi",k = 4) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaabbbbbcccccddddd",k = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaabbbbbcccccddddd",k = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaaabbbbccccddddeeeeffff",k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaaabbbbccccddddeeeeffff",k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "thisisaverylongstringthatrepeatseveryfivethis",k = 5) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "thisisaverylongstringthatrepeatseveryfivethis",k = 5) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mississippiissippimississippi",k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mississippiissippimississippi",k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abacabadabacabad",k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abacabadabacabad",k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffgghhaabbccddeeffgghh",k = 6) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffgghhaabbccddeeffgghh",k = 6) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffaabbccddeeffaabbccddeeff",k = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffaabbccddeeffaabbccddeeff",k = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffaabbccddeeff",k = 6) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffaabbccddeeff",k = 6) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopqwertyuiopqwertyuiop",k = 12) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopqwertyuiopqwertyuiop",k = 12) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm",k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm",k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qqrqqqrqqqrqqqrqqqrqqqrqqqr",k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qqrqqqrqqqrqqqrqqqrqqqrqqqr",k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "baaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaa",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "baaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaa",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mississippiissippiissippiissipp",k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mississippiissippiissippiissipp",k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mississippimississippimississippimississippi",k = 11) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mississippimississippimississippimississippi",k = 11) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "12345678901234567890123456789012345678901234567890",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "12345678901234567890123456789012345678901234567890",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aabbccddaabbccddaabbccdd",k = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aabbccddaabbccddaabbccdd",k = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcabcabcabcabcabcabcabcabcabc",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abababababababababababababababab",k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abababababababababababababababab",k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zyxwvutrsrqponmlkjihgfedcbazyxwvut",k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zyxwvutrsrqponmlkjihgfedcbazyxwvut",k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 26) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 26) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyx",k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyx",k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "mnopqrstmnopqrstmnopqrst",k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "mnopqrstmnopqrstmnopqrst",k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaabaaaabaaaabaaaabaaaabaaaabaaaab",k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaabaaaabaaaabaaaabaaaabaaaabaaaab",k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "lkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjh",k = 11) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "lkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjh",k = 11) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "zzzzyyyxxxyyyzzzzxxxxyyyy",k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "zzzzyyyxxxyyyzzzzxxxxyyyy",k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 7) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 7) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaabbbbbccccddddeeeeffffgggghhhh",k = 4) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaabbbbbccccddddeeeeffffgggghhhh",k = 4) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",k = 11) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",k = 11) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 12) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 12) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "ababababababababababababababab",k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "ababababababababababababababab",k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "hellohellohellohellohellohellohellohellohellohello",k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "hellohellohellohellohellohellohellohellohellohello",k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(word = "abababababababababababababababababababab",k = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(word = "abababababababababababababababababababab",k = 4) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(word = "xyzxyzxyzxyzxyzxyz",k = 3) == 0
+    assert candidate(word = "xyzxyzxyzxyz",k = 3) == 0
+    assert candidate(word = "abcdefghijabcdefghij",k = 5) == 2
+    assert candidate(word = "abcabcabc",k = 3) == 0
+    assert candidate(word = "aaaaaaa",k = 1) == 0
+    assert candidate(word = "aaaa",k = 1) == 0
+    assert candidate(word = "xyzxyzxyzxyzxyzxyz",k = 6) == 0
+    assert candidate(word = "abcdabcdabcd",k = 4) == 0
+    assert candidate(word = "mnopqrsmnopqrsmnopqrs",k = 7) == 0
+    assert candidate(word = "leetcodeleet",k = 4) == 1
+    assert candidate(word = "abababab",k = 2) == 0
+    assert candidate(word = "zzzzzzzzzzzz",k = 6) == 0
+    assert candidate(word = "abcdefabcdefabcdef",k = 3) == 3
+    assert candidate(word = "leetcoleet",k = 2) == 3
+    assert candidate(word = "abcabcabcabc",k = 3) == 0
+    assert candidate(word = "abcdabcdabcdabcd",k = 4) == 0
+    assert candidate(word = "abababababab",k = 2) == 0
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 16) == 0
+    assert candidate(word = "aaaabbbbccccddddeeeeffff",k = 4) == 5
+    assert candidate(word = "hellohellohellohellohellohellohellohello",k = 5) == 0
+    assert candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0
+    assert candidate(word = "qwertyqwertyqwertyqwertyqwertyqwerty",k = 5) == 5
+    assert candidate(word = "abcdefabcdefabcdefabcdef",k = 6) == 0
+    assert candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0
+    assert candidate(word = "abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd",k = 4) == 0
+    assert candidate(word = "abcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefgh",k = 8) == 0
+    assert candidate(word = "mnopqrstuqponmlkjihgfedcbamnopqrstuqponmlkjihgfedcba",k = 10) == 4
+    assert candidate(word = "abcdefgabcdefgabcdefgabcdefgabcdefg",k = 7) == 0
+    assert candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+    assert candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnopmnop",k = 10) == 6
+    assert candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0
+    assert candidate(word = "abcdefghabcdefghabcdefgh",k = 8) == 0
+    assert candidate(word = "racecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecaracecar",k = 7) == 10
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",k = 2) == 25
+    assert candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrs",k = 10) == 1
+    assert candidate(word = "aaaaaaaaaabbbbbbbbbbcccccccccc",k = 9) == 2
+    assert candidate(word = "qwertyuiopasdfghjklzxcvbnm",k = 1) == 25
+    assert candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 12) == 2
+    assert candidate(word = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",k = 26) == 0
+    assert candidate(word = "abacabadabacabadabacabadabacaba",k = 3) == 7
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+    assert candidate(word = "racecaracecaracecaracecaracecar",k = 7) == 3
+    assert candidate(word = "aabbccddeeaabbccddee",k = 5) == 2
+    assert candidate(word = "zyxwvutrsrqponmlkjihgfedcba",k = 5) == 4
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzz",k = 6) == 0
+    assert candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 9) == 2
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+    assert candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 10) == 2
+    assert candidate(word = "abcdefghijklmnopqrstabcdefghijklmnopqrst",k = 5) == 6
+    assert candidate(word = "mnopmnopmnopmnopmnopmnopmnopmnop",k = 8) == 0
+    assert candidate(word = "abracadabraabracadabraabracadabra",k = 9) == 2
+    assert candidate(word = "mnopqrsmnopqrsmnopqrsmnopqrsmnopqrs",k = 7) == 0
+    assert candidate(word = "abacabadabacabadabacaba",k = 5) == 3
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 20) == 3
+    assert candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",k = 9) == 0
+    assert candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 3) == 6
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 12) == 0
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabc",k = 9) == 0
+    assert candidate(word = "xyzxyzxyzxyzxyzxyzxyzxyz",k = 3) == 0
+    assert candidate(word = "mississippimississippimississippimississippi",k = 4) == 9
+    assert candidate(word = "aaaaabbbbbcccccddddd",k = 5) == 3
+    assert candidate(word = "abcabcabcabcabcabc",k = 3) == 0
+    assert candidate(word = "aaaaaabbbbccccddddeeeeffff",k = 4) == 5
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 7) == 0
+    assert candidate(word = "thisisaverylongstringthatrepeatseveryfivethis",k = 5) == 8
+    assert candidate(word = "mississippiissippimississippi",k = 4) == 6
+    assert candidate(word = "abacabadabacabad",k = 4) == 2
+    assert candidate(word = "aabbccddeeffgghhaabbccddeeffgghh",k = 6) == 4
+    assert candidate(word = "aabbccddeeffaabbccddeeffaabbccddeeff",k = 6) == 3
+    assert candidate(word = "aabbccddeeffaabbccddeeff",k = 6) == 2
+    assert candidate(word = "qwertyuiopqwertyuiopqwertyuiop",k = 12) == 1
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 5) == 0
+    assert candidate(word = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm",k = 10) == 4
+    assert candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+    assert candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghij",k = 10) == 0
+    assert candidate(word = "qqrqqqrqqqrqqqrqqqrqqqrqqqr",k = 3) == 6
+    assert candidate(word = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 10) == 5
+    assert candidate(word = "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij",k = 15) == 1
+    assert candidate(word = "baaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaabaaaa",k = 10) == 1
+    assert candidate(word = "mississippiissippiissippiissipp",k = 4) == 6
+    assert candidate(word = "mississippimississippimississippimississippi",k = 11) == 0
+    assert candidate(word = "12345678901234567890123456789012345678901234567890",k = 10) == 0
+    assert candidate(word = "aabbccddaabbccddaabbccdd",k = 4) == 3
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+    assert candidate(word = "abcabcabcabcabcabcabcabcabcabc",k = 3) == 0
+    assert candidate(word = "qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty",k = 6) == 0
+    assert candidate(word = "abababababababababababababababab",k = 2) == 0
+    assert candidate(word = "mnopqrstmnopqrstmnopqrstmnopqrst",k = 8) == 0
+    assert candidate(word = "zyxwvutrsrqponmlkjihgfedcbazyxwvut",k = 5) == 5
+    assert candidate(word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",k = 26) == 0
+    assert candidate(word = "zyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyxzyx",k = 3) == 0
+    assert candidate(word = "mnopqrstmnopqrstmnopqrst",k = 10) == 1
+    assert candidate(word = "aaaaabaaaabaaaabaaaabaaaabaaaabaaaab",k = 5) == 1
+    assert candidate(word = "lkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjhlkjh",k = 11) == 3
+    assert candidate(word = "zzzzyyyxxxyyyzzzzxxxxyyyy",k = 5) == 4
+    assert candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 5) == 0
+    assert candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdef",k = 7) == 5
+    assert candidate(word = "aaaaabbbbbccccddddeeeeffffgggghhhh",k = 4) == 7
+    assert candidate(word = "xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy",k = 11) == 2
+    assert candidate(word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",k = 12) == 0
+    assert candidate(word = "qwertyuiopqwertyuiopqwertyuiopqwertyuiop",k = 10) == 0
+    assert candidate(word = "abcdefabcdefabcdefabcdefabcdefabcdef",k = 6) == 0
+    assert candidate(word = "ababababababababababababababab",k = 2) == 0
+    assert candidate(word = "hellohellohellohellohellohellohellohellohellohello",k = 5) == 0
+    assert candidate(word = "abababababababababababababababababababab",k = 4) == 0
+
+

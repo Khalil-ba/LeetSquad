@@ -1,0 +1,995 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [3, 4], [5, 6]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [3, 4], [5, 6]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 0], [2, 0], [3, 0]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 0], [2, 0], [3, 0]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [0, 0], [0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [0, 0], [0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[7, 3], [2, 1], [4, 4]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[7, 3], [2, 1], [4, 4]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[2, 1], [5, 0], [4, 2]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[2, 1], [5, 0], [4, 2]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [1, 1], [2, 2]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [1, 1], [2, 2]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [2, 2], [8, 3]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [2, 2], [8, 3]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [5, 10], [20, 10]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [5, 10], [20, 10]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 0], [0, 100], [50, 50]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 0], [0, 100], [50, 50]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [2, 2], [1, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [2, 2], [1, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[3, 0], [0, 3]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[3, 0], [0, 3]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 500000000], [500000000, 250000000]]) == 1250000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 500000000], [500000000, 250000000]]) == 1250000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 5], [5, 5], [5, 5]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 5], [5, 5], [5, 5]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [50, 100], [25, 25]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [50, 100], [25, 25]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 1], [0, 2], [0, 3]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 1], [0, 2], [0, 3]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 0], [0, 10], [5, 5]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 0], [0, 10], [5, 5]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 10], [3, 6], [7, 8]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 10], [3, 6], [7, 8]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 99], [99, 98], [98, 97], [97, 96], [96, 95], [95, 94], [94, 93], [93, 92], [92, 91], [91, 90]]) == 109
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 99], [99, 98], [98, 97], [97, 96], [96, 95], [95, 94], [94, 93], [93, 92], [92, 91], [91, 90]]) == 109: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [50, 100], [25, 75], [75, 25]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [50, 100], [25, 75], [75, 25]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 100], [1, 99], [1, 98], [1, 97], [1, 96]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 100], [1, 99], [1, 98], [1, 97], [1, 96]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 500000000], [500000000, 1000000000], [250000000, 750000000], [750000000, 250000000]]) == 1500000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 500000000], [500000000, 1000000000], [250000000, 750000000], [750000000, 250000000]]) == 1500000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [250000000, 250000000], [750000000, 750000000]]) == 1750000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [250000000, 250000000], [750000000, 750000000]]) == 1750000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 999999999], [2, 999999998], [3, 999999997], [4, 999999996], [5, 999999995]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 999999999], [2, 999999998], [3, 999999997], [4, 999999996], [5, 999999995]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 10], [10, 5], [3, 15], [15, 3], [8, 8]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 10], [10, 5], [3, 15], [15, 3], [8, 8]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == 46
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == 46: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000]]) == 1468750000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000]]) == 1468750000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 5], [5, 4], [5, 3], [5, 2], [5, 1], [5, 0], [4, 5], [3, 5], [2, 5], [1, 5]]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 5], [5, 4], [5, 3], [5, 2], [5, 1], [5, 0], [4, 5], [3, 5], [2, 5], [1, 5]]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 1000000000], [2, 1000000000], [3, 1000000000], [4, 1000000000], [5, 1000000000], [6, 1000000000], [7, 1000000000], [8, 1000000000], [9, 1000000000], [10, 1000000000]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 1000000000], [2, 1000000000], [3, 1000000000], [4, 1000000000], [5, 1000000000], [6, 1000000000], [7, 1000000000], [8, 1000000000], [9, 1000000000], [10, 1000000000]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000], [31250000, 15625000], [15625000, 7812500], [7812500, 3906250], [3906250, 1953125], [1953125, 976562], [976562, 488281], [488281, 244140], [244140, 122070], [122070, 61035], [61035, 30517], [30517, 15258], [15258, 7629], [7629, 3814], [3814, 1907], [1907, 953], [953, 476], [476, 238], [238, 119], [119, 59], [59, 29], [29, 14], [14, 7], [7, 3], [3, 1]]) == 1499999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000], [31250000, 15625000], [15625000, 7812500], [7812500, 3906250], [3906250, 1953125], [1953125, 976562], [976562, 488281], [488281, 244140], [244140, 122070], [122070, 61035], [61035, 30517], [30517, 15258], [15258, 7629], [7629, 3814], [3814, 1907], [1907, 953], [953, 476], [476, 238], [238, 119], [119, 59], [59, 29], [29, 14], [14, 7], [7, 3], [3, 1]]) == 1499999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30]]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30]]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 1], [1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [3, 3]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 1], [1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [3, 3]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [500000001, 499999999]]) == 1500000002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [500000001, 499999999]]) == 1500000002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [9, 4], [8, 3], [7, 2], [6, 1], [5, 0], [4, 6], [3, 7], [2, 8], [1, 9]]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [9, 4], [8, 3], [7, 2], [6, 1], [5, 0], [4, 6], [3, 7], [2, 8], [1, 9]]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [200, 150], [300, 100], [400, 50], [500, 0]]) == 1300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [200, 150], [300, 100], [400, 50], [500, 0]]) == 1300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 10], [20, 10], [30, 10], [40, 10], [50, 10], [60, 10], [70, 10], [80, 10], [90, 10], [100, 10]]) == 460
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 10], [20, 10], [30, 10], [40, 10], [50, 10], [60, 10], [70, 10], [80, 10], [90, 10], [100, 10]]) == 460: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 0], [0, 5], [5, 5], [0, 0], [10, 10]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 0], [0, 5], [5, 5], [0, 0], [10, 10]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0]]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0]]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [20, 15], [30, 25], [40, 35], [50, 45]]) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [20, 15], [30, 25], [40, 35], [50, 45]]) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 6], [6, 5], [7, 8], [8, 7], [9, 10], [10, 9]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 6], [6, 5], [7, 8], [8, 7], [9, 10], [10, 9]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 90], [90, 80], [80, 70], [70, 60], [60, 50]]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 90], [90, 80], [80, 70], [70, 60], [60, 50]]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000, 500], [1500, 1000], [2000, 1500], [2500, 2000], [3000, 2500]]) == 5000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000, 500], [1500, 1000], [2000, 1500], [2500, 2000], [3000, 2500]]) == 5000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 900000000], [500000000, 400000000], [300000000, 200000000], [100000000, 90000000]]) == 1210000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 900000000], [500000000, 400000000], [300000000, 200000000], [100000000, 90000000]]) == 1210000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10]]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10]]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[500, 500], [500, 500], [500, 500], [500, 500], [500, 500]]) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[500, 500], [500, 500], [500, 500], [500, 500], [500, 500]]) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [5, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40]]) == 84
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [5, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40]]) == 84: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [2, 1], [1, 2]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [2, 1], [1, 2]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 505
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 505: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 2], [10, 3], [15, 5], [20, 10]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 2], [10, 3], [15, 5], [20, 10]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 0], [0, 100], [50, 50], [25, 25], [75, 75]]) == 175
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 0], [0, 100], [50, 50], [25, 25], [75, 75]]) == 175: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 0], [20, 10], [30, 20], [40, 30], [50, 40], [60, 50], [70, 60], [80, 70], [90, 80]]) == 170
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 0], [20, 10], [30, 20], [40, 30], [50, 40], [60, 50], [70, 60], [80, 70], [90, 80]]) == 170: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 1], [101, 1], [102, 1], [103, 1], [104, 1]]) == 506
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 1], [101, 1], [102, 1], [103, 1], [104, 1]]) == 506: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 15], [20, 10], [30, 5], [40, 0], [50, 25], [60, 30], [70, 20]]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 15], [20, 10], [30, 5], [40, 0], [50, 25], [60, 30], [70, 20]]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[9, 1], [8, 2], [7, 3], [6, 4], [5, 5], [4, 6], [3, 7], [2, 8], [1, 9]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[9, 1], [8, 2], [7, 3], [6, 4], [5, 5], [4, 6], [3, 7], [2, 8], [1, 9]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [200, 150], [50, 100], [300, 200]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [200, 150], [50, 100], [300, 200]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [200, 100], [300, 150], [50, 25]]) == 475
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [200, 100], [300, 150], [50, 25]]) == 475: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[50, 0], [25, 0], [0, 50], [0, 25], [75, 0], [0, 75]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[50, 0], [25, 0], [0, 50], [0, 25], [75, 0], [0, 75]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40], [55, 45], [60, 50], [65, 55]]) == 155
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40], [55, 45], [60, 50], [65, 55]]) == 155: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 10], [90, 20], [80, 30], [70, 40], [60, 50], [50, 60], [40, 70], [30, 80], [20, 90], [10, 100]]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 10], [90, 20], [80, 30], [70, 40], [60, 50], [50, 60], [40, 70], [30, 80], [20, 90], [10, 100]]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[500, 250], [250, 125], [125, 62], [62, 31], [31, 15], [15, 7], [7, 3], [3, 1], [1, 0]]) == 750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[500, 250], [250, 125], [125, 62], [62, 31], [31, 15], [15, 7], [7, 3], [3, 1], [1, 0]]) == 750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10]]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10]]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 0], [5, 5], [5, 10], [5, 15], [5, 20], [5, 25], [5, 30], [5, 35], [5, 40], [5, 45]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 0], [5, 5], [5, 10], [5, 15], [5, 20], [5, 25], [5, 30], [5, 35], [5, 40], [5, 45]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 50], [50, 100], [200, 150], [150, 200]]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 50], [50, 100], [200, 150], [150, 200]]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [5, 10], [15, 20], [20, 15], [25, 30], [30, 25]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [5, 10], [15, 20], [20, 15], [25, 30], [30, 25]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 5]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 5]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 0], [50, 100], [25, 50], [10, 25], [5, 10], [1, 5]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 0], [50, 100], [25, 50], [10, 25], [5, 10], [1, 5]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 10], [15, 5], [25, 20], [35, 30], [45, 40], [55, 50], [65, 60], [75, 70], [85, 80]]) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 10], [15, 5], [25, 20], [35, 30], [45, 40], [55, 50], [65, 60], [75, 70], [85, 80]]) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[5, 10], [10, 5], [0, 0], [7, 7], [3, 3]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[5, 10], [10, 5], [0, 0], [7, 7], [3, 3]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000, 1000], [2000, 1000], [3000, 1000], [4000, 1000], [5000, 1000], [6000, 1000], [7000, 1000], [8000, 1000], [9000, 1000], [10000, 1000]]) == 46000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000, 1000], [2000, 1000], [3000, 1000], [4000, 1000], [5000, 1000], [6000, 1000], [7000, 1000], [8000, 1000], [9000, 1000], [10000, 1000]]) == 46000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [110, 110], [120, 120], [130, 130], [140, 140], [150, 150]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [110, 110], [120, 120], [130, 130], [140, 140], [150, 150]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10], [1, 100], [2, 90], [3, 80], [4, 70], [5, 60], [6, 50], [7, 40], [8, 30], [9, 20], [10, 10]]) == 505
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10], [1, 100], [2, 90], [3, 80], [4, 70], [5, 60], [6, 50], [7, 40], [8, 30], [9, 20], [10, 10]]) == 505: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 0], [0, 1], [1, 1], [0, 0], [1, 0], [0, 1]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 0], [0, 1], [1, 1], [0, 0], [1, 0], [0, 1]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100000, 50000], [50000, 25000], [25000, 12500], [12500, 6250], [6250, 3125], [3125, 1562], [1562, 781], [781, 390], [390, 195]]) == 149805
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100000, 50000], [50000, 25000], [25000, 12500], [12500, 6250], [6250, 3125], [3125, 1562], [1562, 781], [781, 390], [390, 195]]) == 149805: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[100, 0], [90, 10], [80, 20], [70, 30], [60, 40], [50, 50], [40, 60], [30, 70], [20, 80], [10, 90]]) == 350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[100, 0], [90, 10], [80, 20], [70, 30], [60, 40], [50, 50], [40, 60], [30, 70], [20, 80], [10, 90]]) == 350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[500, 400], [400, 300], [300, 200], [200, 100]]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[500, 400], [400, 300], [300, 200], [200, 100]]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 100], [100, 200], [200, 300], [300, 400], [400, 500]]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 100], [100, 200], [200, 300], [300, 400], [400, 500]]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 0], [0, 10], [5, 5], [5, 0], [0, 5], [7, 7], [3, 3], [2, 2], [1, 1]]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 0], [0, 10], [5, 5], [5, 0], [0, 5], [7, 7], [3, 3], [2, 2], [1, 1]]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9]]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9]]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(transactions = [[10, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40], [50, 45], [55, 50]]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(transactions = [[10, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40], [50, 45], [55, 50]]) == 100: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(transactions = [[1, 2], [3, 4], [5, 6]]) == 5
+    assert candidate(transactions = [[1, 0], [2, 0], [3, 0]]) == 6
+    assert candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5]]) == 4
+    assert candidate(transactions = [[0, 0], [0, 0], [0, 0]]) == 0
+    assert candidate(transactions = [[7, 3], [2, 1], [4, 4]]) == 9
+    assert candidate(transactions = [[2, 1], [5, 0], [4, 2]]) == 10
+    assert candidate(transactions = [[0, 0], [1, 1], [2, 2]]) == 2
+    assert candidate(transactions = [[10, 5], [2, 2], [8, 3]]) == 15
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000
+    assert candidate(transactions = [[10, 5], [5, 10], [20, 10]]) == 25
+    assert candidate(transactions = [[100, 0], [0, 100], [50, 50]]) == 150
+    assert candidate(transactions = [[10, 5], [2, 2], [1, 1]]) == 10
+    assert candidate(transactions = [[3, 0], [0, 3]]) == 3
+    assert candidate(transactions = [[1000000000, 500000000], [500000000, 250000000]]) == 1250000000
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000
+    assert candidate(transactions = [[5, 5], [5, 5], [5, 5]]) == 5
+    assert candidate(transactions = [[100, 50], [50, 100], [25, 25]]) == 100
+    assert candidate(transactions = [[0, 1], [0, 2], [0, 3]]) == 0
+    assert candidate(transactions = [[10, 0], [0, 10], [5, 5]]) == 15
+    assert candidate(transactions = [[5, 10], [3, 6], [7, 8]]) == 7
+    assert candidate(transactions = [[100, 99], [99, 98], [98, 97], [97, 96], [96, 95], [95, 94], [94, 93], [93, 92], [92, 91], [91, 90]]) == 109
+    assert candidate(transactions = [[100, 50], [50, 100], [25, 75], [75, 25]]) == 150
+    assert candidate(transactions = [[1, 100], [1, 99], [1, 98], [1, 97], [1, 96]]) == 1
+    assert candidate(transactions = [[1000000000, 500000000], [500000000, 1000000000], [250000000, 750000000], [750000000, 250000000]]) == 1500000000
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [250000000, 250000000], [750000000, 750000000]]) == 1750000000
+    assert candidate(transactions = [[1, 999999999], [2, 999999998], [3, 999999997], [4, 999999996], [5, 999999995]]) == 5
+    assert candidate(transactions = [[5, 10], [10, 5], [3, 15], [15, 3], [8, 8]]) == 25
+    assert candidate(transactions = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == 46
+    assert candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000]]) == 1468750000
+    assert candidate(transactions = [[5, 5], [5, 4], [5, 3], [5, 2], [5, 1], [5, 0], [4, 5], [3, 5], [2, 5], [1, 5]]) == 20
+    assert candidate(transactions = [[1, 1000000000], [2, 1000000000], [3, 1000000000], [4, 1000000000], [5, 1000000000], [6, 1000000000], [7, 1000000000], [8, 1000000000], [9, 1000000000], [10, 1000000000]]) == 10
+    assert candidate(transactions = [[1000000000, 500000000], [500000000, 250000000], [250000000, 125000000], [125000000, 62500000], [62500000, 31250000], [31250000, 15625000], [15625000, 7812500], [7812500, 3906250], [3906250, 1953125], [1953125, 976562], [976562, 488281], [488281, 244140], [244140, 122070], [122070, 61035], [61035, 30517], [30517, 15258], [15258, 7629], [7629, 3814], [3814, 1907], [1907, 953], [953, 476], [476, 238], [238, 119], [119, 59], [59, 29], [29, 14], [14, 7], [7, 3], [3, 1]]) == 1499999999
+    assert candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30]]) == 135
+    assert candidate(transactions = [[1, 1], [1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [3, 3]]) == 6
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000], [500000001, 499999999]]) == 1500000002
+    assert candidate(transactions = [[10, 5], [9, 4], [8, 3], [7, 2], [6, 1], [5, 0], [4, 6], [3, 7], [2, 8], [1, 9]]) == 35
+    assert candidate(transactions = [[100, 50], [200, 150], [300, 100], [400, 50], [500, 0]]) == 1300
+    assert candidate(transactions = [[10, 10], [20, 10], [30, 10], [40, 10], [50, 10], [60, 10], [70, 10], [80, 10], [90, 10], [100, 10]]) == 460
+    assert candidate(transactions = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]]) == 45
+    assert candidate(transactions = [[5, 0], [0, 5], [5, 5], [0, 0], [10, 10]]) == 15
+    assert candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0]]) == 55
+    assert candidate(transactions = [[10, 5], [20, 15], [30, 25], [40, 35], [50, 45]]) == 70
+    assert candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 6], [6, 5], [7, 8], [8, 7], [9, 10], [10, 9]]) == 14
+    assert candidate(transactions = [[100, 90], [90, 80], [80, 70], [70, 60], [60, 50]]) == 140
+    assert candidate(transactions = [[9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 17
+    assert candidate(transactions = [[1000, 500], [1500, 1000], [2000, 1500], [2500, 2000], [3000, 2500]]) == 5000
+    assert candidate(transactions = [[1000000000, 900000000], [500000000, 400000000], [300000000, 200000000], [100000000, 90000000]]) == 1210000000
+    assert candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10]]) == 55
+    assert candidate(transactions = [[500, 500], [500, 500], [500, 500], [500, 500], [500, 500]]) == 500
+    assert candidate(transactions = [[10, 1], [5, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40]]) == 84
+    assert candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 9
+    assert candidate(transactions = [[10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55]]) == 50
+    assert candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [2, 1], [1, 2]]) == 4
+    assert candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 505
+    assert candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == 5
+    assert candidate(transactions = [[5, 2], [10, 3], [15, 5], [20, 10]]) == 40
+    assert candidate(transactions = [[100, 0], [0, 100], [50, 50], [25, 25], [75, 75]]) == 175
+    assert candidate(transactions = [[1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 10
+    assert candidate(transactions = [[10, 1], [9, 2], [8, 3], [7, 4], [6, 5], [5, 6], [4, 7], [3, 8], [2, 9], [1, 10]]) == 30
+    assert candidate(transactions = [[10, 0], [20, 10], [30, 20], [40, 30], [50, 40], [60, 50], [70, 60], [80, 70], [90, 80]]) == 170
+    assert candidate(transactions = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 19
+    assert candidate(transactions = [[100, 1], [101, 1], [102, 1], [103, 1], [104, 1]]) == 506
+    assert candidate(transactions = [[0, 0], [0, 1], [1, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == 6
+    assert candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10
+    assert candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13
+    assert candidate(transactions = [[10, 15], [20, 10], [30, 5], [40, 0], [50, 25], [60, 30], [70, 20]]) == 210
+    assert candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8
+    assert candidate(transactions = [[9, 1], [8, 2], [7, 3], [6, 4], [5, 5], [4, 6], [3, 7], [2, 8], [1, 9]]) == 25
+    assert candidate(transactions = [[100, 50], [200, 150], [50, 100], [300, 200]]) == 400
+    assert candidate(transactions = [[100, 50], [200, 100], [300, 150], [50, 25]]) == 475
+    assert candidate(transactions = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]) == 0
+    assert candidate(transactions = [[50, 0], [25, 0], [0, 50], [0, 25], [75, 0], [0, 75]]) == 150
+    assert candidate(transactions = [[20, 10], [25, 15], [30, 20], [35, 25], [40, 30], [45, 35], [50, 40], [55, 45], [60, 50], [65, 55]]) == 155
+    assert candidate(transactions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) == 6
+    assert candidate(transactions = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == 5
+    assert candidate(transactions = [[9, 8], [7, 6], [5, 4], [3, 2], [1, 0]]) == 13
+    assert candidate(transactions = [[100, 10], [90, 20], [80, 30], [70, 40], [60, 50], [50, 60], [40, 70], [30, 80], [20, 90], [10, 100]]) == 300
+    assert candidate(transactions = [[500, 250], [250, 125], [125, 62], [62, 31], [31, 15], [15, 7], [7, 3], [3, 1], [1, 0]]) == 750
+    assert candidate(transactions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10]]) == 300
+    assert candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [1, 10], [2, 20], [3, 30], [4, 40], [5, 50], [6, 60], [7, 70], [8, 80], [9, 90], [10, 100]]) == 100
+    assert candidate(transactions = [[5, 0], [5, 5], [5, 10], [5, 15], [5, 20], [5, 25], [5, 30], [5, 35], [5, 40], [5, 45]]) == 10
+    assert candidate(transactions = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]]) == 4
+    assert candidate(transactions = [[100, 50], [50, 100], [200, 150], [150, 200]]) == 250
+    assert candidate(transactions = [[10, 5], [5, 10], [15, 20], [20, 15], [25, 30], [30, 25]]) == 40
+    assert candidate(transactions = [[1, 2], [2, 1], [3, 4], [4, 3], [5, 5]]) == 7
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000], [500000000, 500000000]]) == 1500000000
+    assert candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]]) == 15
+    assert candidate(transactions = [[100, 0], [50, 100], [25, 50], [10, 25], [5, 10], [1, 5]]) == 150
+    assert candidate(transactions = [[10, 9], [9, 8], [8, 7], [7, 6], [6, 5], [5, 4], [4, 3], [3, 2], [2, 1], [1, 0]]) == 19
+    assert candidate(transactions = [[5, 10], [15, 5], [25, 20], [35, 30], [45, 40], [55, 50], [65, 60], [75, 70], [85, 80]]) == 125
+    assert candidate(transactions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 100
+    assert candidate(transactions = [[5, 10], [10, 5], [0, 0], [7, 7], [3, 3]]) == 12
+    assert candidate(transactions = [[1000, 1000], [2000, 1000], [3000, 1000], [4000, 1000], [5000, 1000], [6000, 1000], [7000, 1000], [8000, 1000], [9000, 1000], [10000, 1000]]) == 46000
+    assert candidate(transactions = [[10, 10], [20, 20], [30, 30], [40, 40], [50, 50], [60, 60], [70, 70], [80, 80], [90, 90], [100, 100], [110, 110], [120, 120], [130, 130], [140, 140], [150, 150]]) == 150
+    assert candidate(transactions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10], [1, 100], [2, 90], [3, 80], [4, 70], [5, 60], [6, 50], [7, 40], [8, 30], [9, 20], [10, 10]]) == 505
+    assert candidate(transactions = [[1, 0], [0, 1], [1, 1], [0, 0], [1, 0], [0, 1]]) == 3
+    assert candidate(transactions = [[1000000000, 0], [0, 1000000000]]) == 1000000000
+    assert candidate(transactions = [[100000, 50000], [50000, 25000], [25000, 12500], [12500, 6250], [6250, 3125], [3125, 1562], [1562, 781], [781, 390], [390, 195]]) == 149805
+    assert candidate(transactions = [[100, 0], [90, 10], [80, 20], [70, 30], [60, 40], [50, 50], [40, 60], [30, 70], [20, 80], [10, 90]]) == 350
+    assert candidate(transactions = [[500, 400], [400, 300], [300, 200], [200, 100]]) == 800
+    assert candidate(transactions = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10]]) == 0
+    assert candidate(transactions = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 7
+    assert candidate(transactions = [[0, 100], [100, 200], [200, 300], [300, 400], [400, 500]]) == 400
+    assert candidate(transactions = [[10, 0], [0, 10], [5, 5], [5, 0], [0, 5], [7, 7], [3, 3], [2, 2], [1, 1]]) == 22
+    assert candidate(transactions = [[10, 10], [9, 9], [8, 8], [7, 7], [6, 6], [5, 5], [4, 4], [3, 3], [2, 2], [1, 1]]) == 10
+    assert candidate(transactions = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == 8
+    assert candidate(transactions = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 65
+    assert candidate(transactions = [[10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9]]) == 54
+    assert candidate(transactions = [[10, 5], [15, 10], [20, 15], [25, 20], [30, 25], [35, 30], [40, 35], [45, 40], [50, 45], [55, 50]]) == 100
+
+

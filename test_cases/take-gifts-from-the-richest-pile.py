@@ -1,0 +1,986 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(gifts = [25, 64, 9, 4, 100],k = 4) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [25, 64, 9, 4, 100],k = 4) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 81, 49],k = 3) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 81, 49],k = 3) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 1, 1, 1],k = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 1, 1, 1],k = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [49, 36, 25, 16, 9],k = 5) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [49, 36, 25, 16, 9],k = 5) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000],k = 1000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000],k = 1000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 81, 4, 25, 9],k = 3) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 81, 4, 25, 9],k = 3) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [36, 27, 18, 12, 9],k = 5) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [36, 27, 18, 12, 9],k = 5) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000],k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000],k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [36, 49, 64, 81],k = 2) == 102
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [36, 49, 64, 81],k = 2) == 102: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 25, 36, 49, 64, 81, 100],k = 3) == 153
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 25, 36, 49, 64, 81, 100],k = 3) == 153: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000],k = 1) == 31622
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000],k = 1) == 31622: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 81, 25, 9],k = 3) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 81, 25, 9],k = 3) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 10) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 10) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],k = 25) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],k = 25) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 876543219, 765432198, 654321987, 543219876],k = 7) == 76901
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 876543219, 765432198, 654321987, 543219876],k = 7) == 76901: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991, 99999990, 99999989, 99999988, 99999987, 99999986, 99999985, 99999984, 99999983, 99999982, 99999981],k = 1000) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991, 99999990, 99999989, 99999988, 99999987, 99999986, 99999985, 99999984, 99999983, 99999982, 99999981],k = 1000) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 30) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 30) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 60) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 60) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765],k = 15) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765],k = 15) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 15) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 15) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1024, 512, 256, 128, 64],k = 50) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1024, 512, 256, 128, 64],k = 50) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 75) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 75) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1000) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1000) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456789, 987654321, 135792468, 246813579, 111213141],k = 20) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456789, 987654321, 135792468, 246813579, 111213141],k = 20) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],k = 500) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],k = 500) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 1000) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 1000) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 987654321, 987654321, 987654321, 987654321],k = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 987654321, 987654321, 987654321, 987654321],k = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000],k = 10) == 381
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000],k = 10) == 381: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 10) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 10) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 10) == 195
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 10) == 195: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 100000, 10000, 1000, 100, 10, 1],k = 1000) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 100000, 10000, 1000, 100, 10, 1],k = 1000) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [81, 81, 81, 81, 81, 81, 81, 81, 81, 81],k = 20) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [81, 81, 81, 81, 81, 81, 81, 81, 81, 81],k = 20) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 50) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 50) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 25) == 125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 25) == 125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 10) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 10) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 999999999, 999999998, 999999997, 999999996],k = 1000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 999999999, 999999998, 999999997, 999999996],k = 1000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 1000) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 1000) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],k = 100) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],k = 100) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 81, 4, 25, 9, 36, 64, 49, 100],k = 15) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 81, 4, 25, 9, 36, 64, 49, 100],k = 15) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 50) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 50) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456, 654321, 111111, 222222, 333333],k = 50) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456, 654321, 111111, 222222, 333333],k = 50) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 876543219, 765432108, 654321097, 543210986, 432109875, 321098764, 210987653, 109876542],k = 500) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 876543219, 765432108, 654321097, 543210986, 432109875, 321098764, 210987653, 109876542],k = 500) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456789, 987654321, 456789123, 321987654, 654321987],k = 15) == 58
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456789, 987654321, 456789123, 321987654, 654321987],k = 15) == 58: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 990000, 980000, 970000, 960000, 950000],k = 100) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 990000, 980000, 970000, 960000, 950000],k = 100) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 500) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 500) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225],k = 75) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225],k = 75) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991],k = 500) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991],k = 500) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324],k = 100) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324],k = 100) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10],k = 10) == 1890
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10],k = 10) == 1890: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 100) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 100) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 876543219, 765432197, 654321975, 543219753, 432197531, 321975319, 219753197, 197531975, 975319753],k = 1000) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 876543219, 765432197, 654321975, 543219753, 432197531, 321975319, 219753197, 197531975, 975319753],k = 1000) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100000, 100000, 100000, 100000, 100000],k = 250) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100000, 100000, 100000, 100000, 100000],k = 250) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],k = 100) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],k = 100) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 20) == 84
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 20) == 84: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111],k = 30) == 77
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111],k = 30) == 77: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 100) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 100) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [981, 961, 941, 921, 901, 881, 861, 841, 821, 801, 781, 761, 741, 721, 701],k = 15) == 428
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [981, 961, 941, 921, 901, 881, 861, 841, 821, 801, 781, 761, 741, 721, 701],k = 15) == 428: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529],k = 20) == 263
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529],k = 20) == 263: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36],k = 50) == 34
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36],k = 50) == 34: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625],k = 25) == 268
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625],k = 25) == 268: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],k = 20) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],k = 20) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [314159265, 271828182, 161803398, 141421356, 111111111, 618033988, 333333333],k = 100) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [314159265, 271828182, 161803398, 141421356, 111111111, 618033988, 333333333],k = 100) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61],k = 30) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61],k = 30) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 10) == 890
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 10) == 890: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [999999999],k = 1000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [999999999],k = 1000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [9, 8, 7, 6, 5, 4, 3, 2, 1],k = 100) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [9, 8, 7, 6, 5, 4, 3, 2, 1],k = 100) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000],k = 50) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000],k = 50) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 20) == 106
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 20) == 106: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],k = 20) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],k = 20) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 50) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 50) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [16, 144, 121, 100, 81, 64, 49, 36, 25, 16],k = 15) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [16, 144, 121, 100, 81, 64, 49, 36, 25, 16],k = 15) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [81, 64, 49, 36, 25, 16, 9, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 10) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [81, 64, 49, 36, 25, 16, 9, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 10) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 10) == 852
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 10) == 852: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [361, 441, 529, 625, 729, 841, 961],k = 20) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [361, 441, 529, 625, 729, 841, 961],k = 20) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 51
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 51: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [441, 361, 289, 225, 169, 121, 81, 49, 25, 9, 1],k = 7) == 189
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [441, 361, 289, 225, 169, 121, 81, 49, 25, 9, 1],k = 7) == 189: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [361, 441, 529, 625, 729, 841, 961, 1089, 1225, 1369, 1521, 1681, 1849, 2025, 2209],k = 15) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [361, 441, 529, 625, 729, 841, 961, 1089, 1225, 1369, 1521, 1681, 1849, 2025, 2209],k = 15) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [65536, 4096, 256, 16, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 500) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [65536, 4096, 256, 16, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 500) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456789, 987654321, 135792468, 246813579, 864204680],k = 50) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456789, 987654321, 135792468, 246813579, 864204680],k = 50) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 1000) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 1000) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1],k = 100) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1],k = 100) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 25) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 25) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 200) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 200) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484],k = 30) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484],k = 30) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 500) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 500) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 10) == 644
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 10) == 644: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [987654321, 876543210, 765432109, 654321098, 543210987, 432109876, 321098765, 210987654, 109876543, 98765432],k = 50) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [987654321, 876543210, 765432109, 654321098, 543210987, 432109876, 321098765, 210987654, 109876543, 98765432],k = 50) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025],k = 500) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025],k = 500) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [169, 441, 961, 1681, 2809, 4489, 6889, 10201, 14641],k = 75) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [169, 441, 961, 1681, 2809, 4489, 6889, 10201, 14641],k = 75) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024],k = 30) == 375
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024],k = 30) == 375: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000],k = 5) == 5005000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000],k = 5) == 5005000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [46656, 1296, 324, 81, 25, 9, 4, 1],k = 15) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [46656, 1296, 324, 81, 25, 9, 4, 1],k = 15) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 999999999, 999999998, 999999997],k = 1000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 999999999, 999999998, 999999997],k = 1000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [3125, 5625, 144, 2025, 441, 900],k = 25) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [3125, 5625, 144, 2025, 441, 900],k = 25) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 1000) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 1000) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287],k = 15) == 451
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287],k = 15) == 451: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 100) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 100) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1000, 500, 250, 125, 63, 32, 16, 8, 4, 2, 1],k = 500) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1000, 500, 250, 125, 63, 32, 16, 8, 4, 2, 1],k = 500) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 20) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 20) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [999999, 888888, 777777, 666666, 555555, 444444, 333333, 222222, 111111],k = 300) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [999999, 888888, 777777, 666666, 555555, 444444, 333333, 222222, 111111],k = 300) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [169, 144, 121, 100, 81, 64, 49, 36, 25, 16, 9, 4, 1],k = 13) == 72
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [169, 144, 121, 100, 81, 64, 49, 36, 25, 16, 9, 4, 1],k = 13) == 72: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gifts = [123456789, 987654321, 111213141, 212223242, 313233343, 414243444, 515253545, 616263646, 717273747, 818283848],k = 1000) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gifts = [123456789, 987654321, 111213141, 212223242, 313233343, 414243444, 515253545, 616263646, 717273747, 818283848],k = 1000) == 10: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(gifts = [25, 64, 9, 4, 100],k = 4) == 29
+    assert candidate(gifts = [16, 81, 49],k = 3) == 20
+    assert candidate(gifts = [1, 1, 1, 1],k = 4) == 4
+    assert candidate(gifts = [49, 36, 25, 16, 9],k = 5) == 25
+    assert candidate(gifts = [1000000000],k = 1000) == 1
+    assert candidate(gifts = [16, 81, 4, 25, 9],k = 3) == 31
+    assert candidate(gifts = [36, 27, 18, 12, 9],k = 5) == 21
+    assert candidate(gifts = [1000000000],k = 10) == 1
+    assert candidate(gifts = [36, 49, 64, 81],k = 2) == 102
+    assert candidate(gifts = [16, 25, 36, 49, 64, 81, 100],k = 3) == 153
+    assert candidate(gifts = [1000000000],k = 1) == 31622
+    assert candidate(gifts = [16, 81, 25, 9],k = 3) == 27
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 10) == 27
+    assert candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 100) == 5
+    assert candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],k = 25) == 20
+    assert candidate(gifts = [987654321, 876543219, 765432198, 654321987, 543219876],k = 7) == 76901
+    assert candidate(gifts = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991, 99999990, 99999989, 99999988, 99999987, 99999986, 99999985, 99999984, 99999983, 99999982, 99999981],k = 1000) == 20
+    assert candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 30) == 11
+    assert candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 60) == 15
+    assert candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765],k = 15) == 38
+    assert candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 100) == 10
+    assert candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 15) == 30
+    assert candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 1024, 512, 256, 128, 64],k = 50) == 16
+    assert candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 75) == 20
+    assert candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 1000) == 20
+    assert candidate(gifts = [123456789, 987654321, 135792468, 246813579, 111213141],k = 20) == 15
+    assert candidate(gifts = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],k = 500) == 20
+    assert candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 1000) == 15
+    assert candidate(gifts = [987654321, 987654321, 987654321, 987654321, 987654321],k = 100) == 5
+    assert candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000],k = 10) == 381
+    assert candidate(gifts = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],k = 10) == 24
+    assert candidate(gifts = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888],k = 100) == 10
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 10) == 195
+    assert candidate(gifts = [1000000, 100000, 10000, 1000, 100, 10, 1],k = 1000) == 7
+    assert candidate(gifts = [81, 81, 81, 81, 81, 81, 81, 81, 81, 81],k = 20) == 30
+    assert candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 50) == 50
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 25) == 125
+    assert candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 10) == 56
+    assert candidate(gifts = [1000000000, 999999999, 999999998, 999999997, 999999996],k = 1000) == 5
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],k = 100) == 10
+    assert candidate(gifts = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],k = 1000) == 10
+    assert candidate(gifts = [1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144],k = 100) == 9
+    assert candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 100) == 10
+    assert candidate(gifts = [16, 81, 4, 25, 9, 36, 64, 49, 100],k = 15) == 23
+    assert candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 50) == 10
+    assert candidate(gifts = [123456, 654321, 111111, 222222, 333333],k = 50) == 5
+    assert candidate(gifts = [987654321, 876543219, 765432108, 654321097, 543210986, 432109875, 321098764, 210987653, 109876542],k = 500) == 9
+    assert candidate(gifts = [123456789, 987654321, 456789123, 321987654, 654321987],k = 15) == 58
+    assert candidate(gifts = [1000000, 990000, 980000, 970000, 960000, 950000],k = 100) == 6
+    assert candidate(gifts = [1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000],k = 500) == 10
+    assert candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225],k = 75) == 15
+    assert candidate(gifts = [1000000, 999999, 999998, 999997, 999996, 999995, 999994, 999993, 999992, 999991],k = 500) == 10
+    assert candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324],k = 100) == 15
+    assert candidate(gifts = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10],k = 10) == 1890
+    assert candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 100) == 20
+    assert candidate(gifts = [987654321, 876543219, 765432197, 654321975, 543219753, 432197531, 321975319, 219753197, 197531975, 975319753],k = 1000) == 10
+    assert candidate(gifts = [100000, 100000, 100000, 100000, 100000],k = 250) == 5
+    assert candidate(gifts = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],k = 100) == 9
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71],k = 20) == 84
+    assert candidate(gifts = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111],k = 30) == 77
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 100) == 25
+    assert candidate(gifts = [981, 961, 941, 921, 901, 881, 861, 841, 821, 801, 781, 761, 741, 721, 701],k = 15) == 428
+    assert candidate(gifts = [16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529],k = 20) == 263
+    assert candidate(gifts = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36],k = 50) == 34
+    assert candidate(gifts = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625],k = 25) == 268
+    assert candidate(gifts = [1000000000, 1, 2, 3, 4, 5, 6, 7, 8, 9],k = 20) == 10
+    assert candidate(gifts = [314159265, 271828182, 161803398, 141421356, 111111111, 618033988, 333333333],k = 100) == 7
+    assert candidate(gifts = [3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61],k = 30) == 29
+    assert candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 10) == 890
+    assert candidate(gifts = [999999999],k = 1000) == 1
+    assert candidate(gifts = [9, 8, 7, 6, 5, 4, 3, 2, 1],k = 100) == 9
+    assert candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000],k = 50) == 5
+    assert candidate(gifts = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 20) == 106
+    assert candidate(gifts = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],k = 20) == 37
+    assert candidate(gifts = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 50) == 15
+    assert candidate(gifts = [16, 144, 121, 100, 81, 64, 49, 36, 25, 16],k = 15) == 40
+    assert candidate(gifts = [81, 64, 49, 36, 25, 16, 9, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 10) == 30
+    assert candidate(gifts = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 100) == 10
+    assert candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 10) == 852
+    assert candidate(gifts = [361, 441, 529, 625, 729, 841, 961],k = 20) == 16
+    assert candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 51
+    assert candidate(gifts = [441, 361, 289, 225, 169, 121, 81, 49, 25, 9, 1],k = 7) == 189
+    assert candidate(gifts = [361, 441, 529, 625, 729, 841, 961, 1089, 1225, 1369, 1521, 1681, 1849, 2025, 2209],k = 15) == 495
+    assert candidate(gifts = [65536, 4096, 256, 16, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 500) == 20
+    assert candidate(gifts = [123456789, 987654321, 135792468, 246813579, 864204680],k = 50) == 5
+    assert candidate(gifts = [1000000000, 999999999, 888888888, 777777777, 666666666],k = 1000) == 5
+    assert candidate(gifts = [1000, 500, 250, 125, 62, 31, 15, 7, 3, 1],k = 100) == 10
+    assert candidate(gifts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 25) == 10
+    assert candidate(gifts = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42],k = 200) == 20
+    assert candidate(gifts = [121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484],k = 30) == 31
+    assert candidate(gifts = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 500) == 10
+    assert candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 10) == 644
+    assert candidate(gifts = [987654321, 876543210, 765432109, 654321098, 543210987, 432109876, 321098765, 210987654, 109876543, 98765432],k = 50) == 10
+    assert candidate(gifts = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025],k = 500) == 25
+    assert candidate(gifts = [169, 441, 961, 1681, 2809, 4489, 6889, 10201, 14641],k = 75) == 9
+    assert candidate(gifts = [64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024],k = 30) == 375
+    assert candidate(gifts = [1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000],k = 5) == 5005000
+    assert candidate(gifts = [46656, 1296, 324, 81, 25, 9, 4, 1],k = 15) == 18
+    assert candidate(gifts = [1000000000, 999999999, 999999998, 999999997],k = 1000) == 4
+    assert candidate(gifts = [3125, 5625, 144, 2025, 441, 900],k = 25) == 6
+    assert candidate(gifts = [999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1, 999999999, 1],k = 1000) == 10
+    assert candidate(gifts = [1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287],k = 15) == 451
+    assert candidate(gifts = [1000000000, 500000000, 250000000, 125000000, 62500000],k = 100) == 5
+    assert candidate(gifts = [1000, 500, 250, 125, 63, 32, 16, 8, 4, 2, 1],k = 500) == 11
+    assert candidate(gifts = [1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1],k = 20) == 20
+    assert candidate(gifts = [999999, 888888, 777777, 666666, 555555, 444444, 333333, 222222, 111111],k = 300) == 9
+    assert candidate(gifts = [169, 144, 121, 100, 81, 64, 49, 36, 25, 16, 9, 4, 1],k = 13) == 72
+    assert candidate(gifts = [123456789, 987654321, 111213141, 212223242, 313233343, 414243444, 515253545, 616263646, 717273747, 818283848],k = 1000) == 10
+
+

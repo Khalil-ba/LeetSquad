@@ -1,0 +1,914 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 500,high = 550) == 57
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 500,high = 550) == 57: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 90,high = 100) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 90,high = 100) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 1000,high = 2000) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 1000,high = 2000) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1,high = 100) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1,high = 100) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 50,high = 150) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 50,high = 150) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 123,high = 456) == 71
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 123,high = 456) == 71: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 1,high = 9999) == 4000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 1,high = 9999) == 4000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 77,high = 777) == 220
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 77,high = 777) == 220: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 1,high = 13) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 1,high = 13) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 55,high = 65) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 55,high = 65) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 100,high = 250) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 100,high = 250) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 10,high = 100) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 10,high = 100) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 89,high = 99) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 89,high = 99) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 11111,high = 111111) == 61117
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 11111,high = 111111) == 61117: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 99999900,high = 99999999) == 620
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 99999900,high = 99999999) == 620: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 123456,high = 654321) == 372532
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 123456,high = 654321) == 372532: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 99900,high = 100000) == 320
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 99900,high = 100000) == 320: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 300000,high = 300099) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 300000,high = 300099) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 400000,high = 499999) == 150000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 400000,high = 499999) == 150000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 987654,high = 9876543) == 6134569
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 987654,high = 9876543) == 6134569: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 100000,high = 101000) == 2304
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 100000,high = 101000) == 2304: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 100000,high = 999999) == 450000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 100000,high = 999999) == 450000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 888888,high = 888899) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 888888,high = 888899) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 333333,high = 333333) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 333333,high = 333333) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 123456,high = 123567) == 133
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 123456,high = 123567) == 133: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1000,high = 9999) == 2700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1000,high = 9999) == 2700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 999999,high = 1000000) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 999999,high = 1000000) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 100000000,high = 101000000) == 600000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 100000000,high = 101000000) == 600000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 44444444,high = 55555555) == 13827164
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 44444444,high = 55555555) == 13827164: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 55555,high = 555555) == 305561
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 55555,high = 555555) == 305561: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 1000000,high = 2000000) == 600000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 1000000,high = 2000000) == 600000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 100000,high = 1000000) == 550001
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 100000,high = 1000000) == 550001: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 3000000,high = 3333333) == 533338
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 3000000,high = 3333333) == 533338: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 1000000,high = 1100000) == 150002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 1000000,high = 1100000) == 150002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 1000,high = 9999) == 3700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 1000,high = 9999) == 3700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 100000,high = 150000) == 30000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 100000,high = 150000) == 30000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 111111,high = 111111) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 111111,high = 111111) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 123456,high = 654321) == 368812
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 123456,high = 654321) == 368812: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 100000,high = 200000) == 50000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 100000,high = 200000) == 50000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 11111,high = 22222) == 6794
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 11111,high = 22222) == 6794: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 888888,high = 8888888) == 5688895
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 888888,high = 8888888) == 5688895: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 9999990,high = 9999999) == 61
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 9999990,high = 9999999) == 61: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 999900,high = 999999) == 420
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 999900,high = 999999) == 420: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 555555,high = 555666) == 408
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 555555,high = 555666) == 408: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 456789,high = 987654) == 305488
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 456789,high = 987654) == 305488: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 10000,high = 11000) == 1302
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 10000,high = 11000) == 1302: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 555555,high = 5555555) == 3555562
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 555555,high = 5555555) == 3555562: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1000,high = 1010) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1000,high = 1010) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 222222,high = 222222) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 222222,high = 222222) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 60606060,high = 60606066) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 60606060,high = 60606066) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1,high = 1000) == 192
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1,high = 1000) == 192: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 1234567,high = 7654321) == 4913300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 1234567,high = 7654321) == 4913300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 80000000,high = 88000000) == 12800002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 80000000,high = 88000000) == 12800002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 6666666,high = 66666666) == 48666674
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 6666666,high = 66666666) == 48666674: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 123456,high = 765432) == 382031
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 123456,high = 765432) == 382031: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 1000,high = 1500) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 1000,high = 1500) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 12345678,high = 87654321) == 63207868
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 12345678,high = 87654321) == 63207868: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 222222,high = 2222222) == 1422229
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 222222,high = 2222222) == 1422229: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 1000000,high = 1999999) == 1600000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 1000000,high = 1999999) == 1600000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 777,high = 7777) == 2881
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 777,high = 7777) == 2881: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 10000000,high = 88888888) == 64111112
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 10000000,high = 88888888) == 64111112: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 123000,high = 124000) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 123000,high = 124000) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 20000000,high = 20202020) == 304666
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 20000000,high = 20202020) == 304666: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 777000,high = 778000) == 3302
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 777000,high = 778000) == 3302: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 60000000,high = 66000000) == 9600002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 60000000,high = 66000000) == 9600002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 44444,high = 444444) == 244450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 44444,high = 444444) == 244450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 9876543,high = 98765432) == 70234569
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 9876543,high = 98765432) == 70234569: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 5555555,high = 55555555) == 40555563
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 5555555,high = 55555555) == 40555563: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 123456,high = 789012) == 432150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 123456,high = 789012) == 432150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1,high = 10000) == 2893
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1,high = 10000) == 2893: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 700,high = 777) == 94
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 700,high = 777) == 94: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 123456789,high = 987654321) == 795042436
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 123456789,high = 987654321) == 795042436: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 555555,high = 666666) == 103707
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 555555,high = 666666) == 103707: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 14141414,high = 41414141) == 20624429
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 14141414,high = 41414141) == 20624429: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 660000,high = 661000) == 2302
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 660000,high = 661000) == 2302: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 8000000,high = 8888888) == 1422223
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 8000000,high = 8888888) == 1422223: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 66666666,high = 666666666) == 546666675
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 66666666,high = 666666666) == 546666675: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 444444,high = 4444444) == 2844451
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 444444,high = 4444444) == 2844451: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 99990,high = 100009) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 99990,high = 100009) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 4444444,high = 5555555) == 1271608
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 4444444,high = 5555555) == 1271608: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 9,low = 99990,high = 100010) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 9,low = 99990,high = 100010) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 12345,high = 54321) == 20920
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 12345,high = 54321) == 20920: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 500000,high = 505000) == 6502
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 500000,high = 505000) == 6502: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 30000000,high = 33333333) == 5666672
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 30000000,high = 33333333) == 5666672: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 123456789,high = 987654321) == 795595736
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 123456789,high = 987654321) == 795595736: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 5,low = 12345,high = 67890) == 32715
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 5,low = 12345,high = 67890) == 32715: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 1000,high = 2000) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 1000,high = 2000) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 3000000,high = 3000100) == 121
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 3000000,high = 3000100) == 121: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 7,low = 70000,high = 77777) == 10890
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 7,low = 70000,high = 77777) == 10890: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 2,low = 22222222,high = 222222222) == 182222231
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 2,low = 22222222,high = 222222222) == 182222231: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 0,low = 1000,high = 10000) == 2704
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 0,low = 1000,high = 10000) == 2704: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 8,low = 88888888,high = 888888888) == 728888897
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 8,low = 88888888,high = 888888888) == 728888897: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 666666,high = 6666666) == 4266673
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 666666,high = 6666666) == 4266673: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 6,low = 60000000,high = 66666666) == 11333336
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 6,low = 60000000,high = 66666666) == 11333336: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 100000,high = 110000) == 14002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 100000,high = 110000) == 14002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 12345,high = 54321) == 24253
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 12345,high = 54321) == 24253: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 4,low = 400000,high = 400100) == 121
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 4,low = 400000,high = 400100) == 121: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 1000000,high = 1010000) == 14002
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 1000000,high = 1010000) == 14002: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 1,low = 1000,high = 10000) == 3701
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 1,low = 1000,high = 10000) == 3701: {e}')
+    
+    total += 1
+    try:
+        result = candidate(d = 3,low = 20000,high = 23000) == 901
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(d = 3,low = 20000,high = 23000) == 901: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(d = 5,low = 500,high = 550) == 57
+    assert candidate(d = 9,low = 90,high = 100) == 11
+    assert candidate(d = 9,low = 1000,high = 2000) == 300
+    assert candidate(d = 0,low = 1,high = 100) == 11
+    assert candidate(d = 5,low = 50,high = 150) == 21
+    assert candidate(d = 5,low = 123,high = 456) == 71
+    assert candidate(d = 9,low = 1,high = 9999) == 4000
+    assert candidate(d = 7,low = 77,high = 777) == 220
+    assert candidate(d = 1,low = 1,high = 13) == 6
+    assert candidate(d = 5,low = 55,high = 65) == 7
+    assert candidate(d = 3,low = 100,high = 250) == 35
+    assert candidate(d = 0,low = 10,high = 100) == 11
+    assert candidate(d = 9,low = 89,high = 99) == 12
+    assert candidate(d = 1,low = 11111,high = 111111) == 61117
+    assert candidate(d = 9,low = 99999900,high = 99999999) == 620
+    assert candidate(d = 4,low = 123456,high = 654321) == 372532
+    assert candidate(d = 9,low = 99900,high = 100000) == 320
+    assert candidate(d = 3,low = 300000,high = 300099) == 120
+    assert candidate(d = 4,low = 400000,high = 499999) == 150000
+    assert candidate(d = 9,low = 987654,high = 9876543) == 6134569
+    assert candidate(d = 0,low = 100000,high = 101000) == 2304
+    assert candidate(d = 0,low = 100000,high = 999999) == 450000
+    assert candidate(d = 8,low = 888888,high = 888899) == 52
+    assert candidate(d = 3,low = 333333,high = 333333) == 6
+    assert candidate(d = 2,low = 123456,high = 123567) == 133
+    assert candidate(d = 0,low = 1000,high = 9999) == 2700
+    assert candidate(d = 9,low = 999999,high = 1000000) == 6
+    assert candidate(d = 4,low = 100000000,high = 101000000) == 600000
+    assert candidate(d = 4,low = 44444444,high = 55555555) == 13827164
+    assert candidate(d = 5,low = 55555,high = 555555) == 305561
+    assert candidate(d = 6,low = 1000000,high = 2000000) == 600000
+    assert candidate(d = 1,low = 100000,high = 1000000) == 550001
+    assert candidate(d = 3,low = 3000000,high = 3333333) == 533338
+    assert candidate(d = 1,low = 1000000,high = 1100000) == 150002
+    assert candidate(d = 7,low = 1000,high = 9999) == 3700
+    assert candidate(d = 3,low = 100000,high = 150000) == 30000
+    assert candidate(d = 1,low = 111111,high = 111111) == 6
+    assert candidate(d = 2,low = 123456,high = 654321) == 368812
+    assert candidate(d = 9,low = 100000,high = 200000) == 50000
+    assert candidate(d = 2,low = 11111,high = 22222) == 6794
+    assert candidate(d = 8,low = 888888,high = 8888888) == 5688895
+    assert candidate(d = 9,low = 9999990,high = 9999999) == 61
+    assert candidate(d = 9,low = 999900,high = 999999) == 420
+    assert candidate(d = 5,low = 555555,high = 555666) == 408
+    assert candidate(d = 4,low = 456789,high = 987654) == 305488
+    assert candidate(d = 1,low = 10000,high = 11000) == 1302
+    assert candidate(d = 5,low = 555555,high = 5555555) == 3555562
+    assert candidate(d = 0,low = 1000,high = 1010) == 23
+    assert candidate(d = 2,low = 222222,high = 222222) == 6
+    assert candidate(d = 6,low = 60606060,high = 60606066) == 29
+    assert candidate(d = 0,low = 1,high = 1000) == 192
+    assert candidate(d = 3,low = 1234567,high = 7654321) == 4913300
+    assert candidate(d = 8,low = 80000000,high = 88000000) == 12800002
+    assert candidate(d = 6,low = 6666666,high = 66666666) == 48666674
+    assert candidate(d = 7,low = 123456,high = 765432) == 382031
+    assert candidate(d = 7,low = 1000,high = 1500) == 100
+    assert candidate(d = 6,low = 12345678,high = 87654321) == 63207868
+    assert candidate(d = 2,low = 222222,high = 2222222) == 1422229
+    assert candidate(d = 1,low = 1000000,high = 1999999) == 1600000
+    assert candidate(d = 7,low = 777,high = 7777) == 2881
+    assert candidate(d = 8,low = 10000000,high = 88888888) == 64111112
+    assert candidate(d = 6,low = 123000,high = 124000) == 300
+    assert candidate(d = 2,low = 20000000,high = 20202020) == 304666
+    assert candidate(d = 7,low = 777000,high = 778000) == 3302
+    assert candidate(d = 6,low = 60000000,high = 66000000) == 9600002
+    assert candidate(d = 4,low = 44444,high = 444444) == 244450
+    assert candidate(d = 9,low = 9876543,high = 98765432) == 70234569
+    assert candidate(d = 5,low = 5555555,high = 55555555) == 40555563
+    assert candidate(d = 2,low = 123456,high = 789012) == 432150
+    assert candidate(d = 0,low = 1,high = 10000) == 2893
+    assert candidate(d = 7,low = 700,high = 777) == 94
+    assert candidate(d = 3,low = 123456789,high = 987654321) == 795042436
+    assert candidate(d = 5,low = 555555,high = 666666) == 103707
+    assert candidate(d = 4,low = 14141414,high = 41414141) == 20624429
+    assert candidate(d = 6,low = 660000,high = 661000) == 2302
+    assert candidate(d = 8,low = 8000000,high = 8888888) == 1422223
+    assert candidate(d = 6,low = 66666666,high = 666666666) == 546666675
+    assert candidate(d = 4,low = 444444,high = 4444444) == 2844451
+    assert candidate(d = 9,low = 99990,high = 100009) == 42
+    assert candidate(d = 4,low = 4444444,high = 5555555) == 1271608
+    assert candidate(d = 9,low = 99990,high = 100010) == 42
+    assert candidate(d = 5,low = 12345,high = 54321) == 20920
+    assert candidate(d = 5,low = 500000,high = 505000) == 6502
+    assert candidate(d = 3,low = 30000000,high = 33333333) == 5666672
+    assert candidate(d = 5,low = 123456789,high = 987654321) == 795595736
+    assert candidate(d = 5,low = 12345,high = 67890) == 32715
+    assert candidate(d = 7,low = 1000,high = 2000) == 300
+    assert candidate(d = 3,low = 3000000,high = 3000100) == 121
+    assert candidate(d = 7,low = 70000,high = 77777) == 10890
+    assert candidate(d = 2,low = 22222222,high = 222222222) == 182222231
+    assert candidate(d = 0,low = 1000,high = 10000) == 2704
+    assert candidate(d = 8,low = 88888888,high = 888888888) == 728888897
+    assert candidate(d = 6,low = 666666,high = 6666666) == 4266673
+    assert candidate(d = 6,low = 60000000,high = 66666666) == 11333336
+    assert candidate(d = 1,low = 100000,high = 110000) == 14002
+    assert candidate(d = 1,low = 12345,high = 54321) == 24253
+    assert candidate(d = 4,low = 400000,high = 400100) == 121
+    assert candidate(d = 1,low = 1000000,high = 1010000) == 14002
+    assert candidate(d = 1,low = 1000,high = 10000) == 3701
+    assert candidate(d = 3,low = 20000,high = 23000) == 901
+
+

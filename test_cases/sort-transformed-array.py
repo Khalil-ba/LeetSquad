@@ -1,0 +1,1112 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = -2,b = 3,c = -1) == [-231, -171, -66, -36, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = -2,b = 3,c = -1) == [-231, -171, -66, -36, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 1) == [-19, -9, 1, 11, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 1) == [-19, -9, 1, 11, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 0,b = 2,c = 3) == [1, 3, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 0,b = 2,c = 3) == [1, 3, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-4, -2, 2, 4],a = 1,b = 3,c = 5) == [3, 9, 15, 33]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-4, -2, 2, 4],a = 1,b = 3,c = 5) == [3, 9, 15, 33]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 3) == [-17, -7, 3, 13, 23]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 3) == [-17, -7, 3, 13, 23]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],a = 1,b = -2,c = 1) == [0, 1, 4, 9, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],a = 1,b = -2,c = 1) == [0, 1, 4, 9, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 5) == [5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 5) == [5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],a = -1,b = 2,c = -1) == [-16, -9, -4, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],a = -1,b = 2,c = -1) == [-16, -9, -4, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 0, 2, 3],a = 1,b = -3,c = 2) == [0, 2, 2, 6, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 0, 2, 3],a = 1,b = -3,c = 2) == [0, 2, 2, 6, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = -3,c = 1) == [1, 36, 66, 171, 231]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = -3,c = 1) == [1, 36, 66, 171, 231]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 0) == [0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 0) == [0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 3) == [-17, -7, 3, 13, 23]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 3) == [-17, -7, 3, 13, 23]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-4, -2, 2, 4],a = -1,b = 3,c = 5) == [-23, -5, 1, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-4, -2, 2, 4],a = -1,b = 3,c = 5) == [-23, -5, 1, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = 0,c = -3) == [-3, 47, 47, 197, 197]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = 0,c = -3) == [-3, 47, 47, 197, 197]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 2,b = -3,c = 1) == [0, 1, 3, 6, 10, 15, 28]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 2,b = -3,c = 1) == [0, 1, 3, 6, 10, 15, 28]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 0, 2, 3],a = -2,b = -4,c = 1) == [-29, -15, -5, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 0, 2, 3],a = -2,b = -4,c = 1) == [-29, -15, -5, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 0,b = 1,c = 1) == [0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 0,b = 1,c = 1) == [0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 1) == [-19, -9, 1, 11, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 1) == [-19, -9, 1, 11, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 0,b = -1,c = 2) == [1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 0,b = -1,c = 2) == [1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5],a = 2,b = -4,c = 2) == [0, 2, 8, 18, 32]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5],a = 2,b = -4,c = 2) == [0, 2, 8, 18, 32]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1],a = 0,b = 2,c = 3) == [-7, -5, -3, -1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1],a = 0,b = 2,c = 3) == [-7, -5, -3, -1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = -2,b = 0,c = 10) == [-190, -152, -118, -88, -62, -40, -22, -8, 2, 8, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = -2,b = 0,c = 10) == [-190, -152, -118, -88, -62, -40, -22, -8, 2, 8, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 2, 4, 6, 8, 10],a = 1,b = -4,c = 4) == [0, 4, 4, 16, 36, 64]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 2, 4, 6, 8, 10],a = 1,b = -4,c = 4) == [0, 4, 4, 16, 36, 64]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -3, -1, 1, 3, 5],a = -3,b = 5,c = -2) == [-102, -52, -44, -14, -10, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -3, -1, 1, 3, 5],a = -3,b = 5,c = -2) == [-102, -52, -44, -14, -10, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 4, 9, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 4, 9, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -25, 0, 25, 50],a = 2,b = -10,c = 3) == [3, 1003, 1503, 4503, 5503]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -25, 0, 25, 50],a = 2,b = -10,c = 3) == [3, 1003, 1503, 4503, 5503]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-6, -4, -2, 0, 2, 4, 6],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-6, -4, -2, 0, 2, 4, 6],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -6, -3, 0, 1, 4, 8],a = 2,b = -3,c = 1) == [0, 1, 21, 28, 91, 105, 231]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -6, -3, 0, 1, 4, 8],a = 2,b = -3,c = 1) == [0, 1, 21, 28, 91, 105, 231]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-7, -3, 0, 3, 7],a = 0,b = -5,c = 15) == [-20, 0, 15, 30, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-7, -3, 0, 3, 7],a = 0,b = -5,c = 15) == [-20, 0, 15, 30, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 1,b = -4,c = 4) == [1, 4, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 1,b = -4,c = 4) == [1, 4, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -1,c = 5) == [0, 2, 4, 6, 8, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -1,c = 5) == [0, 2, 4, 6, 8, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 10,b = -20,c = 10) == [0, 10, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 10,b = -20,c = 10) == [0, 10, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 0, 2, 4],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 0, 2, 4],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-30, -20, -10, 0, 10, 20, 30],a = 0,b = -1,c = 5) == [-25, -15, -5, 5, 15, 25, 35]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-30, -20, -10, 0, 10, 20, 30],a = 0,b = -1,c = 5) == [-25, -15, -5, 5, 15, 25, 35]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-8, -6, -4, -2, 0, 2, 4, 6, 8],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49, 49, 81]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-8, -6, -4, -2, 0, 2, 4, 6, 8],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49, 49, 81]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -25, 0, 25, 50],a = -2,b = 0,c = 100) == [-4900, -4900, -1150, -1150, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -25, 0, 25, 50],a = -2,b = 0,c = 100) == [-4900, -4900, -1150, -1150, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = -4) == [-4, -3, -3, 0, 0, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = -4) == [-4, -3, -3, 0, 0, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-9, -7, -5, -3, -1, 1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-9, -7, -5, -3, -1, 1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -25, -10, -5, 0, 5, 10, 25, 50],a = 0,b = 1,c = -50) == [-100, -75, -60, -55, -50, -45, -40, -25, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -25, -10, -5, 0, 5, 10, 25, 50],a = 0,b = 1,c = -50) == [-100, -75, -60, -55, -50, -45, -40, -25, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -90, -80, -70],a = 1,b = 10,c = 25) == [4225, 5625, 7225, 9025]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -90, -80, -70],a = 1,b = 10,c = 25) == [4225, 5625, 7225, 9025]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-7, -5, -3, -1, 1, 3, 5, 7],a = -1,b = 1,c = 0) == [-56, -42, -30, -20, -12, -6, -2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-7, -5, -3, -1, 1, 3, 5, 7],a = -1,b = 1,c = 0) == [-56, -42, -30, -20, -12, -6, -2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = -1,b = 0,c = 0) == [-400, -400, -225, -225, -100, -100, -25, -25, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = -1,b = 0,c = 0) == [-400, -400, -225, -225, -100, -100, -25, -25, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 1, 3, 5, 7],a = 0,b = -3,c = 2) == [-19, -13, -7, -1, 5, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 1, 3, 5, 7],a = 0,b = -3,c = 2) == [-19, -13, -7, -1, 5, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = -4,c = 1) == [1, 31, 71, 161, 241, 391, 511, 721, 881]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = -4,c = 1) == [1, 31, 71, 161, 241, 391, 511, 721, 881]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 1,b = 2,c = 3) == [2, 3, 6, 18, 38, 83, 123]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 1,b = 2,c = 3) == [2, 3, 6, 18, 38, 83, 123]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = 4,c = -3) == [-15, -11, -7, -3, 1, 5, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = 4,c = -3) == [-15, -11, -7, -3, 1, 5, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -2,b = 4,c = -6) == [-652, -516, -396, -292, -204, -132, -76, -36, -12, -4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -2,b = 4,c = -6) == [-652, -516, -396, -292, -204, -132, -76, -36, -12, -4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13],a = 0,b = -1,c = 5) == [-8, -6, -4, -2, 0, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13],a = 0,b = -1,c = 5) == [-8, -6, -4, -2, 0, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-8, -4, -1, 1, 4, 8],a = -3,b = 6,c = -2) == [-242, -146, -74, -26, -11, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-8, -4, -1, 1, 4, 8],a = -3,b = 6,c = -2) == [-242, -146, -74, -26, -11, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = -1,b = 0,c = 0) == [-225, -225, -100, -100, -25, -25, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = -1,b = 0,c = 0) == [-225, -225, -100, -100, -25, -25, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -7, -4, 0, 3, 6, 9],a = 2,b = -5,c = 7) == [7, 10, 49, 59, 124, 140, 257]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -7, -4, 0, 3, 6, 9],a = 2,b = -5,c = 7) == [7, 10, 49, 59, 124, 140, 257]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -90, -80, -70, -60, -50],a = -1,b = 1,c = 1) == [-10099, -8189, -6479, -4969, -3659, -2549]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -90, -80, -70, -60, -50],a = -1,b = 1,c = 1) == [-10099, -8189, -6479, -4969, -3659, -2549]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = 4,c = -10) == [-10, 20, 60, 150, 230, 380, 500, 710, 870]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = 4,c = -10) == [-10, 20, 60, 150, 230, 380, 500, 710, 870]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-6, -3, 0, 3, 6],a = -3,b = 0,c = 9) == [-99, -99, -18, -18, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-6, -3, 0, 3, 6],a = -3,b = 0,c = 9) == [-99, -99, -18, -18, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, -10, 0, 10, 50, 100],a = 1,b = 0,c = 0) == [0, 100, 100, 2500, 2500, 10000, 10000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, -10, 0, 10, 50, 100],a = 1,b = 0,c = 0) == [0, 100, 100, 2500, 2500, 10000, 10000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 2,b = -3,c = 1) == [0, 1, 6, 36, 66, 171, 231]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 2,b = -3,c = 1) == [0, 1, 6, 36, 66, 171, 231]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, 0, 50, 100],a = 3,b = -2,c = 1) == [1, 7401, 7601, 29801, 30201]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, 0, 50, 100],a = 3,b = -2,c = 1) == [1, 7401, 7601, 29801, 30201]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1, 2, 3, 4, 5],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1, 2, 3, 4, 5],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -25, 0, 25, 50],a = -3,b = 0,c = 100) == [-7400, -7400, -1775, -1775, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -25, 0, 25, 50],a = -3,b = 0,c = 100) == [-7400, -7400, -1775, -1775, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-12, -9, -6, -3, 0, 3, 6, 9, 12],a = -1,b = 2,c = 1) == [-167, -119, -98, -62, -47, -23, -14, -2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-12, -9, -6, -3, 0, 3, 6, 9, 12],a = -1,b = 2,c = 1) == [-167, -119, -98, -62, -47, -23, -14, -2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = -3,b = -6,c = -2) == [-299, -191, -146, -74, -47, -11, -2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = -3,b = -6,c = -2) == [-299, -191, -146, -74, -47, -11, -2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 1,b = 1,c = 1) == [1, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 1,b = 1,c = 1) == [1, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 0, 2, 5],a = 1,b = 0,c = -6) == [-6, -5, -2, 3, 19]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 0, 2, 5],a = 1,b = 0,c = -6) == [-6, -5, -2, 3, 19]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -10, 0, 10, 20],a = -1,b = 0,c = 0) == [-400, -400, -100, -100, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -10, 0, 10, 20],a = -1,b = 0,c = 0) == [-400, -400, -100, -100, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -1,b = 2,c = -1) == [-324, -256, -196, -144, -100, -64, -36, -16, -4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -1,b = 2,c = -1) == [-324, -256, -196, -144, -100, -64, -36, -16, -4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-8, -4, -2, 0, 2, 4, 8],a = 0,b = 1,c = -1) == [-9, -5, -3, -1, 1, 3, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-8, -4, -2, 0, 2, 4, 8],a = 0,b = 1,c = -1) == [-9, -5, -3, -1, 1, 3, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-7, -4, -1, 2, 5, 8],a = 0,b = 1,c = -1) == [-8, -5, -2, 1, 4, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-7, -4, -1, 2, 5, 8],a = 0,b = 1,c = -1) == [-8, -5, -2, 1, 4, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5],a = 1,b = -1,c = 1) == [1, 1, 3, 7, 13, 21]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5],a = 1,b = -1,c = 1) == [1, 1, 3, 7, 13, 21]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -1, 0, 1, 2, 3],a = -2,b = 4,c = -1) == [-31, -7, -7, -1, -1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -1, 0, 1, 2, 3],a = -2,b = 4,c = -1) == [-31, -7, -7, -1, -1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 1,b = 1,c = 1) == [1, 21, 31, 91, 111, 211, 241, 381, 421]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 1,b = 1,c = 1) == [1, 21, 31, 91, 111, 211, 241, 381, 421]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -40, -30, -20, -10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -40, -30, -20, -10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-2, -1, 0, 1, 2],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-2, -1, 0, 1, 2],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -1, 0, 1, 10],a = 2,b = -4,c = 3) == [1, 3, 9, 163, 243]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -1, 0, 1, 10],a = 2,b = -4,c = 3) == [1, 3, 9, 163, 243]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100, 225, 225]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100, 225, 225]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 2,c = 1) == [1, 16, 36, 81, 121]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 2,c = 1) == [1, 16, 36, 81, 121]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = 0,c = -81) == [-81, -72, -72, -45, -45, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = 0,c = -81) == [-81, -72, -72, -45, -45, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, -10, 10, 50, 100],a = 2,b = -3,c = 1) == [171, 231, 4851, 5151, 19701, 20301]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, -10, 10, 50, 100],a = 2,b = -3,c = 1) == [171, 231, 4851, 5151, 19701, 20301]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -1, 1, 5],a = -2,b = 5,c = -3) == [-78, -28, -10, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -1, 1, 5],a = -2,b = 5,c = -3) == [-78, -28, -10, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, -20, 0, 20, 50, 100],a = 2,b = -3,c = 1) == [1, 741, 861, 4851, 5151, 19701, 20301]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, -20, 0, 20, 50, 100],a = 2,b = -3,c = 1) == [1, 741, 861, 4851, 5151, 19701, 20301]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -2, 0, 2, 5],a = 3,b = -4,c = 1) == [1, 5, 21, 56, 96]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -2, 0, 2, 5],a = 3,b = -4,c = 1) == [1, 5, 21, 56, 96]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, -1, 1, 5, 10],a = 0,b = -1,c = 10) == [0, 5, 9, 11, 15, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, -1, 1, 5, 10],a = 0,b = -1,c = 10) == [0, 5, 9, 11, 15, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 100,c = -5000) == [-15000, -10000, -5000, 0, 5000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 100,c = -5000) == [-15000, -10000, -5000, 0, 5000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -3, -1, 0, 1, 3, 5],a = -2,b = 4,c = -7) == [-77, -37, -37, -13, -13, -7, -5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -3, -1, 0, 1, 3, 5],a = -2,b = 4,c = -7) == [-77, -37, -37, -13, -13, -7, -5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-7, -2, 1, 4, 9],a = -1,b = 0,c = 0) == [-81, -49, -16, -4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-7, -2, 1, 4, 9],a = -1,b = 0,c = 0) == [-81, -49, -16, -4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -1, 0, 2, 8],a = -2,b = 4,c = -6) == [-102, -76, -12, -6, -6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -1, 0, 2, 8],a = -2,b = 4,c = -6) == [-102, -76, -12, -6, -6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1],a = -1,b = 0,c = 0) == [-25, -16, -9, -4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1],a = -1,b = 0,c = 0) == [-25, -16, -9, -4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -3, -1, 1, 3, 5],a = 2,b = -4,c = 1) == [-1, 7, 7, 31, 31, 71]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -3, -1, 1, 3, 5],a = 2,b = -4,c = 1) == [-1, 7, 7, 31, 31, 71]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1],a = 3,b = -2,c = 1) == [6, 17, 34, 57, 86]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1],a = 3,b = -2,c = 1) == [6, 17, 34, 57, 86]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = -2,b = 4,c = -2) == [-8, -2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = -2,b = 4,c = -2) == [-8, -2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, -25, 0, 25, 50, 100],a = -1,b = 0,c = 0) == [-10000, -10000, -2500, -2500, -625, -625, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, -25, 0, 25, 50, 100],a = -1,b = 0,c = 0) == [-10000, -10000, -2500, -2500, -625, -625, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -25, 0, 25, 50],a = -1,b = 0,c = 2500) == [0, 0, 1875, 1875, 2500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -25, 0, 25, 50],a = -1,b = 0,c = 2500) == [0, 0, 1875, 1875, 2500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 1,b = 0,c = 0) == [0, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 1,b = 0,c = 0) == [0, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-6, -3, 0, 3, 6],a = -2,b = 4,c = -1) == [-97, -49, -31, -7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-6, -3, 0, 3, 6],a = -2,b = 4,c = -1) == [-97, -49, -31, -7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -10, 0, 10, 20],a = 3,b = 6,c = 2) == [2, 242, 362, 1082, 1322]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -10, 0, 10, 20],a = 3,b = 6,c = 2) == [2, 242, 362, 1082, 1322]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 1,b = -2,c = 1) == [0, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 1,b = -2,c = 1) == [0, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -1, 1, 3, 5],a = -2,b = 4,c = -3) == [-73, -33, -9, -9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -1, 1, 3, 5],a = -2,b = 4,c = -3) == [-73, -33, -9, -9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-20, -10, 0, 10, 20],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-20, -10, 0, 10, 20],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -4,c = 8) == [-12, -4, 4, 12, 20, 28]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -4,c = 8) == [-12, -4, 4, 12, 20, 28]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -7, -4, -1, 2, 5, 8],a = 2,b = -3,c = 1) == [3, 6, 36, 45, 105, 120, 231]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -7, -4, -1, 2, 5, 8],a = 2,b = -3,c = 1) == [3, 6, 36, 45, 105, 120, 231]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1, 2, 3],a = 3,b = -6,c = 3) == [0, 3, 3, 12, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1, 2, 3],a = 3,b = -6,c = 3) == [0, 3, 3, 12, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-99, -98, -97, -96, -95],a = 1,b = 1,c = 1) == [8931, 9121, 9313, 9507, 9703]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-99, -98, -97, -96, -95],a = 1,b = 1,c = 1) == [8931, 9121, 9313, 9507, 9703]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 1,c = 1) == [1, 3, 7, 13, 21, 31, 43, 57, 73, 91, 111]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 1,c = 1) == [1, 3, 7, 13, 21, 31, 43, 57, 73, 91, 111]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, 0, 10],a = -1,b = 0,c = 100) == [0, 0, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, 0, 10],a = -1,b = 0,c = 100) == [0, 0, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = -1,c = 4) == [1, 2, 3, 4, 5, 6, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = -1,c = 4) == [1, 2, 3, 4, 5, 6, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-6, -3, 0, 3, 6],a = 2,b = -3,c = 1) == [1, 10, 28, 55, 91]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-6, -3, 0, 3, 6],a = 2,b = -3,c = 1) == [1, 10, 28, 55, 91]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -40, -30, -20, -10],a = -1,b = 0,c = 100) == [-2400, -1500, -800, -300, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -40, -30, -20, -10],a = -1,b = 0,c = 100) == [-2400, -1500, -800, -300, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],a = 0,b = 1,c = 0) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],a = 0,b = 1,c = 0) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = -1,c = 0) == [0, 6, 12, 30, 42, 72, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = -1,c = 0) == [0, 6, 12, 30, 42, 72, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-1, 0, 1],a = 100,b = 0,c = 0) == [0, 100, 100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-1, 0, 1],a = 100,b = 0,c = 0) == [0, 100, 100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-8, -4, 0, 4, 8],a = 0,b = 0,c = 7) == [7, 7, 7, 7, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-8, -4, 0, 4, 8],a = 0,b = 0,c = 7) == [7, 7, 7, 7, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 3,b = -18,c = 27) == [0, 27, 27, 108, 108, 243, 432]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 3,b = -18,c = 27) == [0, 27, 27, 108, 108, 243, 432]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = -2,b = 3,c = -1) == [-231, -171, -66, -36, -1]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 1) == [-19, -9, 1, 11, 21]
+    assert candidate(nums = [-1, 0, 1],a = 0,b = 2,c = 3) == [1, 3, 5]
+    assert candidate(nums = [-4, -2, 2, 4],a = 1,b = 3,c = 5) == [3, 9, 15, 33]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 3) == [-17, -7, 3, 13, 23]
+    assert candidate(nums = [1, 2, 3, 4, 5],a = 1,b = -2,c = 1) == [0, 1, 4, 9, 16]
+    assert candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 5) == [5, 5, 5]
+    assert candidate(nums = [1, 2, 3, 4, 5],a = -1,b = 2,c = -1) == [-16, -9, -4, -1, 0]
+    assert candidate(nums = [-3, -1, 0, 2, 3],a = 1,b = -3,c = 2) == [0, 2, 2, 6, 20]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = -3,c = 1) == [1, 36, 66, 171, 231]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4, 9, 9]
+    assert candidate(nums = [-1, 0, 1],a = 0,b = 0,c = 0) == [0, 0, 0]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = 2,c = 3) == [-17, -7, 3, 13, 23]
+    assert candidate(nums = [-4, -2, 2, 4],a = -1,b = 3,c = 5) == [-23, -5, 1, 7]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 2,b = 0,c = -3) == [-3, 47, 47, 197, 197]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 2,b = -3,c = 1) == [0, 1, 3, 6, 10, 15, 28]
+    assert candidate(nums = [-3, -1, 0, 2, 3],a = -2,b = -4,c = 1) == [-29, -15, -5, 1, 3]
+    assert candidate(nums = [-1, 0, 1],a = 0,b = 1,c = 1) == [0, 1, 2]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 0,b = -2,c = 1) == [-19, -9, 1, 11, 21]
+    assert candidate(nums = [-1, 0, 1],a = 0,b = -1,c = 2) == [1, 2, 3]
+    assert candidate(nums = [1, 2, 3, 4, 5],a = 2,b = -4,c = 2) == [0, 2, 8, 18, 32]
+    assert candidate(nums = [-5, -4, -3, -2, -1],a = 0,b = 2,c = 3) == [-7, -5, -3, -1, 1]
+    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = -2,b = 0,c = 10) == [-190, -152, -118, -88, -62, -40, -22, -8, 2, 8, 10]
+    assert candidate(nums = [0, 2, 4, 6, 8, 10],a = 1,b = -4,c = 4) == [0, 4, 4, 16, 36, 64]
+    assert candidate(nums = [-5, -3, -1, 1, 3, 5],a = -3,b = 5,c = -2) == [-102, -52, -44, -14, -10, 0]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 4, 9, 16]
+    assert candidate(nums = [-50, -25, 0, 25, 50],a = 2,b = -10,c = 3) == [3, 1003, 1503, 4503, 5503]
+    assert candidate(nums = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    assert candidate(nums = [-6, -4, -2, 0, 2, 4, 6],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49]
+    assert candidate(nums = [-10, -6, -3, 0, 1, 4, 8],a = 2,b = -3,c = 1) == [0, 1, 21, 28, 91, 105, 231]
+    assert candidate(nums = [-7, -3, 0, 3, 7],a = 0,b = -5,c = 15) == [-20, 0, 15, 30, 50]
+    assert candidate(nums = [-1, 0, 1],a = 1,b = -4,c = 4) == [1, 4, 9]
+    assert candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -1,c = 5) == [0, 2, 4, 6, 8, 10]
+    assert candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 4]
+    assert candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]
+    assert candidate(nums = [-1, 0, 1],a = 10,b = -20,c = 10) == [0, 10, 40]
+    assert candidate(nums = [-3, -1, 0, 2, 4],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+    assert candidate(nums = [-30, -20, -10, 0, 10, 20, 30],a = 0,b = -1,c = 5) == [-25, -15, -5, 5, 15, 25, 35]
+    assert candidate(nums = [-8, -6, -4, -2, 0, 2, 4, 6, 8],a = 1,b = 2,c = 1) == [1, 1, 9, 9, 25, 25, 49, 49, 81]
+    assert candidate(nums = [-50, -25, 0, 25, 50],a = -2,b = 0,c = 100) == [-4900, -4900, -1150, -1150, 100]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 1,b = 0,c = -4) == [-4, -3, -3, 0, 0, 5, 5]
+    assert candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0, 0, 0]
+    assert candidate(nums = [-9, -7, -5, -3, -1, 1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    assert candidate(nums = [-50, -25, -10, -5, 0, 5, 10, 25, 50],a = 0,b = 1,c = -50) == [-100, -75, -60, -55, -50, -45, -40, -25, 0]
+    assert candidate(nums = [-100, -90, -80, -70],a = 1,b = 10,c = 25) == [4225, 5625, 7225, 9025]
+    assert candidate(nums = [-7, -5, -3, -1, 1, 3, 5, 7],a = -1,b = 1,c = 0) == [-56, -42, -30, -20, -12, -6, -2, 0]
+    assert candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = -1,b = 0,c = 0) == [-400, -400, -225, -225, -100, -100, -25, -25, 0]
+    assert candidate(nums = [-3, -1, 1, 3, 5, 7],a = 0,b = -3,c = 2) == [-19, -13, -7, -1, 5, 11]
+    assert candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = -4,c = 1) == [1, 31, 71, 161, 241, 391, 511, 721, 881]
+    assert candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 1,b = 2,c = 3) == [2, 3, 6, 18, 38, 83, 123]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = 4,c = -3) == [-15, -11, -7, -3, 1, 5, 9]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -2,b = 4,c = -6) == [-652, -516, -396, -292, -204, -132, -76, -36, -12, -4]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13],a = 0,b = -1,c = 5) == [-8, -6, -4, -2, 0, 2, 4]
+    assert candidate(nums = [-8, -4, -1, 1, 4, 8],a = -3,b = 6,c = -2) == [-242, -146, -74, -26, -11, 1]
+    assert candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = -1,b = 0,c = 0) == [-225, -225, -100, -100, -25, -25, 0]
+    assert candidate(nums = [-10, -7, -4, 0, 3, 6, 9],a = 2,b = -5,c = 7) == [7, 10, 49, 59, 124, 140, 257]
+    assert candidate(nums = [-100, -90, -80, -70, -60, -50],a = -1,b = 1,c = 1) == [-10099, -8189, -6479, -4969, -3659, -2549]
+    assert candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 2,b = 4,c = -10) == [-10, 20, 60, 150, 230, 380, 500, 710, 870]
+    assert candidate(nums = [-6, -3, 0, 3, 6],a = -3,b = 0,c = 9) == [-99, -99, -18, -18, 9]
+    assert candidate(nums = [-100, -50, -10, 0, 10, 50, 100],a = 1,b = 0,c = 0) == [0, 100, 100, 2500, 2500, 10000, 10000]
+    assert candidate(nums = [-10, -5, -1, 0, 1, 5, 10],a = 2,b = -3,c = 1) == [0, 1, 6, 36, 66, 171, 231]
+    assert candidate(nums = [-100, -50, 0, 50, 100],a = 3,b = -2,c = 1) == [1, 7401, 7601, 29801, 30201]
+    assert candidate(nums = [-1, 0, 1, 2, 3, 4, 5],a = 1,b = 0,c = 0) == [0, 1, 1, 4, 9, 16, 25]
+    assert candidate(nums = [-50, -25, 0, 25, 50],a = -3,b = 0,c = 100) == [-7400, -7400, -1775, -1775, 100]
+    assert candidate(nums = [-12, -9, -6, -3, 0, 3, 6, 9, 12],a = -1,b = 2,c = 1) == [-167, -119, -98, -62, -47, -23, -14, -2, 1]
+    assert candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = -3,b = -6,c = -2) == [-299, -191, -146, -74, -47, -11, -2]
+    assert candidate(nums = [-1, 0, 1],a = 1,b = 1,c = 1) == [1, 1, 3]
+    assert candidate(nums = [-3, -1, 0, 2, 5],a = 1,b = 0,c = -6) == [-6, -5, -2, 3, 19]
+    assert candidate(nums = [-20, -10, 0, 10, 20],a = -1,b = 0,c = 0) == [-400, -400, -100, -100, 0]
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],a = -1,b = 2,c = -1) == [-324, -256, -196, -144, -100, -64, -36, -16, -4, 0]
+    assert candidate(nums = [-8, -4, -2, 0, 2, 4, 8],a = 0,b = 1,c = -1) == [-9, -5, -3, -1, 1, 3, 7]
+    assert candidate(nums = [-7, -4, -1, 2, 5, 8],a = 0,b = 1,c = -1) == [-8, -5, -2, 1, 4, 7]
+    assert candidate(nums = [0, 1, 2, 3, 4, 5],a = 1,b = -1,c = 1) == [1, 1, 3, 7, 13, 21]
+    assert candidate(nums = [-3, -1, 0, 1, 2, 3],a = -2,b = 4,c = -1) == [-31, -7, -7, -1, -1, 1]
+    assert candidate(nums = [-20, -15, -10, -5, 0, 5, 10, 15, 20],a = 1,b = 1,c = 1) == [1, 21, 31, 91, 111, 211, 241, 381, 421]
+    assert candidate(nums = [-50, -40, -30, -20, -10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100]
+    assert candidate(nums = [-2, -1, 0, 1, 2],a = 0,b = 0,c = 0) == [0, 0, 0, 0, 0]
+    assert candidate(nums = [-10, -1, 0, 1, 10],a = 2,b = -4,c = 3) == [1, 3, 9, 163, 243]
+    assert candidate(nums = [-15, -10, -5, 0, 5, 10, 15],a = 1,b = 0,c = 0) == [0, 25, 25, 100, 100, 225, 225]
+    assert candidate(nums = [-10, -5, 0, 5, 10],a = 1,b = 2,c = 1) == [1, 16, 36, 81, 121]
+    assert candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = 0,c = -81) == [-81, -72, -72, -45, -45, 0, 0]
+    assert candidate(nums = [-100, -50, -10, 10, 50, 100],a = 2,b = -3,c = 1) == [171, 231, 4851, 5151, 19701, 20301]
+    assert candidate(nums = [-5, -1, 1, 5],a = -2,b = 5,c = -3) == [-78, -28, -10, 0]
+    assert candidate(nums = [-100, -50, -20, 0, 20, 50, 100],a = 2,b = -3,c = 1) == [1, 741, 861, 4851, 5151, 19701, 20301]
+    assert candidate(nums = [-5, -2, 0, 2, 5],a = 3,b = -4,c = 1) == [1, 5, 21, 56, 96]
+    assert candidate(nums = [-10, -5, -1, 1, 5, 10],a = 0,b = -1,c = 10) == [0, 5, 9, 11, 15, 20]
+    assert candidate(nums = [-100, -50, 0, 50, 100],a = 0,b = 100,c = -5000) == [-15000, -10000, -5000, 0, 5000]
+    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 0,b = 0,c = 100) == [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+    assert candidate(nums = [-5, -3, -1, 0, 1, 3, 5],a = -2,b = 4,c = -7) == [-77, -37, -37, -13, -13, -7, -5]
+    assert candidate(nums = [-7, -2, 1, 4, 9],a = -1,b = 0,c = 0) == [-81, -49, -16, -4, -1]
+    assert candidate(nums = [1, 3, 5, 7, 9],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+    assert candidate(nums = [-5, -1, 0, 2, 8],a = -2,b = 4,c = -6) == [-102, -76, -12, -6, -6]
+    assert candidate(nums = [-5, -4, -3, -2, -1],a = -1,b = 0,c = 0) == [-25, -16, -9, -4, -1]
+    assert candidate(nums = [-5, -3, -1, 1, 3, 5],a = 2,b = -4,c = 1) == [-1, 7, 7, 31, 31, 71]
+    assert candidate(nums = [-5, -4, -3, -2, -1],a = 3,b = -2,c = 1) == [6, 17, 34, 57, 86]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = -1,b = 0,c = 0) == [-9, -9, -4, -4, -1, -1, 0]
+    assert candidate(nums = [-1, 0, 1],a = -2,b = 4,c = -2) == [-8, -2, 0]
+    assert candidate(nums = [-100, -50, -25, 0, 25, 50, 100],a = -1,b = 0,c = 0) == [-10000, -10000, -2500, -2500, -625, -625, 0]
+    assert candidate(nums = [-50, -25, 0, 25, 50],a = -1,b = 0,c = 2500) == [0, 0, 1875, 1875, 2500]
+    assert candidate(nums = [-1, 0, 1],a = 1,b = 0,c = 0) == [0, 1, 1]
+    assert candidate(nums = [-6, -3, 0, 3, 6],a = -2,b = 4,c = -1) == [-97, -49, -31, -7, -1]
+    assert candidate(nums = [-20, -10, 0, 10, 20],a = 3,b = 6,c = 2) == [2, 242, 362, 1082, 1322]
+    assert candidate(nums = [-1, 0, 1],a = 1,b = -2,c = 1) == [0, 1, 4]
+    assert candidate(nums = [-5, -1, 1, 3, 5],a = -2,b = 4,c = -3) == [-73, -33, -9, -9, -1]
+    assert candidate(nums = [-20, -10, 0, 10, 20],a = 0,b = 0,c = 5) == [5, 5, 5, 5, 5]
+    assert candidate(nums = [-5, -3, -1, 1, 3, 5],a = 0,b = -4,c = 8) == [-12, -4, 4, 12, 20, 28]
+    assert candidate(nums = [-10, -7, -4, -1, 2, 5, 8],a = 2,b = -3,c = 1) == [3, 6, 36, 45, 105, 120, 231]
+    assert candidate(nums = [-1, 0, 1, 2, 3],a = 3,b = -6,c = 3) == [0, 3, 3, 12, 12]
+    assert candidate(nums = [-99, -98, -97, -96, -95],a = 1,b = 1,c = 1) == [8931, 9121, 9313, 9507, 9703]
+    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],a = 1,b = 1,c = 1) == [1, 3, 7, 13, 21, 31, 43, 57, 73, 91, 111]
+    assert candidate(nums = [-10, 0, 10],a = -1,b = 0,c = 100) == [0, 0, 100]
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],a = 0,b = -1,c = 4) == [1, 2, 3, 4, 5, 6, 7]
+    assert candidate(nums = [-6, -3, 0, 3, 6],a = 2,b = -3,c = 1) == [1, 10, 28, 55, 91]
+    assert candidate(nums = [-50, -40, -30, -20, -10],a = -1,b = 0,c = 100) == [-2400, -1500, -800, -300, 0]
+    assert candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],a = 0,b = 1,c = 0) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+    assert candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 1,b = -1,c = 0) == [0, 6, 12, 30, 42, 72, 90]
+    assert candidate(nums = [-1, 0, 1],a = 100,b = 0,c = 0) == [0, 100, 100]
+    assert candidate(nums = [-8, -4, 0, 4, 8],a = 0,b = 0,c = 7) == [7, 7, 7, 7, 7]
+    assert candidate(nums = [-2, -1, 0, 1, 2],a = 1,b = 2,c = 1) == [0, 1, 1, 4, 9]
+    assert candidate(nums = [-9, -6, -3, 0, 3, 6, 9],a = 3,b = -18,c = 27) == [0, 27, 27, 108, 108, 243, 432]
+
+

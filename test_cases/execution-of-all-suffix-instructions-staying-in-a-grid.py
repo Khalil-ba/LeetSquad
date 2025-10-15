@@ -1,0 +1,815 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 1,startPos = [0, 0],s = "LRUD") == [0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1,startPos = [0, 0],s = "LRUD") == [0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [2, 2],s = "DDDD") == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [2, 2],s = "DDDD") == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [2, 2],s = "LUDDRL") == [6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [2, 2],s = "LUDDRL") == [6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [0, 3],s = "RRRR") == [0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [0, 3],s = "RRRR") == [0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,startPos = [2, 0],s = "RRU") == [3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,startPos = [2, 0],s = "RRU") == [3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [1, 2],s = "LURDLU") == [6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [1, 2],s = "LURDLU") == [6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [2, 2],s = "UUDDLLRR") == [8, 7, 1, 5, 4, 3, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [2, 2],s = "UUDDLLRR") == [8, 7, 1, 5, 4, 3, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,startPos = [0, 1],s = "RRDDLU") == [1, 5, 4, 3, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,startPos = [0, 1],s = "RRDDLU") == [1, 5, 4, 3, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [3, 0],s = "DDDD") == [0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [3, 0],s = "DDDD") == [0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 0],s = "DRDLUR") == [6, 5, 1, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 0],s = "DRDLUR") == [6, 5, 1, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2,startPos = [1, 1],s = "LURD") == [4, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2,startPos = [1, 1],s = "LURD") == [4, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [3, 3],s = "DDDDRRRRUUUULLLL") == [1, 1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [3, 3],s = "DDDDRRRRUUUULLLL") == [1, 1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,startPos = [0, 2],s = "LLD") == [3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,startPos = [0, 2],s = "LLD") == [3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [3, 3],s = "RRRDDDDLLLLUUUU") == [1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [3, 3],s = "RRRDDDDLLLLUUUU") == [1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [3, 3],s = "LDRURLDRU") == [9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [3, 3],s = "LDRURLDRU") == [9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,startPos = [14, 0],s = "LLLLDDDDDDDDDDDDUUUUUUUUUUUUUUUU") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,startPos = [14, 0],s = "LLLLDDDDDDDDDDDDUUUUUUUUUUUUUUUU") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [1, 6],s = "RULDDRRULLUUDD") == [6, 10, 12, 3, 2, 1, 4, 3, 3, 2, 1, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [1, 6],s = "RULDDRRULLUUDD") == [6, 10, 12, 3, 2, 1, 4, 3, 3, 2, 1, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [8, 0],s = "DDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [8, 0],s = "DDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 4],s = "LLLLDDRRRRUUUU") == [12, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 4],s = "LLLLDDRRRRUUUU") == [12, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 13,startPos = [1, 1],s = "LRRUDLRLRLUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD") == [94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 13,startPos = [1, 1],s = "LRRUDLRLRLUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD") == [94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [0, 0],s = "RRRRDDDDLLLLUUUUDDDDLLLLUUUU") == [20, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [0, 0],s = "RRRRDDDDLLLLUUUUDDDDLLLLUUUU") == [20, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [7, 2],s = "DRLLURDDRLUUDDRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [7, 2],s = "DRLLURDDRLUUDDRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [3, 3],s = "LRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR") == [34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [3, 3],s = "LRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR") == [34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [4, 4],s = "LULULULULULULULULULU") == [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [4, 4],s = "LULULULULULULULULULU") == [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [0, 5],s = "LLLLDDRRUUDDLLRRUUDDLLRRUUDD") == [28, 27, 26, 4, 2, 1, 0, 0, 0, 0, 18, 6, 4, 2, 0, 0, 0, 0, 10, 6, 4, 2, 0, 0, 0, 0, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [0, 5],s = "LLLLDDRRUUDDLLRRUUDDLLRRUUDD") == [28, 27, 26, 4, 2, 1, 0, 0, 0, 0, 18, 6, 4, 2, 0, 0, 0, 0, 10, 6, 4, 2, 0, 0, 0, 0, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "LRUDLRUDLRUD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "LRUDLRUDLRUD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [7, 0],s = "RRRRDDDDLLLLUUUU") == [4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [7, 0],s = "RRRRDDDDLLLLUUUU") == [4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [2, 3],s = "LRRUDLRLRLUDUDUDUD") == [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [2, 3],s = "LRRUDLRLRLUDUDUDUD") == [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,startPos = [3, 3],s = "LRRLDDUUDDUUDDRRLLRRRRUUUUDDDDLLLL") == [34, 33, 32, 31, 30, 29, 19, 27, 26, 25, 15, 23, 22, 21, 11, 10, 9, 8, 7, 6, 5, 4, 3, 10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,startPos = [3, 3],s = "LRRLDDUUDDUUDDRRLLRRRRUUUUDDDDLLLL") == [34, 33, 32, 31, 30, 29, 19, 27, 26, 25, 15, 23, 22, 21, 11, 10, 9, 8, 7, 6, 5, 4, 3, 10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 400,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 400,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLLLLLLLLLLLL") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLLLLLLLLLLLL") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [3, 3],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [3, 3],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLRRRRRRRRUUUUUUUDDDDDDD") == [6, 6, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLRRRRRRRRUUUUUUUDDDDDDD") == [6, 6, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [3, 3],s = "LLLLDDDDRRRRUUUU") == [3, 6, 5, 4, 3, 6, 5, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [3, 3],s = "LLLLDDDDRRRRUUUU") == [3, 6, 5, 4, 3, 6, 5, 4, 3, 6, 5, 4, 3, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [4, 4],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [4, 4],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [2, 2],s = "LRLRLRLRLRLRLRLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [2, 2],s = "LRLRLRLRLRLRLRLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 300,startPos = [299, 299],s = "DDDDRRRRUUUULLLL") == [0, 0, 0, 0, 0, 0, 0, 0, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 300,startPos = [299, 299],s = "DDDDRRRRUUUULLLL") == [0, 0, 0, 0, 0, 0, 0, 0, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,startPos = [5, 5],s = "UDLRUDLRUDLRUDLRUDLR") == [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,startPos = [5, 5],s = "UDLRUDLRUDLRUDLRUDLR") == [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 2],s = "DDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUU") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 2],s = "DDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUU") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [5, 0],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [5, 0],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,startPos = [14, 14],s = "LLLLLLLLLLLLLLL") == [14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,startPos = [14, 14],s = "LLLLLLLLLLLLLLL") == [14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [4, 4],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [4, 4],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [0, 5],s = "DDDDDDRRRRRDDDRRLUUL") == [5, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 3, 2, 1, 0, 0, 1, 0, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [0, 5],s = "DDDDDDRRRRRDDDRRLUUL") == [5, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 3, 2, 1, 0, 0, 1, 0, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [7, 0],s = "RRRRRRRRUUUUUUUUDDDDDDDDLLLLLLLL") == [7, 14, 13, 12, 11, 10, 9, 8, 7, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [7, 0],s = "RRRRRRRRUUUUUUUUDDDDDDDDLLLLLLLL") == [7, 14, 13, 12, 11, 10, 9, 8, 7, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 4],s = "LLLLDDDDRRRRUUUU") == [16, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 4],s = "LLLLDDDDRRRRUUUU") == [16, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 4],s = "RRRRRRRRRRRRRRRRRRRR") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 4],s = "RRRRRRRRRRRRRRRRRRRR") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [1, 1],s = "DRDLDRDLDRDLDRDLDRDLDRDLDRDLDRDL") == [14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [1, 1],s = "DRDLDRDLDRDLDRDLDRDLDRDLDRDLDRDL") == [14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [3, 3],s = "LUDDRRUULLDD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [3, 3],s = "LUDDRRUULLDD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [0, 0],s = "RLRLRLRLRLRLRLRLRLRL") == [20, 0, 18, 0, 16, 0, 14, 0, 12, 0, 10, 0, 8, 0, 6, 0, 4, 0, 2, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [0, 0],s = "RLRLRLRLRLRLRLRLRLRL") == [20, 0, 18, 0, 16, 0, 14, 0, 12, 0, 10, 0, 8, 0, 6, 0, 4, 0, 2, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDDRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDDRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [2, 2],s = "DDRRUULLUU") == [10, 8, 6, 5, 4, 4, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [2, 2],s = "DDRRUULLUU") == [10, 8, 6, 5, 4, 4, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [1, 1],s = "DDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUU") == [40, 39, 5, 3, 1, 1, 1, 33, 32, 31, 5, 3, 1, 1, 1, 25, 24, 23, 5, 3, 1, 1, 1, 17, 16, 15, 5, 3, 1, 1, 1, 9, 8, 7, 5, 3, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [1, 1],s = "DDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUU") == [40, 39, 5, 3, 1, 1, 1, 33, 32, 31, 5, 3, 1, 1, 1, 25, 24, 23, 5, 3, 1, 1, 1, 17, 16, 15, 5, 3, 1, 1, 1, 9, 8, 7, 5, 3, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [4, 5],s = "RRRDDDDLUUUULLLRRUUDD") == [0, 0, 0, 1, 1, 1, 12, 10, 9, 9, 11, 10, 9, 8, 2, 0, 0, 4, 3, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [4, 5],s = "RRRDDDDLUUUULLLRRUUDD") == [0, 0, 0, 1, 1, 1, 12, 10, 9, 9, 11, 10, 9, 8, 2, 0, 0, 4, 3, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,startPos = [6, 6],s = "RRDDLLUUDDRRLLUUDDRRLLUUDDRRLLUUDDRRLLUUDD") == [42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,startPos = [6, 6],s = "RRDDLLUUDDRRLLUUDDRRLLUUDDRRLLUUDDRRLLUUDD") == [42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 11,startPos = [5, 5],s = "DDDDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 11,startPos = [5, 5],s = "DDDDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,startPos = [19, 0],s = "RRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL") == [19, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,startPos = [19, 0],s = "RRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL") == [19, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [4, 4],s = "UDLRUDLRUDLRUDLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [4, 4],s = "UDLRUDLRUDLRUDLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [2, 3],s = "LLLDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 4, 3, 5, 4, 3, 2, 2, 5, 3, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [2, 3],s = "LLLDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 4, 3, 5, 4, 3, 2, 2, 5, 3, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [4, 0],s = "DDDDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [4, 0],s = "DDDDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [7, 7],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDD") == [28, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 12, 11, 10, 9, 8, 6, 4, 2, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [7, 7],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDD") == [28, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 12, 11, 10, 9, 8, 6, 4, 2, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [4, 1],s = "LDDRRULUDR") == [2, 1, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [4, 1],s = "LDDRRULUDR") == [2, 1, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [6, 6],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [6, 6],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [2, 2],s = "LUDDRRUUDDLL") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [2, 2],s = "LUDDRRUUDDLL") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 4,startPos = [2, 0],s = "RRRDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 1, 0, 0, 0, 0, 2, 2, 5, 3, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 4,startPos = [2, 0],s = "RRRDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 1, 0, 0, 0, 0, 2, 2, 5, 3, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,startPos = [2, 2],s = "RRDDLLUUURRDDDLLUUU") == [19, 18, 17, 16, 4, 3, 2, 12, 11, 4, 3, 2, 7, 6, 4, 3, 2, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,startPos = [2, 2],s = "RRDDLLUUURRDDDLLUUU") == [19, 18, 17, 16, 4, 3, 2, 12, 11, 4, 3, 2, 7, 6, 4, 3, 2, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [0, 0],s = "RRRDDDLLLUUUDDDRRRLUUDLLUURDDLL") == [30, 7, 5, 3, 2, 1, 0, 0, 0, 0, 0, 0, 18, 12, 6, 4, 3, 2, 0, 0, 0, 1, 0, 0, 0, 0, 4, 2, 1, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [0, 0],s = "RRRDDDLLLUUUDDDRRRLUUDLLUURDDLL") == [30, 7, 5, 3, 2, 1, 0, 0, 0, 0, 0, 0, 18, 12, 6, 4, 3, 2, 0, 0, 0, 1, 0, 0, 0, 0, 4, 2, 1, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3,startPos = [1, 1],s = "RLLDDRRUUULLDD") == [4, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3,startPos = [1, 1],s = "RLLDDRRUUULLDD") == [4, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [4, 4],s = "DDDDDDDDUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [4, 4],s = "DDDDDDDDUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,startPos = [2, 2],s = "LRLRLRLRLRLRLR") == [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,startPos = [2, 2],s = "LRLRLRLRLRLRLR") == [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [0, 7],s = "RRRRRRRRUUUUUUUUDDDDDDDDLDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [0, 7],s = "RRRRRRRRUUUUUUUUDDDDDDDDLDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [8, 0],s = "RRRRRRRRDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [8, 0],s = "RRRRRRRRDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,startPos = [0, 11],s = "LLLLLLLLLLLL") == [11, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,startPos = [0, 11],s = "LLLLLLLLLLLL") == [11, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [5, 4],s = "UUDDLLRRUUDDLLRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [5, 4],s = "UUDDLLRRUUDDLLRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,startPos = [10, 10],s = "LDRURLDRURLDRURLDRU") == [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,startPos = [10, 10],s = "LDRURLDRURLDRURLDRU") == [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,startPos = [7, 7],s = "RRRRUUUULLLLDDDDRRRRUUUULLLLDDDD") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,startPos = [7, 7],s = "RRRRUUUULLLLDDDDRRRRUUUULLLLDDDD") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [3, 3],s = "UUUUDDDDLLLLRRRRUUDDLL") == [3, 10, 9, 8, 3, 6, 5, 4, 3, 13, 12, 11, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [3, 3],s = "UUUUDDDDLLLLRRRRUUDDLL") == [3, 10, 9, 8, 3, 6, 5, 4, 3, 13, 12, 11, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 9,startPos = [0, 8],s = "LLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 9,startPos = [0, 8],s = "LLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 7,startPos = [1, 1],s = "DDRRLLUUDDRRLLUUDDRRLLUU") == [24, 23, 5, 4, 1, 2, 1, 17, 16, 15, 5, 4, 1, 2, 1, 9, 8, 7, 5, 4, 1, 2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 7,startPos = [1, 1],s = "DDRRLLUUDDRRLLUUDDRRLLUU") == [24, 23, 5, 4, 1, 2, 1, 17, 16, 15, 5, 4, 1, 2, 1, 9, 8, 7, 5, 4, 1, 2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [2, 5],s = "RRLLRRLLRRLLRRLLRRLLRRLLRRLLRRLL") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [2, 5],s = "RRLLRRLLRRLLRRLLRRLLRRLLRRLLRRLL") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "UUUUUUUUUUDDDDDDDDDDLLLLLLLLLLRRRRRRRRRR") == [5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 9, 8, 7, 6, 5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "UUUUUUUUUUDDDDDDDDDDLLLLLLLLLLRRRRRRRRRR") == [5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 9, 8, 7, 6, 5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [9, 0],s = "RRRRRRRRRRUUUUUUUUUUDDDDDDDDDDDLLLLLLLLLL") == [9, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [9, 0],s = "RRRRRRRRRRUUUUUUUUUUDDDDDDDDDDDLLLLLLLLLL") == [9, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 12,startPos = [6, 6],s = "UUUUUUUUUUUUDDDDDDDDDDDDLLLLLLLLLLLLRRRRRRRRRRRR") == [6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 11, 10, 9, 8, 7, 6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 12,startPos = [6, 6],s = "UUUUUUUUUUUUDDDDDDDDDDDDLLLLLLLLLLLLRRRRRRRRRRRR") == [6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 11, 10, 9, 8, 7, 6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8,startPos = [3, 4],s = "RRDLULLLUUDDDDRRRRLU") == [20, 19, 18, 17, 16, 15, 14, 13, 9, 8, 7, 6, 5, 4, 3, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8,startPos = [3, 4],s = "RRDLULLLUUDDDDRRRRLU") == [20, 19, 18, 17, 16, 15, 14, 13, 9, 8, 7, 6, 5, 4, 3, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,startPos = [5, 5],s = "LURDLURDLURDLURDLURDLURD") == [24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,startPos = [5, 5],s = "LURDLURDLURDLURDLURDLURD") == [24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(n = 1,startPos = [0, 0],s = "LRUD") == [0, 0, 0, 0]
+    assert candidate(n = 4,startPos = [2, 2],s = "DDDD") == [1, 1, 1, 1]
+    assert candidate(n = 5,startPos = [2, 2],s = "LUDDRL") == [6, 5, 4, 3, 2, 1]
+    assert candidate(n = 4,startPos = [0, 3],s = "RRRR") == [0, 0, 0, 0]
+    assert candidate(n = 3,startPos = [2, 0],s = "RRU") == [3, 2, 1]
+    assert candidate(n = 4,startPos = [1, 2],s = "LURDLU") == [6, 5, 4, 3, 2, 1]
+    assert candidate(n = 4,startPos = [2, 2],s = "UUDDLLRR") == [8, 7, 1, 5, 4, 3, 1, 1]
+    assert candidate(n = 3,startPos = [0, 1],s = "RRDDLU") == [1, 5, 4, 3, 1, 0]
+    assert candidate(n = 4,startPos = [3, 0],s = "DDDD") == [0, 0, 0, 0]
+    assert candidate(n = 5,startPos = [0, 0],s = "DRDLUR") == [6, 5, 1, 0, 0, 1]
+    assert candidate(n = 2,startPos = [1, 1],s = "LURD") == [4, 1, 0, 0]
+    assert candidate(n = 5,startPos = [3, 3],s = "DDDDRRRRUUUULLLL") == [1, 1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+    assert candidate(n = 3,startPos = [0, 2],s = "LLD") == [3, 2, 1]
+    assert candidate(n = 4,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]
+    assert candidate(n = 5,startPos = [3, 3],s = "RRRDDDDLLLLUUUU") == [1, 1, 2, 1, 1, 1, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+    assert candidate(n = 7,startPos = [3, 3],s = "LDRURLDRU") == [9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 15,startPos = [14, 0],s = "LLLLDDDDDDDDDDDDUUUUUUUUUUUUUUUU") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [2, 2],s = "UDLRUDLR") == [8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [1, 6],s = "RULDDRRULLUUDD") == [6, 10, 12, 3, 2, 1, 4, 3, 3, 2, 1, 3, 2, 1]
+    assert candidate(n = 9,startPos = [8, 0],s = "DDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 5,startPos = [0, 4],s = "LLLLDDRRRRUUUU") == [12, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 13,startPos = [1, 1],s = "LRRUDLRLRLUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD") == [94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [0, 0],s = "RRRRDDDDLLLLUUUUDDDDLLLLUUUU") == [20, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 10,startPos = [7, 2],s = "DRLLURDDRLUUDDRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [3, 3],s = "LRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR") == [34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [4, 4],s = "LULULULULULULULULULU") == [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [0, 5],s = "LLLLDDRRUUDDLLRRUUDDLLRRUUDD") == [28, 27, 26, 4, 2, 1, 0, 0, 0, 0, 18, 6, 4, 2, 0, 0, 0, 0, 10, 6, 4, 2, 0, 0, 0, 0, 2, 1]
+    assert candidate(n = 10,startPos = [5, 5],s = "LRUDLRUDLRUD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [7, 0],s = "RRRRDDDDLLLLUUUU") == [4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [2, 3],s = "LRRUDLRLRLUDUDUDUD") == [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 11,startPos = [3, 3],s = "LRRLDDUUDDUUDDRRLLRRRRUUUUDDDDLLLL") == [34, 33, 32, 31, 30, 29, 19, 27, 26, 25, 15, 23, 22, 21, 11, 10, 9, 8, 7, 6, 5, 4, 3, 10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1]
+    assert candidate(n = 400,startPos = [0, 0],s = "RRRRUUUUDDDDLLLL") == [4, 3, 2, 1, 0, 0, 0, 0, 4, 3, 2, 1, 0, 0, 0, 0]
+    assert candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLLLLLLLLLLLL") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [3, 3],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [0, 6],s = "LLLLLLLLRRRRRRRRUUUUUUUDDDDDDD") == [6, 6, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [3, 3],s = "LLLLDDDDRRRRUUUU") == [3, 6, 5, 4, 3, 6, 5, 4, 3, 6, 5, 4, 3, 3, 2, 1]
+    assert candidate(n = 9,startPos = [4, 4],s = "LURDLURDLURDLURD") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [2, 2],s = "LRLRLRLRLRLRLRLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 300,startPos = [299, 299],s = "DDDDRRRRUUUULLLL") == [0, 0, 0, 0, 0, 0, 0, 0, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 12,startPos = [5, 5],s = "UDLRUDLRUDLRUDLRUDLR") == [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 10,startPos = [5, 2],s = "DDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUU") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [5, 0],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+    assert candidate(n = 15,startPos = [14, 14],s = "LLLLLLLLLLLLLLL") == [14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 9,startPos = [4, 4],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [0, 5],s = "DDDDDDRRRRRDDDRRLUUL") == [5, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 3, 2, 1, 0, 0, 1, 0, 0, 1]
+    assert candidate(n = 8,startPos = [7, 0],s = "RRRRRRRRUUUUUUUUDDDDDDDDLLLLLLLL") == [7, 14, 13, 12, 11, 10, 9, 8, 7, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 5,startPos = [0, 4],s = "LLLLDDDDRRRRUUUU") == [16, 10, 8, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 5,startPos = [0, 4],s = "RRRRRRRRRRRRRRRRRRRR") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 9,startPos = [1, 1],s = "DRDLDRDLDRDLDRDLDRDLDRDLDRDLDRDL") == [14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [3, 3],s = "LUDDRRUULLDD") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [0, 0],s = "RLRLRLRLRLRLRLRLRLRL") == [20, 0, 18, 0, 16, 0, 14, 0, 12, 0, 10, 0, 8, 0, 6, 0, 4, 0, 2, 0]
+    assert candidate(n = 10,startPos = [5, 5],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDDRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [2, 2],s = "DDRRUULLUU") == [10, 8, 6, 5, 4, 4, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [1, 1],s = "DDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUUDDDDUUUU") == [40, 39, 5, 3, 1, 1, 1, 33, 32, 31, 5, 3, 1, 1, 1, 25, 24, 23, 5, 3, 1, 1, 1, 17, 16, 15, 5, 3, 1, 1, 1, 9, 8, 7, 5, 3, 1, 1, 1, 1]
+    assert candidate(n = 6,startPos = [4, 5],s = "RRRDDDDLUUUULLLRRUUDD") == [0, 0, 0, 1, 1, 1, 12, 10, 9, 9, 11, 10, 9, 8, 2, 0, 0, 4, 3, 1, 1]
+    assert candidate(n = 12,startPos = [6, 6],s = "RRDDLLUUDDRRLLUUDDRRLLUUDDRRLLUUDDRRLLUUDD") == [42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 11,startPos = [5, 5],s = "DDDDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 10, 9, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+    assert candidate(n = 20,startPos = [19, 0],s = "RRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL") == [19, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 8,startPos = [4, 4],s = "UDLRUDLRUDLRUDLR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 4,startPos = [2, 3],s = "LLLDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 4, 3, 5, 4, 3, 2, 2, 5, 3, 1, 1, 1, 1]
+    assert candidate(n = 5,startPos = [4, 0],s = "DDDDDDDDDDDDDDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [7, 7],s = "LLLLUUUUDDDDRRRRLLLLUUUUDDDD") == [28, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 12, 11, 10, 9, 8, 6, 4, 2, 0, 0, 0, 0]
+    assert candidate(n = 6,startPos = [4, 1],s = "LDDRRULUDR") == [2, 1, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [6, 6],s = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 5,startPos = [2, 2],s = "LUDDRRUUDDLL") == [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 4,startPos = [2, 0],s = "RRRDDDLLLLUUUUDDDD") == [4, 3, 2, 1, 1, 1, 0, 0, 0, 0, 2, 2, 5, 3, 1, 1, 1, 1]
+    assert candidate(n = 5,startPos = [2, 2],s = "RRDDLLUUURRDDDLLUUU") == [19, 18, 17, 16, 4, 3, 2, 12, 11, 4, 3, 2, 7, 6, 4, 3, 2, 2, 1]
+    assert candidate(n = 10,startPos = [0, 0],s = "RRRDDDLLLUUUDDDRRRLUUDLLUURDDLL") == [30, 7, 5, 3, 2, 1, 0, 0, 0, 0, 0, 0, 18, 12, 6, 4, 3, 2, 0, 0, 0, 1, 0, 0, 0, 0, 4, 2, 1, 0, 0]
+    assert candidate(n = 3,startPos = [1, 1],s = "RLLDDRRUUULLDD") == [4, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1]
+    assert candidate(n = 9,startPos = [4, 4],s = "DDDDDDDDUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [4, 4, 4, 4, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+    assert candidate(n = 6,startPos = [2, 2],s = "LRLRLRLRLRLRLR") == [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [0, 7],s = "RRRRRRRRUUUUUUUUDDDDDDDDLDDDDDDD") == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 9,startPos = [8, 0],s = "RRRRRRRRDDDDDDDDDLLLLLLLLLLLLUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 12,startPos = [0, 11],s = "LLLLLLLLLLLL") == [11, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 9,startPos = [5, 4],s = "UUDDLLRRUUDDLLRR") == [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 10,startPos = [5, 5],s = "UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 20,startPos = [10, 10],s = "LDRURLDRURLDRURLDRU") == [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 15,startPos = [7, 7],s = "RRRRUUUULLLLDDDDRRRRUUUULLLLDDDD") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 7,startPos = [3, 3],s = "UUUUDDDDLLLLRRRRUUDDLL") == [3, 10, 9, 8, 3, 6, 5, 4, 3, 13, 12, 11, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 9,startPos = [0, 8],s = "LLLLLLLLUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU") == [8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 7,startPos = [1, 1],s = "DDRRLLUUDDRRLLUUDDRRLLUU") == [24, 23, 5, 4, 1, 2, 1, 17, 16, 15, 5, 4, 1, 2, 1, 9, 8, 7, 5, 4, 1, 2, 1, 1]
+    assert candidate(n = 10,startPos = [2, 5],s = "RRLLRRLLRRLLRRLLRRLLRRLLRRLLRRLL") == [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(n = 10,startPos = [5, 5],s = "UUUUUUUUUUDDDDDDDDDDLLLLLLLLLLRRRRRRRRRR") == [5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 9, 8, 7, 6, 5, 5, 5, 5, 5, 14, 12, 10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 3, 2, 1]
+    assert candidate(n = 10,startPos = [9, 0],s = "RRRRRRRRRRUUUUUUUUUUDDDDDDDDDDDLLLLLLLLLL") == [9, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    assert candidate(n = 12,startPos = [6, 6],s = "UUUUUUUUUUUUDDDDDDDDDDDDLLLLLLLLLLLLRRRRRRRRRRRR") == [6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 11, 10, 9, 8, 7, 6, 6, 6, 6, 6, 6, 17, 15, 13, 11, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2, 1]
+    assert candidate(n = 8,startPos = [3, 4],s = "RRDLULLLUUDDDDRRRRLU") == [20, 19, 18, 17, 16, 15, 14, 13, 9, 8, 7, 6, 5, 4, 3, 5, 4, 3, 2, 1]
+    assert candidate(n = 10,startPos = [5, 5],s = "LURDLURDLURDLURDLURDLURD") == [24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+

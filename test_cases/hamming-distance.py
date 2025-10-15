@@ -1,0 +1,806 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1073741823,y = 2147483647) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1073741823,y = 2147483647) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1023,y = 512) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1023,y = 512) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647,y = 0) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647,y = 0) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647,y = 1) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647,y = 1) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1023,y = 511) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1023,y = 511) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16,y = 32) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16,y = 32) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1073741824,y = 1073741823) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1073741824,y = 1073741823) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 0,y = 0) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 0,y = 0) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 255,y = 0) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 255,y = 0) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 15,y = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 15,y = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647,y = 2147483647) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647,y = 2147483647) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 15,y = 9) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 15,y = 9) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 555,y = 666) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 555,y = 666) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 18446744073709551615,y = 9223372036854775807) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 18446744073709551615,y = 9223372036854775807) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 33554432,y = 67108863) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 33554432,y = 67108863) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1717986918,y = 858993459) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1717986918,y = 858993459) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4095,y = 1023) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4095,y = 1023) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 33554431,y = 16777215) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 33554431,y = 16777215) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 268435455,y = 134217727) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 268435455,y = 134217727) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4294967295,y = 2147483647) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4294967295,y = 2147483647) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1357924680,y = 2468135790) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1357924680,y = 2468135790) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 65535,y = 32768) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 65535,y = 32768) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16777215,y = 16777216) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16777215,y = 16777216) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647,y = 2147483646) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647,y = 2147483646) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 262143,y = 131071) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 262143,y = 131071) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13579,y = 24680) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13579,y = 24680) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4294967295,y = 1) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4294967295,y = 1) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100000000,y = 100000001) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100000000,y = 100000001) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2047,y = 4094) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2047,y = 4094) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 255,y = 127) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 255,y = 127) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 0,y = 2147483647) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 0,y = 2147483647) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 33554431,y = 33554432) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 33554431,y = 33554432) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000000,y = 1000000001) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000000,y = 1000000001) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 134217728,y = 8388607) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 134217728,y = 8388607) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 536870911,y = 536870912) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 536870911,y = 536870912) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 268435456,y = 536870912) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 268435456,y = 536870912) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 16) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 16) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048575,y = 2097150) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048575,y = 2097150) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 128,y = 32) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 128,y = 32) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8191,y = 4095) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8191,y = 4095) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048575,y = 524288) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048575,y = 524288) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 511,y = 255) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 511,y = 255) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048576,y = 2097152) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048576,y = 2097152) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123456789,y = 987654321) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123456789,y = 987654321) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000000007,y = 1000000008) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000000007,y = 1000000008) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1073741824,y = 536870912) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1073741824,y = 536870912) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123,y = 456) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123,y = 456) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 67108863,y = 67108864) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 67108863,y = 67108864) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 134217727,y = 268435455) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 134217727,y = 268435455) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1024,y = 511) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1024,y = 511) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1073741824,y = 2147483647) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1073741824,y = 2147483647) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 24) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 24) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048575,y = 1048574) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048575,y = 1048574) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 131071,y = 32768) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 131071,y = 32768) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 65535,y = 65534) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 65535,y = 65534) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16777215,y = 0) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16777215,y = 0) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8675309,y = 196418) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8675309,y = 196418) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 29) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 29) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 32) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 32) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 255) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 255) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 131071,y = 1048575) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 131071,y = 1048575) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 17,y = 34) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 17,y = 34) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4095,y = 1) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4095,y = 1) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048576,y = 524288) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048576,y = 524288) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 65535,y = 255) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 65535,y = 255) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16777215,y = 8388608) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16777215,y = 8388608) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 0,y = 1073741824) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 0,y = 1073741824) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 2147483647) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 2147483647) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 858993459,y = 2147483647) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 858993459,y = 2147483647) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 65535,y = 0) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 65535,y = 0) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 1000) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 1000) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8388607,y = 16777216) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8388607,y = 16777216) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 268435455,y = 268435456) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 268435455,y = 268435456) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4294967295,y = 0) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4294967295,y = 0) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 131071,y = 65535) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 131071,y = 65535) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16777215,y = 65536) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16777215,y = 65536) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 131072,y = 262144) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 131072,y = 262144) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 16777215,y = 1) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 16777215,y = 1) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048575,y = 2097151) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048575,y = 2097151) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2147483647,y = 1073741823) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2147483647,y = 1073741823) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8191,y = 0) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8191,y = 0) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 32768,y = 65535) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 32768,y = 65535) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1048575,y = 1048576) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1048575,y = 1048576) == 21: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(x = 3,y = 1) == 1
+    assert candidate(x = 7,y = 15) == 1
+    assert candidate(x = 1073741823,y = 2147483647) == 1
+    assert candidate(x = 1023,y = 512) == 9
+    assert candidate(x = 2147483647,y = 0) == 31
+    assert candidate(x = 2147483647,y = 1) == 30
+    assert candidate(x = 1,y = 4) == 2
+    assert candidate(x = 1023,y = 511) == 1
+    assert candidate(x = 16,y = 32) == 2
+    assert candidate(x = 1073741824,y = 1073741823) == 31
+    assert candidate(x = 0,y = 0) == 0
+    assert candidate(x = 255,y = 0) == 8
+    assert candidate(x = 1,y = 1) == 0
+    assert candidate(x = 15,y = 15) == 0
+    assert candidate(x = 2147483647,y = 2147483647) == 0
+    assert candidate(x = 15,y = 9) == 2
+    assert candidate(x = 555,y = 666) == 4
+    assert candidate(x = 18446744073709551615,y = 9223372036854775807) == 1
+    assert candidate(x = 33554432,y = 67108863) == 25
+    assert candidate(x = 1717986918,y = 858993459) == 16
+    assert candidate(x = 4095,y = 1023) == 2
+    assert candidate(x = 33554431,y = 16777215) == 1
+    assert candidate(x = 268435455,y = 134217727) == 1
+    assert candidate(x = 4294967295,y = 2147483647) == 1
+    assert candidate(x = 1357924680,y = 2468135790) == 15
+    assert candidate(x = 65535,y = 32768) == 15
+    assert candidate(x = 16777215,y = 16777216) == 25
+    assert candidate(x = 2147483647,y = 2147483646) == 1
+    assert candidate(x = 262143,y = 131071) == 1
+    assert candidate(x = 13579,y = 24680) == 8
+    assert candidate(x = 4294967295,y = 1) == 31
+    assert candidate(x = 100000000,y = 100000001) == 1
+    assert candidate(x = 2047,y = 4094) == 2
+    assert candidate(x = 255,y = 127) == 1
+    assert candidate(x = 0,y = 2147483647) == 31
+    assert candidate(x = 33554431,y = 33554432) == 26
+    assert candidate(x = 1000000000,y = 1000000001) == 1
+    assert candidate(x = 134217728,y = 8388607) == 24
+    assert candidate(x = 536870911,y = 536870912) == 30
+    assert candidate(x = 268435456,y = 536870912) == 2
+    assert candidate(x = 8,y = 16) == 2
+    assert candidate(x = 1048575,y = 2097150) == 2
+    assert candidate(x = 128,y = 32) == 2
+    assert candidate(x = 8191,y = 4095) == 1
+    assert candidate(x = 1048575,y = 524288) == 19
+    assert candidate(x = 511,y = 255) == 1
+    assert candidate(x = 1048576,y = 2097152) == 2
+    assert candidate(x = 123456789,y = 987654321) == 15
+    assert candidate(x = 1000000007,y = 1000000008) == 4
+    assert candidate(x = 1073741824,y = 536870912) == 2
+    assert candidate(x = 123,y = 456) == 6
+    assert candidate(x = 67108863,y = 67108864) == 27
+    assert candidate(x = 134217727,y = 268435455) == 1
+    assert candidate(x = 1024,y = 511) == 10
+    assert candidate(x = 1073741824,y = 2147483647) == 30
+    assert candidate(x = 8,y = 24) == 1
+    assert candidate(x = 1048575,y = 1048574) == 1
+    assert candidate(x = 131071,y = 32768) == 16
+    assert candidate(x = 65535,y = 65534) == 1
+    assert candidate(x = 16777215,y = 0) == 24
+    assert candidate(x = 8675309,y = 196418) == 11
+    assert candidate(x = 5,y = 10) == 4
+    assert candidate(x = 13,y = 29) == 1
+    assert candidate(x = 8,y = 32) == 2
+    assert candidate(x = 5,y = 255) == 6
+    assert candidate(x = 131071,y = 1048575) == 3
+    assert candidate(x = 17,y = 34) == 4
+    assert candidate(x = 4095,y = 1) == 11
+    assert candidate(x = 1048576,y = 524288) == 2
+    assert candidate(x = 65535,y = 255) == 8
+    assert candidate(x = 16777215,y = 8388608) == 23
+    assert candidate(x = 0,y = 1073741824) == 1
+    assert candidate(x = 1,y = 2147483647) == 30
+    assert candidate(x = 858993459,y = 2147483647) == 15
+    assert candidate(x = 65535,y = 0) == 16
+    assert candidate(x = 500,y = 1000) == 4
+    assert candidate(x = 8388607,y = 16777216) == 24
+    assert candidate(x = 268435455,y = 268435456) == 29
+    assert candidate(x = 4294967295,y = 0) == 32
+    assert candidate(x = 131071,y = 65535) == 1
+    assert candidate(x = 16777215,y = 65536) == 23
+    assert candidate(x = 131072,y = 262144) == 2
+    assert candidate(x = 16777215,y = 1) == 23
+    assert candidate(x = 1048575,y = 2097151) == 1
+    assert candidate(x = 2147483647,y = 1073741823) == 1
+    assert candidate(x = 8191,y = 0) == 13
+    assert candidate(x = 32768,y = 65535) == 15
+    assert candidate(x = 1048575,y = 1048576) == 21
+
+

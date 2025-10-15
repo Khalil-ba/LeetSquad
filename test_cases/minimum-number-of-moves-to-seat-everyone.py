@@ -1,0 +1,923 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 5, 5, 5],students = [5, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 5, 5, 5],students = [5, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30],students = [5, 15, 25]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30],students = [5, 15, 25]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [4, 1, 5, 9],students = [1, 3, 2, 6]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [4, 1, 5, 9],students = [1, 3, 2, 6]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 1],students = [1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 1],students = [1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 1, 5],students = [2, 7, 4]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 1, 5],students = [2, 7, 4]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1],students = [1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1],students = [1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50],students = [49, 50, 51]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50],students = [49, 50, 51]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30],students = [15, 25, 35]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30],students = [15, 25, 35]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30],students = [1, 2, 3]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30],students = [1, 2, 3]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [100, 1, 50],students = [50, 100, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [100, 1, 50],students = [50, 100, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50],students = [5, 15, 25, 35, 45]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50],students = [5, 15, 25, 35, 45]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [100, 1, 50, 50],students = [50, 1, 100, 50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [100, 1, 50, 50],students = [50, 1, 100, 50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [100, 1, 2, 3, 4],students = [1, 2, 3, 4, 100]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [100, 1, 2, 3, 4],students = [1, 2, 3, 4, 100]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [100, 90, 80, 70],students = [70, 80, 90, 100]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [100, 90, 80, 70],students = [70, 80, 90, 100]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50],students = [50, 50, 50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50],students = [50, 50, 50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 1, 100],students = [5, 10, 99]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 1, 100],students = [5, 10, 99]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5],students = [5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5],students = [5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 2, 6, 6],students = [1, 3, 2, 6]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 2, 6, 6],students = [1, 3, 2, 6]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 3, 5, 7, 9],students = [2, 4, 6, 8, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 3, 5, 7, 9],students = [2, 4, 6, 8, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [20, 30, 40, 50, 60, 70, 80],students = [15, 25, 35, 45, 55, 65, 75]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [20, 30, 40, 50, 60, 70, 80],students = [15, 25, 35, 45, 55, 65, 75]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50, 50, 50, 50],students = [45, 45, 45, 55, 55, 55]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50, 50, 50, 50],students = [45, 45, 45, 55, 55, 55]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 3, 8, 8, 10, 10, 13, 13],students = [2, 3, 6, 8, 9, 10, 12, 15]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 3, 8, 8, 10, 10, 13, 13],students = [2, 3, 6, 8, 9, 10, 12, 15]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],students = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],students = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 1, 9, 2, 8, 3, 7, 4, 6, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 1, 9, 2, 8, 3, 7, 4, 6, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50]) == 297
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50]) == 297: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [90, 80, 70, 60, 50, 40, 30],students = [10, 20, 30, 40, 50, 60, 70]) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [90, 80, 70, 60, 50, 40, 30],students = [10, 20, 30, 40, 50, 60, 70]) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [99, 100, 1, 2, 3, 4],students = [5, 6, 7, 8, 9, 1]) == 191
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [99, 100, 1, 2, 3, 4],students = [5, 6, 7, 8, 9, 1]) == 191: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],students = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],students = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [30, 10, 20, 40, 50, 60],students = [5, 15, 25, 35, 45, 55]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [30, 10, 20, 40, 50, 60],students = [5, 15, 25, 35, 45, 55]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 980
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 980: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 5, 9, 13, 17, 21, 25, 29],students = [2, 6, 10, 14, 18, 22, 26, 30]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 5, 9, 13, 17, 21, 25, 29],students = [2, 6, 10, 14, 18, 22, 26, 30]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],students = [99, 97, 95, 93, 91, 89, 87, 85, 83, 81, 79, 77, 75, 73, 71, 69, 67, 65, 63, 61, 59, 57, 55, 53, 51, 49, 47, 45, 43, 41, 39, 37, 35, 33, 31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],students = [99, 97, 95, 93, 91, 89, 87, 85, 83, 81, 79, 77, 75, 73, 71, 69, 67, 65, 63, 61, 59, 57, 55, 53, 51, 49, 47, 45, 43, 41, 39, 37, 35, 33, 31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 2, 2, 3, 3, 3, 5, 5, 5, 6, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 32
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 2, 2, 3, 3, 3, 5, 5, 5, 6, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 32: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41],students = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41],students = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [8, 12, 20, 25, 30, 35],students = [5, 10, 15, 22, 31, 36]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [8, 12, 20, 25, 30, 35],students = [5, 10, 15, 22, 31, 36]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],students = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],students = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 3, 8, 9, 2, 10],students = [4, 6, 7, 1, 11, 15]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 3, 8, 9, 2, 10],students = [4, 6, 7, 1, 11, 15]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],students = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],students = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50, 50, 50],students = [49, 50, 51, 52, 53]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50, 50, 50],students = [49, 50, 51, 52, 53]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 3, 5, 6, 8, 11, 13],students = [1, 4, 7, 9, 10, 12, 15]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 3, 5, 6, 8, 11, 13],students = [1, 4, 7, 9, 10, 12, 15]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],students = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],students = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 540
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 540: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],students = [1, 7, 13, 19, 24, 29, 34, 38, 44, 49]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],students = [1, 7, 13, 19, 24, 29, 34, 38, 44, 49]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6],students = [6, 5, 5, 4, 4, 3, 3, 2, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6],students = [6, 5, 5, 4, 4, 3, 3, 2, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],students = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],students = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 5, 7, 9, 16]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 5, 7, 9, 16]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 40, 30, 20, 10, 100, 90, 80, 70, 60],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 40, 30, 20, 10, 100, 90, 80, 70, 60],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 8, 15, 22, 29],students = [1, 6, 13, 21, 28]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 8, 15, 22, 29],students = [1, 6, 13, 21, 28]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5, 105, 115, 125, 135, 145]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5, 105, 115, 125, 135, 145]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 7, 11, 15, 19, 23, 27, 31, 35, 39],students = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 7, 11, 15, 19, 23, 27, 31, 35, 39],students = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],students = [3, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],students = [3, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 4, 6, 9, 12, 15],students = [3, 5, 7, 10, 13, 16]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 4, 6, 9, 12, 15],students = [3, 5, 7, 10, 13, 16]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],students = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],students = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [45, 46, 47, 48, 49, 51, 52, 53, 54, 55]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [45, 46, 47, 48, 49, 51, 52, 53, 54, 55]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 3, 5, 7, 11, 13, 17, 19],students = [1, 4, 6, 8, 10, 12, 14, 16]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 3, 5, 7, 11, 13, 17, 19],students = [1, 4, 6, 8, 10, 12, 14, 16]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],students = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],students = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],students = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],students = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 7, 9, 11, 16]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 7, 9, 11, 16]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [95, 96, 97, 98, 99, 100],students = [1, 2, 3, 4, 5, 6]) == 564
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [95, 96, 97, 98, 99, 100],students = [1, 2, 3, 4, 5, 6]) == 564: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 15, 25, 35, 45, 55],students = [1, 7, 17, 27, 37, 47]) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 15, 25, 35, 45, 55],students = [1, 7, 17, 27, 37, 47]) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 540
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 540: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 890
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 890: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],students = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],students = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 6, 8, 10, 15, 17, 20, 25, 30, 35],students = [4, 5, 7, 10, 12, 16, 18, 22, 28, 34]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 6, 8, 10, 15, 17, 20, 25, 30, 35],students = [4, 5, 7, 10, 12, 16, 18, 22, 28, 34]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [2, 2, 4, 4, 6, 6, 8, 8, 10, 10],students = [1, 3, 3, 5, 5, 7, 7, 9, 9, 11]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [2, 2, 4, 4, 6, 6, 8, 8, 10, 10],students = [1, 3, 3, 5, 5, 7, 7, 9, 9, 11]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [20, 20, 20, 20, 20],students = [19, 20, 21, 22, 23]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [20, 20, 20, 20, 20],students = [19, 20, 21, 22, 23]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [95, 55, 10, 30, 70],students = [5, 90, 60, 40, 80]) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [95, 55, 10, 30, 70],students = [5, 90, 60, 40, 80]) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24]) == 800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24]) == 800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]) == 3: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(seats = [5, 5, 5, 5],students = [5, 5, 5, 5]) == 0
+    assert candidate(seats = [10, 20, 30],students = [5, 15, 25]) == 15
+    assert candidate(seats = [4, 1, 5, 9],students = [1, 3, 2, 6]) == 7
+    assert candidate(seats = [1, 1, 1, 1],students = [1, 1, 1, 1]) == 0
+    assert candidate(seats = [3, 1, 5],students = [2, 7, 4]) == 4
+    assert candidate(seats = [1, 1, 1],students = [1, 1, 1]) == 0
+    assert candidate(seats = [50, 50, 50],students = [49, 50, 51]) == 2
+    assert candidate(seats = [10, 20, 30],students = [15, 25, 35]) == 15
+    assert candidate(seats = [10, 20, 30],students = [1, 2, 3]) == 54
+    assert candidate(seats = [100, 1, 50],students = [50, 100, 1]) == 0
+    assert candidate(seats = [10, 20, 30, 40, 50],students = [5, 15, 25, 35, 45]) == 25
+    assert candidate(seats = [100, 1, 50, 50],students = [50, 1, 100, 50]) == 0
+    assert candidate(seats = [100, 1, 2, 3, 4],students = [1, 2, 3, 4, 100]) == 0
+    assert candidate(seats = [100, 90, 80, 70],students = [70, 80, 90, 100]) == 0
+    assert candidate(seats = [50, 50, 50],students = [50, 50, 50]) == 0
+    assert candidate(seats = [10, 1, 100],students = [5, 10, 99]) == 5
+    assert candidate(seats = [1, 2, 3, 4, 5],students = [5, 4, 3, 2, 1]) == 0
+    assert candidate(seats = [2, 2, 6, 6],students = [1, 3, 2, 6]) == 4
+    assert candidate(seats = [1, 3, 5, 7, 9],students = [2, 4, 6, 8, 10]) == 5
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+    assert candidate(seats = [5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6]) == 11
+    assert candidate(seats = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+    assert candidate(seats = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]) == 95
+    assert candidate(seats = [20, 30, 40, 50, 60, 70, 80],students = [15, 25, 35, 45, 55, 65, 75]) == 35
+    assert candidate(seats = [50, 50, 50, 50, 50, 50],students = [45, 45, 45, 55, 55, 55]) == 30
+    assert candidate(seats = [3, 3, 8, 8, 10, 10, 13, 13],students = [2, 3, 6, 8, 9, 10, 12, 15]) == 7
+    assert candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 0
+    assert candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28]) == 20
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],students = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 1, 9, 2, 8, 3, 7, 4, 6, 5]) == 0
+    assert candidate(seats = [1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50]) == 297
+    assert candidate(seats = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 300
+    assert candidate(seats = [90, 80, 70, 60, 50, 40, 30],students = [10, 20, 30, 40, 50, 60, 70]) == 140
+    assert candidate(seats = [1, 100, 1, 100, 1, 100, 1, 100, 1, 100],students = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 495
+    assert candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 250
+    assert candidate(seats = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 30
+    assert candidate(seats = [99, 100, 1, 2, 3, 4],students = [5, 6, 7, 8, 9, 1]) == 191
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],students = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+    assert candidate(seats = [30, 10, 20, 40, 50, 60],students = [5, 15, 25, 35, 45, 55]) == 30
+    assert candidate(seats = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 980
+    assert candidate(seats = [1, 5, 9, 13, 17, 21, 25, 29],students = [2, 6, 10, 14, 18, 22, 26, 30]) == 8
+    assert candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 9
+    assert candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],students = [99, 97, 95, 93, 91, 89, 87, 85, 83, 81, 79, 77, 75, 73, 71, 69, 67, 65, 63, 61, 59, 57, 55, 53, 51, 49, 47, 45, 43, 41, 39, 37, 35, 33, 31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 0
+    assert candidate(seats = [5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5]) == 10
+    assert candidate(seats = [2, 2, 2, 3, 3, 3, 5, 5, 5, 6, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 32
+    assert candidate(seats = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41],students = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 0
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5]) == 50
+    assert candidate(seats = [8, 12, 20, 25, 30, 35],students = [5, 10, 15, 22, 31, 36]) == 15
+    assert candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],students = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]) == 90
+    assert candidate(seats = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96],students = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59]) == 450
+    assert candidate(seats = [5, 3, 8, 9, 2, 10],students = [4, 6, 7, 1, 11, 15]) == 11
+    assert candidate(seats = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],students = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145]) == 50
+    assert candidate(seats = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],students = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29]) == 10
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 45
+    assert candidate(seats = [50, 50, 50, 50, 50],students = [49, 50, 51, 52, 53]) == 7
+    assert candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 130
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165, 175, 185, 195]) == 100
+    assert candidate(seats = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 40
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0
+    assert candidate(seats = [2, 3, 5, 6, 8, 11, 13],students = [1, 4, 7, 9, 10, 12, 15]) == 12
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],students = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+    assert candidate(seats = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],students = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140]) == 50
+    assert candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 540
+    assert candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],students = [1, 7, 13, 19, 24, 29, 34, 38, 44, 49]) == 17
+    assert candidate(seats = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6],students = [6, 5, 5, 4, 4, 3, 3, 2, 2, 1]) == 0
+    assert candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],students = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 0
+    assert candidate(seats = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 25
+    assert candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 5, 7, 9, 16]) == 6
+    assert candidate(seats = [50, 40, 30, 20, 10, 100, 90, 80, 70, 60],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 495
+    assert candidate(seats = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],students = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 10
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]) == 90
+    assert candidate(seats = [3, 8, 15, 22, 29],students = [1, 6, 13, 21, 28]) == 8
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [95, 85, 75, 65, 55, 45, 35, 25, 15, 5, 105, 115, 125, 135, 145]) == 75
+    assert candidate(seats = [3, 7, 11, 15, 19, 23, 27, 31, 35, 39],students = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37]) == 20
+    assert candidate(seats = [1, 2, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 42
+    assert candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],students = [3, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57]) == 35
+    assert candidate(seats = [1, 4, 6, 9, 12, 15],students = [3, 5, 7, 10, 13, 16]) == 7
+    assert candidate(seats = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 210
+    assert candidate(seats = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],students = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+    assert candidate(seats = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],students = [45, 46, 47, 48, 49, 51, 52, 53, 54, 55]) == 30
+    assert candidate(seats = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 100
+    assert candidate(seats = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 31
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],students = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 0
+    assert candidate(seats = [2, 3, 5, 7, 11, 13, 17, 19],students = [1, 4, 6, 8, 10, 12, 14, 16]) == 12
+    assert candidate(seats = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],students = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]) == 15
+    assert candidate(seats = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],students = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10
+    assert candidate(seats = [1, 3, 6, 8, 10, 15],students = [2, 4, 7, 9, 11, 16]) == 6
+    assert candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 17
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99]) == 10
+    assert candidate(seats = [95, 96, 97, 98, 99, 100],students = [1, 2, 3, 4, 5, 6]) == 564
+    assert candidate(seats = [5, 15, 25, 35, 45, 55],students = [1, 7, 17, 27, 37, 47]) == 44
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 540
+    assert candidate(seats = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90],students = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 890
+    assert candidate(seats = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],students = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]) == 0
+    assert candidate(seats = [5, 6, 8, 10, 15, 17, 20, 25, 30, 35],students = [4, 5, 7, 10, 12, 16, 18, 22, 28, 34]) == 15
+    assert candidate(seats = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],students = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == 50
+    assert candidate(seats = [2, 2, 4, 4, 6, 6, 8, 8, 10, 10],students = [1, 3, 3, 5, 5, 7, 7, 9, 9, 11]) == 10
+    assert candidate(seats = [20, 20, 20, 20, 20],students = [19, 20, 21, 22, 23]) == 7
+    assert candidate(seats = [95, 55, 10, 30, 70],students = [5, 90, 60, 40, 80]) == 35
+    assert candidate(seats = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],students = [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24]) == 800
+    assert candidate(seats = [1, 2, 2, 3, 4, 4, 5, 5, 6, 6],students = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]) == 3
+
+

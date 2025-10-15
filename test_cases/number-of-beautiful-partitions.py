@@ -1,0 +1,1067 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "52372938462673572",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "52372938462673572",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "33333",k = 1,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "33333",k = 1,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23542185131",k = 3,minLength = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23542185131",k = 3,minLength = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3312958",k = 3,minLength = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3312958",k = 3,minLength = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "253179",k = 2,minLength = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "253179",k = 2,minLength = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "72531",k = 1,minLength = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "72531",k = 1,minLength = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "357291",k = 2,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "357291",k = 2,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22354",k = 1,minLength = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22354",k = 1,minLength = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23542185131",k = 3,minLength = 2) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23542185131",k = 3,minLength = 2) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "77777",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "77777",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "75319",k = 1,minLength = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "75319",k = 1,minLength = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2375193",k = 2,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2375193",k = 2,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3572935729",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3572935729",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23751",k = 2,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23751",k = 2,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2222222222",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2222222222",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2233445566778899",k = 2,minLength = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2233445566778899",k = 2,minLength = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "7223357",k = 2,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "7223357",k = 2,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23759237592375923759",k = 5,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23759237592375923759",k = 5,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "35757575757575",k = 7,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "35757575757575",k = 7,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2354218513197531",k = 4,minLength = 3) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2354218513197531",k = 4,minLength = 3) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "317317317317317317317317317317",k = 8,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "317317317317317317317317317317",k = 8,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "353535353535353535353535",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "353535353535353535353535",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2357235723572357235723572357",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2357235723572357235723572357",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723572357235723572357235723",k = 10,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723572357235723572357235723",k = 10,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235423542354",k = 3,minLength = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235423542354",k = 3,minLength = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "373737373737373737373737",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "373737373737373737373737",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2354218513123542185131",k = 5,minLength = 2) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2354218513123542185131",k = 5,minLength = 2) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "75319284628462846284",k = 4,minLength = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "75319284628462846284",k = 4,minLength = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "331295833129583312958331295833129583312958",k = 10,minLength = 3) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "331295833129583312958331295833129583312958",k = 10,minLength = 3) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "77777777777777777777777777777777777777",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "77777777777777777777777777777777777777",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235711317113",k = 3,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235711317113",k = 3,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23542185131",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23542185131",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2233335555777711112222333355557777",k = 6,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2233335555777711112222333355557777",k = 6,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2333353333533337333313333",k = 7,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2333353333533337333313333",k = 7,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235723572357235723572357235723572357",k = 15,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235723572357235723572357235723572357",k = 15,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23547186918691869",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23547186918691869",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "331295897531",k = 4,minLength = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "331295897531",k = 4,minLength = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222222222",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222222222",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "7777777777777777777777777777",k = 8,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "7777777777777777777777777777",k = 8,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235723572357",k = 6,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235723572357",k = 6,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235235235235235235",k = 7,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235235235235235235",k = 7,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "733733733733733733733733",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "733733733733733733733733",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2375913759231",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2375913759231",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333444555666777888999",k = 3,minLength = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333444555666777888999",k = 3,minLength = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "735235235235235235",k = 7,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "735235235235235235",k = 7,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "252525252525252525252525",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "252525252525252525252525",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "223542185131223542185131223542185131",k = 9,minLength = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "223542185131223542185131223542185131",k = 9,minLength = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "732519753189273189",k = 4,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "732519753189273189",k = 4,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "233757537537537537537",k = 8,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "233757537537537537537",k = 8,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222222222222222222222222222",k = 15,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222222222222222222222222222",k = 15,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333555777111222333",k = 7,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333555777111222333",k = 7,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "735218513735218513735218513735",k = 7,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "735218513735218513735218513735",k = 7,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "272727272727",k = 6,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "272727272727",k = 6,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723572357",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723572357",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333555777111",k = 4,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333555777111",k = 4,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "37537537537537",k = 6,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "37537537537537",k = 6,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22335577112233557711",k = 6,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22335577112233557711",k = 6,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2573197319731973197319",k = 9,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2573197319731973197319",k = 9,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2354218513171925235729",k = 6,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2354218513171925235729",k = 6,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "232323232323232323232323",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "232323232323232323232323",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333555777111222333555777111",k = 4,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333555777111222333555777111",k = 4,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "753197531975319753",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "753197531975319753",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "33333333333333333333333333333333333333",k = 10,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "33333333333333333333333333333333333333",k = 10,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2323232323232323",k = 8,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2323232323232323",k = 8,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "33333333333333",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "33333333333333",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "33129583312958331295833129583312958331",k = 10,minLength = 3) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "33129583312958331295833129583312958331",k = 10,minLength = 3) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "373737373737",k = 6,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "373737373737",k = 6,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2233557711886644",k = 6,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2233557711886644",k = 6,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235476918235476918235476918",k = 6,minLength = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235476918235476918235476918",k = 6,minLength = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "333222111777555333222111",k = 9,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "333222111777555333222111",k = 9,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "29292929292929",k = 3,minLength = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "29292929292929",k = 3,minLength = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "7235719753197532",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "7235719753197532",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "35235235235235235235235235235",k = 10,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "35235235235235235235235235235",k = 10,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "333555777222444666888999",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "333555777222444666888999",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "373737373737373737",k = 5,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "373737373737373737",k = 5,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333555777111222333555777111",k = 6,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333555777111222333555777111",k = 6,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723",k = 1,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723",k = 1,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23571113171923293137414347",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23571113171923293137414347",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222",k = 2,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222",k = 2,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23751937519375193",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23751937519375193",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235421851312354218513123542185",k = 6,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235421851312354218513123542185",k = 6,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22222222222222222222222222222222222222",k = 20,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22222222222222222222222222222222222222",k = 20,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "27272727272727272727272727272",k = 8,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "27272727272727272727272727272",k = 8,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2222222222222222222222222222",k = 12,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2222222222222222222222222222",k = 12,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "753753753753753753753753753753753753753753",k = 15,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "753753753753753753753753753753753753753753",k = 15,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235421851312354218513123542185131",k = 6,minLength = 2) == 462
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235421851312354218513123542185131",k = 6,minLength = 2) == 462: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "52373197357537325",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "52373197357537325",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23232323232323232323232323",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23232323232323232323232323",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "222333555777222333555777222333555777",k = 6,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "222333555777222333555777222333555777",k = 6,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23542185131973",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23542185131973",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "375375375375",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "375375375375",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "75319753197531975319753197531975",k = 8,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "75319753197531975319753197531975",k = 8,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3257113257113257113257",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3257113257113257113257",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "223355771199",k = 6,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "223355771199",k = 6,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "375375375375375375375375375375",k = 7,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "375375375375375375375375375375",k = 7,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723",k = 2,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723",k = 2,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2354218513123542185131",k = 6,minLength = 2) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2354218513123542185131",k = 6,minLength = 2) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "3572535725357",k = 5,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "3572535725357",k = 5,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2357135713571357",k = 7,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2357135713571357",k = 7,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22223333555577772222",k = 4,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22223333555577772222",k = 4,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "53725372537253725372537253725372",k = 10,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "53725372537253725372537253725372",k = 10,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "257357257357",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "257357257357",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2197531975319753",k = 8,minLength = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2197531975319753",k = 8,minLength = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2357235723572357",k = 1,minLength = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2357235723572357",k = 1,minLength = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23542185131719",k = 5,minLength = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23542185131719",k = 5,minLength = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "57575757575757575757575757575",k = 6,minLength = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "57575757575757575757575757575",k = 6,minLength = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "22335577223355772233",k = 6,minLength = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "22335577223355772233",k = 6,minLength = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2357235723572357235723572357",k = 7,minLength = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2357235723572357235723572357",k = 7,minLength = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "37531975319753197537531975319753",k = 12,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "37531975319753197537531975319753",k = 12,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "25252525252525",k = 5,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "25252525252525",k = 5,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "21212121212121",k = 3,minLength = 2) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "21212121212121",k = 3,minLength = 2) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "2357198462357",k = 4,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "2357198462357",k = 4,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "235723572357235723572357",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "235723572357235723572357",k = 10,minLength = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "23232323232323232323232323232323",k = 10,minLength = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "23232323232323232323232323232323",k = 10,minLength = 2) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(s = "52372938462673572",k = 4,minLength = 2) == 0
+    assert candidate(s = "33333",k = 1,minLength = 1) == 0
+    assert candidate(s = "23542185131",k = 3,minLength = 3) == 1
+    assert candidate(s = "3312958",k = 3,minLength = 1) == 1
+    assert candidate(s = "253179",k = 2,minLength = 1) == 1
+    assert candidate(s = "72531",k = 1,minLength = 5) == 1
+    assert candidate(s = "357291",k = 2,minLength = 2) == 0
+    assert candidate(s = "22354",k = 1,minLength = 1) == 1
+    assert candidate(s = "23542185131",k = 3,minLength = 2) == 3
+    assert candidate(s = "77777",k = 5,minLength = 1) == 0
+    assert candidate(s = "75319",k = 1,minLength = 5) == 1
+    assert candidate(s = "22222",k = 5,minLength = 1) == 0
+    assert candidate(s = "2375193",k = 2,minLength = 2) == 0
+    assert candidate(s = "3572935729",k = 5,minLength = 2) == 0
+    assert candidate(s = "23751",k = 2,minLength = 1) == 0
+    assert candidate(s = "2222222222",k = 5,minLength = 1) == 0
+    assert candidate(s = "2233445566778899",k = 2,minLength = 4) == 2
+    assert candidate(s = "7223357",k = 2,minLength = 1) == 0
+    assert candidate(s = "23759237592375923759",k = 5,minLength = 4) == 0
+    assert candidate(s = "35757575757575",k = 7,minLength = 1) == 0
+    assert candidate(s = "2354218513197531",k = 4,minLength = 3) == 2
+    assert candidate(s = "317317317317317317317317317317",k = 8,minLength = 2) == 0
+    assert candidate(s = "353535353535353535353535",k = 10,minLength = 2) == 0
+    assert candidate(s = "2357235723572357235723572357",k = 10,minLength = 2) == 0
+    assert candidate(s = "23572357235723572357235723572357235723",k = 10,minLength = 4) == 0
+    assert candidate(s = "235423542354",k = 3,minLength = 2) == 1
+    assert candidate(s = "373737373737373737373737",k = 10,minLength = 2) == 0
+    assert candidate(s = "2354218513123542185131",k = 5,minLength = 2) == 35
+    assert candidate(s = "75319284628462846284",k = 4,minLength = 3) == 4
+    assert candidate(s = "331295833129583312958331295833129583312958",k = 10,minLength = 3) == 110
+    assert candidate(s = "77777777777777777777777777777777777777",k = 5,minLength = 1) == 0
+    assert candidate(s = "235711317113",k = 3,minLength = 3) == 0
+    assert candidate(s = "23542185131",k = 5,minLength = 1) == 0
+    assert candidate(s = "2233335555777711112222333355557777",k = 6,minLength = 2) == 0
+    assert candidate(s = "2333353333533337333313333",k = 7,minLength = 2) == 0
+    assert candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 5) == 0
+    assert candidate(s = "235723572357235723572357235723572357",k = 15,minLength = 2) == 0
+    assert candidate(s = "23547186918691869",k = 4,minLength = 2) == 0
+    assert candidate(s = "331295897531",k = 4,minLength = 1) == 1
+    assert candidate(s = "22222222222222222222",k = 10,minLength = 2) == 0
+    assert candidate(s = "7777777777777777777777777777",k = 8,minLength = 3) == 0
+    assert candidate(s = "235723572357",k = 6,minLength = 2) == 0
+    assert candidate(s = "235235235235235235",k = 7,minLength = 3) == 0
+    assert candidate(s = "733733733733733733733733",k = 10,minLength = 2) == 0
+    assert candidate(s = "2375913759231",k = 4,minLength = 2) == 0
+    assert candidate(s = "222333444555666777888999",k = 3,minLength = 3) == 1
+    assert candidate(s = "735235235235235235",k = 7,minLength = 2) == 0
+    assert candidate(s = "252525252525252525252525",k = 10,minLength = 2) == 0
+    assert candidate(s = "223542185131223542185131223542185131",k = 9,minLength = 3) == 1
+    assert candidate(s = "732519753189273189",k = 4,minLength = 3) == 0
+    assert candidate(s = "233757537537537537537",k = 8,minLength = 3) == 0
+    assert candidate(s = "22222222222222222222222222222222222222",k = 15,minLength = 1) == 0
+    assert candidate(s = "222333555777111222333",k = 7,minLength = 2) == 0
+    assert candidate(s = "735218513735218513735218513735",k = 7,minLength = 3) == 0
+    assert candidate(s = "272727272727",k = 6,minLength = 1) == 0
+    assert candidate(s = "23572357235723572357",k = 5,minLength = 2) == 0
+    assert candidate(s = "222333555777111",k = 4,minLength = 3) == 0
+    assert candidate(s = "37537537537537",k = 6,minLength = 3) == 0
+    assert candidate(s = "22335577112233557711",k = 6,minLength = 2) == 0
+    assert candidate(s = "2573197319731973197319",k = 9,minLength = 2) == 0
+    assert candidate(s = "2354218513171925235729",k = 6,minLength = 3) == 0
+    assert candidate(s = "232323232323232323232323",k = 10,minLength = 2) == 0
+    assert candidate(s = "222333555777111222333555777111",k = 4,minLength = 3) == 0
+    assert candidate(s = "753197531975319753",k = 10,minLength = 2) == 0
+    assert candidate(s = "33333333333333333333333333333333333333",k = 10,minLength = 1) == 0
+    assert candidate(s = "2323232323232323",k = 8,minLength = 2) == 0
+    assert candidate(s = "33333333333333",k = 5,minLength = 2) == 0
+    assert candidate(s = "33129583312958331295833129583312958331",k = 10,minLength = 3) == 15
+    assert candidate(s = "373737373737",k = 6,minLength = 1) == 0
+    assert candidate(s = "2233557711886644",k = 6,minLength = 1) == 0
+    assert candidate(s = "235476918235476918235476918",k = 6,minLength = 3) == 1
+    assert candidate(s = "333222111777555333222111",k = 9,minLength = 2) == 0
+    assert candidate(s = "29292929292929",k = 3,minLength = 3) == 3
+    assert candidate(s = "7235719753197532",k = 5,minLength = 2) == 0
+    assert candidate(s = "35235235235235235235235235235",k = 10,minLength = 3) == 0
+    assert candidate(s = "333555777222444666888999",k = 5,minLength = 2) == 0
+    assert candidate(s = "373737373737373737",k = 5,minLength = 3) == 0
+    assert candidate(s = "222333555777111222333555777111",k = 6,minLength = 3) == 0
+    assert candidate(s = "23572357235723",k = 1,minLength = 1) == 0
+    assert candidate(s = "23571113171923293137414347",k = 10,minLength = 2) == 0
+    assert candidate(s = "22222222222222",k = 2,minLength = 5) == 0
+    assert candidate(s = "23751937519375193",k = 5,minLength = 2) == 0
+    assert candidate(s = "235421851312354218513123542185",k = 6,minLength = 4) == 0
+    assert candidate(s = "22222222222222222222222222222222222222",k = 20,minLength = 1) == 0
+    assert candidate(s = "27272727272727272727272727272",k = 8,minLength = 2) == 0
+    assert candidate(s = "2222222222222222222222222222",k = 12,minLength = 1) == 0
+    assert candidate(s = "753753753753753753753753753753753753753753",k = 15,minLength = 5) == 0
+    assert candidate(s = "235421851312354218513123542185131",k = 6,minLength = 2) == 462
+    assert candidate(s = "52373197357537325",k = 5,minLength = 1) == 0
+    assert candidate(s = "23232323232323232323232323",k = 10,minLength = 2) == 0
+    assert candidate(s = "222333555777222333555777222333555777",k = 6,minLength = 4) == 0
+    assert candidate(s = "23542185131973",k = 4,minLength = 2) == 0
+    assert candidate(s = "375375375375",k = 5,minLength = 2) == 0
+    assert candidate(s = "75319753197531975319753197531975",k = 8,minLength = 4) == 0
+    assert candidate(s = "3257113257113257113257",k = 10,minLength = 2) == 0
+    assert candidate(s = "223355771199",k = 6,minLength = 2) == 0
+    assert candidate(s = "375375375375375375375375375375",k = 7,minLength = 4) == 0
+    assert candidate(s = "23572357235723",k = 2,minLength = 5) == 0
+    assert candidate(s = "2354218513123542185131",k = 6,minLength = 2) == 21
+    assert candidate(s = "23572357235723572357235723572357235723",k = 15,minLength = 3) == 0
+    assert candidate(s = "3572535725357",k = 5,minLength = 1) == 0
+    assert candidate(s = "2357135713571357",k = 7,minLength = 2) == 0
+    assert candidate(s = "22223333555577772222",k = 4,minLength = 5) == 0
+    assert candidate(s = "53725372537253725372537253725372",k = 10,minLength = 3) == 0
+    assert candidate(s = "257357257357",k = 4,minLength = 2) == 0
+    assert candidate(s = "2197531975319753",k = 8,minLength = 3) == 0
+    assert candidate(s = "2357235723572357",k = 1,minLength = 15) == 0
+    assert candidate(s = "23542185131719",k = 5,minLength = 2) == 1
+    assert candidate(s = "57575757575757575757575757575",k = 6,minLength = 4) == 0
+    assert candidate(s = "22335577223355772233",k = 6,minLength = 1) == 0
+    assert candidate(s = "2357235723572357235723572357",k = 7,minLength = 5) == 0
+    assert candidate(s = "37531975319753197537531975319753",k = 12,minLength = 2) == 0
+    assert candidate(s = "25252525252525",k = 5,minLength = 2) == 0
+    assert candidate(s = "21212121212121",k = 3,minLength = 2) == 15
+    assert candidate(s = "2357198462357",k = 4,minLength = 2) == 0
+    assert candidate(s = "235723572357235723572357",k = 10,minLength = 2) == 0
+    assert candidate(s = "23232323232323232323232323232323",k = 10,minLength = 2) == 0
+
+

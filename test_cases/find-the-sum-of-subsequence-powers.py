@@ -1,0 +1,1094 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -20, -30, -40, -50],k = 3) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -20, -30, -40, -50],k = 3) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600],k = 6) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600],k = 6) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1],k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1],k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 6, 10, 15],k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 6, 10, 15],k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],k = 6) == 463
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],k = 6) == 463: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, -100, 200, -200],k = 2) == 1400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, -100, 200, -200],k = 2) == 1400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100000000, -200000000, -300000000, -400000000, -500000000],k = 4) == 500000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100000000, -200000000, -300000000, -400000000, -500000000],k = 4) == 500000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, -100000000, 50000000, -50000000],k = 3) == 200000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, -100000000, 50000000, -50000000],k = 3) == 200000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],k = 3) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],k = 3) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [4, 3, -1],k = 2) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [4, 3, -1],k = 2) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 0, 0, 0, 0],k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 0, 0, 0, 0],k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11],k = 5) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11],k = 5) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9],k = 3) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9],k = 3) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 2],k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 2],k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1],k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1],k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 5, 9, 13, 17],k = 4) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 5, 9, 13, 17],k = 4) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5],k = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5],k = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5],k = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5],k = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50],k = 4) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50],k = 4) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 5, 8, 10, 12],k = 4) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 5, 8, 10, 12],k = 4) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -5, 0, 5, 10],k = 4) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -5, 0, 5, 10],k = 4) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 200000000, -100000000, -200000000],k = 3) == 400000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 200000000, -100000000, -200000000],k = 3) == 400000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50],k = 3) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50],k = 3) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-3, -2, -1, 0, 1, 2, 3],k = 5) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-3, -2, -1, 0, 1, 2, 3],k = 5) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 15) == 310235072
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 15) == 310235072: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 2580
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 2580: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 4) == 246
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 4) == 246: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 200000000, 300000000, 400000000, 500000000],k = 3) == 99999993
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 200000000, 300000000, 400000000, 500000000],k = 3) == 99999993: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 2, 2, 2, 3, 3, 3],k = 3) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 2, 2, 2, 3, 3, 3],k = 3) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 6) == 2100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 6) == 2100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 10) == 184792
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 10) == 184792: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -50, 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600],k = 8) == 321800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -50, 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600],k = 8) == 321800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 3) == 946502064
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 3) == 946502064: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 7) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 7) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992],k = 5) == 127
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992],k = 5) == 127: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -99, -98, -97, -96, -95, -94, -93, -92, -91, -90, -89, -88, -87, -86, -85, -84, -83, -82, -81],k = 15) == 15504
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -99, -98, -97, -96, -95, -94, -93, -92, -91, -90, -89, -88, -87, -86, -85, -84, -83, -82, -81],k = 15) == 15504: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 11) == 352717
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 11) == 352717: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 4) == 2460
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 4) == 2460: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50],k = 6) == 4630
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50],k = 6) == 4630: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 5) == 753
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 5) == 753: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 7) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 7) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150, -160, -170, -180, -190, -200],k = 15) == 155040
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150, -160, -170, -180, -190, -200],k = 15) == 155040: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],k = 15) == 300540331
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],k = 15) == 300540331: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],k = 7) == 330
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],k = 7) == 330: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996],k = 3) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996],k = 3) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 10) == 60795594
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 10) == 60795594: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],k = 20) == 53130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],k = 20) == 53130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],k = 10) == 92379
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],k = 10) == 92379: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 5) == 2580
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 5) == 2580: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 10) == 300300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 10) == 300300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014],k = 12) == 455
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014],k = 12) == 455: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 6) == 2100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 6) == 2100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],k = 5) == 677430
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],k = 5) == 677430: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500, 781250, 390625, 195312],k = 5) == 370703188
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500, 781250, 390625, 195312],k = 5) == 370703188: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 17170
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 17170: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 10) == 44999097
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 10) == 44999097: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 2460
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 2460: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 15) == 7726160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 15) == 7726160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 15) == 155040
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 15) == 155040: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 7) == 153600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 7) == 153600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 7) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 7) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50000000, -25000000, 0, 25000000, 50000000, 75000000, 100000000],k = 5) == 525000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50000000, -25000000, 0, 25000000, 50000000, 75000000, 100000000],k = 5) == 525000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 10) == 30030
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 10) == 30030: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 6) == 874
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 6) == 874: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],k = 20) == 30045015
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],k = 20) == 30045015: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],k = 8) == 64360
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],k = 8) == 64360: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 18) == 86493225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 18) == 86493225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 6471
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 6471: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 15) == 155117536
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 15) == 155117536: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 1024
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 1024: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-50, -49, -48, -47, -46, -45, -44, -43, -42, -41, -40, -39, -38, -37, -36, -35, -34, -33, -32, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10],k = 20) == 128935568
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-50, -49, -48, -47, -46, -45, -44, -43, -42, -41, -40, -39, -38, -37, -36, -35, -34, -33, -32, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10],k = 20) == 128935568: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35],k = 15) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35],k = 15) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 5, 10, 20, 30, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 1500, 2000, 3000, 5000, 7000, 10000],k = 10) == 2513422
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 5, 10, 20, 30, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 1500, 2000, 3000, 5000, 7000, 10000],k = 10) == 2513422: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 4) == 2460
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 4) == 2460: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],k = 18) == 19000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],k = 18) == 19000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 7) == 1524
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 7) == 1524: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 50000000, 0, -50000000, -100000000, 25000000, 75000000],k = 4) == 74999993
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 50000000, 0, -50000000, -100000000, 25000000, 75000000],k = 4) == 74999993: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500],k = 4) == 218750000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500],k = 4) == 218750000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 12) == 629850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 12) == 629850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 10) == 7286383
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 10) == 7286383: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],k = 15) == 15504
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],k = 15) == 15504: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 16) == 20349
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 16) == 20349: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 11, 12, 13, 14, 15],k = 8) == 22673
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 11, 12, 13, 14, 15],k = 8) == 22673: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 10) == 923835
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 10) == 923835: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 90000000, 80000000, 70000000, 60000000, 50000000, 40000000, 30000000, 20000000, 10000000],k = 5) == 579999986
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 90000000, 80000000, 70000000, 60000000, 50000000, 40000000, 30000000, 20000000, 10000000],k = 5) == 579999986: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41],k = 15) == 108528
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41],k = 15) == 108528: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 6) == 430
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 6) == 430: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],k = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],k = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992, -99999991],k = 7) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992, -99999991],k = 7) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 20) == 30045015
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 20) == 30045015: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 1, 8, 2, 7, 3, 6, 4, 5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 1, 8, 2, 7, 3, 6, 4, 5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991],k = 8) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991],k = 8) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 9) == 3865518
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 9) == 3865518: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 10) == 10240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 10) == 10240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 184767
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 184767: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],k = 25) == 605552908
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],k = 25) == 605552908: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 10) == 3003
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 10) == 3003: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 11) == 167960
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 11) == 167960: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994],k = 5) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994],k = 5) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],k = 7) == 3162380
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],k = 7) == 3162380: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],k = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],k = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, -100000000, 0, 50000000, -50000000],k = 3) == 550000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, -100000000, 0, 50000000, -50000000],k = 3) == 550000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71],k = 20) == 30045015
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71],k = 20) == 30045015: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 8) == 64360
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 8) == 64360: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 100000000, 99999999, 99999998, 99999997],k = 3) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 100000000, 99999999, 99999998, 99999997],k = 3) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 8) == 127867
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 8) == 127867: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 15) == 77520
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 15) == 77520: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = [-10, -20, -30, -40, -50],k = 3) == 110
+    assert candidate(nums = [100, 200, 300, 400, 500, 600],k = 6) == 100
+    assert candidate(nums = [1, 2, 3, 4],k = 3) == 4
+    assert candidate(nums = [1, 1, 1, 1, 1],k = 3) == 0
+    assert candidate(nums = [1, 3, 6, 10, 15],k = 5) == 2
+    assert candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],k = 6) == 463
+    assert candidate(nums = [100, -100, 200, -200],k = 2) == 1400
+    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+    assert candidate(nums = [-100000000, -200000000, -300000000, -400000000, -500000000],k = 4) == 500000000
+    assert candidate(nums = [100000000, -100000000, 50000000, -50000000],k = 3) == 200000000
+    assert candidate(nums = [-10, -5, 0, 5, 10],k = 3) == 55
+    assert candidate(nums = [4, 3, -1],k = 2) == 10
+    assert candidate(nums = [0, 0, 0, 0, 0],k = 2) == 0
+    assert candidate(nums = [1, 3, 5, 7, 9, 11],k = 5) == 12
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258
+    assert candidate(nums = [1, 3, 5, 7, 9],k = 3) == 22
+    assert candidate(nums = [2, 2],k = 2) == 0
+    assert candidate(nums = [1, 1, 1, 1, 1],k = 2) == 0
+    assert candidate(nums = [1, 5, 9, 13, 17],k = 4) == 20
+    assert candidate(nums = [10, 20, 30, 40, 50],k = 5) == 10
+    assert candidate(nums = [5, 5, 5, 5, 5, 5],k = 3) == 0
+    assert candidate(nums = [5, 5, 5, 5, 5],k = 2) == 0
+    assert candidate(nums = [10, 20, 30, 40, 50],k = 4) == 50
+    assert candidate(nums = [1, 5, 8, 10, 12],k = 4) == 11
+    assert candidate(nums = [-10, -5, 0, 5, 10],k = 4) == 25
+    assert candidate(nums = [100000000, 200000000, -100000000, -200000000],k = 3) == 400000000
+    assert candidate(nums = [10, 20, 30, 40, 50],k = 3) == 110
+    assert candidate(nums = [-3, -2, -1, 0, 1, 2, 3],k = 5) == 21
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 15) == 310235072
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 2580
+    assert candidate(nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 4) == 246
+    assert candidate(nums = [100000000, 200000000, 300000000, 400000000, 500000000],k = 3) == 99999993
+    assert candidate(nums = [1, 1, 1, 2, 2, 2, 3, 3, 3],k = 3) == 27
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 6) == 2100
+    assert candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 10) == 184792
+    assert candidate(nums = [-100, -50, 0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600],k = 8) == 321800
+    assert candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],k = 3) == 946502064
+    assert candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 7) == 1200
+    assert candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992],k = 5) == 127
+    assert candidate(nums = [-100, -99, -98, -97, -96, -95, -94, -93, -92, -91, -90, -89, -88, -87, -86, -85, -84, -83, -82, -81],k = 15) == 15504
+    assert candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004],k = 4) == 5
+    assert candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996],k = 4) == 5
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970
+    assert candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 11) == 352717
+    assert candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 4) == 2460
+    assert candidate(nums = [-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50],k = 6) == 4630
+    assert candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 5) == 753
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 7) == 1200
+    assert candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150, -160, -170, -180, -190, -200],k = 15) == 155040
+    assert candidate(nums = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130],k = 15) == 300540331
+    assert candidate(nums = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5],k = 7) == 330
+    assert candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996],k = 3) == 11
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],k = 10) == 60795594
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],k = 20) == 53130
+    assert candidate(nums = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9],k = 10) == 92379
+    assert candidate(nums = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],k = 5) == 2580
+    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 10) == 300300
+    assert candidate(nums = [10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014],k = 12) == 455
+    assert candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 6) == 2100
+    assert candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],k = 5) == 677430
+    assert candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500, 781250, 390625, 195312],k = 5) == 370703188
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],k = 7) == 17170
+    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 10) == 44999097
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 2460
+    assert candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 15) == 7726160
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 15) == 155040
+    assert candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 7) == 153600
+    assert candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 20) == 0
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 7) == 120
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 25) == 0
+    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+    assert candidate(nums = [-50000000, -25000000, 0, 25000000, 50000000, 75000000, 100000000],k = 5) == 525000000
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 10) == 30030
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],k = 6) == 874
+    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],k = 20) == 30045015
+    assert candidate(nums = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],k = 8) == 64360
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 18) == 86493225
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 7) == 6471
+    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 25) == 0
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 15) == 155117536
+    assert candidate(nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 1024
+    assert candidate(nums = [-50, -49, -48, -47, -46, -45, -44, -43, -42, -41, -40, -39, -38, -37, -36, -35, -34, -33, -32, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10],k = 20) == 128935568
+    assert candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35],k = 15) == 16
+    assert candidate(nums = [1, 5, 10, 20, 30, 50, 70, 100, 150, 200, 300, 500, 700, 1000, 1500, 2000, 3000, 5000, 7000, 10000],k = 10) == 2513422
+    assert candidate(nums = [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10],k = 4) == 2460
+    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],k = 18) == 19000
+    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 0
+    assert candidate(nums = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],k = 7) == 1524
+    assert candidate(nums = [100000000, 50000000, 0, -50000000, -100000000, 25000000, 75000000],k = 4) == 74999993
+    assert candidate(nums = [100000000, 50000000, 25000000, 12500000, 6250000, 3125000, 1562500],k = 4) == 218750000
+    assert candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 12) == 629850
+    assert candidate(nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],k = 10) == 7286383
+    assert candidate(nums = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],k = 15) == 15504
+    assert candidate(nums = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 16) == 20349
+    assert candidate(nums = [1, 2, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 11, 12, 13, 14, 15],k = 8) == 22673
+    assert candidate(nums = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 10) == 923835
+    assert candidate(nums = [100000000, 90000000, 80000000, 70000000, 60000000, 50000000, 40000000, 30000000, 20000000, 10000000],k = 5) == 579999986
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 258
+    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41],k = 15) == 108528
+    assert candidate(nums = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],k = 6) == 430
+    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],k = 25) == 0
+    assert candidate(nums = [-100000000, -99999999, -99999998, -99999997, -99999996, -99999995, -99999994, -99999993, -99999992, -99999991],k = 7) == 120
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 20) == 30045015
+    assert candidate(nums = [9, 1, 8, 2, 7, 3, 6, 4, 5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 12) == 125970
+    assert candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994, 99999993, 99999992, 99999991],k = 8) == 45
+    assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288],k = 9) == 3865518
+    assert candidate(nums = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50, 60, 60, 70, 70, 80, 80, 90, 90, 100, 100],k = 10) == 10240
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 10) == 184767
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],k = 25) == 605552908
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 10) == 3003
+    assert candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 11) == 167960
+    assert candidate(nums = [100000000, 99999999, 99999998, 99999997, 99999996, 99999995, 99999994],k = 5) == 21
+    assert candidate(nums = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],k = 7) == 3162380
+    assert candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],k = 8) == 0
+    assert candidate(nums = [100000000, -100000000, 0, 50000000, -50000000],k = 3) == 550000000
+    assert candidate(nums = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71],k = 20) == 30045015
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 8) == 64360
+    assert candidate(nums = [100000000, 100000000, 99999999, 99999998, 99999997],k = 3) == 7
+    assert candidate(nums = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 8) == 127867
+    assert candidate(nums = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],k = 15) == 77520
+
+

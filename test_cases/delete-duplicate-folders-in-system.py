@@ -1,0 +1,698 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(paths = [['project'], ['project', 'src'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs'], ['project', 'docs', 'api'], ['project', 'docs', 'user']]) == [['project', 'docs', 'api'], ['project', 'docs', 'user'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'src'], ['project']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['project'], ['project', 'src'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs'], ['project', 'docs', 'api'], ['project', 'docs', 'user']]) == [['project', 'docs', 'api'], ['project', 'docs', 'user'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'src'], ['project']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['x', 'y'], ['x', 'z'], ['y'], ['y', 'x'], ['z'], ['z', 'x']]) == [['x', 'y'], ['x', 'z'], ['x']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['x', 'y'], ['x', 'z'], ['y'], ['y', 'x'], ['z'], ['z', 'x']]) == [['x', 'y'], ['x', 'z'], ['x']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a', 'b'], ['c', 'd'], ['c'], ['a']]) == [['a', 'b'], ['a'], ['c', 'd'], ['c']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a', 'b'], ['c', 'd'], ['c'], ['a']]) == [['a', 'b'], ['a'], ['c', 'd'], ['c']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home'], ['home', 'user'], ['home', 'user', 'documents'], ['home', 'guest'], ['home', 'guest', 'documents']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home'], ['home', 'user'], ['home', 'user', 'documents'], ['home', 'guest'], ['home', 'guest', 'documents']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['f'], ['f', 'g'], ['f', 'g', 'h'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h', 'i', 'j']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h', 'i', 'j'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h'], ['f', 'g'], ['f']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['f'], ['f', 'g'], ['f', 'g', 'h'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h', 'i', 'j']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h', 'i', 'j'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h'], ['f', 'g'], ['f']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'a'], ['root', 'b'], ['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'x', 'y'], ['root', 'b', 'x', 'y']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'a'], ['root', 'b'], ['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'x', 'y'], ['root', 'b', 'x', 'y']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['folder1'], ['folder1', 'sub1'], ['folder1', 'sub2'], ['folder2'], ['folder2', 'sub1'], ['folder2', 'sub2']]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['folder1'], ['folder1', 'sub1'], ['folder1', 'sub2'], ['folder2'], ['folder2', 'sub1'], ['folder2', 'sub2']]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a'], ['c'], ['a', 'b'], ['c', 'b'], ['a', 'b', 'x'], ['a', 'b', 'x', 'y'], ['w'], ['w', 'y']]) == [['a', 'b'], ['a'], ['c', 'b'], ['c']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a'], ['c'], ['a', 'b'], ['c', 'b'], ['a', 'b', 'x'], ['a', 'b', 'x', 'y'], ['w'], ['w', 'y']]) == [['a', 'b'], ['a'], ['c', 'b'], ['c']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['u'], ['u', 'v'], ['u', 'v', 'w']]) == [['u'], ['x', 'y'], ['x']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['u'], ['u', 'v'], ['u', 'v', 'w']]) == [['u'], ['x', 'y'], ['x']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['m'], ['m', 'n'], ['n'], ['n', 'm'], ['m', 'n', 'o'], ['n', 'm', 'o']]) == [['m'], ['n']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['m'], ['m', 'n'], ['n'], ['n', 'm'], ['m', 'n', 'o'], ['n', 'm', 'o']]) == [['m'], ['n']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['m'], ['m', 'n'], ['p'], ['p', 'n']]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['m'], ['m', 'n'], ['p'], ['p', 'n']]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a'], ['c'], ['d'], ['a', 'b'], ['c', 'b'], ['d', 'a']]) == [['d', 'a'], ['d']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a'], ['c'], ['d'], ['a', 'b'], ['c', 'b'], ['d', 'a']]) == [['d', 'a'], ['d']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['y'], ['y', 'z']]) == [['x']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['y'], ['y', 'z']]) == [['x']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['one'], ['one', 'two'], ['one', 'two', 'three'], ['two'], ['two', 'three']]) == [['one']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['one'], ['one', 'two'], ['one', 'two', 'three'], ['two'], ['two', 'three']]) == [['one']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['p'], ['p', 'q'], ['p', 'q', 'r'], ['p', 'q', 'r', 's'], ['p', 'q', 'r', 't'], ['q'], ['q', 'r'], ['q', 'r', 's'], ['q', 'r', 't'], ['r'], ['r', 's'], ['r', 't'], ['s'], ['t'], ['u'], ['u', 'v'], ['u', 'v', 'w'], ['u', 'v', 'w', 'x'], ['u', 'v', 'w', 'y'], ['v'], ['v', 'w'], ['v', 'w', 'x'], ['v', 'w', 'y'], ['w'], ['w', 'x'], ['w', 'y'], ['x'], ['y']]) == [['p'], ['s'], ['t'], ['u'], ['x'], ['y']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['p'], ['p', 'q'], ['p', 'q', 'r'], ['p', 'q', 'r', 's'], ['p', 'q', 'r', 't'], ['q'], ['q', 'r'], ['q', 'r', 's'], ['q', 'r', 't'], ['r'], ['r', 's'], ['r', 't'], ['s'], ['t'], ['u'], ['u', 'v'], ['u', 'v', 'w'], ['u', 'v', 'w', 'x'], ['u', 'v', 'w', 'y'], ['v'], ['v', 'w'], ['v', 'w', 'x'], ['v', 'w', 'y'], ['w'], ['w', 'x'], ['w', 'y'], ['x'], ['y']]) == [['p'], ['s'], ['t'], ['u'], ['x'], ['y']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level5', 'level4'], ['level1', 'level6', 'level3', 'level4'], ['level1', 'level6', 'level5', 'level4'], ['level1', 'level7', 'level8'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12']]) == [['level1', 'level7', 'level8'], ['level1', 'level7'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12'], ['level1', 'level9', 'level10'], ['level1', 'level9'], ['level1']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level5', 'level4'], ['level1', 'level6', 'level3', 'level4'], ['level1', 'level6', 'level5', 'level4'], ['level1', 'level7', 'level8'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12']]) == [['level1', 'level7', 'level8'], ['level1', 'level7'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12'], ['level1', 'level9', 'level10'], ['level1', 'level9'], ['level1']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['system', 'folderA'], ['system', 'folderB'], ['system', 'folderA', 'subfolderA1'], ['system', 'folderB', 'subfolderA1'], ['system', 'folderA', 'subfolderA2'], ['system', 'folderB', 'subfolderA2'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA2']]) == [['system']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['system', 'folderA'], ['system', 'folderB'], ['system', 'folderA', 'subfolderA1'], ['system', 'folderB', 'subfolderA1'], ['system', 'folderA', 'subfolderA2'], ['system', 'folderB', 'subfolderA2'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA2']]) == [['system']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home', 'user', 'docs'], ['home', 'user', 'photos'], ['home', 'guest', 'docs'], ['home', 'guest', 'photos'], ['home', 'user', 'docs', 'file1'], ['home', 'guest', 'docs', 'file1'], ['home', 'user', 'photos', 'image1'], ['home', 'guest', 'photos', 'image1'], ['home', 'user', 'docs', 'file2'], ['home', 'guest', 'docs', 'file2']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home', 'user', 'docs'], ['home', 'user', 'photos'], ['home', 'guest', 'docs'], ['home', 'guest', 'photos'], ['home', 'user', 'docs', 'file1'], ['home', 'guest', 'docs', 'file1'], ['home', 'user', 'photos', 'image1'], ['home', 'guest', 'photos', 'image1'], ['home', 'user', 'docs', 'file2'], ['home', 'guest', 'docs', 'file2']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['projects', 'proj1'], ['projects', 'proj2'], ['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'src', 'test'], ['projects', 'proj2', 'src', 'test'], ['projects', 'proj1', 'src', 'main', 'file1'], ['projects', 'proj2', 'src', 'main', 'file1'], ['projects', 'proj1', 'src', 'test', 'test1'], ['projects', 'proj2', 'src', 'test', 'test1']]) == [['projects']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['projects', 'proj1'], ['projects', 'proj2'], ['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'src', 'test'], ['projects', 'proj2', 'src', 'test'], ['projects', 'proj1', 'src', 'main', 'file1'], ['projects', 'proj2', 'src', 'main', 'file1'], ['projects', 'proj1', 'src', 'test', 'test1'], ['projects', 'proj2', 'src', 'test', 'test1']]) == [['projects']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['alpha'], ['alpha', 'beta'], ['alpha', 'beta', 'gamma'], ['alpha', 'beta', 'delta'], ['alpha', 'epsilon'], ['alpha', 'epsilon', 'gamma'], ['alpha', 'epsilon', 'delta'], ['beta'], ['beta', 'gamma'], ['beta', 'delta'], ['epsilon'], ['epsilon', 'gamma'], ['epsilon', 'delta'], ['gamma'], ['delta'], ['charlie'], ['charlie', 'foxtrot'], ['charlie', 'foxtrot', 'gamma'], ['charlie', 'foxtrot', 'delta'], ['charlie', 'tango'], ['charlie', 'tango', 'gamma'], ['charlie', 'tango', 'delta']]) == [['alpha'], ['charlie'], ['delta'], ['gamma']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['alpha'], ['alpha', 'beta'], ['alpha', 'beta', 'gamma'], ['alpha', 'beta', 'delta'], ['alpha', 'epsilon'], ['alpha', 'epsilon', 'gamma'], ['alpha', 'epsilon', 'delta'], ['beta'], ['beta', 'gamma'], ['beta', 'delta'], ['epsilon'], ['epsilon', 'gamma'], ['epsilon', 'delta'], ['gamma'], ['delta'], ['charlie'], ['charlie', 'foxtrot'], ['charlie', 'foxtrot', 'gamma'], ['charlie', 'foxtrot', 'delta'], ['charlie', 'tango'], ['charlie', 'tango', 'gamma'], ['charlie', 'tango', 'delta']]) == [['alpha'], ['charlie'], ['delta'], ['gamma']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['project'], ['project', 'src'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs', 'api'], ['project', 'docs', 'userguide'], ['project', 'src', 'main', 'java'], ['project', 'src', 'test', 'java'], ['project', 'docs', 'api', 'java'], ['project', 'docs', 'userguide', 'java'], ['project', 'src', 'main', 'java', 'utils'], ['project', 'src', 'test', 'java', 'utils'], ['project', 'docs', 'api', 'java', 'utils'], ['project', 'docs', 'userguide', 'java', 'utils']]) == [['project', 'docs'], ['project', 'src'], ['project']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['project'], ['project', 'src'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs', 'api'], ['project', 'docs', 'userguide'], ['project', 'src', 'main', 'java'], ['project', 'src', 'test', 'java'], ['project', 'docs', 'api', 'java'], ['project', 'docs', 'userguide', 'java'], ['project', 'src', 'main', 'java', 'utils'], ['project', 'src', 'test', 'java', 'utils'], ['project', 'docs', 'api', 'java', 'utils'], ['project', 'docs', 'userguide', 'java', 'utils']]) == [['project', 'docs'], ['project', 'src'], ['project']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['data', 'archive'], ['data', 'archive', '2021'], ['data', 'archive', '2022'], ['data', 'archive', '2023'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2023'], ['data', 'logs'], ['data', 'logs', 'server1'], ['data', 'logs', 'server2'], ['data', 'logs', 'server3'], ['data', 'temp'], ['data', 'temp', 'server1'], ['data', 'temp', 'server2'], ['data', 'temp', 'server3']]) == [['data']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['data', 'archive'], ['data', 'archive', '2021'], ['data', 'archive', '2022'], ['data', 'archive', '2023'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2023'], ['data', 'logs'], ['data', 'logs', 'server1'], ['data', 'logs', 'server2'], ['data', 'logs', 'server3'], ['data', 'temp'], ['data', 'temp', 'server1'], ['data', 'temp', 'server2'], ['data', 'temp', 'server3']]) == [['data']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['app'], ['app', 'module1'], ['app', 'module2'], ['app', 'module1', 'component1'], ['app', 'module2', 'component1'], ['app', 'module1', 'component2'], ['app', 'module2', 'component2'], ['app', 'module1', 'component1', 'subcomponent1'], ['app', 'module2', 'component1', 'subcomponent1'], ['app', 'module1', 'component2', 'subcomponent1'], ['app', 'module2', 'component2', 'subcomponent1'], ['app', 'module1', 'component1', 'subcomponent2'], ['app', 'module2', 'component1', 'subcomponent2'], ['app', 'module1', 'component2', 'subcomponent2'], ['app', 'module2', 'component2', 'subcomponent2'], ['app', 'module1', 'component1', 'subcomponent2', 'deep1'], ['app', 'module2', 'component1', 'subcomponent2', 'deep1']]) == [['app']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['app'], ['app', 'module1'], ['app', 'module2'], ['app', 'module1', 'component1'], ['app', 'module2', 'component1'], ['app', 'module1', 'component2'], ['app', 'module2', 'component2'], ['app', 'module1', 'component1', 'subcomponent1'], ['app', 'module2', 'component1', 'subcomponent1'], ['app', 'module1', 'component2', 'subcomponent1'], ['app', 'module2', 'component2', 'subcomponent1'], ['app', 'module1', 'component1', 'subcomponent2'], ['app', 'module2', 'component1', 'subcomponent2'], ['app', 'module1', 'component2', 'subcomponent2'], ['app', 'module2', 'component2', 'subcomponent2'], ['app', 'module1', 'component1', 'subcomponent2', 'deep1'], ['app', 'module2', 'component1', 'subcomponent2', 'deep1']]) == [['app']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'a'], ['root', 'b'], ['root', 'a', 'c'], ['root', 'b', 'c'], ['root', 'a', 'd'], ['root', 'b', 'd'], ['root', 'a', 'c', 'e'], ['root', 'b', 'c', 'e']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'a'], ['root', 'b'], ['root', 'a', 'c'], ['root', 'b', 'c'], ['root', 'a', 'd'], ['root', 'b', 'd'], ['root', 'a', 'c', 'e'], ['root', 'b', 'c', 'e']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder1', 'subsubfolder1'], ['root', 'unique', 'folder1'], ['root', 'unique', 'folder1', 'subfolder1'], ['root', 'unique', 'folder1', 'subfolder1', 'subsubfolder1']]) == [['root', 'unique'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder1', 'subsubfolder1'], ['root', 'unique', 'folder1'], ['root', 'unique', 'folder1', 'subfolder1'], ['root', 'unique', 'folder1', 'subfolder1', 'subsubfolder1']]) == [['root', 'unique'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'files'], ['home', 'user2', 'files'], ['home', 'user1', 'files', 'docs'], ['home', 'user2', 'files', 'docs'], ['home', 'user1', 'files', 'docs', 'report1'], ['home', 'user2', 'files', 'docs', 'report1'], ['home', 'user1', 'files', 'docs', 'report2'], ['home', 'user2', 'files', 'docs', 'report2']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'files'], ['home', 'user2', 'files'], ['home', 'user1', 'files', 'docs'], ['home', 'user2', 'files', 'docs'], ['home', 'user1', 'files', 'docs', 'report1'], ['home', 'user2', 'files', 'docs', 'report1'], ['home', 'user1', 'files', 'docs', 'report2'], ['home', 'user2', 'files', 'docs', 'report2']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['z', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['z', 'a', 'b', 'c'], ['x', 'd'], ['y', 'e'], ['z', 'f']]) == [['x', 'd'], ['x'], ['y', 'e'], ['y'], ['z', 'f'], ['z']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['z', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['z', 'a', 'b', 'c'], ['x', 'd'], ['y', 'e'], ['z', 'f']]) == [['x', 'd'], ['x'], ['y', 'e'], ['y'], ['z', 'f'], ['z']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'a', 'b', 'c', 'd'], ['root', 'x', 'y', 'z', 'w'], ['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'a', 'b', 'f'], ['root', 'x', 'y', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h'], ['root', 'a', 'i', 'j'], ['root', 'x', 'i', 'j'], ['root', 'a', 'i', 'k'], ['root', 'x', 'i', 'k']]) == [['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'a', 'b', 'c', 'd'], ['root', 'a', 'b', 'c'], ['root', 'a', 'b', 'f'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'f'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'x', 'y', 'z', 'w'], ['root', 'x', 'y', 'z'], ['root', 'x', 'y'], ['root', 'x'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'a', 'b', 'c', 'd'], ['root', 'x', 'y', 'z', 'w'], ['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'a', 'b', 'f'], ['root', 'x', 'y', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h'], ['root', 'a', 'i', 'j'], ['root', 'x', 'i', 'j'], ['root', 'a', 'i', 'k'], ['root', 'x', 'i', 'k']]) == [['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'a', 'b', 'c', 'd'], ['root', 'a', 'b', 'c'], ['root', 'a', 'b', 'f'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'f'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'x', 'y', 'z', 'w'], ['root', 'x', 'y', 'z'], ['root', 'x', 'y'], ['root', 'x'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub1', 'subsub1'], ['root', 'folder2', 'sub1', 'subsub1']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub1', 'subsub1'], ['root', 'folder2', 'sub1', 'subsub1']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['base'], ['base', 'folder1'], ['base', 'folder1', 'subfolder1'], ['base', 'folder1', 'subfolder2'], ['base', 'folder2'], ['base', 'folder2', 'subfolder1'], ['base', 'folder2', 'subfolder2'], ['base', 'folder3'], ['base', 'folder3', 'subfolder1'], ['base', 'folder3', 'subfolder2'], ['base', 'folder1', 'subfolder1', 'deep1'], ['base', 'folder2', 'subfolder1', 'deep1'], ['base', 'folder3', 'subfolder1', 'deep1']]) == [['base']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['base'], ['base', 'folder1'], ['base', 'folder1', 'subfolder1'], ['base', 'folder1', 'subfolder2'], ['base', 'folder2'], ['base', 'folder2', 'subfolder1'], ['base', 'folder2', 'subfolder2'], ['base', 'folder3'], ['base', 'folder3', 'subfolder1'], ['base', 'folder3', 'subfolder2'], ['base', 'folder1', 'subfolder1', 'deep1'], ['base', 'folder2', 'subfolder1', 'deep1'], ['base', 'folder3', 'subfolder1', 'deep1']]) == [['base']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['system'], ['system', 'app1'], ['system', 'app1', 'data'], ['system', 'app2'], ['system', 'app2', 'data'], ['system', 'app3'], ['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app4'], ['system', 'app4', 'data'], ['system', 'app4', 'logs'], ['system', 'app4', 'temp'], ['system', 'app5'], ['system', 'app5', 'data'], ['system', 'app5', 'logs'], ['system', 'app5', 'temp'], ['system', 'app6'], ['system', 'app6', 'data'], ['system', 'app6', 'logs'], ['system', 'app6', 'temp'], ['system', 'app6', 'config'], ['system', 'app7'], ['system', 'app7', 'data'], ['system', 'app7', 'logs'], ['system', 'app7', 'temp'], ['system', 'app7', 'config'], ['system', 'app8'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8', 'config'], ['system', 'app8', 'bin']]) == [['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app3'], ['system', 'app8', 'bin'], ['system', 'app8', 'config'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8'], ['system']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['system'], ['system', 'app1'], ['system', 'app1', 'data'], ['system', 'app2'], ['system', 'app2', 'data'], ['system', 'app3'], ['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app4'], ['system', 'app4', 'data'], ['system', 'app4', 'logs'], ['system', 'app4', 'temp'], ['system', 'app5'], ['system', 'app5', 'data'], ['system', 'app5', 'logs'], ['system', 'app5', 'temp'], ['system', 'app6'], ['system', 'app6', 'data'], ['system', 'app6', 'logs'], ['system', 'app6', 'temp'], ['system', 'app6', 'config'], ['system', 'app7'], ['system', 'app7', 'data'], ['system', 'app7', 'logs'], ['system', 'app7', 'temp'], ['system', 'app7', 'config'], ['system', 'app8'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8', 'config'], ['system', 'app8', 'bin']]) == [['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app3'], ['system', 'app8', 'bin'], ['system', 'app8', 'config'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8'], ['system']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'x'], ['root', 'y'], ['root', 'x', 'z'], ['root', 'y', 'z'], ['root', 'x', 'a'], ['root', 'y', 'a'], ['root', 'x', 'a', 'b'], ['root', 'y', 'a', 'b']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'x'], ['root', 'y'], ['root', 'x', 'z'], ['root', 'y', 'z'], ['root', 'x', 'a'], ['root', 'y', 'a'], ['root', 'x', 'a', 'b'], ['root', 'y', 'a', 'b']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'level1', 'level2', 'level3'], ['root', 'level1', 'level2', 'level4'], ['root', 'level5', 'level6'], ['root', 'level1', 'level2', 'level3', 'level7'], ['root', 'level5', 'level6', 'level7'], ['root', 'level1', 'level2', 'level3', 'level7', 'level8'], ['root', 'level5', 'level6', 'level7', 'level8']]) == [['root', 'level1', 'level2', 'level4'], ['root', 'level1', 'level2'], ['root', 'level1'], ['root', 'level5'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'level1', 'level2', 'level3'], ['root', 'level1', 'level2', 'level4'], ['root', 'level5', 'level6'], ['root', 'level1', 'level2', 'level3', 'level7'], ['root', 'level5', 'level6', 'level7'], ['root', 'level1', 'level2', 'level3', 'level7', 'level8'], ['root', 'level5', 'level6', 'level7', 'level8']]) == [['root', 'level1', 'level2', 'level4'], ['root', 'level1', 'level2'], ['root', 'level1'], ['root', 'level5'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['data'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2021', 'month1'], ['data', 'backup', '2022', 'month1'], ['data', 'backup', '2021', 'month2'], ['data', 'backup', '2022', 'month2'], ['data', 'backup', '2021', 'month1', 'day1'], ['data', 'backup', '2022', 'month1', 'day1'], ['data', 'backup', '2021', 'month1', 'day2'], ['data', 'backup', '2022', 'month1', 'day2'], ['data', 'backup', '2021', 'month2', 'day1'], ['data', 'backup', '2022', 'month2', 'day1'], ['data', 'backup', '2021', 'month2', 'day2'], ['data', 'backup', '2022', 'month2', 'day2'], ['data', 'backup', '2021', 'month1', 'day1', 'file1'], ['data', 'backup', '2022', 'month1', 'day1', 'file1'], ['data', 'backup', '2021', 'month1', 'day2', 'file1'], ['data', 'backup', '2022', 'month1', 'day2', 'file1'], ['data', 'backup', '2021', 'month2', 'day1', 'file1'], ['data', 'backup', '2022', 'month2', 'day1', 'file1'], ['data', 'backup', '2021', 'month2', 'day2', 'file1'], ['data', 'backup', '2022', 'month2', 'day2', 'file1']]) == [['data', 'backup'], ['data']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['data'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2021', 'month1'], ['data', 'backup', '2022', 'month1'], ['data', 'backup', '2021', 'month2'], ['data', 'backup', '2022', 'month2'], ['data', 'backup', '2021', 'month1', 'day1'], ['data', 'backup', '2022', 'month1', 'day1'], ['data', 'backup', '2021', 'month1', 'day2'], ['data', 'backup', '2022', 'month1', 'day2'], ['data', 'backup', '2021', 'month2', 'day1'], ['data', 'backup', '2022', 'month2', 'day1'], ['data', 'backup', '2021', 'month2', 'day2'], ['data', 'backup', '2022', 'month2', 'day2'], ['data', 'backup', '2021', 'month1', 'day1', 'file1'], ['data', 'backup', '2022', 'month1', 'day1', 'file1'], ['data', 'backup', '2021', 'month1', 'day2', 'file1'], ['data', 'backup', '2022', 'month1', 'day2', 'file1'], ['data', 'backup', '2021', 'month2', 'day1', 'file1'], ['data', 'backup', '2022', 'month2', 'day1', 'file1'], ['data', 'backup', '2021', 'month2', 'day2', 'file1'], ['data', 'backup', '2022', 'month2', 'day2', 'file1']]) == [['data', 'backup'], ['data']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir2'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4'], ['root', 'dir3'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir2'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4'], ['root', 'dir3'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'w'], ['y'], ['y', 'z'], ['y', 'w'], ['a'], ['a', 'b'], ['a', 'b', 'c'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'd'], ['d']]) == [['a', 'b', 'c'], ['a', 'b'], ['a'], ['b', 'c'], ['b', 'd'], ['b'], ['c', 'd'], ['c'], ['d'], ['x']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'w'], ['y'], ['y', 'z'], ['y', 'w'], ['a'], ['a', 'b'], ['a', 'b', 'c'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'd'], ['d']]) == [['a', 'b', 'c'], ['a', 'b'], ['a'], ['b', 'c'], ['b', 'd'], ['b'], ['c', 'd'], ['c'], ['d'], ['x']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['base', 'level1', 'level2', 'level3'], ['other', 'level1', 'level2', 'level3'], ['base', 'level1', 'level2', 'level3', 'level4'], ['other', 'level1', 'level2', 'level3', 'level4'], ['base', 'level1', 'level2', 'level3', 'level4', 'level5'], ['other', 'level1', 'level2', 'level3', 'level4', 'level5'], ['base', 'level1', 'level2', 'other'], ['other', 'level1', 'level2', 'other']]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['base', 'level1', 'level2', 'level3'], ['other', 'level1', 'level2', 'level3'], ['base', 'level1', 'level2', 'level3', 'level4'], ['other', 'level1', 'level2', 'level3', 'level4'], ['base', 'level1', 'level2', 'level3', 'level4', 'level5'], ['other', 'level1', 'level2', 'level3', 'level4', 'level5'], ['base', 'level1', 'level2', 'other'], ['other', 'level1', 'level2', 'other']]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'documents', 'file1'], ['home', 'user2', 'documents', 'file1'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'pictures', 'photo1'], ['home', 'user2', 'pictures', 'photo1']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'documents', 'file1'], ['home', 'user2', 'documents', 'file1'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'pictures', 'photo1'], ['home', 'user2', 'pictures', 'photo1']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['nested', 'folder1'], ['nested', 'folder2'], ['nested', 'folder1', 'subfolder1'], ['nested', 'folder2', 'subfolder1'], ['nested', 'folder1', 'subfolder1', 'subsubfolder1'], ['nested', 'folder2', 'subfolder1', 'subsubfolder1'], ['nested', 'folder1', 'subfolder2'], ['nested', 'folder2', 'subfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2', 'file1'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2', 'file1']]) == [['nested']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['nested', 'folder1'], ['nested', 'folder2'], ['nested', 'folder1', 'subfolder1'], ['nested', 'folder2', 'subfolder1'], ['nested', 'folder1', 'subfolder1', 'subsubfolder1'], ['nested', 'folder2', 'subfolder1', 'subsubfolder1'], ['nested', 'folder1', 'subfolder2'], ['nested', 'folder2', 'subfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2', 'file1'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2', 'file1']]) == [['nested']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a', 'b', 'c', 'd', 'e'], ['f', 'g', 'h'], ['a', 'b', 'c', 'd', 'f'], ['f', 'g', 'h', 'i'], ['a', 'b', 'c', 'd', 'j'], ['j', 'k'], ['f', 'g', 'h', 'i', 'k']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd', 'f'], ['a', 'b', 'c', 'd', 'j'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h'], ['f', 'g'], ['f']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a', 'b', 'c', 'd', 'e'], ['f', 'g', 'h'], ['a', 'b', 'c', 'd', 'f'], ['f', 'g', 'h', 'i'], ['a', 'b', 'c', 'd', 'j'], ['j', 'k'], ['f', 'g', 'h', 'i', 'k']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd', 'f'], ['a', 'b', 'c', 'd', 'j'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h'], ['f', 'g'], ['f']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'a', 'b', 'c'], ['root', 'x', 'y', 'z'], ['root', 'a', 'b', 'd'], ['root', 'x', 'y', 'd'], ['root', 'a', 'b', 'c', 'e'], ['root', 'x', 'y', 'z', 'e'], ['root', 'a', 'b', 'c', 'f'], ['root', 'x', 'y', 'z', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h']]) == [['root', 'a', 'b', 'd'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'd'], ['root', 'x', 'y'], ['root', 'x'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'a', 'b', 'c'], ['root', 'x', 'y', 'z'], ['root', 'a', 'b', 'd'], ['root', 'x', 'y', 'd'], ['root', 'a', 'b', 'c', 'e'], ['root', 'x', 'y', 'z', 'e'], ['root', 'a', 'b', 'c', 'f'], ['root', 'x', 'y', 'z', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h']]) == [['root', 'a', 'b', 'd'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'd'], ['root', 'x', 'y'], ['root', 'x'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['library', 'books', 'genre1'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3'], ['library', 'books', 'genre1', 'author1'], ['library', 'books', 'genre3', 'author1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre1', 'author1', 'book1'], ['library', 'books', 'genre3', 'author1', 'book1']]) == [['library', 'books', 'genre1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre3'], ['library', 'books'], ['library']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['library', 'books', 'genre1'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3'], ['library', 'books', 'genre1', 'author1'], ['library', 'books', 'genre3', 'author1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre1', 'author1', 'book1'], ['library', 'books', 'genre3', 'author1', 'book1']]) == [['library', 'books', 'genre1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre3'], ['library', 'books'], ['library']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['b'], ['b', 'c'], ['b', 'c', 'd'], ['b', 'c', 'd', 'e'], ['c'], ['c', 'd'], ['c', 'd', 'e'], ['d'], ['d', 'e'], ['e']]) == [['a'], ['e']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['b'], ['b', 'c'], ['b', 'c', 'd'], ['b', 'c', 'd', 'e'], ['c'], ['c', 'd'], ['c', 'd', 'e'], ['d'], ['d', 'e'], ['e']]) == [['a'], ['e']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['folder1'], ['folder1', 'folder2'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder9'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15']]) == [['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9'], ['folder1']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['folder1'], ['folder1', 'folder2'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder9'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15']]) == [['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9'], ['folder1']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['projects', 'projectA'], ['projects', 'projectB'], ['projects', 'projectA', 'src'], ['projects', 'projectB', 'src'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectB', 'src', 'module1', 'file5']]) == [['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectA', 'src'], ['projects', 'projectA'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file5'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectB', 'src'], ['projects', 'projectB'], ['projects']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['projects', 'projectA'], ['projects', 'projectB'], ['projects', 'projectA', 'src'], ['projects', 'projectB', 'src'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectB', 'src', 'module1', 'file5']]) == [['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectA', 'src'], ['projects', 'projectA'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file5'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectB', 'src'], ['projects', 'projectB'], ['projects']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['dir1'], ['dir2'], ['dir3'], ['dir1', 'sub1'], ['dir2', 'sub2'], ['dir3', 'sub1'], ['dir1', 'sub1', 'subsub1'], ['dir2', 'sub2', 'subsub2'], ['dir3', 'sub1', 'subsub1'], ['dir1', 'sub1', 'subsub1', 'deeper1'], ['dir3', 'sub1', 'subsub1', 'deeper1']]) == [['dir2', 'sub2', 'subsub2'], ['dir2', 'sub2'], ['dir2']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['dir1'], ['dir2'], ['dir3'], ['dir1', 'sub1'], ['dir2', 'sub2'], ['dir3', 'sub1'], ['dir1', 'sub1', 'subsub1'], ['dir2', 'sub2', 'subsub2'], ['dir3', 'sub1', 'subsub1'], ['dir1', 'sub1', 'subsub1', 'deeper1'], ['dir3', 'sub1', 'subsub1', 'deeper1']]) == [['dir2', 'sub2', 'subsub2'], ['dir2', 'sub2'], ['dir2']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'd'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'a'], ['c', 'a', 'b'], ['d'], ['d', 'a'], ['d', 'a', 'b']]) == [['a']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'd'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'a'], ['c', 'a', 'b'], ['d'], ['d', 'a'], ['d', 'a', 'b']]) == [['a']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder2', 'subsubfolder1'], ['root', 'folder3', 'subfolder3'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder2']]) == [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder3', 'subfolder3'], ['root', 'folder3'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder2', 'subsubfolder1'], ['root', 'folder3', 'subfolder3'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder2']]) == [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder3', 'subfolder3'], ['root', 'folder3'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['folderA'], ['folderB'], ['folderA', 'subA'], ['folderB', 'subA'], ['folderA', 'subA', 'subsubA'], ['folderB', 'subA', 'subsubA'], ['folderC'], ['folderC', 'subB'], ['folderD'], ['folderD', 'subB', 'subsubB'], ['folderE'], ['folderE', 'subB', 'subsubB', 'deepB']]) == [['folderC', 'subB'], ['folderC'], ['folderD', 'subB', 'subsubB'], ['folderD', 'subB'], ['folderD'], ['folderE', 'subB', 'subsubB', 'deepB'], ['folderE', 'subB', 'subsubB'], ['folderE', 'subB'], ['folderE']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['folderA'], ['folderB'], ['folderA', 'subA'], ['folderB', 'subA'], ['folderA', 'subA', 'subsubA'], ['folderB', 'subA', 'subsubA'], ['folderC'], ['folderC', 'subB'], ['folderD'], ['folderD', 'subB', 'subsubB'], ['folderE'], ['folderE', 'subB', 'subsubB', 'deepB']]) == [['folderC', 'subB'], ['folderC'], ['folderD', 'subB', 'subsubB'], ['folderD', 'subB'], ['folderD'], ['folderE', 'subB', 'subsubB', 'deepB'], ['folderE', 'subB', 'subsubB'], ['folderE', 'subB'], ['folderE']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['main'], ['main', 'projects'], ['main', 'projects', 'project1'], ['main', 'projects', 'project2'], ['main', 'projects', 'project1', 'code'], ['main', 'projects', 'project2', 'code'], ['main', 'docs'], ['main', 'docs', 'project1'], ['main', 'docs', 'project2'], ['main', 'docs', 'project1', 'notes'], ['main', 'docs', 'project2', 'notes']]) == [['main', 'docs'], ['main', 'projects'], ['main']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['main'], ['main', 'projects'], ['main', 'projects', 'project1'], ['main', 'projects', 'project2'], ['main', 'projects', 'project1', 'code'], ['main', 'projects', 'project2', 'code'], ['main', 'docs'], ['main', 'docs', 'project1'], ['main', 'docs', 'project2'], ['main', 'docs', 'project1', 'notes'], ['main', 'docs', 'project2', 'notes']]) == [['main', 'docs'], ['main', 'projects'], ['main']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['folder1', 'subfolder1', 'deepsub1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder1', 'subfolder1', 'deepsub3'], ['folder2', 'subfolder2', 'deepsub3'], ['folder1', 'subfolder2'], ['folder2', 'subfolder2'], ['folder3', 'subfolder3']]) == [['folder1', 'subfolder1', 'deepsub1'], ['folder1', 'subfolder1', 'deepsub3'], ['folder1', 'subfolder1'], ['folder1', 'subfolder2'], ['folder1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder2', 'subfolder2', 'deepsub3'], ['folder2', 'subfolder2'], ['folder2'], ['folder3', 'subfolder3'], ['folder3']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['folder1', 'subfolder1', 'deepsub1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder1', 'subfolder1', 'deepsub3'], ['folder2', 'subfolder2', 'deepsub3'], ['folder1', 'subfolder2'], ['folder2', 'subfolder2'], ['folder3', 'subfolder3']]) == [['folder1', 'subfolder1', 'deepsub1'], ['folder1', 'subfolder1', 'deepsub3'], ['folder1', 'subfolder1'], ['folder1', 'subfolder2'], ['folder1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder2', 'subfolder2', 'deepsub3'], ['folder2', 'subfolder2'], ['folder2'], ['folder3', 'subfolder3'], ['folder3']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['parent', 'child1', 'grandchild1'], ['parent', 'child2', 'grandchild1'], ['parent', 'child1', 'grandchild2'], ['parent', 'child2', 'grandchild2'], ['parent', 'child1', 'grandchild3'], ['parent', 'child2', 'grandchild3'], ['parent', 'child1', 'subchild1', 'subsubchild1'], ['parent', 'child2', 'subchild1', 'subsubchild1'], ['parent', 'child1', 'subchild2', 'subsubchild2'], ['parent', 'child2', 'subchild2', 'subsubchild2']]) == [['parent']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['parent', 'child1', 'grandchild1'], ['parent', 'child2', 'grandchild1'], ['parent', 'child1', 'grandchild2'], ['parent', 'child2', 'grandchild2'], ['parent', 'child1', 'grandchild3'], ['parent', 'child2', 'grandchild3'], ['parent', 'child1', 'subchild1', 'subsubchild1'], ['parent', 'child2', 'subchild1', 'subsubchild1'], ['parent', 'child1', 'subchild2', 'subsubchild2'], ['parent', 'child2', 'subchild2', 'subsubchild2']]) == [['parent']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'y'], ['root', 'b', 'y'], ['root', 'a', 'x', 'z'], ['root', 'b', 'x', 'z'], ['root', 'a', 'w'], ['root', 'b', 'w']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'y'], ['root', 'b', 'y'], ['root', 'a', 'x', 'z'], ['root', 'b', 'x', 'z'], ['root', 'a', 'w'], ['root', 'b', 'w']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'd', 'e', 'f'], ['g', 'h', 'i'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['a', 'b', 'c', 'm'], ['g', 'h', 'i', 'm'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'r', 's'], ['n', 'r', 's', 't']]) == [['a', 'b'], ['a', 'd', 'e', 'f'], ['a', 'd', 'e'], ['a', 'd'], ['a'], ['g', 'h'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['g', 'j'], ['g'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'o'], ['n', 'r', 's', 't'], ['n', 'r', 's'], ['n', 'r'], ['n']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'd', 'e', 'f'], ['g', 'h', 'i'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['a', 'b', 'c', 'm'], ['g', 'h', 'i', 'm'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'r', 's'], ['n', 'r', 's', 't']]) == [['a', 'b'], ['a', 'd', 'e', 'f'], ['a', 'd', 'e'], ['a', 'd'], ['a'], ['g', 'h'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['g', 'j'], ['g'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'o'], ['n', 'r', 's', 't'], ['n', 'r', 's'], ['n', 'r'], ['n']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['y'], ['y', 'z'], ['y', 'z', 'w'], ['z'], ['z', 'w'], ['w']]) == [['w'], ['x']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['y'], ['y', 'z'], ['y', 'z', 'w'], ['z'], ['z', 'w'], ['w']]) == [['w'], ['x']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['main', 'branch1'], ['main', 'branch2'], ['main', 'branch1', 'sub1'], ['main', 'branch2', 'sub1'], ['main', 'branch1', 'sub2'], ['main', 'branch2', 'sub2'], ['main', 'branch1', 'sub1', 'subsub1'], ['main', 'branch2', 'sub1', 'subsub1'], ['main', 'branch1', 'sub1', 'subsub2'], ['main', 'branch2', 'sub1', 'subsub2']]) == [['main']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['main', 'branch1'], ['main', 'branch2'], ['main', 'branch1', 'sub1'], ['main', 'branch2', 'sub1'], ['main', 'branch1', 'sub2'], ['main', 'branch2', 'sub2'], ['main', 'branch1', 'sub1', 'subsub1'], ['main', 'branch2', 'sub1', 'subsub1'], ['main', 'branch1', 'sub1', 'subsub2'], ['main', 'branch2', 'sub1', 'subsub2']]) == [['main']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['w'], ['w', 'd'], ['w', 'd', 'e'], ['w', 'd', 'e', 'f'], ['v'], ['v', 'd'], ['v', 'd', 'e'], ['v', 'd', 'e', 'f']]) == [['z', 'a'], ['z']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['w'], ['w', 'd'], ['w', 'd', 'e'], ['w', 'd', 'e', 'f'], ['v'], ['v', 'd'], ['v', 'd', 'e'], ['v', 'd', 'e', 'f']]) == [['z', 'a'], ['z']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['level1'], ['level1', 'level2'], ['level1', 'level2', 'level3'], ['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level3', 'level4', 'level5'], ['levelA'], ['levelA', 'level2'], ['levelA', 'level2', 'level3'], ['levelA', 'level2', 'level3', 'level4'], ['levelA', 'level2', 'level3', 'level4', 'level5']]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['level1'], ['level1', 'level2'], ['level1', 'level2', 'level3'], ['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level3', 'level4', 'level5'], ['levelA'], ['levelA', 'level2'], ['levelA', 'level2', 'level3'], ['levelA', 'level2', 'level3', 'level4'], ['levelA', 'level2', 'level3', 'level4', 'level5']]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir1', 'subdir1'], ['root', 'dir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir2'], ['root', 'dir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir4'], ['root', 'dir4', 'subdir1'], ['root', 'dir4', 'subdir2']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1'], ['root', 'dir3', 'subdir2'], ['root', 'dir3'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir1', 'subdir1'], ['root', 'dir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir2'], ['root', 'dir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir4'], ['root', 'dir4', 'subdir1'], ['root', 'dir4', 'subdir2']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1'], ['root', 'dir3', 'subdir2'], ['root', 'dir3'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder3', 'subfolder2'], ['root', 'folder3', 'subfolder2', 'deepsubfolder1'], ['root', 'folder4', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1']]) == [['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2'], ['root', 'folder5'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder3', 'subfolder2'], ['root', 'folder3', 'subfolder2', 'deepsubfolder1'], ['root', 'folder4', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1']]) == [['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2'], ['root', 'folder5'], ['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home', 'user1', 'docs'], ['home', 'user2', 'docs'], ['home', 'user1', 'music'], ['home', 'user2', 'music'], ['home', 'user1', 'docs', 'report'], ['home', 'user2', 'docs', 'report'], ['home', 'user1', 'music', 'song1'], ['home', 'user2', 'music', 'song2'], ['home', 'user1', 'docs', 'report', 'summary'], ['home', 'user2', 'docs', 'report', 'summary'], ['home', 'user1', 'docs', 'report', 'summary', 'details'], ['home', 'user2', 'docs', 'report', 'summary', 'details']]) == [['home', 'user1', 'music', 'song1'], ['home', 'user1', 'music'], ['home', 'user1'], ['home', 'user2', 'music', 'song2'], ['home', 'user2', 'music'], ['home', 'user2'], ['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home', 'user1', 'docs'], ['home', 'user2', 'docs'], ['home', 'user1', 'music'], ['home', 'user2', 'music'], ['home', 'user1', 'docs', 'report'], ['home', 'user2', 'docs', 'report'], ['home', 'user1', 'music', 'song1'], ['home', 'user2', 'music', 'song2'], ['home', 'user1', 'docs', 'report', 'summary'], ['home', 'user2', 'docs', 'report', 'summary'], ['home', 'user1', 'docs', 'report', 'summary', 'details'], ['home', 'user2', 'docs', 'report', 'summary', 'details']]) == [['home', 'user1', 'music', 'song1'], ['home', 'user1', 'music'], ['home', 'user1'], ['home', 'user2', 'music', 'song2'], ['home', 'user2', 'music'], ['home', 'user2'], ['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['main', 'project', 'src', 'module1'], ['main', 'project', 'src', 'module2'], ['main', 'project', 'src', 'module1', 'submodule1'], ['main', 'project', 'src', 'module2', 'submodule1'], ['main', 'project', 'src', 'module1', 'submodule2'], ['main', 'project', 'src', 'module2', 'submodule2'], ['main', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1'], ['main', 'project', 'src', 'module2', 'submodule1', 'subsubmodule1'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1']]) == [['main', 'project', 'src'], ['main', 'project'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src'], ['main', 'unique', 'project'], ['main', 'unique'], ['main']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['main', 'project', 'src', 'module1'], ['main', 'project', 'src', 'module2'], ['main', 'project', 'src', 'module1', 'submodule1'], ['main', 'project', 'src', 'module2', 'submodule1'], ['main', 'project', 'src', 'module1', 'submodule2'], ['main', 'project', 'src', 'module2', 'submodule2'], ['main', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1'], ['main', 'project', 'src', 'module2', 'submodule1', 'subsubmodule1'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1']]) == [['main', 'project', 'src'], ['main', 'project'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src'], ['main', 'unique', 'project'], ['main', 'unique'], ['main']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj3'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'docs'], ['projects', 'proj2', 'docs'], ['projects', 'proj3', 'docs']]) == [['projects', 'proj3', 'docs'], ['projects', 'proj3'], ['projects']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj3'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'docs'], ['projects', 'proj2', 'docs'], ['projects', 'proj3', 'docs']]) == [['projects', 'proj3', 'docs'], ['projects', 'proj3'], ['projects']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['alpha'], ['beta'], ['gamma'], ['alpha', 'delta'], ['beta', 'delta'], ['gamma', 'epsilon'], ['alpha', 'delta', 'zeta'], ['beta', 'delta', 'zeta'], ['alpha', 'delta', 'zeta', 'eta'], ['beta', 'delta', 'zeta', 'eta'], ['alpha', 'theta'], ['beta', 'theta'], ['gamma', 'theta']]) == [['gamma', 'epsilon'], ['gamma', 'theta'], ['gamma']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['alpha'], ['beta'], ['gamma'], ['alpha', 'delta'], ['beta', 'delta'], ['gamma', 'epsilon'], ['alpha', 'delta', 'zeta'], ['beta', 'delta', 'zeta'], ['alpha', 'delta', 'zeta', 'eta'], ['beta', 'delta', 'zeta', 'eta'], ['alpha', 'theta'], ['beta', 'theta'], ['gamma', 'theta']]) == [['gamma', 'epsilon'], ['gamma', 'theta'], ['gamma']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['project'], ['project', 'module1'], ['project', 'module1', 'file1'], ['project', 'module2'], ['project', 'module2', 'file1'], ['project', 'module3'], ['project', 'module3', 'file2'], ['project', 'module4'], ['project', 'module4', 'file3'], ['project', 'module5'], ['project', 'module5', 'file3'], ['project', 'module6'], ['project', 'module6', 'file4'], ['project', 'module7'], ['project', 'module7', 'file4'], ['project', 'module8'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6']]) == [['project', 'module3', 'file2'], ['project', 'module3'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6'], ['project', 'module8'], ['project']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['project'], ['project', 'module1'], ['project', 'module1', 'file1'], ['project', 'module2'], ['project', 'module2', 'file1'], ['project', 'module3'], ['project', 'module3', 'file2'], ['project', 'module4'], ['project', 'module4', 'file3'], ['project', 'module5'], ['project', 'module5', 'file3'], ['project', 'module6'], ['project', 'module6', 'file4'], ['project', 'module7'], ['project', 'module7', 'file4'], ['project', 'module8'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6']]) == [['project', 'module3', 'file2'], ['project', 'module3'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6'], ['project', 'module8'], ['project']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['app', 'module1', 'service1'], ['app', 'module2', 'service2'], ['app', 'module3', 'service1'], ['app', 'module4', 'service4'], ['app', 'module1', 'service1', 'endpoint1'], ['app', 'module3', 'service1', 'endpoint1'], ['app', 'module5'], ['app', 'module5', 'endpoint2']]) == [['app', 'module2', 'service2'], ['app', 'module2'], ['app', 'module4', 'service4'], ['app', 'module4'], ['app', 'module5', 'endpoint2'], ['app', 'module5'], ['app']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['app', 'module1', 'service1'], ['app', 'module2', 'service2'], ['app', 'module3', 'service1'], ['app', 'module4', 'service4'], ['app', 'module1', 'service1', 'endpoint1'], ['app', 'module3', 'service1', 'endpoint1'], ['app', 'module5'], ['app', 'module5', 'endpoint2']]) == [['app', 'module2', 'service2'], ['app', 'module2'], ['app', 'module4', 'service4'], ['app', 'module4'], ['app', 'module5', 'endpoint2'], ['app', 'module5'], ['app']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir2'], ['root', 'dir1', 'subdir1', 'subsubdir1'], ['root', 'dir2', 'subdir1', 'subsubdir1'], ['root', 'dir1', 'subdir3'], ['root', 'dir2', 'subdir3']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir2'], ['root', 'dir1', 'subdir1', 'subsubdir1'], ['root', 'dir2', 'subdir1', 'subsubdir1'], ['root', 'dir1', 'subdir3'], ['root', 'dir2', 'subdir3']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'child1'], ['root', 'child2'], ['root', 'child1', 'sub1'], ['root', 'child2', 'sub1'], ['root', 'child1', 'sub1', 'subsub1'], ['root', 'child2', 'sub1', 'subsub1'], ['root', 'child1', 'sub2'], ['root', 'child2', 'sub2'], ['root', 'child1', 'sub2', 'subsub2'], ['root', 'child2', 'sub2', 'subsub2'], ['root', 'child3'], ['root', 'child3', 'sub1'], ['root', 'child3', 'sub1', 'subsub1'], ['root', 'child3', 'sub2'], ['root', 'child3', 'sub2', 'subsub2']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'child1'], ['root', 'child2'], ['root', 'child1', 'sub1'], ['root', 'child2', 'sub1'], ['root', 'child1', 'sub1', 'subsub1'], ['root', 'child2', 'sub1', 'subsub1'], ['root', 'child1', 'sub2'], ['root', 'child2', 'sub2'], ['root', 'child1', 'sub2', 'subsub2'], ['root', 'child2', 'sub2', 'subsub2'], ['root', 'child3'], ['root', 'child3', 'sub1'], ['root', 'child3', 'sub1', 'subsub1'], ['root', 'child3', 'sub2'], ['root', 'child3', 'sub2', 'subsub2']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home'], ['home', 'user1'], ['home', 'user1', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2'], ['home', 'user2', 'documents'], ['home', 'user2', 'pictures'], ['home', 'user3'], ['home', 'user3', 'documents'], ['home', 'user3', 'pictures'], ['home', 'user3', 'videos'], ['home', 'user4'], ['home', 'user4', 'documents'], ['home', 'user4', 'pictures'], ['home', 'user4', 'videos'], ['home', 'user5'], ['home', 'user5', 'documents'], ['home', 'user5', 'pictures'], ['home', 'user5', 'videos'], ['home', 'user6'], ['home', 'user6', 'documents'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6', 'music']]) == [['home', 'user6', 'documents'], ['home', 'user6', 'music'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6'], ['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home'], ['home', 'user1'], ['home', 'user1', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2'], ['home', 'user2', 'documents'], ['home', 'user2', 'pictures'], ['home', 'user3'], ['home', 'user3', 'documents'], ['home', 'user3', 'pictures'], ['home', 'user3', 'videos'], ['home', 'user4'], ['home', 'user4', 'documents'], ['home', 'user4', 'pictures'], ['home', 'user4', 'videos'], ['home', 'user5'], ['home', 'user5', 'documents'], ['home', 'user5', 'pictures'], ['home', 'user5', 'videos'], ['home', 'user6'], ['home', 'user6', 'documents'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6', 'music']]) == [['home', 'user6', 'documents'], ['home', 'user6', 'music'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6'], ['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['documents', 'work', 'reports'], ['documents', 'work', 'reports', 'monthly'], ['documents', 'work', 'reports', 'monthly', 'jan'], ['documents', 'work', 'reports', 'monthly', 'feb'], ['documents', 'work', 'reports', 'monthly', 'mar'], ['documents', 'home', 'reports'], ['documents', 'home', 'reports', 'monthly'], ['documents', 'home', 'reports', 'monthly', 'jan'], ['documents', 'home', 'reports', 'monthly', 'feb'], ['documents', 'home', 'reports', 'monthly', 'mar'], ['documents', 'finance', 'reports'], ['documents', 'finance', 'reports', 'monthly'], ['documents', 'finance', 'reports', 'monthly', 'jan'], ['documents', 'finance', 'reports', 'monthly', 'feb'], ['documents', 'finance', 'reports', 'monthly', 'mar']]) == [['documents']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['documents', 'work', 'reports'], ['documents', 'work', 'reports', 'monthly'], ['documents', 'work', 'reports', 'monthly', 'jan'], ['documents', 'work', 'reports', 'monthly', 'feb'], ['documents', 'work', 'reports', 'monthly', 'mar'], ['documents', 'home', 'reports'], ['documents', 'home', 'reports', 'monthly'], ['documents', 'home', 'reports', 'monthly', 'jan'], ['documents', 'home', 'reports', 'monthly', 'feb'], ['documents', 'home', 'reports', 'monthly', 'mar'], ['documents', 'finance', 'reports'], ['documents', 'finance', 'reports', 'monthly'], ['documents', 'finance', 'reports', 'monthly', 'jan'], ['documents', 'finance', 'reports', 'monthly', 'feb'], ['documents', 'finance', 'reports', 'monthly', 'mar']]) == [['documents']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub2'], ['root', 'folder2', 'sub2'], ['root', 'folder3', 'sub1'], ['root', 'folder4', 'sub1'], ['root', 'folder3', 'sub3'], ['root', 'folder4', 'sub3']]) == [['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub2'], ['root', 'folder2', 'sub2'], ['root', 'folder3', 'sub1'], ['root', 'folder4', 'sub1'], ['root', 'folder3', 'sub3'], ['root', 'folder4', 'sub3']]) == [['root']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home', 'user1', 'docs', 'work'], ['home', 'user2', 'docs', 'work'], ['home', 'user1', 'docs', 'projects'], ['home', 'user2', 'docs', 'projects'], ['home', 'user1', 'downloads', 'movies'], ['home', 'user2', 'downloads', 'movies'], ['home', 'user1', 'downloads', 'music'], ['home', 'user2', 'downloads', 'music'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'wedding'], ['home', 'user2', 'pictures', 'wedding']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home', 'user1', 'docs', 'work'], ['home', 'user2', 'docs', 'work'], ['home', 'user1', 'docs', 'projects'], ['home', 'user2', 'docs', 'projects'], ['home', 'user1', 'downloads', 'movies'], ['home', 'user2', 'downloads', 'movies'], ['home', 'user1', 'downloads', 'music'], ['home', 'user2', 'downloads', 'music'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'wedding'], ['home', 'user2', 'pictures', 'wedding']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['library'], ['library', 'section1'], ['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section2'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section3'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section4'], ['library', 'section4', 'shelf5'], ['library', 'section4', 'shelf6'], ['library', 'section5'], ['library', 'section5', 'shelf5'], ['library', 'section5', 'shelf6'], ['library', 'section6'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section7'], ['library', 'section7', 'shelf9'], ['library', 'section7', 'shelf10']]) == [['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section1'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section2'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section3'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section6'], ['library', 'section7', 'shelf10'], ['library', 'section7', 'shelf9'], ['library', 'section7'], ['library']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['library'], ['library', 'section1'], ['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section2'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section3'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section4'], ['library', 'section4', 'shelf5'], ['library', 'section4', 'shelf6'], ['library', 'section5'], ['library', 'section5', 'shelf5'], ['library', 'section5', 'shelf6'], ['library', 'section6'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section7'], ['library', 'section7', 'shelf9'], ['library', 'section7', 'shelf10']]) == [['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section1'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section2'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section3'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section6'], ['library', 'section7', 'shelf10'], ['library', 'section7', 'shelf9'], ['library', 'section7'], ['library']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'documents', 'work'], ['home', 'user2', 'documents', 'work'], ['home', 'user1', 'documents', 'personal'], ['home', 'user2', 'documents', 'personal'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'travel'], ['home', 'user2', 'pictures', 'travel'], ['home', 'user1', 'pictures', 'travel', '2022'], ['home', 'user2', 'pictures', 'travel', '2022']]) == [['home']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'documents', 'work'], ['home', 'user2', 'documents', 'work'], ['home', 'user1', 'documents', 'personal'], ['home', 'user2', 'documents', 'personal'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'travel'], ['home', 'user2', 'pictures', 'travel'], ['home', 'user1', 'pictures', 'travel', '2022'], ['home', 'user2', 'pictures', 'travel', '2022']]) == [['home']]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir2'], ['root', 'dir1', 'dir3'], ['root', 'dir2', 'dir4'], ['root', 'dir2', 'dir3'], ['root', 'dir1', 'dir3', 'dir5'], ['root', 'dir2', 'dir3', 'dir5']]) == [['root', 'dir1'], ['root', 'dir2', 'dir4'], ['root', 'dir2'], ['root']]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir2'], ['root', 'dir1', 'dir3'], ['root', 'dir2', 'dir4'], ['root', 'dir2', 'dir3'], ['root', 'dir1', 'dir3', 'dir5'], ['root', 'dir2', 'dir3', 'dir5']]) == [['root', 'dir1'], ['root', 'dir2', 'dir4'], ['root', 'dir2'], ['root']]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(paths = [['project'], ['project', 'src'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs'], ['project', 'docs', 'api'], ['project', 'docs', 'user']]) == [['project', 'docs', 'api'], ['project', 'docs', 'user'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'src'], ['project']]
+    assert candidate(paths = [['x'], ['x', 'y'], ['x', 'z'], ['y'], ['y', 'x'], ['z'], ['z', 'x']]) == [['x', 'y'], ['x', 'z'], ['x']]
+    assert candidate(paths = [['a', 'b'], ['c', 'd'], ['c'], ['a']]) == [['a', 'b'], ['a'], ['c', 'd'], ['c']]
+    assert candidate(paths = [['home'], ['home', 'user'], ['home', 'user', 'documents'], ['home', 'guest'], ['home', 'guest', 'documents']]) == [['home']]
+    assert candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['f'], ['f', 'g'], ['f', 'g', 'h'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h', 'i', 'j']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h', 'i', 'j'], ['f', 'g', 'h', 'i'], ['f', 'g', 'h'], ['f', 'g'], ['f']]
+    assert candidate(paths = [['root'], ['root', 'a'], ['root', 'b'], ['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'x', 'y'], ['root', 'b', 'x', 'y']]) == [['root']]
+    assert candidate(paths = [['folder1'], ['folder1', 'sub1'], ['folder1', 'sub2'], ['folder2'], ['folder2', 'sub1'], ['folder2', 'sub2']]) == []
+    assert candidate(paths = [['a'], ['c'], ['a', 'b'], ['c', 'b'], ['a', 'b', 'x'], ['a', 'b', 'x', 'y'], ['w'], ['w', 'y']]) == [['a', 'b'], ['a'], ['c', 'b'], ['c']]
+    assert candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['u'], ['u', 'v'], ['u', 'v', 'w']]) == [['u'], ['x', 'y'], ['x']]
+    assert candidate(paths = [['m'], ['m', 'n'], ['n'], ['n', 'm'], ['m', 'n', 'o'], ['n', 'm', 'o']]) == [['m'], ['n']]
+    assert candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1']]) == [['root']]
+    assert candidate(paths = [['m'], ['m', 'n'], ['p'], ['p', 'n']]) == []
+    assert candidate(paths = [['a'], ['c'], ['d'], ['a', 'b'], ['c', 'b'], ['d', 'a']]) == [['d', 'a'], ['d']]
+    assert candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['y'], ['y', 'z']]) == [['x']]
+    assert candidate(paths = [['one'], ['one', 'two'], ['one', 'two', 'three'], ['two'], ['two', 'three']]) == [['one']]
+    assert candidate(paths = [['p'], ['p', 'q'], ['p', 'q', 'r'], ['p', 'q', 'r', 's'], ['p', 'q', 'r', 't'], ['q'], ['q', 'r'], ['q', 'r', 's'], ['q', 'r', 't'], ['r'], ['r', 's'], ['r', 't'], ['s'], ['t'], ['u'], ['u', 'v'], ['u', 'v', 'w'], ['u', 'v', 'w', 'x'], ['u', 'v', 'w', 'y'], ['v'], ['v', 'w'], ['v', 'w', 'x'], ['v', 'w', 'y'], ['w'], ['w', 'x'], ['w', 'y'], ['x'], ['y']]) == [['p'], ['s'], ['t'], ['u'], ['x'], ['y']]
+    assert candidate(paths = [['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level5', 'level4'], ['level1', 'level6', 'level3', 'level4'], ['level1', 'level6', 'level5', 'level4'], ['level1', 'level7', 'level8'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12']]) == [['level1', 'level7', 'level8'], ['level1', 'level7'], ['level1', 'level9', 'level10', 'level11'], ['level1', 'level9', 'level10', 'level12'], ['level1', 'level9', 'level10'], ['level1', 'level9'], ['level1']]
+    assert candidate(paths = [['system', 'folderA'], ['system', 'folderB'], ['system', 'folderA', 'subfolderA1'], ['system', 'folderB', 'subfolderA1'], ['system', 'folderA', 'subfolderA2'], ['system', 'folderB', 'subfolderA2'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA1', 'subsubfolderA2'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA1'], ['system', 'folderA', 'subfolderA2', 'subsubfolderA2'], ['system', 'folderB', 'subfolderA2', 'subsubfolderA2']]) == [['system']]
+    assert candidate(paths = [['home', 'user', 'docs'], ['home', 'user', 'photos'], ['home', 'guest', 'docs'], ['home', 'guest', 'photos'], ['home', 'user', 'docs', 'file1'], ['home', 'guest', 'docs', 'file1'], ['home', 'user', 'photos', 'image1'], ['home', 'guest', 'photos', 'image1'], ['home', 'user', 'docs', 'file2'], ['home', 'guest', 'docs', 'file2']]) == [['home']]
+    assert candidate(paths = [['projects', 'proj1'], ['projects', 'proj2'], ['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'src', 'test'], ['projects', 'proj2', 'src', 'test'], ['projects', 'proj1', 'src', 'main', 'file1'], ['projects', 'proj2', 'src', 'main', 'file1'], ['projects', 'proj1', 'src', 'test', 'test1'], ['projects', 'proj2', 'src', 'test', 'test1']]) == [['projects']]
+    assert candidate(paths = [['alpha'], ['alpha', 'beta'], ['alpha', 'beta', 'gamma'], ['alpha', 'beta', 'delta'], ['alpha', 'epsilon'], ['alpha', 'epsilon', 'gamma'], ['alpha', 'epsilon', 'delta'], ['beta'], ['beta', 'gamma'], ['beta', 'delta'], ['epsilon'], ['epsilon', 'gamma'], ['epsilon', 'delta'], ['gamma'], ['delta'], ['charlie'], ['charlie', 'foxtrot'], ['charlie', 'foxtrot', 'gamma'], ['charlie', 'foxtrot', 'delta'], ['charlie', 'tango'], ['charlie', 'tango', 'gamma'], ['charlie', 'tango', 'delta']]) == [['alpha'], ['charlie'], ['delta'], ['gamma']]
+    assert candidate(paths = [['project'], ['project', 'src'], ['project', 'docs'], ['project', 'src', 'main'], ['project', 'src', 'test'], ['project', 'docs', 'api'], ['project', 'docs', 'userguide'], ['project', 'src', 'main', 'java'], ['project', 'src', 'test', 'java'], ['project', 'docs', 'api', 'java'], ['project', 'docs', 'userguide', 'java'], ['project', 'src', 'main', 'java', 'utils'], ['project', 'src', 'test', 'java', 'utils'], ['project', 'docs', 'api', 'java', 'utils'], ['project', 'docs', 'userguide', 'java', 'utils']]) == [['project', 'docs'], ['project', 'src'], ['project']]
+    assert candidate(paths = [['data', 'archive'], ['data', 'archive', '2021'], ['data', 'archive', '2022'], ['data', 'archive', '2023'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2023'], ['data', 'logs'], ['data', 'logs', 'server1'], ['data', 'logs', 'server2'], ['data', 'logs', 'server3'], ['data', 'temp'], ['data', 'temp', 'server1'], ['data', 'temp', 'server2'], ['data', 'temp', 'server3']]) == [['data']]
+    assert candidate(paths = [['app'], ['app', 'module1'], ['app', 'module2'], ['app', 'module1', 'component1'], ['app', 'module2', 'component1'], ['app', 'module1', 'component2'], ['app', 'module2', 'component2'], ['app', 'module1', 'component1', 'subcomponent1'], ['app', 'module2', 'component1', 'subcomponent1'], ['app', 'module1', 'component2', 'subcomponent1'], ['app', 'module2', 'component2', 'subcomponent1'], ['app', 'module1', 'component1', 'subcomponent2'], ['app', 'module2', 'component1', 'subcomponent2'], ['app', 'module1', 'component2', 'subcomponent2'], ['app', 'module2', 'component2', 'subcomponent2'], ['app', 'module1', 'component1', 'subcomponent2', 'deep1'], ['app', 'module2', 'component1', 'subcomponent2', 'deep1']]) == [['app']]
+    assert candidate(paths = [['root', 'a'], ['root', 'b'], ['root', 'a', 'c'], ['root', 'b', 'c'], ['root', 'a', 'd'], ['root', 'b', 'd'], ['root', 'a', 'c', 'e'], ['root', 'b', 'c', 'e']]) == [['root']]
+    assert candidate(paths = [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder1', 'subsubfolder1'], ['root', 'unique', 'folder1'], ['root', 'unique', 'folder1', 'subfolder1'], ['root', 'unique', 'folder1', 'subfolder1', 'subsubfolder1']]) == [['root', 'unique'], ['root']]
+    assert candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'files'], ['home', 'user2', 'files'], ['home', 'user1', 'files', 'docs'], ['home', 'user2', 'files', 'docs'], ['home', 'user1', 'files', 'docs', 'report1'], ['home', 'user2', 'files', 'docs', 'report1'], ['home', 'user1', 'files', 'docs', 'report2'], ['home', 'user2', 'files', 'docs', 'report2']]) == [['home']]
+    assert candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['z', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['z', 'a', 'b', 'c'], ['x', 'd'], ['y', 'e'], ['z', 'f']]) == [['x', 'd'], ['x'], ['y', 'e'], ['y'], ['z', 'f'], ['z']]
+    assert candidate(paths = [['root', 'a', 'b', 'c', 'd'], ['root', 'x', 'y', 'z', 'w'], ['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'a', 'b', 'f'], ['root', 'x', 'y', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h'], ['root', 'a', 'i', 'j'], ['root', 'x', 'i', 'j'], ['root', 'a', 'i', 'k'], ['root', 'x', 'i', 'k']]) == [['root', 'a', 'b', 'c', 'd', 'e'], ['root', 'a', 'b', 'c', 'd'], ['root', 'a', 'b', 'c'], ['root', 'a', 'b', 'f'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'f'], ['root', 'x', 'y', 'z', 'w', 'v'], ['root', 'x', 'y', 'z', 'w'], ['root', 'x', 'y', 'z'], ['root', 'x', 'y'], ['root', 'x'], ['root']]
+    assert candidate(paths = [['root'], ['root', 'folder1'], ['root', 'folder2'], ['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub1', 'subsub1'], ['root', 'folder2', 'sub1', 'subsub1']]) == [['root']]
+    assert candidate(paths = [['base'], ['base', 'folder1'], ['base', 'folder1', 'subfolder1'], ['base', 'folder1', 'subfolder2'], ['base', 'folder2'], ['base', 'folder2', 'subfolder1'], ['base', 'folder2', 'subfolder2'], ['base', 'folder3'], ['base', 'folder3', 'subfolder1'], ['base', 'folder3', 'subfolder2'], ['base', 'folder1', 'subfolder1', 'deep1'], ['base', 'folder2', 'subfolder1', 'deep1'], ['base', 'folder3', 'subfolder1', 'deep1']]) == [['base']]
+    assert candidate(paths = [['system'], ['system', 'app1'], ['system', 'app1', 'data'], ['system', 'app2'], ['system', 'app2', 'data'], ['system', 'app3'], ['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app4'], ['system', 'app4', 'data'], ['system', 'app4', 'logs'], ['system', 'app4', 'temp'], ['system', 'app5'], ['system', 'app5', 'data'], ['system', 'app5', 'logs'], ['system', 'app5', 'temp'], ['system', 'app6'], ['system', 'app6', 'data'], ['system', 'app6', 'logs'], ['system', 'app6', 'temp'], ['system', 'app6', 'config'], ['system', 'app7'], ['system', 'app7', 'data'], ['system', 'app7', 'logs'], ['system', 'app7', 'temp'], ['system', 'app7', 'config'], ['system', 'app8'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8', 'config'], ['system', 'app8', 'bin']]) == [['system', 'app3', 'data'], ['system', 'app3', 'logs'], ['system', 'app3'], ['system', 'app8', 'bin'], ['system', 'app8', 'config'], ['system', 'app8', 'data'], ['system', 'app8', 'logs'], ['system', 'app8', 'temp'], ['system', 'app8'], ['system']]
+    assert candidate(paths = [['root', 'x'], ['root', 'y'], ['root', 'x', 'z'], ['root', 'y', 'z'], ['root', 'x', 'a'], ['root', 'y', 'a'], ['root', 'x', 'a', 'b'], ['root', 'y', 'a', 'b']]) == [['root']]
+    assert candidate(paths = [['root', 'level1', 'level2', 'level3'], ['root', 'level1', 'level2', 'level4'], ['root', 'level5', 'level6'], ['root', 'level1', 'level2', 'level3', 'level7'], ['root', 'level5', 'level6', 'level7'], ['root', 'level1', 'level2', 'level3', 'level7', 'level8'], ['root', 'level5', 'level6', 'level7', 'level8']]) == [['root', 'level1', 'level2', 'level4'], ['root', 'level1', 'level2'], ['root', 'level1'], ['root', 'level5'], ['root']]
+    assert candidate(paths = [['data'], ['data', 'backup'], ['data', 'backup', '2021'], ['data', 'backup', '2022'], ['data', 'backup', '2021', 'month1'], ['data', 'backup', '2022', 'month1'], ['data', 'backup', '2021', 'month2'], ['data', 'backup', '2022', 'month2'], ['data', 'backup', '2021', 'month1', 'day1'], ['data', 'backup', '2022', 'month1', 'day1'], ['data', 'backup', '2021', 'month1', 'day2'], ['data', 'backup', '2022', 'month1', 'day2'], ['data', 'backup', '2021', 'month2', 'day1'], ['data', 'backup', '2022', 'month2', 'day1'], ['data', 'backup', '2021', 'month2', 'day2'], ['data', 'backup', '2022', 'month2', 'day2'], ['data', 'backup', '2021', 'month1', 'day1', 'file1'], ['data', 'backup', '2022', 'month1', 'day1', 'file1'], ['data', 'backup', '2021', 'month1', 'day2', 'file1'], ['data', 'backup', '2022', 'month1', 'day2', 'file1'], ['data', 'backup', '2021', 'month2', 'day1', 'file1'], ['data', 'backup', '2022', 'month2', 'day1', 'file1'], ['data', 'backup', '2021', 'month2', 'day2', 'file1'], ['data', 'backup', '2022', 'month2', 'day2', 'file1']]) == [['data', 'backup'], ['data']]
+    assert candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir3'], ['root', 'dir2'], ['root', 'dir3', 'subdir2'], ['root', 'dir3', 'subdir4'], ['root', 'dir3'], ['root']]
+    assert candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'w'], ['y'], ['y', 'z'], ['y', 'w'], ['a'], ['a', 'b'], ['a', 'b', 'c'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'd'], ['d']]) == [['a', 'b', 'c'], ['a', 'b'], ['a'], ['b', 'c'], ['b', 'd'], ['b'], ['c', 'd'], ['c'], ['d'], ['x']]
+    assert candidate(paths = [['base', 'level1', 'level2', 'level3'], ['other', 'level1', 'level2', 'level3'], ['base', 'level1', 'level2', 'level3', 'level4'], ['other', 'level1', 'level2', 'level3', 'level4'], ['base', 'level1', 'level2', 'level3', 'level4', 'level5'], ['other', 'level1', 'level2', 'level3', 'level4', 'level5'], ['base', 'level1', 'level2', 'other'], ['other', 'level1', 'level2', 'other']]) == []
+    assert candidate(paths = [['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'documents', 'file1'], ['home', 'user2', 'documents', 'file1'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'pictures', 'photo1'], ['home', 'user2', 'pictures', 'photo1']]) == [['home']]
+    assert candidate(paths = [['nested', 'folder1'], ['nested', 'folder2'], ['nested', 'folder1', 'subfolder1'], ['nested', 'folder2', 'subfolder1'], ['nested', 'folder1', 'subfolder1', 'subsubfolder1'], ['nested', 'folder2', 'subfolder1', 'subsubfolder1'], ['nested', 'folder1', 'subfolder2'], ['nested', 'folder2', 'subfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2'], ['nested', 'folder1', 'subfolder2', 'subsubfolder2', 'file1'], ['nested', 'folder2', 'subfolder2', 'subsubfolder2', 'file1']]) == [['nested']]
+    assert candidate(paths = [['a', 'b', 'c', 'd', 'e'], ['f', 'g', 'h'], ['a', 'b', 'c', 'd', 'f'], ['f', 'g', 'h', 'i'], ['a', 'b', 'c', 'd', 'j'], ['j', 'k'], ['f', 'g', 'h', 'i', 'k']]) == [['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd', 'f'], ['a', 'b', 'c', 'd', 'j'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c'], ['a', 'b'], ['a'], ['f', 'g', 'h'], ['f', 'g'], ['f']]
+    assert candidate(paths = [['root', 'a', 'b', 'c'], ['root', 'x', 'y', 'z'], ['root', 'a', 'b', 'd'], ['root', 'x', 'y', 'd'], ['root', 'a', 'b', 'c', 'e'], ['root', 'x', 'y', 'z', 'e'], ['root', 'a', 'b', 'c', 'f'], ['root', 'x', 'y', 'z', 'f'], ['root', 'a', 'g'], ['root', 'x', 'g'], ['root', 'a', 'h'], ['root', 'x', 'h']]) == [['root', 'a', 'b', 'd'], ['root', 'a', 'b'], ['root', 'a', 'g'], ['root', 'a', 'h'], ['root', 'a'], ['root', 'x', 'g'], ['root', 'x', 'h'], ['root', 'x', 'y', 'd'], ['root', 'x', 'y'], ['root', 'x'], ['root']]
+    assert candidate(paths = [['library', 'books', 'genre1'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3'], ['library', 'books', 'genre1', 'author1'], ['library', 'books', 'genre3', 'author1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre1', 'author1', 'book1'], ['library', 'books', 'genre3', 'author1', 'book1']]) == [['library', 'books', 'genre1'], ['library', 'books', 'genre2', 'author2'], ['library', 'books', 'genre2'], ['library', 'books', 'genre3', 'author2'], ['library', 'books', 'genre3'], ['library', 'books'], ['library']]
+    assert candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e'], ['b'], ['b', 'c'], ['b', 'c', 'd'], ['b', 'c', 'd', 'e'], ['c'], ['c', 'd'], ['c', 'd', 'e'], ['d'], ['d', 'e'], ['e']]) == [['a'], ['e']]
+    assert candidate(paths = [['folder1'], ['folder1', 'folder2'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder9'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15']]) == [['folder1', 'folder2', 'folder3', 'folder4'], ['folder1', 'folder2', 'folder3', 'folder5'], ['folder1', 'folder2', 'folder3'], ['folder1', 'folder2', 'folder6', 'folder7'], ['folder1', 'folder2', 'folder6', 'folder8'], ['folder1', 'folder2', 'folder6'], ['folder1', 'folder2'], ['folder1', 'folder9', 'folder10', 'folder11'], ['folder1', 'folder9', 'folder10', 'folder12'], ['folder1', 'folder9', 'folder10'], ['folder1', 'folder9', 'folder13', 'folder14'], ['folder1', 'folder9', 'folder13', 'folder15'], ['folder1', 'folder9', 'folder13'], ['folder1', 'folder9'], ['folder1']]
+    assert candidate(paths = [['projects', 'projectA'], ['projects', 'projectB'], ['projects', 'projectA', 'src'], ['projects', 'projectB', 'src'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectB', 'src', 'module1', 'file5']]) == [['projects', 'projectA', 'src', 'module1', 'file1'], ['projects', 'projectA', 'src', 'module1', 'file4'], ['projects', 'projectA', 'src', 'module1'], ['projects', 'projectA', 'src', 'module2', 'file2'], ['projects', 'projectA', 'src', 'module2'], ['projects', 'projectA', 'src'], ['projects', 'projectA'], ['projects', 'projectB', 'src', 'module1', 'file1'], ['projects', 'projectB', 'src', 'module1', 'file5'], ['projects', 'projectB', 'src', 'module1'], ['projects', 'projectB', 'src', 'module2', 'file3'], ['projects', 'projectB', 'src', 'module2'], ['projects', 'projectB', 'src'], ['projects', 'projectB'], ['projects']]
+    assert candidate(paths = [['dir1'], ['dir2'], ['dir3'], ['dir1', 'sub1'], ['dir2', 'sub2'], ['dir3', 'sub1'], ['dir1', 'sub1', 'subsub1'], ['dir2', 'sub2', 'subsub2'], ['dir3', 'sub1', 'subsub1'], ['dir1', 'sub1', 'subsub1', 'deeper1'], ['dir3', 'sub1', 'subsub1', 'deeper1']]) == [['dir2', 'sub2', 'subsub2'], ['dir2', 'sub2'], ['dir2']]
+    assert candidate(paths = [['a'], ['a', 'b'], ['a', 'b', 'c'], ['a', 'b', 'd'], ['b'], ['b', 'c'], ['b', 'd'], ['c'], ['c', 'a'], ['c', 'a', 'b'], ['d'], ['d', 'a'], ['d', 'a', 'b']]) == [['a']]
+    assert candidate(paths = [['root', 'folder1', 'subfolder1', 'subsubfolder1'], ['root', 'folder2', 'subfolder2', 'subsubfolder1'], ['root', 'folder3', 'subfolder3'], ['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder2']]) == [['root', 'folder1'], ['root', 'folder2'], ['root', 'folder3', 'subfolder3'], ['root', 'folder3'], ['root']]
+    assert candidate(paths = [['folderA'], ['folderB'], ['folderA', 'subA'], ['folderB', 'subA'], ['folderA', 'subA', 'subsubA'], ['folderB', 'subA', 'subsubA'], ['folderC'], ['folderC', 'subB'], ['folderD'], ['folderD', 'subB', 'subsubB'], ['folderE'], ['folderE', 'subB', 'subsubB', 'deepB']]) == [['folderC', 'subB'], ['folderC'], ['folderD', 'subB', 'subsubB'], ['folderD', 'subB'], ['folderD'], ['folderE', 'subB', 'subsubB', 'deepB'], ['folderE', 'subB', 'subsubB'], ['folderE', 'subB'], ['folderE']]
+    assert candidate(paths = [['main'], ['main', 'projects'], ['main', 'projects', 'project1'], ['main', 'projects', 'project2'], ['main', 'projects', 'project1', 'code'], ['main', 'projects', 'project2', 'code'], ['main', 'docs'], ['main', 'docs', 'project1'], ['main', 'docs', 'project2'], ['main', 'docs', 'project1', 'notes'], ['main', 'docs', 'project2', 'notes']]) == [['main', 'docs'], ['main', 'projects'], ['main']]
+    assert candidate(paths = [['folder1', 'subfolder1', 'deepsub1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder1', 'subfolder1', 'deepsub3'], ['folder2', 'subfolder2', 'deepsub3'], ['folder1', 'subfolder2'], ['folder2', 'subfolder2'], ['folder3', 'subfolder3']]) == [['folder1', 'subfolder1', 'deepsub1'], ['folder1', 'subfolder1', 'deepsub3'], ['folder1', 'subfolder1'], ['folder1', 'subfolder2'], ['folder1'], ['folder2', 'subfolder2', 'deepsub2'], ['folder2', 'subfolder2', 'deepsub3'], ['folder2', 'subfolder2'], ['folder2'], ['folder3', 'subfolder3'], ['folder3']]
+    assert candidate(paths = [['parent', 'child1', 'grandchild1'], ['parent', 'child2', 'grandchild1'], ['parent', 'child1', 'grandchild2'], ['parent', 'child2', 'grandchild2'], ['parent', 'child1', 'grandchild3'], ['parent', 'child2', 'grandchild3'], ['parent', 'child1', 'subchild1', 'subsubchild1'], ['parent', 'child2', 'subchild1', 'subsubchild1'], ['parent', 'child1', 'subchild2', 'subsubchild2'], ['parent', 'child2', 'subchild2', 'subsubchild2']]) == [['parent']]
+    assert candidate(paths = [['root', 'a', 'x'], ['root', 'b', 'x'], ['root', 'a', 'y'], ['root', 'b', 'y'], ['root', 'a', 'x', 'z'], ['root', 'b', 'x', 'z'], ['root', 'a', 'w'], ['root', 'b', 'w']]) == [['root']]
+    assert candidate(paths = [['a', 'b', 'c'], ['a', 'd', 'e'], ['a', 'd', 'e', 'f'], ['g', 'h', 'i'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['a', 'b', 'c', 'm'], ['g', 'h', 'i', 'm'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'r', 's'], ['n', 'r', 's', 't']]) == [['a', 'b'], ['a', 'd', 'e', 'f'], ['a', 'd', 'e'], ['a', 'd'], ['a'], ['g', 'h'], ['g', 'j', 'k'], ['g', 'j', 'l'], ['g', 'j'], ['g'], ['n', 'o', 'p'], ['n', 'o', 'q'], ['n', 'o'], ['n', 'r', 's', 't'], ['n', 'r', 's'], ['n', 'r'], ['n']]
+    assert candidate(paths = [['x'], ['x', 'y'], ['x', 'y', 'z'], ['x', 'y', 'z', 'w'], ['y'], ['y', 'z'], ['y', 'z', 'w'], ['z'], ['z', 'w'], ['w']]) == [['w'], ['x']]
+    assert candidate(paths = [['main', 'branch1'], ['main', 'branch2'], ['main', 'branch1', 'sub1'], ['main', 'branch2', 'sub1'], ['main', 'branch1', 'sub2'], ['main', 'branch2', 'sub2'], ['main', 'branch1', 'sub1', 'subsub1'], ['main', 'branch2', 'sub1', 'subsub1'], ['main', 'branch1', 'sub1', 'subsub2'], ['main', 'branch2', 'sub1', 'subsub2']]) == [['main']]
+    assert candidate(paths = [['x'], ['y'], ['z'], ['x', 'a'], ['y', 'a'], ['z', 'a'], ['x', 'a', 'b'], ['y', 'a', 'b'], ['x', 'a', 'b', 'c'], ['y', 'a', 'b', 'c'], ['w'], ['w', 'd'], ['w', 'd', 'e'], ['w', 'd', 'e', 'f'], ['v'], ['v', 'd'], ['v', 'd', 'e'], ['v', 'd', 'e', 'f']]) == [['z', 'a'], ['z']]
+    assert candidate(paths = [['level1'], ['level1', 'level2'], ['level1', 'level2', 'level3'], ['level1', 'level2', 'level3', 'level4'], ['level1', 'level2', 'level3', 'level4', 'level5'], ['levelA'], ['levelA', 'level2'], ['levelA', 'level2', 'level3'], ['levelA', 'level2', 'level3', 'level4'], ['levelA', 'level2', 'level3', 'level4', 'level5']]) == []
+    assert candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir1', 'subdir1'], ['root', 'dir2'], ['root', 'dir2', 'subdir1'], ['root', 'dir2', 'subdir2'], ['root', 'dir3'], ['root', 'dir3', 'subdir2'], ['root', 'dir4'], ['root', 'dir4', 'subdir1'], ['root', 'dir4', 'subdir2']]) == [['root', 'dir1', 'subdir1'], ['root', 'dir1'], ['root', 'dir3', 'subdir2'], ['root', 'dir3'], ['root']]
+    assert candidate(paths = [['root', 'folder1', 'subfolder1'], ['root', 'folder2', 'subfolder1'], ['root', 'folder3', 'subfolder2'], ['root', 'folder3', 'subfolder2', 'deepsubfolder1'], ['root', 'folder4', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1']]) == [['root', 'folder5', 'subfolder2', 'deepsubfolder1', 'deeper1'], ['root', 'folder5', 'subfolder2', 'deepsubfolder1'], ['root', 'folder5', 'subfolder2'], ['root', 'folder5'], ['root']]
+    assert candidate(paths = [['home', 'user1', 'docs'], ['home', 'user2', 'docs'], ['home', 'user1', 'music'], ['home', 'user2', 'music'], ['home', 'user1', 'docs', 'report'], ['home', 'user2', 'docs', 'report'], ['home', 'user1', 'music', 'song1'], ['home', 'user2', 'music', 'song2'], ['home', 'user1', 'docs', 'report', 'summary'], ['home', 'user2', 'docs', 'report', 'summary'], ['home', 'user1', 'docs', 'report', 'summary', 'details'], ['home', 'user2', 'docs', 'report', 'summary', 'details']]) == [['home', 'user1', 'music', 'song1'], ['home', 'user1', 'music'], ['home', 'user1'], ['home', 'user2', 'music', 'song2'], ['home', 'user2', 'music'], ['home', 'user2'], ['home']]
+    assert candidate(paths = [['main', 'project', 'src', 'module1'], ['main', 'project', 'src', 'module2'], ['main', 'project', 'src', 'module1', 'submodule1'], ['main', 'project', 'src', 'module2', 'submodule1'], ['main', 'project', 'src', 'module1', 'submodule2'], ['main', 'project', 'src', 'module2', 'submodule2'], ['main', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1'], ['main', 'project', 'src', 'module2', 'submodule1', 'subsubmodule1'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1'], ['main', 'unique', 'project', 'src', 'module1', 'submodule1', 'subsubmodule1']]) == [['main', 'project', 'src'], ['main', 'project'], ['main', 'unique', 'project', 'src', 'module1'], ['main', 'unique', 'project', 'src'], ['main', 'unique', 'project'], ['main', 'unique'], ['main']]
+    assert candidate(paths = [['projects', 'proj1', 'src'], ['projects', 'proj2', 'src'], ['projects', 'proj3'], ['projects', 'proj1', 'src', 'main'], ['projects', 'proj2', 'src', 'main'], ['projects', 'proj1', 'docs'], ['projects', 'proj2', 'docs'], ['projects', 'proj3', 'docs']]) == [['projects', 'proj3', 'docs'], ['projects', 'proj3'], ['projects']]
+    assert candidate(paths = [['alpha'], ['beta'], ['gamma'], ['alpha', 'delta'], ['beta', 'delta'], ['gamma', 'epsilon'], ['alpha', 'delta', 'zeta'], ['beta', 'delta', 'zeta'], ['alpha', 'delta', 'zeta', 'eta'], ['beta', 'delta', 'zeta', 'eta'], ['alpha', 'theta'], ['beta', 'theta'], ['gamma', 'theta']]) == [['gamma', 'epsilon'], ['gamma', 'theta'], ['gamma']]
+    assert candidate(paths = [['project'], ['project', 'module1'], ['project', 'module1', 'file1'], ['project', 'module2'], ['project', 'module2', 'file1'], ['project', 'module3'], ['project', 'module3', 'file2'], ['project', 'module4'], ['project', 'module4', 'file3'], ['project', 'module5'], ['project', 'module5', 'file3'], ['project', 'module6'], ['project', 'module6', 'file4'], ['project', 'module7'], ['project', 'module7', 'file4'], ['project', 'module8'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6']]) == [['project', 'module3', 'file2'], ['project', 'module3'], ['project', 'module8', 'file5'], ['project', 'module8', 'file6'], ['project', 'module8'], ['project']]
+    assert candidate(paths = [['app', 'module1', 'service1'], ['app', 'module2', 'service2'], ['app', 'module3', 'service1'], ['app', 'module4', 'service4'], ['app', 'module1', 'service1', 'endpoint1'], ['app', 'module3', 'service1', 'endpoint1'], ['app', 'module5'], ['app', 'module5', 'endpoint2']]) == [['app', 'module2', 'service2'], ['app', 'module2'], ['app', 'module4', 'service4'], ['app', 'module4'], ['app', 'module5', 'endpoint2'], ['app', 'module5'], ['app']]
+    assert candidate(paths = [['root', 'dir1', 'subdir1'], ['root', 'dir2', 'subdir1'], ['root', 'dir1', 'subdir2'], ['root', 'dir2', 'subdir2'], ['root', 'dir1', 'subdir1', 'subsubdir1'], ['root', 'dir2', 'subdir1', 'subsubdir1'], ['root', 'dir1', 'subdir3'], ['root', 'dir2', 'subdir3']]) == [['root']]
+    assert candidate(paths = [['root'], ['root', 'child1'], ['root', 'child2'], ['root', 'child1', 'sub1'], ['root', 'child2', 'sub1'], ['root', 'child1', 'sub1', 'subsub1'], ['root', 'child2', 'sub1', 'subsub1'], ['root', 'child1', 'sub2'], ['root', 'child2', 'sub2'], ['root', 'child1', 'sub2', 'subsub2'], ['root', 'child2', 'sub2', 'subsub2'], ['root', 'child3'], ['root', 'child3', 'sub1'], ['root', 'child3', 'sub1', 'subsub1'], ['root', 'child3', 'sub2'], ['root', 'child3', 'sub2', 'subsub2']]) == [['root']]
+    assert candidate(paths = [['home'], ['home', 'user1'], ['home', 'user1', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2'], ['home', 'user2', 'documents'], ['home', 'user2', 'pictures'], ['home', 'user3'], ['home', 'user3', 'documents'], ['home', 'user3', 'pictures'], ['home', 'user3', 'videos'], ['home', 'user4'], ['home', 'user4', 'documents'], ['home', 'user4', 'pictures'], ['home', 'user4', 'videos'], ['home', 'user5'], ['home', 'user5', 'documents'], ['home', 'user5', 'pictures'], ['home', 'user5', 'videos'], ['home', 'user6'], ['home', 'user6', 'documents'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6', 'music']]) == [['home', 'user6', 'documents'], ['home', 'user6', 'music'], ['home', 'user6', 'pictures'], ['home', 'user6', 'videos'], ['home', 'user6'], ['home']]
+    assert candidate(paths = [['documents', 'work', 'reports'], ['documents', 'work', 'reports', 'monthly'], ['documents', 'work', 'reports', 'monthly', 'jan'], ['documents', 'work', 'reports', 'monthly', 'feb'], ['documents', 'work', 'reports', 'monthly', 'mar'], ['documents', 'home', 'reports'], ['documents', 'home', 'reports', 'monthly'], ['documents', 'home', 'reports', 'monthly', 'jan'], ['documents', 'home', 'reports', 'monthly', 'feb'], ['documents', 'home', 'reports', 'monthly', 'mar'], ['documents', 'finance', 'reports'], ['documents', 'finance', 'reports', 'monthly'], ['documents', 'finance', 'reports', 'monthly', 'jan'], ['documents', 'finance', 'reports', 'monthly', 'feb'], ['documents', 'finance', 'reports', 'monthly', 'mar']]) == [['documents']]
+    assert candidate(paths = [['root', 'folder1', 'sub1'], ['root', 'folder2', 'sub1'], ['root', 'folder1', 'sub2'], ['root', 'folder2', 'sub2'], ['root', 'folder3', 'sub1'], ['root', 'folder4', 'sub1'], ['root', 'folder3', 'sub3'], ['root', 'folder4', 'sub3']]) == [['root']]
+    assert candidate(paths = [['home', 'user1', 'docs', 'work'], ['home', 'user2', 'docs', 'work'], ['home', 'user1', 'docs', 'projects'], ['home', 'user2', 'docs', 'projects'], ['home', 'user1', 'downloads', 'movies'], ['home', 'user2', 'downloads', 'movies'], ['home', 'user1', 'downloads', 'music'], ['home', 'user2', 'downloads', 'music'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'wedding'], ['home', 'user2', 'pictures', 'wedding']]) == [['home']]
+    assert candidate(paths = [['library'], ['library', 'section1'], ['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section2'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section3'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section4'], ['library', 'section4', 'shelf5'], ['library', 'section4', 'shelf6'], ['library', 'section5'], ['library', 'section5', 'shelf5'], ['library', 'section5', 'shelf6'], ['library', 'section6'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section7'], ['library', 'section7', 'shelf9'], ['library', 'section7', 'shelf10']]) == [['library', 'section1', 'shelf1'], ['library', 'section1', 'shelf2'], ['library', 'section1', 'shelf3'], ['library', 'section1'], ['library', 'section2', 'shelf1'], ['library', 'section2', 'shelf2'], ['library', 'section2', 'shelf4'], ['library', 'section2'], ['library', 'section3', 'shelf3'], ['library', 'section3', 'shelf4'], ['library', 'section3'], ['library', 'section6', 'shelf7'], ['library', 'section6', 'shelf8'], ['library', 'section6'], ['library', 'section7', 'shelf10'], ['library', 'section7', 'shelf9'], ['library', 'section7'], ['library']]
+    assert candidate(paths = [['home'], ['home', 'user1'], ['home', 'user2'], ['home', 'user1', 'documents'], ['home', 'user2', 'documents'], ['home', 'user1', 'pictures'], ['home', 'user2', 'pictures'], ['home', 'user1', 'documents', 'work'], ['home', 'user2', 'documents', 'work'], ['home', 'user1', 'documents', 'personal'], ['home', 'user2', 'documents', 'personal'], ['home', 'user1', 'pictures', 'vacation'], ['home', 'user2', 'pictures', 'vacation'], ['home', 'user1', 'pictures', 'travel'], ['home', 'user2', 'pictures', 'travel'], ['home', 'user1', 'pictures', 'travel', '2022'], ['home', 'user2', 'pictures', 'travel', '2022']]) == [['home']]
+    assert candidate(paths = [['root'], ['root', 'dir1'], ['root', 'dir2'], ['root', 'dir1', 'dir3'], ['root', 'dir2', 'dir4'], ['root', 'dir2', 'dir3'], ['root', 'dir1', 'dir3', 'dir5'], ['root', 'dir2', 'dir3', 'dir5']]) == [['root', 'dir1'], ['root', 'dir2', 'dir4'], ['root', 'dir2'], ['root']]
+
+

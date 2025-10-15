@@ -1,0 +1,1121 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, 2, -2, 3, -3]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, 2, -2, 3, -3]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [8, -8]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [8, -8]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-2, -2, 1, 1]) == [-2, -2, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-2, -2, 1, 1]) == [-2, -2, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1000, 1000]) == [-1000, 1000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1000, 1000]) == [-1000, 1000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, -4, -3, -2, -1]) == [-4, -3, -2, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, -4, -3, -2, -1]) == [-4, -3, -2, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -1, 5, -1]) == [5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -1, 5, -1]) == [5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-2, -1, 1, 2]) == [-2, -1, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-2, -1, 1, 2]) == [-2, -1, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-2, -2, 1, -2]) == [-2, -2, -2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-2, -2, 1, -2]) == [-2, -2, -2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, -1, -2, -3]) == [1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, -1, -2, -3]) == [1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -2, -2, -2]) == [-2, -2, -2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -2, -2, -2]) == [-2, -2, -2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, -4, -5]) == [-4, -5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, -4, -5]) == [-4, -5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1000, -1000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1000, -1000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-3, 3, 1, -1, -2, 2]) == [-3, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-3, 3, 1, -1, -2, 2]) == [-3, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 1, 2, -3, -4, -5, 6, 7, 8, 9]) == [10, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 1, 2, -3, -4, -5, 6, 7, 8, 9]) == [10, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-2, -1, 1, 2, 3, 4]) == [-2, -1, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-2, -1, 1, 2, 3, 4]) == [-2, -1, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -10, 10, -5]) == [-10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -10, 10, -5]) == [-10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 2, -5]) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 2, -5]) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [6, 2, -3, -4, -5]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [6, 2, -3, -4, -5]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, -5]) == [5, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, -5]) == [5, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, -10, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, -10, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, -3, -4]) == [-3, -4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, -3, -4]) == [-3, -4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 2, -3, 5, -1, -4, 6, -6]) == [10, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 2, -3, 5, -1, -4, 6, -6]) == [10, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-7, 7, -8, 8, -9, 9, 10, -10, 11, -11]) == [-7, -8, -9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-7, 7, -8, 8, -9, 9, 10, -10, 11, -11]) == [-7, -8, -9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5, 3, -3, 2, -2, 1, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5, 3, -3, 2, -2, 1, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == [-2, -4, -6, -8, -10, -12, -14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == [-2, -4, -6, -8, -10, -12, -14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, -6, -7, -8, -9, -10]) == [-6, -7, -8, -9, -10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, -6, -7, -8, -9, -10]) == [-6, -7, -8, -9, -10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, 40, 50, -15, -25, -35, -45, -55, 60, 70]) == [-55, 60, 70]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, 40, 50, -15, -25, -35, -45, -55, 60, 70]) == [-55, 60, 70]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 5, 5, 5, 5, -5, -5, -5, -5, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 5, 5, 5, 5, -5, -5, -5, -5, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [3, 3, 3, 3, -3, -3, -3, -3, 3, 3, 3, 3, -3, -3, -3, -3]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [3, 3, 3, 3, -3, -3, -3, -3, 3, 3, 3, 3, -3, -3, -3, -3]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [50, -40, 30, -20, 10, -5, 0, 5, -10, 20, -30, 40, -50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [50, -40, 30, -20, 10, -5, 0, 5, -10, 20, -30, 40, -50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, -29, -27, -25, -23, -21, -19, -17, -15, -13, -11, -9, -7, -5, -3, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, -29, -27, -25, -23, -21, -19, -17, -15, -13, -11, -9, -7, -5, -3, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-50, 50, -40, 40, -30, 30, -20, 20, -10, 10]) == [-50, 50, 40, 30, 20, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-50, 50, -40, 40, -30, 30, -20, 20, -10, 10]) == [-50, 50, 40, 30, 20, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -90, -80, 70, -60, 50, -40, 30, -20, 10]) == [100, 70, 50, 30, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -90, -80, 70, -60, 50, -40, 30, -20, 10]) == [100, 70, 50, 30, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, 25]) == [-5, -10, -15, -20, 20, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, 25]) == [-5, -10, -15, -20, 20, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, -1, 1, 2, -2, -2, 2, 3, -3, -3, 3, 4, -4, -4, 4]) == [-1, -2, -3, -4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, -1, 1, 2, -2, -2, 2, 3, -3, -3, 3, 4, -4, -4, 4]) == [-1, -2, -3, -4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, -2, -3, 1, 2, 3, -4, -5, 4, 5]) == [-1, -2, -3, -4, -5, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, -2, -3, 1, 2, 3, -4, -5, 4, 5]) == [-1, -2, -3, -4, -5, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 15, 25, 35, 45, 55, -5, -15, -25, -35, -45, -55]) == [5, 15, 25, 35, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 15, 25, 35, 45, 55, -5, -15, -25, -35, -45, -55]) == [5, 15, 25, 35, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -200, 50, -50, 300, -150, 250, -100]) == [-200, 300, 250]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -200, 50, -50, 300, -150, 250, -100]) == [-200, 300, 250]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == [-10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == [-10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, 15, 20, -20, -15, -10, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, 15, 20, -20, -15, -10, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [8, -2, 9, -3, 4, -1, 7, -5, 6, -4]) == [8, 9, 4, 7, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [8, -2, 9, -3, 4, -1, 7, -5, 6, -4]) == [8, 9, 4, 7, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 5, 5, 5, -5, -5, -5, -5, 5, 5]) == [5, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 5, 5, 5, -5, -5, -5, -5, 5, 5]) == [5, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 7, 3, -7, 4, -4, 2, -2, 1, -1]) == [5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 7, 3, -7, 4, -4, 2, -2, 1, -1]) == [5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25]) == [-5, -10, -15, -20, -25, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25]) == [-5, -10, -15, -20, -25, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [2, -2, 4, -4, 6, -6, 8, -8, 10, -10, 12, -12, 14, -14, 16, -16]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [2, -2, 4, -4, 6, -6, 8, -8, 10, -10, 12, -12, 14, -14, 16, -16]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 3, 5, 7, 9, -9, -7, -5, -3, -1, 2, 4, 6, 8, 10, -10, -8, -6, -4, -2]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 3, 5, 7, 9, -9, -7, -5, -3, -1, 2, 4, 6, 8, 10, -10, -8, -6, -4, -2]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, -2, -3, 4, 5, 6, -7, -8, 9, 10, -10, 11, -11, 12, -12]) == [-1, -2, -3, -7, -8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, -2, -3, 4, 5, 6, -7, -8, 9, 10, -10, 11, -11, 12, -12]) == [-1, -2, -3, -7, -8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, 10, -9, 9, -8, 8, -7, 7, -6, 6, -5, 5, -4, 4, -3, 3, -2, 2, -1, 1]) == [-10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, 10, -9, 9, -8, 8, -7, 7, -6, 6, -5, 5, -4, 4, -3, 3, -2, 2, -1, 1]) == [-10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50, 60, 70, 80, 90]) == [60, 70, 80, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50, 60, 70, 80, 90]) == [60, 70, 80, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -3, 7, -2, 1, -10, 15, -15, 20]) == [-10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -3, 7, -2, 1, -10, 15, -15, 20]) == [-10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -10, 15, -20, 25, -30, 35, -40]) == [-10, -20, -30, -40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -10, 15, -20, 25, -30, 35, -40]) == [-10, -20, -30, -40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -5, 5, -5, 5, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -5, 5, -5, 5, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90]) == [100, 98, 96, 94, 92, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90]) == [100, 98, 96, 94, 92, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, -20, -30, 30, 20, 10, -10, -20, -30]) == [-10, -20, -30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, -20, -30, 30, 20, 10, -10, -20, -30]) == [-10, -20, -30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, -15, -20, 5, 15, -10, 25, -30]) == [-30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, -15, -20, 5, 15, -10, 25, -30]) == [-30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, -5, -15, -25, -35, 40, -45, 50]) == [-35, -45, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, -5, -15, -25, -35, 40, -45, 50]) == [-35, -45, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, -20, -30, 10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-10, -20, -30, -40, -45, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, -20, -30, 10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-10, -20, -30, -40, -45, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, -10, -5, 20, -20, 15, -15, 25, -25]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, -10, -5, 20, -20, 15, -15, 25, -25]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12]) == [-1, -3, -5, -7, -9, -11, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12]) == [-1, -3, -5, -7, -9, -11, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -1, 9, -2, 8, -3, 7, -4, 6, -5]) == [10, 9, 8, 7, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -1, 9, -2, 8, -3, 7, -4, 6, -5]) == [10, 9, 8, 7, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90, -89]) == [100, 98, 96, 94, 92, 90]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90, -89]) == [100, 98, 96, 94, 92, 90]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, -5, 10, -10, 5, -5, 10]) == [5, 10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, -5, 10, -10, 5, -5, 10]) == [5, 10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, 200, 300, -100, -200, -300, 400, -400, 500, -500]) == [100, 200]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, 200, 300, -100, -200, -300, 400, -400, 500, -500]) == [100, 200]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 100, -90, 80, -70, 60, -50, 40, -30, 20, -10]) == [-20, -40, -60, -80, -100, 100, 80, 60, 40, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 100, -90, 80, -70, 60, -50, 40, -30, 20, -10]) == [-20, -40, -60, -80, -100, 100, 80, 60, 40, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -1, 99, -2, 98, -3, 97, -4, 96, -5, 95, -6, 94, -7, 93, -8, 92, -9, 91, -10]) == [100, 99, 98, 97, 96, 95, 94, 93, 92, 91]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -1, 99, -2, 98, -3, 97, -4, 96, -5, 95, -6, 94, -7, 93, -8, 92, -9, 91, -10]) == [100, 99, 98, 97, 96, 95, 94, 93, 92, 91]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -5, 5, -10, 10, -10, 5, -5, 2, -2]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -5, 5, -10, 10, -10, 5, -5, 2, -2]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60]) == [-10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60]) == [-10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -50, 50, -100, 200, -200, 300, -300, 400, -400]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -50, 50, -100, 200, -200, 300, -300, 400, -400]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9, -10, 10]) == [-2, -3, -4, -5, -6, -7, -8, -9, -10, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9, -10, 10]) == [-2, -3, -4, -5, -6, -7, -8, -9, -10, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, 200, 300, 400, 500, -100, -200, -300, -400, -500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 600, 700, 800, 900, 1000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, 200, 300, 400, 500, -100, -200, -300, -400, -500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 600, 700, 800, 900, 1000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16]) == [-1, -3, -5, -7, -9, -11, -13, -15, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16]) == [-1, -3, -5, -7, -9, -11, -13, -15, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -10, 5, 3, -3, -5, 8, 8, -8, 2, -2]) == [8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -10, 5, 3, -3, -5, 8, 8, -8, 2, -2]) == [8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150]) == [-20, -40, -60, -80, -100, -120, -140, 150]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150]) == [-20, -40, -60, -80, -100, -120, -140, 150]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, -3, -2, -1, 4, 5, -5, -4]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, -3, -2, -1, 4, 5, -5, -4]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, 15, -10, 20, -15, -20, 25, -25, 30, -30, 35, -35]) == [5, 10, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, 15, -10, 20, -15, -20, 25, -25, 30, -30, 35, -35]) == [5, 10, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -50, 50, -25, 25, -10, 10, -5, 5, -2, 2, -1, 1]) == [100, 50, 25, 10, 5, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -50, 50, -25, 25, -10, 10, -5, 5, -2, 2, -1, 1]) == [100, 50, 25, 10, 5, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]) == [-1, -3, -5, -7, -9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]) == [-1, -3, -5, -7, -9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [100, -50, 20, -10, 5, -5, 10, -20, 30, -40]) == [100]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [100, -50, 20, -10, 5, -5, 10, -20, 30, -40]) == [100]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, 40, 50, 60, 70, 80, 90, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, 40, 50, 60, 70, 80, 90, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-40, -45, 45]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-40, -45, 45]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [10, 20, 30, 40, 50, -10, -20, -30, -40, -50]) == [10, 20, 30, 40]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [10, 20, 30, 40, 50, -10, -20, -30, -40, -50]) == [10, 20, 30, 40]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [50, -50, 49, -49, 48, -48, 47, -47, 46, -46, 45, -45, 44, -44, 43, -43]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [50, -50, 49, -49, 48, -48, 47, -47, 46, -46, 45, -45, 44, -44, 43, -43]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-100, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == [-100, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-100, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == [-100, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1, -6, 6, -7, 7, -8, 8, -9, 9]) == [-1, -2, -3, -4, -5, -6, -7, -8, -9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1, -6, 6, -7, 7, -8, 8, -9, 9]) == [-1, -2, -3, -4, -5, -6, -7, -8, -9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [5, 10, 15, -15, -10, -5, 20, -20, 25, -25, 30, -30]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [5, 10, 15, -15, -10, -5, 20, -20, 25, -25, 30, -30]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -15]) == [-2, -4, -6, -8, -10, -12, -14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -15]) == [-2, -4, -6, -8, -10, -12, -14]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(asteroids = [1, -1, 2, -2, 3, -3]) == []
+    assert candidate(asteroids = [8, -8]) == []
+    assert candidate(asteroids = [-2, -2, 1, 1]) == [-2, -2, 1, 1]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]
+    assert candidate(asteroids = [-1000, 1000]) == [-1000, 1000]
+    assert candidate(asteroids = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+    assert candidate(asteroids = [1, 2, 3, -4, -3, -2, -1]) == [-4, -3, -2, -1]
+    assert candidate(asteroids = [5, -1, 5, -1]) == [5, 5]
+    assert candidate(asteroids = [-2, -1, 1, 2]) == [-2, -1, 1, 2]
+    assert candidate(asteroids = [1, 2, 3, -3, -2, -1]) == []
+    assert candidate(asteroids = [-2, -2, 1, -2]) == [-2, -2, -2]
+    assert candidate(asteroids = [1, 2, 3, -1, -2, -3]) == [1, 2]
+    assert candidate(asteroids = [1, -2, -2, -2]) == [-2, -2, -2]
+    assert candidate(asteroids = [1, 2, 3, -4, -5]) == [-4, -5]
+    assert candidate(asteroids = [1000, -1000]) == []
+    assert candidate(asteroids = [-3, 3, 1, -1, -2, 2]) == [-3, 3, 2]
+    assert candidate(asteroids = [10, 1, 2, -3, -4, -5, 6, 7, 8, 9]) == [10, 6, 7, 8, 9]
+    assert candidate(asteroids = [-2, -1, 1, 2, 3, 4]) == [-2, -1, 1, 2, 3, 4]
+    assert candidate(asteroids = [5, -10, 10, -5]) == [-10, 10]
+    assert candidate(asteroids = [10, 2, -5]) == [10]
+    assert candidate(asteroids = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+    assert candidate(asteroids = [6, 2, -3, -4, -5]) == [6]
+    assert candidate(asteroids = [5, 10, -5]) == [5, 10]
+    assert candidate(asteroids = [5, 10, -10, -5]) == []
+    assert candidate(asteroids = [1, 2, -3, -4]) == [-3, -4]
+    assert candidate(asteroids = [10, 2, -3, 5, -1, -4, 6, -6]) == [10, 5]
+    assert candidate(asteroids = [-7, 7, -8, 8, -9, 9, 10, -10, 11, -11]) == [-7, -8, -9, 9]
+    assert candidate(asteroids = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5, 3, -3, 2, -2, 1, -1]) == []
+    assert candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50]) == []
+    assert candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == [-2, -4, -6, -8, -10, -12, -14, 15]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, -6, -7, -8, -9, -10]) == [-6, -7, -8, -9, -10]
+    assert candidate(asteroids = [10, 20, 30, 40, 50, -15, -25, -35, -45, -55, 60, 70]) == [-55, 60, 70]
+    assert candidate(asteroids = [5, 5, 5, 5, 5, -5, -5, -5, -5, -5]) == []
+    assert candidate(asteroids = [3, 3, 3, 3, -3, -3, -3, -3, 3, 3, 3, 3, -3, -3, -3, -3]) == []
+    assert candidate(asteroids = [50, -40, 30, -20, 10, -5, 0, 5, -10, 20, -30, 40, -50]) == []
+    assert candidate(asteroids = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == []
+    assert candidate(asteroids = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, -29, -27, -25, -23, -21, -19, -17, -15, -13, -11, -9, -7, -5, -3, -1]) == []
+    assert candidate(asteroids = [-50, 50, -40, 40, -30, 30, -20, 20, -10, 10]) == [-50, 50, 40, 30, 20, 10]
+    assert candidate(asteroids = [100, -90, -80, 70, -60, 50, -40, 30, -20, 10]) == [100, 70, 50, 30, 10]
+    assert candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, 25]) == [-5, -10, -15, -20, 20, 25]
+    assert candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []
+    assert candidate(asteroids = [1, -1, -1, 1, 2, -2, -2, 2, 3, -3, -3, 3, 4, -4, -4, 4]) == [-1, -2, -3, -4, 4]
+    assert candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]
+    assert candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == []
+    assert candidate(asteroids = [-1, -2, -3, 1, 2, 3, -4, -5, 4, 5]) == [-1, -2, -3, -4, -5, 4, 5]
+    assert candidate(asteroids = [5, 15, 25, 35, 45, 55, -5, -15, -25, -35, -45, -55]) == [5, 15, 25, 35, 45]
+    assert candidate(asteroids = [7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7]) == []
+    assert candidate(asteroids = [100, -200, 50, -50, 300, -150, 250, -100]) == [-200, 300, 250]
+    assert candidate(asteroids = [-10, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5]) == [-10]
+    assert candidate(asteroids = [5, 10, 15, 20, -20, -15, -10, -5]) == []
+    assert candidate(asteroids = [8, -2, 9, -3, 4, -1, 7, -5, 6, -4]) == [8, 9, 4, 7, 6]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+    assert candidate(asteroids = [5, 5, 5, 5, -5, -5, -5, -5, 5, 5]) == [5, 5]
+    assert candidate(asteroids = [5, 7, 3, -7, 4, -4, 2, -2, 1, -1]) == [5]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert candidate(asteroids = [9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9]) == []
+    assert candidate(asteroids = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25]) == [-5, -10, -15, -20, -25, 25]
+    assert candidate(asteroids = [2, -2, 4, -4, 6, -6, 8, -8, 10, -10, 12, -12, 14, -14, 16, -16]) == []
+    assert candidate(asteroids = [1, 3, 5, 7, 9, -9, -7, -5, -3, -1, 2, 4, 6, 8, 10, -10, -8, -6, -4, -2]) == []
+    assert candidate(asteroids = [-1, -2, -3, 4, 5, 6, -7, -8, 9, 10, -10, 11, -11, 12, -12]) == [-1, -2, -3, -7, -8, 9]
+    assert candidate(asteroids = [-10, 10, -9, 9, -8, 8, -7, 7, -6, 6, -5, 5, -4, 4, -3, 3, -2, 2, -1, 1]) == [-10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert candidate(asteroids = [50, 40, 30, 20, 10, -10, -20, -30, -40, -50, 60, 70, 80, 90]) == [60, 70, 80, 90]
+    assert candidate(asteroids = [5, -3, 7, -2, 1, -10, 15, -15, 20]) == [-10, 20]
+    assert candidate(asteroids = [2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []
+    assert candidate(asteroids = [5, -10, 15, -20, 25, -30, 35, -40]) == [-10, -20, -30, -40]
+    assert candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []
+    assert candidate(asteroids = [5, -5, 5, -5, 5, -5]) == []
+    assert candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90]) == [100, 98, 96, 94, 92, 90]
+    assert candidate(asteroids = [-10, -20, -30, 30, 20, 10, -10, -20, -30]) == [-10, -20, -30]
+    assert candidate(asteroids = [10, 20, -15, -20, 5, 15, -10, 25, -30]) == [-30]
+    assert candidate(asteroids = [10, 20, 30, -5, -15, -25, -35, 40, -45, 50]) == [-35, -45, 50]
+    assert candidate(asteroids = [-10, -20, -30, 10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-10, -20, -30, -40, -45, 45]
+    assert candidate(asteroids = [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert candidate(asteroids = [5, 10, -10, -5, 20, -20, 15, -15, 25, -25]) == []
+    assert candidate(asteroids = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == []
+    assert candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12]) == [-1, -3, -5, -7, -9, -11, 12]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []
+    assert candidate(asteroids = [10, -1, 9, -2, 8, -3, 7, -4, 6, -5]) == [10, 9, 8, 7, 6]
+    assert candidate(asteroids = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == []
+    assert candidate(asteroids = [100, -99, 98, -97, 96, -95, 94, -93, 92, -91, 90, -89]) == [100, 98, 96, 94, 92, 90]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+    assert candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []
+    assert candidate(asteroids = [5, 10, -5, 10, -10, 5, -5, 10]) == [5, 10, 10]
+    assert candidate(asteroids = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == []
+    assert candidate(asteroids = [1, 2, 3, 4, 5, -5, -4, -3, -2, -1]) == []
+    assert candidate(asteroids = [100, 200, 300, -100, -200, -300, 400, -400, 500, -500]) == [100, 200]
+    assert candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 100, -90, 80, -70, 60, -50, 40, -30, 20, -10]) == [-20, -40, -60, -80, -100, 100, 80, 60, 40, 20]
+    assert candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11]) == []
+    assert candidate(asteroids = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == []
+    assert candidate(asteroids = [100, -1, 99, -2, 98, -3, 97, -4, 96, -5, 95, -6, 94, -7, 93, -8, 92, -9, 91, -10]) == [100, 99, 98, 97, 96, 95, 94, 93, 92, 91]
+    assert candidate(asteroids = [10, -5, 5, -10, 10, -10, 5, -5, 2, -2]) == []
+    assert candidate(asteroids = [-10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60]) == [-10]
+    assert candidate(asteroids = [100, -50, 50, -100, 200, -200, 300, -300, 400, -400]) == []
+    assert candidate(asteroids = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1]) == []
+    assert candidate(asteroids = [1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9, -10, 10]) == [-2, -3, -4, -5, -6, -7, -8, -9, -10, 10]
+    assert candidate(asteroids = [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]) == [-10, -20, -30, -40, -50, 50, 40, 30, 20, 10]
+    assert candidate(asteroids = [100, 200, 300, 400, 500, -100, -200, -300, -400, -500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 600, 700, 800, 900, 1000]
+    assert candidate(asteroids = [10, 20, 30, 40, 50, -50, -40, -30, -20, -10]) == []
+    assert candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]
+    assert candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16]) == [-1, -3, -5, -7, -9, -11, -13, -15, 16]
+    assert candidate(asteroids = [5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5, 5, -5]) == []
+    assert candidate(asteroids = [10, -10, 5, 3, -3, -5, 8, 8, -8, 2, -2]) == [8]
+    assert candidate(asteroids = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150]) == [-20, -40, -60, -80, -100, -120, -140, 150]
+    assert candidate(asteroids = [1, 2, 3, -3, -2, -1, 4, 5, -5, -4]) == []
+    assert candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]) == [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1]
+    assert candidate(asteroids = [5, 10, 15, -10, 20, -15, -20, 25, -25, 30, -30, 35, -35]) == [5, 10, 15]
+    assert candidate(asteroids = [100, -50, 50, -25, 25, -10, 10, -5, 5, -2, 2, -1, 1]) == [100, 50, 25, 10, 5, 2, 1]
+    assert candidate(asteroids = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]) == [-1, -3, -5, -7, -9, 10]
+    assert candidate(asteroids = [100, -50, 20, -10, 5, -5, 10, -20, 30, -40]) == [100]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]) == [1, 2, 3, 4]
+    assert candidate(asteroids = [10, 20, 30, 40, 50, 60, 70, 80, 90, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == []
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    assert candidate(asteroids = [10, 20, 30, -15, -25, 5, 15, -5, -10, -20, 25, 35, -40, 40, -45, 45]) == [-40, -45, 45]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == []
+    assert candidate(asteroids = [10, 20, 30, 40, 50, -10, -20, -30, -40, -50]) == [10, 20, 30, 40]
+    assert candidate(asteroids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert candidate(asteroids = [50, -50, 49, -49, 48, -48, 47, -47, 46, -46, 45, -45, 44, -44, 43, -43]) == []
+    assert candidate(asteroids = [-100, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == [-100, 50]
+    assert candidate(asteroids = [-1, -2, -3, -4, -5, 5, 4, 3, 2, 1, -6, 6, -7, 7, -8, 8, -9, 9]) == [-1, -2, -3, -4, -5, -6, -7, -8, -9, 9]
+    assert candidate(asteroids = [5, 10, 15, -15, -10, -5, 20, -20, 25, -25, 30, -30]) == []
+    assert candidate(asteroids = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10]) == []
+    assert candidate(asteroids = [1, 1, 1, 1, 1, -1, -1, -1, -1, -1]) == []
+    assert candidate(asteroids = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -15]) == [-2, -4, -6, -8, -10, -12, -14]
+
+

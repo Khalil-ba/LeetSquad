@@ -1,0 +1,626 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 x.y.z', '2 y.z', '3 z']) == ['1 x.y.z', '3 y.z', '6 z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 x.y.z', '2 y.z', '3 z']) == ['1 x.y.z', '3 y.z', '6 z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 a.com', '2 b.a.com', '3 c.b.a.com']) == ['6 a.com', '6 com', '5 b.a.com', '3 c.b.a.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 a.com', '2 b.a.com', '3 c.b.a.com']) == ['6 a.com', '6 com', '5 b.a.com', '3 c.b.a.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 a.com', '2 a.b.com', '3 a.b.c.com']) == ['1 a.com', '6 com', '2 a.b.com', '2 b.com', '3 a.b.c.com', '3 b.c.com', '3 c.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 a.com', '2 a.b.com', '3 a.b.c.com']) == ['1 a.com', '6 com', '2 a.b.com', '2 b.com', '3 a.b.c.com', '3 b.c.com', '3 c.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['500 blog.example.co', '200 news.example.co', '100 example.co']) == ['500 blog.example.co', '800 example.co', '800 co', '200 news.example.co']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['500 blog.example.co', '200 news.example.co', '100 example.co']) == ['500 blog.example.co', '800 example.co', '800 co', '200 news.example.co']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['900 google.mail.com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org']) == ['900 google.mail.com', '901 mail.com', '951 com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org', '5 org']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['900 google.mail.com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org']) == ['900 google.mail.com', '901 mail.com', '951 com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org', '5 org']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['50 mail.google.com', '1 mail.yahoo.com', '5 mail.msn.com']) == ['50 mail.google.com', '50 google.com', '56 com', '1 mail.yahoo.com', '1 yahoo.com', '5 mail.msn.com', '5 msn.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['50 mail.google.com', '1 mail.yahoo.com', '5 mail.msn.com']) == ['50 mail.google.com', '50 google.com', '56 com', '1 mail.yahoo.com', '1 yahoo.com', '5 mail.msn.com', '5 msn.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['9001 discuss.leetcode.com']) == ['9001 discuss.leetcode.com', '9001 leetcode.com', '9001 com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['9001 discuss.leetcode.com']) == ['9001 discuss.leetcode.com', '9001 leetcode.com', '9001 com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 example.com', '5 example.co.uk', '3 sub.example.co.uk']) == ['10 example.com', '10 com', '8 example.co.uk', '8 co.uk', '8 uk', '3 sub.example.co.uk']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 example.com', '5 example.co.uk', '3 sub.example.co.uk']) == ['10 example.com', '10 com', '8 example.co.uk', '8 co.uk', '8 uk', '3 sub.example.co.uk']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 x.y.z', '20 w.x.y.z', '30 v.w.x.y.z']) == ['150 x.y.z', '150 y.z', '150 z', '50 w.x.y.z', '30 v.w.x.y.z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 x.y.z', '20 w.x.y.z', '30 v.w.x.y.z']) == ['150 x.y.z', '150 y.z', '150 z', '50 w.x.y.z', '30 v.w.x.y.z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 example.com', '2 sub.example.com', '3 sub.sub.example.com']) == ['6 example.com', '6 com', '5 sub.example.com', '3 sub.sub.example.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 example.com', '2 sub.example.com', '3 sub.sub.example.com']) == ['6 example.com', '6 com', '5 sub.example.com', '3 sub.sub.example.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com']) == ['1500 main.domain.com', '1700 domain.com', '1700 com', '500 sub.main.domain.com', '200 sub.domain.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com']) == ['1500 main.domain.com', '1700 domain.com', '1700 com', '500 sub.main.domain.com', '200 sub.domain.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 a.com', '50 b.a.com', '25 c.b.a.com']) == ['175 a.com', '175 com', '75 b.a.com', '25 c.b.a.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 a.com', '50 b.a.com', '25 c.b.a.com']) == ['175 a.com', '175 com', '75 b.a.com', '25 c.b.a.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 example.com', '5 sub.example.com', '3 subsub.example.com']) == ['18 example.com', '18 com', '5 sub.example.com', '3 subsub.example.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 example.com', '5 sub.example.com', '3 subsub.example.com']) == ['18 example.com', '18 com', '5 sub.example.com', '3 subsub.example.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['700 tech.forum.net', '800 tech.net', '900 forum.net', '1000 net', '500 tech.forum.forge.net', '300 forum.forge.net', '200 forge.net']) == ['700 tech.forum.net', '1600 forum.net', '4400 net', '800 tech.net', '500 tech.forum.forge.net', '800 forum.forge.net', '1000 forge.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['700 tech.forum.net', '800 tech.net', '900 forum.net', '1000 net', '500 tech.forum.forge.net', '300 forum.forge.net', '200 forge.net']) == ['700 tech.forum.net', '1600 forum.net', '4400 net', '800 tech.net', '500 tech.forum.forge.net', '800 forum.forge.net', '1000 forge.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['300 deep.subdomain.example.com', '200 subdomain.example.com', '100 example.com', '150 another.subdomain.example.com', '50 yet.another.example.com']) == ['300 deep.subdomain.example.com', '650 subdomain.example.com', '800 example.com', '800 com', '150 another.subdomain.example.com', '50 yet.another.example.com', '50 another.example.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['300 deep.subdomain.example.com', '200 subdomain.example.com', '100 example.com', '150 another.subdomain.example.com', '50 yet.another.example.com']) == ['300 deep.subdomain.example.com', '650 subdomain.example.com', '800 example.com', '800 com', '150 another.subdomain.example.com', '50 yet.another.example.com', '50 another.example.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['3000 complex.sub.domain.com', '2000 sub.domain.com', '1000 domain.com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com']) == ['3000 complex.sub.domain.com', '5600 sub.domain.com', '6600 domain.com', '6600 com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com', '100 sub.sub.domain.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['3000 complex.sub.domain.com', '2000 sub.domain.com', '1000 domain.com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com']) == ['3000 complex.sub.domain.com', '5600 sub.domain.com', '6600 domain.com', '6600 com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com', '100 sub.sub.domain.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['300 www.example.co.uk', '200 mail.example.co.uk', '150 blog.example.co.uk', '100 co.uk']) == ['300 www.example.co.uk', '650 example.co.uk', '750 co.uk', '750 uk', '200 mail.example.co.uk', '150 blog.example.co.uk']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['300 www.example.co.uk', '200 mail.example.co.uk', '150 blog.example.co.uk', '100 co.uk']) == ['300 www.example.co.uk', '650 example.co.uk', '750 co.uk', '750 uk', '200 mail.example.co.uk', '150 blog.example.co.uk']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['600 alpha.beta.gamma.delta.com', '500 beta.gamma.delta.com', '400 gamma.delta.com', '300 delta.com', '200 alpha.com', '100 com']) == ['600 alpha.beta.gamma.delta.com', '1100 beta.gamma.delta.com', '1500 gamma.delta.com', '1800 delta.com', '2100 com', '200 alpha.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['600 alpha.beta.gamma.delta.com', '500 beta.gamma.delta.com', '400 gamma.delta.com', '300 delta.com', '200 alpha.com', '100 com']) == ['600 alpha.beta.gamma.delta.com', '1100 beta.gamma.delta.com', '1500 gamma.delta.com', '1800 delta.com', '2100 com', '200 alpha.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 x.y.z.com', '500 y.z.com', '250 z.com', '150 a.b.y.z.com', '100 b.y.z.com', '75 y.z.com', '60 z.com', '40 w.x.y.z.com']) == ['1040 x.y.z.com', '1865 y.z.com', '2175 z.com', '2175 com', '150 a.b.y.z.com', '250 b.y.z.com', '40 w.x.y.z.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 x.y.z.com', '500 y.z.com', '250 z.com', '150 a.b.y.z.com', '100 b.y.z.com', '75 y.z.com', '60 z.com', '40 w.x.y.z.com']) == ['1040 x.y.z.com', '1865 y.z.com', '2175 z.com', '2175 com', '150 a.b.y.z.com', '250 b.y.z.com', '40 w.x.y.z.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 one.two.three.four.com', '200 two.three.four.com', '150 three.four.com', '100 four.com', '75 one.two.four.com', '50 two.four.com', '40 four.com', '25 one.two.three.com', '100 two.three.com', '60 three.com', '35 com']) == ['100 one.two.three.four.com', '300 two.three.four.com', '450 three.four.com', '715 four.com', '935 com', '75 one.two.four.com', '125 two.four.com', '25 one.two.three.com', '125 two.three.com', '185 three.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 one.two.three.four.com', '200 two.three.four.com', '150 three.four.com', '100 four.com', '75 one.two.four.com', '50 two.four.com', '40 four.com', '25 one.two.three.com', '100 two.three.com', '60 three.com', '35 com']) == ['100 one.two.three.four.com', '300 two.three.four.com', '450 three.four.com', '715 four.com', '935 com', '75 one.two.four.com', '125 two.four.com', '25 one.two.three.com', '125 two.three.com', '185 three.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 co.uk', '20 uk', '30 com', '40 google.com', '50 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '100 uk', '200 blog.uk', '300 news.uk', '400 mail.uk']) == ['270 co.uk', '1380 uk', '70 com', '40 google.com', '260 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '200 blog.uk', '300 news.uk', '400 mail.uk']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 co.uk', '20 uk', '30 com', '40 google.com', '50 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '100 uk', '200 blog.uk', '300 news.uk', '400 mail.uk']) == ['270 co.uk', '1380 uk', '70 com', '40 google.com', '260 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '200 blog.uk', '300 news.uk', '400 mail.uk']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 example1.com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']) == ['100 example1.com', '5500 com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 example1.com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']) == ['100 example1.com', '5500 com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 main.homepage.net', '2000 sub.main.homepage.net', '300 sub.homepage.net', '150 homepage.net', '500 main.net', '100 net', '250 sub.sub.main.homepage.net']) == ['3250 main.homepage.net', '3700 homepage.net', '4300 net', '2250 sub.main.homepage.net', '300 sub.homepage.net', '500 main.net', '250 sub.sub.main.homepage.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 main.homepage.net', '2000 sub.main.homepage.net', '300 sub.homepage.net', '150 homepage.net', '500 main.net', '100 net', '250 sub.sub.main.homepage.net']) == ['3250 main.homepage.net', '3700 homepage.net', '4300 net', '2250 sub.main.homepage.net', '300 sub.homepage.net', '500 main.net', '250 sub.sub.main.homepage.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1200 verydeep.subdomain.example.com', '300 deep.subdomain.example.com', '400 subdomain.example.com', '100 example.com']) == ['1200 verydeep.subdomain.example.com', '1900 subdomain.example.com', '2000 example.com', '2000 com', '300 deep.subdomain.example.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1200 verydeep.subdomain.example.com', '300 deep.subdomain.example.com', '400 subdomain.example.com', '100 example.com']) == ['1200 verydeep.subdomain.example.com', '1900 subdomain.example.com', '2000 example.com', '2000 com', '300 deep.subdomain.example.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['800 blog.medium.com', '200 tech.medium.com', '300 news.medium.com', '100 medium.com', '500 articles.blog.medium.com']) == ['1300 blog.medium.com', '1900 medium.com', '1900 com', '200 tech.medium.com', '300 news.medium.com', '500 articles.blog.medium.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['800 blog.medium.com', '200 tech.medium.com', '300 news.medium.com', '100 medium.com', '500 articles.blog.medium.com']) == ['1300 blog.medium.com', '1900 medium.com', '1900 com', '200 tech.medium.com', '300 news.medium.com', '500 articles.blog.medium.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 main.site.org', '500 sub1.main.site.org', '200 sub2.main.site.org', '100 site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']) == ['1775 main.site.org', '1875 site.org', '1875 org', '575 sub1.main.site.org', '200 sub2.main.site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 main.site.org', '500 sub1.main.site.org', '200 sub2.main.site.org', '100 site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']) == ['1775 main.site.org', '1875 site.org', '1875 org', '575 sub1.main.site.org', '200 sub2.main.site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10000 top.level.domain.io', '9000 level.domain.io', '8000 domain.io', '7000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']) == ['16000 top.level.domain.io', '30000 level.domain.io', '42000 domain.io', '52000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10000 top.level.domain.io', '9000 level.domain.io', '8000 domain.io', '7000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']) == ['16000 top.level.domain.io', '30000 level.domain.io', '42000 domain.io', '52000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['500 support.microsoft.com', '300 download.microsoft.com', '200 services.microsoft.com', '100 microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']) == ['500 support.microsoft.com', '1650 microsoft.com', '1650 com', '300 download.microsoft.com', '200 services.microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['500 support.microsoft.com', '300 download.microsoft.com', '200 services.microsoft.com', '100 microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']) == ['500 support.microsoft.com', '1650 microsoft.com', '1650 com', '300 download.microsoft.com', '200 services.microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 forum.discussion.community.org', '50 news.discussion.community.org', '200 discussion.community.org', '100 community.org', '50 org', '300 updates.discussion.community.org']) == ['100 forum.discussion.community.org', '650 discussion.community.org', '750 community.org', '800 org', '50 news.discussion.community.org', '300 updates.discussion.community.org']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 forum.discussion.community.org', '50 news.discussion.community.org', '200 discussion.community.org', '100 community.org', '50 org', '300 updates.discussion.community.org']) == ['100 forum.discussion.community.org', '650 discussion.community.org', '750 community.org', '800 org', '50 news.discussion.community.org', '300 updates.discussion.community.org']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['150 mail.google.com', '50 docs.google.com', '200 accounts.google.com', '100 google.com', '300 app.mail.google.com']) == ['450 mail.google.com', '800 google.com', '800 com', '50 docs.google.com', '200 accounts.google.com', '300 app.mail.google.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['150 mail.google.com', '50 docs.google.com', '200 accounts.google.com', '100 google.com', '300 app.mail.google.com']) == ['450 mail.google.com', '800 google.com', '800 com', '50 docs.google.com', '200 accounts.google.com', '300 app.mail.google.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10000 main.prod.env.com', '5000 sub.main.prod.env.com', '2500 service.sub.main.prod.env.com', '1250 prod.env.com', '625 env.com', '312 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']) == ['17968 main.prod.env.com', '19218 prod.env.com', '19843 env.com', '19843 com', '7968 sub.main.prod.env.com', '2968 service.sub.main.prod.env.com', '468 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10000 main.prod.env.com', '5000 sub.main.prod.env.com', '2500 service.sub.main.prod.env.com', '1250 prod.env.com', '625 env.com', '312 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']) == ['17968 main.prod.env.com', '19218 prod.env.com', '19843 env.com', '19843 com', '7968 sub.main.prod.env.com', '2968 service.sub.main.prod.env.com', '468 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 abc.def.ghi', '2 abc.def', '3 def', '4 ghi', '5 abc', '6 abc.def.ghi.jkl', '7 def.ghi.jkl', '8 ghi.jkl', '9 jkl']) == ['1 abc.def.ghi', '1 def.ghi', '5 ghi', '2 abc.def', '5 def', '5 abc', '6 abc.def.ghi.jkl', '13 def.ghi.jkl', '21 ghi.jkl', '30 jkl']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 abc.def.ghi', '2 abc.def', '3 def', '4 ghi', '5 abc', '6 abc.def.ghi.jkl', '7 def.ghi.jkl', '8 ghi.jkl', '9 jkl']) == ['1 abc.def.ghi', '1 def.ghi', '5 ghi', '2 abc.def', '5 def', '5 abc', '6 abc.def.ghi.jkl', '13 def.ghi.jkl', '21 ghi.jkl', '30 jkl']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10000 main.example.com', '3000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '1500 sub.example.com', '1000 another.sub.example.com']) == ['15000 main.example.com', '17500 example.com', '17500 com', '5000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '2500 sub.example.com', '1000 another.sub.example.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10000 main.example.com', '3000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '1500 sub.example.com', '1000 another.sub.example.com']) == ['15000 main.example.com', '17500 example.com', '17500 com', '5000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '2500 sub.example.com', '1000 another.sub.example.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 company.corp.local', '200 it.corp.local', '300 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']) == ['100 company.corp.local', '3600 corp.local', '3600 local', '1700 it.corp.local', '1800 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 company.corp.local', '200 it.corp.local', '300 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']) == ['100 company.corp.local', '3600 corp.local', '3600 local', '1700 it.corp.local', '1800 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 a.b.c.d.e.com', '500 f.g.c.d.e.com', '250 g.c.d.e.com', '125 c.d.e.com', '60 d.e.com', '30 e.com']) == ['1000 a.b.c.d.e.com', '1000 b.c.d.e.com', '1875 c.d.e.com', '1935 d.e.com', '1965 e.com', '1965 com', '500 f.g.c.d.e.com', '750 g.c.d.e.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 a.b.c.d.e.com', '500 f.g.c.d.e.com', '250 g.c.d.e.com', '125 c.d.e.com', '60 d.e.com', '30 e.com']) == ['1000 a.b.c.d.e.com', '1000 b.c.d.e.com', '1875 c.d.e.com', '1935 d.e.com', '1965 e.com', '1965 com', '500 f.g.c.d.e.com', '750 g.c.d.e.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 abc.com', '2 xyz.abc.com', '3 def.abc.com', '4 ghi.def.abc.com', '5 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']) == ['21 abc.com', '21 com', '2 xyz.abc.com', '18 def.abc.com', '15 ghi.def.abc.com', '11 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 abc.com', '2 xyz.abc.com', '3 def.abc.com', '4 ghi.def.abc.com', '5 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']) == ['21 abc.com', '21 com', '2 xyz.abc.com', '18 def.abc.com', '15 ghi.def.abc.com', '11 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1500 tech.gaming.website.com', '300 mobile.gaming.website.com', '200 gaming.website.com', '1000 website.com']) == ['1500 tech.gaming.website.com', '2000 gaming.website.com', '3000 website.com', '3000 com', '300 mobile.gaming.website.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1500 tech.gaming.website.com', '300 mobile.gaming.website.com', '200 gaming.website.com', '1000 website.com']) == ['1500 tech.gaming.website.com', '2000 gaming.website.com', '3000 website.com', '3000 com', '300 mobile.gaming.website.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['150 tech.productivitytools.io', '250 productivitytools.io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io', '100 io']) == ['150 tech.productivitytools.io', '1300 productivitytools.io', '1400 io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['150 tech.productivitytools.io', '250 productivitytools.io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io', '100 io']) == ['150 tech.productivitytools.io', '1300 productivitytools.io', '1400 io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1500 forum.discussion.web', '2500 chat.forum.discussion.web', '1000 support.web', '500 help.support.web', '2000 help.web', '800 forum.web', '1200 web']) == ['4000 forum.discussion.web', '4000 discussion.web', '9500 web', '2500 chat.forum.discussion.web', '1500 support.web', '500 help.support.web', '2000 help.web', '800 forum.web']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1500 forum.discussion.web', '2500 chat.forum.discussion.web', '1000 support.web', '500 help.support.web', '2000 help.web', '800 forum.web', '1200 web']) == ['4000 forum.discussion.web', '4000 discussion.web', '9500 web', '2500 chat.forum.discussion.web', '1500 support.web', '500 help.support.web', '2000 help.web', '800 forum.web']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['200 admin.internal.server.net', '150 db.internal.server.net', '100 internal.server.net', '50 server.net', '25 net']) == ['200 admin.internal.server.net', '450 internal.server.net', '500 server.net', '525 net', '150 db.internal.server.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['200 admin.internal.server.net', '150 db.internal.server.net', '100 internal.server.net', '50 server.net', '25 net']) == ['200 admin.internal.server.net', '450 internal.server.net', '500 server.net', '525 net', '150 db.internal.server.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['100 abc.def.com', '200 def.com', '300 ghi.jkl.com', '400 jkl.com', '500 mno.pqr.com', '600 pqr.com']) == ['100 abc.def.com', '300 def.com', '2100 com', '300 ghi.jkl.com', '700 jkl.com', '500 mno.pqr.com', '1100 pqr.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['100 abc.def.com', '200 def.com', '300 ghi.jkl.com', '400 jkl.com', '500 mno.pqr.com', '600 pqr.com']) == ['100 abc.def.com', '300 def.com', '2100 com', '300 ghi.jkl.com', '700 jkl.com', '500 mno.pqr.com', '1100 pqr.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com']) == ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 o.p.q.r.s.t.u.v.w.x.y.z.com', '1 p.q.r.s.t.u.v.w.x.y.z.com', '1 q.r.s.t.u.v.w.x.y.z.com', '1 r.s.t.u.v.w.x.y.z.com', '1 s.t.u.v.w.x.y.z.com', '1 t.u.v.w.x.y.z.com', '1 u.v.w.x.y.z.com', '1 v.w.x.y.z.com', '1 w.x.y.z.com', '1 x.y.z.com', '1 y.z.com', '1 z.com', '6 com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 n.o.p.q.r.s.t.u.v.w.x.y.com', '2 o.p.q.r.s.t.u.v.w.x.y.com', '2 p.q.r.s.t.u.v.w.x.y.com', '2 q.r.s.t.u.v.w.x.y.com', '2 r.s.t.u.v.w.x.y.com', '2 s.t.u.v.w.x.y.com', '2 t.u.v.w.x.y.com', '2 u.v.w.x.y.com', '2 v.w.x.y.com', '2 w.x.y.com', '2 x.y.com', '2 y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 m.n.o.p.q.r.s.t.u.v.w.x.com', '3 n.o.p.q.r.s.t.u.v.w.x.com', '3 o.p.q.r.s.t.u.v.w.x.com', '3 p.q.r.s.t.u.v.w.x.com', '3 q.r.s.t.u.v.w.x.com', '3 r.s.t.u.v.w.x.com', '3 s.t.u.v.w.x.com', '3 t.u.v.w.x.com', '3 u.v.w.x.com', '3 v.w.x.com', '3 w.x.com', '3 x.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com']) == ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 o.p.q.r.s.t.u.v.w.x.y.z.com', '1 p.q.r.s.t.u.v.w.x.y.z.com', '1 q.r.s.t.u.v.w.x.y.z.com', '1 r.s.t.u.v.w.x.y.z.com', '1 s.t.u.v.w.x.y.z.com', '1 t.u.v.w.x.y.z.com', '1 u.v.w.x.y.z.com', '1 v.w.x.y.z.com', '1 w.x.y.z.com', '1 x.y.z.com', '1 y.z.com', '1 z.com', '6 com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 n.o.p.q.r.s.t.u.v.w.x.y.com', '2 o.p.q.r.s.t.u.v.w.x.y.com', '2 p.q.r.s.t.u.v.w.x.y.com', '2 q.r.s.t.u.v.w.x.y.com', '2 r.s.t.u.v.w.x.y.com', '2 s.t.u.v.w.x.y.com', '2 t.u.v.w.x.y.com', '2 u.v.w.x.y.com', '2 v.w.x.y.com', '2 w.x.y.com', '2 x.y.com', '2 y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 m.n.o.p.q.r.s.t.u.v.w.x.com', '3 n.o.p.q.r.s.t.u.v.w.x.com', '3 o.p.q.r.s.t.u.v.w.x.com', '3 p.q.r.s.t.u.v.w.x.com', '3 q.r.s.t.u.v.w.x.com', '3 r.s.t.u.v.w.x.com', '3 s.t.u.v.w.x.com', '3 t.u.v.w.x.com', '3 u.v.w.x.com', '3 v.w.x.com', '3 w.x.com', '3 x.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 blog.devsite.co.uk', '2000 devsite.co.uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk', '100 co.uk']) == ['1150 blog.devsite.co.uk', '3450 devsite.co.uk', '4050 co.uk', '4050 uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 blog.devsite.co.uk', '2000 devsite.co.uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk', '100 co.uk']) == ['1150 blog.devsite.co.uk', '3450 devsite.co.uk', '4050 co.uk', '4050 uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1 example.net', '2 sub1.example.net', '3 sub2.sub1.example.net', '4 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']) == ['15 example.net', '15 net', '14 sub1.example.net', '12 sub2.sub1.example.net', '9 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1 example.net', '2 sub1.example.net', '3 sub2.sub1.example.net', '4 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']) == ['15 example.net', '15 net', '14 sub1.example.net', '12 sub2.sub1.example.net', '9 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['150 a.b.com', '200 b.com', '100 a.c.com', '120 c.com', '80 a.b.c.com', '50 b.c.com', '30 c.com', '25 d.e.f.g.com']) == ['150 a.b.com', '350 b.com', '755 com', '100 a.c.com', '380 c.com', '80 a.b.c.com', '130 b.c.com', '25 d.e.f.g.com', '25 e.f.g.com', '25 f.g.com', '25 g.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['150 a.b.com', '200 b.com', '100 a.c.com', '120 c.com', '80 a.b.c.com', '50 b.c.com', '30 c.com', '25 d.e.f.g.com']) == ['150 a.b.com', '350 b.com', '755 com', '100 a.c.com', '380 c.com', '80 a.b.c.com', '130 b.c.com', '25 d.e.f.g.com', '25 e.f.g.com', '25 f.g.com', '25 g.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 tech.guru.experts.net', '20 experts.net', '30 guru.experts.net', '40 tech.net', '50 guru.net', '60 tech.guru.net', '70 guru.experts.net', '80 experts.tech.guru.net']) == ['10 tech.guru.experts.net', '110 guru.experts.net', '130 experts.net', '360 net', '40 tech.net', '190 guru.net', '140 tech.guru.net', '80 experts.tech.guru.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 tech.guru.experts.net', '20 experts.net', '30 guru.experts.net', '40 tech.net', '50 guru.net', '60 tech.guru.net', '70 guru.experts.net', '80 experts.tech.guru.net']) == ['10 tech.guru.experts.net', '110 guru.experts.net', '130 experts.net', '360 net', '40 tech.net', '190 guru.net', '140 tech.guru.net', '80 experts.tech.guru.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['300 tech.interview.prep.co', '200 coding.blog.tech.interview.prep.co', '100 interview.prep.co', '50 prep.co']) == ['500 tech.interview.prep.co', '600 interview.prep.co', '650 prep.co', '650 co', '200 coding.blog.tech.interview.prep.co', '200 blog.tech.interview.prep.co']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['300 tech.interview.prep.co', '200 coding.blog.tech.interview.prep.co', '100 interview.prep.co', '50 prep.co']) == ['500 tech.interview.prep.co', '600 interview.prep.co', '650 prep.co', '650 co', '200 coding.blog.tech.interview.prep.co', '200 blog.tech.interview.prep.co']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1234 main.site.org', '4321 sub.site.org', '1111 sub.sub.site.org', '2222 site.org']) == ['1234 main.site.org', '8888 site.org', '8888 org', '5432 sub.site.org', '1111 sub.sub.site.org']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1234 main.site.org', '4321 sub.site.org', '1111 sub.sub.site.org', '2222 site.org']) == ['1234 main.site.org', '8888 site.org', '8888 org', '5432 sub.site.org', '1111 sub.sub.site.org']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['12000 main.home.user.net', '6000 personal.main.home.user.net', '4000 work.home.user.net', '3000 personal.work.home.user.net', '2000 user.net', '1500 home.user.net', '1000 main.user.net']) == ['18000 main.home.user.net', '26500 home.user.net', '29500 user.net', '29500 net', '6000 personal.main.home.user.net', '7000 work.home.user.net', '3000 personal.work.home.user.net', '1000 main.user.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['12000 main.home.user.net', '6000 personal.main.home.user.net', '4000 work.home.user.net', '3000 personal.work.home.user.net', '2000 user.net', '1500 home.user.net', '1000 main.user.net']) == ['18000 main.home.user.net', '26500 home.user.net', '29500 user.net', '29500 net', '6000 personal.main.home.user.net', '7000 work.home.user.net', '3000 personal.work.home.user.net', '1000 main.user.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['9001 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '16 a.b.c.d.e.f.g.h.i.j.k', '17 a.b.c.d.e.f.g.h.i.j', '18 a.b.c.d.e.f.g.h.i', '19 a.b.c.d.e.f.g.h', '20 a.b.c.d.e.f.g']) == ['9002 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 o.p.q.r.s.t.u.v.w.x.y.z', '9002 p.q.r.s.t.u.v.w.x.y.z', '9002 q.r.s.t.u.v.w.x.y.z', '9002 r.s.t.u.v.w.x.y.z', '9002 s.t.u.v.w.x.y.z', '9002 t.u.v.w.x.y.z', '9002 u.v.w.x.y.z', '9002 v.w.x.y.z', '9002 w.x.y.z', '9002 x.y.z', '9002 y.z', '9002 z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 m.n.o.p.q.r.s.t.u.v.w.x.y', '2 n.o.p.q.r.s.t.u.v.w.x.y', '2 o.p.q.r.s.t.u.v.w.x.y', '2 p.q.r.s.t.u.v.w.x.y', '2 q.r.s.t.u.v.w.x.y', '2 r.s.t.u.v.w.x.y', '2 s.t.u.v.w.x.y', '2 t.u.v.w.x.y', '2 u.v.w.x.y', '2 v.w.x.y', '2 w.x.y', '2 x.y', '2 y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 l.m.n.o.p.q.r.s.t.u.v.w.x', '3 m.n.o.p.q.r.s.t.u.v.w.x', '3 n.o.p.q.r.s.t.u.v.w.x', '3 o.p.q.r.s.t.u.v.w.x', '3 p.q.r.s.t.u.v.w.x', '3 q.r.s.t.u.v.w.x', '3 r.s.t.u.v.w.x', '3 s.t.u.v.w.x', '3 t.u.v.w.x', '3 u.v.w.x', '3 v.w.x', '3 w.x', '3 x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 k.l.m.n.o.p.q.r.s.t.u.v.w', '4 l.m.n.o.p.q.r.s.t.u.v.w', '4 m.n.o.p.q.r.s.t.u.v.w', '4 n.o.p.q.r.s.t.u.v.w', '4 o.p.q.r.s.t.u.v.w', '4 p.q.r.s.t.u.v.w', '4 q.r.s.t.u.v.w', '4 r.s.t.u.v.w', '4 s.t.u.v.w', '4 t.u.v.w', '4 u.v.w', '4 v.w', '4 w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 j.k.l.m.n.o.p.q.r.s.t.u.v', '5 k.l.m.n.o.p.q.r.s.t.u.v', '5 l.m.n.o.p.q.r.s.t.u.v', '5 m.n.o.p.q.r.s.t.u.v', '5 n.o.p.q.r.s.t.u.v', '5 o.p.q.r.s.t.u.v', '5 p.q.r.s.t.u.v', '5 q.r.s.t.u.v', '5 r.s.t.u.v', '5 s.t.u.v', '5 t.u.v', '5 u.v', '5 v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 i.j.k.l.m.n.o.p.q.r.s.t.u', '6 j.k.l.m.n.o.p.q.r.s.t.u', '6 k.l.m.n.o.p.q.r.s.t.u', '6 l.m.n.o.p.q.r.s.t.u', '6 m.n.o.p.q.r.s.t.u', '6 n.o.p.q.r.s.t.u', '6 o.p.q.r.s.t.u', '6 p.q.r.s.t.u', '6 q.r.s.t.u', '6 r.s.t.u', '6 s.t.u', '6 t.u', '6 u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 h.i.j.k.l.m.n.o.p.q.r.s.t', '7 i.j.k.l.m.n.o.p.q.r.s.t', '7 j.k.l.m.n.o.p.q.r.s.t', '7 k.l.m.n.o.p.q.r.s.t', '7 l.m.n.o.p.q.r.s.t', '7 m.n.o.p.q.r.s.t', '7 n.o.p.q.r.s.t', '7 o.p.q.r.s.t', '7 p.q.r.s.t', '7 q.r.s.t', '7 r.s.t', '7 s.t', '7 t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 g.h.i.j.k.l.m.n.o.p.q.r.s', '8 h.i.j.k.l.m.n.o.p.q.r.s', '8 i.j.k.l.m.n.o.p.q.r.s', '8 j.k.l.m.n.o.p.q.r.s', '8 k.l.m.n.o.p.q.r.s', '8 l.m.n.o.p.q.r.s', '8 m.n.o.p.q.r.s', '8 n.o.p.q.r.s', '8 o.p.q.r.s', '8 p.q.r.s', '8 q.r.s', '8 r.s', '8 s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 f.g.h.i.j.k.l.m.n.o.p.q.r', '9 g.h.i.j.k.l.m.n.o.p.q.r', '9 h.i.j.k.l.m.n.o.p.q.r', '9 i.j.k.l.m.n.o.p.q.r', '9 j.k.l.m.n.o.p.q.r', '9 k.l.m.n.o.p.q.r', '9 l.m.n.o.p.q.r', '9 m.n.o.p.q.r', '9 n.o.p.q.r', '9 o.p.q.r', '9 p.q.r', '9 q.r', '9 r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 e.f.g.h.i.j.k.l.m.n.o.p.q', '10 f.g.h.i.j.k.l.m.n.o.p.q', '10 g.h.i.j.k.l.m.n.o.p.q', '10 h.i.j.k.l.m.n.o.p.q', '10 i.j.k.l.m.n.o.p.q', '10 j.k.l.m.n.o.p.q', '10 k.l.m.n.o.p.q', '10 l.m.n.o.p.q', '10 m.n.o.p.q', '10 n.o.p.q', '10 o.p.q', '10 p.q', '10 q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 d.e.f.g.h.i.j.k.l.m.n.o.p', '11 e.f.g.h.i.j.k.l.m.n.o.p', '11 f.g.h.i.j.k.l.m.n.o.p', '11 g.h.i.j.k.l.m.n.o.p', '11 h.i.j.k.l.m.n.o.p', '11 i.j.k.l.m.n.o.p', '11 j.k.l.m.n.o.p', '11 k.l.m.n.o.p', '11 l.m.n.o.p', '11 m.n.o.p', '11 n.o.p', '11 o.p', '11 p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 c.d.e.f.g.h.i.j.k.l.m.n.o', '12 d.e.f.g.h.i.j.k.l.m.n.o', '12 e.f.g.h.i.j.k.l.m.n.o', '12 f.g.h.i.j.k.l.m.n.o', '12 g.h.i.j.k.l.m.n.o', '12 h.i.j.k.l.m.n.o', '12 i.j.k.l.m.n.o', '12 j.k.l.m.n.o', '12 k.l.m.n.o', '12 l.m.n.o', '12 m.n.o', '12 n.o', '12 o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '13 b.c.d.e.f.g.h.i.j.k.l.m.n', '13 c.d.e.f.g.h.i.j.k.l.m.n', '13 d.e.f.g.h.i.j.k.l.m.n', '13 e.f.g.h.i.j.k.l.m.n', '13 f.g.h.i.j.k.l.m.n', '13 g.h.i.j.k.l.m.n', '13 h.i.j.k.l.m.n', '13 i.j.k.l.m.n', '13 j.k.l.m.n', '13 k.l.m.n', '13 l.m.n', '13 m.n', '13 n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '14 b.c.d.e.f.g.h.i.j.k.l.m', '14 c.d.e.f.g.h.i.j.k.l.m', '14 d.e.f.g.h.i.j.k.l.m', '14 e.f.g.h.i.j.k.l.m', '14 f.g.h.i.j.k.l.m', '14 g.h.i.j.k.l.m', '14 h.i.j.k.l.m', '14 i.j.k.l.m', '14 j.k.l.m', '14 k.l.m', '14 l.m', '14 m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '15 b.c.d.e.f.g.h.i.j.k.l', '15 c.d.e.f.g.h.i.j.k.l', '15 d.e.f.g.h.i.j.k.l', '15 e.f.g.h.i.j.k.l', '15 f.g.h.i.j.k.l', '15 g.h.i.j.k.l', '15 h.i.j.k.l', '15 i.j.k.l', '15 j.k.l', '15 k.l', '15 l', '16 a.b.c.d.e.f.g.h.i.j.k', '16 b.c.d.e.f.g.h.i.j.k', '16 c.d.e.f.g.h.i.j.k', '16 d.e.f.g.h.i.j.k', '16 e.f.g.h.i.j.k', '16 f.g.h.i.j.k', '16 g.h.i.j.k', '16 h.i.j.k', '16 i.j.k', '16 j.k', '16 k', '17 a.b.c.d.e.f.g.h.i.j', '17 b.c.d.e.f.g.h.i.j', '17 c.d.e.f.g.h.i.j', '17 d.e.f.g.h.i.j', '17 e.f.g.h.i.j', '17 f.g.h.i.j', '17 g.h.i.j', '17 h.i.j', '17 i.j', '17 j', '18 a.b.c.d.e.f.g.h.i', '18 b.c.d.e.f.g.h.i', '18 c.d.e.f.g.h.i', '18 d.e.f.g.h.i', '18 e.f.g.h.i', '18 f.g.h.i', '18 g.h.i', '18 h.i', '18 i', '19 a.b.c.d.e.f.g.h', '19 b.c.d.e.f.g.h', '19 c.d.e.f.g.h', '19 d.e.f.g.h', '19 e.f.g.h', '19 f.g.h', '19 g.h', '19 h', '20 a.b.c.d.e.f.g', '20 b.c.d.e.f.g', '20 c.d.e.f.g', '20 d.e.f.g', '20 e.f.g', '20 f.g', '20 g']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['9001 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '16 a.b.c.d.e.f.g.h.i.j.k', '17 a.b.c.d.e.f.g.h.i.j', '18 a.b.c.d.e.f.g.h.i', '19 a.b.c.d.e.f.g.h', '20 a.b.c.d.e.f.g']) == ['9002 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 o.p.q.r.s.t.u.v.w.x.y.z', '9002 p.q.r.s.t.u.v.w.x.y.z', '9002 q.r.s.t.u.v.w.x.y.z', '9002 r.s.t.u.v.w.x.y.z', '9002 s.t.u.v.w.x.y.z', '9002 t.u.v.w.x.y.z', '9002 u.v.w.x.y.z', '9002 v.w.x.y.z', '9002 w.x.y.z', '9002 x.y.z', '9002 y.z', '9002 z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 m.n.o.p.q.r.s.t.u.v.w.x.y', '2 n.o.p.q.r.s.t.u.v.w.x.y', '2 o.p.q.r.s.t.u.v.w.x.y', '2 p.q.r.s.t.u.v.w.x.y', '2 q.r.s.t.u.v.w.x.y', '2 r.s.t.u.v.w.x.y', '2 s.t.u.v.w.x.y', '2 t.u.v.w.x.y', '2 u.v.w.x.y', '2 v.w.x.y', '2 w.x.y', '2 x.y', '2 y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 l.m.n.o.p.q.r.s.t.u.v.w.x', '3 m.n.o.p.q.r.s.t.u.v.w.x', '3 n.o.p.q.r.s.t.u.v.w.x', '3 o.p.q.r.s.t.u.v.w.x', '3 p.q.r.s.t.u.v.w.x', '3 q.r.s.t.u.v.w.x', '3 r.s.t.u.v.w.x', '3 s.t.u.v.w.x', '3 t.u.v.w.x', '3 u.v.w.x', '3 v.w.x', '3 w.x', '3 x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 k.l.m.n.o.p.q.r.s.t.u.v.w', '4 l.m.n.o.p.q.r.s.t.u.v.w', '4 m.n.o.p.q.r.s.t.u.v.w', '4 n.o.p.q.r.s.t.u.v.w', '4 o.p.q.r.s.t.u.v.w', '4 p.q.r.s.t.u.v.w', '4 q.r.s.t.u.v.w', '4 r.s.t.u.v.w', '4 s.t.u.v.w', '4 t.u.v.w', '4 u.v.w', '4 v.w', '4 w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 j.k.l.m.n.o.p.q.r.s.t.u.v', '5 k.l.m.n.o.p.q.r.s.t.u.v', '5 l.m.n.o.p.q.r.s.t.u.v', '5 m.n.o.p.q.r.s.t.u.v', '5 n.o.p.q.r.s.t.u.v', '5 o.p.q.r.s.t.u.v', '5 p.q.r.s.t.u.v', '5 q.r.s.t.u.v', '5 r.s.t.u.v', '5 s.t.u.v', '5 t.u.v', '5 u.v', '5 v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 i.j.k.l.m.n.o.p.q.r.s.t.u', '6 j.k.l.m.n.o.p.q.r.s.t.u', '6 k.l.m.n.o.p.q.r.s.t.u', '6 l.m.n.o.p.q.r.s.t.u', '6 m.n.o.p.q.r.s.t.u', '6 n.o.p.q.r.s.t.u', '6 o.p.q.r.s.t.u', '6 p.q.r.s.t.u', '6 q.r.s.t.u', '6 r.s.t.u', '6 s.t.u', '6 t.u', '6 u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 h.i.j.k.l.m.n.o.p.q.r.s.t', '7 i.j.k.l.m.n.o.p.q.r.s.t', '7 j.k.l.m.n.o.p.q.r.s.t', '7 k.l.m.n.o.p.q.r.s.t', '7 l.m.n.o.p.q.r.s.t', '7 m.n.o.p.q.r.s.t', '7 n.o.p.q.r.s.t', '7 o.p.q.r.s.t', '7 p.q.r.s.t', '7 q.r.s.t', '7 r.s.t', '7 s.t', '7 t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 g.h.i.j.k.l.m.n.o.p.q.r.s', '8 h.i.j.k.l.m.n.o.p.q.r.s', '8 i.j.k.l.m.n.o.p.q.r.s', '8 j.k.l.m.n.o.p.q.r.s', '8 k.l.m.n.o.p.q.r.s', '8 l.m.n.o.p.q.r.s', '8 m.n.o.p.q.r.s', '8 n.o.p.q.r.s', '8 o.p.q.r.s', '8 p.q.r.s', '8 q.r.s', '8 r.s', '8 s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 f.g.h.i.j.k.l.m.n.o.p.q.r', '9 g.h.i.j.k.l.m.n.o.p.q.r', '9 h.i.j.k.l.m.n.o.p.q.r', '9 i.j.k.l.m.n.o.p.q.r', '9 j.k.l.m.n.o.p.q.r', '9 k.l.m.n.o.p.q.r', '9 l.m.n.o.p.q.r', '9 m.n.o.p.q.r', '9 n.o.p.q.r', '9 o.p.q.r', '9 p.q.r', '9 q.r', '9 r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 e.f.g.h.i.j.k.l.m.n.o.p.q', '10 f.g.h.i.j.k.l.m.n.o.p.q', '10 g.h.i.j.k.l.m.n.o.p.q', '10 h.i.j.k.l.m.n.o.p.q', '10 i.j.k.l.m.n.o.p.q', '10 j.k.l.m.n.o.p.q', '10 k.l.m.n.o.p.q', '10 l.m.n.o.p.q', '10 m.n.o.p.q', '10 n.o.p.q', '10 o.p.q', '10 p.q', '10 q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 d.e.f.g.h.i.j.k.l.m.n.o.p', '11 e.f.g.h.i.j.k.l.m.n.o.p', '11 f.g.h.i.j.k.l.m.n.o.p', '11 g.h.i.j.k.l.m.n.o.p', '11 h.i.j.k.l.m.n.o.p', '11 i.j.k.l.m.n.o.p', '11 j.k.l.m.n.o.p', '11 k.l.m.n.o.p', '11 l.m.n.o.p', '11 m.n.o.p', '11 n.o.p', '11 o.p', '11 p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 c.d.e.f.g.h.i.j.k.l.m.n.o', '12 d.e.f.g.h.i.j.k.l.m.n.o', '12 e.f.g.h.i.j.k.l.m.n.o', '12 f.g.h.i.j.k.l.m.n.o', '12 g.h.i.j.k.l.m.n.o', '12 h.i.j.k.l.m.n.o', '12 i.j.k.l.m.n.o', '12 j.k.l.m.n.o', '12 k.l.m.n.o', '12 l.m.n.o', '12 m.n.o', '12 n.o', '12 o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '13 b.c.d.e.f.g.h.i.j.k.l.m.n', '13 c.d.e.f.g.h.i.j.k.l.m.n', '13 d.e.f.g.h.i.j.k.l.m.n', '13 e.f.g.h.i.j.k.l.m.n', '13 f.g.h.i.j.k.l.m.n', '13 g.h.i.j.k.l.m.n', '13 h.i.j.k.l.m.n', '13 i.j.k.l.m.n', '13 j.k.l.m.n', '13 k.l.m.n', '13 l.m.n', '13 m.n', '13 n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '14 b.c.d.e.f.g.h.i.j.k.l.m', '14 c.d.e.f.g.h.i.j.k.l.m', '14 d.e.f.g.h.i.j.k.l.m', '14 e.f.g.h.i.j.k.l.m', '14 f.g.h.i.j.k.l.m', '14 g.h.i.j.k.l.m', '14 h.i.j.k.l.m', '14 i.j.k.l.m', '14 j.k.l.m', '14 k.l.m', '14 l.m', '14 m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '15 b.c.d.e.f.g.h.i.j.k.l', '15 c.d.e.f.g.h.i.j.k.l', '15 d.e.f.g.h.i.j.k.l', '15 e.f.g.h.i.j.k.l', '15 f.g.h.i.j.k.l', '15 g.h.i.j.k.l', '15 h.i.j.k.l', '15 i.j.k.l', '15 j.k.l', '15 k.l', '15 l', '16 a.b.c.d.e.f.g.h.i.j.k', '16 b.c.d.e.f.g.h.i.j.k', '16 c.d.e.f.g.h.i.j.k', '16 d.e.f.g.h.i.j.k', '16 e.f.g.h.i.j.k', '16 f.g.h.i.j.k', '16 g.h.i.j.k', '16 h.i.j.k', '16 i.j.k', '16 j.k', '16 k', '17 a.b.c.d.e.f.g.h.i.j', '17 b.c.d.e.f.g.h.i.j', '17 c.d.e.f.g.h.i.j', '17 d.e.f.g.h.i.j', '17 e.f.g.h.i.j', '17 f.g.h.i.j', '17 g.h.i.j', '17 h.i.j', '17 i.j', '17 j', '18 a.b.c.d.e.f.g.h.i', '18 b.c.d.e.f.g.h.i', '18 c.d.e.f.g.h.i', '18 d.e.f.g.h.i', '18 e.f.g.h.i', '18 f.g.h.i', '18 g.h.i', '18 h.i', '18 i', '19 a.b.c.d.e.f.g.h', '19 b.c.d.e.f.g.h', '19 c.d.e.f.g.h', '19 d.e.f.g.h', '19 e.f.g.h', '19 f.g.h', '19 g.h', '19 h', '20 a.b.c.d.e.f.g', '20 b.c.d.e.f.g', '20 c.d.e.f.g', '20 d.e.f.g', '20 e.f.g', '20 f.g', '20 g']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['75 blog.health.com', '25 news.health.com', '50 health.com', '1000 medicine.com', '500 health.medicine.com']) == ['75 blog.health.com', '150 health.com', '1650 com', '25 news.health.com', '1500 medicine.com', '500 health.medicine.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['75 blog.health.com', '25 news.health.com', '50 health.com', '1000 medicine.com', '500 health.medicine.com']) == ['75 blog.health.com', '150 health.com', '1650 com', '25 news.health.com', '1500 medicine.com', '500 health.medicine.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a']) == ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 o.p.q.r.s.t.u.v.w.x.y.z', '1234 p.q.r.s.t.u.v.w.x.y.z', '1234 q.r.s.t.u.v.w.x.y.z', '1234 r.s.t.u.v.w.x.y.z', '1234 s.t.u.v.w.x.y.z', '1234 t.u.v.w.x.y.z', '1234 u.v.w.x.y.z', '1234 v.w.x.y.z', '1234 w.x.y.z', '1234 x.y.z', '1234 y.z', '1234 z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 l.k.j.i.h.g.f.e.d.c.b.a', '5678 k.j.i.h.g.f.e.d.c.b.a', '5678 j.i.h.g.f.e.d.c.b.a', '5678 i.h.g.f.e.d.c.b.a', '5678 h.g.f.e.d.c.b.a', '5678 g.f.e.d.c.b.a', '5678 f.e.d.c.b.a', '5678 e.d.c.b.a', '5678 d.c.b.a', '5678 c.b.a', '5678 b.a', '5678 a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a']) == ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 o.p.q.r.s.t.u.v.w.x.y.z', '1234 p.q.r.s.t.u.v.w.x.y.z', '1234 q.r.s.t.u.v.w.x.y.z', '1234 r.s.t.u.v.w.x.y.z', '1234 s.t.u.v.w.x.y.z', '1234 t.u.v.w.x.y.z', '1234 u.v.w.x.y.z', '1234 v.w.x.y.z', '1234 w.x.y.z', '1234 x.y.z', '1234 y.z', '1234 z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 l.k.j.i.h.g.f.e.d.c.b.a', '5678 k.j.i.h.g.f.e.d.c.b.a', '5678 j.i.h.g.f.e.d.c.b.a', '5678 i.h.g.f.e.d.c.b.a', '5678 h.g.f.e.d.c.b.a', '5678 g.f.e.d.c.b.a', '5678 f.e.d.c.b.a', '5678 e.d.c.b.a', '5678 d.c.b.a', '5678 c.b.a', '5678 b.a', '5678 a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['9000 market.shop.com', '4500 tech.shop.com', '2250 blog.shop.com', '1125 shop.com', '562 support.blog.shop.com', '281 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']) == ['9000 market.shop.com', '17858 shop.com', '17858 com', '4500 tech.shop.com', '3233 blog.shop.com', '983 support.blog.shop.com', '421 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['9000 market.shop.com', '4500 tech.shop.com', '2250 blog.shop.com', '1125 shop.com', '562 support.blog.shop.com', '281 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']) == ['9000 market.shop.com', '17858 shop.com', '17858 com', '4500 tech.shop.com', '3233 blog.shop.com', '983 support.blog.shop.com', '421 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 a.b.c.d.e', '500 f.g.h.i', '200 j.k.l', '300 m.n.o.p']) == ['1000 a.b.c.d.e', '1000 b.c.d.e', '1000 c.d.e', '1000 d.e', '1000 e', '500 f.g.h.i', '500 g.h.i', '500 h.i', '500 i', '200 j.k.l', '200 k.l', '200 l', '300 m.n.o.p', '300 n.o.p', '300 o.p', '300 p']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 a.b.c.d.e', '500 f.g.h.i', '200 j.k.l', '300 m.n.o.p']) == ['1000 a.b.c.d.e', '1000 b.c.d.e', '1000 c.d.e', '1000 d.e', '1000 e', '500 f.g.h.i', '500 g.h.i', '500 h.i', '500 i', '200 j.k.l', '200 k.l', '200 l', '300 m.n.o.p', '300 n.o.p', '300 o.p', '300 p']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 main.business.world.com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com', '4 business.world.com', '5 world.com']) == ['15 main.business.world.com', '19 business.world.com', '24 world.com', '24 com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 main.business.world.com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com', '4 business.world.com', '5 world.com']) == ['15 main.business.world.com', '19 business.world.com', '24 world.com', '24 com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['4000 blog.news.co', '1500 tech.blog.news.co', '1000 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']) == ['5500 blog.news.co', '7500 news.co', '9300 co', '1500 tech.blog.news.co', '1500 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['4000 blog.news.co', '1500 tech.blog.news.co', '1000 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']) == ['5500 blog.news.co', '7500 news.co', '9300 co', '1500 tech.blog.news.co', '1500 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['300 video.youtube.com', '200 music.youtube.com', '100 youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com', '50 com']) == ['300 video.youtube.com', '1300 youtube.com', '1450 com', '200 music.youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['300 video.youtube.com', '200 music.youtube.com', '100 youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com', '50 com']) == ['300 video.youtube.com', '1300 youtube.com', '1450 com', '200 music.youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['300 blog.businessinsider.com', '400 businessinsider.com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '50 insider.com', '500 blog.insider.com', '200 tech.insider.com', '100 insider.com']) == ['300 blog.businessinsider.com', '1000 businessinsider.com', '1850 com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '850 insider.com', '500 blog.insider.com', '200 tech.insider.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['300 blog.businessinsider.com', '400 businessinsider.com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '50 insider.com', '500 blog.insider.com', '200 tech.insider.com', '100 insider.com']) == ['300 blog.businessinsider.com', '1000 businessinsider.com', '1850 com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '850 insider.com', '500 blog.insider.com', '200 tech.insider.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['500 blog.example.co', '300 news.example.co', '200 tech.example.co', '100 example.co', '50 sub.tech.example.co']) == ['500 blog.example.co', '1150 example.co', '1150 co', '300 news.example.co', '250 tech.example.co', '50 sub.tech.example.co']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['500 blog.example.co', '300 news.example.co', '200 tech.example.co', '100 example.co', '50 sub.tech.example.co']) == ['500 blog.example.co', '1150 example.co', '1150 co', '300 news.example.co', '250 tech.example.co', '50 sub.tech.example.co']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1234 company.job.search.engine.com', '4321 job.search.engine.com', '1111 search.engine.com', '2222 engine.com', '3333 com', '5678 tech.engine.com', '8765 tech.com']) == ['1234 company.job.search.engine.com', '5555 job.search.engine.com', '6666 search.engine.com', '14566 engine.com', '26664 com', '5678 tech.engine.com', '8765 tech.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1234 company.job.search.engine.com', '4321 job.search.engine.com', '1111 search.engine.com', '2222 engine.com', '3333 com', '5678 tech.engine.com', '8765 tech.com']) == ['1234 company.job.search.engine.com', '5555 job.search.engine.com', '6666 search.engine.com', '14566 engine.com', '26664 com', '5678 tech.engine.com', '8765 tech.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10000 web.page.co.uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk', '5000 co.uk', '7500 uk']) == ['10000 web.page.co.uk', '14000 page.co.uk', '20000 co.uk', '27500 uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10000 web.page.co.uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk', '5000 co.uk', '7500 uk']) == ['10000 web.page.co.uk', '14000 page.co.uk', '20000 co.uk', '27500 uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 news.media.co', '5000 news.sport.media.co', '3000 news.culture.media.co', '2000 sport.media.co', '1500 culture.media.co', '1000 media.co', '800 news.co', '500 co']) == ['1000 news.media.co', '13500 media.co', '14800 co', '5000 news.sport.media.co', '7000 sport.media.co', '3000 news.culture.media.co', '4500 culture.media.co', '800 news.co']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 news.media.co', '5000 news.sport.media.co', '3000 news.culture.media.co', '2000 sport.media.co', '1500 culture.media.co', '1000 media.co', '800 news.co', '500 co']) == ['1000 news.media.co', '13500 media.co', '14800 co', '5000 news.sport.media.co', '7000 sport.media.co', '3000 news.culture.media.co', '4500 culture.media.co', '800 news.co']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['10 abc.def.ghi', '20 def.ghi', '30 ghi', '40 h.i.j', '50 i.j', '60 j', '70 k.l.m', '80 l.m', '90 m']) == ['10 abc.def.ghi', '30 def.ghi', '60 ghi', '40 h.i.j', '90 i.j', '150 j', '70 k.l.m', '150 l.m', '240 m']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['10 abc.def.ghi', '20 def.ghi', '30 ghi', '40 h.i.j', '50 i.j', '60 j', '70 k.l.m', '80 l.m', '90 m']) == ['10 abc.def.ghi', '30 def.ghi', '60 ghi', '40 h.i.j', '90 i.j', '150 j', '70 k.l.m', '150 l.m', '240 m']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '50 yet.another.domain.com', '25 yet.sub.another.domain.com', '125 another.yet.sub.domain.com']) == ['1950 main.domain.com', '2350 domain.com', '2350 com', '800 sub.main.domain.com', '325 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '150 another.main.domain.com', '50 yet.another.domain.com', '75 another.domain.com', '25 yet.sub.another.domain.com', '25 sub.another.domain.com', '125 another.yet.sub.domain.com', '125 yet.sub.domain.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '50 yet.another.domain.com', '25 yet.sub.another.domain.com', '125 another.yet.sub.domain.com']) == ['1950 main.domain.com', '2350 domain.com', '2350 com', '800 sub.main.domain.com', '325 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '150 another.main.domain.com', '50 yet.another.domain.com', '75 another.domain.com', '25 yet.sub.another.domain.com', '25 sub.another.domain.com', '125 another.yet.sub.domain.com', '125 yet.sub.domain.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['750 gaming.gamesite.net', '250 gamesite.net', '150 news.gamesite.net', '1000 gaming.net', '500 net', '200 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']) == ['750 gaming.gamesite.net', '1450 gamesite.net', '2950 net', '150 news.gamesite.net', '1000 gaming.net', '300 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['750 gaming.gamesite.net', '250 gamesite.net', '150 news.gamesite.net', '1000 gaming.net', '500 net', '200 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']) == ['750 gaming.gamesite.net', '1450 gamesite.net', '2950 net', '150 news.gamesite.net', '1000 gaming.net', '300 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['250 news.market.com', '150 finance.market.com', '1000 market.com', '500 news.international.market.com', '300 finance.international.market.com', '200 international.market.com']) == ['250 news.market.com', '2400 market.com', '2400 com', '150 finance.market.com', '500 news.international.market.com', '1000 international.market.com', '300 finance.international.market.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['250 news.market.com', '150 finance.market.com', '1000 market.com', '500 news.international.market.com', '300 finance.international.market.com', '200 international.market.com']) == ['250 news.market.com', '2400 market.com', '2400 com', '150 finance.market.com', '500 news.international.market.com', '1000 international.market.com', '300 finance.international.market.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['1234 a.b.c.d.e.f.com', '5678 g.h.i.j.k.com', '9101 l.m.n.o.p.q.r.com', '1112 m.n.o.p.q.r.com', '1314 n.o.p.q.r.com']) == ['1234 a.b.c.d.e.f.com', '1234 b.c.d.e.f.com', '1234 c.d.e.f.com', '1234 d.e.f.com', '1234 e.f.com', '1234 f.com', '18439 com', '5678 g.h.i.j.k.com', '5678 h.i.j.k.com', '5678 i.j.k.com', '5678 j.k.com', '5678 k.com', '9101 l.m.n.o.p.q.r.com', '10213 m.n.o.p.q.r.com', '11527 n.o.p.q.r.com', '11527 o.p.q.r.com', '11527 p.q.r.com', '11527 q.r.com', '11527 r.com']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['1234 a.b.c.d.e.f.com', '5678 g.h.i.j.k.com', '9101 l.m.n.o.p.q.r.com', '1112 m.n.o.p.q.r.com', '1314 n.o.p.q.r.com']) == ['1234 a.b.c.d.e.f.com', '1234 b.c.d.e.f.com', '1234 c.d.e.f.com', '1234 d.e.f.com', '1234 e.f.com', '1234 f.com', '18439 com', '5678 g.h.i.j.k.com', '5678 h.i.j.k.com', '5678 i.j.k.com', '5678 j.k.com', '5678 k.com', '9101 l.m.n.o.p.q.r.com', '10213 m.n.o.p.q.r.com', '11527 n.o.p.q.r.com', '11527 o.p.q.r.com', '11527 p.q.r.com', '11527 q.r.com', '11527 r.com']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cpdomains = ['500 x.y.z', '200 a.b.c.d', '100 e.f.g', '400 h.i.j.k.l', '600 m.n.o']) == ['500 x.y.z', '500 y.z', '500 z', '200 a.b.c.d', '200 b.c.d', '200 c.d', '200 d', '100 e.f.g', '100 f.g', '100 g', '400 h.i.j.k.l', '400 i.j.k.l', '400 j.k.l', '400 k.l', '400 l', '600 m.n.o', '600 n.o', '600 o']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cpdomains = ['500 x.y.z', '200 a.b.c.d', '100 e.f.g', '400 h.i.j.k.l', '600 m.n.o']) == ['500 x.y.z', '500 y.z', '500 z', '200 a.b.c.d', '200 b.c.d', '200 c.d', '200 d', '100 e.f.g', '100 f.g', '100 g', '400 h.i.j.k.l', '400 i.j.k.l', '400 j.k.l', '400 k.l', '400 l', '600 m.n.o', '600 n.o', '600 o']: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(cpdomains = ['1 x.y.z', '2 y.z', '3 z']) == ['1 x.y.z', '3 y.z', '6 z']
+    assert candidate(cpdomains = ['1 a.com', '2 b.a.com', '3 c.b.a.com']) == ['6 a.com', '6 com', '5 b.a.com', '3 c.b.a.com']
+    assert candidate(cpdomains = ['1 a.com', '2 a.b.com', '3 a.b.c.com']) == ['1 a.com', '6 com', '2 a.b.com', '2 b.com', '3 a.b.c.com', '3 b.c.com', '3 c.com']
+    assert candidate(cpdomains = ['500 blog.example.co', '200 news.example.co', '100 example.co']) == ['500 blog.example.co', '800 example.co', '800 co', '200 news.example.co']
+    assert candidate(cpdomains = ['900 google.mail.com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org']) == ['900 google.mail.com', '901 mail.com', '951 com', '50 yahoo.com', '1 intel.mail.com', '5 wiki.org', '5 org']
+    assert candidate(cpdomains = ['50 mail.google.com', '1 mail.yahoo.com', '5 mail.msn.com']) == ['50 mail.google.com', '50 google.com', '56 com', '1 mail.yahoo.com', '1 yahoo.com', '5 mail.msn.com', '5 msn.com']
+    assert candidate(cpdomains = ['9001 discuss.leetcode.com']) == ['9001 discuss.leetcode.com', '9001 leetcode.com', '9001 com']
+    assert candidate(cpdomains = ['10 example.com', '5 example.co.uk', '3 sub.example.co.uk']) == ['10 example.com', '10 com', '8 example.co.uk', '8 co.uk', '8 uk', '3 sub.example.co.uk']
+    assert candidate(cpdomains = ['100 x.y.z', '20 w.x.y.z', '30 v.w.x.y.z']) == ['150 x.y.z', '150 y.z', '150 z', '50 w.x.y.z', '30 v.w.x.y.z']
+    assert candidate(cpdomains = ['1 example.com', '2 sub.example.com', '3 sub.sub.example.com']) == ['6 example.com', '6 com', '5 sub.example.com', '3 sub.sub.example.com']
+    assert candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com']) == ['1500 main.domain.com', '1700 domain.com', '1700 com', '500 sub.main.domain.com', '200 sub.domain.com']
+    assert candidate(cpdomains = ['100 a.com', '50 b.a.com', '25 c.b.a.com']) == ['175 a.com', '175 com', '75 b.a.com', '25 c.b.a.com']
+    assert candidate(cpdomains = ['10 example.com', '5 sub.example.com', '3 subsub.example.com']) == ['18 example.com', '18 com', '5 sub.example.com', '3 subsub.example.com']
+    assert candidate(cpdomains = ['700 tech.forum.net', '800 tech.net', '900 forum.net', '1000 net', '500 tech.forum.forge.net', '300 forum.forge.net', '200 forge.net']) == ['700 tech.forum.net', '1600 forum.net', '4400 net', '800 tech.net', '500 tech.forum.forge.net', '800 forum.forge.net', '1000 forge.net']
+    assert candidate(cpdomains = ['300 deep.subdomain.example.com', '200 subdomain.example.com', '100 example.com', '150 another.subdomain.example.com', '50 yet.another.example.com']) == ['300 deep.subdomain.example.com', '650 subdomain.example.com', '800 example.com', '800 com', '150 another.subdomain.example.com', '50 yet.another.example.com', '50 another.example.com']
+    assert candidate(cpdomains = ['3000 complex.sub.domain.com', '2000 sub.domain.com', '1000 domain.com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com']) == ['3000 complex.sub.domain.com', '5600 sub.domain.com', '6600 domain.com', '6600 com', '500 verydeep.sub.domain.com', '100 verydeep.sub.sub.domain.com', '100 sub.sub.domain.com']
+    assert candidate(cpdomains = ['300 www.example.co.uk', '200 mail.example.co.uk', '150 blog.example.co.uk', '100 co.uk']) == ['300 www.example.co.uk', '650 example.co.uk', '750 co.uk', '750 uk', '200 mail.example.co.uk', '150 blog.example.co.uk']
+    assert candidate(cpdomains = ['600 alpha.beta.gamma.delta.com', '500 beta.gamma.delta.com', '400 gamma.delta.com', '300 delta.com', '200 alpha.com', '100 com']) == ['600 alpha.beta.gamma.delta.com', '1100 beta.gamma.delta.com', '1500 gamma.delta.com', '1800 delta.com', '2100 com', '200 alpha.com']
+    assert candidate(cpdomains = ['1000 x.y.z.com', '500 y.z.com', '250 z.com', '150 a.b.y.z.com', '100 b.y.z.com', '75 y.z.com', '60 z.com', '40 w.x.y.z.com']) == ['1040 x.y.z.com', '1865 y.z.com', '2175 z.com', '2175 com', '150 a.b.y.z.com', '250 b.y.z.com', '40 w.x.y.z.com']
+    assert candidate(cpdomains = ['100 one.two.three.four.com', '200 two.three.four.com', '150 three.four.com', '100 four.com', '75 one.two.four.com', '50 two.four.com', '40 four.com', '25 one.two.three.com', '100 two.three.com', '60 three.com', '35 com']) == ['100 one.two.three.four.com', '300 two.three.four.com', '450 three.four.com', '715 four.com', '935 com', '75 one.two.four.com', '125 two.four.com', '25 one.two.three.com', '125 two.three.com', '185 three.com']
+    assert candidate(cpdomains = ['10 co.uk', '20 uk', '30 com', '40 google.com', '50 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '100 uk', '200 blog.uk', '300 news.uk', '400 mail.uk']) == ['270 co.uk', '1380 uk', '70 com', '40 google.com', '260 google.co.uk', '60 blog.google.co.uk', '70 news.google.co.uk', '80 mail.google.co.uk', '90 google.uk', '200 blog.uk', '300 news.uk', '400 mail.uk']
+    assert candidate(cpdomains = ['100 example1.com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']) == ['100 example1.com', '5500 com', '200 example2.com', '300 example3.com', '400 example4.com', '500 example5.com', '600 example6.com', '700 example7.com', '800 example8.com', '900 example9.com', '1000 example10.com']
+    assert candidate(cpdomains = ['1000 main.homepage.net', '2000 sub.main.homepage.net', '300 sub.homepage.net', '150 homepage.net', '500 main.net', '100 net', '250 sub.sub.main.homepage.net']) == ['3250 main.homepage.net', '3700 homepage.net', '4300 net', '2250 sub.main.homepage.net', '300 sub.homepage.net', '500 main.net', '250 sub.sub.main.homepage.net']
+    assert candidate(cpdomains = ['1200 verydeep.subdomain.example.com', '300 deep.subdomain.example.com', '400 subdomain.example.com', '100 example.com']) == ['1200 verydeep.subdomain.example.com', '1900 subdomain.example.com', '2000 example.com', '2000 com', '300 deep.subdomain.example.com']
+    assert candidate(cpdomains = ['800 blog.medium.com', '200 tech.medium.com', '300 news.medium.com', '100 medium.com', '500 articles.blog.medium.com']) == ['1300 blog.medium.com', '1900 medium.com', '1900 com', '200 tech.medium.com', '300 news.medium.com', '500 articles.blog.medium.com']
+    assert candidate(cpdomains = ['1000 main.site.org', '500 sub1.main.site.org', '200 sub2.main.site.org', '100 site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']) == ['1775 main.site.org', '1875 site.org', '1875 org', '575 sub1.main.site.org', '200 sub2.main.site.org', '50 sub3.sub1.main.site.org', '25 sub4.sub1.main.site.org']
+    assert candidate(cpdomains = ['10000 top.level.domain.io', '9000 level.domain.io', '8000 domain.io', '7000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']) == ['16000 top.level.domain.io', '30000 level.domain.io', '42000 domain.io', '52000 io', '6000 another.top.level.domain.io', '5000 another.level.domain.io', '4000 another.domain.io', '3000 another.io']
+    assert candidate(cpdomains = ['500 support.microsoft.com', '300 download.microsoft.com', '200 services.microsoft.com', '100 microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']) == ['500 support.microsoft.com', '1650 microsoft.com', '1650 com', '300 download.microsoft.com', '200 services.microsoft.com', '400 updates.microsoft.com', '150 secure.microsoft.com']
+    assert candidate(cpdomains = ['100 forum.discussion.community.org', '50 news.discussion.community.org', '200 discussion.community.org', '100 community.org', '50 org', '300 updates.discussion.community.org']) == ['100 forum.discussion.community.org', '650 discussion.community.org', '750 community.org', '800 org', '50 news.discussion.community.org', '300 updates.discussion.community.org']
+    assert candidate(cpdomains = ['150 mail.google.com', '50 docs.google.com', '200 accounts.google.com', '100 google.com', '300 app.mail.google.com']) == ['450 mail.google.com', '800 google.com', '800 com', '50 docs.google.com', '200 accounts.google.com', '300 app.mail.google.com']
+    assert candidate(cpdomains = ['10000 main.prod.env.com', '5000 sub.main.prod.env.com', '2500 service.sub.main.prod.env.com', '1250 prod.env.com', '625 env.com', '312 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']) == ['17968 main.prod.env.com', '19218 prod.env.com', '19843 env.com', '19843 com', '7968 sub.main.prod.env.com', '2968 service.sub.main.prod.env.com', '468 helper.service.sub.main.prod.env.com', '156 feedback.helper.service.sub.main.prod.env.com']
+    assert candidate(cpdomains = ['1 abc.def.ghi', '2 abc.def', '3 def', '4 ghi', '5 abc', '6 abc.def.ghi.jkl', '7 def.ghi.jkl', '8 ghi.jkl', '9 jkl']) == ['1 abc.def.ghi', '1 def.ghi', '5 ghi', '2 abc.def', '5 def', '5 abc', '6 abc.def.ghi.jkl', '13 def.ghi.jkl', '21 ghi.jkl', '30 jkl']
+    assert candidate(cpdomains = ['10000 main.example.com', '3000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '1500 sub.example.com', '1000 another.sub.example.com']) == ['15000 main.example.com', '17500 example.com', '17500 com', '5000 sub1.main.example.com', '2000 sub2.sub1.main.example.com', '2500 sub.example.com', '1000 another.sub.example.com']
+    assert candidate(cpdomains = ['100 company.corp.local', '200 it.corp.local', '300 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']) == ['100 company.corp.local', '3600 corp.local', '3600 local', '1700 it.corp.local', '1800 hr.corp.local', '400 dev.it.corp.local', '500 qa.it.corp.local', '600 design.it.corp.local', '700 finance.hr.corp.local', '800 marketing.hr.corp.local']
+    assert candidate(cpdomains = ['1000 a.b.c.d.e.com', '500 f.g.c.d.e.com', '250 g.c.d.e.com', '125 c.d.e.com', '60 d.e.com', '30 e.com']) == ['1000 a.b.c.d.e.com', '1000 b.c.d.e.com', '1875 c.d.e.com', '1935 d.e.com', '1965 e.com', '1965 com', '500 f.g.c.d.e.com', '750 g.c.d.e.com']
+    assert candidate(cpdomains = ['1 abc.com', '2 xyz.abc.com', '3 def.abc.com', '4 ghi.def.abc.com', '5 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']) == ['21 abc.com', '21 com', '2 xyz.abc.com', '18 def.abc.com', '15 ghi.def.abc.com', '11 jkl.ghi.def.abc.com', '6 mno.jkl.ghi.def.abc.com']
+    assert candidate(cpdomains = ['1500 tech.gaming.website.com', '300 mobile.gaming.website.com', '200 gaming.website.com', '1000 website.com']) == ['1500 tech.gaming.website.com', '2000 gaming.website.com', '3000 website.com', '3000 com', '300 mobile.gaming.website.com']
+    assert candidate(cpdomains = ['150 tech.productivitytools.io', '250 productivitytools.io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io', '100 io']) == ['150 tech.productivitytools.io', '1300 productivitytools.io', '1400 io', '400 blog.productivitytools.io', '300 dev.productivitytools.io', '200 docs.productivitytools.io']
+    assert candidate(cpdomains = ['1500 forum.discussion.web', '2500 chat.forum.discussion.web', '1000 support.web', '500 help.support.web', '2000 help.web', '800 forum.web', '1200 web']) == ['4000 forum.discussion.web', '4000 discussion.web', '9500 web', '2500 chat.forum.discussion.web', '1500 support.web', '500 help.support.web', '2000 help.web', '800 forum.web']
+    assert candidate(cpdomains = ['200 admin.internal.server.net', '150 db.internal.server.net', '100 internal.server.net', '50 server.net', '25 net']) == ['200 admin.internal.server.net', '450 internal.server.net', '500 server.net', '525 net', '150 db.internal.server.net']
+    assert candidate(cpdomains = ['100 abc.def.com', '200 def.com', '300 ghi.jkl.com', '400 jkl.com', '500 mno.pqr.com', '600 pqr.com']) == ['100 abc.def.com', '300 def.com', '2100 com', '300 ghi.jkl.com', '700 jkl.com', '500 mno.pqr.com', '1100 pqr.com']
+    assert candidate(cpdomains = ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com']) == ['1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 m.n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 n.o.p.q.r.s.t.u.v.w.x.y.z.com', '1 o.p.q.r.s.t.u.v.w.x.y.z.com', '1 p.q.r.s.t.u.v.w.x.y.z.com', '1 q.r.s.t.u.v.w.x.y.z.com', '1 r.s.t.u.v.w.x.y.z.com', '1 s.t.u.v.w.x.y.z.com', '1 t.u.v.w.x.y.z.com', '1 u.v.w.x.y.z.com', '1 v.w.x.y.z.com', '1 w.x.y.z.com', '1 x.y.z.com', '1 y.z.com', '1 z.com', '6 com', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 m.n.o.p.q.r.s.t.u.v.w.x.y.com', '2 n.o.p.q.r.s.t.u.v.w.x.y.com', '2 o.p.q.r.s.t.u.v.w.x.y.com', '2 p.q.r.s.t.u.v.w.x.y.com', '2 q.r.s.t.u.v.w.x.y.com', '2 r.s.t.u.v.w.x.y.com', '2 s.t.u.v.w.x.y.com', '2 t.u.v.w.x.y.com', '2 u.v.w.x.y.com', '2 v.w.x.y.com', '2 w.x.y.com', '2 x.y.com', '2 y.com', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 l.m.n.o.p.q.r.s.t.u.v.w.x.com', '3 m.n.o.p.q.r.s.t.u.v.w.x.com', '3 n.o.p.q.r.s.t.u.v.w.x.com', '3 o.p.q.r.s.t.u.v.w.x.com', '3 p.q.r.s.t.u.v.w.x.com', '3 q.r.s.t.u.v.w.x.com', '3 r.s.t.u.v.w.x.com', '3 s.t.u.v.w.x.com', '3 t.u.v.w.x.com', '3 u.v.w.x.com', '3 v.w.x.com', '3 w.x.com', '3 x.com']
+    assert candidate(cpdomains = ['1000 blog.devsite.co.uk', '2000 devsite.co.uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk', '100 co.uk']) == ['1150 blog.devsite.co.uk', '3450 devsite.co.uk', '4050 co.uk', '4050 uk', '300 sub.devsite.co.uk', '150 sub.blog.devsite.co.uk', '500 blog.co.uk']
+    assert candidate(cpdomains = ['1 example.net', '2 sub1.example.net', '3 sub2.sub1.example.net', '4 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']) == ['15 example.net', '15 net', '14 sub1.example.net', '12 sub2.sub1.example.net', '9 sub3.sub2.sub1.example.net', '5 sub4.sub3.sub2.sub1.example.net']
+    assert candidate(cpdomains = ['150 a.b.com', '200 b.com', '100 a.c.com', '120 c.com', '80 a.b.c.com', '50 b.c.com', '30 c.com', '25 d.e.f.g.com']) == ['150 a.b.com', '350 b.com', '755 com', '100 a.c.com', '380 c.com', '80 a.b.c.com', '130 b.c.com', '25 d.e.f.g.com', '25 e.f.g.com', '25 f.g.com', '25 g.com']
+    assert candidate(cpdomains = ['10 tech.guru.experts.net', '20 experts.net', '30 guru.experts.net', '40 tech.net', '50 guru.net', '60 tech.guru.net', '70 guru.experts.net', '80 experts.tech.guru.net']) == ['10 tech.guru.experts.net', '110 guru.experts.net', '130 experts.net', '360 net', '40 tech.net', '190 guru.net', '140 tech.guru.net', '80 experts.tech.guru.net']
+    assert candidate(cpdomains = ['300 tech.interview.prep.co', '200 coding.blog.tech.interview.prep.co', '100 interview.prep.co', '50 prep.co']) == ['500 tech.interview.prep.co', '600 interview.prep.co', '650 prep.co', '650 co', '200 coding.blog.tech.interview.prep.co', '200 blog.tech.interview.prep.co']
+    assert candidate(cpdomains = ['1234 main.site.org', '4321 sub.site.org', '1111 sub.sub.site.org', '2222 site.org']) == ['1234 main.site.org', '8888 site.org', '8888 org', '5432 sub.site.org', '1111 sub.sub.site.org']
+    assert candidate(cpdomains = ['12000 main.home.user.net', '6000 personal.main.home.user.net', '4000 work.home.user.net', '3000 personal.work.home.user.net', '2000 user.net', '1500 home.user.net', '1000 main.user.net']) == ['18000 main.home.user.net', '26500 home.user.net', '29500 user.net', '29500 net', '6000 personal.main.home.user.net', '7000 work.home.user.net', '3000 personal.work.home.user.net', '1000 main.user.net']
+    assert candidate(cpdomains = ['9001 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '16 a.b.c.d.e.f.g.h.i.j.k', '17 a.b.c.d.e.f.g.h.i.j', '18 a.b.c.d.e.f.g.h.i', '19 a.b.c.d.e.f.g.h', '20 a.b.c.d.e.f.g']) == ['9002 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 n.o.p.q.r.s.t.u.v.w.x.y.z', '9002 o.p.q.r.s.t.u.v.w.x.y.z', '9002 p.q.r.s.t.u.v.w.x.y.z', '9002 q.r.s.t.u.v.w.x.y.z', '9002 r.s.t.u.v.w.x.y.z', '9002 s.t.u.v.w.x.y.z', '9002 t.u.v.w.x.y.z', '9002 u.v.w.x.y.z', '9002 v.w.x.y.z', '9002 w.x.y.z', '9002 x.y.z', '9002 y.z', '9002 z', '2 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 l.m.n.o.p.q.r.s.t.u.v.w.x.y', '2 m.n.o.p.q.r.s.t.u.v.w.x.y', '2 n.o.p.q.r.s.t.u.v.w.x.y', '2 o.p.q.r.s.t.u.v.w.x.y', '2 p.q.r.s.t.u.v.w.x.y', '2 q.r.s.t.u.v.w.x.y', '2 r.s.t.u.v.w.x.y', '2 s.t.u.v.w.x.y', '2 t.u.v.w.x.y', '2 u.v.w.x.y', '2 v.w.x.y', '2 w.x.y', '2 x.y', '2 y', '3 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 k.l.m.n.o.p.q.r.s.t.u.v.w.x', '3 l.m.n.o.p.q.r.s.t.u.v.w.x', '3 m.n.o.p.q.r.s.t.u.v.w.x', '3 n.o.p.q.r.s.t.u.v.w.x', '3 o.p.q.r.s.t.u.v.w.x', '3 p.q.r.s.t.u.v.w.x', '3 q.r.s.t.u.v.w.x', '3 r.s.t.u.v.w.x', '3 s.t.u.v.w.x', '3 t.u.v.w.x', '3 u.v.w.x', '3 v.w.x', '3 w.x', '3 x', '4 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 j.k.l.m.n.o.p.q.r.s.t.u.v.w', '4 k.l.m.n.o.p.q.r.s.t.u.v.w', '4 l.m.n.o.p.q.r.s.t.u.v.w', '4 m.n.o.p.q.r.s.t.u.v.w', '4 n.o.p.q.r.s.t.u.v.w', '4 o.p.q.r.s.t.u.v.w', '4 p.q.r.s.t.u.v.w', '4 q.r.s.t.u.v.w', '4 r.s.t.u.v.w', '4 s.t.u.v.w', '4 t.u.v.w', '4 u.v.w', '4 v.w', '4 w', '5 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 i.j.k.l.m.n.o.p.q.r.s.t.u.v', '5 j.k.l.m.n.o.p.q.r.s.t.u.v', '5 k.l.m.n.o.p.q.r.s.t.u.v', '5 l.m.n.o.p.q.r.s.t.u.v', '5 m.n.o.p.q.r.s.t.u.v', '5 n.o.p.q.r.s.t.u.v', '5 o.p.q.r.s.t.u.v', '5 p.q.r.s.t.u.v', '5 q.r.s.t.u.v', '5 r.s.t.u.v', '5 s.t.u.v', '5 t.u.v', '5 u.v', '5 v', '6 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 h.i.j.k.l.m.n.o.p.q.r.s.t.u', '6 i.j.k.l.m.n.o.p.q.r.s.t.u', '6 j.k.l.m.n.o.p.q.r.s.t.u', '6 k.l.m.n.o.p.q.r.s.t.u', '6 l.m.n.o.p.q.r.s.t.u', '6 m.n.o.p.q.r.s.t.u', '6 n.o.p.q.r.s.t.u', '6 o.p.q.r.s.t.u', '6 p.q.r.s.t.u', '6 q.r.s.t.u', '6 r.s.t.u', '6 s.t.u', '6 t.u', '6 u', '7 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 g.h.i.j.k.l.m.n.o.p.q.r.s.t', '7 h.i.j.k.l.m.n.o.p.q.r.s.t', '7 i.j.k.l.m.n.o.p.q.r.s.t', '7 j.k.l.m.n.o.p.q.r.s.t', '7 k.l.m.n.o.p.q.r.s.t', '7 l.m.n.o.p.q.r.s.t', '7 m.n.o.p.q.r.s.t', '7 n.o.p.q.r.s.t', '7 o.p.q.r.s.t', '7 p.q.r.s.t', '7 q.r.s.t', '7 r.s.t', '7 s.t', '7 t', '8 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 f.g.h.i.j.k.l.m.n.o.p.q.r.s', '8 g.h.i.j.k.l.m.n.o.p.q.r.s', '8 h.i.j.k.l.m.n.o.p.q.r.s', '8 i.j.k.l.m.n.o.p.q.r.s', '8 j.k.l.m.n.o.p.q.r.s', '8 k.l.m.n.o.p.q.r.s', '8 l.m.n.o.p.q.r.s', '8 m.n.o.p.q.r.s', '8 n.o.p.q.r.s', '8 o.p.q.r.s', '8 p.q.r.s', '8 q.r.s', '8 r.s', '8 s', '9 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 e.f.g.h.i.j.k.l.m.n.o.p.q.r', '9 f.g.h.i.j.k.l.m.n.o.p.q.r', '9 g.h.i.j.k.l.m.n.o.p.q.r', '9 h.i.j.k.l.m.n.o.p.q.r', '9 i.j.k.l.m.n.o.p.q.r', '9 j.k.l.m.n.o.p.q.r', '9 k.l.m.n.o.p.q.r', '9 l.m.n.o.p.q.r', '9 m.n.o.p.q.r', '9 n.o.p.q.r', '9 o.p.q.r', '9 p.q.r', '9 q.r', '9 r', '10 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 d.e.f.g.h.i.j.k.l.m.n.o.p.q', '10 e.f.g.h.i.j.k.l.m.n.o.p.q', '10 f.g.h.i.j.k.l.m.n.o.p.q', '10 g.h.i.j.k.l.m.n.o.p.q', '10 h.i.j.k.l.m.n.o.p.q', '10 i.j.k.l.m.n.o.p.q', '10 j.k.l.m.n.o.p.q', '10 k.l.m.n.o.p.q', '10 l.m.n.o.p.q', '10 m.n.o.p.q', '10 n.o.p.q', '10 o.p.q', '10 p.q', '10 q', '11 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 c.d.e.f.g.h.i.j.k.l.m.n.o.p', '11 d.e.f.g.h.i.j.k.l.m.n.o.p', '11 e.f.g.h.i.j.k.l.m.n.o.p', '11 f.g.h.i.j.k.l.m.n.o.p', '11 g.h.i.j.k.l.m.n.o.p', '11 h.i.j.k.l.m.n.o.p', '11 i.j.k.l.m.n.o.p', '11 j.k.l.m.n.o.p', '11 k.l.m.n.o.p', '11 l.m.n.o.p', '11 m.n.o.p', '11 n.o.p', '11 o.p', '11 p', '12 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 b.c.d.e.f.g.h.i.j.k.l.m.n.o', '12 c.d.e.f.g.h.i.j.k.l.m.n.o', '12 d.e.f.g.h.i.j.k.l.m.n.o', '12 e.f.g.h.i.j.k.l.m.n.o', '12 f.g.h.i.j.k.l.m.n.o', '12 g.h.i.j.k.l.m.n.o', '12 h.i.j.k.l.m.n.o', '12 i.j.k.l.m.n.o', '12 j.k.l.m.n.o', '12 k.l.m.n.o', '12 l.m.n.o', '12 m.n.o', '12 n.o', '12 o', '13 a.b.c.d.e.f.g.h.i.j.k.l.m.n', '13 b.c.d.e.f.g.h.i.j.k.l.m.n', '13 c.d.e.f.g.h.i.j.k.l.m.n', '13 d.e.f.g.h.i.j.k.l.m.n', '13 e.f.g.h.i.j.k.l.m.n', '13 f.g.h.i.j.k.l.m.n', '13 g.h.i.j.k.l.m.n', '13 h.i.j.k.l.m.n', '13 i.j.k.l.m.n', '13 j.k.l.m.n', '13 k.l.m.n', '13 l.m.n', '13 m.n', '13 n', '14 a.b.c.d.e.f.g.h.i.j.k.l.m', '14 b.c.d.e.f.g.h.i.j.k.l.m', '14 c.d.e.f.g.h.i.j.k.l.m', '14 d.e.f.g.h.i.j.k.l.m', '14 e.f.g.h.i.j.k.l.m', '14 f.g.h.i.j.k.l.m', '14 g.h.i.j.k.l.m', '14 h.i.j.k.l.m', '14 i.j.k.l.m', '14 j.k.l.m', '14 k.l.m', '14 l.m', '14 m', '15 a.b.c.d.e.f.g.h.i.j.k.l', '15 b.c.d.e.f.g.h.i.j.k.l', '15 c.d.e.f.g.h.i.j.k.l', '15 d.e.f.g.h.i.j.k.l', '15 e.f.g.h.i.j.k.l', '15 f.g.h.i.j.k.l', '15 g.h.i.j.k.l', '15 h.i.j.k.l', '15 i.j.k.l', '15 j.k.l', '15 k.l', '15 l', '16 a.b.c.d.e.f.g.h.i.j.k', '16 b.c.d.e.f.g.h.i.j.k', '16 c.d.e.f.g.h.i.j.k', '16 d.e.f.g.h.i.j.k', '16 e.f.g.h.i.j.k', '16 f.g.h.i.j.k', '16 g.h.i.j.k', '16 h.i.j.k', '16 i.j.k', '16 j.k', '16 k', '17 a.b.c.d.e.f.g.h.i.j', '17 b.c.d.e.f.g.h.i.j', '17 c.d.e.f.g.h.i.j', '17 d.e.f.g.h.i.j', '17 e.f.g.h.i.j', '17 f.g.h.i.j', '17 g.h.i.j', '17 h.i.j', '17 i.j', '17 j', '18 a.b.c.d.e.f.g.h.i', '18 b.c.d.e.f.g.h.i', '18 c.d.e.f.g.h.i', '18 d.e.f.g.h.i', '18 e.f.g.h.i', '18 f.g.h.i', '18 g.h.i', '18 h.i', '18 i', '19 a.b.c.d.e.f.g.h', '19 b.c.d.e.f.g.h', '19 c.d.e.f.g.h', '19 d.e.f.g.h', '19 e.f.g.h', '19 f.g.h', '19 g.h', '19 h', '20 a.b.c.d.e.f.g', '20 b.c.d.e.f.g', '20 c.d.e.f.g', '20 d.e.f.g', '20 e.f.g', '20 f.g', '20 g']
+    assert candidate(cpdomains = ['75 blog.health.com', '25 news.health.com', '50 health.com', '1000 medicine.com', '500 health.medicine.com']) == ['75 blog.health.com', '150 health.com', '1650 com', '25 news.health.com', '1500 medicine.com', '500 health.medicine.com']
+    assert candidate(cpdomains = ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a']) == ['1234 a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 l.m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 m.n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 n.o.p.q.r.s.t.u.v.w.x.y.z', '1234 o.p.q.r.s.t.u.v.w.x.y.z', '1234 p.q.r.s.t.u.v.w.x.y.z', '1234 q.r.s.t.u.v.w.x.y.z', '1234 r.s.t.u.v.w.x.y.z', '1234 s.t.u.v.w.x.y.z', '1234 t.u.v.w.x.y.z', '1234 u.v.w.x.y.z', '1234 v.w.x.y.z', '1234 w.x.y.z', '1234 x.y.z', '1234 y.z', '1234 z', '5678 y.x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 x.w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 w.v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 v.u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 u.t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 t.s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 s.r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 r.q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 q.p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 p.o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 o.n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 n.m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 m.l.k.j.i.h.g.f.e.d.c.b.a', '5678 l.k.j.i.h.g.f.e.d.c.b.a', '5678 k.j.i.h.g.f.e.d.c.b.a', '5678 j.i.h.g.f.e.d.c.b.a', '5678 i.h.g.f.e.d.c.b.a', '5678 h.g.f.e.d.c.b.a', '5678 g.f.e.d.c.b.a', '5678 f.e.d.c.b.a', '5678 e.d.c.b.a', '5678 d.c.b.a', '5678 c.b.a', '5678 b.a', '5678 a']
+    assert candidate(cpdomains = ['9000 market.shop.com', '4500 tech.shop.com', '2250 blog.shop.com', '1125 shop.com', '562 support.blog.shop.com', '281 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']) == ['9000 market.shop.com', '17858 shop.com', '17858 com', '4500 tech.shop.com', '3233 blog.shop.com', '983 support.blog.shop.com', '421 team.support.blog.shop.com', '140 help.team.support.blog.shop.com']
+    assert candidate(cpdomains = ['1000 a.b.c.d.e', '500 f.g.h.i', '200 j.k.l', '300 m.n.o.p']) == ['1000 a.b.c.d.e', '1000 b.c.d.e', '1000 c.d.e', '1000 d.e', '1000 e', '500 f.g.h.i', '500 g.h.i', '500 h.i', '500 i', '200 j.k.l', '200 k.l', '200 l', '300 m.n.o.p', '300 n.o.p', '300 o.p', '300 p']
+    assert candidate(cpdomains = ['10 main.business.world.com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com', '4 business.world.com', '5 world.com']) == ['15 main.business.world.com', '19 business.world.com', '24 world.com', '24 com', '2 sub.main.business.world.com', '3 subsub.main.business.world.com']
+    assert candidate(cpdomains = ['4000 blog.news.co', '1500 tech.blog.news.co', '1000 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']) == ['5500 blog.news.co', '7500 news.co', '9300 co', '1500 tech.blog.news.co', '1500 sports.co', '2000 sports.news.co', '500 tech.sports.co', '300 tech.co']
+    assert candidate(cpdomains = ['300 video.youtube.com', '200 music.youtube.com', '100 youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com', '50 com']) == ['300 video.youtube.com', '1300 youtube.com', '1450 com', '200 music.youtube.com', '500 m.youtube.com', '200 mobile.youtube.com', '100 google.com']
+    assert candidate(cpdomains = ['300 blog.businessinsider.com', '400 businessinsider.com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '50 insider.com', '500 blog.insider.com', '200 tech.insider.com', '100 insider.com']) == ['300 blog.businessinsider.com', '1000 businessinsider.com', '1850 com', '200 news.businessinsider.com', '100 tech.businessinsider.com', '850 insider.com', '500 blog.insider.com', '200 tech.insider.com']
+    assert candidate(cpdomains = ['500 blog.example.co', '300 news.example.co', '200 tech.example.co', '100 example.co', '50 sub.tech.example.co']) == ['500 blog.example.co', '1150 example.co', '1150 co', '300 news.example.co', '250 tech.example.co', '50 sub.tech.example.co']
+    assert candidate(cpdomains = ['1234 company.job.search.engine.com', '4321 job.search.engine.com', '1111 search.engine.com', '2222 engine.com', '3333 com', '5678 tech.engine.com', '8765 tech.com']) == ['1234 company.job.search.engine.com', '5555 job.search.engine.com', '6666 search.engine.com', '14566 engine.com', '26664 com', '5678 tech.engine.com', '8765 tech.com']
+    assert candidate(cpdomains = ['10000 web.page.co.uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk', '5000 co.uk', '7500 uk']) == ['10000 web.page.co.uk', '14000 page.co.uk', '20000 co.uk', '27500 uk', '2500 blog.page.co.uk', '1500 news.page.co.uk', '1000 mail.co.uk']
+    assert candidate(cpdomains = ['1000 news.media.co', '5000 news.sport.media.co', '3000 news.culture.media.co', '2000 sport.media.co', '1500 culture.media.co', '1000 media.co', '800 news.co', '500 co']) == ['1000 news.media.co', '13500 media.co', '14800 co', '5000 news.sport.media.co', '7000 sport.media.co', '3000 news.culture.media.co', '4500 culture.media.co', '800 news.co']
+    assert candidate(cpdomains = ['10 abc.def.ghi', '20 def.ghi', '30 ghi', '40 h.i.j', '50 i.j', '60 j', '70 k.l.m', '80 l.m', '90 m']) == ['10 abc.def.ghi', '30 def.ghi', '60 ghi', '40 h.i.j', '90 i.j', '150 j', '70 k.l.m', '150 l.m', '240 m']
+    assert candidate(cpdomains = ['1000 main.domain.com', '500 sub.main.domain.com', '200 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '50 yet.another.domain.com', '25 yet.sub.another.domain.com', '125 another.yet.sub.domain.com']) == ['1950 main.domain.com', '2350 domain.com', '2350 com', '800 sub.main.domain.com', '325 sub.domain.com', '300 another.sub.main.domain.com', '150 sub.another.main.domain.com', '150 another.main.domain.com', '50 yet.another.domain.com', '75 another.domain.com', '25 yet.sub.another.domain.com', '25 sub.another.domain.com', '125 another.yet.sub.domain.com', '125 yet.sub.domain.com']
+    assert candidate(cpdomains = ['750 gaming.gamesite.net', '250 gamesite.net', '150 news.gamesite.net', '1000 gaming.net', '500 net', '200 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']) == ['750 gaming.gamesite.net', '1450 gamesite.net', '2950 net', '150 news.gamesite.net', '1000 gaming.net', '300 streaming.gamesite.net', '100 gaming.streaming.gamesite.net']
+    assert candidate(cpdomains = ['250 news.market.com', '150 finance.market.com', '1000 market.com', '500 news.international.market.com', '300 finance.international.market.com', '200 international.market.com']) == ['250 news.market.com', '2400 market.com', '2400 com', '150 finance.market.com', '500 news.international.market.com', '1000 international.market.com', '300 finance.international.market.com']
+    assert candidate(cpdomains = ['1234 a.b.c.d.e.f.com', '5678 g.h.i.j.k.com', '9101 l.m.n.o.p.q.r.com', '1112 m.n.o.p.q.r.com', '1314 n.o.p.q.r.com']) == ['1234 a.b.c.d.e.f.com', '1234 b.c.d.e.f.com', '1234 c.d.e.f.com', '1234 d.e.f.com', '1234 e.f.com', '1234 f.com', '18439 com', '5678 g.h.i.j.k.com', '5678 h.i.j.k.com', '5678 i.j.k.com', '5678 j.k.com', '5678 k.com', '9101 l.m.n.o.p.q.r.com', '10213 m.n.o.p.q.r.com', '11527 n.o.p.q.r.com', '11527 o.p.q.r.com', '11527 p.q.r.com', '11527 q.r.com', '11527 r.com']
+    assert candidate(cpdomains = ['500 x.y.z', '200 a.b.c.d', '100 e.f.g', '400 h.i.j.k.l', '600 m.n.o']) == ['500 x.y.z', '500 y.z', '500 z', '200 a.b.c.d', '200 b.c.d', '200 c.d', '200 d', '100 e.f.g', '100 f.g', '100 g', '400 h.i.j.k.l', '400 i.j.k.l', '400 j.k.l', '400 k.l', '400 l', '600 m.n.o', '600 n.o', '600 o']
+
+

@@ -1,0 +1,1661 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 99,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 99,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10,query_row = 2,query_glass = 1) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10,query_row = 2,query_glass = 1) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 3,query_row = 2,query_glass = 0) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 3,query_row = 2,query_glass = 0) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5,query_row = 2,query_glass = 2) == 0.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5,query_row = 2,query_glass = 2) == 0.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 9,query_glass = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 9,query_glass = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000009,query_row = 33,query_glass = 17) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000009,query_row = 33,query_glass = 17) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1,query_row = 1,query_glass = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1,query_row = 1,query_glass = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 4,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 4,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10,query_row = 4,query_glass = 2) == 0.625
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10,query_row = 4,query_glass = 2) == 0.625: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 2,query_row = 1,query_glass = 1) == 0.5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 2,query_row = 1,query_glass = 1) == 0.5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 4,query_glass = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 4,query_glass = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10,query_row = 3,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10,query_row = 3,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10,query_row = 5,query_glass = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10,query_row = 5,query_glass = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000000,query_row = 99,query_glass = 50) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000000,query_row = 99,query_glass = 50) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 0,query_row = 0,query_glass = 0) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 0,query_row = 0,query_glass = 0) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5,query_row = 2,query_glass = 1) == 1.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5,query_row = 2,query_glass = 1) == 1.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 600,query_row = 40,query_glass = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 600,query_row = 40,query_glass = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000000,query_row = 65,query_glass = 33) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000000,query_row = 65,query_glass = 33) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20,query_row = 7,query_glass = 3) == 0.21875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20,query_row = 7,query_glass = 3) == 0.21875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20000,query_row = 40,query_glass = 35) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20000,query_row = 40,query_glass = 35) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 7,query_glass = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 7,query_glass = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 300,query_row = 25,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 300,query_row = 25,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20,query_row = 7,query_glass = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20,query_row = 7,query_glass = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 2000,query_row = 25,query_glass = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 2000,query_row = 25,query_glass = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 45,query_glass = 40) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 45,query_glass = 40) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 45,query_glass = 23) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 45,query_glass = 23) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 30,query_glass = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 30,query_glass = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 350,query_row = 50,query_glass = 45) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 350,query_row = 50,query_glass = 45) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 45,query_glass = 23) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 45,query_glass = 23) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 400,query_row = 55,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 400,query_row = 55,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 2000000,query_row = 65,query_glass = 33) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 2000000,query_row = 65,query_glass = 33) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 40,query_glass = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 40,query_glass = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000,query_row = 30,query_glass = 18) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000,query_row = 30,query_glass = 18) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 25,query_row = 8,query_glass = 6) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 25,query_row = 8,query_glass = 6) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1200,query_row = 70,query_glass = 60) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1200,query_row = 70,query_glass = 60) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 65,query_glass = 60) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 65,query_glass = 60) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000000,query_row = 55,query_glass = 28) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000000,query_row = 55,query_glass = 28) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 25,query_glass = 12) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 25,query_glass = 12) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5,query_row = 3,query_glass = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5,query_row = 3,query_glass = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 400,query_row = 10,query_glass = 8) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 400,query_row = 10,query_glass = 8) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 250,query_row = 20,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 250,query_row = 20,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 35,query_glass = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 35,query_glass = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 9,query_glass = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 9,query_glass = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 99,query_glass = 95) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 99,query_glass = 95) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 15,query_row = 4,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 15,query_row = 4,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20,query_row = 4,query_glass = 4) == 0.3125
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20,query_row = 4,query_glass = 4) == 0.3125: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000000,query_row = 70,query_glass = 35) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000000,query_row = 70,query_glass = 35) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 375,query_row = 85,query_glass = 80) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 375,query_row = 85,query_glass = 80) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 750,query_row = 90,query_glass = 85) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 750,query_row = 90,query_glass = 85) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 9,query_glass = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 9,query_glass = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1800,query_row = 99,query_glass = 99) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1800,query_row = 99,query_glass = 99) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 150,query_row = 8,query_glass = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 150,query_row = 8,query_glass = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 20,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 20,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000,query_row = 40,query_glass = 20) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000,query_row = 40,query_glass = 20) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 250,query_row = 40,query_glass = 35) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 250,query_row = 40,query_glass = 35) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000000,query_row = 60,query_glass = 30) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000000,query_row = 60,query_glass = 30) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200000,query_row = 40,query_glass = 35) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200000,query_row = 40,query_glass = 35) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 35,query_glass = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 35,query_glass = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 450,query_row = 60,query_glass = 55) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 450,query_row = 60,query_glass = 55) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000000,query_row = 80,query_glass = 60) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000000,query_row = 80,query_glass = 60) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 150,query_row = 20,query_glass = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 150,query_row = 20,query_glass = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000000,query_row = 45,query_glass = 23) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000000,query_row = 45,query_glass = 23) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000000,query_row = 70,query_glass = 55) == 0.6195281249608406
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000000,query_row = 70,query_glass = 55) == 0.6195281249608406: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 400,query_row = 40,query_glass = 35) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 400,query_row = 40,query_glass = 35) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 20,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 20,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 300,query_row = 45,query_glass = 40) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 300,query_row = 45,query_glass = 40) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 30,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 30,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 40,query_row = 10,query_glass = 8) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 40,query_row = 10,query_glass = 8) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 700,query_row = 70,query_glass = 65) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 700,query_row = 70,query_glass = 65) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000,query_row = 20,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000,query_row = 20,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 60,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 60,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 7,query_row = 4,query_glass = 2) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 7,query_row = 4,query_glass = 2) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 25,query_glass = 20) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 25,query_glass = 20) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 7,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 7,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000,query_row = 55,query_glass = 28) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000,query_row = 55,query_glass = 28) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000000,query_row = 90,query_glass = 65) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000000,query_row = 90,query_glass = 65) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200000,query_row = 80,query_glass = 45) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200000,query_row = 80,query_glass = 45) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 425,query_row = 95,query_glass = 90) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 425,query_row = 95,query_glass = 90) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1024,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1024,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 600,query_row = 75,query_glass = 70) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 600,query_row = 75,query_glass = 70) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 35,query_glass = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 35,query_glass = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 25,query_row = 15,query_glass = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 25,query_row = 15,query_glass = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1100,query_row = 65,query_glass = 55) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1100,query_row = 65,query_glass = 55) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 300,query_row = 9,query_glass = 6) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 300,query_row = 9,query_glass = 6) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000000,query_row = 90,query_glass = 45) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000000,query_row = 90,query_glass = 45) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 15,query_glass = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 15,query_glass = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1400,query_row = 80,query_glass = 70) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1400,query_row = 80,query_glass = 70) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 4,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 4,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 175,query_row = 45,query_glass = 40) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 175,query_row = 45,query_glass = 40) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000,query_row = 25,query_glass = 12) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000,query_row = 25,query_glass = 12) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1700,query_row = 95,query_glass = 85) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1700,query_row = 95,query_glass = 85) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1023,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1023,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200000,query_row = 50,query_glass = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200000,query_row = 50,query_glass = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 25,query_glass = 12) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 25,query_glass = 12) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000000,query_row = 70,query_glass = 35) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000000,query_row = 70,query_glass = 35) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 20,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 20,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 275,query_row = 65,query_glass = 60) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 275,query_row = 65,query_glass = 60) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 325,query_row = 75,query_glass = 70) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 325,query_row = 75,query_glass = 70) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 900,query_row = 99,query_glass = 98) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 900,query_row = 99,query_glass = 98) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5,query_row = 3,query_glass = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5,query_row = 3,query_glass = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 15,query_glass = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 15,query_glass = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 35,query_glass = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 35,query_glass = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000,query_row = 50,query_glass = 45) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000,query_row = 50,query_glass = 45) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000,query_row = 40,query_glass = 20) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000,query_row = 40,query_glass = 20) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 400,query_row = 30,query_glass = 20) == 0.12409851141273975
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 400,query_row = 30,query_glass = 20) == 0.12409851141273975: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000000,query_row = 70,query_glass = 35) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000000,query_row = 70,query_glass = 35) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 999999999,query_row = 99,query_glass = 49) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 999999999,query_row = 99,query_glass = 49) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 950,query_row = 99,query_glass = 99) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 950,query_row = 99,query_glass = 99) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 150,query_row = 30,query_glass = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 150,query_row = 30,query_glass = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 50,query_glass = 45) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 50,query_glass = 45) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 300,query_row = 30,query_glass = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 300,query_row = 30,query_glass = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 7,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 7,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 900,query_row = 90,query_glass = 85) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 900,query_row = 90,query_glass = 85) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000,query_row = 15,query_glass = 8) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000,query_row = 15,query_glass = 8) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 30,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 30,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 60,query_row = 20,query_glass = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 60,query_row = 20,query_glass = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 800,query_row = 80,query_glass = 75) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 800,query_row = 80,query_glass = 75) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000,query_row = 60,query_glass = 55) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000,query_row = 60,query_glass = 55) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 75,query_row = 25,query_glass = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 75,query_row = 25,query_glass = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000000,query_row = 80,query_glass = 40) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000000,query_row = 80,query_glass = 40) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000,query_row = 60,query_glass = 30) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000,query_row = 60,query_glass = 30) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 40,query_glass = 20) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 40,query_glass = 20) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 15,query_row = 5,query_glass = 2) == 0.875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 15,query_row = 5,query_glass = 2) == 0.875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20000,query_row = 50,query_glass = 30) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20000,query_row = 50,query_glass = 30) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000000,query_row = 75,query_glass = 38) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000000,query_row = 75,query_glass = 38) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 7,query_glass = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 7,query_glass = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 150,query_row = 20,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 150,query_row = 20,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 800,query_row = 50,query_glass = 40) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 800,query_row = 50,query_glass = 40) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50,query_row = 6,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50,query_row = 6,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20000,query_row = 35,query_glass = 18) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20000,query_row = 35,query_glass = 18) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20,query_row = 5,query_glass = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20,query_row = 5,query_glass = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 50,query_glass = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 50,query_glass = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 850,query_row = 98,query_glass = 95) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 850,query_row = 98,query_glass = 95) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 70,query_glass = 40) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 70,query_glass = 40) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 5,query_glass = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 5,query_glass = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1600,query_row = 90,query_glass = 80) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1600,query_row = 90,query_glass = 80) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 35,query_glass = 18) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 35,query_glass = 18) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 15,query_row = 6,query_glass = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 15,query_row = 6,query_glass = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 50,query_glass = 45) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 50,query_glass = 45) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 30,query_row = 9,query_glass = 7) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 30,query_row = 9,query_glass = 7) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 2000,query_row = 15,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 2000,query_row = 15,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 25,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 25,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200000,query_row = 55,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200000,query_row = 55,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 25,query_row = 6,query_glass = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 25,query_row = 6,query_glass = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 700,query_row = 85,query_glass = 80) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 700,query_row = 85,query_glass = 80) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 15,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 15,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000,query_row = 90,query_glass = 50) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000,query_row = 90,query_glass = 50) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 550,query_row = 70,query_glass = 65) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 550,query_row = 70,query_glass = 65) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 800,query_row = 95,query_glass = 90) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 800,query_row = 95,query_glass = 90) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 15,query_glass = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 15,query_glass = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 225,query_row = 55,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 225,query_row = 55,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500,query_row = 10,query_glass = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500,query_row = 10,query_glass = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 20000000,query_row = 80,query_glass = 40) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 20000000,query_row = 80,query_glass = 40) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10000000,query_row = 50,query_glass = 25) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10000000,query_row = 50,query_glass = 25) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100000,query_row = 30,query_glass = 15) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100000,query_row = 30,query_glass = 15) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 2000,query_row = 20,query_glass = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 2000,query_row = 20,query_glass = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 10,query_glass = 6) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 10,query_glass = 6) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 125,query_row = 35,query_glass = 30) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 125,query_row = 35,query_glass = 30) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 900,query_row = 55,query_glass = 45) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 900,query_row = 55,query_glass = 45) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 15,query_glass = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 15,query_glass = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1500,query_row = 85,query_glass = 75) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1500,query_row = 85,query_glass = 75) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 25,query_glass = 20) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 25,query_glass = 20) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000,query_row = 45,query_glass = 40) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000,query_row = 45,query_glass = 40) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1300,query_row = 75,query_glass = 65) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1300,query_row = 75,query_glass = 65) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 650,query_row = 80,query_glass = 75) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 650,query_row = 80,query_glass = 75) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 5,query_glass = 2) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 5,query_glass = 2) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 7,query_row = 2,query_glass = 0) == 1.0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 7,query_row = 2,query_glass = 0) == 1.0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000000,query_row = 85,query_glass = 43) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000000,query_row = 85,query_glass = 43) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000,query_row = 99,query_glass = 99) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000,query_row = 99,query_glass = 99) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 600,query_row = 60,query_glass = 55) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 600,query_row = 60,query_glass = 55) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 500000,query_row = 35,query_glass = 18) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 500000,query_row = 35,query_glass = 18) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 700,query_row = 45,query_glass = 35) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 700,query_row = 45,query_glass = 35) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 50000,query_row = 60,query_glass = 35) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 50000,query_row = 60,query_glass = 35) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000,query_row = 30,query_glass = 25) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000,query_row = 30,query_glass = 25) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 200,query_row = 15,query_glass = 8) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 200,query_row = 15,query_glass = 8) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 100,query_row = 8,query_glass = 6) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 100,query_row = 8,query_glass = 6) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 1000000000,query_row = 90,query_glass = 45) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 1000000000,query_row = 90,query_glass = 45) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 5000000,query_row = 60,query_glass = 50) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 5000000,query_row = 60,query_glass = 50) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(poured = 10,query_row = 5,query_glass = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(poured = 10,query_row = 5,query_glass = 3) == 0: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(poured = 100,query_row = 99,query_glass = 50) == 0
+    assert candidate(poured = 10,query_row = 2,query_glass = 1) == 1
+    assert candidate(poured = 3,query_row = 2,query_glass = 0) == 0
+    assert candidate(poured = 5,query_row = 2,query_glass = 2) == 0.5
+    assert candidate(poured = 100,query_row = 9,query_glass = 4) == 1
+    assert candidate(poured = 100000009,query_row = 33,query_glass = 17) == 1
+    assert candidate(poured = 1,query_row = 1,query_glass = 1) == 0
+    assert candidate(poured = 100,query_row = 4,query_glass = 2) == 1
+    assert candidate(poured = 10,query_row = 4,query_glass = 2) == 0.625
+    assert candidate(poured = 2,query_row = 1,query_glass = 1) == 0.5
+    assert candidate(poured = 100,query_row = 4,query_glass = 3) == 1
+    assert candidate(poured = 10,query_row = 3,query_glass = 2) == 1
+    assert candidate(poured = 10,query_row = 5,query_glass = 2) == 0
+    assert candidate(poured = 1000000000,query_row = 99,query_glass = 50) == 1
+    assert candidate(poured = 0,query_row = 0,query_glass = 0) == 0
+    assert candidate(poured = 5,query_row = 2,query_glass = 1) == 1.0
+    assert candidate(poured = 600,query_row = 40,query_glass = 30) == 0
+    assert candidate(poured = 500000000,query_row = 65,query_glass = 33) == 1
+    assert candidate(poured = 20,query_row = 7,query_glass = 3) == 0.21875
+    assert candidate(poured = 20000,query_row = 40,query_glass = 35) == 0
+    assert candidate(poured = 50,query_row = 7,query_glass = 4) == 1
+    assert candidate(poured = 300,query_row = 25,query_glass = 15) == 1
+    assert candidate(poured = 20,query_row = 7,query_glass = 5) == 0
+    assert candidate(poured = 2000,query_row = 25,query_glass = 20) == 0
+    assert candidate(poured = 50000,query_row = 45,query_glass = 40) == 0
+    assert candidate(poured = 100000,query_row = 45,query_glass = 23) == 1
+    assert candidate(poured = 50000,query_row = 30,query_glass = 25) == 1
+    assert candidate(poured = 350,query_row = 50,query_glass = 45) == 0
+    assert candidate(poured = 50000,query_row = 45,query_glass = 23) == 1
+    assert candidate(poured = 400,query_row = 55,query_glass = 50) == 0
+    assert candidate(poured = 2000000,query_row = 65,query_glass = 33) == 1
+    assert candidate(poured = 10000,query_row = 40,query_glass = 25) == 1
+    assert candidate(poured = 5000,query_row = 30,query_glass = 18) == 1
+    assert candidate(poured = 25,query_row = 8,query_glass = 6) == 0
+    assert candidate(poured = 1200,query_row = 70,query_glass = 60) == 0
+    assert candidate(poured = 100,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 500,query_row = 65,query_glass = 60) == 0
+    assert candidate(poured = 50000000,query_row = 55,query_glass = 28) == 1
+    assert candidate(poured = 200,query_row = 25,query_glass = 12) == 1
+    assert candidate(poured = 5,query_row = 3,query_glass = 2) == 0
+    assert candidate(poured = 400,query_row = 10,query_glass = 8) == 1
+    assert candidate(poured = 250,query_row = 20,query_glass = 10) == 1
+    assert candidate(poured = 10000,query_row = 35,query_glass = 30) == 0
+    assert candidate(poured = 200,query_row = 9,query_glass = 7) == 1
+    assert candidate(poured = 1000,query_row = 99,query_glass = 95) == 0
+    assert candidate(poured = 15,query_row = 4,query_glass = 2) == 1
+    assert candidate(poured = 20,query_row = 4,query_glass = 4) == 0.3125
+    assert candidate(poured = 10000000,query_row = 70,query_glass = 35) == 1
+    assert candidate(poured = 375,query_row = 85,query_glass = 80) == 0
+    assert candidate(poured = 750,query_row = 90,query_glass = 85) == 0
+    assert candidate(poured = 1000,query_row = 9,query_glass = 4) == 1
+    assert candidate(poured = 1800,query_row = 99,query_glass = 99) == 0
+    assert candidate(poured = 150,query_row = 8,query_glass = 4) == 1
+    assert candidate(poured = 500,query_row = 20,query_glass = 10) == 1
+    assert candidate(poured = 1000000,query_row = 40,query_glass = 20) == 1
+    assert candidate(poured = 250,query_row = 40,query_glass = 35) == 0
+    assert candidate(poured = 100000000,query_row = 60,query_glass = 30) == 1
+    assert candidate(poured = 200000,query_row = 40,query_glass = 35) == 0
+    assert candidate(poured = 500,query_row = 35,query_glass = 25) == 0
+    assert candidate(poured = 450,query_row = 60,query_glass = 55) == 0
+    assert candidate(poured = 50000000,query_row = 80,query_glass = 60) == 1
+    assert candidate(poured = 150,query_row = 20,query_glass = 15) == 0
+    assert candidate(poured = 5000000,query_row = 45,query_glass = 23) == 1
+    assert candidate(poured = 10000000,query_row = 70,query_glass = 55) == 0.6195281249608406
+    assert candidate(poured = 400,query_row = 40,query_glass = 35) == 0
+    assert candidate(poured = 1000,query_row = 20,query_glass = 15) == 1
+    assert candidate(poured = 300,query_row = 45,query_glass = 40) == 0
+    assert candidate(poured = 10000,query_row = 30,query_glass = 15) == 1
+    assert candidate(poured = 40,query_row = 10,query_glass = 8) == 0
+    assert candidate(poured = 700,query_row = 70,query_glass = 65) == 0
+    assert candidate(poured = 5000,query_row = 20,query_glass = 15) == 1
+    assert candidate(poured = 1000,query_row = 60,query_glass = 50) == 0
+    assert candidate(poured = 7,query_row = 4,query_glass = 2) == 0
+    assert candidate(poured = 10000,query_row = 25,query_glass = 20) == 1
+    assert candidate(poured = 100,query_row = 7,query_glass = 5) == 1
+    assert candidate(poured = 200,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 500000,query_row = 55,query_glass = 28) == 1
+    assert candidate(poured = 100000000,query_row = 90,query_glass = 65) == 1
+    assert candidate(poured = 200000,query_row = 80,query_glass = 45) == 1
+    assert candidate(poured = 425,query_row = 95,query_glass = 90) == 0
+    assert candidate(poured = 1000,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 1024,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 600,query_row = 75,query_glass = 70) == 0
+    assert candidate(poured = 200,query_row = 35,query_glass = 30) == 0
+    assert candidate(poured = 25,query_row = 15,query_glass = 10) == 0
+    assert candidate(poured = 1100,query_row = 65,query_glass = 55) == 0
+    assert candidate(poured = 300,query_row = 9,query_glass = 6) == 1
+    assert candidate(poured = 100000000,query_row = 90,query_glass = 45) == 1
+    assert candidate(poured = 50,query_row = 15,query_glass = 10) == 0
+    assert candidate(poured = 1400,query_row = 80,query_glass = 70) == 0
+    assert candidate(poured = 50,query_row = 4,query_glass = 2) == 1
+    assert candidate(poured = 175,query_row = 45,query_glass = 40) == 0
+    assert candidate(poured = 5000,query_row = 25,query_glass = 12) == 1
+    assert candidate(poured = 1700,query_row = 95,query_glass = 85) == 0
+    assert candidate(poured = 1023,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 200000,query_row = 50,query_glass = 25) == 1
+    assert candidate(poured = 50000,query_row = 25,query_glass = 12) == 1
+    assert candidate(poured = 1000000000,query_row = 70,query_glass = 35) == 1
+    assert candidate(poured = 10000,query_row = 20,query_glass = 10) == 1
+    assert candidate(poured = 275,query_row = 65,query_glass = 60) == 0
+    assert candidate(poured = 325,query_row = 75,query_glass = 70) == 0
+    assert candidate(poured = 900,query_row = 99,query_glass = 98) == 0
+    assert candidate(poured = 5,query_row = 3,query_glass = 1) == 0
+    assert candidate(poured = 500,query_row = 15,query_glass = 7) == 1
+    assert candidate(poured = 100000,query_row = 35,query_glass = 30) == 0
+    assert candidate(poured = 1000000,query_row = 50,query_glass = 45) == 0
+    assert candidate(poured = 10000,query_row = 40,query_glass = 20) == 1
+    assert candidate(poured = 400,query_row = 30,query_glass = 20) == 0.12409851141273975
+    assert candidate(poured = 5000000,query_row = 70,query_glass = 35) == 1
+    assert candidate(poured = 999999999,query_row = 99,query_glass = 49) == 1
+    assert candidate(poured = 950,query_row = 99,query_glass = 99) == 0
+    assert candidate(poured = 50,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 150,query_row = 30,query_glass = 25) == 0
+    assert candidate(poured = 100000,query_row = 50,query_glass = 45) == 0
+    assert candidate(poured = 300,query_row = 30,query_glass = 25) == 0
+    assert candidate(poured = 50,query_row = 7,query_glass = 5) == 1
+    assert candidate(poured = 900,query_row = 90,query_glass = 85) == 0
+    assert candidate(poured = 5000,query_row = 15,query_glass = 8) == 1
+    assert candidate(poured = 500,query_row = 30,query_glass = 15) == 1
+    assert candidate(poured = 60,query_row = 20,query_glass = 15) == 0
+    assert candidate(poured = 800,query_row = 80,query_glass = 75) == 0
+    assert candidate(poured = 500000,query_row = 60,query_glass = 55) == 0
+    assert candidate(poured = 75,query_row = 25,query_glass = 20) == 0
+    assert candidate(poured = 100000000,query_row = 80,query_glass = 40) == 1
+    assert candidate(poured = 1000000,query_row = 60,query_glass = 30) == 1
+    assert candidate(poured = 50000,query_row = 40,query_glass = 20) == 1
+    assert candidate(poured = 15,query_row = 5,query_glass = 2) == 0.875
+    assert candidate(poured = 20000,query_row = 50,query_glass = 30) == 1
+    assert candidate(poured = 10000000,query_row = 75,query_glass = 38) == 1
+    assert candidate(poured = 200,query_row = 7,query_glass = 3) == 1
+    assert candidate(poured = 150,query_row = 20,query_glass = 10) == 1
+    assert candidate(poured = 800,query_row = 50,query_glass = 40) == 0
+    assert candidate(poured = 50,query_row = 6,query_glass = 2) == 1
+    assert candidate(poured = 20000,query_row = 35,query_glass = 18) == 1
+    assert candidate(poured = 20,query_row = 5,query_glass = 3) == 1
+    assert candidate(poured = 100000,query_row = 50,query_glass = 25) == 1
+    assert candidate(poured = 850,query_row = 98,query_glass = 95) == 0
+    assert candidate(poured = 100000,query_row = 70,query_glass = 40) == 1
+    assert candidate(poured = 100,query_row = 5,query_glass = 3) == 1
+    assert candidate(poured = 1600,query_row = 90,query_glass = 80) == 0
+    assert candidate(poured = 1000,query_row = 35,query_glass = 18) == 1
+    assert candidate(poured = 15,query_row = 6,query_glass = 4) == 0
+    assert candidate(poured = 500,query_row = 50,query_glass = 45) == 0
+    assert candidate(poured = 30,query_row = 9,query_glass = 7) == 0
+    assert candidate(poured = 2000,query_row = 15,query_glass = 10) == 1
+    assert candidate(poured = 1000,query_row = 25,query_glass = 15) == 1
+    assert candidate(poured = 200000,query_row = 55,query_glass = 50) == 0
+    assert candidate(poured = 25,query_row = 6,query_glass = 4) == 1
+    assert candidate(poured = 700,query_row = 85,query_glass = 80) == 0
+    assert candidate(poured = 500,query_row = 15,query_glass = 10) == 1
+    assert candidate(poured = 500000,query_row = 90,query_glass = 50) == 1
+    assert candidate(poured = 550,query_row = 70,query_glass = 65) == 0
+    assert candidate(poured = 800,query_row = 95,query_glass = 90) == 0
+    assert candidate(poured = 1000,query_row = 15,query_glass = 7) == 1
+    assert candidate(poured = 225,query_row = 55,query_glass = 50) == 0
+    assert candidate(poured = 500,query_row = 10,query_glass = 5) == 1
+    assert candidate(poured = 20000000,query_row = 80,query_glass = 40) == 1
+    assert candidate(poured = 10000000,query_row = 50,query_glass = 25) == 1
+    assert candidate(poured = 100000,query_row = 30,query_glass = 15) == 1
+    assert candidate(poured = 2000,query_row = 20,query_glass = 10) == 1
+    assert candidate(poured = 200,query_row = 10,query_glass = 6) == 1
+    assert candidate(poured = 125,query_row = 35,query_glass = 30) == 0
+    assert candidate(poured = 900,query_row = 55,query_glass = 45) == 0
+    assert candidate(poured = 100,query_row = 15,query_glass = 7) == 1
+    assert candidate(poured = 1500,query_row = 85,query_glass = 75) == 0
+    assert candidate(poured = 100,query_row = 25,query_glass = 20) == 0
+    assert candidate(poured = 500000,query_row = 45,query_glass = 40) == 0
+    assert candidate(poured = 1300,query_row = 75,query_glass = 65) == 0
+    assert candidate(poured = 650,query_row = 80,query_glass = 75) == 0
+    assert candidate(poured = 100,query_row = 5,query_glass = 2) == 1
+    assert candidate(poured = 7,query_row = 2,query_glass = 0) == 1.0
+    assert candidate(poured = 50000000,query_row = 85,query_glass = 43) == 1
+    assert candidate(poured = 1000,query_row = 99,query_glass = 99) == 0
+    assert candidate(poured = 600,query_row = 60,query_glass = 55) == 0
+    assert candidate(poured = 500000,query_row = 35,query_glass = 18) == 1
+    assert candidate(poured = 700,query_row = 45,query_glass = 35) == 0
+    assert candidate(poured = 50000,query_row = 60,query_glass = 35) == 1
+    assert candidate(poured = 5000,query_row = 30,query_glass = 25) == 0
+    assert candidate(poured = 200,query_row = 15,query_glass = 8) == 1
+    assert candidate(poured = 100,query_row = 8,query_glass = 6) == 1
+    assert candidate(poured = 1000000000,query_row = 90,query_glass = 45) == 1
+    assert candidate(poured = 5000000,query_row = 60,query_glass = 50) == 0
+    assert candidate(poured = 10,query_row = 5,query_glass = 3) == 0
+
+

@@ -1,0 +1,851 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30],boxes = [[10], [20], [30], [40]]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30],boxes = [[10], [20], [30], [40]]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000],boxes = [[100000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000],boxes = [[100000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30],boxes = [[10, 20, 30], [15, 25, 35]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30],boxes = [[10, 20, 30], [15, 25, 35]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 100000],boxes = [[1], [100000]]) == 99999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 100000],boxes = [[1], [100000]]) == 99999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [2, 3, 5],boxes = [[4, 8], [2, 8]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [2, 3, 5],boxes = [[4, 8], [2, 8]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [3, 5, 8, 10, 11, 12],boxes = [[12], [11, 9], [10, 5, 14]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [3, 5, 8, 10, 11, 12],boxes = [[12], [11, 9], [10, 5, 14]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5],boxes = [[5, 5, 5, 5, 5]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5],boxes = [[5, 5, 5, 5, 5]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9],boxes = [[2, 4, 6, 8, 10]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9],boxes = [[2, 4, 6, 8, 10]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 5, 5, 5],boxes = [[5, 5, 5, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 5, 5, 5],boxes = [[5, 5, 5, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [2, 3, 5],boxes = [[1, 4], [2, 3], [3, 4]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [2, 3, 5],boxes = [[1, 4], [2, 3], [3, 4]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[20000, 30000, 50000], [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[20000, 30000, 50000], [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 15, 25, 35, 45]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 15, 25, 35, 45]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 5, 9, 13, 17], [3, 7, 11, 15, 19]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 5, 9, 13, 17], [3, 7, 11, 15, 19]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000, 50000], [100000], [25000, 75000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000, 50000], [100000], [25000, 75000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [5, 10, 15, 20, 25, 30]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [5, 10, 15, 20, 25, 30]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [99999, 99998, 99997, 99996, 99995],boxes = [[100000], [99999], [99998], [99997], [99996], [99995]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [99999, 99998, 99997, 99996, 99995],boxes = [[100000], [99999], [99998], [99997], [99996], [99995]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],boxes = [[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [3, 7, 11, 15, 19, 23, 27, 31]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],boxes = [[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [3, 7, 11, 15, 19, 23, 27, 31]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500], [100, 200, 300, 400, 500, 600, 700, 800, 900]]) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500], [100, 200, 300, 400, 500, 600, 700, 800, 900]]) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[5, 10, 100, 1000, 10000, 100000, 500000], [1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[5, 10, 100, 1000, 10000, 100000, 500000], [1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[3, 6, 9, 12, 15, 18, 21], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[3, 6, 9, 12, 15, 18, 21], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 5, 9, 13, 17, 21, 25, 29]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 5, 9, 13, 17, 21, 25, 29]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [19, 17, 15, 13, 11, 9, 7, 5, 3, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [19, 17, 15, 13, 11, 9, 7, 5, 3, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 10, 15, 20, 25],boxes = [[5, 10, 15, 20, 25], [1, 2, 3, 4, 5], [26, 27, 28, 29, 30]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 10, 15, 20, 25],boxes = [[5, 10, 15, 20, 25], [1, 2, 3, 4, 5], [26, 27, 28, 29, 30]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[5, 10], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60]]) == 145
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[5, 10], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60]]) == 145: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3, 4, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3, 4, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000, 90000, 80000, 70000, 60000],boxes = [[95000, 100000], [85000, 90000, 95000], [75000, 80000, 85000], [65000, 70000, 75000, 80000]]) == 80000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000, 90000, 80000, 70000, 60000],boxes = [[95000, 100000], [85000, 90000, 95000], [75000, 80000, 85000], [65000, 70000, 75000, 80000]]) == 80000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 11, 12], [9, 8, 7, 6, 5, 4, 3, 2, 1], [15, 20, 25, 30, 35]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 11, 12], [9, 8, 7, 6, 5, 4, 3, 2, 1], [15, 20, 25, 30, 35]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [1, 2, 3, 4, 5]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [1, 2, 3, 4, 5]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000],boxes = [[99999, 99998, 99997, 99996, 99995]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000],boxes = [[99999, 99998, 99997, 99996, 99995]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[5, 10, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[5, 10, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [25000, 50000, 75000, 100000],boxes = [[12500, 37500, 62500, 87500], [10000, 40000, 70000, 100000], [50000, 50000, 50000, 50000]]) == 60000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [25000, 50000, 75000, 100000],boxes = [[12500, 37500, 62500, 87500], [10000, 40000, 70000, 100000], [50000, 50000, 50000, 50000]]) == 60000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[100], [200], [300], [400], [500], [600], [700], [800], [900], [1000]]) == 4500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[100], [200], [300], [400], [500], [600], [700], [800], [900], [1000]]) == 4500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],boxes = [[100000], [100001], [99999], [99998], [99997], [99996], [99995], [99994], [99993], [99992], [99991]]) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],boxes = [[100000], [100001], [99999], [99998], [99997], [99996], [99995], [99994], [99993], [99992], [99991]]) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[1, 10, 100, 1000, 10000, 100000], [2, 20, 200, 2000, 20000, 200000], [5, 50, 500, 5000, 50000, 500000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[1, 10, 100, 1000, 10000, 100000], [2, 20, 200, 2000, 20000, 200000], [5, 50, 500, 5000, 50000, 500000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [11, 12, 13, 14, 15], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [11, 12, 13, 14, 15], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [16]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [16]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],boxes = [[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], [50, 150, 250, 350, 450, 550, 650, 750, 850, 950, 1050]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],boxes = [[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], [50, 150, 250, 350, 450, 550, 650, 750, 850, 950, 1050]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10], [9, 10], [8, 9, 10], [7, 8, 9, 10], [6, 7, 8, 9, 10], [5, 6, 7, 8, 9, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10], [9, 10], [8, 9, 10], [7, 8, 9, 10], [6, 7, 8, 9, 10], [5, 6, 7, 8, 9, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[1, 2, 3, 4, 5], [101, 102, 103, 104, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[1, 2, 3, 4, 5], [101, 102, 103, 104, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [20000, 10000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 70000, 90000, 110000], [30000, 60000, 90000, 120000], [25000, 50000, 75000, 100000, 125000]]) == 100000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [20000, 10000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 70000, 90000, 110000], [30000, 60000, 90000, 120000], [25000, 50000, 75000, 100000, 125000]]) == 100000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18], [4, 8, 12, 16, 20]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18], [4, 8, 12, 16, 20]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 100000],boxes = [[50000], [150000], [100000]]) == 99999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 100000],boxes = [[50000], [150000], [100000]]) == 99999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 10, 100, 1000, 10000],boxes = [[5, 50, 500, 5000, 50000], [1, 2, 3, 4, 5], [9999, 99999]]) == 44444
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 10, 100, 1000, 10000],boxes = [[5, 50, 500, 5000, 50000], [1, 2, 3, 4, 5], [9999, 99999]]) == 44444: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 30, 50, 70, 90, 110], [20, 40, 60, 80, 100, 120]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 30, 50, 70, 90, 110], [20, 40, 60, 80, 100, 120]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[49999], [50000], [50001]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[49999], [50000], [50001]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [50, 50, 50, 50, 50, 50, 50, 50, 50, 50], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [50, 50, 50, 50, 50, 50, 50, 50, 50, 50], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[20, 40], [10, 30], [5, 15, 25, 35]]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[20, 40], [10, 30], [5, 15, 25, 35]]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000, 100000, 100000],boxes = [[100000], [100001], [99999, 100000, 100001]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000, 100000, 100000],boxes = [[100000], [100001], [99999, 100000, 100001]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50000, 40000, 30000, 20000, 10000],boxes = [[10000, 20000, 30000, 40000, 50000], [15000, 25000, 35000, 45000, 55000], [55000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50000, 40000, 30000, 20000, 10000],boxes = [[10000, 20000, 30000, 40000, 50000], [15000, 25000, 35000, 45000, 55000], [55000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50, 60, 70, 80, 90, 100],boxes = [[40, 90], [50, 60, 100], [80, 95, 110]]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50, 60, 70, 80, 90, 100],boxes = [[40, 90], [50, 60, 100], [80, 95, 110]]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 60000, 70000, 80000, 90000, 100000], [90000, 100000, 110000, 120000, 130000, 140000, 150000]]) == 100000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 60000, 70000, 80000, 90000, 100000], [90000, 100000, 110000, 120000, 130000, 140000, 150000]]) == 100000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],boxes = [[100], [256, 512, 1024], [2, 4, 8, 16, 32, 64, 128]]) == 1793
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],boxes = [[100], [256, 512, 1024], [2, 4, 8, 16, 32, 64, 128]]) == 1793: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10], [5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10], [5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],boxes = [[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],boxes = [[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000],boxes = [[110000, 120000, 130000], [90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000], [55000, 54000, 53000, 52000, 51000, 50000, 49000, 48000, 47000, 46000]]) == 550000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000],boxes = [[110000, 120000, 130000], [90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000], [55000, 54000, 53000, 52000, 51000, 50000, 49000, 48000, 47000, 46000]]) == 550000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50],boxes = [[5, 15, 25, 35, 45], [6, 16, 26, 36, 46], [7, 17, 27, 37, 47]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50],boxes = [[5, 15, 25, 35, 45], [6, 16, 26, 36, 46], [7, 17, 27, 37, 47]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[1, 5, 9, 13, 17], [3, 7, 11, 15, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[1, 5, 9, 13, 17], [3, 7, 11, 15, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [90, 80, 70, 60, 50, 40, 30, 20, 10, 0]]) == 450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [90, 80, 70, 60, 50, 40, 30, 20, 10, 0]]) == 450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40], [1, 9, 17, 25, 33], [5, 10, 15, 20, 25, 30, 35]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40], [1, 9, 17, 25, 33], [5, 10, 15, 20, 25, 30, 35]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[5000, 15000, 25000, 35000, 45000, 55000], [10000, 20000, 30000, 40000, 50000]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[5000, 15000, 25000, 35000, 45000, 55000], [10000, 20000, 30000, 40000, 50000]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500]]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500]]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[2, 3, 5, 7, 11], [1, 4, 9], [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[2, 3, 5, 7, 11], [1, 4, 9], [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 10, 15, 20, 25], [3, 6, 9, 12, 15]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 10, 15, 20, 25], [3, 6, 9, 12, 15]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[1000, 2000], [500, 1500], [300, 700, 1100]]) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[1000, 2000], [500, 1500], [300, 700, 1100]]) == 1500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000], [50001], [50002], [50003], [50004]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000], [50001], [50002], [50003], [50004]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1000, 2000, 3000, 4000, 5000],boxes = [[1000, 2000, 3000, 4000, 5000], [1500, 2500, 3500, 4500, 5500], [900, 1900, 2900, 3900, 4900]]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1000, 2000, 3000, 4000, 5000],boxes = [[1000, 2000, 3000, 4000, 5000], [1500, 2500, 3500, 4500, 5500], [900, 1900, 2900, 3900, 4900]]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20], [5, 15], [3, 7, 12]]) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20], [5, 15], [3, 7, 12]]) == 18: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(packages = [10, 20, 30],boxes = [[10], [20], [30], [40]]) == 30
+    assert candidate(packages = [100000],boxes = [[100000]]) == 0
+    assert candidate(packages = [10, 20, 30],boxes = [[10, 20, 30], [15, 25, 35]]) == 0
+    assert candidate(packages = [1, 100000],boxes = [[1], [100000]]) == 99999
+    assert candidate(packages = [2, 3, 5],boxes = [[4, 8], [2, 8]]) == 6
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 45
+    assert candidate(packages = [3, 5, 8, 10, 11, 12],boxes = [[12], [11, 9], [10, 5, 14]]) == 9
+    assert candidate(packages = [1, 2, 3, 4, 5],boxes = [[5, 5, 5, 5, 5]]) == 10
+    assert candidate(packages = [1, 3, 5, 7, 9],boxes = [[2, 4, 6, 8, 10]]) == 5
+    assert candidate(packages = [5, 5, 5, 5],boxes = [[5, 5, 5, 5]]) == 0
+    assert candidate(packages = [2, 3, 5],boxes = [[1, 4], [2, 3], [3, 4]]) == -1
+    assert candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[20000, 30000, 50000], [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 15, 25, 35, 45]]) == 0
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 5, 9, 13, 17], [3, 7, 11, 15, 19]]) == 10
+    assert candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000, 50000], [100000], [25000, 75000]]) == 0
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [5, 10, 15, 20, 25, 30]]) == 10
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]]) == 0
+    assert candidate(packages = [99999, 99998, 99997, 99996, 99995],boxes = [[100000], [99999], [99998], [99997], [99996], [99995]]) == 10
+    assert candidate(packages = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],boxes = [[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [3, 7, 11, 15, 19, 23, 27, 31]]) == 9
+    assert candidate(packages = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500], [100, 200, 300, 400, 500, 600, 700, 800, 900]]) == 99
+    assert candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[5, 10, 100, 1000, 10000, 100000, 500000], [1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]]) == 0
+    assert candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[3, 6, 9, 12, 15, 18, 21], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]]) == 10
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30], [1, 5, 9, 13, 17, 21, 25, 29]]) == 14
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [19, 17, 15, 13, 11, 9, 7, 5, 3, 1]]) == 0
+    assert candidate(packages = [5, 10, 15, 20, 25],boxes = [[5, 10, 15, 20, 25], [1, 2, 3, 4, 5], [26, 27, 28, 29, 30]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+    assert candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[5, 10], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60]]) == 145
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3, 4, 5]]) == 0
+    assert candidate(packages = [100000, 90000, 80000, 70000, 60000],boxes = [[95000, 100000], [85000, 90000, 95000], [75000, 80000, 85000], [65000, 70000, 75000, 80000]]) == 80000
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 11, 12], [9, 8, 7, 6, 5, 4, 3, 2, 1], [15, 20, 25, 30, 35]]) == 45
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [1, 2, 3, 4, 5]]) == 0
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0
+    assert candidate(packages = [100000],boxes = [[99999, 99998, 99997, 99996, 99995]]) == -1
+    assert candidate(packages = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[5, 10, 15], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]]) == 0
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15]]) == 0
+    assert candidate(packages = [25000, 50000, 75000, 100000],boxes = [[12500, 37500, 62500, 87500], [10000, 40000, 70000, 100000], [50000, 50000, 50000, 50000]]) == 60000
+    assert candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[100], [200], [300], [400], [500], [600], [700], [800], [900], [1000]]) == 4500
+    assert candidate(packages = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],boxes = [[100000], [100001], [99999], [99998], [99997], [99996], [99995], [99994], [99993], [99992], [99991]]) == 45
+    assert candidate(packages = [1, 10, 100, 1000, 10000, 100000],boxes = [[1, 10, 100, 1000, 10000, 100000], [2, 20, 200, 2000, 20000, 200000], [5, 50, 500, 5000, 50000, 500000]]) == 0
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1], [2], [3]]) == 0
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [11, 12, 13, 14, 15], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [16]]) == 7
+    assert candidate(packages = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],boxes = [[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], [50, 150, 250, 350, 450, 550, 650, 750, 850, 950, 1050]]) == 0
+    assert candidate(packages = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10], [9, 10], [8, 9, 10], [7, 8, 9, 10], [6, 7, 8, 9, 10], [5, 6, 7, 8, 9, 10]]) == 10
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[1, 2, 3, 4, 5], [101, 102, 103, 104, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]]) == 0
+    assert candidate(packages = [20000, 10000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 70000, 90000, 110000], [30000, 60000, 90000, 120000], [25000, 50000, 75000, 100000, 125000]]) == 100000
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]) == 0
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[15, 25, 35, 45, 55, 65, 75, 85, 95, 105], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105]]) == 0
+    assert candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]]) == 0
+    assert candidate(packages = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18], [4, 8, 12, 16, 20]]) == 0
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+    assert candidate(packages = [1, 100000],boxes = [[50000], [150000], [100000]]) == 99999
+    assert candidate(packages = [1, 10, 100, 1000, 10000],boxes = [[5, 50, 500, 5000, 50000], [1, 2, 3, 4, 5], [9999, 99999]]) == 44444
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [10, 30, 50, 70, 90, 110], [20, 40, 60, 80, 100, 120]]) == 50
+    assert candidate(packages = [1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [1, 11, 21, 31, 41, 51, 61, 71, 81, 91]]) == 14
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],boxes = [[1, 3, 5, 7, 9, 11, 13, 15], [2, 4, 6, 8, 10, 12, 14], [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]) == 0
+    assert candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[49999], [50000], [50001]]) == 0
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [50, 50, 50, 50, 50, 50, 50, 50, 50, 50], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 450
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[20, 40], [10, 30], [5, 15, 25, 35]]) == 90
+    assert candidate(packages = [100000, 100000, 100000],boxes = [[100000], [100001], [99999, 100000, 100001]]) == 0
+    assert candidate(packages = [50000, 40000, 30000, 20000, 10000],boxes = [[10000, 20000, 30000, 40000, 50000], [15000, 25000, 35000, 45000, 55000], [55000]]) == 0
+    assert candidate(packages = [50, 60, 70, 80, 90, 100],boxes = [[40, 90], [50, 60, 100], [80, 95, 110]]) == 60
+    assert candidate(packages = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],boxes = [[50000, 60000, 70000, 80000, 90000, 100000], [90000, 100000, 110000, 120000, 130000, 140000, 150000]]) == 100000
+    assert candidate(packages = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],boxes = [[100], [256, 512, 1024], [2, 4, 8, 16, 32, 64, 128]]) == 1793
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10], [5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 10, 10, 10, 10, 10, 10, 10, 10, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5
+    assert candidate(packages = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],boxes = [[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]) == 0
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 10
+    assert candidate(packages = [100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000],boxes = [[110000, 120000, 130000], [90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000], [55000, 54000, 53000, 52000, 51000, 50000, 49000, 48000, 47000, 46000]]) == 550000
+    assert candidate(packages = [10, 20, 30, 40, 50],boxes = [[5, 15, 25, 35, 45], [6, 16, 26, 36, 46], [7, 17, 27, 37, 47]]) == -1
+    assert candidate(packages = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],boxes = [[1, 5, 9, 13, 17], [3, 7, 11, 15, 19], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]) == 10
+    assert candidate(packages = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],boxes = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]) == 0
+    assert candidate(packages = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],boxes = [[10, 20, 30, 40, 50, 60, 70, 80, 90, 100], [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]]) == 0
+    assert candidate(packages = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],boxes = [[5, 15, 25, 35, 45, 55, 65, 75, 85, 95], [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], [90, 80, 70, 60, 50, 40, 30, 20, 10, 0]]) == 450
+    assert candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40], [1, 9, 17, 25, 33], [5, 10, 15, 20, 25, 30, 35]]) == 10
+    assert candidate(packages = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97],boxes = [[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]]) == 25
+    assert candidate(packages = [10000, 20000, 30000, 40000, 50000],boxes = [[5000, 15000, 25000, 35000, 45000, 55000], [10000, 20000, 30000, 40000, 50000]]) == 0
+    assert candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[500, 600, 700, 800, 900, 1000], [900, 1000, 1100, 1200, 1300, 1400, 1500]]) == 1000
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[2, 3, 5, 7, 11], [1, 4, 9], [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]]) == 9
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20, 30], [5, 10, 15, 20, 25, 30], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]) == 5
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]]) == -1
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [5, 10, 15, 20, 25], [3, 6, 9, 12, 15]]) == 0
+    assert candidate(packages = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],boxes = [[1000, 2000], [500, 1500], [300, 700, 1100]]) == 1500
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],boxes = [[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]]) == 0
+    assert candidate(packages = [50000, 50000, 50000, 50000, 50000],boxes = [[50000], [50001], [50002], [50003], [50004]]) == 0
+    assert candidate(packages = [1000, 2000, 3000, 4000, 5000],boxes = [[1000, 2000, 3000, 4000, 5000], [1500, 2500, 3500, 4500, 5500], [900, 1900, 2900, 3900, 4900]]) == 0
+    assert candidate(packages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],boxes = [[10, 20], [5, 15], [3, 7, 12]]) == 18
+
+

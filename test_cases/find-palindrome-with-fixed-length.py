@@ -1,0 +1,1004 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(queries = [10, 20, 30],intLength = 2) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10, 20, 30],intLength = 2) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 3, 5, 7, 9],intLength = 5) == [10001, 10201, 10401, 10601, 10801]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 3, 5, 7, 9],intLength = 5) == [10001, 10201, 10401, 10601, 10801]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [50000],intLength = 15) == [100499999994001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [50000],intLength = 15) == [100499999994001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 1000000],intLength = 15) == [100000000000001, 109999999999901]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 1000000],intLength = 15) == [100000000000001, 109999999999901]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 90],intLength = 3) == [101, 111, 121, 131, 141, 999]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 90],intLength = 3) == [101, 111, 121, 131, 141, 999]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [2, 4, 6],intLength = 4) == [1111, 1331, 1551]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [2, 4, 6],intLength = 4) == [1111, 1331, 1551]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000],intLength = 7) == [1000001, 1009001, 1099901, 1999991]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000],intLength = 7) == [1000001, 1009001, 1099901, 1999991]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 1, 1, 1],intLength = 1) == [1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 1, 1, 1],intLength = 1) == [1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 100000000],intLength = 1) == [1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 100000000],intLength = 1) == [1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000000],intLength = 1) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000000],intLength = 1) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000000],intLength = 15) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000000],intLength = 15) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000],intLength = 5) == [10001, 10901, 19991, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000],intLength = 5) == [10001, 10901, 19991, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000],intLength = 15) == [100999999999001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000],intLength = 15) == [100999999999001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3],intLength = 1) == [1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3],intLength = 1) == [1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5, 15, 25],intLength = 2) == [55, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5, 15, 25],intLength = 2) == [55, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456, 654321],intLength = 10) == [-1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456, 654321],intLength = 10) == [-1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000],intLength = 13) == [1049999999401, 1099999999901, 1149999999411, 1199999999911, 1249999999421, 1299999999921, 1349999999431, 1399999999931]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000],intLength = 13) == [1049999999401, 1099999999901, 1149999999411, 1199999999911, 1249999999421, 1299999999921, 1349999999431, 1399999999931]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100, 1000, 10000, 100000, 1000000],intLength = 15) == [100000999000001, 100009999900001, 100099999990001, 100999999999001, 109999999999901]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100, 1000, 10000, 100000, 1000000],intLength = 15) == [100000999000001, 100009999900001, 100099999990001, 100999999999001, 109999999999901]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 9, 99, 999, 9999, 99999],intLength = 15) == [100000000000001, 100000080000001, 100000989000001, 100009989900001, 100099989990001, 100999989999001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 9, 99, 999, 9999, 99999],intLength = 15) == [100000000000001, 100000080000001, 100000989000001, 100009989900001, 100099989990001, 100999989999001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 3) == [101, 191, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 3) == [101, 191, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [90000000, 95000000, 99000000],intLength = 15) == [999999999999999, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [90000000, 95000000, 99000000],intLength = 15) == [999999999999999, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456789],intLength = 15) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456789],intLength = 15) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 123456, 987654, 999999],intLength = 5) == [10001, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 123456, 987654, 999999],intLength = 5) == [10001, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [98765, 43210, 54321, 67890],intLength = 5) == [-1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [98765, 43210, 54321, 67890],intLength = 5) == [-1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 11) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 11) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 15) == [100000000000001, 100000010000001, 100000020000001, 100000030000001, 100000040000001, 100000050000001, 100000060000001, 100000070000001, 100000080000001, 100000090000001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 15) == [100000000000001, 100000010000001, 100000020000001, 100000030000001, 100000040000001, 100000050000001, 100000060000001, 100000070000001, 100000080000001, 100000090000001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123, 456, 789, 101112, 131415],intLength = 11) == [10012221001, 10045554001, 10078887001, 20111111102, 23141414132]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123, 456, 789, 101112, 131415],intLength = 11) == [10012221001, 10045554001, 10078887001, 20111111102, 23141414132]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 9) == [100000001, 100010001, 100020001, 100030001, 100040001, 100050001, 100060001, 100070001, 100080001, 100090001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 9) == [100000001, 100010001, 100020001, 100030001, 100040001, 100050001, 100060001, 100070001, 100080001, 100090001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 19991, 29992, 39993, 49994, 59995, 69996, 79997, 89998, 99999, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 19991, 29992, 39993, 49994, 59995, 69996, 79997, 89998, 99999, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000, 200000000, 300000000],intLength = 12) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000, 200000000, 300000000],intLength = 12) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000, 100000001, 100000002],intLength = 13) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000, 100000001, 100000002],intLength = 13) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500000000, 600000000, 700000000],intLength = 9) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500000000, 600000000, 700000000],intLength = 9) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],intLength = 14) == [10000000000001, 10000044000001, 10000099000001, 10000144100001, 10000199100001, 10000244200001, 10000299200001, 10000344300001, 10000399300001, 10000444400001, 10000499400001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],intLength = 14) == [10000000000001, 10000044000001, 10000099000001, 10000144100001, 10000199100001, 10000244200001, 10000299200001, 10000344300001, 10000399300001, 10000444400001, 10000499400001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000, 200000, 300000],intLength = 11) == [19999999991, 29999999992, 39999999993]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000, 200000, 300000],intLength = 11) == [19999999991, 29999999992, 39999999993]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 13) == [1009999999001, 1019999999101, 1029999999201, 1039999999301, 1049999999401]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 13) == [1009999999001, 1019999999101, 1029999999201, 1039999999301, 1049999999401]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500000, 600000, 700000, 800000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961, 1799999999971]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500000, 600000, 700000, 800000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961, 1799999999971]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000],intLength = 6) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000],intLength = 6) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000, 10001, 10002, 10003, 10004],intLength = 6) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000, 10001, 10002, 10003, 10004],intLength = 6) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000, 6000, 7000, 8000, 9000, 10000],intLength = 11) == [10499999401, 10599999501, 10699999601, 10799999701, 10899999801, 10999999901]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000, 6000, 7000, 8000, 9000, 10000],intLength = 11) == [10499999401, 10599999501, 10699999601, 10799999701, 10899999801, 10999999901]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [999999999],intLength = 15) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [999999999],intLength = 15) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 6) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 6) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 5, 10, 15, 20, 25, 30],intLength = 5) == [10001, 10401, 10901, 11411, 11911, 12421, 12921]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 5, 10, 15, 20, 25, 30],intLength = 5) == [10001, 10401, 10901, 11411, 11911, 12421, 12921]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000, 100001, 100002],intLength = 11) == [19999999991, 20000000002, 20000100002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000, 100001, 100002],intLength = 11) == [19999999991, 20000000002, 20000100002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 5) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 5) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [50000, 150000, 250000],intLength = 11) == [14999999941, 24999999942, 34999999943]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [50000, 150000, 250000],intLength = 11) == [14999999941, 24999999942, 34999999943]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 4) == [1001, 1111, 1221, 1331, 1441, 1551, 1661, 1771, 1881, 1991, 2002, 2112, 2222, 2332, 2442, 2552, 2662, 2772, 2882, 2992]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 4) == [1001, 1111, 1221, 1331, 1441, 1551, 1661, 1771, 1881, 1991, 2002, 2112, 2222, 2332, 2442, 2552, 2662, 2772, 2882, 2992]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 50000000, 100000000],intLength = 15) == [100000000000001, 599999999999995, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 50000000, 100000000],intLength = 15) == [100000000000001, 599999999999995, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000000, 6000000, 7000000],intLength = 11) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000000, 6000000, 7000000],intLength = 11) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10, 20, 30, 40, 50],intLength = 5) == [10901, 11911, 12921, 13931, 14941]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10, 20, 30, 40, 50],intLength = 5) == [10901, 11911, 12921, 13931, 14941]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 14) == [10000000000001, 10000011000001, 10000022000001, 10000033000001, 10000044000001, 10000055000001, 10000066000001, 10000077000001, 10000088000001, 10000099000001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 14) == [10000000000001, 10000011000001, 10000022000001, 10000033000001, 10000044000001, 10000055000001, 10000066000001, 10000077000001, 10000088000001, 10000099000001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000, 99999, 88888],intLength = 15) == [100999999999001, 100999989999001, 100888878888001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000, 99999, 88888],intLength = 15) == [100999999999001, 100999989999001, 100888878888001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [999999, 999998, 999997],intLength = 7) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [999999, 999998, 999997],intLength = 7) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456, 654321, 111111],intLength = 9) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456, 654321, 111111],intLength = 9) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 1000000, 2000000, 3000000, 4000000, 5000000],intLength = 7) == [1000001, 1001001, 1002001, 1003001, 1004001, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 1000000, 2000000, 3000000, 4000000, 5000000],intLength = 7) == [1000001, 1001001, 1002001, 1003001, 1004001, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 15) == [109999999999901, 119999999999911, 129999999999921, 139999999999931, 149999999999941]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 15) == [109999999999901, 119999999999911, 129999999999921, 139999999999931, 149999999999941]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [12345, 67890, 111111, 222222, 333333],intLength = 7) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [12345, 67890, 111111, 222222, 333333],intLength = 7) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 100000000, 50000000, 25000000, 75000000, 90000000, 100000000, 85000000, 65000000, 45000000],intLength = 8) == [10000001, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 100000000, 50000000, 25000000, 75000000, 90000000, 100000000, 85000000, 65000000, 45000000],intLength = 8) == [10000001, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100, 200, 300, 400, 500],intLength = 15) == [100000999000001, 100001999100001, 100002999200001, 100003999300001, 100004999400001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100, 200, 300, 400, 500],intLength = 15) == [100000999000001, 100001999100001, 100002999200001, 100003999300001, 100004999400001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000, 20000, 30000],intLength = 7) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000, 20000, 30000],intLength = 7) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 123456, 987654, 1000000],intLength = 5) == [10001, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 123456, 987654, 1000000],intLength = 5) == [10001, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 8) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 8) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 11) == [10099999001, 10199999101, 10299999201, 10399999301, 10499999401]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 11) == [10099999001, 10199999101, 10299999201, 10399999301, 10499999401]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 11) == [10000000001, 10000900001, 10009990001, 10099999001, 10999999901, 19999999991]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 11) == [10000000001, 10000900001, 10009990001, 10099999001, 10999999901, 19999999991]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000, 10000, 15000, 20000],intLength = 10) == [1499999941, 1999999991, 2499999942, 2999999992]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000, 10000, 15000, 20000],intLength = 10) == [1499999941, 1999999991, 2499999942, 2999999992]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [999999, 888888, 777777, 666666, 555555],intLength = 10) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [999999, 888888, 777777, 666666, 555555],intLength = 10) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 1000000, 9999999, 10000000],intLength = 13) == [1000000000001, 1999999999991, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 1000000, 9999999, 10000000],intLength = 13) == [1000000000001, 1999999999991, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [98765, 43210, 11111, 22222, 33333],intLength = 11) == [19876467891, 14320902341, 11111011111, 12222122221, 13333233331]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [98765, 43210, 11111, 22222, 33333],intLength = 11) == [19876467891, 14320902341, 11111011111, 12222122221, 13333233331]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500000, 600000, 700000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500000, 600000, 700000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [987654321],intLength = 15) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [987654321],intLength = 15) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456789],intLength = 9) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456789],intLength = 9) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456789, 987654321, 500000000, 300000000, 200000000],intLength = 15) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456789, 987654321, 500000000, 300000000, 200000000],intLength = 15) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123, 456, 789],intLength = 10) == [1012222101, 1045555401, 1078888701]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123, 456, 789],intLength = 10) == [1012222101, 1045555401, 1078888701]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000, 200000, 300000],intLength = 9) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000, 200000, 300000],intLength = 9) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000],intLength = 15) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000],intLength = 15) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [999999999, 999999998, 999999997, 999999996, 999999995],intLength = 15) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [999999999, 999999998, 999999997, 999999996, 999999995],intLength = 15) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 999999999],intLength = 15) == [100000000000001, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 999999999],intLength = 15) == [100000000000001, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000, 1000000, 10000000, 100000000, 1000000000],intLength = 11) == [19999999991, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000, 1000000, 10000000, 100000000, 1000000000],intLength = 11) == [19999999991, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000, 10000, 15000, 20000],intLength = 7) == [5999995, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000, 10000, 15000, 20000],intLength = 7) == [5999995, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500, 1000, 1500, 2000, 2500, 3000],intLength = 7) == [1499941, 1999991, 2499942, 2999992, 3499943, 3999993]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500, 1000, 1500, 2000, 2500, 3000],intLength = 7) == [1499941, 1999991, 2499942, 2999992, 3499943, 3999993]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000000],intLength = 9) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000000],intLength = 9) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000, 20000, 30000, 40000],intLength = 11) == [10999999901, 11999999911, 12999999921, 13999999931]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000, 20000, 30000, 40000],intLength = 11) == [10999999901, 11999999911, 12999999921, 13999999931]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [987654, 987655, 987656, 987657, 987658],intLength = 13) == [1987653567891, 1987654567891, 1987655567891, 1987656567891, 1987657567891]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [987654, 987655, 987656, 987657, 987658],intLength = 13) == [1987653567891, 1987654567891, 1987655567891, 1987656567891, 1987657567891]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],intLength = 3) == [101, 141, 191, 242, 292, 343, 393, 444, 494, 545, 595, 646, 696, 747, 797, 848, 898, 949, 999, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],intLength = 3) == [101, 141, 191, 242, 292, 343, 393, 444, 494, 545, 595, 646, 696, 747, 797, 848, 898, 949, 999, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456789, 987654321, 567891234],intLength = 15) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456789, 987654321, 567891234],intLength = 15) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 123456789, 987654321, 500000000],intLength = 9) == [100000001, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 123456789, 987654321, 500000000],intLength = 9) == [100000001, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000, 1000001, 1000002, 1000003, 1000004],intLength = 13) == [1999999999991, 2000000000002, 2000001000002, 2000002000002, 2000003000002]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000, 1000001, 1000002, 1000003, 1000004],intLength = 13) == [1999999999991, 2000000000002, 2000001000002, 2000002000002, 2000003000002]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [5000, 10000, 15000, 20000],intLength = 9) == [149999941, 199999991, 249999942, 299999992]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [5000, 10000, 15000, 20000],intLength = 9) == [149999941, 199999991, 249999942, 299999992]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000, 99999999, 88888888, 77777777],intLength = 13) == [-1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000, 99999999, 88888888, 77777777],intLength = 13) == [-1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [123456789],intLength = 10) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [123456789],intLength = 10) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000, 99999999, 99999998, 99999997, 99999996],intLength = 2) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000, 99999999, 99999998, 99999997, 99999996],intLength = 2) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1000000, 1000001, 1000002],intLength = 15) == [109999999999901, 110000000000011, 110000010000011]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1000000, 1000001, 1000002],intLength = 15) == [109999999999901, 110000000000011, 110000010000011]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [999999, 999998, 999997, 999996, 999995],intLength = 6) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [999999, 999998, 999997, 999996, 999995],intLength = 6) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],intLength = 11) == [-1, -1, -1, 19999999991, 10999999901, 10099999001, 10009990001, 10000900001, 10000000001]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],intLength = 11) == [-1, -1, -1, 19999999991, 10999999901, 10099999001, 10009990001, 10000900001, 10000000001]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 14) == [10000000000001, 10000099000001, 10000999900001, 10009999990001, 10099999999001, 10999999999901]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 14) == [10000000000001, 10000099000001, 10000999900001, 10009999990001, 10099999999001, 10999999999901]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [987654321, 123456789],intLength = 8) == [-1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [987654321, 123456789],intLength = 8) == [-1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [10000000, 10000001, 10000002, 10000003, 10000004],intLength = 7) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [10000000, 10000001, 10000002, 10000003, 10000004],intLength = 7) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500000, 500001, 500002, 500003, 500004],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500000, 500001, 500002, 500003, 500004],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, 10000, 100000, 1000000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901, 19991, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, 10000, 100000, 1000000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901, 19991, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [99999999, 100000000, 100000001],intLength = 9) == [-1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [99999999, 100000000, 100000001],intLength = 9) == [-1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = [500000, 500001, 500002, 500003, 500004, 500005],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051, 1500004000051]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = [500000, 500001, 500002, 500003, 500004, 500005],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051, 1500004000051]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(queries = [10, 20, 30],intLength = 2) == [-1, -1, -1]
+    assert candidate(queries = [1, 3, 5, 7, 9],intLength = 5) == [10001, 10201, 10401, 10601, 10801]
+    assert candidate(queries = [50000],intLength = 15) == [100499999994001]
+    assert candidate(queries = [1, 1000000],intLength = 15) == [100000000000001, 109999999999901]
+    assert candidate(queries = [1, 2, 3, 4, 5, 90],intLength = 3) == [101, 111, 121, 131, 141, 999]
+    assert candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]
+    assert candidate(queries = [2, 4, 6],intLength = 4) == [1111, 1331, 1551]
+    assert candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]
+    assert candidate(queries = [1, 10, 100, 1000],intLength = 7) == [1000001, 1009001, 1099901, 1999991]
+    assert candidate(queries = [10, 20, 30],intLength = 6) == [109901, 119911, 129921]
+    assert candidate(queries = [100, 200, 300],intLength = 7) == [1099901, 1199911, 1299921]
+    assert candidate(queries = [1, 1, 1, 1],intLength = 1) == [1, 1, 1, 1]
+    assert candidate(queries = [1, 100000000],intLength = 1) == [1, -1]
+    assert candidate(queries = [5000000],intLength = 1) == [-1]
+    assert candidate(queries = [1000000000],intLength = 15) == [-1]
+    assert candidate(queries = [1, 10, 100, 1000, 10000],intLength = 5) == [10001, 10901, 19991, -1, -1]
+    assert candidate(queries = [100000],intLength = 15) == [100999999999001]
+    assert candidate(queries = [1, 2, 3],intLength = 1) == [1, 2, 3]
+    assert candidate(queries = [5, 15, 25],intLength = 2) == [55, -1, -1]
+    assert candidate(queries = [123456, 654321],intLength = 10) == [-1, -1]
+    assert candidate(queries = [50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000],intLength = 13) == [1049999999401, 1099999999901, 1149999999411, 1199999999911, 1249999999421, 1299999999921, 1349999999431, 1399999999931]
+    assert candidate(queries = [100, 1000, 10000, 100000, 1000000],intLength = 15) == [100000999000001, 100009999900001, 100099999990001, 100999999999001, 109999999999901]
+    assert candidate(queries = [1, 9, 99, 999, 9999, 99999],intLength = 15) == [100000000000001, 100000080000001, 100000989000001, 100009989900001, 100099989990001, 100999989999001]
+    assert candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 3) == [101, 191, -1, -1, -1, -1]
+    assert candidate(queries = [90000000, 95000000, 99000000],intLength = 15) == [999999999999999, -1, -1]
+    assert candidate(queries = [123456789],intLength = 15) == [-1]
+    assert candidate(queries = [1, 123456, 987654, 999999],intLength = 5) == [10001, -1, -1, -1]
+    assert candidate(queries = [98765, 43210, 54321, 67890],intLength = 5) == [-1, -1, -1, -1]
+    assert candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 11) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 15) == [100000000000001, 100000010000001, 100000020000001, 100000030000001, 100000040000001, 100000050000001, 100000060000001, 100000070000001, 100000080000001, 100000090000001]
+    assert candidate(queries = [123, 456, 789, 101112, 131415],intLength = 11) == [10012221001, 10045554001, 10078887001, 20111111102, 23141414132]
+    assert candidate(queries = [1, 10, 100, 1000, 10000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 9) == [100000001, 100010001, 100020001, 100030001, 100040001, 100050001, 100060001, 100070001, 100080001, 100090001]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 2, 3, 4, 5, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 19991, 29992, 39993, 49994, 59995, 69996, 79997, 89998, 99999, -1]
+    assert candidate(queries = [100000000, 200000000, 300000000],intLength = 12) == [-1, -1, -1]
+    assert candidate(queries = [100000000, 100000001, 100000002],intLength = 13) == [-1, -1, -1]
+    assert candidate(queries = [500000000, 600000000, 700000000],intLength = 9) == [-1, -1, -1]
+    assert candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],intLength = 14) == [10000000000001, 10000044000001, 10000099000001, 10000144100001, 10000199100001, 10000244200001, 10000299200001, 10000344300001, 10000399300001, 10000444400001, 10000499400001]
+    assert candidate(queries = [100000, 200000, 300000],intLength = 11) == [19999999991, 29999999992, 39999999993]
+    assert candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 13) == [1009999999001, 1019999999101, 1029999999201, 1039999999301, 1049999999401]
+    assert candidate(queries = [500000, 600000, 700000, 800000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961, 1799999999971]
+    assert candidate(queries = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000],intLength = 6) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(queries = [10000, 10001, 10002, 10003, 10004],intLength = 6) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [5000, 6000, 7000, 8000, 9000, 10000],intLength = 11) == [10499999401, 10599999501, 10699999601, 10799999701, 10899999801, 10999999901]
+    assert candidate(queries = [999999999],intLength = 15) == [-1]
+    assert candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 6) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 5, 10, 15, 20, 25, 30],intLength = 5) == [10001, 10401, 10901, 11411, 11911, 12421, 12921]
+    assert candidate(queries = [100000, 100001, 100002],intLength = 11) == [19999999991, 20000000002, 20000100002]
+    assert candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 5) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [50000, 150000, 250000],intLength = 11) == [14999999941, 24999999942, 34999999943]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1, -1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],intLength = 4) == [1001, 1111, 1221, 1331, 1441, 1551, 1661, 1771, 1881, 1991, 2002, 2112, 2222, 2332, 2442, 2552, 2662, 2772, 2882, 2992]
+    assert candidate(queries = [1, 50000000, 100000000],intLength = 15) == [100000000000001, 599999999999995, -1]
+    assert candidate(queries = [5000000, 6000000, 7000000],intLength = 11) == [-1, -1, -1]
+    assert candidate(queries = [10, 20, 30, 40, 50],intLength = 5) == [10901, 11911, 12921, 13931, 14941]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 14) == [10000000000001, 10000011000001, 10000022000001, 10000033000001, 10000044000001, 10000055000001, 10000066000001, 10000077000001, 10000088000001, 10000099000001]
+    assert candidate(queries = [100000, 99999, 88888],intLength = 15) == [100999999999001, 100999989999001, 100888878888001]
+    assert candidate(queries = [999999, 999998, 999997],intLength = 7) == [-1, -1, -1]
+    assert candidate(queries = [123456, 654321, 111111],intLength = 9) == [-1, -1, -1]
+    assert candidate(queries = [1, 2, 3, 4, 5, 1000000, 2000000, 3000000, 4000000, 5000000],intLength = 7) == [1000001, 1001001, 1002001, 1003001, 1004001, -1, -1, -1, -1, -1]
+    assert candidate(queries = [1000000, 2000000, 3000000, 4000000, 5000000],intLength = 15) == [109999999999901, 119999999999911, 129999999999921, 139999999999931, 149999999999941]
+    assert candidate(queries = [12345, 67890, 111111, 222222, 333333],intLength = 7) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 100000000, 50000000, 25000000, 75000000, 90000000, 100000000, 85000000, 65000000, 45000000],intLength = 8) == [10000001, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(queries = [100, 200, 300, 400, 500],intLength = 15) == [100000999000001, 100001999100001, 100002999200001, 100003999300001, 100004999400001]
+    assert candidate(queries = [10000, 20000, 30000],intLength = 7) == [-1, -1, -1]
+    assert candidate(queries = [1, 123456, 987654, 1000000],intLength = 5) == [10001, -1, -1, -1]
+    assert candidate(queries = [10000, 20000, 30000, 40000, 50000],intLength = 8) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1000, 2000, 3000, 4000, 5000],intLength = 11) == [10099999001, 10199999101, 10299999201, 10399999301, 10499999401]
+    assert candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 11) == [10000000001, 10000900001, 10009990001, 10099999001, 10999999901, 19999999991]
+    assert candidate(queries = [5000, 10000, 15000, 20000],intLength = 10) == [1499999941, 1999999991, 2499999942, 2999999992]
+    assert candidate(queries = [999999, 888888, 777777, 666666, 555555],intLength = 10) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 1000000, 9999999, 10000000],intLength = 13) == [1000000000001, 1999999999991, -1, -1]
+    assert candidate(queries = [98765, 43210, 11111, 22222, 33333],intLength = 11) == [19876467891, 14320902341, 11111011111, 12222122221, 13333233331]
+    assert candidate(queries = [500000, 600000, 700000],intLength = 13) == [1499999999941, 1599999999951, 1699999999961]
+    assert candidate(queries = [987654321],intLength = 15) == [-1]
+    assert candidate(queries = [123456789],intLength = 9) == [-1]
+    assert candidate(queries = [123456789, 987654321, 500000000, 300000000, 200000000],intLength = 15) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [123, 456, 789],intLength = 10) == [1012222101, 1045555401, 1078888701]
+    assert candidate(queries = [100000, 200000, 300000],intLength = 9) == [-1, -1, -1]
+    assert candidate(queries = [100000000],intLength = 15) == [-1]
+    assert candidate(queries = [999999999, 999999998, 999999997, 999999996, 999999995],intLength = 15) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1, 999999999],intLength = 15) == [100000000000001, -1]
+    assert candidate(queries = [100000, 1000000, 10000000, 100000000, 1000000000],intLength = 11) == [19999999991, -1, -1, -1, -1]
+    assert candidate(queries = [5000, 10000, 15000, 20000],intLength = 7) == [5999995, -1, -1, -1]
+    assert candidate(queries = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000],intLength = 9) == [100000001, 100090001, 100999001, 109999901, 199999991, -1, -1, -1, -1, -1]
+    assert candidate(queries = [500, 1000, 1500, 2000, 2500, 3000],intLength = 7) == [1499941, 1999991, 2499942, 2999992, 3499943, 3999993]
+    assert candidate(queries = [1000000000],intLength = 9) == [-1]
+    assert candidate(queries = [10000, 20000, 30000, 40000],intLength = 11) == [10999999901, 11999999911, 12999999921, 13999999931]
+    assert candidate(queries = [987654, 987655, 987656, 987657, 987658],intLength = 13) == [1987653567891, 1987654567891, 1987655567891, 1987656567891, 1987657567891]
+    assert candidate(queries = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],intLength = 3) == [101, 141, 191, 242, 292, 343, 393, 444, 494, 545, 595, 646, 696, 747, 797, 848, 898, 949, 999, -1]
+    assert candidate(queries = [123456789, 987654321, 567891234],intLength = 15) == [-1, -1, -1]
+    assert candidate(queries = [1, 123456789, 987654321, 500000000],intLength = 9) == [100000001, -1, -1, -1]
+    assert candidate(queries = [1000000, 1000001, 1000002, 1000003, 1000004],intLength = 13) == [1999999999991, 2000000000002, 2000001000002, 2000002000002, 2000003000002]
+    assert candidate(queries = [5000, 10000, 15000, 20000],intLength = 9) == [149999941, 199999991, 249999942, 299999992]
+    assert candidate(queries = [100000000, 99999999, 88888888, 77777777],intLength = 13) == [-1, -1, -1, -1]
+    assert candidate(queries = [123456789],intLength = 10) == [-1]
+    assert candidate(queries = [100000000, 99999999, 99999998, 99999997, 99999996],intLength = 2) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [1000000, 1000001, 1000002],intLength = 15) == [109999999999901, 110000000000011, 110000010000011]
+    assert candidate(queries = [999999, 999998, 999997, 999996, 999995],intLength = 6) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1],intLength = 11) == [-1, -1, -1, 19999999991, 10999999901, 10099999001, 10009990001, 10000900001, 10000000001]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],intLength = 2) == [11, 22, 33, 44, 55, 66, 77, 88, 99, -1]
+    assert candidate(queries = [1, 10, 100, 1000, 10000, 100000],intLength = 14) == [10000000000001, 10000099000001, 10000999900001, 10009999990001, 10099999999001, 10999999999901]
+    assert candidate(queries = [987654321, 123456789],intLength = 8) == [-1, -1]
+    assert candidate(queries = [10000000, 10000001, 10000002, 10000003, 10000004],intLength = 7) == [-1, -1, -1, -1, -1]
+    assert candidate(queries = [500000, 500001, 500002, 500003, 500004],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051]
+    assert candidate(queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, 10000, 100000, 1000000],intLength = 5) == [10001, 10101, 10201, 10301, 10401, 10501, 10601, 10701, 10801, 10901, 19991, -1, -1, -1, -1]
+    assert candidate(queries = [99999999, 100000000, 100000001],intLength = 9) == [-1, -1, -1]
+    assert candidate(queries = [500000, 500001, 500002, 500003, 500004, 500005],intLength = 13) == [1499999999941, 1500000000051, 1500001000051, 1500002000051, 1500003000051, 1500004000051]
+
+

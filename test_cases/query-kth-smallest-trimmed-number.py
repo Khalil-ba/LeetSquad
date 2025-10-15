@@ -1,0 +1,860 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 3]]) == [0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 3]]) == [0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '456', '789', '012'],queries = [[1, 2], [3, 3], [2, 1]]) == [3, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '456', '789', '012'],queries = [[1, 2], [3, 3], [2, 1]]) == [3, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001', '002', '003'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001', '002', '003'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001', '012', '123', '234'],queries = [[1, 2], [2, 3], [3, 1]]) == [0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001', '012', '123', '234'],queries = [[1, 2], [2, 3], [3, 1]]) == [0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001', '002', '003', '004'],queries = [[1, 3], [4, 1], [2, 2]]) == [0, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001', '002', '003', '004'],queries = [[1, 3], [4, 1], [2, 2]]) == [0, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['24', '37', '96', '04'],queries = [[2, 1], [2, 2]]) == [3, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['24', '37', '96', '04'],queries = [[2, 1], [2, 2]]) == [3, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['56', '78', '90'],queries = [[1, 1], [2, 2]]) == [2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['56', '78', '90'],queries = [[1, 1], [2, 2]]) == [2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12', '12', '12'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12', '12', '12'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['567', '890', '123'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['567', '890', '123'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 3], [2, 1]]) == [0, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 3], [2, 1]]) == [0, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 1], [2, 3]]) == [0, 2, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 1], [2, 3]]) == [0, 2, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['102', '473', '251', '814'],queries = [[1, 1], [2, 3], [4, 2], [1, 2]]) == [2, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['102', '473', '251', '814'],queries = [[1, 1], [2, 3], [4, 2], [1, 2]]) == [2, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001', '010', '100'],queries = [[1, 1], [2, 2], [3, 3]]) == [1, 0, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001', '010', '100'],queries = [[1, 1], [2, 2], [3, 3]]) == [1, 0, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['987', '654', '321'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['987', '654', '321'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1234567890', '9876543210', '0000000000', '1111111111', '2222222222'],queries = [[1, 5], [3, 10], [2, 3], [5, 2]]) == [2, 0, 3, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1234567890', '9876543210', '0000000000', '1111111111', '2222222222'],queries = [[1, 5], [3, 10], [2, 3], [5, 2]]) == [2, 0, 3, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9999', '8888', '7777', '6666'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 4]]) == [3, 2, 1, 0, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9999', '8888', '7777', '6666'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 4]]) == [3, 2, 1, 0, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555', '666666666', '777777777', '888888888', '999999999'],queries = [[9, 1], [1, 9], [5, 5], [3, 7], [7, 3], [2, 8], [8, 2], [4, 6], [6, 4]]) == [8, 0, 4, 2, 6, 1, 7, 3, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555', '666666666', '777777777', '888888888', '999999999'],queries = [[9, 1], [1, 9], [5, 5], [3, 7], [7, 3], [2, 8], [8, 2], [4, 6], [6, 4]]) == [8, 0, 4, 2, 6, 1, 7, 3, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1001', '10001', '100001', '1000001', '10000001'],queries = [[1, 4], [2, 6], [3, 3], [4, 5], [5, 1]]) == [1, 4, 2, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1001', '10001', '100001', '1000001', '10000001'],queries = [[1, 4], [2, 6], [3, 3], [4, 5], [5, 1]]) == [1, 4, 2, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123456', '654321', '135799', '975311', '246800'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [0, 2, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123456', '654321', '135799', '975311', '246800'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [0, 2, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12345', '67890', '54321', '09876', '43210'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [3, 4, 0, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12345', '67890', '54321', '09876', '43210'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [3, 4, 0, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123456789', '987654321', '135792468', '246801357', '579135791'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [1, 4], [2, 3], [3, 2], [4, 1]]) == [0, 2, 3, 2, 2, 3, 3, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123456789', '987654321', '135792468', '246801357', '579135791'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [1, 4], [2, 3], [3, 2], [4, 1]]) == [0, 2, 3, 2, 2, 3, 3, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['10001', '01001', '00101', '00011', '11001'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3]]) == [0, 1, 4, 1, 4, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['10001', '01001', '00101', '00011', '11001'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3]]) == [0, 1, 4, 1, 4, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009'],queries = [[1, 1], [9, 1], [2, 1], [3, 1], [8, 1], [4, 1], [7, 1], [5, 1], [6, 1]]) == [0, 8, 1, 2, 7, 3, 6, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009'],queries = [[1, 1], [9, 1], [2, 1], [3, 1], [8, 1], [4, 1], [7, 1], [5, 1], [6, 1]]) == [0, 8, 1, 2, 7, 3, 6, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1234', '2345', '3456', '4567', '5678', '6789', '7890'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]]) == [6, 1, 2, 3, 4, 5, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1234', '2345', '3456', '4567', '5678', '6789', '7890'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]]) == [6, 1, 2, 3, 4, 5, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00000', '00001', '00002', '00003', '00004'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 5]]) == [0, 1, 2, 3, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00000', '00001', '00002', '00003', '00004'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 5]]) == [0, 1, 2, 3, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [5, 5], [3, 3], [2, 2], [4, 4]]) == [1, 4, 0, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [5, 5], [3, 3], [2, 2], [4, 4]]) == [1, 4, 0, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['987', '876', '765', '654', '543', '432', '321', '210', '109'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 2], [8, 3], [9, 1]]) == [7, 6, 6, 5, 4, 3, 2, 1, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['987', '876', '765', '654', '543', '432', '321', '210', '109'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 2], [8, 3], [9, 1]]) == [7, 6, 6, 5, 4, 3, 2, 1, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1010', '0101', '0011', '1100'],queries = [[1, 2], [2, 1], [3, 4], [4, 3]]) == [3, 3, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1010', '0101', '0011', '1100'],queries = [[1, 2], [2, 1], [3, 4], [4, 3]]) == [3, 3, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1111', '2222', '3333', '4444', '5555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 5]]) == [0, 1, 2, 3, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1111', '2222', '3333', '4444', '5555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 5]]) == [0, 1, 2, 3, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['000001', '000010', '000100', '001000', '010000', '100000'],queries = [[1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6]]) == [0, 1, 2, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['000001', '000010', '000100', '001000', '010000', '100000'],queries = [[1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6]]) == [0, 1, 2, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '11112', '11122', '11222', '12222'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '11112', '11122', '11222', '12222'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['100100', '100010', '101000', '010100', '001100', '001010', '010010', '000101', '000011', '110000'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2], [6, 1], [7, 6], [8, 5], [9, 4], [10, 3]]) == [8, 8, 6, 5, 9, 5, 1, 9, 5, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['100100', '100010', '101000', '010100', '001100', '001010', '010010', '000101', '000011', '110000'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2], [6, 1], [7, 6], [8, 5], [9, 4], [10, 3]]) == [8, 8, 6, 5, 9, 5, 1, 9, 5, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['999', '888', '777', '666', '555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 3]]) == [4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['999', '888', '777', '666', '555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 3]]) == [4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00123', '00234', '00345', '00456'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [2, 3]]) == [0, 1, 2, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00123', '00234', '00345', '00456'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [2, 3]]) == [0, 1, 2, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '234', '345', '456', '567', '678', '789', '890', '901', '012'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [7, 3], [4, 3], [6, 3], [9, 1]]) == [7, 8, 2, 1, 4, 9, 5, 2, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '234', '345', '456', '567', '678', '789', '890', '901', '012'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [7, 3], [4, 3], [6, 3], [9, 1]]) == [7, 8, 2, 1, 4, 9, 5, 2, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00000', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [6, 5], [3, 3], [4, 2], [2, 4], [5, 5]]) == [0, 5, 2, 3, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00000', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [6, 5], [3, 3], [4, 2], [2, 4], [5, 5]]) == [0, 5, 2, 3, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '456', '789', '101', '111'],queries = [[1, 1], [2, 2], [3, 3], [4, 1], [5, 2]]) == [3, 4, 0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '456', '789', '101', '111'],queries = [[1, 1], [2, 2], [3, 3], [4, 1], [5, 2]]) == [3, 4, 0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123456', '654321', '111111', '222222', '333333'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [2, 3, 4, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123456', '654321', '111111', '222222', '333333'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [2, 3, 4, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['999', '111', '222', '888', '333', '444', '555', '666', '777', '000'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [4, 4], [7, 5], [6, 6], [9, 9]]) == [9, 0, 5, 2, 8, 1, 4, 7, 6, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['999', '111', '222', '888', '333', '444', '555', '666', '777', '000'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [4, 4], [7, 5], [6, 6], [9, 9]]) == [9, 0, 5, 2, 8, 1, 4, 7, 6, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['09876', '54321', '01234', '98765', '43210'],queries = [[1, 3], [2, 2], [3, 1], [4, 5], [5, 4]]) == [4, 1, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['09876', '54321', '01234', '98765', '43210'],queries = [[1, 3], [2, 2], [3, 1], [4, 5], [5, 4]]) == [4, 1, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0000', '1111', '2222', '3333', '4444', '5555', '6666', '7777', '8888', '9999'],queries = [[1, 1], [5, 4], [10, 1], [3, 2], [7, 3]]) == [0, 4, 9, 2, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0000', '1111', '2222', '3333', '4444', '5555', '6666', '7777', '8888', '9999'],queries = [[1, 1], [5, 4], [10, 1], [3, 2], [7, 3]]) == [0, 4, 9, 2, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '01010', '10010'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [6, 3], [7, 3], [8, 3], [9, 3], [10, 3]]) == [6, 2, 3, 8, 9, 0, 5, 7, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '01010', '10010'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [6, 3], [7, 3], [8, 3], [9, 3], [10, 3]]) == [6, 2, 3, 8, 9, 0, 5, 7, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '456', '789', '123', '456'],queries = [[1, 3], [2, 3], [3, 3], [4, 2], [5, 1]]) == [0, 3, 1, 4, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '456', '789', '123', '456'],queries = [[1, 3], [2, 3], [3, 3], [4, 2], [5, 1]]) == [0, 3, 1, 4, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009', '00010'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009', '00010'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['112233', '223344', '334455', '445566', '556677'],queries = [[1, 3], [2, 6], [3, 2], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['112233', '223344', '334455', '445566', '556677'],queries = [[1, 3], [2, 6], [3, 2], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123456789', '234567890', '345678901', '456789012', '567890123'],queries = [[1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [1, 1]]) == [0, 1, 2, 3, 4, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123456789', '234567890', '345678901', '456789012', '567890123'],queries = [[1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [1, 1]]) == [0, 1, 2, 3, 4, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['98765', '87654', '76543', '65432', '54321'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['98765', '87654', '76543', '65432', '54321'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '21111', '31111', '41111', '51111'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '21111', '31111', '41111', '51111'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9999999999', '1234567890', '1111111111', '2222222222', '3333333333'],queries = [[1, 10], [2, 5], [3, 7], [4, 2], [5, 9]]) == [2, 3, 4, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9999999999', '1234567890', '1111111111', '2222222222', '3333333333'],queries = [[1, 10], [2, 5], [3, 7], [4, 2], [5, 9]]) == [2, 3, 4, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 4], [8, 4], [9, 5], [10, 5], [11, 6], [12, 6], [13, 7], [14, 7], [15, 8], [16, 8]]) == [0, 2, 8, 12, 2, 10, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 4], [8, 4], [9, 5], [10, 5], [11, 6], [12, 6], [13, 7], [14, 7], [15, 8], [16, 8]]) == [0, 2, 8, 12, 2, 10, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9], [5, 9]]) == [0, 1, 2, 3, 4, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9], [5, 9]]) == [0, 1, 2, 3, 4, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0000', '0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 3, 1, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0000', '0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 3, 1, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '10010', '01010'],queries = [[1, 2], [3, 3], [5, 1], [7, 4], [9, 5], [2, 5], [4, 2], [6, 3], [8, 1], [10, 2]]) == [5, 3, 8, 6, 7, 1, 1, 0, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '10010', '01010'],queries = [[1, 2], [3, 3], [5, 1], [7, 4], [9, 5], [2, 5], [4, 2], [6, 3], [8, 1], [10, 2]]) == [5, 3, 8, 6, 7, 1, 1, 0, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['99999', '88888', '77777', '66666', '55555', '44444', '33333'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1], [3, 5], [4, 4]]) == [6, 5, 4, 3, 2, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['99999', '88888', '77777', '66666', '55555', '44444', '33333'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1], [3, 5], [4, 4]]) == [6, 5, 4, 3, 2, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0011', '0101', '1001', '1100'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2]]) == [3, 1, 3, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0011', '0101', '1001', '1100'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2]]) == [3, 1, 3, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0123456789', '1234567890', '2345678901', '3456789012', '4567890123'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0123456789', '1234567890', '2345678901', '3456789012', '4567890123'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00011', '00111', '01111', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [5, 2], [9, 3], [4, 4], [3, 5], [8, 1], [2, 2]]) == [0, 4, 8, 3, 2, 7, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00011', '00111', '01111', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [5, 2], [9, 3], [4, 4], [3, 5], [8, 1], [2, 2]]) == [0, 4, 8, 3, 2, 7, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12', '21', '11', '22', '12', '21'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [1, 2]]) == [1, 2, 5, 0, 3, 4, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12', '21', '11', '22', '12', '21'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [1, 2]]) == [1, 2, 5, 0, 3, 4, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9990', '9909', '9099', '0999', '9999'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 1], [5, 2], [5, 3]]) == [0, 0, 0, 0, 4, 4, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9990', '9909', '9099', '0999', '9999'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 1], [5, 2], [5, 3]]) == [0, 0, 0, 0, 4, 4, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001100', '010101', '100100', '110011'],queries = [[1, 2], [2, 3], [3, 4], [4, 5], [1, 3], [2, 4], [3, 5], [4, 6]]) == [0, 0, 1, 1, 3, 2, 3, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001100', '010101', '100100', '110011'],queries = [[1, 2], [2, 3], [3, 4], [4, 5], [1, 3], [2, 4], [3, 5], [4, 6]]) == [0, 0, 1, 1, 3, 2, 3, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00111', '01010', '10001', '11100', '10110'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 4, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00111', '01010', '10001', '11100', '10110'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 4, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3], [3, 2]]) == [0, 1, 2, 3, 4, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3], [3, 2]]) == [0, 1, 2, 3, 4, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [3, 2], [5, 3], [2, 4], [4, 5]]) == [0, 2, 4, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [3, 2], [5, 3], [2, 4], [4, 5]]) == [0, 2, 4, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12345', '67890', '13579', '24680', '97531'],queries = [[1, 2], [3, 4], [5, 1], [2, 5], [4, 3]]) == [4, 3, 2, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12345', '67890', '13579', '24680', '97531'],queries = [[1, 2], [3, 4], [5, 1], [2, 5], [4, 3]]) == [4, 3, 2, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1111111111', '2222222222', '3333333333', '4444444444', '5555555555', '6666666666', '7777777777', '8888888888', '9999999999'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1111111111', '2222222222', '3333333333', '4444444444', '5555555555', '6666666666', '7777777777', '8888888888', '9999999999'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['50000', '05000', '00500', '00050'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [3, 5], [4, 5]]) == [0, 1, 3, 1, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['50000', '05000', '00500', '00050'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [3, 5], [4, 5]]) == [0, 1, 3, 1, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9876543210', '0123456789', '1029384756', '2918074653', '3827165430'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [1, 1, 4, 3, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9876543210', '0123456789', '1029384756', '2918074653', '3827165430'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [1, 1, 4, 3, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['123', '234', '345', '456', '567', '678', '789'],queries = [[1, 1], [2, 3], [4, 2], [5, 3], [7, 1]]) == [0, 1, 3, 4, 6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['123', '234', '345', '456', '567', '678', '789'],queries = [[1, 1], [2, 3], [4, 2], [5, 3], [7, 1]]) == [0, 1, 3, 4, 6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['999999', '888888', '777777', '666666', '555555'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['999999', '888888', '777777', '666666', '555555'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [1, 1]]) == [0, 1, 2, 3, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [1, 1]]) == [0, 1, 2, 3, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [1, 3, 0, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [1, 3, 0, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0000000000', '0000000001', '0000000010', '0000000100', '0000001000', '0000010000', '0000100000', '0001000000', '0010000000', '0100000000'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0000000000', '0000000001', '0000000010', '0000000100', '0000001000', '0000010000', '0000100000', '0001000000', '0010000000', '0100000000'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['110011001', '101010101', '010101010', '001100110', '100110011'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 3], [2, 3], [3, 5], [4, 5], [5, 1]]) == [2, 1, 4, 0, 0, 0, 2, 4, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['110011001', '101010101', '010101010', '001100110', '100110011'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 3], [2, 3], [3, 5], [4, 5], [5, 1]]) == [2, 1, 4, 0, 0, 0, 2, 4, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['98765', '87654', '76543', '65432'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2], [2, 3]]) == [3, 2, 1, 0, 3, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['98765', '87654', '76543', '65432'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2], [2, 3]]) == [3, 2, 1, 0, 3, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [1, 3, 1, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [1, 3, 1, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['99999', '99998', '99997', '99996', '99995'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['99999', '99998', '99997', '99996', '99995'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['1234', '5678', '9012', '3456'],queries = [[1, 1], [2, 4], [3, 3], [4, 2]]) == [2, 3, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['1234', '5678', '9012', '3456'],queries = [[1, 1], [2, 4], [3, 3], [4, 2]]) == [2, 3, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['001', '010', '100', '011', '101', '110'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3]]) == [1, 2, 4, 1, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['001', '010', '100', '011', '101', '110'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3]]) == [1, 2, 4, 1, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '22222', '33333', '44444'],queries = [[4, 5], [3, 4], [2, 3], [1, 2]]) == [3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '22222', '33333', '44444'],queries = [[4, 5], [3, 4], [2, 3], [1, 2]]) == [3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9876543210', '8765432109', '7654321098', '6543210987', '5432109876'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [4, 2, 0, 3, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9876543210', '8765432109', '7654321098', '6543210987', '5432109876'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [4, 2, 0, 3, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['9876543210', '0123456789', '1098765432', '2987654321', '3876543210'],queries = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10]]) == [1, 2, 3, 4, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['9876543210', '0123456789', '1098765432', '2987654321', '3876543210'],queries = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10]]) == [1, 2, 3, 4, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0011', '0101', '0110', '1001', '1010', '1100'],queries = [[1, 1], [3, 2], [2, 2], [4, 3], [5, 1], [6, 3]]) == [2, 3, 1, 5, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0011', '0101', '0110', '1001', '1010', '1100'],queries = [[1, 1], [3, 2], [2, 2], [4, 3], [5, 1], [6, 3]]) == [2, 3, 1, 5, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00100', '01010', '10001', '01110', '11001'],queries = [[1, 5], [2, 3], [3, 2], [4, 4], [5, 1]]) == [0, 4, 4, 1, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00100', '01010', '10001', '01110', '11001'],queries = [[1, 5], [2, 3], [3, 2], [4, 4], [5, 1]]) == [0, 4, 4, 1, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['987654321', '876543219', '765432198', '654321987', '543219876'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9]]) == [0, 0, 0, 0, 0, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['987654321', '876543219', '765432198', '654321987', '543219876'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9]]) == [0, 0, 0, 0, 0, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00111', '01110', '11100', '11001', '10011'],queries = [[1, 3], [2, 2], [3, 1], [4, 4], [5, 5]]) == [3, 3, 0, 2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00111', '01110', '11100', '11001', '10011'],queries = [[1, 3], [2, 2], [3, 1], [4, 4], [5, 5]]) == [3, 3, 0, 2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001'],queries = [[1, 4], [2, 3], [3, 2], [4, 1], [5, 4], [6, 3], [7, 2], [8, 1], [9, 4], [10, 3]]) == [0, 8, 8, 6, 4, 3, 2, 5, 8, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001'],queries = [[1, 4], [2, 3], [3, 2], [4, 1], [5, 4], [6, 3], [7, 2], [8, 1], [9, 4], [10, 3]]) == [0, 8, 8, 6, 4, 3, 2, 5, 8, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 0, 0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = ['00001', '00002', '00003', '00004', '00005'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2]]) == [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = ['00001', '00002', '00003', '00004', '00005'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2]]) == [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 3]]) == [0, 1, 2, 3]
+    assert candidate(nums = ['123', '456', '789', '012'],queries = [[1, 2], [3, 3], [2, 1]]) == [3, 1, 0]
+    assert candidate(nums = ['001', '002', '003'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]
+    assert candidate(nums = ['001', '012', '123', '234'],queries = [[1, 2], [2, 3], [3, 1]]) == [0, 1, 2]
+    assert candidate(nums = ['001', '002', '003', '004'],queries = [[1, 3], [4, 1], [2, 2]]) == [0, 3, 1]
+    assert candidate(nums = ['24', '37', '96', '04'],queries = [[2, 1], [2, 2]]) == [3, 0]
+    assert candidate(nums = ['111', '222', '333', '444'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [0, 1, 2, 3]
+    assert candidate(nums = ['56', '78', '90'],queries = [[1, 1], [2, 2]]) == [2, 1]
+    assert candidate(nums = ['12', '12', '12'],queries = [[1, 1], [2, 1], [3, 1]]) == [0, 1, 2]
+    assert candidate(nums = ['567', '890', '123'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 0, 0]
+    assert candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 3], [2, 1]]) == [0, 2, 1]
+    assert candidate(nums = ['123', '456', '789'],queries = [[1, 2], [3, 1], [2, 3]]) == [0, 2, 1]
+    assert candidate(nums = ['102', '473', '251', '814'],queries = [[1, 1], [2, 3], [4, 2], [1, 2]]) == [2, 2, 1, 0]
+    assert candidate(nums = ['001', '010', '100'],queries = [[1, 1], [2, 2], [3, 3]]) == [1, 0, 2]
+    assert candidate(nums = ['987', '654', '321'],queries = [[1, 3], [2, 2], [3, 1]]) == [2, 1, 0]
+    assert candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['1234567890', '9876543210', '0000000000', '1111111111', '2222222222'],queries = [[1, 5], [3, 10], [2, 3], [5, 2]]) == [2, 0, 3, 0]
+    assert candidate(nums = ['9999', '8888', '7777', '6666'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 4]]) == [3, 2, 1, 0, 3]
+    assert candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555', '666666666', '777777777', '888888888', '999999999'],queries = [[9, 1], [1, 9], [5, 5], [3, 7], [7, 3], [2, 8], [8, 2], [4, 6], [6, 4]]) == [8, 0, 4, 2, 6, 1, 7, 3, 5]
+    assert candidate(nums = ['1001', '10001', '100001', '1000001', '10000001'],queries = [[1, 4], [2, 6], [3, 3], [4, 5], [5, 1]]) == [1, 4, 2, 1, 4]
+    assert candidate(nums = ['123456', '654321', '135799', '975311', '246800'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [0, 2, 3, 2, 2]
+    assert candidate(nums = ['12345', '67890', '54321', '09876', '43210'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [3, 4, 0, 3, 3]
+    assert candidate(nums = ['123456789', '987654321', '135792468', '246801357', '579135791'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [1, 4], [2, 3], [3, 2], [4, 1]]) == [0, 2, 3, 2, 2, 3, 3, 2, 2]
+    assert candidate(nums = ['10001', '01001', '00101', '00011', '11001'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3]]) == [0, 1, 4, 1, 4, 1]
+    assert candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009'],queries = [[1, 1], [9, 1], [2, 1], [3, 1], [8, 1], [4, 1], [7, 1], [5, 1], [6, 1]]) == [0, 8, 1, 2, 7, 3, 6, 4, 5]
+    assert candidate(nums = ['1234', '2345', '3456', '4567', '5678', '6789', '7890'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]]) == [6, 1, 2, 3, 4, 5, 6]
+    assert candidate(nums = ['00000', '00001', '00002', '00003', '00004'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 5]]) == [0, 1, 2, 3, 4, 0]
+    assert candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [5, 5], [3, 3], [2, 2], [4, 4]]) == [1, 4, 0, 3, 2]
+    assert candidate(nums = ['987', '876', '765', '654', '543', '432', '321', '210', '109'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 2], [8, 3], [9, 1]]) == [7, 6, 6, 5, 4, 3, 2, 1, 8]
+    assert candidate(nums = ['1010', '0101', '0011', '1100'],queries = [[1, 2], [2, 1], [3, 4], [4, 3]]) == [3, 3, 0, 1]
+    assert candidate(nums = ['1111', '2222', '3333', '4444', '5555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 5]]) == [0, 1, 2, 3, 4, 0]
+    assert candidate(nums = ['000001', '000010', '000100', '001000', '010000', '100000'],queries = [[1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6]]) == [0, 1, 2, 3, 4, 5]
+    assert candidate(nums = ['11111', '11112', '11122', '11222', '12222'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['100100', '100010', '101000', '010100', '001100', '001010', '010010', '000101', '000011', '110000'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2], [6, 1], [7, 6], [8, 5], [9, 4], [10, 3]]) == [8, 8, 6, 5, 9, 5, 1, 9, 5, 7]
+    assert candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['999', '888', '777', '666', '555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 3]]) == [4, 3, 2, 1, 0]
+    assert candidate(nums = ['00123', '00234', '00345', '00456'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [2, 3]]) == [0, 1, 2, 3, 1]
+    assert candidate(nums = ['123', '234', '345', '456', '567', '678', '789', '890', '901', '012'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [7, 3], [4, 3], [6, 3], [9, 1]]) == [7, 8, 2, 1, 4, 9, 5, 2, 4, 5]
+    assert candidate(nums = ['00000', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [6, 5], [3, 3], [4, 2], [2, 4], [5, 5]]) == [0, 5, 2, 3, 1, 4]
+    assert candidate(nums = ['123', '456', '789', '101', '111'],queries = [[1, 1], [2, 2], [3, 3], [4, 1], [5, 2]]) == [3, 4, 0, 1, 2]
+    assert candidate(nums = ['123456', '654321', '111111', '222222', '333333'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [2, 3, 4, 4, 0]
+    assert candidate(nums = ['999', '111', '222', '888', '333', '444', '555', '666', '777', '000'],queries = [[1, 1], [10, 3], [5, 2], [3, 3], [8, 1], [2, 2], [4, 4], [7, 5], [6, 6], [9, 9]]) == [9, 0, 5, 2, 8, 1, 4, 7, 6, 3]
+    assert candidate(nums = ['09876', '54321', '01234', '98765', '43210'],queries = [[1, 3], [2, 2], [3, 1], [4, 5], [5, 4]]) == [4, 1, 2, 1, 0]
+    assert candidate(nums = ['0000', '1111', '2222', '3333', '4444', '5555', '6666', '7777', '8888', '9999'],queries = [[1, 1], [5, 4], [10, 1], [3, 2], [7, 3]]) == [0, 4, 9, 2, 6]
+    assert candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '01010', '10010'],queries = [[1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [6, 3], [7, 3], [8, 3], [9, 3], [10, 3]]) == [6, 2, 3, 8, 9, 0, 5, 7, 1, 4]
+    assert candidate(nums = ['123', '456', '789', '123', '456'],queries = [[1, 3], [2, 3], [3, 3], [4, 2], [5, 1]]) == [0, 3, 1, 4, 2]
+    assert candidate(nums = ['00001', '00002', '00003', '00004', '00005', '00006', '00007', '00008', '00009', '00010'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1]]) == [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    assert candidate(nums = ['112233', '223344', '334455', '445566', '556677'],queries = [[1, 3], [2, 6], [3, 2], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['123456789', '234567890', '345678901', '456789012', '567890123'],queries = [[1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [1, 1]]) == [0, 1, 2, 3, 4, 1]
+    assert candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['98765', '87654', '76543', '65432', '54321'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [4, 3, 2, 1, 0]
+    assert candidate(nums = ['11111', '21111', '31111', '41111', '51111'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['9999999999', '1234567890', '1111111111', '2222222222', '3333333333'],queries = [[1, 10], [2, 5], [3, 7], [4, 2], [5, 9]]) == [2, 3, 4, 1, 0]
+    assert candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3], [7, 4], [8, 4], [9, 5], [10, 5], [11, 6], [12, 6], [13, 7], [14, 7], [15, 8], [16, 8]]) == [0, 2, 8, 12, 2, 10, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    assert candidate(nums = ['111111111', '222222222', '333333333', '444444444', '555555555'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9], [5, 9]]) == [0, 1, 2, 3, 4, 2, 4]
+    assert candidate(nums = ['0000', '0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 3, 1, 3, 4]
+    assert candidate(nums = ['00011', '00101', '01001', '10001', '00110', '01100', '11000', '10100', '10010', '01010'],queries = [[1, 2], [3, 3], [5, 1], [7, 4], [9, 5], [2, 5], [4, 2], [6, 3], [8, 1], [10, 2]]) == [5, 3, 8, 6, 7, 1, 1, 0, 1, 0]
+    assert candidate(nums = ['99999', '88888', '77777', '66666', '55555', '44444', '33333'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1], [3, 5], [4, 4]]) == [6, 5, 4, 3, 2, 4, 3]
+    assert candidate(nums = ['0011', '0101', '1001', '1100'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2]]) == [3, 1, 3, 3, 3]
+    assert candidate(nums = ['0123456789', '1234567890', '2345678901', '3456789012', '4567890123'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['00001', '00011', '00111', '01111', '11111', '22222', '33333', '44444', '55555'],queries = [[1, 1], [5, 2], [9, 3], [4, 4], [3, 5], [8, 1], [2, 2]]) == [0, 4, 8, 3, 2, 7, 1]
+    assert candidate(nums = ['12', '21', '11', '22', '12', '21'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [1, 2]]) == [1, 2, 5, 0, 3, 4, 2]
+    assert candidate(nums = ['9990', '9909', '9099', '0999', '9999'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 1], [5, 2], [5, 3]]) == [0, 0, 0, 0, 4, 4, 4]
+    assert candidate(nums = ['001100', '010101', '100100', '110011'],queries = [[1, 2], [2, 3], [3, 4], [4, 5], [1, 3], [2, 4], [3, 5], [4, 6]]) == [0, 0, 1, 1, 3, 2, 3, 3]
+    assert candidate(nums = ['00111', '01010', '10001', '11100', '10110'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 4, 3]
+    assert candidate(nums = ['00123', '01234', '12345', '23456', '34567'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [2, 3], [3, 2]]) == [0, 1, 2, 3, 4, 1, 2]
+    assert candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [3, 2], [5, 3], [2, 4], [4, 5]]) == [0, 2, 4, 1, 3]
+    assert candidate(nums = ['12345', '67890', '13579', '24680', '97531'],queries = [[1, 2], [3, 4], [5, 1], [2, 5], [4, 3]]) == [4, 3, 2, 2, 3]
+    assert candidate(nums = ['1111111111', '2222222222', '3333333333', '4444444444', '5555555555', '6666666666', '7777777777', '8888888888', '9999999999'],queries = [[1, 9], [2, 8], [3, 7], [4, 6], [5, 5], [6, 4], [7, 3], [8, 2], [9, 1]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    assert candidate(nums = ['50000', '05000', '00500', '00050'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [3, 5], [4, 5]]) == [0, 1, 3, 1, 1, 0]
+    assert candidate(nums = ['9876543210', '0123456789', '1029384756', '2918074653', '3827165430'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [1, 1, 4, 3, 0]
+    assert candidate(nums = ['123', '234', '345', '456', '567', '678', '789'],queries = [[1, 1], [2, 3], [4, 2], [5, 3], [7, 1]]) == [0, 1, 3, 4, 6]
+    assert candidate(nums = ['999999', '888888', '777777', '666666', '555555'],queries = [[1, 6], [2, 5], [3, 4], [4, 3], [5, 2]]) == [4, 3, 2, 1, 0]
+    assert candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [1, 1]]) == [0, 1, 2, 3, 4, 0]
+    assert candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [1, 3, 0, 2, 4]
+    assert candidate(nums = ['0000000000', '0000000001', '0000000010', '0000000100', '0000001000', '0000010000', '0000100000', '0001000000', '0010000000', '0100000000'],queries = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    assert candidate(nums = ['110011001', '101010101', '010101010', '001100110', '100110011'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [1, 3], [2, 3], [3, 5], [4, 5], [5, 1]]) == [2, 1, 4, 0, 0, 0, 2, 4, 1, 4]
+    assert candidate(nums = ['98765', '87654', '76543', '65432'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [1, 2], [2, 3]]) == [3, 2, 1, 0, 3, 2]
+    assert candidate(nums = ['0001', '0010', '0100', '1000'],queries = [[1, 1], [2, 2], [3, 3], [4, 4]]) == [1, 3, 1, 3]
+    assert candidate(nums = ['99999', '99998', '99997', '99996', '99995'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [4, 3, 2, 1, 0]
+    assert candidate(nums = ['1234', '5678', '9012', '3456'],queries = [[1, 1], [2, 4], [3, 3], [4, 2]]) == [2, 3, 3, 1]
+    assert candidate(nums = ['001', '010', '100', '011', '101', '110'],queries = [[1, 1], [2, 1], [3, 2], [4, 2], [5, 3], [6, 3]]) == [1, 2, 4, 1, 4, 5]
+    assert candidate(nums = ['11111', '22222', '33333', '44444'],queries = [[4, 5], [3, 4], [2, 3], [1, 2]]) == [3, 2, 1, 0]
+    assert candidate(nums = ['9876543210', '8765432109', '7654321098', '6543210987', '5432109876'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [4, 2, 0, 3, 1]
+    assert candidate(nums = ['12345', '23456', '34567', '45678', '56789'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['9876543210', '0123456789', '1098765432', '2987654321', '3876543210'],queries = [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10]]) == [1, 2, 3, 4, 0]
+    assert candidate(nums = ['0011', '0101', '0110', '1001', '1010', '1100'],queries = [[1, 1], [3, 2], [2, 2], [4, 3], [5, 1], [6, 3]]) == [2, 3, 1, 5, 1, 2]
+    assert candidate(nums = ['00100', '01010', '10001', '01110', '11001'],queries = [[1, 5], [2, 3], [3, 2], [4, 4], [5, 1]]) == [0, 4, 4, 1, 4]
+    assert candidate(nums = ['987654321', '876543219', '765432198', '654321987', '543219876'],queries = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [3, 9]]) == [0, 0, 0, 0, 0, 2]
+    assert candidate(nums = ['11111', '22222', '33333', '44444', '55555'],queries = [[1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]) == [0, 1, 2, 3, 4]
+    assert candidate(nums = ['00111', '01110', '11100', '11001', '10011'],queries = [[1, 3], [2, 2], [3, 1], [4, 4], [5, 5]]) == [3, 3, 0, 2, 2]
+    assert candidate(nums = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001'],queries = [[1, 4], [2, 3], [3, 2], [4, 1], [5, 4], [6, 3], [7, 2], [8, 1], [9, 4], [10, 3]]) == [0, 8, 8, 6, 4, 3, 2, 5, 8, 7]
+    assert candidate(nums = ['00001', '00010', '00100', '01000', '10000'],queries = [[1, 5], [2, 4], [3, 3], [4, 2], [5, 1]]) == [0, 0, 0, 0, 0]
+    assert candidate(nums = ['00001', '00002', '00003', '00004', '00005'],queries = [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2]]) == [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
+
+

@@ -1,0 +1,968 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [2, 5, 1, 2, 5],nums2 = [10, 5, 2, 1, 5, 2]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [2, 5, 1, 2, 5],nums2 = [10, 5, 2, 1, 5, 2]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 4, 2],nums2 = [1, 2, 4]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 4, 2],nums2 = [1, 2, 4]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 2, 1],nums2 = [2, 1, 1, 2]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 2, 1],nums2 = [2, 1, 1, 2]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5],nums2 = [5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5],nums2 = [5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1],nums2 = [1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1],nums2 = [1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3],nums2 = [3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 3, 4, 5],nums2 = [3, 3, 3]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 3, 4, 5],nums2 = [3, 3, 3]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 3, 2, 1],nums2 = [1, 2, 3, 4, 3, 2, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 3, 2, 1],nums2 = [1, 2, 3, 4, 3, 2, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 2, 1, 4]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 2, 1, 4]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3],nums2 = [3]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3],nums2 = [3]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1000, 2000],nums2 = [2000, 1000]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1000, 2000],nums2 = [2000, 1000]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 1, 2]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 1, 2]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1],nums2 = [1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1],nums2 = [1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 1, 4, 5, 1, 3],nums2 = [5, 2, 1, 4, 1, 3]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 1, 4, 5, 1, 3],nums2 = [5, 2, 1, 4, 1, 3]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3],nums2 = [3, 3, 3]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3],nums2 = [3, 3, 3]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 4, 2, 6, 7, 8, 9],nums2 = [2, 3, 6, 7, 8, 9, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 4, 2, 6, 7, 8, 9],nums2 = [2, 3, 6, 7, 8, 9, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1000, 2000, 1000, 2000],nums2 = [2000, 1000, 2000, 1000]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1000, 2000, 1000, 2000],nums2 = [2000, 1000, 2000, 1000]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 4, 8],nums2 = [1, 9, 2, 5, 1, 3, 4, 8, 7]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 4, 8],nums2 = [1, 9, 2, 5, 1, 3, 4, 8, 7]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [5, 1, 4, 9, 3, 7, 2, 8, 10, 6]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [5, 1, 4, 9, 3, 7, 2, 8, 10, 6]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],nums2 = [90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],nums2 = [90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [10, 5, 2, 1, 5, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 2, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [10, 5, 2, 1, 5, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 2, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 3, 7, 1, 7, 5, 9, 1, 3]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 3, 7, 1, 7, 5, 9, 1, 3]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 10],nums2 = [3, 3, 3, 5, 5, 5, 7, 7, 7]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 10],nums2 = [3, 3, 3, 5, 5, 5, 7, 7, 7]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [8, 5, 1, 2, 6, 8, 3, 6],nums2 = [8, 3, 2, 1, 6, 8, 8, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [8, 5, 1, 2, 6, 8, 3, 6],nums2 = [8, 3, 2, 1, 6, 8, 8, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],nums2 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],nums2 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 5],nums2 = [1, 9, 2, 5, 1, 5, 9, 7, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 5],nums2 = [1, 9, 2, 5, 1, 5, 9, 7, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 10, 15, 20, 25, 30],nums2 = [5, 10, 15, 20, 25, 30, 5, 10, 15, 20, 25, 30]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 10, 15, 20, 25, 30],nums2 = [5, 10, 15, 20, 25, 30, 5, 10, 15, 20, 25, 30]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1],nums2 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1],nums2 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 4, 3, 2, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 4, 3, 2, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [20, 10, 40, 30, 50]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [20, 10, 40, 30, 50]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],nums2 = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],nums2 = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 2, 1, 3, 3, 1, 2],nums2 = [2, 1, 3, 3, 1, 2, 2, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 2, 1, 3, 3, 1, 2],nums2 = [2, 1, 3, 3, 1, 2, 2, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [2, 3, 1, 3, 4, 5, 6],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [2, 3, 1, 3, 4, 5, 6],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 1, 4, 3, 6, 2, 7, 8, 9],nums2 = [10, 5, 2, 3, 8, 1, 6, 4, 7]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 1, 4, 3, 6, 2, 7, 8, 9],nums2 = [10, 5, 2, 3, 8, 1, 6, 4, 7]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 3, 8, 7, 9, 2, 4, 1],nums2 = [7, 2, 3, 8, 9, 4, 5, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 3, 8, 7, 9, 2, 4, 1],nums2 = [7, 2, 3, 8, 9, 4, 5, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5, 1, 9, 2, 5, 1, 7, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5, 1, 9, 2, 5, 1, 7, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4],nums2 = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4],nums2 = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],nums2 = [1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],nums2 = [1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5],nums2 = [5, 1, 4, 1, 3, 1, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5],nums2 = [5, 1, 4, 1, 3, 1, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 4, 2, 3, 5, 7],nums2 = [1, 3, 5, 4, 2, 7]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 4, 2, 3, 5, 7],nums2 = [1, 3, 5, 4, 2, 7]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [2, 1, 3, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [2, 1, 3, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 14, 23, 42, 55, 67, 78],nums2 = [5, 14, 23, 42, 55, 67, 78]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 14, 23, 42, 55, 67, 78],nums2 = [5, 14, 23, 42, 55, 67, 78]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [4, 1, 3, 3, 5, 2, 1, 4, 3, 3],nums2 = [3, 5, 1, 3, 2, 1, 4, 3, 4]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [4, 1, 3, 3, 5, 2, 1, 4, 3, 3],nums2 = [3, 5, 1, 3, 2, 1, 4, 3, 4]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110],nums2 = [110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110],nums2 = [110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 3, 1, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 3, 1, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [10, 5, 2, 1, 5, 2, 8, 7, 10, 9],nums2 = [10, 2, 5, 1, 5, 2, 9, 10, 7, 8]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [10, 5, 2, 1, 5, 2, 8, 7, 10, 9],nums2 = [10, 2, 5, 1, 5, 2, 9, 10, 7, 8]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 1, 4, 5, 5, 3],nums2 = [5, 5, 3, 1, 4, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 1, 4, 5, 5, 3],nums2 = [5, 5, 3, 1, 4, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [500, 400, 300, 200, 100]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [500, 400, 300, 200, 100]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 13, 14, 15]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 13, 14, 15]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 2, 2, 1, 5],nums2 = [3, 2, 2, 1, 5, 3, 2, 2, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 2, 2, 1, 5],nums2 = [3, 2, 2, 1, 5, 3, 2, 2, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [1, 4, 2, 3, 5, 6],nums2 = [6, 2, 4, 5, 1]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [1, 4, 2, 3, 5, 6],nums2 = [6, 2, 4, 5, 1]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums1 = [5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20],nums2 = [5, 5, 5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20]) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums1 = [5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20],nums2 = [5, 5, 5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20]) == 48: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums1 = [2, 5, 1, 2, 5],nums2 = [10, 5, 2, 1, 5, 2]) == 3
+    assert candidate(nums1 = [1, 4, 2],nums2 = [1, 2, 4]) == 2
+    assert candidate(nums1 = [3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3]) == 7
+    assert candidate(nums1 = [1, 2, 2, 1],nums2 = [2, 1, 1, 2]) == 2
+    assert candidate(nums1 = [5],nums2 = [5]) == 1
+    assert candidate(nums1 = [1, 1, 1, 1],nums2 = [1, 1, 1, 1]) == 4
+    assert candidate(nums1 = [1, 2, 3],nums2 = [3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3, 3, 4, 5],nums2 = [3, 3, 3]) == 2
+    assert candidate(nums1 = [1, 2, 3, 3, 2, 1],nums2 = [1, 2, 3, 4, 3, 2, 1]) == 6
+    assert candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 2, 1, 4]) == 3
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1]) == 2
+    assert candidate(nums1 = [3],nums2 = [3]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5]) == 5
+    assert candidate(nums1 = [1000, 2000],nums2 = [2000, 1000]) == 1
+    assert candidate(nums1 = [5, 1, 4, 2],nums2 = [5, 1, 2]) == 3
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6]) == 0
+    assert candidate(nums1 = [1],nums2 = [1]) == 1
+    assert candidate(nums1 = [5, 1, 4, 5, 1, 3],nums2 = [5, 2, 1, 4, 1, 3]) == 5
+    assert candidate(nums1 = [3],nums2 = [3, 3, 3]) == 1
+    assert candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5
+    assert candidate(nums1 = [1, 4, 2, 6, 7, 8, 9],nums2 = [2, 3, 6, 7, 8, 9, 10]) == 5
+    assert candidate(nums1 = [1, 1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1, 1]) == 11
+    assert candidate(nums1 = [1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2
+    assert candidate(nums1 = [1000, 2000, 1000, 2000],nums2 = [2000, 1000, 2000, 1000]) == 3
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 11
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 4, 8],nums2 = [1, 9, 2, 5, 1, 3, 4, 8, 7]) == 5
+    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [5, 1, 4, 9, 3, 7, 2, 8, 10, 6]) == 5
+    assert candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],nums2 = [90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 11
+    assert candidate(nums1 = [10, 5, 2, 1, 5, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 2, 1]) == 9
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20
+    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 15
+    assert candidate(nums1 = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 2
+    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) == 15
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 20
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 3, 7, 1, 7, 5, 9, 1, 3]) == 9
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 10],nums2 = [3, 3, 3, 5, 5, 5, 7, 7, 7]) == 6
+    assert candidate(nums1 = [8, 5, 1, 2, 6, 8, 3, 6],nums2 = [8, 3, 2, 1, 6, 8, 8, 5]) == 4
+    assert candidate(nums1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],nums2 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 60
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 29
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5, 9, 2, 5],nums2 = [1, 9, 2, 5, 1, 5, 9, 7, 3]) == 4
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [3, 3, 3, 3, 3, 3],nums2 = [3, 3, 3, 3, 3, 3]) == 6
+    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 0
+    assert candidate(nums1 = [5, 10, 15, 20, 25, 30],nums2 = [5, 10, 15, 20, 25, 30, 5, 10, 15, 20, 25, 30]) == 6
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1
+    assert candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]) == 2
+    assert candidate(nums1 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1],nums2 = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 2, 1]) == 22
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == 5
+    assert candidate(nums1 = [5, 4, 3, 2, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [5, 4, 3, 2, 1]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6]) == 2
+    assert candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [20, 10, 40, 30, 50]) == 3
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+    assert candidate(nums1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],nums2 = [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+    assert candidate(nums1 = [1, 2, 2, 1, 3, 3, 1, 2],nums2 = [2, 1, 3, 3, 1, 2, 2, 1]) == 6
+    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 0
+    assert candidate(nums1 = [1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1]) == 5
+    assert candidate(nums1 = [2, 3, 1, 3, 4, 5, 6],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 5
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5]) == 4
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45]) == 3
+    assert candidate(nums1 = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],nums2 = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1]) == 2
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 10
+    assert candidate(nums1 = [5, 1, 4, 3, 6, 2, 7, 8, 9],nums2 = [10, 5, 2, 3, 8, 1, 6, 4, 7]) == 4
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 5
+    assert candidate(nums1 = [5, 3, 8, 7, 9, 2, 4, 1],nums2 = [7, 2, 3, 8, 9, 4, 5, 1]) == 5
+    assert candidate(nums1 = [1, 3, 7, 1, 7, 5],nums2 = [1, 9, 2, 5, 1, 7, 5, 1, 9, 2, 5, 1, 7, 5]) == 5
+    assert candidate(nums1 = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4],nums2 = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]) == 6
+    assert candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 0
+    assert candidate(nums1 = [2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2],nums2 = [1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1]) == 28
+    assert candidate(nums1 = [1, 2, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 2, 1]) == 5
+    assert candidate(nums1 = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5],nums2 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]) == 5
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]) == 10
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 50
+    assert candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5],nums2 = [5, 1, 4, 1, 3, 1, 2, 1]) == 5
+    assert candidate(nums1 = [1, 4, 2, 3, 5, 7],nums2 = [1, 3, 5, 4, 2, 7]) == 4
+    assert candidate(nums1 = [2, 1, 3, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 8
+    assert candidate(nums1 = [5, 14, 23, 42, 55, 67, 78],nums2 = [5, 14, 23, 42, 55, 67, 78]) == 7
+    assert candidate(nums1 = [4, 1, 3, 3, 5, 2, 1, 4, 3, 3],nums2 = [3, 5, 1, 3, 2, 1, 4, 3, 4]) == 6
+    assert candidate(nums1 = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110],nums2 = [110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100]) == 1
+    assert candidate(nums1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 16
+    assert candidate(nums1 = [1, 2, 1, 3, 1, 4, 1, 5, 1],nums2 = [1, 5, 1, 4, 1, 3, 1, 2, 1]) == 5
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 1
+    assert candidate(nums1 = [10, 5, 2, 1, 5, 2, 8, 7, 10, 9],nums2 = [10, 2, 5, 1, 5, 2, 9, 10, 7, 8]) == 6
+    assert candidate(nums1 = [5, 1, 4, 5, 5, 3],nums2 = [5, 5, 3, 1, 4, 5]) == 4
+    assert candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [500, 400, 300, 200, 100]) == 1
+    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 13, 14, 15]) == 13
+    assert candidate(nums1 = [1, 2, 2, 1, 5],nums2 = [3, 2, 2, 1, 5, 3, 2, 2, 1]) == 4
+    assert candidate(nums1 = [1, 4, 2, 3, 5, 6],nums2 = [6, 2, 4, 5, 1]) == 2
+    assert candidate(nums1 = [5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20],nums2 = [5, 5, 5, 14, 10, 3, 2, 1, 5, 18, 9, 10, 13, 11, 10, 13, 13, 20, 7, 7, 13, 4, 12, 18, 10, 3, 1, 10, 19, 14, 18, 2, 17, 20, 2, 19, 2, 11, 2, 13, 12, 20, 1, 10, 19, 14, 18, 2, 17, 20]) == 48
+
+

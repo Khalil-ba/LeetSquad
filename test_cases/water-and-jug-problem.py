@@ -1,0 +1,1742 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 7,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 7,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 3,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 3,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 5,target = 9) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 5,target = 9) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2,y = 6,target = 5) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2,y = 6,target = 5) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 10,target = 15) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 10,target = 15) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 5,target = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 5,target = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 3,target = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 3,target = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 11,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 11,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 3,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 3,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 9,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 9,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 2,target = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 2,target = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 1,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 1,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 10,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 10,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 11,target = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 11,target = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 34,y = 5,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 34,y = 5,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 333,target = 500) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 333,target = 500) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 2,target = 3) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 2,target = 3) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 4,target = 7) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 4,target = 7) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 5,target = 4) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 5,target = 4) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 29,y = 31,target = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 29,y = 31,target = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 39,target = 11) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 39,target = 11) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 67,y = 79,target = 178) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 67,y = 79,target = 178) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 666,y = 777,target = 1434) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 666,y = 777,target = 1434) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 54,target = 77) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 54,target = 77) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 17,y = 13,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 17,y = 13,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 200,y = 300,target = 500) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 200,y = 300,target = 500) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 311,y = 271,target = 582) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 311,y = 271,target = 582) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 53,y = 67,target = 134) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 53,y = 67,target = 134) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 400,y = 500,target = 800) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 400,y = 500,target = 800) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 31,y = 47,target = 78) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 31,y = 47,target = 78) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 47,y = 61,target = 110) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 47,y = 61,target = 110) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 61,y = 41,target = 29) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 61,y = 41,target = 29) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 29,target = 42) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 29,target = 42) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 103,y = 113,target = 326) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 103,y = 113,target = 326) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 300,target = 400) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 300,target = 400) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 73,y = 21,target = 50) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 73,y = 21,target = 50) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 33,target = 67) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 33,target = 67) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 79,y = 97,target = 236) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 79,y = 97,target = 236) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 107,target = 294) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 107,target = 294) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 33,y = 44,target = 77) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 33,y = 44,target = 77) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 101,target = 73) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 101,target = 73) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 31,y = 47,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 31,y = 47,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 17,target = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 17,target = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 200,y = 125,target = 325) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 200,y = 125,target = 325) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 123,y = 456,target = 579) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 123,y = 456,target = 579) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 41,y = 97,target = 86) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 41,y = 97,target = 86) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 61,y = 79,target = 89) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 61,y = 79,target = 89) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 37,target = 60) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 37,target = 60) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 727,y = 1019,target = 1746) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 727,y = 1019,target = 1746) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 29,y = 41,target = 59) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 29,y = 41,target = 59) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 127,y = 139,target = 414) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 127,y = 139,target = 414) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 109,target = 310) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 109,target = 310) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 29,y = 31,target = 60) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 29,y = 31,target = 60) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 61,y = 122,target = 183) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 61,y = 122,target = 183) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 54,target = 43) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 54,target = 43) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 149,y = 163,target = 510) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 149,y = 163,target = 510) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 89,y = 103,target = 270) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 89,y = 103,target = 270) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 61,target = 73) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 61,target = 73) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 75,target = 250) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 75,target = 250) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 53,y = 19,target = 67) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 53,y = 19,target = 67) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 113,y = 137,target = 390) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 113,y = 137,target = 390) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 81,y = 147,target = 108) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 81,y = 147,target = 108) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 600,target = 1000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 600,target = 1000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 157,y = 173,target = 550) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 157,y = 173,target = 550) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 253,y = 103,target = 356) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 253,y = 103,target = 356) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 750,target = 1000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 750,target = 1000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 113,y = 131,target = 119) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 113,y = 131,target = 119) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 250,y = 350,target = 600) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 250,y = 350,target = 600) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 71,y = 23,target = 37) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 71,y = 23,target = 37) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 59,y = 17,target = 50) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 59,y = 17,target = 50) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 37,target = 29) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 37,target = 29) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 221,y = 359,target = 285) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 221,y = 359,target = 285) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 151,y = 167,target = 526) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 151,y = 167,target = 526) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 41,y = 37,target = 78) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 41,y = 37,target = 78) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 17,target = 29) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 17,target = 29) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 53,y = 47,target = 100) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 53,y = 47,target = 100) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 61,y = 73,target = 164) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 61,y = 73,target = 164) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 17,y = 23,target = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 17,y = 23,target = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 37,target = 88) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 37,target = 88) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 400,y = 1000,target = 500) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 400,y = 1000,target = 500) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 59,y = 61,target = 120) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 59,y = 61,target = 120) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 333,y = 444,target = 777) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 333,y = 444,target = 777) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 61,y = 41,target = 183) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 61,y = 41,target = 183) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 59,target = 156) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 59,target = 156) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 83,y = 53,target = 109) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 83,y = 53,target = 109) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 103,target = 206) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 103,target = 206) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 13,target = 19) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 13,target = 19) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 73,y = 89,target = 210) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 73,y = 89,target = 210) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 17,y = 13,target = 26) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 17,y = 13,target = 26) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 401,y = 199,target = 202) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 401,y = 199,target = 202) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 139,y = 157,target = 482) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 139,y = 157,target = 482) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 601,y = 409,target = 500) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 601,y = 409,target = 500) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 71,y = 83,target = 101) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 71,y = 83,target = 101) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 139,target = 240) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 139,target = 240) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 37,target = 101) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 37,target = 101) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 101,target = 199) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 101,target = 199) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 41,y = 43,target = 84) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 41,y = 43,target = 84) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 103,target = 204) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 103,target = 204) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 53,y = 89,target = 31) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 53,y = 89,target = 31) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 109,y = 131,target = 366) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 109,y = 131,target = 366) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 71,y = 83,target = 194) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 71,y = 83,target = 194) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 750,y = 900,target = 1500) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 750,y = 900,target = 1500) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 43,y = 59,target = 102) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 43,y = 59,target = 102) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 400,y = 150,target = 250) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 400,y = 150,target = 250) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 19,y = 23,target = 42) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 19,y = 23,target = 42) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 29,target = 17) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 29,target = 17) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 301,y = 197,target = 498) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 301,y = 197,target = 498) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 111,y = 333,target = 444) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 111,y = 333,target = 444) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 787,y = 359,target = 428) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 787,y = 359,target = 428) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 29,y = 41,target = 58) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 29,y = 41,target = 58) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 137,y = 151,target = 458) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 137,y = 151,target = 458) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 59,y = 71,target = 150) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 59,y = 71,target = 150) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 89,y = 67,target = 52) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 89,y = 67,target = 52) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 333,y = 222,target = 111) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 333,y = 222,target = 111) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 71,y = 73,target = 144) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 71,y = 73,target = 144) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 17,target = 24) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 17,target = 24) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 45,y = 10,target = 75) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 45,y = 10,target = 75) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 800,y = 900,target = 1600) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 800,y = 900,target = 1600) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 17,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 17,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 300,target = 200) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 300,target = 200) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 37,y = 53,target = 90) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 37,y = 53,target = 90) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000,y = 1001,target = 2001) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000,y = 1001,target = 2001) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000,y = 333,target = 667) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000,y = 333,target = 667) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 17,target = 39) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 17,target = 39) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 313,y = 509,target = 822) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 313,y = 509,target = 822) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 43,y = 59,target = 37) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 43,y = 59,target = 37) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 131,y = 149,target = 442) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 131,y = 149,target = 442) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 107,y = 127,target = 350) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 107,y = 127,target = 350) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 47,y = 19,target = 28) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 47,y = 19,target = 28) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 97,y = 101,target = 198) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 97,y = 101,target = 198) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 200,y = 123,target = 323) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 200,y = 123,target = 323) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 202,target = 303) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 202,target = 303) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 55,y = 77,target = 110) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 55,y = 77,target = 110) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 89,y = 71,target = 160) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 89,y = 71,target = 160) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 101,y = 89,target = 190) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 101,y = 89,target = 190) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 53,y = 109,target = 162) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 53,y = 109,target = 162) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 17,target = 30) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 17,target = 30) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 33,target = 66) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 33,target = 66) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 23,y = 31,target = 54) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 23,y = 31,target = 54) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 17,y = 37,target = 41) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 17,y = 37,target = 41) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 83,y = 101,target = 254) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 83,y = 101,target = 254) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 7,target = 11) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 7,target = 11) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 22,y = 33,target = 55) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 22,y = 33,target = 55) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 15,target = 25) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 15,target = 25) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 2,target = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 2,target = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 13,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 13,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 3,target = 1) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 3,target = 1) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 13,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 13,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 9,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 9,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 9,target = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 9,target = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 15,target = 7) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 15,target = 7) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 33,y = 55,target = 11) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 33,y = 55,target = 11) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 15,target = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 15,target = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 333,y = 444,target = 111) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 333,y = 444,target = 111) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1000,y = 1000,target = 1500) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1000,y = 1000,target = 1500) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 11,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 11,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 12,target = 16) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 12,target = 16) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 10,y = 15,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 10,y = 15,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 11,target = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 11,target = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 1,y = 1,target = 0) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 1,y = 1,target = 0) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 6,y = 6,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 6,y = 6,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 7,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 7,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 17,target = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 17,target = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 11,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 11,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 1000,target = 750) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 1000,target = 750) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 11,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 11,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 13,y = 19,target = 32) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 13,y = 19,target = 32) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 9,target = 7) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 9,target = 7) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 220,y = 340,target = 560) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 220,y = 340,target = 560) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 9,target = 13) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 9,target = 13) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 1,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 1,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 200,target = 400) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 200,target = 400) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 6,y = 19,target = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 6,y = 19,target = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 500,y = 500,target = 1000) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 500,y = 500,target = 1000) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 3,target = 5) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 3,target = 5) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 11,target = 13) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 11,target = 13) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 17,target = 20) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 17,target = 20) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 7,target = 12) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 7,target = 12) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 2,y = 3,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 2,y = 3,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 3,y = 3,target = 6) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 3,y = 3,target = 6) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 3,target = 2) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 3,target = 2) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 333,y = 666,target = 999) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 333,y = 666,target = 999) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 10,target = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 10,target = 8) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 5,y = 10,target = 15) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 5,y = 10,target = 15) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 3,target = 11) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 3,target = 11) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 100,y = 300,target = 500) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 100,y = 300,target = 500) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 8,y = 11,target = 1) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 8,y = 11,target = 1) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 13,target = 10) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 13,target = 10) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 22,y = 26,target = 16) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 22,y = 26,target = 16) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 7,y = 11,target = 18) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 7,y = 11,target = 18) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 34,y = 51,target = 68) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 34,y = 51,target = 68) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(x = 4,y = 6,target = 8) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(x = 4,y = 6,target = 8) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(x = 3,y = 7,target = 1) == True
+    assert candidate(x = 7,y = 3,target = 1) == True
+    assert candidate(x = 8,y = 5,target = 9) == True
+    assert candidate(x = 2,y = 6,target = 5) == False
+    assert candidate(x = 10,y = 10,target = 15) == False
+    assert candidate(x = 5,y = 5,target = 10) == True
+    assert candidate(x = 5,y = 3,target = 8) == True
+    assert candidate(x = 7,y = 11,target = 6) == True
+    assert candidate(x = 7,y = 3,target = 2) == True
+    assert candidate(x = 4,y = 9,target = 6) == True
+    assert candidate(x = 1,y = 2,target = 3) == True
+    assert candidate(x = 1,y = 1,target = 2) == True
+    assert candidate(x = 10,y = 10,target = 20) == True
+    assert candidate(x = 8,y = 11,target = 15) == True
+    assert candidate(x = 34,y = 5,target = 6) == True
+    assert candidate(x = 100,y = 333,target = 500) == False
+    assert candidate(x = 5,y = 2,target = 3) == True
+    assert candidate(x = 4,y = 4,target = 7) == False
+    assert candidate(x = 3,y = 5,target = 4) == True
+    assert candidate(x = 29,y = 31,target = 30) == True
+    assert candidate(x = 23,y = 39,target = 11) == True
+    assert candidate(x = 67,y = 79,target = 178) == False
+    assert candidate(x = 666,y = 777,target = 1434) == False
+    assert candidate(x = 23,y = 54,target = 77) == True
+    assert candidate(x = 17,y = 13,target = 20) == True
+    assert candidate(x = 200,y = 300,target = 500) == True
+    assert candidate(x = 311,y = 271,target = 582) == True
+    assert candidate(x = 53,y = 67,target = 134) == False
+    assert candidate(x = 400,y = 500,target = 800) == True
+    assert candidate(x = 31,y = 47,target = 78) == True
+    assert candidate(x = 47,y = 61,target = 110) == False
+    assert candidate(x = 61,y = 41,target = 29) == True
+    assert candidate(x = 23,y = 29,target = 42) == True
+    assert candidate(x = 103,y = 113,target = 326) == False
+    assert candidate(x = 500,y = 300,target = 400) == True
+    assert candidate(x = 73,y = 21,target = 50) == True
+    assert candidate(x = 100,y = 33,target = 67) == True
+    assert candidate(x = 79,y = 97,target = 236) == False
+    assert candidate(x = 97,y = 107,target = 294) == False
+    assert candidate(x = 33,y = 44,target = 77) == True
+    assert candidate(x = 97,y = 101,target = 73) == True
+    assert candidate(x = 31,y = 47,target = 20) == True
+    assert candidate(x = 13,y = 17,target = 30) == True
+    assert candidate(x = 200,y = 125,target = 325) == True
+    assert candidate(x = 123,y = 456,target = 579) == True
+    assert candidate(x = 41,y = 97,target = 86) == True
+    assert candidate(x = 61,y = 79,target = 89) == True
+    assert candidate(x = 23,y = 37,target = 60) == True
+    assert candidate(x = 727,y = 1019,target = 1746) == True
+    assert candidate(x = 29,y = 41,target = 59) == True
+    assert candidate(x = 127,y = 139,target = 414) == False
+    assert candidate(x = 101,y = 109,target = 310) == False
+    assert candidate(x = 29,y = 31,target = 60) == True
+    assert candidate(x = 61,y = 122,target = 183) == True
+    assert candidate(x = 97,y = 54,target = 43) == True
+    assert candidate(x = 149,y = 163,target = 510) == False
+    assert candidate(x = 89,y = 103,target = 270) == False
+    assert candidate(x = 97,y = 61,target = 73) == True
+    assert candidate(x = 100,y = 75,target = 250) == False
+    assert candidate(x = 53,y = 19,target = 67) == True
+    assert candidate(x = 113,y = 137,target = 390) == False
+    assert candidate(x = 81,y = 147,target = 108) == True
+    assert candidate(x = 500,y = 600,target = 1000) == True
+    assert candidate(x = 157,y = 173,target = 550) == False
+    assert candidate(x = 253,y = 103,target = 356) == True
+    assert candidate(x = 500,y = 750,target = 1000) == True
+    assert candidate(x = 113,y = 131,target = 119) == True
+    assert candidate(x = 250,y = 350,target = 600) == True
+    assert candidate(x = 71,y = 23,target = 37) == True
+    assert candidate(x = 59,y = 17,target = 50) == True
+    assert candidate(x = 23,y = 37,target = 29) == True
+    assert candidate(x = 221,y = 359,target = 285) == True
+    assert candidate(x = 151,y = 167,target = 526) == False
+    assert candidate(x = 41,y = 37,target = 78) == True
+    assert candidate(x = 13,y = 17,target = 29) == True
+    assert candidate(x = 53,y = 47,target = 100) == True
+    assert candidate(x = 61,y = 73,target = 164) == False
+    assert candidate(x = 17,y = 23,target = 30) == True
+    assert candidate(x = 101,y = 37,target = 88) == True
+    assert candidate(x = 400,y = 1000,target = 500) == False
+    assert candidate(x = 59,y = 61,target = 120) == True
+    assert candidate(x = 333,y = 444,target = 777) == True
+    assert candidate(x = 61,y = 41,target = 183) == False
+    assert candidate(x = 97,y = 59,target = 156) == True
+    assert candidate(x = 83,y = 53,target = 109) == True
+    assert candidate(x = 101,y = 103,target = 206) == False
+    assert candidate(x = 8,y = 13,target = 19) == True
+    assert candidate(x = 73,y = 89,target = 210) == False
+    assert candidate(x = 17,y = 13,target = 26) == True
+    assert candidate(x = 401,y = 199,target = 202) == True
+    assert candidate(x = 139,y = 157,target = 482) == False
+    assert candidate(x = 601,y = 409,target = 500) == True
+    assert candidate(x = 71,y = 83,target = 101) == True
+    assert candidate(x = 101,y = 139,target = 240) == True
+    assert candidate(x = 100,y = 37,target = 101) == True
+    assert candidate(x = 97,y = 101,target = 199) == False
+    assert candidate(x = 41,y = 43,target = 84) == True
+    assert candidate(x = 101,y = 103,target = 204) == True
+    assert candidate(x = 53,y = 89,target = 31) == True
+    assert candidate(x = 109,y = 131,target = 366) == False
+    assert candidate(x = 71,y = 83,target = 194) == False
+    assert candidate(x = 750,y = 900,target = 1500) == True
+    assert candidate(x = 43,y = 59,target = 102) == True
+    assert candidate(x = 400,y = 150,target = 250) == True
+    assert candidate(x = 19,y = 23,target = 42) == True
+    assert candidate(x = 13,y = 29,target = 17) == True
+    assert candidate(x = 301,y = 197,target = 498) == True
+    assert candidate(x = 111,y = 333,target = 444) == True
+    assert candidate(x = 787,y = 359,target = 428) == True
+    assert candidate(x = 29,y = 41,target = 58) == True
+    assert candidate(x = 137,y = 151,target = 458) == False
+    assert candidate(x = 59,y = 71,target = 150) == False
+    assert candidate(x = 89,y = 67,target = 52) == True
+    assert candidate(x = 333,y = 222,target = 111) == True
+    assert candidate(x = 71,y = 73,target = 144) == True
+    assert candidate(x = 13,y = 17,target = 24) == True
+    assert candidate(x = 45,y = 10,target = 75) == False
+    assert candidate(x = 800,y = 900,target = 1600) == True
+    assert candidate(x = 13,y = 17,target = 20) == True
+    assert candidate(x = 100,y = 300,target = 200) == True
+    assert candidate(x = 37,y = 53,target = 90) == True
+    assert candidate(x = 1000,y = 1001,target = 2001) == True
+    assert candidate(x = 1000,y = 333,target = 667) == True
+    assert candidate(x = 13,y = 17,target = 39) == False
+    assert candidate(x = 313,y = 509,target = 822) == True
+    assert candidate(x = 43,y = 59,target = 37) == True
+    assert candidate(x = 131,y = 149,target = 442) == False
+    assert candidate(x = 107,y = 127,target = 350) == False
+    assert candidate(x = 47,y = 19,target = 28) == True
+    assert candidate(x = 97,y = 101,target = 198) == True
+    assert candidate(x = 200,y = 123,target = 323) == True
+    assert candidate(x = 101,y = 202,target = 303) == True
+    assert candidate(x = 55,y = 77,target = 110) == True
+    assert candidate(x = 89,y = 71,target = 160) == True
+    assert candidate(x = 101,y = 89,target = 190) == True
+    assert candidate(x = 53,y = 109,target = 162) == True
+    assert candidate(x = 23,y = 17,target = 30) == True
+    assert candidate(x = 100,y = 33,target = 66) == True
+    assert candidate(x = 23,y = 31,target = 54) == True
+    assert candidate(x = 17,y = 37,target = 41) == True
+    assert candidate(x = 83,y = 101,target = 254) == False
+    assert candidate(x = 5,y = 7,target = 11) == True
+    assert candidate(x = 22,y = 33,target = 55) == True
+    assert candidate(x = 10,y = 15,target = 25) == True
+    assert candidate(x = 5,y = 2,target = 7) == True
+    assert candidate(x = 7,y = 13,target = 20) == True
+    assert candidate(x = 3,y = 3,target = 1) == False
+    assert candidate(x = 7,y = 13,target = 1) == True
+    assert candidate(x = 3,y = 9,target = 6) == True
+    assert candidate(x = 4,y = 9,target = 8) == True
+    assert candidate(x = 10,y = 15,target = 7) == False
+    assert candidate(x = 33,y = 55,target = 11) == True
+    assert candidate(x = 10,y = 15,target = 5) == True
+    assert candidate(x = 333,y = 444,target = 111) == True
+    assert candidate(x = 1000,y = 1000,target = 1500) == False
+    assert candidate(x = 5,y = 11,target = 2) == True
+    assert candidate(x = 8,y = 12,target = 16) == True
+    assert candidate(x = 10,y = 15,target = 20) == True
+    assert candidate(x = 7,y = 11,target = 8) == True
+    assert candidate(x = 1,y = 1,target = 0) == True
+    assert candidate(x = 6,y = 6,target = 6) == True
+    assert candidate(x = 3,y = 7,target = 2) == True
+    assert candidate(x = 8,y = 17,target = 15) == True
+    assert candidate(x = 7,y = 11,target = 1) == True
+    assert candidate(x = 500,y = 1000,target = 750) == False
+    assert candidate(x = 7,y = 11,target = 2) == True
+    assert candidate(x = 13,y = 19,target = 32) == True
+    assert candidate(x = 4,y = 9,target = 7) == True
+    assert candidate(x = 220,y = 340,target = 560) == True
+    assert candidate(x = 4,y = 9,target = 13) == True
+    assert candidate(x = 3,y = 1,target = 2) == True
+    assert candidate(x = 500,y = 200,target = 400) == True
+    assert candidate(x = 6,y = 19,target = 5) == True
+    assert candidate(x = 500,y = 500,target = 1000) == True
+    assert candidate(x = 8,y = 3,target = 5) == True
+    assert candidate(x = 8,y = 11,target = 13) == True
+    assert candidate(x = 4,y = 17,target = 20) == True
+    assert candidate(x = 5,y = 7,target = 12) == True
+    assert candidate(x = 2,y = 3,target = 1) == True
+    assert candidate(x = 3,y = 3,target = 6) == True
+    assert candidate(x = 5,y = 3,target = 2) == True
+    assert candidate(x = 333,y = 666,target = 999) == True
+    assert candidate(x = 4,y = 10,target = 8) == True
+    assert candidate(x = 5,y = 10,target = 15) == True
+    assert candidate(x = 8,y = 3,target = 11) == True
+    assert candidate(x = 100,y = 300,target = 500) == False
+    assert candidate(x = 8,y = 11,target = 1) == True
+    assert candidate(x = 7,y = 13,target = 10) == True
+    assert candidate(x = 22,y = 26,target = 16) == True
+    assert candidate(x = 7,y = 11,target = 18) == True
+    assert candidate(x = 34,y = 51,target = 68) == True
+    assert candidate(x = 4,y = 6,target = 8) == True
+
+

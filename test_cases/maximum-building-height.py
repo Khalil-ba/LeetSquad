@@ -1,0 +1,797 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 6,restrictions = []) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,restrictions = []) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,restrictions = [[2, 1], [4, 1]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,restrictions = [[2, 1], [4, 1]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [50, 25], [90, 10]]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [50, 25], [90, 10]]) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[500000, 500000]]) == 999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[500000, 500000]]) == 999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,restrictions = [[5, 3], [2, 5], [7, 4], [10, 3]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,restrictions = [[5, 3], [2, 5], [7, 4], [10, 3]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,restrictions = [[1000, 50], [2000, 100], [3000, 150], [4000, 200], [5000, 250], [6000, 300], [7000, 350], [8000, 400], [9000, 450]]) == 91450
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,restrictions = [[1000, 50], [2000, 100], [3000, 150], [4000, 200], [5000, 250], [6000, 300], [7000, 350], [8000, 400], [9000, 450]]) == 91450: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[5, 3], [6, 2], [7, 1], [8, 0], [9, 1], [10, 2], [11, 3], [12, 4], [13, 5], [14, 6], [15, 7]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[5, 3], [6, 2], [7, 1], [8, 0], [9, 1], [10, 2], [11, 3], [12, 4], [13, 5], [14, 6], [15, 7]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[100, 1], [200, 2], [300, 3], [400, 4], [500, 5], [600, 6], [700, 7], [800, 8], [900, 9]]) == 109
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[100, 1], [200, 2], [300, 3], [400, 4], [500, 5], [600, 6], [700, 7], [800, 8], [900, 9]]) == 109: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[20, 100], [40, 50], [60, 75], [80, 25], [100, 100], [120, 75], [140, 50], [160, 25], [180, 0], [200, 100]]) == 62
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[20, 100], [40, 50], [60, 75], [80, 25], [100, 100], [120, 75], [140, 50], [160, 25], [180, 0], [200, 100]]) == 62: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [30, 5], [50, 5], [70, 5], [90, 5]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [30, 5], [50, 5], [70, 5], [90, 5]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[500000, 1], [500001, 1], [500002, 1], [500003, 1], [500004, 1], [500005, 1], [500006, 1], [500007, 1], [500008, 1]]) == 499993
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[500000, 1], [500001, 1], [500002, 1], [500003, 1], [500004, 1], [500005, 1], [500006, 1], [500007, 1], [500008, 1]]) == 499993: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[2000, 1000], [4000, 1500], [6000, 2000], [8000, 2500]]) == 4500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[2000, 1000], [4000, 1500], [6000, 2000], [8000, 2500]]) == 4500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[5, 3], [10, 2], [15, 1], [20, 2], [25, 3], [30, 2], [35, 1], [40, 2], [45, 3], [50, 2], [55, 1], [60, 2], [65, 3], [70, 2], [75, 1], [80, 2], [85, 3], [90, 2], [95, 1], [100, 2], [105, 3], [110, 2], [115, 1], [120, 2], [125, 3], [130, 2], [135, 1], [140, 2], [145, 3], [150, 2], [155, 1], [160, 2], [165, 3], [170, 2], [175, 1], [180, 2], [185, 3], [190, 2], [195, 1]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[5, 3], [10, 2], [15, 1], [20, 2], [25, 3], [30, 2], [35, 1], [40, 2], [45, 3], [50, 2], [55, 1], [60, 2], [65, 3], [70, 2], [75, 1], [80, 2], [85, 3], [90, 2], [95, 1], [100, 2], [105, 3], [110, 2], [115, 1], [120, 2], [125, 3], [130, 2], [135, 1], [140, 2], [145, 3], [150, 2], [155, 1], [160, 2], [165, 3], [170, 2], [175, 1], [180, 2], [185, 3], [190, 2], [195, 1]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 9], [20, 8], [30, 7], [40, 6], [50, 5], [60, 4], [70, 3], [80, 2], [90, 1]]) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 9], [20, 8], [30, 7], [40, 6], [50, 5], [60, 4], [70, 3], [80, 2], [90, 1]]) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,restrictions = [[50, 1000], [100, 900], [150, 800], [200, 700], [250, 600], [300, 500], [350, 400], [400, 300], [450, 200], [500, 100]]) == 4600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,restrictions = [[50, 1000], [100, 900], [150, 800], [200, 700], [250, 600], [300, 500], [350, 400], [400, 300], [450, 200], [500, 100]]) == 4600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[2, 3], [5, 4], [8, 1], [15, 5], [18, 2]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[2, 3], [5, 4], [8, 1], [15, 5], [18, 2]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 3], [40, 15], [50, 5], [60, 20], [70, 7], [80, 12], [90, 10], [100, 2]]) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 3], [40, 15], [50, 5], [60, 20], [70, 7], [80, 12], [90, 10], [100, 2]]) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[3, 2], [6, 3], [9, 2], [15, 5], [18, 4]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[3, 2], [6, 3], [9, 2], [15, 5], [18, 4]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[1000, 5000], [2000, 10000], [3000, 15000], [4000, 20000], [5000, 25000], [6000, 30000], [7000, 35000], [8000, 40000], [9000, 45000], [10000, 50000]]) == 9999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[1000, 5000], [2000, 10000], [3000, 15000], [4000, 20000], [5000, 25000], [6000, 30000], [7000, 35000], [8000, 40000], [9000, 45000], [10000, 50000]]) == 9999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999,restrictions = [[999, 1]]) == 499
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999,restrictions = [[999, 1]]) == 499: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000000,restrictions = [[100000000, 10000000], [200000000, 20000000], [300000000, 30000000], [400000000, 40000000]]) == 640000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000000,restrictions = [[100000000, 10000000], [200000000, 20000000], [300000000, 30000000], [400000000, 40000000]]) == 640000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[999999, 999999]]) == 999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[999999, 999999]]) == 999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,restrictions = [[3, 2], [5, 3], [10, 5], [15, 7], [20, 9], [25, 11], [30, 13], [35, 15], [40, 17], [45, 19], [50, 21]]) == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,restrictions = [[3, 2], [5, 3], [10, 5], [15, 7], [20, 9], [25, 11], [30, 13], [35, 15], [40, 17], [45, 19], [50, 21]]) == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[3, 3], [6, 2], [9, 5], [15, 4]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[3, 3], [6, 2], [9, 5], [15, 4]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 950
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 950: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,restrictions = [[50000, 100000], [100000, 150000], [150000, 200000], [200000, 250000], [250000, 300000]]) == 499999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,restrictions = [[50000, 100000], [100000, 150000], [150000, 200000], [200000, 250000], [250000, 300000]]) == 499999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000], [5000, 2500], [6000, 3000], [7000, 3500], [8000, 4000], [9000, 4500], [10000, 5000]]) == 5250
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000], [5000, 2500], [6000, 3000], [7000, 3500], [8000, 4000], [9000, 4500], [10000, 5000]]) == 5250: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[2, 1], [4, 1], [6, 1], [8, 1], [10, 1], [12, 1], [14, 1], [16, 1], [18, 1], [20, 1]]) == 999981
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[2, 1], [4, 1], [6, 1], [8, 1], [10, 1], [12, 1], [14, 1], [16, 1], [18, 1], [20, 1]]) == 999981: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,restrictions = [[10000, 5000], [30000, 15000], [50000, 25000], [70000, 30000], [90000, 35000]]) == 45000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,restrictions = [[10000, 5000], [30000, 15000], [50000, 25000], [70000, 30000], [90000, 35000]]) == 45000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[2, 500000], [3, 500000], [4, 500000], [5, 500000], [6, 500000], [7, 500000], [8, 500000], [9, 500000], [10, 500000]]) == 999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[2, 500000], [3, 500000], [4, 500000], [5, 500000], [6, 500000], [7, 500000], [8, 500000], [9, 500000], [10, 500000]]) == 999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50000000,restrictions = [[10000000, 20000000], [20000000, 10000000], [30000000, 15000000], [40000000, 5000000], [50000000, 25000000]]) == 17500000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50000000,restrictions = [[10000000, 20000000], [20000000, 10000000], [30000000, 15000000], [40000000, 5000000], [50000000, 25000000]]) == 17500000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,restrictions = [[100000, 150000], [200000, 250000], [300000, 350000], [400000, 450000]]) == 499999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,restrictions = [[100000, 150000], [200000, 250000], [300000, 350000], [400000, 450000]]) == 499999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 150,restrictions = [[15, 15], [30, 30], [45, 45], [60, 60], [75, 75], [90, 90], [105, 105], [120, 120], [135, 135], [150, 150]]) == 149
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 150,restrictions = [[15, 15], [30, 30], [45, 45], [60, 60], [75, 75], [90, 90], [105, 105], [120, 120], [135, 135], [150, 150]]) == 149: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[50, 50], [100, 100], [150, 150], [200, 200], [250, 250], [300, 300], [350, 350], [400, 400], [450, 450], [500, 500], [550, 550], [600, 600], [650, 650], [700, 700], [750, 750], [800, 800], [850, 850], [900, 900], [950, 950], [1000, 1000]]) == 999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[50, 50], [100, 100], [150, 150], [200, 200], [250, 250], [300, 300], [350, 350], [400, 400], [450, 450], [500, 500], [550, 550], [600, 600], [650, 650], [700, 700], [750, 750], [800, 800], [850, 850], [900, 900], [950, 950], [1000, 1000]]) == 999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000]]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000]]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[100, 900], [200, 800], [300, 700], [400, 600], [500, 500], [600, 400], [700, 300], [800, 200], [900, 100]]) == 499
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[100, 900], [200, 800], [300, 700], [400, 600], [500, 500], [600, 400], [700, 300], [800, 200], [900, 100]]) == 499: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,restrictions = [[5, 4], [10, 3], [15, 2], [20, 1], [25, 0], [30, 1], [35, 2], [40, 3], [45, 4], [50, 5]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,restrictions = [[5, 4], [10, 3], [15, 2], [20, 1], [25, 0], [30, 1], [35, 2], [40, 3], [45, 4], [50, 5]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[50, 100], [150, 100], [250, 100], [350, 100], [450, 100], [550, 100], [650, 100], [750, 100], [850, 100], [950, 100]]) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[50, 100], [150, 100], [250, 100], [350, 100], [450, 100], [550, 100], [650, 100], [750, 100], [850, 100], [950, 100]]) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[500, 500], [250, 250], [750, 750], [100, 100], [900, 900]]) == 999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[500, 500], [250, 250], [750, 750], [100, 100], [900, 900]]) == 999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,restrictions = [[1000, 500], [5000, 2500], [10000, 5000], [25000, 10000], [50000, 15000], [75000, 10000], [90000, 5000], [95000, 1000]]) == 25000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,restrictions = [[1000, 500], [5000, 2500], [10000, 5000], [25000, 10000], [50000, 15000], [75000, 10000], [90000, 5000], [95000, 1000]]) == 25000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45]]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45]]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 10], [20, 15], [30, 20], [40, 10], [50, 25], [60, 20], [70, 15], [80, 10], [90, 5]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 10], [20, 15], [30, 20], [40, 10], [50, 25], [60, 20], [70, 15], [80, 10], [90, 5]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[3, 20], [50, 10], [90, 5]]) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[3, 20], [50, 10], [90, 5]]) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 1], [20, 1], [30, 1], [40, 1], [50, 1], [60, 1], [70, 1], [80, 1], [90, 1]]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 1], [20, 1], [30, 1], [40, 1], [50, 1], [60, 1], [70, 1], [80, 1], [90, 1]]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[500, 1000], [2500, 2000], [5000, 3000], [7500, 2000], [9500, 1000]]) == 3750
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[500, 1000], [2500, 2000], [5000, 3000], [7500, 2000], [9500, 1000]]) == 3750: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 52
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 52: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000000,restrictions = [[100000000, 99999999], [200000000, 88888888], [300000000, 77777777], [400000000, 66666666], [500000000, 55555555]]) == 555555555
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000000,restrictions = [[100000000, 99999999], [200000000, 88888888], [300000000, 77777777], [400000000, 66666666], [500000000, 55555555]]) == 555555555: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[2, 3], [4, 2], [6, 3], [8, 2], [10, 3], [12, 2], [14, 3], [16, 2], [18, 3]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[2, 3], [4, 2], [6, 3], [8, 2], [10, 3], [12, 2], [14, 3], [16, 2], [18, 3]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[20, 1], [40, 3], [60, 5], [80, 7], [100, 9], [120, 11], [140, 13], [160, 15], [180, 17]]) == 37
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[20, 1], [40, 3], [60, 5], [80, 7], [100, 9], [120, 11], [140, 13], [160, 15], [180, 17]]) == 37: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,restrictions = [[5, 25], [10, 15], [20, 30], [35, 20], [45, 10]]) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,restrictions = [[5, 25], [10, 15], [20, 30], [35, 20], [45, 10]]) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[100000, 50000], [200000, 100000], [300000, 75000], [400000, 25000], [500000, 100000]]) == 600000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[100000, 50000], [200000, 100000], [300000, 75000], [400000, 25000], [500000, 100000]]) == 600000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[50000, 100000], [100000, 200000], [150000, 300000], [200000, 400000], [250000, 500000], [300000, 400000], [350000, 300000], [400000, 200000], [450000, 100000]]) == 650000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[50000, 100000], [100000, 200000], [150000, 300000], [200000, 400000], [250000, 500000], [300000, 400000], [350000, 300000], [400000, 200000], [450000, 100000]]) == 650000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 15,restrictions = [[3, 2], [6, 3], [9, 1], [12, 4]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 15,restrictions = [[3, 2], [6, 3], [9, 1], [12, 4]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[10000, 1000], [20000, 2000], [30000, 3000], [40000, 4000], [50000, 5000], [60000, 6000], [70000, 7000], [80000, 8000], [90000, 9000]]) == 919000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[10000, 1000], [20000, 2000], [30000, 3000], [40000, 4000], [50000, 5000], [60000, 6000], [70000, 7000], [80000, 8000], [90000, 9000]]) == 919000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 10], [20, 5], [30, 15], [40, 20], [50, 10], [60, 25], [70, 30], [80, 5], [90, 40]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 10], [20, 5], [30, 15], [40, 20], [50, 10], [60, 25], [70, 30], [80, 5], [90, 40]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,restrictions = [[5, 5], [10, 10], [15, 15], [20, 20], [25, 25], [30, 30], [35, 35], [40, 40], [45, 45]]) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,restrictions = [[5, 5], [10, 10], [15, 15], [20, 20], [25, 25], [30, 30], [35, 35], [40, 40], [45, 45]]) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[2, 9999], [4, 9998], [6, 9997], [8, 9996], [10, 9995], [12, 9994], [14, 9993], [16, 9992], [18, 9991], [20, 9990]]) == 9999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[2, 9999], [4, 9998], [6, 9997], [8, 9996], [10, 9995], [12, 9994], [14, 9993], [16, 9992], [18, 9991], [20, 9990]]) == 9999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[2, 99], [4, 98], [6, 97], [8, 96], [10, 95], [12, 94], [14, 93], [16, 92], [18, 91], [20, 90], [22, 89], [24, 88], [26, 87], [28, 86], [30, 85], [32, 84], [34, 83], [36, 82], [38, 81], [40, 80], [42, 79], [44, 78], [46, 77], [48, 76], [50, 75], [52, 74], [54, 73], [56, 72], [58, 71], [60, 70], [62, 69], [64, 68], [66, 67], [68, 66], [70, 65], [72, 64], [74, 63], [76, 62], [78, 61], [80, 60], [82, 59], [84, 58], [86, 57], [88, 56], [90, 55], [92, 54], [94, 53], [96, 52], [98, 51], [100, 50]]) == 66
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[2, 99], [4, 98], [6, 97], [8, 96], [10, 95], [12, 94], [14, 93], [16, 92], [18, 91], [20, 90], [22, 89], [24, 88], [26, 87], [28, 86], [30, 85], [32, 84], [34, 83], [36, 82], [38, 81], [40, 80], [42, 79], [44, 78], [46, 77], [48, 76], [50, 75], [52, 74], [54, 73], [56, 72], [58, 71], [60, 70], [62, 69], [64, 68], [66, 67], [68, 66], [70, 65], [72, 64], [74, 63], [76, 62], [78, 61], [80, 60], [82, 59], [84, 58], [86, 57], [88, 56], [90, 55], [92, 54], [94, 53], [96, 52], [98, 51], [100, 50]]) == 66: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[2, 1], [50, 50], [150, 20], [100, 30], [180, 10]]) == 64
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[2, 1], [50, 50], [150, 20], [100, 30], [180, 10]]) == 64: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[200000, 300000], [400000, 100000], [600000, 200000], [800000, 400000], [1000000, 500000]]) == 550000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[200000, 300000], [400000, 100000], [600000, 200000], [800000, 400000], [1000000, 500000]]) == 550000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[10, 900], [20, 800], [30, 700], [40, 600], [50, 500], [60, 400], [70, 300], [80, 200], [90, 100]]) == 999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[10, 900], [20, 800], [30, 700], [40, 600], [50, 500], [60, 400], [70, 300], [80, 200], [90, 100]]) == 999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[100, 50], [200, 40], [300, 30], [400, 20], [500, 10], [600, 0], [700, 10], [800, 20], [900, 30]]) == 9130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[100, 50], [200, 40], [300, 30], [400, 20], [500, 10], [600, 0], [700, 10], [800, 20], [900, 30]]) == 9130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10], [110, 20], [120, 30], [130, 40], [140, 50], [150, 60], [160, 70], [170, 80], [180, 90], [190, 100], [200, 110]]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10], [110, 20], [120, 30], [130, 40], [140, 50], [150, 60], [160, 70], [170, 80], [180, 90], [190, 100], [200, 110]]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,restrictions = [[50, 10], [100, 20], [150, 10], [200, 20], [250, 10], [300, 20], [350, 10], [400, 20], [450, 10], [500, 20]]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,restrictions = [[50, 10], [100, 20], [150, 10], [200, 20], [250, 10], [300, 20], [350, 10], [400, 20], [450, 10], [500, 20]]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,restrictions = [[500, 500], [1000, 400], [1500, 600], [2000, 500], [2500, 700], [3000, 400], [3500, 600], [4000, 500], [4500, 700], [5000, 400]]) == 850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,restrictions = [[500, 500], [1000, 400], [1500, 600], [2000, 500], [2500, 700], [3000, 400], [3500, 600], [4000, 500], [4500, 700], [5000, 400]]) == 850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,restrictions = [[100, 10], [200, 200], [300, 150], [400, 100], [500, 50]]) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,restrictions = [[100, 10], [200, 200], [300, 150], [400, 100], [500, 50]]) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 300,restrictions = [[30, 2], [60, 4], [90, 6], [120, 8], [150, 10], [180, 12], [210, 14], [240, 16], [270, 18]]) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 300,restrictions = [[30, 2], [60, 4], [90, 6], [120, 8], [150, 10], [180, 12], [210, 14], [240, 16], [270, 18]]) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[10, 5], [30, 10], [50, 5], [70, 10], [90, 5]]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[10, 5], [30, 10], [50, 5], [70, 10], [90, 5]]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,restrictions = [[20, 15], [30, 25], [40, 35], [50, 45], [60, 55], [70, 65], [80, 75], [90, 85]]) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,restrictions = [[20, 15], [30, 25], [40, 35], [50, 45], [60, 55], [70, 65], [80, 75], [90, 85]]) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[10, 5], [20, 15], [30, 10], [40, 20], [50, 15], [60, 25], [70, 20], [80, 30], [90, 25], [100, 35]]) == 935
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[10, 5], [20, 15], [30, 10], [40, 20], [50, 15], [60, 25], [70, 20], [80, 30], [90, 25], [100, 35]]) == 935: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,restrictions = [[3, 2], [6, 3], [15, 5], [18, 4]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,restrictions = [[3, 2], [6, 3], [15, 5], [18, 4]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,restrictions = [[100, 100], [200, 900], [300, 300], [400, 700], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900]]) == 999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,restrictions = [[100, 100], [200, 900], [300, 300], [400, 700], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900]]) == 999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000000,restrictions = [[1000000, 500000], [2000000, 1000000], [3000000, 1500000], [4000000, 2000000], [5000000, 2500000], [6000000, 3000000], [7000000, 3500000], [8000000, 4000000], [9000000, 4500000]]) == 5500000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000000,restrictions = [[1000000, 500000], [2000000, 1000000], [3000000, 1500000], [4000000, 2000000], [5000000, 2500000], [6000000, 3000000], [7000000, 3500000], [8000000, 4000000], [9000000, 4500000]]) == 5500000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 460
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 460: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,restrictions = [[500, 500], [1000, 500], [1500, 500]]) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,restrictions = [[500, 500], [1000, 500], [1500, 500]]) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,restrictions = [[500, 100], [1000, 500], [1500, 200], [2000, 1000]]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,restrictions = [[500, 100], [1000, 500], [1500, 200], [2000, 1000]]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 200,restrictions = [[2, 198], [4, 196], [6, 194], [8, 192], [10, 190], [12, 188], [14, 186], [16, 184], [18, 182], [20, 180]]) == 199
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 200,restrictions = [[2, 198], [4, 196], [6, 194], [8, 192], [10, 190], [12, 188], [14, 186], [16, 184], [18, 182], [20, 180]]) == 199: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000000,restrictions = [[1000000, 1000000], [3000000, 3000000], [5000000, 5000000], [7000000, 7000000], [9000000, 9000000]]) == 9999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000000,restrictions = [[1000000, 1000000], [3000000, 3000000], [5000000, 5000000], [7000000, 7000000], [9000000, 9000000]]) == 9999999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000]]) == 499999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000]]) == 499999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100000,restrictions = [[5000, 1000], [15000, 2000], [25000, 3000], [35000, 4000], [45000, 5000], [55000, 6000], [65000, 7000], [75000, 8000], [85000, 9000], [95000, 10000]]) == 15000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100000,restrictions = [[5000, 1000], [15000, 2000], [25000, 3000], [35000, 4000], [45000, 5000], [55000, 6000], [65000, 7000], [75000, 8000], [85000, 9000], [95000, 10000]]) == 15000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[500, 5000], [1000, 10000], [1500, 15000], [2000, 20000], [2500, 25000], [3000, 30000]]) == 9999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[500, 5000], [1000, 10000], [1500, 15000], [2000, 20000], [2500, 25000], [3000, 30000]]) == 9999: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[1000, 500], [2000, 1000], [3000, 750], [4000, 1500], [5000, 1250], [6000, 2000], [7000, 1750], [8000, 2500], [9000, 2250], [10000, 3000]]) == 993000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[1000, 500], [2000, 1000], [3000, 750], [4000, 1500], [5000, 1250], [6000, 2000], [7000, 1750], [8000, 2500], [9000, 2250], [10000, 3000]]) == 993000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,restrictions = [[1000, 500], [2000, 750], [3000, 1000], [4000, 1250], [5000, 1500]]) == 6500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,restrictions = [[1000, 500], [2000, 750], [3000, 1000], [4000, 1250], [5000, 1500]]) == 6500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000], [600000, 600000], [700000, 700000], [800000, 800000], [900000, 900000]]) == 999999
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000], [600000, 600000], [700000, 700000], [800000, 800000], [900000, 900000]]) == 999999: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(n = 6,restrictions = []) == 5
+    assert candidate(n = 5,restrictions = [[2, 1], [4, 1]]) == 2
+    assert candidate(n = 100,restrictions = [[10, 5], [50, 25], [90, 10]]) == 37
+    assert candidate(n = 1000000,restrictions = [[500000, 500000]]) == 999999
+    assert candidate(n = 10,restrictions = [[5, 3], [2, 5], [7, 4], [10, 3]]) == 5
+    assert candidate(n = 100000,restrictions = [[1000, 50], [2000, 100], [3000, 150], [4000, 200], [5000, 250], [6000, 300], [7000, 350], [8000, 400], [9000, 450]]) == 91450
+    assert candidate(n = 20,restrictions = [[5, 3], [6, 2], [7, 1], [8, 0], [9, 1], [10, 2], [11, 3], [12, 4], [13, 5], [14, 6], [15, 7]]) == 12
+    assert candidate(n = 1000,restrictions = [[100, 1], [200, 2], [300, 3], [400, 4], [500, 5], [600, 6], [700, 7], [800, 8], [900, 9]]) == 109
+    assert candidate(n = 200,restrictions = [[20, 100], [40, 50], [60, 75], [80, 25], [100, 100], [120, 75], [140, 50], [160, 25], [180, 0], [200, 100]]) == 62
+    assert candidate(n = 100,restrictions = [[10, 5], [30, 5], [50, 5], [70, 5], [90, 5]]) == 15
+    assert candidate(n = 1000000,restrictions = [[500000, 1], [500001, 1], [500002, 1], [500003, 1], [500004, 1], [500005, 1], [500006, 1], [500007, 1], [500008, 1]]) == 499993
+    assert candidate(n = 10000,restrictions = [[2000, 1000], [4000, 1500], [6000, 2000], [8000, 2500]]) == 4500
+    assert candidate(n = 200,restrictions = [[5, 3], [10, 2], [15, 1], [20, 2], [25, 3], [30, 2], [35, 1], [40, 2], [45, 3], [50, 2], [55, 1], [60, 2], [65, 3], [70, 2], [75, 1], [80, 2], [85, 3], [90, 2], [95, 1], [100, 2], [105, 3], [110, 2], [115, 1], [120, 2], [125, 3], [130, 2], [135, 1], [140, 2], [145, 3], [150, 2], [155, 1], [160, 2], [165, 3], [170, 2], [175, 1], [180, 2], [185, 3], [190, 2], [195, 1]]) == 6
+    assert candidate(n = 100,restrictions = [[10, 9], [20, 8], [30, 7], [40, 6], [50, 5], [60, 4], [70, 3], [80, 2], [90, 1]]) == 13
+    assert candidate(n = 5000,restrictions = [[50, 1000], [100, 900], [150, 800], [200, 700], [250, 600], [300, 500], [350, 400], [400, 300], [450, 200], [500, 100]]) == 4600
+    assert candidate(n = 20,restrictions = [[2, 3], [5, 4], [8, 1], [15, 5], [18, 2]]) == 6
+    assert candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 3], [40, 15], [50, 5], [60, 20], [70, 7], [80, 12], [90, 10], [100, 2]]) == 16
+    assert candidate(n = 20,restrictions = [[3, 2], [6, 3], [9, 2], [15, 5], [18, 4]]) == 6
+    assert candidate(n = 10000,restrictions = [[1000, 5000], [2000, 10000], [3000, 15000], [4000, 20000], [5000, 25000], [6000, 30000], [7000, 35000], [8000, 40000], [9000, 45000], [10000, 50000]]) == 9999
+    assert candidate(n = 999,restrictions = [[999, 1]]) == 499
+    assert candidate(n = 1000000000,restrictions = [[100000000, 10000000], [200000000, 20000000], [300000000, 30000000], [400000000, 40000000]]) == 640000000
+    assert candidate(n = 1000000,restrictions = [[999999, 999999]]) == 999999
+    assert candidate(n = 50,restrictions = [[3, 2], [5, 3], [10, 5], [15, 7], [20, 9], [25, 11], [30, 13], [35, 15], [40, 17], [45, 19], [50, 21]]) == 22
+    assert candidate(n = 20,restrictions = [[3, 3], [6, 2], [9, 5], [15, 4]]) == 9
+    assert candidate(n = 1000,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 950
+    assert candidate(n = 500000,restrictions = [[50000, 100000], [100000, 150000], [150000, 200000], [200000, 250000], [250000, 300000]]) == 499999
+    assert candidate(n = 10000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000], [5000, 2500], [6000, 3000], [7000, 3500], [8000, 4000], [9000, 4500], [10000, 5000]]) == 5250
+    assert candidate(n = 1000000,restrictions = [[2, 1], [4, 1], [6, 1], [8, 1], [10, 1], [12, 1], [14, 1], [16, 1], [18, 1], [20, 1]]) == 999981
+    assert candidate(n = 100000,restrictions = [[10000, 5000], [30000, 15000], [50000, 25000], [70000, 30000], [90000, 35000]]) == 45000
+    assert candidate(n = 1000000,restrictions = [[2, 500000], [3, 500000], [4, 500000], [5, 500000], [6, 500000], [7, 500000], [8, 500000], [9, 500000], [10, 500000]]) == 999999
+    assert candidate(n = 50000000,restrictions = [[10000000, 20000000], [20000000, 10000000], [30000000, 15000000], [40000000, 5000000], [50000000, 25000000]]) == 17500000
+    assert candidate(n = 500000,restrictions = [[100000, 150000], [200000, 250000], [300000, 350000], [400000, 450000]]) == 499999
+    assert candidate(n = 150,restrictions = [[15, 15], [30, 30], [45, 45], [60, 60], [75, 75], [90, 90], [105, 105], [120, 120], [135, 135], [150, 150]]) == 149
+    assert candidate(n = 1000,restrictions = [[50, 50], [100, 100], [150, 150], [200, 200], [250, 250], [300, 300], [350, 350], [400, 400], [450, 450], [500, 500], [550, 550], [600, 600], [650, 650], [700, 700], [750, 750], [800, 800], [850, 850], [900, 900], [950, 950], [1000, 1000]]) == 999
+    assert candidate(n = 5000,restrictions = [[1000, 500], [2000, 1000], [3000, 1500], [4000, 2000]]) == 3000
+    assert candidate(n = 1000,restrictions = [[100, 900], [200, 800], [300, 700], [400, 600], [500, 500], [600, 400], [700, 300], [800, 200], [900, 100]]) == 499
+    assert candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25]]) == 75
+    assert candidate(n = 50,restrictions = [[5, 4], [10, 3], [15, 2], [20, 1], [25, 0], [30, 1], [35, 2], [40, 3], [45, 4], [50, 5]]) == 7
+    assert candidate(n = 1000,restrictions = [[50, 100], [150, 100], [250, 100], [350, 100], [450, 100], [550, 100], [650, 100], [750, 100], [850, 100], [950, 100]]) == 150
+    assert candidate(n = 1000,restrictions = [[500, 500], [250, 250], [750, 750], [100, 100], [900, 900]]) == 999
+    assert candidate(n = 100000,restrictions = [[1000, 500], [5000, 2500], [10000, 5000], [25000, 10000], [50000, 15000], [75000, 10000], [90000, 5000], [95000, 1000]]) == 25000
+    assert candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45]]) == 55
+    assert candidate(n = 100,restrictions = [[10, 10], [20, 15], [30, 20], [40, 10], [50, 25], [60, 20], [70, 15], [80, 10], [90, 5]]) == 25
+    assert candidate(n = 100,restrictions = [[3, 20], [50, 10], [90, 5]]) == 29
+    assert candidate(n = 100,restrictions = [[10, 1], [20, 1], [30, 1], [40, 1], [50, 1], [60, 1], [70, 1], [80, 1], [90, 1]]) == 11
+    assert candidate(n = 10000,restrictions = [[500, 1000], [2500, 2000], [5000, 3000], [7500, 2000], [9500, 1000]]) == 3750
+    assert candidate(n = 100,restrictions = [[10, 5], [20, 10], [30, 15], [40, 20], [50, 25], [60, 30], [70, 35], [80, 40], [90, 45], [100, 50]]) == 52
+    assert candidate(n = 1000000000,restrictions = [[100000000, 99999999], [200000000, 88888888], [300000000, 77777777], [400000000, 66666666], [500000000, 55555555]]) == 555555555
+    assert candidate(n = 20,restrictions = [[2, 3], [4, 2], [6, 3], [8, 2], [10, 3], [12, 2], [14, 3], [16, 2], [18, 3]]) == 5
+    assert candidate(n = 200,restrictions = [[20, 1], [40, 3], [60, 5], [80, 7], [100, 9], [120, 11], [140, 13], [160, 15], [180, 17]]) == 37
+    assert candidate(n = 50,restrictions = [[5, 25], [10, 15], [20, 30], [35, 20], [45, 10]]) == 27
+    assert candidate(n = 1000000,restrictions = [[100000, 50000], [200000, 100000], [300000, 75000], [400000, 25000], [500000, 100000]]) == 600000
+    assert candidate(n = 1000000,restrictions = [[50000, 100000], [100000, 200000], [150000, 300000], [200000, 400000], [250000, 500000], [300000, 400000], [350000, 300000], [400000, 200000], [450000, 100000]]) == 650000
+    assert candidate(n = 15,restrictions = [[3, 2], [6, 3], [9, 1], [12, 4]]) == 7
+    assert candidate(n = 1000000,restrictions = [[10000, 1000], [20000, 2000], [30000, 3000], [40000, 4000], [50000, 5000], [60000, 6000], [70000, 7000], [80000, 8000], [90000, 9000]]) == 919000
+    assert candidate(n = 100,restrictions = [[10, 10], [20, 5], [30, 15], [40, 20], [50, 10], [60, 25], [70, 30], [80, 5], [90, 40]]) == 25
+    assert candidate(n = 50,restrictions = [[5, 5], [10, 10], [15, 15], [20, 20], [25, 25], [30, 30], [35, 35], [40, 40], [45, 45]]) == 49
+    assert candidate(n = 100,restrictions = [[10, 1], [20, 2], [30, 3], [40, 4], [50, 5], [60, 6], [70, 7], [80, 8], [90, 9], [100, 10]]) == 14
+    assert candidate(n = 10000,restrictions = [[2, 9999], [4, 9998], [6, 9997], [8, 9996], [10, 9995], [12, 9994], [14, 9993], [16, 9992], [18, 9991], [20, 9990]]) == 9999
+    assert candidate(n = 100,restrictions = [[2, 99], [4, 98], [6, 97], [8, 96], [10, 95], [12, 94], [14, 93], [16, 92], [18, 91], [20, 90], [22, 89], [24, 88], [26, 87], [28, 86], [30, 85], [32, 84], [34, 83], [36, 82], [38, 81], [40, 80], [42, 79], [44, 78], [46, 77], [48, 76], [50, 75], [52, 74], [54, 73], [56, 72], [58, 71], [60, 70], [62, 69], [64, 68], [66, 67], [68, 66], [70, 65], [72, 64], [74, 63], [76, 62], [78, 61], [80, 60], [82, 59], [84, 58], [86, 57], [88, 56], [90, 55], [92, 54], [94, 53], [96, 52], [98, 51], [100, 50]]) == 66
+    assert candidate(n = 200,restrictions = [[2, 1], [50, 50], [150, 20], [100, 30], [180, 10]]) == 64
+    assert candidate(n = 1000000,restrictions = [[200000, 300000], [400000, 100000], [600000, 200000], [800000, 400000], [1000000, 500000]]) == 550000
+    assert candidate(n = 1000,restrictions = [[10, 900], [20, 800], [30, 700], [40, 600], [50, 500], [60, 400], [70, 300], [80, 200], [90, 100]]) == 999
+    assert candidate(n = 10000,restrictions = [[100, 50], [200, 40], [300, 30], [400, 20], [500, 10], [600, 0], [700, 10], [800, 20], [900, 30]]) == 9130
+    assert candidate(n = 200,restrictions = [[10, 100], [20, 90], [30, 80], [40, 70], [50, 60], [60, 50], [70, 40], [80, 30], [90, 20], [100, 10], [110, 20], [120, 30], [130, 40], [140, 50], [150, 60], [160, 70], [170, 80], [180, 90], [190, 100], [200, 110]]) == 110
+    assert candidate(n = 500,restrictions = [[50, 10], [100, 20], [150, 10], [200, 20], [250, 10], [300, 20], [350, 10], [400, 20], [450, 10], [500, 20]]) == 40
+    assert candidate(n = 50,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 12
+    assert candidate(n = 5000,restrictions = [[500, 500], [1000, 400], [1500, 600], [2000, 500], [2500, 700], [3000, 400], [3500, 600], [4000, 500], [4500, 700], [5000, 400]]) == 850
+    assert candidate(n = 500,restrictions = [[100, 10], [200, 200], [300, 150], [400, 100], [500, 50]]) == 180
+    assert candidate(n = 300,restrictions = [[30, 2], [60, 4], [90, 6], [120, 8], [150, 10], [180, 12], [210, 14], [240, 16], [270, 18]]) == 48
+    assert candidate(n = 100,restrictions = [[10, 5], [30, 10], [50, 5], [70, 10], [90, 5]]) == 17
+    assert candidate(n = 100,restrictions = [[20, 15], [30, 25], [40, 35], [50, 45], [60, 55], [70, 65], [80, 75], [90, 85]]) == 95
+    assert candidate(n = 1000,restrictions = [[10, 5], [20, 15], [30, 10], [40, 20], [50, 15], [60, 25], [70, 20], [80, 30], [90, 25], [100, 35]]) == 935
+    assert candidate(n = 20,restrictions = [[3, 2], [6, 3], [15, 5], [18, 4]]) == 8
+    assert candidate(n = 1000,restrictions = [[100, 100], [200, 900], [300, 300], [400, 700], [500, 500], [600, 600], [700, 700], [800, 800], [900, 900]]) == 999
+    assert candidate(n = 10000000,restrictions = [[1000000, 500000], [2000000, 1000000], [3000000, 1500000], [4000000, 2000000], [5000000, 2500000], [6000000, 3000000], [7000000, 3500000], [8000000, 4000000], [9000000, 4500000]]) == 5500000
+    assert candidate(n = 500,restrictions = [[5, 1], [10, 2], [15, 3], [20, 4], [25, 5], [30, 6], [35, 7], [40, 8], [45, 9], [50, 10]]) == 460
+    assert candidate(n = 2000,restrictions = [[500, 500], [1000, 500], [1500, 500]]) == 1000
+    assert candidate(n = 2000,restrictions = [[500, 100], [1000, 500], [1500, 200], [2000, 1000]]) == 700
+    assert candidate(n = 200,restrictions = [[2, 198], [4, 196], [6, 194], [8, 192], [10, 190], [12, 188], [14, 186], [16, 184], [18, 182], [20, 180]]) == 199
+    assert candidate(n = 10000000,restrictions = [[1000000, 1000000], [3000000, 3000000], [5000000, 5000000], [7000000, 7000000], [9000000, 9000000]]) == 9999999
+    assert candidate(n = 500000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000]]) == 499999
+    assert candidate(n = 100000,restrictions = [[5000, 1000], [15000, 2000], [25000, 3000], [35000, 4000], [45000, 5000], [55000, 6000], [65000, 7000], [75000, 8000], [85000, 9000], [95000, 10000]]) == 15000
+    assert candidate(n = 10000,restrictions = [[500, 5000], [1000, 10000], [1500, 15000], [2000, 20000], [2500, 25000], [3000, 30000]]) == 9999
+    assert candidate(n = 1000000,restrictions = [[1000, 500], [2000, 1000], [3000, 750], [4000, 1500], [5000, 1250], [6000, 2000], [7000, 1750], [8000, 2500], [9000, 2250], [10000, 3000]]) == 993000
+    assert candidate(n = 10000,restrictions = [[1000, 500], [2000, 750], [3000, 1000], [4000, 1250], [5000, 1500]]) == 6500
+    assert candidate(n = 1000000,restrictions = [[100000, 100000], [200000, 200000], [300000, 300000], [400000, 400000], [500000, 500000], [600000, 600000], [700000, 700000], [800000, 800000], [900000, 900000]]) == 999999
+
+

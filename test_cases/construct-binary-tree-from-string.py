@@ -1,0 +1,1004 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2)(3(4)(5(6)(7)))"), tree_node([1, 2, 3, None, None, 4, 5, None, None, 6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2)(3(4)(5(6)(7)))"), tree_node([1, 2, 3, None, None, 4, 5, None, None, 6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2)(-3)"), tree_node([-1, -2, -3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2)(-3)"), tree_node([-1, -2, -3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3)(4))(5(6)(7))"), tree_node([1, 2, 5, 3, 4, 6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3)(4))(5(6)(7))"), tree_node([1, 2, 5, 3, 4, 6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(4(3(2(1))))"), tree_node([5, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(4(3(2(1))))"), tree_node([5, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-4(2(3)(1))(6(5)(7))"), tree_node([-4, 2, 6, 3, 1, 5, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-4(2(3)(1))(6(5)(7))"), tree_node([-4, 2, 6, 3, 1, 5, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(4()(3))"), tree_node([5, 4, None, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(4()(3))"), tree_node([5, 4, None, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2)(3)"), tree_node([1, 2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2)(3)"), tree_node([1, 2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "4(2(3)(1))(6(5)(7))"), tree_node([4, 2, 6, 3, 1, 5, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "4(2(3)(1))(6(5)(7))"), tree_node([4, 2, 6, 3, 1, 5, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1()(2)"), tree_node([1, None, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1()(2)"), tree_node([1, None, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-4)(-5))(-3(-6)(-7))"), tree_node([-1, -2, -3, -4, -5, -6, -7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-4)(-5))(-3(-6)(-7))"), tree_node([-1, -2, -3, -4, -5, -6, -7])): {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "") == None
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "") == None: {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(4)(5))(3(6)(7))"), tree_node([1, 2, 3, 4, 5, 6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(4)(5))(3(6)(7))"), tree_node([1, 2, 3, 4, 5, 6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "2(3)(1)"), tree_node([2, 3, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "2(3)(1)"), tree_node([2, 3, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(0(0))(0(0))"), tree_node([0, 0, 0, 0, None, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(0(0))(0(0))"), tree_node([0, 0, 0, 0, None, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2)"), tree_node([1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2)"), tree_node([1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "4(2(3)(1))(6(5))"), tree_node([4, 2, 6, 3, 1, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "4(2(3)(1))(6(5))"), tree_node([4, 2, 6, 3, 1, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "2(3(4)(5))(6(7))"), tree_node([2, 3, 6, 4, 5, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "2(3(4)(5))(6(7))"), tree_node([2, 3, 6, 4, 5, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(4(11(7)(2)))(8(13)(4(9)))"), tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(4(11(7)(2)))(8(13)(4(9)))"), tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(3))"), tree_node([1, 2, None, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(3))"), tree_node([1, 2, None, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(1(2))(3(4(5)(6))(7))"), tree_node([0, 1, 3, 2, None, 4, 7, None, None, 5, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(1(2))(3(4(5)(6))(7))"), tree_node([0, 1, 3, 2, None, 4, 7, None, None, 5, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3))"), tree_node([1, 2, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3))"), tree_node([1, 2, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "2(3(4))"), tree_node([2, 3, None, 4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "2(3(4))"), tree_node([2, 3, None, 4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "2(3()())"), tree_node([2, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "2(3()())"), tree_node([2, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-3)(-4))(-5(-6)(-7))"), tree_node([-1, -2, -5, -3, -4, -6, -7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-3)(-4))(-5(-6)(-7))"), tree_node([-1, -2, -5, -3, -4, -6, -7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2)(1))))))))(11(12(13(14(15(16(17(18(19))))))))))"), tree_node([10, 9, 11, 8, None, 12, None, 7, None, 13, None, 6, None, 14, None, 5, None, 15, None, 4, None, 16, None, 3, None, 17, None, 2, 1, 18, None, None, None, None, None, 19]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2)(1))))))))(11(12(13(14(15(16(17(18(19))))))))))"), tree_node([10, 9, 11, 8, None, 12, None, 7, None, 13, None, 6, None, 14, None, 5, None, 15, None, 4, None, 16, None, 3, None, 17, None, 2, 1, 18, None, None, None, None, None, 19])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9(10))))))))))"), tree_node([0, 1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9(10))))))))))"), tree_node([0, 1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "2(3(5(7(11(13)))(8(12)))(4(6(9)(10))))"), tree_node([2, 3, None, 5, 4, 7, 8, 6, None, 11, None, 12, None, 9, 10, 13]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "2(3(5(7(11(13)))(8(12)))(4(6(9)(10))))"), tree_node([2, 3, None, 5, 4, 7, 8, 6, None, 11, None, 12, None, 9, 10, 13])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25(10)(35))(75(60)(80)))(150(125(110)(135))(175(160)(190)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 10, 35, 60, 80, 110, 135, 160, 190]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25(10)(35))(75(60)(80)))(150(125(110)(135))(175(160)(190)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 10, 35, 60, 80, 110, 135, 160, 190])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "6(5(4(3(2(1)))))"), tree_node([6, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "6(5(4(3(2(1)))))"), tree_node([6, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(5(3(2)(8(6)(10)))(15(12()(17(13)(18))))"), tree_node([10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(5(3(2)(8(6)(10)))(15(12()(17(13)(18))))"), tree_node([10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))"), tree_node([1, 2, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))"), tree_node([1, 2, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(1)(2(3(4(5))(6(7)))(8(9(10))))"), tree_node([0, 1, 2, None, None, 3, 8, 4, 6, 9, None, 5, None, 7, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(1)(2(3(4(5))(6(7)))(8(9(10))))"), tree_node([0, 1, 2, None, None, 3, 8, 4, 6, 9, None, 5, None, 7, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(4(3(2(1)(0)))(-1))(-2(-3))"), tree_node([5, 4, -2, 3, -1, -3, None, 2, None, None, None, None, None, 1, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(4(3(2(1)(0)))(-1))(-2(-3))"), tree_node([5, 4, -2, 3, -1, -3, None, 2, None, None, None, None, None, 1, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(2(4(-3)))(-5(6(-7)(8))(-9))"), tree_node([-1, 2, -5, 4, None, 6, -9, -3, None, -7, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(2(4(-3)))(-5(6(-7)(8))(-9))"), tree_node([-1, 2, -5, 4, None, 6, -9, -3, None, -7, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(2(3(-4)(-5)))(-6(-7(-8)(-9))(-10(-11)(-12)))"), tree_node([-1, 2, -6, 3, None, -7, -10, -4, -5, -8, -9, -11, -12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(2(3(-4)(-5)))(-6(-7(-8)(-9))(-10(-11)(-12)))"), tree_node([-1, 2, -6, 3, None, -7, -10, -4, -5, -8, -9, -11, -12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(-20(15)(7))(30(-10)(40))"), tree_node([10, -20, 30, 15, 7, -10, 40]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(-20(15)(7))(30(-10)(40))"), tree_node([10, -20, 30, 15, 7, -10, 40])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-100(50(25(12)(38))(75(-10)(-20)))(-200(-50(-100)(-150))(-75(-200)(-250)))"), tree_node([-100, 50, -200, 25, 75, -50, -75, 12, 38, -10, -20, -100, -150, -200, -250]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-100(50(25(12)(38))(75(-10)(-20)))(-200(-50(-100)(-150))(-75(-200)(-250)))"), tree_node([-100, 50, -200, 25, 75, -50, -75, 12, 38, -10, -20, -100, -150, -200, -250])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))(-1(-2(-3(-4(-5(-6(-7(-8(-9(-10))))))))))"), tree_node([10, 9, -1, 8, None, -2, None, 7, None, -3, None, 6, None, -4, None, 5, None, -5, None, 4, None, -6, None, 3, None, -7, None, 2, None, -8, None, 1, None, -9, None, None, None, -10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))(-1(-2(-3(-4(-5(-6(-7(-8(-9(-10))))))))))"), tree_node([10, 9, -1, 8, None, -2, None, 7, None, -3, None, 6, None, -4, None, 5, None, -5, None, 4, None, -6, None, 3, None, -7, None, 2, None, -8, None, 1, None, -9, None, None, None, -10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(-5(12)(-6))(15(8)(9))"), tree_node([10, -5, 15, 12, -6, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(-5(12)(-6))(15(8)(9))"), tree_node([10, -5, 15, 12, -6, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25(12(6)(7))(37(18)(19)))(75(62(58)(59))(88(81)(82))))"), tree_node([100, 50, None, 25, 75, 12, 37, 62, 88, 6, 7, 18, 19, 58, 59, 81, 82]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25(12(6)(7))(37(18)(19)))(75(62(58)(59))(88(81)(82))))"), tree_node([100, 50, None, 25, 75, 12, 37, 62, 88, 6, 7, 18, 19, 58, 59, 81, 82])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(1(0))(2(5()(8))(4(9)(10)))"), tree_node([3, 1, 2, 0, None, 5, 4, None, None, None, 8, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(1(0))(2(5()(8))(4(9)(10)))"), tree_node([3, 1, 2, 0, None, 5, 4, None, None, None, 8, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-4(-8)(-9)))(-3(-5(-10)(-11))(-6(-12)(-13)))"), tree_node([-1, -2, -3, -4, None, -5, -6, -8, -9, -10, -11, -12, -13]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-4(-8)(-9)))(-3(-5(-10)(-11))(-6(-12)(-13)))"), tree_node([-1, -2, -3, -4, None, -5, -6, -8, -9, -10, -11, -12, -13])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(5(3(1)(2))(7(6)(8)))(15(13(11)(12))(18(16)(17)))"), tree_node([10, 5, 15, 3, 7, 13, 18, 1, 2, 6, 8, 11, 12, 16, 17]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(5(3(1)(2))(7(6)(8)))(15(13(11)(12))(18(16)(17)))"), tree_node([10, 5, 15, 3, 7, 13, 18, 1, 2, 6, 8, 11, 12, 16, 17])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(2(1))(4(5(6(7))(8))(9))"), tree_node([3, 2, 4, 1, None, 5, 9, None, None, 6, 8, None, None, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(2(1))(4(5(6(7))(8))(9))"), tree_node([3, 2, 4, 1, None, 5, 9, None, None, 6, 8, None, None, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9)(8(10)))"), tree_node([3, 5, 1, 6, 2, 9, 8, None, None, 7, 4, None, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9)(8(10)))"), tree_node([3, 5, 1, 6, 2, 9, 8, None, None, 7, 4, None, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9(8)))"), tree_node([3, 5, 1, 6, 2, 9, None, None, None, 7, 4, 8]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9(8)))"), tree_node([3, 5, 1, 6, 2, 9, None, None, None, 7, 4, 8])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-3(-4))(-5(-6(-7))))"), tree_node([-1, -2, None, -3, -5, -4, None, -6, None, None, None, -7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-3(-4))(-5(-6(-7))))"), tree_node([-1, -2, None, -3, -5, -4, None, -6, None, None, None, -7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(-2)(-3(4)(-5))"), tree_node([1, -2, -3, None, None, 4, -5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(-2)(-3(4)(-5))"), tree_node([1, -2, -3, None, None, 4, -5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25)(75))(200(150)(250))"), tree_node([100, 50, 200, 25, 75, 150, 250]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25)(75))(200(150)(250))"), tree_node([100, 50, 200, 25, 75, 150, 250])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(-2(3)(4))(5(-6)(7))"), tree_node([1, -2, 5, 3, 4, -6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(-2(3)(4))(5(-6)(7))"), tree_node([1, -2, 5, 3, 4, -6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(0(0(0)(0))(0(0)(0)))(0(0(0)(0))(0(0)(0)))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(0(0(0)(0))(0(0)(0)))(0(0(0)(0))(0(0)(0)))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25(12)(37))(75(62)(87)))(150(125(110)(130))(175(160)(180)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 12, 37, 62, 87, 110, 130, 160, 180]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25(12)(37))(75(62)(87)))(150(125(110)(130))(175(160)(180)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 12, 37, 62, 87, 110, 130, 160, 180])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-10(-20(-30)(-15))(-5(-1)(2))"), tree_node([-10, -20, -5, -30, -15, -1, 2]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-10(-20(-30)(-15))(-5(-1)(2))"), tree_node([-10, -20, -5, -30, -15, -1, 2])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9(10))))))"), tree_node([1, 2, 5, 3, 4, 6, None, None, None, None, None, 7, None, 8, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9(10))))))"), tree_node([1, 2, 5, 3, 4, 6, None, None, None, None, None, 7, None, 8, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-3(-4)(-5)))(-6(-7)(-8(-9)))"), tree_node([-1, -2, -6, -3, None, -7, -8, -4, -5, None, None, -9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-3(-4)(-5)))(-6(-7)(-8(-9)))"), tree_node([-1, -2, -6, -3, None, -7, -8, -4, -5, None, None, -9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3))(4(5(6))(7(8(9))(10(11(12)))))"), tree_node([1, 2, 4, 3, None, 5, 7, None, None, 6, None, 8, 10, None, None, 9, None, 11, None, None, None, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3))(4(5(6))(7(8(9))(10(11(12)))))"), tree_node([1, 2, 4, 3, None, 5, 7, None, None, 6, None, 8, 10, None, None, 9, None, 11, None, None, None, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4))(5))(6(7(8)(9))(10))"), tree_node([1, 2, 6, 3, 5, 7, 10, 4, None, None, None, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4))(5))(6(7(8)(9))(10))"), tree_node([1, 2, 6, 3, 5, 7, 10, 4, None, None, None, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(0(0(0))(0))(0(0)(0(0(0))))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(0(0(0))(0))(0(0)(0(0(0))))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))(10(11)(12))))(13(14(15)(16))(17(18)(19)))"), tree_node([1, 2, 13, 3, 6, 14, 17, 4, 5, 7, 10, 15, 16, 18, 19, None, None, None, None, 8, 9, 11, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))(10(11)(12))))(13(14(15)(16))(17(18)(19)))"), tree_node([1, 2, 13, 3, 6, 14, 17, 4, 5, 7, 10, 15, 16, 18, 19, None, None, None, None, 8, 9, 11, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "20(10(5(3(2))(7))(15(12)(18(17))))(30(25(22)(27))(35(32)(38(37))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 3, 7, 12, 18, 22, 27, 32, 38, 2, None, None, None, None, None, 17, None, None, None, None, None, None, None, 37]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "20(10(5(3(2))(7))(15(12)(18(17))))(30(25(22)(27))(35(32)(38(37))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 3, 7, 12, 18, 22, 27, 32, 38, 2, None, None, None, None, None, 17, None, None, None, None, None, None, None, 37])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12))(13))(14))(15))(16))(17))(18)"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12))(13))(14))(15))(16))(17))(18)"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(0(0(0)(0))(0))(0(0)(0))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(0(0(0)(0))(0))(0(0)(0))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(4))(3(5(6))(7))"), tree_node([1, 2, 3, None, 4, 5, 7, None, None, 6]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(4))(3(5(6))(7))"), tree_node([1, 2, 3, None, 4, 5, 7, None, None, 6])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1))))))))"), tree_node([10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1))))))))"), tree_node([10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9))))))))"), tree_node([0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9))))))))"), tree_node([0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(3(4()(5))(6(7()(8))(9))(10(11()(12))(13(14()(15)))(16(17()(18))(19))))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(3(4()(5))(6(7()(8))(9))(10(11()(12))(13(14()(15)))(16(17()(18))(19))))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(10(15)(20))(25(30)(35))"), tree_node([5, 10, 25, 15, 20, 30, 35]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(10(15)(20))(25(30)(35))"), tree_node([5, 10, 25, 15, 20, 30, 35])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250(225)(275)))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175, 225, 275]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250(225)(275)))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175, 225, 275])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1(-1(-2(-3(-4(-5))))))))))))"), tree_node([9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1(-1(-2(-3(-4(-5))))))))))))"), tree_node([9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(5(6)(7))(8(9)(10(11)(12)))"), tree_node([3, 5, 8, 6, 7, 9, 10, None, None, None, None, None, None, 11, 12]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(5(6)(7))(8(9)(10(11)(12)))"), tree_node([3, 5, 8, 6, 7, 9, 10, None, None, None, None, None, None, 11, 12])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7(8()(9(10)))))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7, 8, None, None, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7(8()(9(10)))))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7, 8, None, None, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(2(1)(4))(5(6(8)(9))(7(10)(11)))"), tree_node([3, 2, 5, 1, 4, 6, 7, None, None, None, None, 8, 9, 10, 11]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(2(1)(4))(5(6(8)(9))(7(10)(11)))"), tree_node([3, 2, 5, 1, 4, 6, 7, None, None, None, None, 8, 9, 10, 11])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "20(10(5(2(1))(3))(15(12)(18(16)(17))))(30(25(22)(23))(35(32(31)(33))(40(38)(39))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 2, 3, 12, 18, 22, 23, 32, 40, 1, None, None, None, None, None, 16, 17, None, None, None, None, 31, 33, 38, 39]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "20(10(5(2(1))(3))(15(12)(18(16)(17))))(30(25(22)(23))(35(32(31)(33))(40(38)(39))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 2, 3, 12, 18, 22, 23, 32, 40, 1, None, None, None, None, None, 16, 17, None, None, None, None, 31, 33, 38, 39])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5)(6))(7(8)(9)))(10(11(12(13)(14))(15(16)(17)))(18(19(20)(21))(22(23)(24))))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5)(6))(7(8)(9)))(10(11(12(13)(14))(15(16)(17)))(18(19(20)(21))(22(23)(24))))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-3(2(-1))(4(0)(-8(6)(7)))"), tree_node([-3, 2, 4, -1, None, 0, -8, None, None, None, None, 6, 7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-3(2(-1))(4(0)(-8(6)(7)))"), tree_node([-3, 2, 4, -1, None, 0, -8, None, None, None, None, 6, 7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(5(3)(7))(15(12)(20))"), tree_node([10, 5, 15, 3, 7, 12, 20]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(5(3)(7))(15(12)(20))"), tree_node([10, 5, 15, 3, 7, 12, 20])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))))(10(11(12(13)(14))(15(16(17)(18))))(19(20(21(22)(23))(24(25(26)(27))))(28(29(30(31)(32))(33(34(35)(36))))))"), tree_node([1, 2, None, 3, 6, 4, 5, 7, None, None, None, None, None, 8, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))))(10(11(12(13)(14))(15(16(17)(18))))(19(20(21(22)(23))(24(25(26)(27))))(28(29(30(31)(32))(33(34(35)(36))))))"), tree_node([1, 2, None, 3, 6, 4, 5, 7, None, None, None, None, None, 8, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12)(13))(14))(15))(16))(17))(18)(19))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12)(13))(14))(15))(16))(17))(18)(19))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10)))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10)))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-3(-4(-5(-6(-7))))))"), tree_node([-1, -2, None, -3, None, -4, None, -5, None, -6, None, -7]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-3(-4(-5(-6(-7))))))"), tree_node([-1, -2, None, -3, None, -4, None, -5, None, -6, None, -7])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "5(4(3(2(1()())())()))(6(7(8(9(10(11(12(13(14(15))))))))))"), tree_node([5, 4, 6, 3, None, 7, None, 2, None, 8, None, 1, None, 9, None, None, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "5(4(3(2(1()())())()))(6(7(8(9(10(11(12(13(14(15))))))))))"), tree_node([5, 4, 6, 3, None, 7, None, 2, None, 8, None, 1, None, 9, None, None, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "7(8(9(10)(11))(12(13)(14)))(15(16(17)(18))(19(20)(21)))"), tree_node([7, 8, 15, 9, 12, 16, 19, 10, 11, 13, 14, 17, 18, 20, 21]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "7(8(9(10)(11))(12(13)(14)))(15(16(17)(18))(19(20)(21)))"), tree_node([7, 8, 15, 9, 12, 16, 19, 10, 11, 13, 14, 17, 18, 20, 21])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9)(10)))(11))(12(13)(14(15)(16))))"), tree_node([1, 2, 5, 3, 4, 6, 12, None, None, None, None, 7, 11, 13, 14, 8, None, None, None, None, None, 15, 16, 9, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9)(10)))(11))(12(13)(14(15)(16))))"), tree_node([1, 2, 5, 3, 4, 6, 12, None, None, None, None, 7, 11, 13, 14, 8, None, None, None, None, None, 15, 16, 9, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1000(500(250(125)(375))(750(375)(875)))(1500(1250(625)(875))(1750(1375)(1875)))"), tree_node([1000, 500, 1500, 250, 750, 1250, 1750, 125, 375, 375, 875, 625, 875, 1375, 1875]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1000(500(250(125)(375))(750(375)(875)))(1500(1250(625)(875))(1750(1375)(1875)))"), tree_node([1000, 500, 1500, 250, 750, 1250, 1750, 125, 375, 375, 875, 625, 875, 1375, 1875])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "3(2(1))(4(5(6))(7(8(9))))"), tree_node([3, 2, 4, 1, None, 5, 7, None, None, 6, None, 8, None, None, None, 9]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "3(2(1))(4(5(6))(7(8(9))))"), tree_node([3, 2, 4, 1, None, 5, 7, None, None, 6, None, 8, None, None, None, 9])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10)))))))"), tree_node([1, 2, None, 3, 5, 4, None, 6, None, None, None, 7, None, 8, None, 9, None, 10]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10)))))))"), tree_node([1, 2, None, 3, 5, 4, None, 6, None, None, None, 7, None, 8, None, 9, None, 10])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1))))))))"), tree_node([9, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1))))))))"), tree_node([9, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "8(5(9(-3))(6))(12(10(11))(13(14)(15)))"), tree_node([8, 5, 12, 9, 6, 10, 13, -3, None, None, None, 11, None, 14, 15]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "8(5(9(-3))(6))(12(10(11))(13(14)(15)))"), tree_node([8, 5, 12, 9, 6, 10, 13, -3, None, None, None, 11, None, 14, 15])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5)))))"), tree_node([1, 2, None, 3, None, 4, None, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5)))))"), tree_node([1, 2, None, 3, None, 4, None, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2()(3))(4(5()(6))(7(8()(9)))"), tree_node([1, 2, None, None, 3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2()(3))(4(5()(6))(7(8()(9)))"), tree_node([1, 2, None, None, 3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))"), tree_node([10, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))"), tree_node([10, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "0(0(0(0(0(0(0(0(0(0))))))))"), tree_node([0]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "0(0(0(0(0(0(0(0(0(0))))))))"), tree_node([0])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5()())())()))"), tree_node([1, 2, None, 3, None, 4, None, 5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5()())())()))"), tree_node([1, 2, None, 3, None, 4, None, 5])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10))))))))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10))))))))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(-5)(20(-10)(30(25)(35)))"), tree_node([10, -5, 20, None, None, -10, 30, None, None, 25, 35]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(-5)(20(-10)(30(25)(35)))"), tree_node([10, -5, 20, None, None, -10, 30, None, None, 25, 35])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "123(456(789(101112))(131415))(161718(192021)(222324))"), tree_node([123, 456, 161718, 789, 131415, 192021, 222324, 101112]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "123(456(789(101112))(131415))(161718(192021)(222324))"), tree_node([123, 456, 161718, 789, 131415, 192021, 222324, 101112])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "8(3(2(1))(6(5)(7)))(12(9)(15(14)))"), tree_node([8, 3, 12, 2, 6, 9, 15, 1, None, 5, 7, None, None, 14]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "8(3(2(1))(6(5)(7)))(12(9)(15(14)))"), tree_node([8, 3, 12, 2, 6, 9, 15, 1, None, 5, 7, None, None, 14])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "10(5(3(2)(1))(4()(6)))(-1(-2(-3)))"), tree_node([10, 5, -1, 3, 4, -2, None, 2, 1, None, 6, -3]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "10(5(3(2)(1))(4()(6)))(-1(-2(-3)))"), tree_node([10, 5, -1, 3, 4, -2, None, 2, 1, None, 6, -3])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-10(5(3(-1)(2))(8(6)(7)))(-3(-8(-15)(-13))(-2(-7)(-4)))"), tree_node([-10, 5, -3, 3, 8, -8, -2, -1, 2, 6, 7, -15, -13, -7, -4]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-10(5(3(-1)(2))(8(6)(7)))(-3(-8(-15)(-13))(-2(-7)(-4)))"), tree_node([-10, 5, -3, 3, 8, -8, -2, -1, 2, 6, 7, -15, -13, -7, -4])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4(5(6)(7))(8))(9))(10(11(12)(13))(14))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4(5(6)(7))(8))(9))(10(11(12)(13))(14))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10(11(12))))))))(13(14)(15))"), tree_node([1]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10(11(12))))))))(13(14)(15))"), tree_node([1])): {e}')
+    
+    total += 1
+    try:
+        result = is_same_tree(candidate(s = "-1(-2(-3(-4(-5))))"), tree_node([-1, -2, None, -3, None, -4, None, -5]))
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in is_same_tree(candidate(s = "-1(-2(-3(-4(-5))))"), tree_node([-1, -2, None, -3, None, -4, None, -5])): {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert is_same_tree(candidate(s = "1(2)(3(4)(5(6)(7)))"), tree_node([1, 2, 3, None, None, 4, 5, None, None, 6, 7]))
+    assert is_same_tree(candidate(s = "-1(-2)(-3)"), tree_node([-1, -2, -3]))
+    assert is_same_tree(candidate(s = "1(2(3)(4))(5(6)(7))"), tree_node([1, 2, 5, 3, 4, 6, 7]))
+    assert is_same_tree(candidate(s = "5(4(3(2(1))))"), tree_node([5, 4, None, 3, None, 2, None, 1]))
+    assert is_same_tree(candidate(s = "-4(2(3)(1))(6(5)(7))"), tree_node([-4, 2, 6, 3, 1, 5, 7]))
+    assert is_same_tree(candidate(s = "5(4()(3))"), tree_node([5, 4, None, None, 3]))
+    assert is_same_tree(candidate(s = "1(2)(3)"), tree_node([1, 2, 3]))
+    assert is_same_tree(candidate(s = "4(2(3)(1))(6(5)(7))"), tree_node([4, 2, 6, 3, 1, 5, 7]))
+    assert is_same_tree(candidate(s = "1()(2)"), tree_node([1, None, 2]))
+    assert is_same_tree(candidate(s = "-1(-2(-4)(-5))(-3(-6)(-7))"), tree_node([-1, -2, -3, -4, -5, -6, -7]))
+    assert candidate(s = "") == None
+    assert is_same_tree(candidate(s = "1(2(4)(5))(3(6)(7))"), tree_node([1, 2, 3, 4, 5, 6, 7]))
+    assert is_same_tree(candidate(s = "2(3)(1)"), tree_node([2, 3, 1]))
+    assert is_same_tree(candidate(s = "0(0(0))(0(0))"), tree_node([0, 0, 0, 0, None, 0]))
+    assert is_same_tree(candidate(s = "1(2)"), tree_node([1, 2]))
+    assert is_same_tree(candidate(s = "4(2(3)(1))(6(5))"), tree_node([4, 2, 6, 3, 1, 5]))
+    assert is_same_tree(candidate(s = "1"), tree_node([1]))
+    assert is_same_tree(candidate(s = "2(3(4)(5))(6(7))"), tree_node([2, 3, 6, 4, 5, 7]))
+    assert is_same_tree(candidate(s = "5(4(11(7)(2)))(8(13)(4(9)))"), tree_node([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 9]))
+    assert is_same_tree(candidate(s = "1(2()(3))"), tree_node([1, 2, None, None, 3]))
+    assert is_same_tree(candidate(s = "0(1(2))(3(4(5)(6))(7))"), tree_node([0, 1, 3, 2, None, 4, 7, None, None, 5, 6]))
+    assert is_same_tree(candidate(s = "1(2(3))"), tree_node([1, 2, None, 3]))
+    assert is_same_tree(candidate(s = "2(3(4))"), tree_node([2, 3, None, 4]))
+    assert is_same_tree(candidate(s = "2(3()())"), tree_node([2, 3]))
+    assert is_same_tree(candidate(s = "-1(-2(-3)(-4))(-5(-6)(-7))"), tree_node([-1, -2, -5, -3, -4, -6, -7]))
+    assert is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2)(1))))))))(11(12(13(14(15(16(17(18(19))))))))))"), tree_node([10, 9, 11, 8, None, 12, None, 7, None, 13, None, 6, None, 14, None, 5, None, 15, None, 4, None, 16, None, 3, None, 17, None, 2, 1, 18, None, None, None, None, None, 19]))
+    assert is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9(10))))))))))"), tree_node([0, 1, None, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7]))
+    assert is_same_tree(candidate(s = "2(3(5(7(11(13)))(8(12)))(4(6(9)(10))))"), tree_node([2, 3, None, 5, 4, 7, 8, 6, None, 11, None, 12, None, 9, 10, 13]))
+    assert is_same_tree(candidate(s = "100(50(25(10)(35))(75(60)(80)))(150(125(110)(135))(175(160)(190)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 10, 35, 60, 80, 110, 135, 160, 190]))
+    assert is_same_tree(candidate(s = "6(5(4(3(2(1)))))"), tree_node([6, 5, None, 4, None, 3, None, 2, None, 1]))
+    assert is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9]))
+    assert is_same_tree(candidate(s = "10(5(3(2)(8(6)(10)))(15(12()(17(13)(18))))"), tree_node([10]))
+    assert is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))"), tree_node([1, 2, None, 3]))
+    assert is_same_tree(candidate(s = "0(1)(2(3(4(5))(6(7)))(8(9(10))))"), tree_node([0, 1, 2, None, None, 3, 8, 4, 6, 9, None, 5, None, 7, None, 10]))
+    assert is_same_tree(candidate(s = "5(4(3(2(1)(0)))(-1))(-2(-3))"), tree_node([5, 4, -2, 3, -1, -3, None, 2, None, None, None, None, None, 1, 0]))
+    assert is_same_tree(candidate(s = "-1(2(4(-3)))(-5(6(-7)(8))(-9))"), tree_node([-1, 2, -5, 4, None, 6, -9, -3, None, -7, 8]))
+    assert is_same_tree(candidate(s = "-1(2(3(-4)(-5)))(-6(-7(-8)(-9))(-10(-11)(-12)))"), tree_node([-1, 2, -6, 3, None, -7, -10, -4, -5, -8, -9, -11, -12]))
+    assert is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7]))
+    assert is_same_tree(candidate(s = "10(-20(15)(7))(30(-10)(40))"), tree_node([10, -20, 30, 15, 7, -10, 40]))
+    assert is_same_tree(candidate(s = "-100(50(25(12)(38))(75(-10)(-20)))(-200(-50(-100)(-150))(-75(-200)(-250)))"), tree_node([-100, 50, -200, 25, 75, -50, -75, 12, 38, -10, -20, -100, -150, -200, -250]))
+    assert is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))(-1(-2(-3(-4(-5(-6(-7(-8(-9(-10))))))))))"), tree_node([10, 9, -1, 8, None, -2, None, 7, None, -3, None, 6, None, -4, None, 5, None, -5, None, 4, None, -6, None, 3, None, -7, None, 2, None, -8, None, 1, None, -9, None, None, None, -10]))
+    assert is_same_tree(candidate(s = "10(-5(12)(-6))(15(8)(9))"), tree_node([10, -5, 15, 12, -6, 8, 9]))
+    assert is_same_tree(candidate(s = "100(50(25(12(6)(7))(37(18)(19)))(75(62(58)(59))(88(81)(82))))"), tree_node([100, 50, None, 25, 75, 12, 37, 62, 88, 6, 7, 18, 19, 58, 59, 81, 82]))
+    assert is_same_tree(candidate(s = "3(1(0))(2(5()(8))(4(9)(10)))"), tree_node([3, 1, 2, 0, None, 5, 4, None, None, None, 8, 9, 10]))
+    assert is_same_tree(candidate(s = "-1(-2(-4(-8)(-9)))(-3(-5(-10)(-11))(-6(-12)(-13)))"), tree_node([-1, -2, -3, -4, None, -5, -6, -8, -9, -10, -11, -12, -13]))
+    assert is_same_tree(candidate(s = "10(5(3(1)(2))(7(6)(8)))(15(13(11)(12))(18(16)(17)))"), tree_node([10, 5, 15, 3, 7, 13, 18, 1, 2, 6, 8, 11, 12, 16, 17]))
+    assert is_same_tree(candidate(s = "3(2(1))(4(5(6(7))(8))(9))"), tree_node([3, 2, 4, 1, None, 5, 9, None, None, 6, 8, None, None, 7]))
+    assert is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9)(8(10)))"), tree_node([3, 5, 1, 6, 2, 9, 8, None, None, 7, 4, None, None, 10]))
+    assert is_same_tree(candidate(s = "3(5(6)(2(7)(4)))(1(9(8)))"), tree_node([3, 5, 1, 6, 2, 9, None, None, None, 7, 4, 8]))
+    assert is_same_tree(candidate(s = "-1(-2(-3(-4))(-5(-6(-7))))"), tree_node([-1, -2, None, -3, -5, -4, None, -6, None, None, None, -7]))
+    assert is_same_tree(candidate(s = "1(-2)(-3(4)(-5))"), tree_node([1, -2, -3, None, None, 4, -5]))
+    assert is_same_tree(candidate(s = "100(50(25)(75))(200(150)(250))"), tree_node([100, 50, 200, 25, 75, 150, 250]))
+    assert is_same_tree(candidate(s = "1(-2(3)(4))(5(-6)(7))"), tree_node([1, -2, 5, 3, 4, -6, 7]))
+    assert is_same_tree(candidate(s = "0(0(0(0)(0))(0(0)(0)))(0(0(0)(0))(0(0)(0)))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
+    assert is_same_tree(candidate(s = "100(50(25(12)(37))(75(62)(87)))(150(125(110)(130))(175(160)(180)))"), tree_node([100, 50, 150, 25, 75, 125, 175, 12, 37, 62, 87, 110, 130, 160, 180]))
+    assert is_same_tree(candidate(s = "-10(-20(-30)(-15))(-5(-1)(2))"), tree_node([-10, -20, -5, -30, -15, -1, 2]))
+    assert is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9(10))))))"), tree_node([1, 2, 5, 3, 4, 6, None, None, None, None, None, 7, None, 8, None, 9, None, 10]))
+    assert is_same_tree(candidate(s = "-1(-2(-3(-4)(-5)))(-6(-7)(-8(-9)))"), tree_node([-1, -2, -6, -3, None, -7, -8, -4, -5, None, None, -9]))
+    assert is_same_tree(candidate(s = "1(2(3))(4(5(6))(7(8(9))(10(11(12)))))"), tree_node([1, 2, 4, 3, None, 5, 7, None, None, 6, None, 8, 10, None, None, 9, None, 11, None, None, None, 12]))
+    assert is_same_tree(candidate(s = "1(2(3(4))(5))(6(7(8)(9))(10))"), tree_node([1, 2, 6, 3, 5, 7, 10, 4, None, None, None, 8, 9]))
+    assert is_same_tree(candidate(s = "0(0(0(0))(0))(0(0)(0(0(0))))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, 0]))
+    assert is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))(10(11)(12))))(13(14(15)(16))(17(18)(19)))"), tree_node([1, 2, 13, 3, 6, 14, 17, 4, 5, 7, 10, 15, 16, 18, 19, None, None, None, None, 8, 9, 11, 12]))
+    assert is_same_tree(candidate(s = "20(10(5(3(2))(7))(15(12)(18(17))))(30(25(22)(27))(35(32)(38(37))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 3, 7, 12, 18, 22, 27, 32, 38, 2, None, None, None, None, None, 17, None, None, None, None, None, None, None, 37]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12))(13))(14))(15))(16))(17))(18)"), tree_node([1]))
+    assert is_same_tree(candidate(s = "0(0(0(0)(0))(0))(0(0)(0))"), tree_node([0, 0, 0, 0, 0, 0, 0, 0, 0]))
+    assert is_same_tree(candidate(s = "1(2()(4))(3(5(6))(7))"), tree_node([1, 2, 3, None, 4, 5, 7, None, None, 6]))
+    assert is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1))))))))"), tree_node([10]))
+    assert is_same_tree(candidate(s = "0(1(2(3(4(5(6(7(8(9))))))))"), tree_node([0]))
+    assert is_same_tree(candidate(s = "1(2()(3(4()(5))(6(7()(8))(9))(10(11()(12))(13(14()(15)))(16(17()(18))(19))))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "5(10(15)(20))(25(30)(35))"), tree_node([5, 10, 25, 15, 20, 30, 35]))
+    assert is_same_tree(candidate(s = "100(50(25)(75))(200(150(125)(175))(250(225)(275)))"), tree_node([100, 50, 200, 25, 75, 150, 250, None, None, None, None, 125, 175, 225, 275]))
+    assert is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+    assert is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1(-1(-2(-3(-4(-5))))))))))))"), tree_node([9]))
+    assert is_same_tree(candidate(s = "3(5(6)(7))(8(9)(10(11)(12)))"), tree_node([3, 5, 8, 6, 7, 9, 10, None, None, None, None, None, None, 11, 12]))
+    assert is_same_tree(candidate(s = "1(2()(3(4()(5(6()(7(8()(9(10)))))))))"), tree_node([1, 2, None, None, 3, 4, None, None, 5, 6, None, None, 7, 8, None, None, 9, 10]))
+    assert is_same_tree(candidate(s = "3(2(1)(4))(5(6(8)(9))(7(10)(11)))"), tree_node([3, 2, 5, 1, 4, 6, 7, None, None, None, None, 8, 9, 10, 11]))
+    assert is_same_tree(candidate(s = "20(10(5(2(1))(3))(15(12)(18(16)(17))))(30(25(22)(23))(35(32(31)(33))(40(38)(39))))"), tree_node([20, 10, 30, 5, 15, 25, 35, 2, 3, 12, 18, 22, 23, 32, 40, 1, None, None, None, None, None, 16, 17, None, None, None, None, 31, 33, 38, 39]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15)))))))))))))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5)(6))(7(8)(9)))(10(11(12(13)(14))(15(16)(17)))(18(19(20)(21))(22(23)(24))))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "-3(2(-1))(4(0)(-8(6)(7)))"), tree_node([-3, 2, 4, -1, None, 0, -8, None, None, None, None, 6, 7]))
+    assert is_same_tree(candidate(s = "10(5(3)(7))(15(12)(20))"), tree_node([10, 5, 15, 3, 7, 12, 20]))
+    assert is_same_tree(candidate(s = "1(2(3(4)(5))(6(7(8)(9))))(10(11(12(13)(14))(15(16(17)(18))))(19(20(21(22)(23))(24(25(26)(27))))(28(29(30(31)(32))(33(34(35)(36))))))"), tree_node([1, 2, None, 3, 6, 4, 5, 7, None, None, None, None, None, 8, 9]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10)(11))(12)(13))(14))(15))(16))(17))(18)(19))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "1(2(3))(4(5(6(7(8(9(10)))))))"), tree_node([1, 2, 4, 3, None, 5, None, None, None, 6, None, 7, None, 8, None, 9, None, 10]))
+    assert is_same_tree(candidate(s = "-1(-2(-3(-4(-5(-6(-7))))))"), tree_node([-1, -2, None, -3, None, -4, None, -5, None, -6, None, -7]))
+    assert is_same_tree(candidate(s = "5(4(3(2(1()())())()))(6(7(8(9(10(11(12(13(14(15))))))))))"), tree_node([5, 4, 6, 3, None, 7, None, 2, None, 8, None, 1, None, 9, None, None, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+    assert is_same_tree(candidate(s = "7(8(9(10)(11))(12(13)(14)))(15(16(17)(18))(19(20)(21)))"), tree_node([7, 8, 15, 9, 12, 16, 19, 10, 11, 13, 14, 17, 18, 20, 21]))
+    assert is_same_tree(candidate(s = "1(2(3)(4))(5(6(7(8(9)(10)))(11))(12(13)(14(15)(16))))"), tree_node([1, 2, 5, 3, 4, 6, 12, None, None, None, None, 7, 11, 13, 14, 8, None, None, None, None, None, 15, 16, 9, 10]))
+    assert is_same_tree(candidate(s = "1000(500(250(125)(375))(750(375)(875)))(1500(1250(625)(875))(1750(1375)(1875)))"), tree_node([1000, 500, 1500, 250, 750, 1250, 1750, 125, 375, 375, 875, 625, 875, 1375, 1875]))
+    assert is_same_tree(candidate(s = "3(2(1))(4(5(6))(7(8(9))))"), tree_node([3, 2, 4, 1, None, 5, 7, None, None, 6, None, 8, None, None, None, 9]))
+    assert is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10)))))))"), tree_node([1, 2, None, 3, 5, 4, None, 6, None, None, None, 7, None, 8, None, 9, None, 10]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10(11(12(13(14(15))))))))))))))"), tree_node([1, 2, None, 3, None, 4, None, 5, None, 6, None, 7, None, 8, None, 9, None, 10, None, 11, None, 12, None, 13, None, 14, None, 15]))
+    assert is_same_tree(candidate(s = "9(8(7(6(5(4(3(2(1))))))))"), tree_node([9, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+    assert is_same_tree(candidate(s = "8(5(9(-3))(6))(12(10(11))(13(14)(15)))"), tree_node([8, 5, 12, 9, 6, 10, 13, -3, None, None, None, 11, None, 14, 15]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5)))))"), tree_node([1, 2, None, 3, None, 4, None, 5]))
+    assert is_same_tree(candidate(s = "1(2()(3))(4(5()(6))(7(8()(9)))"), tree_node([1, 2, None, None, 3]))
+    assert is_same_tree(candidate(s = "10(9(8(7(6(5(4(3(2(1)))))))))"), tree_node([10, 9, None, 8, None, 7, None, 6, None, 5, None, 4, None, 3, None, 2, None, 1]))
+    assert is_same_tree(candidate(s = "0(0(0(0(0(0(0(0(0(0))))))))"), tree_node([0]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5()())())()))"), tree_node([1, 2, None, 3, None, 4, None, 5]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6(7(8(9(10))))))))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "10(-5)(20(-10)(30(25)(35)))"), tree_node([10, -5, 20, None, None, -10, 30, None, None, 25, 35]))
+    assert is_same_tree(candidate(s = "123(456(789(101112))(131415))(161718(192021)(222324))"), tree_node([123, 456, 161718, 789, 131415, 192021, 222324, 101112]))
+    assert is_same_tree(candidate(s = "8(3(2(1))(6(5)(7)))(12(9)(15(14)))"), tree_node([8, 3, 12, 2, 6, 9, 15, 1, None, 5, 7, None, None, 14]))
+    assert is_same_tree(candidate(s = "10(5(3(2)(1))(4()(6)))(-1(-2(-3)))"), tree_node([10, 5, -1, 3, 4, -2, None, 2, 1, None, 6, -3]))
+    assert is_same_tree(candidate(s = "-10(5(3(-1)(2))(8(6)(7)))(-3(-8(-15)(-13))(-2(-7)(-4)))"), tree_node([-10, 5, -3, 3, 8, -8, -2, -1, 2, 6, 7, -15, -13, -7, -4]))
+    assert is_same_tree(candidate(s = "1(2(3(4(5(6)(7))(8))(9))(10(11(12)(13))(14))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "1(2(3(4))(5(6(7(8(9(10(11(12))))))))(13(14)(15))"), tree_node([1]))
+    assert is_same_tree(candidate(s = "-1(-2(-3(-4(-5))))"), tree_node([-1, -2, None, -3, None, -4, None, -5]))
+
+

@@ -1,0 +1,968 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 20], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 20], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-3, -1], [0, 2], [5, 6]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-3, -1], [0, 2], [5, 6]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 3], [4, 6], [5, 7], [6, 8]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 3], [4, 6], [5, 7], [6, 8]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, -2], [-3, -4], [-5, -6]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, -2], [-3, -4], [-5, -6]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[7, 9], [4, 5], [2, 3]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[7, 9], [4, 5], [2, 3]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1000, 1000], [-999, 999], [0, 1], [2, 3], [4, 5]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1000, 1000], [-999, 999], [0, 1], [2, 3], [4, 5]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 3], [4, 5], [6, 7], [8, 9]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 3], [4, 5], [6, 7], [8, 9]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [7, 8], [4, 5]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [7, 8], [4, 5]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, 10], [-20, -10], [0, 5]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, 10], [-20, -10], [0, 5]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 2], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 2], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, 0], [0, 1], [1, 2]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, 0], [0, 1], [1, 2]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 3], [4, 7], [6, 8]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 3], [4, 7], [6, 8]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[0, 3], [1, 2], [3, 4], [4, 5]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[0, 3], [1, 2], [3, 4], [4, 5]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [3, 5], [0, 6], [5, 7], [8, 10], [11, 13]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [3, 5], [0, 6], [5, 7], [8, 10], [11, 13]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1000, 1000], [0, 0], [1, 1]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1000, 1000], [0, 0], [1, 1]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30]]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30]]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -3], [-2, 0], [1, 3], [4, 6], [7, 9], [10, 12]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -3], [-2, 0], [1, 3], [4, 6], [7, 9], [10, 12]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -2], [-4, -1], [0, 3], [3, 7], [8, 10]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -2], [-4, -1], [0, 3], [3, 7], [8, 10]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1000, 1000], [-999, 999], [-998, 998], [-997, 997], [-996, 996], [-995, 995], [-994, 994], [-993, 993], [-992, 992], [-991, 991]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1000, 1000], [-999, 999], [-998, 998], [-997, 997], [-996, 996], [-995, 995], [-994, 994], [-993, 993], [-992, 992], [-991, 991]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -1], [-2, -1], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -1], [-2, -1], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 5]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 5]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 4], [2, 5], [3, 6], [0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 4], [2, 5], [3, 6], [0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14], [12, 15], [13, 16], [14, 17], [15, 18], [16, 19], [17, 20]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14], [12, 15], [13, 16], [14, 17], [15, 18], [16, 19], [17, 20]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 50], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 50], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 5], [3, 9], [4, 8], [5, 7], [6, 11]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 5], [3, 9], [4, 8], [5, 7], [6, 11]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -1], [-9, 0], [-8, -2], [-7, -3], [-6, -4], [-5, -5], [0, 1], [1, 2], [2, 3], [3, 4]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -1], [-9, 0], [-8, -2], [-7, -3], [-6, -4], [-5, -5], [0, 1], [1, 2], [2, 3], [3, 4]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, 5], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, 5], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 15], [12, 16], [13, 17], [14, 18], [15, 19]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 15], [12, 16], [13, 17], [14, 18], [15, 19]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, 0], [-4, -3], [-2, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, 0], [-4, -3], [-2, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, 1], [-2, 0], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, 1], [-2, 0], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10], [9, 11]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10], [9, 11]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-100, 0], [-99, 1], [-98, 2], [-97, 3], [-96, 4], [-95, 5], [-94, 6], [-93, 7], [-92, 8], [-91, 9]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-100, 0], [-99, 1], [-98, 2], [-97, 3], [-96, 4], [-95, 5], [-94, 6], [-93, 7], [-92, 8], [-91, 9]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [5, 7], [6, 8], [9, 11], [10, 12], [13, 15], [14, 16], [17, 19], [18, 20]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [5, 7], [6, 8], [9, 11], [10, 12], [13, 15], [14, 16], [17, 19], [18, 20]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-8, -3], [-6, -1], [-4, 0], [-2, 2], [0, 4], [2, 6], [4, 8], [6, 10]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-8, -3], [-6, -1], [-4, 0], [-2, 2], [0, 4], [2, 6], [4, 8], [6, 10]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8], [9, 11], [12, 14], [15, 17], [18, 20]]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8], [9, 11], [12, 14], [15, 17], [18, 20]]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 6], [3, 4], [4, 7], [5, 8], [6, 9], [7, 10]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 6], [3, 4], [4, 7], [5, 8], [6, 9], [7, 10]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -2], [-5, 0], [0, 5], [3, 8], [6, 11], [8, 13], [10, 15]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -2], [-5, 0], [0, 5], [3, 8], [6, 11], [8, 13], [10, 15]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81], [21, 80], [22, 79], [23, 78], [24, 77], [25, 76], [26, 75], [27, 74], [28, 73], [29, 72], [30, 71], [31, 70], [32, 69], [33, 68], [34, 67], [35, 66], [36, 65], [37, 64], [38, 63], [39, 62], [40, 61], [41, 60], [42, 59], [43, 58], [44, 57], [45, 56], [46, 55], [47, 54], [48, 53], [49, 52], [50, 51]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81], [21, 80], [22, 79], [23, 78], [24, 77], [25, 76], [26, 75], [27, 74], [28, 73], [29, 72], [30, 71], [31, 70], [32, 69], [33, 68], [34, 67], [35, 66], [36, 65], [37, 64], [38, 63], [39, 62], [40, 61], [41, 60], [42, 59], [43, 58], [44, 57], [45, 56], [46, 55], [47, 54], [48, 53], [49, 52], [50, 51]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 11], [7, 12]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 11], [7, 12]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -1], [-9, -2], [-8, -3], [-7, -4], [-6, -5], [-5, -6], [-4, -7], [-3, -8], [-2, -9], [-1, -10]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -1], [-9, -2], [-8, -3], [-7, -4], [-6, -5], [-5, -6], [-4, -7], [-3, -8], [-2, -9], [-1, -10]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-100, -50], [-50, 0], [0, 50], [50, 100], [100, 150], [150, 200], [200, 250], [250, 300], [300, 350], [350, 400]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-100, -50], [-50, 0], [0, 50], [50, 100], [100, 150], [150, 200], [200, 250], [250, 300], [300, 350], [350, 400]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -1], [-9, -8], [-7, -6], [-5, -4], [-3, -2], [-1, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -1], [-9, -8], [-7, -6], [-5, -4], [-3, -2], [-1, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 5], [4, 6], [5, 8], [6, 10], [7, 12]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 5], [4, 6], [5, 8], [6, 10], [7, 12]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7], [-8, 8], [-9, 9], [-10, 10], [-11, 11], [-12, 12], [-13, 13], [-14, 14], [-15, 15], [-16, 16], [-17, 17], [-18, 18], [-19, 19], [-20, 20]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7], [-8, 8], [-9, 9], [-10, 10], [-11, 11], [-12, 12], [-13, 13], [-14, 14], [-15, 15], [-16, 16], [-17, 17], [-18, 18], [-19, 19], [-20, 20]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-500, -250], [-250, 0], [0, 250], [250, 500], [500, 750], [750, 1000], [-499, -249], [-249, 1], [1, 251], [251, 501]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-500, -250], [-250, 0], [0, 250], [250, 500], [500, 750], [750, 1000], [-499, -249], [-249, 1], [1, 251], [251, 501]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-50, -49], [-48, -47], [-46, -45], [-44, -43], [-42, -41], [-40, -39], [-38, -37], [-36, -35], [-34, -33], [-32, -31], [-30, -29], [-28, -27], [-26, -25], [-24, -23], [-22, -21], [-20, -19], [-18, -17], [-16, -15], [-14, -13], [-12, -11], [-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19], [20, 21], [22, 23], [24, 25], [26, 27], [28, 29], [30, 31], [32, 33], [34, 35], [36, 37], [38, 39], [40, 41], [42, 43], [44, 45], [46, 47], [48, 49]]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-50, -49], [-48, -47], [-46, -45], [-44, -43], [-42, -41], [-40, -39], [-38, -37], [-36, -35], [-34, -33], [-32, -31], [-30, -29], [-28, -27], [-26, -25], [-24, -23], [-22, -21], [-20, -19], [-18, -17], [-16, -15], [-14, -13], [-12, -11], [-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19], [20, 21], [22, 23], [24, 25], [26, 27], [28, 29], [30, 31], [32, 33], [34, 35], [36, 37], [38, 39], [40, 41], [42, 43], [44, 45], [46, 47], [48, 49]]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [11, 20], [21, 30], [12, 29], [13, 28], [14, 27], [15, 26], [16, 25], [17, 24], [18, 23], [19, 22], [20, 21]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [11, 20], [21, 30], [12, 29], [13, 28], [14, 27], [15, 26], [16, 25], [17, 24], [18, 23], [19, 22], [20, 21]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992], [-992, -991], [-991, -990]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992], [-992, -991], [-991, -990]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17], [16, 18], [17, 19], [18, 20], [19, 21], [20, 22]]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17], [16, 18], [17, 19], [18, 20], [19, 21], [20, 22]]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 5], [4, 7], [6, 9], [8, 11], [10, 13], [12, 15]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 5], [4, 7], [6, 9], [8, 11], [10, 13], [12, 15]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40], [41, 42], [43, 44], [45, 46], [47, 48], [49, 50]]) == 25
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40], [41, 42], [43, 44], [45, 46], [47, 48], [49, 50]]) == 25: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-100, -90], [-95, -85], [-80, -70], [-75, -65], [-60, -50], [-55, -45], [-40, -30], [-35, -25], [-20, -10], [-15, -5]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-100, -90], [-95, -85], [-80, -70], [-75, -65], [-60, -50], [-55, -45], [-40, -30], [-35, -25], [-20, -10], [-15, -5]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 10], [4, 6], [6, 9], [8, 12], [10, 15], [13, 18], [16, 20]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 10], [4, 6], [6, 9], [8, 12], [10, 15], [13, 18], [16, 20]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-500, -200], [-300, -100], [-250, -50], [-200, 0], [-150, 50], [-100, 100], [-50, 150], [0, 200], [50, 250], [100, 300]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-500, -200], [-300, -100], [-250, -50], [-200, 0], [-150, 50], [-100, 100], [-50, 150], [0, 200], [50, 250], [100, 300]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, 10], [-9, 9], [-8, 8], [-7, 7], [-6, 6], [-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, 10], [-9, 9], [-8, 8], [-7, 7], [-6, 6], [-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 5], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 5], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 5], [5, 10], [10, 15], [15, 20], [20, 25], [1, 25], [2, 26], [3, 27], [4, 28], [5, 29]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 5], [5, 10], [10, 15], [15, 20], [20, 25], [1, 25], [2, 26], [3, 27], [4, 28], [5, 29]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91]]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91]]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-6, -2], [-3, -1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-6, -2], [-3, -1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-1000, -999], [-998, -997], [-996, -995], [-994, -993], [-992, -991], [-990, -989], [-988, -987], [-986, -985]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-1000, -999], [-998, -997], [-996, -995], [-994, -993], [-992, -991], [-990, -989], [-988, -987], [-986, -985]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, -3], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, -3], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -5], [-4, -2], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -5], [-4, -2], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-10, -1], [-5, -2], [-3, 0], [0, 3], [2, 5], [4, 7], [6, 9], [8, 10]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-10, -1], [-5, -2], [-3, 0], [0, 3], [2, 5], [4, 7], [6, 9], [8, 10]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-100, -50], [-75, -25], [-50, -10], [-25, 10], [0, 20], [10, 30], [20, 40], [30, 50], [40, 60], [50, 70]]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-100, -50], [-75, -25], [-50, -10], [-25, 10], [0, 20], [10, 30], [20, 40], [30, 50], [40, 60], [50, 70]]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-5, 0], [-3, -1], [0, 5], [2, 4], [3, 7], [5, 9]]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-5, 0], [-3, -1], [0, 5], [2, 4], [3, 7], [5, 9]]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[-50, 0], [-40, 10], [-30, 20], [-20, 30], [-10, 40], [0, 50], [10, 60], [20, 70], [30, 80], [40, 90]]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[-50, 0], [-40, 10], [-30, 20], [-20, 30], [-10, 40], [0, 50], [10, 60], [20, 70], [30, 80], [40, 90]]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15]]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15]]) == 5: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(pairs = [[1, 20], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 5
+    assert candidate(pairs = [[-10, -5], [-3, -1], [0, 2], [5, 6]]) == 4
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 5
+    assert candidate(pairs = [[1, 5], [2, 3], [4, 6], [5, 7], [6, 8]]) == 2
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == 1
+    assert candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8]]) == 3
+    assert candidate(pairs = [[-1, -2], [-3, -4], [-5, -6]]) == 3
+    assert candidate(pairs = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == 2
+    assert candidate(pairs = [[7, 9], [4, 5], [2, 3]]) == 3
+    assert candidate(pairs = [[-1000, 1000], [-999, 999], [0, 1], [2, 3], [4, 5]]) == 3
+    assert candidate(pairs = [[1, 10], [2, 3], [4, 5], [6, 7], [8, 9]]) == 4
+    assert candidate(pairs = [[1, 2], [7, 8], [4, 5]]) == 3
+    assert candidate(pairs = [[-10, 10], [-20, -10], [0, 5]]) == 2
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4]]) == 2
+    assert candidate(pairs = [[1, 2], [2, 2], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8]]) == 4
+    assert candidate(pairs = [[-1, 0], [0, 1], [1, 2]]) == 2
+    assert candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1]]) == 5
+    assert candidate(pairs = [[1, 5], [2, 3], [4, 7], [6, 8]]) == 2
+    assert candidate(pairs = [[0, 3], [1, 2], [3, 4], [4, 5]]) == 2
+    assert candidate(pairs = [[1, 3], [3, 5], [0, 6], [5, 7], [8, 10], [11, 13]]) == 4
+    assert candidate(pairs = [[-1000, 1000], [0, 0], [1, 1]]) == 2
+    assert candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10]]) == 3
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]) == 3
+    assert candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == 1
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30]]) == 15
+    assert candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == 2
+    assert candidate(pairs = [[-5, -3], [-2, 0], [1, 3], [4, 6], [7, 9], [10, 12]]) == 6
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == 7
+    assert candidate(pairs = [[-5, -2], [-4, -1], [0, 3], [3, 7], [8, 10]]) == 3
+    assert candidate(pairs = [[-1000, 1000], [-999, 999], [-998, 998], [-997, 997], [-996, 996], [-995, 995], [-994, 994], [-993, 993], [-992, 992], [-991, 991]]) == 1
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == 8
+    assert candidate(pairs = [[-5, -1], [-2, -1], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7]]) == 3
+    assert candidate(pairs = [[1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5], [3, 4], [3, 5], [4, 5]]) == 2
+    assert candidate(pairs = [[1, 4], [2, 5], [3, 6], [0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10]]) == 2
+    assert candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10]]) == 3
+    assert candidate(pairs = [[1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14], [12, 15], [13, 16], [14, 17], [15, 18], [16, 19], [17, 20]]) == 5
+    assert candidate(pairs = [[1, 50], [10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == 5
+    assert candidate(pairs = [[1, 10], [2, 5], [3, 9], [4, 8], [5, 7], [6, 11]]) == 2
+    assert candidate(pairs = [[-10, -1], [-9, 0], [-8, -2], [-7, -3], [-6, -4], [-5, -5], [0, 1], [1, 2], [2, 3], [3, 4]]) == 3
+    assert candidate(pairs = [[-1, 5], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 12], [7, 13], [8, 14]]) == 2
+    assert candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 15], [12, 16], [13, 17], [14, 18], [15, 19]]) == 3
+    assert candidate(pairs = [[-5, 0], [-4, -3], [-2, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4
+    assert candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40]]) == 5
+    assert candidate(pairs = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5]]) == 5
+    assert candidate(pairs = [[-1, 1], [-2, 0], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9]]) == 4
+    assert candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81]]) == 1
+    assert candidate(pairs = [[1, 5], [2, 3], [4, 6], [7, 8], [8, 10], [9, 11]]) == 4
+    assert candidate(pairs = [[-100, 0], [-99, 1], [-98, 2], [-97, 3], [-96, 4], [-95, 5], [-94, 6], [-93, 7], [-92, 8], [-91, 9]]) == 1
+    assert candidate(pairs = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == 2
+    assert candidate(pairs = [[1, 3], [2, 4], [5, 7], [6, 8], [9, 11], [10, 12], [13, 15], [14, 16], [17, 19], [18, 20]]) == 5
+    assert candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86]]) == 1
+    assert candidate(pairs = [[-10, -5], [-8, -3], [-6, -1], [-4, 0], [-2, 2], [0, 4], [2, 6], [4, 8], [6, 10]]) == 3
+    assert candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8], [9, 11], [12, 14], [15, 17], [18, 20]]) == 9
+    assert candidate(pairs = [[1, 5], [2, 6], [3, 4], [4, 7], [5, 8], [6, 9], [7, 10]]) == 2
+    assert candidate(pairs = [[-10, -2], [-5, 0], [0, 5], [3, 8], [6, 11], [8, 13], [10, 15]]) == 3
+    assert candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 11
+    assert candidate(pairs = [[1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2]]) == 1
+    assert candidate(pairs = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == 1
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == 8
+    assert candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91], [11, 90], [12, 89], [13, 88], [14, 87], [15, 86], [16, 85], [17, 84], [18, 83], [19, 82], [20, 81], [21, 80], [22, 79], [23, 78], [24, 77], [25, 76], [26, 75], [27, 74], [28, 73], [29, 72], [30, 71], [31, 70], [32, 69], [33, 68], [34, 67], [35, 66], [36, 65], [37, 64], [38, 63], [39, 62], [40, 61], [41, 60], [42, 59], [43, 58], [44, 57], [45, 56], [46, 55], [47, 54], [48, 53], [49, 52], [50, 51]]) == 1
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 11], [7, 12]]) == 2
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10
+    assert candidate(pairs = [[-10, -1], [-9, -2], [-8, -3], [-7, -4], [-6, -5], [-5, -6], [-4, -7], [-3, -8], [-2, -9], [-1, -10]]) == 5
+    assert candidate(pairs = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13]]) == 2
+    assert candidate(pairs = [[1, 10], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == 4
+    assert candidate(pairs = [[-100, -50], [-50, 0], [0, 50], [50, 100], [100, 150], [150, 200], [200, 250], [250, 300], [300, 350], [350, 400]]) == 5
+    assert candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12]]) == 4
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13]]) == 6
+    assert candidate(pairs = [[-10, -1], [-9, -8], [-7, -6], [-5, -4], [-3, -2], [-1, 0], [1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == 10
+    assert candidate(pairs = [[-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]) == 10
+    assert candidate(pairs = [[1, 3], [2, 5], [4, 6], [5, 8], [6, 10], [7, 12]]) == 3
+    assert candidate(pairs = [[-1, 1], [-2, 2], [-3, 3], [-4, 4], [-5, 5], [-6, 6], [-7, 7], [-8, 8], [-9, 9], [-10, 10], [-11, 11], [-12, 12], [-13, 13], [-14, 14], [-15, 15], [-16, 16], [-17, 17], [-18, 18], [-19, 19], [-20, 20]]) == 1
+    assert candidate(pairs = [[-500, -250], [-250, 0], [0, 250], [250, 500], [500, 750], [750, 1000], [-499, -249], [-249, 1], [1, 251], [251, 501]]) == 4
+    assert candidate(pairs = [[-50, -49], [-48, -47], [-46, -45], [-44, -43], [-42, -41], [-40, -39], [-38, -37], [-36, -35], [-34, -33], [-32, -31], [-30, -29], [-28, -27], [-26, -25], [-24, -23], [-22, -21], [-20, -19], [-18, -17], [-16, -15], [-14, -13], [-12, -11], [-10, -9], [-8, -7], [-6, -5], [-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19], [20, 21], [22, 23], [24, 25], [26, 27], [28, 29], [30, 31], [32, 33], [34, 35], [36, 37], [38, 39], [40, 41], [42, 43], [44, 45], [46, 47], [48, 49]]) == 50
+    assert candidate(pairs = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == 5
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == 10
+    assert candidate(pairs = [[1, 10], [11, 20], [21, 30], [12, 29], [13, 28], [14, 27], [15, 26], [16, 25], [17, 24], [18, 23], [19, 22], [20, 21]]) == 3
+    assert candidate(pairs = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992], [-992, -991], [-991, -990]]) == 5
+    assert candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17], [16, 18], [17, 19], [18, 20], [19, 21], [20, 22]]) == 7
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2
+    assert candidate(pairs = [[1, 2], [3, 5], [4, 7], [6, 9], [8, 11], [10, 13], [12, 15]]) == 4
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40], [41, 42], [43, 44], [45, 46], [47, 48], [49, 50]]) == 25
+    assert candidate(pairs = [[-100, -90], [-95, -85], [-80, -70], [-75, -65], [-60, -50], [-55, -45], [-40, -30], [-35, -25], [-20, -10], [-15, -5]]) == 5
+    assert candidate(pairs = [[1, 2], [3, 10], [4, 6], [6, 9], [8, 12], [10, 15], [13, 18], [16, 20]]) == 4
+    assert candidate(pairs = [[-5, -3], [-2, -1], [0, 2], [3, 5], [6, 8]]) == 5
+    assert candidate(pairs = [[-500, -200], [-300, -100], [-250, -50], [-200, 0], [-150, 50], [-100, 100], [-50, 150], [0, 200], [50, 250], [100, 300]]) == 3
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5
+    assert candidate(pairs = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == 10
+    assert candidate(pairs = [[-10, 10], [-9, 9], [-8, 8], [-7, 7], [-6, 6], [-5, 5], [-4, 4], [-3, 3], [-2, 2], [-1, 1]]) == 1
+    assert candidate(pairs = [[1, 3], [2, 5], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14]]) == 3
+    assert candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15], [14, 16], [15, 17]]) == 5
+    assert candidate(pairs = [[1, 5], [5, 10], [10, 15], [15, 20], [20, 25], [1, 25], [2, 26], [3, 27], [4, 28], [5, 29]]) == 3
+    assert candidate(pairs = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92], [10, 91]]) == 1
+    assert candidate(pairs = [[-10, -5], [-6, -2], [-3, -1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == 4
+    assert candidate(pairs = [[-1000, -999], [-998, -997], [-996, -995], [-994, -993], [-992, -991], [-990, -989], [-988, -987], [-986, -985]]) == 8
+    assert candidate(pairs = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550]]) == 4
+    assert candidate(pairs = [[-5, -3], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8]]) == 4
+    assert candidate(pairs = [[-10, -5], [-4, -2], [0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]]) == 8
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == 5
+    assert candidate(pairs = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [11, 20], [12, 19], [13, 18], [14, 17], [15, 16]]) == 2
+    assert candidate(pairs = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == 5
+    assert candidate(pairs = [[-10, -1], [-5, -2], [-3, 0], [0, 3], [2, 5], [4, 7], [6, 9], [8, 10]]) == 4
+    assert candidate(pairs = [[-100, -50], [-75, -25], [-50, -10], [-25, 10], [0, 20], [10, 30], [20, 40], [30, 50], [40, 60], [50, 70]]) == 4
+    assert candidate(pairs = [[-5, 0], [-3, -1], [0, 5], [2, 4], [3, 7], [5, 9]]) == 3
+    assert candidate(pairs = [[-50, 0], [-40, 10], [-30, 20], [-20, 30], [-10, 40], [0, 50], [10, 60], [20, 70], [30, 80], [40, 90]]) == 2
+    assert candidate(pairs = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 15]]) == 5
+
+

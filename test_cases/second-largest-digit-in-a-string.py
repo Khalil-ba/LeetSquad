@@ -1,0 +1,1193 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "same1same1same1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "same1same1same1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij0") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij0") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc1111") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc1111") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "dfa12321afd") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "dfa12321afd") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "11223344556677889900") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "11223344556677889900") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "noDigitsHere") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "noDigitsHere") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "unique9") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "unique9") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1a2a3a4a5a6a7a8a9a0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1a2a3a4a5a6a7a8a9a0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "no digits here") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "no digits here") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000000000") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000000000") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9999999999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9999999999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "00000000001111111111") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "00000000001111111111") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a9b8c7d6e5f4g3h2i1j0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a9b8c7d6e5f4g3h2i1j0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz0") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz0") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0a0b0c0d0e0f0g0h0i0j0k0l0m0n0o0p0q0r0s0t0u0v0w0x0y0z0") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0a0b0c0d0e0f0g0h0i0j0k0l0m0n0o0p0q0r0s0t0u0v0w0x0y0z0") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd1abcd2abcd3abcd4abcd5abcd6abcd7abcd8abcd9abcd0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd1abcd2abcd3abcd4abcd5abcd6abcd7abcd8abcd9abcd0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9a8b7c6d5e4f3g2h1i0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9a8b7c6d5e4f3g2h1i0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123xyz123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123xyz123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210abc9876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210abc9876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9223372036854775807") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9223372036854775807") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "z9y8x7w6v5u4t3s2r1q0p9o8n7m6l5k4j3i2h1g0f9e8d7c6b5a4") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "z9y8x7w6v5u4t3s2r1q0p9o8n7m6l5k4j3i2h1g0f9e8d7c6b5a4") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghij0123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghij0123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99887766554433221100") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99887766554433221100") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij01234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij01234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123abc123abc123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123abc123abc123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123xyz123abc123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123xyz123abc123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123abc456def789ghi123") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123abc456def789ghi123") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b1c2d2e3f3g4h4i5j5k6l6m7n7o8p8q9r0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b1c2d2e3f3g4h4i5j5k6l6m7n7o8p8q9r0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1223344556677889900") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1223344556677889900") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234123412341234") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234123412341234") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123123123abc123123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123123123abc123123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "000000000000000000000") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "000000000000000000000") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789098765432101234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789098765432101234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b1c2d2e3f3g4h4i5j5") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b1c2d2e3f3g4h4i5j5") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111111111222222222233333333334444444444555555555566666666667777777777888888888899999999990000000000") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111111111222222222233333333334444444444555555555566666666667777777777888888888899999999990000000000") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890123456789012345678901234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890123456789012345678901234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "999888777666555444333222111000") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "999888777666555444333222111000") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210abcdefghijklmnopqrstuvwxyz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210abcdefghijklmnopqrstuvwxyz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99999999999999999999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99999999999999999999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "012345678901234567890123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "012345678901234567890123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "10011001100110011001100110011001100110011001") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "10011001100110011001100110011001100110011001") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghijk") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghijk") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij0123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij0123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "5555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "5555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "987654321009876543210987654321098765432109876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "987654321009876543210987654321098765432109876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghij1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghij1234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678901234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678901234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz1234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "98765432109876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "98765432109876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z11") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z11") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111222333444555666777888999") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111222333444555666777888999") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "999999999999999999999999999999999999999999999999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "999999999999999999999999999999999999999999999999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg1234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "5555555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "5555555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzz99999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzz99999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b1c1d1e1f1g1h1i1j1") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b1c1d1e1f1g1h1i1j1") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "z9y8x7w6v5u4t3s2r1q0p") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "z9y8x7w6v5u4t3s2r1q0p") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210abcdefg") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210abcdefg") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "98765432100123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "98765432100123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000000000000000000000000000000000000000000000000") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000000000000000000000000000000000000000000000000") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123xyz456") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123xyz456") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789012345678901234567890123456789012345678901234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789012345678901234567890123456789012345678901234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z7") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z7") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzzzzzzzzz9zzzzzzzzzzzzzzzz8") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzzzzzzzzz9zzzzzzzzzzzzzzzz8") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhii123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhii123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij1234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcabcabc123123123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcabcabc123123123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzz9zzz8zzz7zzz6zzz5zzz4zzz3zzz2zzz1zzz0zzz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzz9zzz8zzz7zzz6zzz5zzz4zzz3zzz2zzz1zzz0zzz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "5555555555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "5555555555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111222333444555666777888999000") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111222333444555666777888999000") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzz999zzz888zzz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzz999zzz888zzz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000000000000111111111111222222222222333333333") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000000000000111111111111222222222222333333333") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd1234567890abcd") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd1234567890abcd") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123abc123abc123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123abc123abc123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123abc456def789ghi0jkl") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123abc456def789ghi0jkl") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "00000000000000000000") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "00000000000000000000") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij012345678909876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij012345678909876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123456789012345678901234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123456789012345678901234567890") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9999999999999999999999999999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9999999999999999999999999999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "987654321098765432109876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "987654321098765432109876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc123xyz987") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc123xyz987") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0000111122223333444455556666777788889999") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0000111122223333444455556666777788889999") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "555555555555555555555555555555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "555555555555555555555555555555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0s0t1u2v3w4x5y6z7") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0s0t1u2v3w4x5y6z7") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1122334455667788990011223344556677889900") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1122334455667788990011223344556677889900") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0123456789abcdefghij0123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0123456789abcdefghij0123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1a2b3c4d5e6f7g8h9i0j") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1a2b3c4d5e6f7g8h9i0j") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1111111111111111111112") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1111111111111111111112") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "1234567890abcdefghij") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "1234567890abcdefghij") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "122222222222222222222") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "122222222222222222222") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123123123123123123123123123123123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123123123123123123123123123123123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9999999999888888888877777777766666666555555554444444433333333222222221111111100000000") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9999999999888888888877777777766666666555555554444444433333333222222221111111100000000") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz9876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz9876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "a9b8c7d6e5f4g3h2i1") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "a9b8c7d6e5f4g3h2i1") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "111122223333444455556666777788889999") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "111122223333444455556666777788889999") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij9876543210") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij9876543210") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd1234efgh5678ijkl90mnop") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd1234efgh5678ijkl90mnop") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "123123123123123") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "123123123123123") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "9876543210abcdefghij0123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "9876543210abcdefghij0123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zz9zz8zz7zz6zz5zz4zz3zz2zz1zz0zz") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zz9zz8zz7zz6zz5zz4zz3zz2zz1zz0zz") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "12345678901234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "12345678901234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "0102030405060708090") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "0102030405060708090") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abc1234567890") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abc1234567890") == 8: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(s = "9876543210") == 8
+    assert candidate(s = "same1same1same1") == -1
+    assert candidate(s = "abcdefghij0") == -1
+    assert candidate(s = "abc1111") == -1
+    assert candidate(s = "1a") == -1
+    assert candidate(s = "1234567890") == 8
+    assert candidate(s = "dfa12321afd") == 2
+    assert candidate(s = "a1") == -1
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0") == 8
+    assert candidate(s = "11223344556677889900") == 8
+    assert candidate(s = "noDigitsHere") == -1
+    assert candidate(s = "unique9") == -1
+    assert candidate(s = "a1a2a3a4a5a6a7a8a9a0") == 8
+    assert candidate(s = "no digits here") == -1
+    assert candidate(s = "0000000000") == -1
+    assert candidate(s = "9999999999") == -1
+    assert candidate(s = "00000000001111111111") == 0
+    assert candidate(s = "1001") == 0
+    assert candidate(s = "abcdefg") == -1
+    assert candidate(s = "a9b8c7d6e5f4g3h2i1j0") == 8
+    assert candidate(s = "abcdefghijklmnopqrstuvwxyz0") == -1
+    assert candidate(s = "0a0b0c0d0e0f0g0h0i0j0k0l0m0n0o0p0q0r0s0t0u0v0w0x0y0z0") == -1
+    assert candidate(s = "abcd1abcd2abcd3abcd4abcd5abcd6abcd7abcd8abcd9abcd0") == 8
+    assert candidate(s = "9a8b7c6d5e4f3g2h1i0") == 8
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8
+    assert candidate(s = "abc123xyz123") == 2
+    assert candidate(s = "9876543210abc9876543210") == 8
+    assert candidate(s = "9223372036854775807") == 8
+    assert candidate(s = "z9y8x7w6v5u4t3s2r1q0p9o8n7m6l5k4j3i2h1g0f9e8d7c6b5a4") == 8
+    assert candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz") == 8
+    assert candidate(s = "1234567890abcdefghij0123456789") == 8
+    assert candidate(s = "99887766554433221100") == 8
+    assert candidate(s = "abcdefghij01234567890") == 8
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0") == 8
+    assert candidate(s = "abc123abc123abc123") == 2
+    assert candidate(s = "a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1
+    assert candidate(s = "abc123xyz123abc123") == 2
+    assert candidate(s = "1234567890abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz") == 8
+    assert candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z1") == -1
+    assert candidate(s = "123abc456def789ghi123") == 8
+    assert candidate(s = "1") == -1
+    assert candidate(s = "a1b1c2d2e3f3g4h4i5j5k6l6m7n7o8p8q9r0") == 8
+    assert candidate(s = "1223344556677889900") == 8
+    assert candidate(s = "1234123412341234") == 3
+    assert candidate(s = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001") == 0
+    assert candidate(s = "abc123123123abc123123") == 2
+    assert candidate(s = "000000000000000000000") == -1
+    assert candidate(s = "123456789098765432101234567890") == 8
+    assert candidate(s = "a1b1c2d2e3f3g4h4i5j5") == 4
+    assert candidate(s = "1111111111222222222233333333334444444444555555555566666666667777777777888888888899999999990000000000") == 8
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6") == 8
+    assert candidate(s = "1234567890123456789012345678901234567890") == 8
+    assert candidate(s = "999888777666555444333222111000") == 8
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8
+    assert candidate(s = "9876543210abcdefghijklmnopqrstuvwxyz") == 8
+    assert candidate(s = "99999999999999999999") == -1
+    assert candidate(s = "012345678901234567890123456789") == 8
+    assert candidate(s = "10011001100110011001100110011001100110011001") == 0
+    assert candidate(s = "1234567890abcdefghijk") == 8
+    assert candidate(s = "abcdefghij0123456789") == 8
+    assert candidate(s = "5555555555") == -1
+    assert candidate(s = "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1
+    assert candidate(s = "987654321009876543210987654321098765432109876543210") == 8
+    assert candidate(s = "1234567890abcdefghij1234567890") == 8
+    assert candidate(s = "12345678901234567890") == 8
+    assert candidate(s = "abcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+    assert candidate(s = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz1234567890") == 8
+    assert candidate(s = "98765432109876543210") == 8
+    assert candidate(s = "1a1b1c1d1e1f1g1h1i1j1k1l1m1n1o1p1q1r1s1t1u1v1w1x1y1z11") == -1
+    assert candidate(s = "111222333444555666777888999") == 8
+    assert candidate(s = "999999999999999999999999999999999999999999999999") == -1
+    assert candidate(s = "abcdefg1234567890") == 8
+    assert candidate(s = "5555555555555") == -1
+    assert candidate(s = "abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+    assert candidate(s = "a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0") == 8
+    assert candidate(s = "zzzzz99999") == -1
+    assert candidate(s = "a1b1c1d1e1f1g1h1i1j1") == -1
+    assert candidate(s = "z9y8x7w6v5u4t3s2r1q0p") == 8
+    assert candidate(s = "9876543210abcdefg") == 8
+    assert candidate(s = "98765432100123456789") == 8
+    assert candidate(s = "0000000000000000000000000000000000000000000000000") == -1
+    assert candidate(s = "abc123xyz456") == 5
+    assert candidate(s = "123456789012345678901234567890123456789012345678901234567890") == 8
+    assert candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z7") == 8
+    assert candidate(s = "zzzzzzzzzzzzzzzzz9zzzzzzzzzzzzzzzz8") == 8
+    assert candidate(s = "aabbccddeeffgghhii123456789") == 8
+    assert candidate(s = "0123456789") == 8
+    assert candidate(s = "abcdefghij1234567890") == 8
+    assert candidate(s = "abcabcabc123123123") == 2
+    assert candidate(s = "zzz9zzz8zzz7zzz6zzz5zzz4zzz3zzz2zzz1zzz0zzz") == 8
+    assert candidate(s = "5555555555555555") == -1
+    assert candidate(s = "a1b") == -1
+    assert candidate(s = "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t") == 8
+    assert candidate(s = "111222333444555666777888999000") == 8
+    assert candidate(s = "zzz999zzz888zzz") == 8
+    assert candidate(s = "0000000000000111111111111222222222222333333333") == 2
+    assert candidate(s = "abcd1234567890abcd") == 8
+    assert candidate(s = "123abc123abc123") == 2
+    assert candidate(s = "123abc456def789ghi0jkl") == 8
+    assert candidate(s = "a1b2c3d4e5f6g7h8i9j0a1b2c3d4e5f6g7h8i9j0") == 8
+    assert candidate(s = "00000000000000000000") == -1
+    assert candidate(s = "abcdefghij012345678909876543210") == 8
+    assert candidate(s = "123456789012345678901234567890") == 8
+    assert candidate(s = "9999999999999999999999999999") == -1
+    assert candidate(s = "987654321098765432109876543210") == 8
+    assert candidate(s = "abc123xyz987") == 8
+    assert candidate(s = "0000111122223333444455556666777788889999") == 8
+    assert candidate(s = "555555555555555555555555555555555555") == -1
+    assert candidate(s = "1a1b2c2d3e3f4g4h5i5j6k6l7m7n8o8p9q9r0s0t1u2v3w4x5y6z7") == 8
+    assert candidate(s = "1122334455667788990011223344556677889900") == 8
+    assert candidate(s = "0123456789abcdefghij0123456789") == 8
+    assert candidate(s = "1a2b3c4d5e6f7g8h9i0j") == 8
+    assert candidate(s = "1111111111111111111112") == 1
+    assert candidate(s = "1234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+    assert candidate(s = "1234567890abcdefghij") == 8
+    assert candidate(s = "122222222222222222222") == 1
+    assert candidate(s = "123123123123123123123123123123123") == 2
+    assert candidate(s = "9999999999888888888877777777766666666555555554444444433333333222222221111111100000000") == 8
+    assert candidate(s = "abcdefghijklmnopqrstuvwxyz9876543210") == 8
+    assert candidate(s = "a9b8c7d6e5f4g3h2i1") == 8
+    assert candidate(s = "111122223333444455556666777788889999") == 8
+    assert candidate(s = "abcdefghij9876543210") == 8
+    assert candidate(s = "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999") == -1
+    assert candidate(s = "abcd1234efgh5678ijkl90mnop") == 8
+    assert candidate(s = "123123123123123") == 2
+    assert candidate(s = "9876543210abcdefghij0123456789") == 8
+    assert candidate(s = "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555") == -1
+    assert candidate(s = "zz9zz8zz7zz6zz5zz4zz3zz2zz1zz0zz") == 8
+    assert candidate(s = "12345678901234567890abcdefghijabcdefghijabcdefghijabcdefghij012345678901234567890123456789") == 8
+    assert candidate(s = "0102030405060708090") == 8
+    assert candidate(s = "abc1234567890") == 8
+
+

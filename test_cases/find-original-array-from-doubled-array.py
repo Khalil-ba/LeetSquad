@@ -1,0 +1,1130 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 1, 4, 2, 8, 4]) == [1, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 1, 4, 2, 8, 4]) == [1, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 2, 4]) == [2, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 2, 4]) == [2, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 6, 9, 18]) == [1, 3, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 6, 9, 18]) == [1, 3, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [8, 4, 2, 1, 16, 8, 4, 2]) == [1, 2, 4, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [8, 4, 2, 1, 16, 8, 4, 2]) == [1, 2, 4, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 3, 10, 0, 6, 9, 18, 15]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 3, 10, 0, 6, 9, 18, 15]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [0, 0, 0, 0]) == [0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [0, 0, 0, 0]) == [0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [100, 200, 300, 400, 500, 1000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [100, 200, 300, 400, 500, 1000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 6, 12, 24, 48, 96]) == [1, 3, 12, 48]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 6, 12, 24, 48, 96]) == [1, 3, 12, 48]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 3, 10, 15, 2, 6]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 3, 10, 15, 2, 6]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 3, 4, 2, 6, 8]) == [1, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 3, 4, 2, 6, 8]) == [1, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 1, 2, 4, 4, 8]) == [1, 2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 1, 2, 4, 4, 8]) == [1, 2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [6, 3, 0, 1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [6, 3, 0, 1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 6, 4, 8]) == [1, 3, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 6, 4, 8]) == [1, 3, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 2, 4, 8, 8]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 2, 4, 8, 8]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 1]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 1]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 3, 10, 15, 20, 6]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 3, 10, 15, 20, 6]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 60, 120, 180, 240, 300]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 60, 120, 180, 240, 300]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 6, 12, 12, 12, 24, 24, 24, 24, 24, 24, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 6, 12, 12, 12, 24, 24, 24, 24, 24, 24, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == [2, 2, 8, 8, 32, 32, 128, 128, 512, 512]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == [2, 2, 8, 8, 32, 32, 128, 128, 512, 512]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 18, 54, 162, 486, 1458, 4374, 13122, 39366, 118098, 354294]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 18, 54, 162, 486, 1458, 4374, 13122, 39366, 118098, 354294]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 220, 242, 264, 286, 308, 330, 352, 374, 396, 440, 484, 528, 572, 616, 660, 704, 748, 792, 880, 968, 1056, 1144, 1232, 1320, 1408, 1496, 1584, 1760, 1936, 2112, 2288, 2464, 2640, 2816, 2992, 3168, 3520, 3872, 4224, 4576, 4928, 5280, 5632, 5984, 6336, 7040, 7744, 8448, 9152, 9856, 10560, 11264, 11968, 12672, 14080, 15488, 16896, 18304, 19712, 21120, 22528, 23936, 25344, 28160, 31936, 35712, 39488, 43264, 47136, 50944, 54752, 58560, 62368, 66176, 69984, 73792, 77600, 81408, 85216, 89024, 92832, 96640, 100448]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 220, 242, 264, 286, 308, 330, 352, 374, 396, 440, 484, 528, 572, 616, 660, 704, 748, 792, 880, 968, 1056, 1144, 1232, 1320, 1408, 1496, 1584, 1760, 1936, 2112, 2288, 2464, 2640, 2816, 2992, 3168, 3520, 3872, 4224, 4576, 4928, 5280, 5632, 5984, 6336, 7040, 7744, 8448, 9152, 9856, 10560, 11264, 11968, 12672, 14080, 15488, 16896, 18304, 19712, 21120, 22528, 23936, 25344, 28160, 31936, 35712, 39488, 43264, 47136, 50944, 54752, 58560, 62368, 66176, 69984, 73792, 77600, 81408, 85216, 89024, 92832, 96640, 100448]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [9, 18, 36, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [9, 18, 36, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [19, 38, 57, 76, 95, 114, 133, 152, 171, 190, 380, 570, 760, 950, 1140, 1330, 1520, 1710, 1900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [19, 38, 57, 76, 95, 114, 133, 152, 171, 190, 380, 570, 760, 950, 1140, 1330, 1520, 1710, 1900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 12, 12, 18, 18, 24, 24, 36, 36, 48, 48, 54, 54, 72, 72, 96, 96, 108, 108, 144, 144, 192, 192]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 12, 12, 18, 18, 24, 24, 36, 36, 48, 48, 54, 54, 72, 72, 96, 96, 108, 108, 144, 144, 192, 192]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 18, 18]) == [1, 1, 3, 3, 9, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 18, 18]) == [1, 1, 3, 3, 9, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [0, 0, 0, 0, 0, 0]) == [0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [0, 0, 0, 0, 0, 0]) == [0, 0, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [23, 46, 92, 184, 368, 736, 1472, 2944, 5888, 11776, 23552, 47104, 94208, 188416, 376832, 753664, 1507328, 3014656, 6029312]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [23, 46, 92, 184, 368, 736, 1472, 2944, 5888, 11776, 23552, 47104, 94208, 188416, 376832, 753664, 1507328, 3014656, 6029312]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192, 256, 288, 384, 384]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192, 256, 288, 384, 384]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 6, 10, 14, 18, 22, 26, 30, 34, 38]) == [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 6, 10, 14, 18, 22, 26, 30, 34, 38]) == [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 222, 333, 444, 555, 666, 777, 888, 999, 1100, 2200, 3300, 4400, 5500, 6600, 7700, 8800, 9900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 222, 333, 444, 555, 666, 777, 888, 999, 1100, 2200, 3300, 4400, 5500, 6600, 7700, 8800, 9900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 7, 14, 28, 28, 56, 56, 112, 112, 224, 224]) == [7, 7, 28, 28, 112, 112]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 7, 14, 28, 28, 56, 56, 112, 112, 224, 224]) == [7, 7, 28, 28, 112, 112]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 729, 1458, 2187, 4374, 6561, 13122, 19683, 39366]) == [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 729, 1458, 2187, 4374, 6561, 13122, 19683, 39366]) == [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 12, 15, 30, 60, 75, 150, 225, 450, 900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 12, 15, 30, 60, 75, 150, 225, 450, 900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 16, 32, 32, 32, 32, 32, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 256, 256, 256, 256, 256, 512, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 2048]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 16, 32, 32, 32, 32, 32, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 256, 256, 256, 256, 256, 512, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 2048]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 300, 450, 600, 750, 900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 300, 450, 600, 750, 900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1023, 2046, 3069, 4092, 5115, 6138, 7161, 8184, 9207, 10230, 2046, 4092, 6138, 8184, 10230, 12276, 14322, 16368, 18414, 20460, 3069, 6138, 9207, 12276, 15345, 18414, 21483, 24540, 27597, 30654]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1023, 2046, 3069, 4092, 5115, 6138, 7161, 8184, 9207, 10230, 2046, 4092, 6138, 8184, 10230, 12276, 14322, 16368, 18414, 20460, 3069, 6138, 9207, 12276, 15345, 18414, 21483, 24540, 27597, 30654]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 48, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296, 4718592, 9437184, 18874368, 37748736, 75497472, 150994944, 301989888, 603979776, 1207959552, 2415919104, 4831838208, 9663676416, 19327352832, 38654705664, 77309411328, 154618822656, 309237645312, 618475290624, 1236950581248, 2473901162496, 4947802324992, 9895604649984, 19791209299968, 39582418599936, 79164837199872, 158329674399744, 316659348799488, 633318697598976, 1266637395197952, 2533274790395904, 5066549580791808, 10133099161583616, 20266198323167232, 40532396646334464, 81064793292668928, 162129586585337856, 324259173170675712, 648518346341351424, 1297036692682702848, 2594073385365405696, 5188146770730811392, 10376293541461622784, 20752587082923245568, 41505174165846491136, 83010348331692982272, 166020696663385964544]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 48, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296, 4718592, 9437184, 18874368, 37748736, 75497472, 150994944, 301989888, 603979776, 1207959552, 2415919104, 4831838208, 9663676416, 19327352832, 38654705664, 77309411328, 154618822656, 309237645312, 618475290624, 1236950581248, 2473901162496, 4947802324992, 9895604649984, 19791209299968, 39582418599936, 79164837199872, 158329674399744, 316659348799488, 633318697598976, 1266637395197952, 2533274790395904, 5066549580791808, 10133099161583616, 20266198323167232, 40532396646334464, 81064793292668928, 162129586585337856, 324259173170675712, 648518346341351424, 1297036692682702848, 2594073385365405696, 5188146770730811392, 10376293541461622784, 20752587082923245568, 41505174165846491136, 83010348331692982272, 166020696663385964544]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 14, 21, 28, 28, 35, 42, 42, 56, 56, 70, 70, 84, 84, 105, 105, 140, 140, 168, 168, 210, 210, 280, 280]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 14, 21, 28, 28, 35, 42, 42, 56, 56, 70, 70, 84, 84, 105, 105, 140, 140, 168, 168, 210, 210, 280, 280]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 40, 80, 120, 160, 200, 240, 280, 320, 360, 400]) == [5, 10, 15, 20, 20, 25, 30, 35, 40, 40, 45, 50, 60, 80, 100, 120, 140, 160, 180, 200]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 40, 80, 120, 160, 200, 240, 280, 320, 360, 400]) == [5, 10, 15, 20, 20, 25, 30, 35, 40, 40, 45, 50, 60, 80, 100, 120, 140, 160, 180, 200]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [23, 46, 69, 92, 115, 138, 161, 184, 207, 230, 460, 690, 920, 1150, 1380, 1610, 1840, 2070, 2300]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [23, 46, 69, 92, 115, 138, 161, 184, 207, 230, 460, 690, 920, 1150, 1380, 1610, 1840, 2070, 2300]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [0, 0, 0, 0, 0, 0, 0]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [0, 0, 0, 0, 0, 0, 0]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130, 260, 520, 780, 1040, 1300]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130, 260, 520, 780, 1040, 1300]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 9, 18, 27, 54, 81, 162, 243, 486]) == [3, 9, 27, 81, 243]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 9, 18, 27, 54, 81, 162, 243, 486]) == [3, 9, 27, 81, 243]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [101, 202, 404, 808, 1616, 3232, 6464, 12928, 25856, 51712, 103424, 206848, 413696, 827392, 1654784, 3309568, 6619136, 13238272, 26476544]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [101, 202, 404, 808, 1616, 3232, 6464, 12928, 25856, 51712, 103424, 206848, 413696, 827392, 1654784, 3309568, 6619136, 13238272, 26476544]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 340, 510, 680, 850, 1020, 1190, 1360, 1530, 1700]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 340, 510, 680, 850, 1020, 1190, 1360, 1530, 1700]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 10, 15, 20, 20, 25, 30, 30, 40, 40, 50, 50, 60, 60, 75, 75, 100, 100, 120, 120, 150, 150, 200, 200]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 10, 15, 20, 20, 25, 30, 30, 40, 40, 50, 50, 60, 60, 75, 75, 100, 100, 120, 120, 150, 150, 200, 200]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 6, 9, 12, 18, 24, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 6, 9, 12, 18, 24, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 6, 6, 8, 8, 12, 12, 16, 16, 24, 24, 32, 32, 48, 48, 64, 64, 96, 96, 128, 128]) == [1, 1, 3, 3, 4, 4, 12, 12, 16, 16, 48, 48, 64, 64]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 6, 6, 8, 8, 12, 12, 16, 16, 24, 24, 32, 32, 48, 48, 64, 64, 96, 96, 128, 128]) == [1, 1, 3, 3, 4, 4, 12, 12, 16, 16, 48, 48, 64, 64]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153, 162, 171, 180, 189, 198, 207, 216, 225, 234, 243, 252, 261, 270]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153, 162, 171, 180, 189, 198, 207, 216, 225, 234, 243, 252, 261, 270]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512]) == [1, 1, 1, 4, 4, 4, 16, 16, 16, 64, 64, 64, 256, 256, 256]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512]) == [1, 1, 1, 4, 4, 4, 16, 16, 16, 64, 64, 64, 256, 256, 256]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == [2, 8, 32, 128, 512]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == [2, 8, 32, 128, 512]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64]) == [2, 4, 8, 16, 32]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64]) == [2, 4, 8, 16, 32]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 140, 280, 420, 560, 700]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 140, 280, 420, 560, 700]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 3, 6, 6, 12, 12, 24, 24, 48, 48]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 3, 6, 6, 12, 12, 24, 24, 48, 48]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]) == [1, 4, 16, 64, 256]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]) == [1, 4, 16, 64, 256]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120, 40, 80, 120, 160, 200, 240, 80, 160, 240, 320, 400, 480, 160, 320, 480, 640, 800, 960]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120, 40, 80, 120, 160, 200, 240, 80, 160, 240, 320, 400, 480, 160, 320, 480, 640, 800, 960]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [3, 3, 6, 6, 9, 9, 18, 18, 27, 27]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [3, 3, 6, 6, 9, 9, 18, 18, 27, 27]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024]) == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024]) == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536]) == [2, 8, 32, 128, 512, 2048, 8192, 32768]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536]) == [2, 8, 32, 128, 512, 2048, 8192, 32768]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 60, 120, 180, 240, 300]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 60, 120, 180, 240, 300]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 180, 360, 540, 720, 900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 180, 360, 540, 720, 900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688, 229376, 458752, 917504, 1835008]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688, 229376, 458752, 917504, 1835008]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120]) == [10, 20, 30, 40, 50, 60]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120]) == [10, 20, 30, 40, 50, 60]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32]) == [1, 2, 4, 8, 16]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32]) == [1, 2, 4, 8, 16]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 22, 44, 66, 88, 110, 132, 154, 176, 198, 220, 33, 66, 99, 132, 165, 198, 231, 264, 297, 330]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 22, 44, 66, 88, 110, 132, 154, 176, 198, 220, 33, 66, 99, 132, 165, 198, 231, 264, 297, 330]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 3, 3, 6, 6, 12, 12, 24, 24, 48, 48, 96, 96, 192, 192, 384, 384, 768, 768, 1536, 1536, 3072, 3072, 6144, 6144, 12288, 12288, 24576, 24576]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 3, 3, 6, 6, 12, 12, 24, 24, 48, 48, 96, 96, 192, 192, 384, 384, 768, 768, 1536, 1536, 3072, 3072, 6144, 6144, 12288, 12288, 24576, 24576]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [29, 58, 87, 116, 145, 174, 203, 232, 261, 290, 580, 870, 1160, 1450, 1740, 2030, 2320, 2610, 2900]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [29, 58, 87, 116, 145, 174, 203, 232, 261, 290, 580, 870, 1160, 1450, 1740, 2030, 2320, 2610, 2900]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1088, 1152, 1216, 1280, 1344, 1408, 1472, 1536, 1600, 128, 256, 384, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048, 2176, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4352, 4608, 4864, 5120, 5376, 5632, 5888, 6144, 6400]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1088, 1152, 1216, 1280, 1344, 1408, 1472, 1536, 1600, 128, 256, 384, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048, 2176, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4352, 4608, 4864, 5120, 5376, 5632, 5888, 6144, 6400]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576]) == [2, 8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576]) == [2, 8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320, 640, 640, 1280, 1280, 2560, 2560, 5120]) == [5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320, 640, 640, 1280, 1280, 2560, 2560, 5120]) == [5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 180, 200, 240, 280, 320, 360, 400]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 180, 200, 240, 280, 320, 360, 400]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512]) == [1, 1, 4, 4, 16, 16, 64, 64, 256, 256]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512]) == [1, 1, 4, 4, 16, 16, 64, 64, 256, 256]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 6, 9, 12, 18, 27, 36, 54, 81, 108, 162, 243, 324, 486, 729, 972, 1458, 2187]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 6, 9, 12, 18, 27, 36, 54, 81, 108, 162, 243, 324, 486, 729, 972, 1458, 2187]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195, 97, 48, 24, 12, 6, 3, 1]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195, 97, 48, 24, 12, 6, 3, 1]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 250, 375, 500, 625, 1250]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 250, 375, 500, 625, 1250]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200]) == [100, 400, 1600, 6400, 25600]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200]) == [100, 400, 1600, 6400, 25600]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 24, 30, 40, 60, 120]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 24, 30, 40, 60, 120]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304, 110592, 147456, 196608, 221184, 294912, 393216, 442368, 589824, 786432, 884736, 1179648, 1572864, 1769472, 2359296, 3145728, 3538944, 4718592, 6291456, 7077888, 9437184, 12582912, 14155776, 18874368, 25165824, 28311552, 37748736, 50331648, 56623104, 75497472, 100663296, 113246208, 150994944, 201326592, 226492416, 301989888, 402653184, 452984832, 603979776, 805306368, 893558688, 1207959552, 1610612736, 1787117376, 2415919104, 3221225472, 3574234752, 4831838208, 6442450944, 7148469504, 9663676416, 12884901888, 14296939008, 19327352832, 25769803776, 28593878016, 38654705664, 51539607552, 57187756032, 77309411328, 103079215104, 114375512064, 154618822656, 206158430208, 228751024128, 309237645312, 412316860416, 457502048256, 618475290624, 824633720832, 915004096512, 1236950581248, 1649267441664, 1830008193024, 2473901162496, 3298534883328, 3660016386048, 4947802324992, 6597069766656, 7320032772096, 9895604649984, 13194139533312, 14640065544192, 19791209299968, 26388279066624, 29280131088384, 39582418599936, 52776558133248, 58560262176768, 79164837199872, 105553116266496, 117120524353536, 158329674399744, 211106232532992, 234241048707072, 316659348799488, 422212465065984, 468482097414144, 633318697598976, 844424930131968, 936964194828288, 1266637395197952, 1688849860263936, 1873928389656576, 2533274790395904, 3377699720527872, 3747856779313152, 5066549580791808, 6755399441055744, 7495713558626304, 10133099161583616, 13510798882111488, 14991427117252608, 18958426576449824, 24349218045901216, 25722183890390144, 33392794892405760, 43998436091802432, 46474474833634208, 59525809886226240, 76796872183603840, 81348611215888544, 104281498830908160, 133593744367207680, 139342930911092288, 166399283014597440, 204791659156811520, 215343397595105920, 253068831957584768, 306386488715214080, 323015096392658880, 386797763385011520, 459579311430428160, 484522644589988224, 583887458675897600, 719158822845642240, 726783966884982336, 875809045506491520, 1078318430193856320, 1090175950327473344, 1313710568259737280, 1617491260261184480, 1635263925491209984, 1970565852389605840, 2434982520522368960, 2452895888236814976, 2956131704779211680, 3669965041044737920, 3679343832355222464, 4434197557168817440, 5539930082089475840, 5519015748532833696, 6651296335753226160, 8303893443132713760, 8278523622799250544, 10666592671504839200, 13338186886263570720, 13317785434198875816, 16000189007257258880, 20450915848351427640, 20423678151298313728, 24000378014514517760, 30676373772527141460, 30635517226947470592, 36000567021771776000, 46014560658790712180, 46002688140418453888, 54000850532657664000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304, 110592, 147456, 196608, 221184, 294912, 393216, 442368, 589824, 786432, 884736, 1179648, 1572864, 1769472, 2359296, 3145728, 3538944, 4718592, 6291456, 7077888, 9437184, 12582912, 14155776, 18874368, 25165824, 28311552, 37748736, 50331648, 56623104, 75497472, 100663296, 113246208, 150994944, 201326592, 226492416, 301989888, 402653184, 452984832, 603979776, 805306368, 893558688, 1207959552, 1610612736, 1787117376, 2415919104, 3221225472, 3574234752, 4831838208, 6442450944, 7148469504, 9663676416, 12884901888, 14296939008, 19327352832, 25769803776, 28593878016, 38654705664, 51539607552, 57187756032, 77309411328, 103079215104, 114375512064, 154618822656, 206158430208, 228751024128, 309237645312, 412316860416, 457502048256, 618475290624, 824633720832, 915004096512, 1236950581248, 1649267441664, 1830008193024, 2473901162496, 3298534883328, 3660016386048, 4947802324992, 6597069766656, 7320032772096, 9895604649984, 13194139533312, 14640065544192, 19791209299968, 26388279066624, 29280131088384, 39582418599936, 52776558133248, 58560262176768, 79164837199872, 105553116266496, 117120524353536, 158329674399744, 211106232532992, 234241048707072, 316659348799488, 422212465065984, 468482097414144, 633318697598976, 844424930131968, 936964194828288, 1266637395197952, 1688849860263936, 1873928389656576, 2533274790395904, 3377699720527872, 3747856779313152, 5066549580791808, 6755399441055744, 7495713558626304, 10133099161583616, 13510798882111488, 14991427117252608, 18958426576449824, 24349218045901216, 25722183890390144, 33392794892405760, 43998436091802432, 46474474833634208, 59525809886226240, 76796872183603840, 81348611215888544, 104281498830908160, 133593744367207680, 139342930911092288, 166399283014597440, 204791659156811520, 215343397595105920, 253068831957584768, 306386488715214080, 323015096392658880, 386797763385011520, 459579311430428160, 484522644589988224, 583887458675897600, 719158822845642240, 726783966884982336, 875809045506491520, 1078318430193856320, 1090175950327473344, 1313710568259737280, 1617491260261184480, 1635263925491209984, 1970565852389605840, 2434982520522368960, 2452895888236814976, 2956131704779211680, 3669965041044737920, 3679343832355222464, 4434197557168817440, 5539930082089475840, 5519015748532833696, 6651296335753226160, 8303893443132713760, 8278523622799250544, 10666592671504839200, 13338186886263570720, 13317785434198875816, 16000189007257258880, 20450915848351427640, 20423678151298313728, 24000378014514517760, 30676373772527141460, 30635517226947470592, 36000567021771776000, 46014560658790712180, 46002688140418453888, 54000850532657664000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(changed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == [0, 0, 0, 0, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(changed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == [0, 0, 0, 0, 0]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(changed = [2, 1, 4, 2, 8, 4]) == [1, 2, 4]
+    assert candidate(changed = [2, 4, 2, 4]) == [2, 2]
+    assert candidate(changed = [1, 2, 3, 6, 9, 18]) == [1, 3, 9]
+    assert candidate(changed = [8, 4, 2, 1, 16, 8, 4, 2]) == [1, 2, 4, 8]
+    assert candidate(changed = [5, 3, 10, 0, 6, 9, 18, 15]) == []
+    assert candidate(changed = [0, 0, 0, 0]) == [0, 0]
+    assert candidate(changed = [100, 200, 300, 400, 500, 1000]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16]) == []
+    assert candidate(changed = [1, 2, 3, 6, 12, 24, 48, 96]) == [1, 3, 12, 48]
+    assert candidate(changed = [5, 3, 10, 15, 2, 6]) == []
+    assert candidate(changed = [1, 3, 4, 2, 6, 8]) == [1, 3, 4]
+    assert candidate(changed = [1, 2]) == [1]
+    assert candidate(changed = [1]) == []
+    assert candidate(changed = [2, 1, 2, 4, 4, 8]) == [1, 2, 4]
+    assert candidate(changed = [6, 3, 0, 1]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 50]) == []
+    assert candidate(changed = [1, 2, 3, 6, 4, 8]) == [1, 3, 4]
+    assert candidate(changed = [2, 4, 2, 4, 8, 8]) == []
+    assert candidate(changed = [2, 1]) == [1]
+    assert candidate(changed = [5, 3, 10, 15, 20, 6]) == []
+    assert candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 60, 120, 180, 240, 300]) == []
+    assert candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]) == []
+    assert candidate(changed = [3, 6, 6, 12, 12, 12, 24, 24, 24, 24, 24, 24, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48]) == []
+    assert candidate(changed = [2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == [2, 2, 8, 8, 32, 32, 128, 128, 512, 512]
+    assert candidate(changed = [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 18, 54, 162, 486, 1458, 4374, 13122, 39366, 118098, 354294]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192]) == []
+    assert candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []
+    assert candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 220, 242, 264, 286, 308, 330, 352, 374, 396, 440, 484, 528, 572, 616, 660, 704, 748, 792, 880, 968, 1056, 1144, 1232, 1320, 1408, 1496, 1584, 1760, 1936, 2112, 2288, 2464, 2640, 2816, 2992, 3168, 3520, 3872, 4224, 4576, 4928, 5280, 5632, 5984, 6336, 7040, 7744, 8448, 9152, 9856, 10560, 11264, 11968, 12672, 14080, 15488, 16896, 18304, 19712, 21120, 22528, 23936, 25344, 28160, 31936, 35712, 39488, 43264, 47136, 50944, 54752, 58560, 62368, 66176, 69984, 73792, 77600, 81408, 85216, 89024, 92832, 96640, 100448]) == []
+    assert candidate(changed = [9, 18, 36, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296]) == []
+    assert candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105, 112, 119, 126, 133, 140]) == []
+    assert candidate(changed = [19, 38, 57, 76, 95, 114, 133, 152, 171, 190, 380, 570, 760, 950, 1140, 1330, 1520, 1710, 1900]) == []
+    assert candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 12, 12, 18, 18, 24, 24, 36, 36, 48, 48, 54, 54, 72, 72, 96, 96, 108, 108, 144, 144, 192, 192]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40]) == []
+    assert candidate(changed = [1, 1, 2, 2, 3, 3, 6, 6, 9, 9, 18, 18]) == [1, 1, 3, 3, 9, 9]
+    assert candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]) == []
+    assert candidate(changed = [0, 0, 0, 0, 0, 0]) == [0, 0, 0]
+    assert candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688]) == []
+    assert candidate(changed = [23, 46, 92, 184, 368, 736, 1472, 2944, 5888, 11776, 23552, 47104, 94208, 188416, 376832, 753664, 1507328, 3014656, 6029312]) == []
+    assert candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 12, 16, 18, 24, 24, 32, 36, 48, 48, 64, 72, 96, 96, 128, 144, 192, 192, 256, 288, 384, 384]) == []
+    assert candidate(changed = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 6, 10, 14, 18, 22, 26, 30, 34, 38]) == [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    assert candidate(changed = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90]) == []
+    assert candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 222, 333, 444, 555, 666, 777, 888, 999, 1100, 2200, 3300, 4400, 5500, 6600, 7700, 8800, 9900]) == []
+    assert candidate(changed = [7, 14, 7, 14, 28, 28, 56, 56, 112, 112, 224, 224]) == [7, 7, 28, 28, 112, 112]
+    assert candidate(changed = [1, 2, 3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 729, 1458, 2187, 4374, 6561, 13122, 19683, 39366]) == [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+    assert candidate(changed = [3, 6, 12, 15, 30, 60, 75, 150, 225, 450, 900]) == []
+    assert candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 16, 32, 32, 32, 32, 32, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 256, 256, 256, 256, 256, 512, 512, 512, 512, 512, 1024, 1024, 1024, 1024, 1024, 2048, 2048, 2048, 2048, 2048]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400]) == []
+    assert candidate(changed = [15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 300, 450, 600, 750, 900]) == []
+    assert candidate(changed = [1023, 2046, 3069, 4092, 5115, 6138, 7161, 8184, 9207, 10230, 2046, 4092, 6138, 8184, 10230, 12276, 14322, 16368, 18414, 20460, 3069, 6138, 9207, 12276, 15345, 18414, 21483, 24540, 27597, 30654]) == []
+    assert candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 48, 72, 144, 288, 576, 1152, 2304, 4608, 9216, 18432, 36864, 73728, 147456, 294912, 589824, 1179648, 2359296, 4718592, 9437184, 18874368, 37748736, 75497472, 150994944, 301989888, 603979776, 1207959552, 2415919104, 4831838208, 9663676416, 19327352832, 38654705664, 77309411328, 154618822656, 309237645312, 618475290624, 1236950581248, 2473901162496, 4947802324992, 9895604649984, 19791209299968, 39582418599936, 79164837199872, 158329674399744, 316659348799488, 633318697598976, 1266637395197952, 2533274790395904, 5066549580791808, 10133099161583616, 20266198323167232, 40532396646334464, 81064793292668928, 162129586585337856, 324259173170675712, 648518346341351424, 1297036692682702848, 2594073385365405696, 5188146770730811392, 10376293541461622784, 20752587082923245568, 41505174165846491136, 83010348331692982272, 166020696663385964544]) == []
+    assert candidate(changed = [7, 14, 14, 21, 28, 28, 35, 42, 42, 56, 56, 70, 70, 84, 84, 105, 105, 140, 140, 168, 168, 210, 210, 280, 280]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 40, 80, 120, 160, 200, 240, 280, 320, 360, 400]) == [5, 10, 15, 20, 20, 25, 30, 35, 40, 40, 45, 50, 60, 80, 100, 120, 140, 160, 180, 200]
+    assert candidate(changed = [23, 46, 69, 92, 115, 138, 161, 184, 207, 230, 460, 690, 920, 1150, 1380, 1610, 1840, 2070, 2300]) == []
+    assert candidate(changed = [0, 0, 0, 0, 0, 0, 0]) == []
+    assert candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]) == []
+    assert candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == []
+    assert candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+    assert candidate(changed = [13, 26, 39, 52, 65, 78, 91, 104, 117, 130, 260, 520, 780, 1040, 1300]) == []
+    assert candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == []
+    assert candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32]) == []
+    assert candidate(changed = [1, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256]) == []
+    assert candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320]) == []
+    assert candidate(changed = [3, 6, 9, 18, 27, 54, 81, 162, 243, 486]) == [3, 9, 27, 81, 243]
+    assert candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+    assert candidate(changed = [101, 202, 404, 808, 1616, 3232, 6464, 12928, 25856, 51712, 103424, 206848, 413696, 827392, 1654784, 3309568, 6619136, 13238272, 26476544]) == []
+    assert candidate(changed = [17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 340, 510, 680, 850, 1020, 1190, 1360, 1530, 1700]) == []
+    assert candidate(changed = [1, 2, 2, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]) == []
+    assert candidate(changed = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    assert candidate(changed = [5, 10, 10, 15, 20, 20, 25, 30, 30, 40, 40, 50, 50, 60, 60, 75, 75, 100, 100, 120, 120, 150, 150, 200, 200]) == []
+    assert candidate(changed = [3, 6, 9, 12, 18, 24, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024]) == []
+    assert candidate(changed = [1, 1, 2, 2, 3, 3, 4, 4, 6, 6, 8, 8, 12, 12, 16, 16, 24, 24, 32, 32, 48, 48, 64, 64, 96, 96, 128, 128]) == [1, 1, 3, 3, 4, 4, 12, 12, 16, 16, 48, 48, 64, 64]
+    assert candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768]) == []
+    assert candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153, 162, 171, 180, 189, 198, 207, 216, 225, 234, 243, 252, 261, 270]) == []
+    assert candidate(changed = [1, 1, 1, 2, 2, 2, 4, 4, 4, 8, 8, 8, 16, 16, 16, 32, 32, 32, 64, 64, 64, 128, 128, 128, 256, 256, 256, 512, 512, 512]) == [1, 1, 1, 4, 4, 4, 16, 16, 16, 64, 64, 64, 256, 256, 256]
+    assert candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]) == [2, 8, 32, 128, 512]
+    assert candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64]) == [2, 4, 8, 16, 32]
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []
+    assert candidate(changed = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 140, 280, 420, 560, 700]) == []
+    assert candidate(changed = [1, 2, 2, 3, 6, 6, 12, 12, 24, 24, 48, 48]) == []
+    assert candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]) == [1, 4, 16, 64, 256]
+    assert candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024, 2048, 2048, 4096, 4096, 8192, 8192, 16384, 16384]) == []
+    assert candidate(changed = [2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []
+    assert candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]) == []
+    assert candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120, 40, 80, 120, 160, 200, 240, 80, 160, 240, 320, 400, 480, 160, 320, 480, 640, 800, 960]) == []
+    assert candidate(changed = [3, 3, 6, 6, 9, 9, 18, 18, 27, 27]) == []
+    assert candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024]) == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+    assert candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64]) == []
+    assert candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536]) == [2, 8, 32, 128, 512, 2048, 8192, 32768]
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 60, 120, 180, 240, 300]) == []
+    assert candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 180, 360, 540, 720, 900]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []
+    assert candidate(changed = [7, 14, 28, 56, 112, 224, 448, 896, 1792, 3584, 7168, 14336, 28672, 57344, 114688, 229376, 458752, 917504, 1835008]) == []
+    assert candidate(changed = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 18, 36, 54, 72, 90, 108, 126, 144, 162, 180]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+    assert candidate(changed = [10, 20, 30, 40, 50, 60, 20, 40, 60, 80, 100, 120]) == [10, 20, 30, 40, 50, 60]
+    assert candidate(changed = [1, 2, 2, 4, 4, 8, 8, 16, 16, 32]) == [1, 2, 4, 8, 16]
+    assert candidate(changed = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 22, 44, 66, 88, 110, 132, 154, 176, 198, 220, 33, 66, 99, 132, 165, 198, 231, 264, 297, 330]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150]) == []
+    assert candidate(changed = [1, 1, 2, 3, 3, 6, 6, 12, 12, 24, 24, 48, 48, 96, 96, 192, 192, 384, 384, 768, 768, 1536, 1536, 3072, 3072, 6144, 6144, 12288, 12288, 24576, 24576]) == []
+    assert candidate(changed = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]) == [1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144]
+    assert candidate(changed = [29, 58, 87, 116, 145, 174, 203, 232, 261, 290, 580, 870, 1160, 1450, 1740, 2030, 2320, 2610, 2900]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1088, 1152, 1216, 1280, 1344, 1408, 1472, 1536, 1600, 128, 256, 384, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048, 2176, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4352, 4608, 4864, 5120, 5376, 5632, 5888, 6144, 6400]) == []
+    assert candidate(changed = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576]) == [2, 8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288]
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == []
+    assert candidate(changed = [5, 10, 10, 20, 20, 40, 40, 80, 80, 160, 160, 320, 320, 640, 640, 1280, 1280, 2560, 2560, 5120]) == [5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560]
+    assert candidate(changed = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 180, 200, 240, 280, 320, 360, 400]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512]) == [1, 1, 4, 4, 16, 16, 64, 64, 256, 256]
+    assert candidate(changed = [1, 2, 3, 6, 9, 12, 18, 27, 36, 54, 81, 108, 162, 243, 324, 486, 729, 972, 1458, 2187]) == []
+    assert candidate(changed = [100000, 50000, 25000, 12500, 6250, 3125, 1562, 781, 390, 195, 97, 48, 24, 12, 6, 3, 1]) == []
+    assert candidate(changed = [5, 10, 15, 20, 25, 50, 75, 100, 125, 250, 375, 500, 625, 1250]) == []
+    assert candidate(changed = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    assert candidate(changed = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200]) == [100, 400, 1600, 6400, 25600]
+    assert candidate(changed = [1, 1, 2, 2, 4, 4, 8, 8, 16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512, 1024, 1024]) == []
+    assert candidate(changed = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 24, 30, 40, 60, 120]) == []
+    assert candidate(changed = [1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 36, 48, 54, 72, 96, 108, 144, 192, 216, 288, 384, 432, 576, 768, 864, 1152, 1536, 1728, 2304, 3072, 3456, 4608, 6144, 6912, 9216, 12288, 13824, 18432, 24576, 27648, 36864, 49152, 55296, 73728, 98304, 110592, 147456, 196608, 221184, 294912, 393216, 442368, 589824, 786432, 884736, 1179648, 1572864, 1769472, 2359296, 3145728, 3538944, 4718592, 6291456, 7077888, 9437184, 12582912, 14155776, 18874368, 25165824, 28311552, 37748736, 50331648, 56623104, 75497472, 100663296, 113246208, 150994944, 201326592, 226492416, 301989888, 402653184, 452984832, 603979776, 805306368, 893558688, 1207959552, 1610612736, 1787117376, 2415919104, 3221225472, 3574234752, 4831838208, 6442450944, 7148469504, 9663676416, 12884901888, 14296939008, 19327352832, 25769803776, 28593878016, 38654705664, 51539607552, 57187756032, 77309411328, 103079215104, 114375512064, 154618822656, 206158430208, 228751024128, 309237645312, 412316860416, 457502048256, 618475290624, 824633720832, 915004096512, 1236950581248, 1649267441664, 1830008193024, 2473901162496, 3298534883328, 3660016386048, 4947802324992, 6597069766656, 7320032772096, 9895604649984, 13194139533312, 14640065544192, 19791209299968, 26388279066624, 29280131088384, 39582418599936, 52776558133248, 58560262176768, 79164837199872, 105553116266496, 117120524353536, 158329674399744, 211106232532992, 234241048707072, 316659348799488, 422212465065984, 468482097414144, 633318697598976, 844424930131968, 936964194828288, 1266637395197952, 1688849860263936, 1873928389656576, 2533274790395904, 3377699720527872, 3747856779313152, 5066549580791808, 6755399441055744, 7495713558626304, 10133099161583616, 13510798882111488, 14991427117252608, 18958426576449824, 24349218045901216, 25722183890390144, 33392794892405760, 43998436091802432, 46474474833634208, 59525809886226240, 76796872183603840, 81348611215888544, 104281498830908160, 133593744367207680, 139342930911092288, 166399283014597440, 204791659156811520, 215343397595105920, 253068831957584768, 306386488715214080, 323015096392658880, 386797763385011520, 459579311430428160, 484522644589988224, 583887458675897600, 719158822845642240, 726783966884982336, 875809045506491520, 1078318430193856320, 1090175950327473344, 1313710568259737280, 1617491260261184480, 1635263925491209984, 1970565852389605840, 2434982520522368960, 2452895888236814976, 2956131704779211680, 3669965041044737920, 3679343832355222464, 4434197557168817440, 5539930082089475840, 5519015748532833696, 6651296335753226160, 8303893443132713760, 8278523622799250544, 10666592671504839200, 13338186886263570720, 13317785434198875816, 16000189007257258880, 20450915848351427640, 20423678151298313728, 24000378014514517760, 30676373772527141460, 30635517226947470592, 36000567021771776000, 46014560658790712180, 46002688140418453888, 54000850532657664000]) == []
+    assert candidate(changed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == [0, 0, 0, 0, 0]
+
+

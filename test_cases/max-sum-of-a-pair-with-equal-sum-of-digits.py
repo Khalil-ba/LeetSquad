@@ -1,0 +1,1103 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(nums = [99, 18, 81, 27]) == 108
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99, 18, 81, 27]) == 108: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 23, 45, 55, 23]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 23, 45, 55, 23]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 23, 45, 55]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 23, 45, 55]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 222, 333, 444]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 222, 333, 444]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 999999999]) == 1999999998
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 999999999]) == 1999999998: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 111111111, 222222222]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 111111111, 222222222]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99, 18, 81, 27, 72]) == 153
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99, 18, 81, 27, 72]) == 153: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 99, 999, 9999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 99, 999, 9999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [89, 98, 76, 67, 54, 45, 32, 23, 10, 1]) == 187
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [89, 98, 76, 67, 54, 45, 32, 23, 10, 1]) == 187: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 23, 32, 44, 55]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 23, 32, 44, 55]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 23, 45, 67, 89, 90, 11]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 23, 45, 67, 89, 90, 11]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 231, 312]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 231, 312]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 12, 19, 14]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 12, 19, 14]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [18, 43, 36, 13, 7]) == 54
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [18, 43, 36, 13, 7]) == 54: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213]) == 534
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213]) == 534: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55, 23, 45, 67, 89, 90]) == 135
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55, 23, 45, 67, 89, 90]) == 135: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 312, 231]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 312, 231]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 234567891, 123456789, 987654321]) == 1975308642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 234567891, 123456789, 987654321]) == 1975308642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [55555, 44444, 33333, 22222, 11111, 66666, 77777, 88888, 99999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [55555, 44444, 33333, 22222, 11111, 66666, 77777, 88888, 99999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 54321, 13452, 21435, 23541, 32145, 42315, 52314, 34512, 54123]) == 108444
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 54321, 13452, 21435, 23541, 32145, 42315, 52314, 34512, 54123]) == 108444: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 54321, 23451, 45123, 34512, 123456, 654321, 234516, 165432, 321654, 654123, 412365, 564321, 123654, 654312]) == 1308633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 54321, 23451, 45123, 34512, 123456, 654321, 234516, 165432, 321654, 654123, 412365, 564321, 123654, 654312]) == 1308633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 231, 312, 132, 213, 456, 654, 564, 546, 465, 645, 789, 987, 897, 879, 798, 978]) == 1965
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 231, 312, 132, 213, 456, 654, 564, 546, 465, 645, 789, 987, 897, 879, 798, 978]) == 1965: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 1100, 1010, 1001, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 1100, 1010, 1001, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 234567891, 345678912, 456789123, 567891234, 678912345, 789123456, 891234567]) == 1878888888
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 234567891, 345678912, 456789123, 567891234, 678912345, 789123456, 891234567]) == 1878888888: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000001, 1000000011, 1000000111, 1000001111, 1000011111, 1000111111, 1001111111, 1011111111, 1111111111]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000001, 1000000011, 1000000111, 1000001111, 1000011111, 1000111111, 1001111111, 1011111111, 1111111111]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999, 10000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999, 10000]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 132, 213, 231, 312, 321, 456, 465, 546, 564, 645, 654, 789, 798, 879, 897, 978, 987, 101, 110, 1001, 1010, 1100]) == 2110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 132, 213, 231, 312, 321, 456, 465, 546, 564, 645, 654, 789, 798, 879, 897, 978, 987, 101, 110, 1001, 1010, 1100]) == 2110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [555555555, 222222222, 333333333, 444444444, 55555555, 22222222, 33333333, 44444444, 5555555, 2222222, 3333333, 4444444]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [555555555, 222222222, 333333333, 444444444, 55555555, 22222222, 33333333, 44444444, 5555555, 2222222, 3333333, 4444444]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == 1100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 312, 231, 111, 222, 333]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 312, 231, 111, 222, 333]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1998
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1998: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 1100, 1010, 10001, 9999, 8888, 7777, 6666, 5555, 4444, 3333, 2222, 1111]) == 11101
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 1100, 1010, 10001, 9999, 8888, 7777, 6666, 5555, 4444, 3333, 2222, 1111]) == 11101: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99, 999, 9999, 99999, 999999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99, 999, 9999, 99999, 999999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999, 123456789, 987654321]) == 1543209876
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999, 123456789, 987654321]) == 1543209876: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1234, 4321, 2341, 1432, 1243, 2413, 3412, 4123, 1342, 3241]) == 8444
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1234, 4321, 2341, 1432, 1243, 2413, 3412, 4123, 1342, 3241]) == 8444: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 123456789, 98765432, 12345678, 9876543, 1234567]) == 1111111110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 123456789, 98765432, 12345678, 9876543, 1234567]) == 1111111110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11112, 22223, 33334, 44445, 55556, 66667, 77778, 88889, 99990]) == 177768
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11112, 22223, 33334, 44445, 55556, 66667, 77778, 88889, 99990]) == 177768: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 111, 456, 654, 789, 987]) == 1776
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 111, 456, 654, 789, 987]) == 1776: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 123456789, 111222333, 333222111, 444444444, 555555555]) == 1543209876
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 123456789, 111222333, 333222111, 444444444, 555555555]) == 1543209876: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 100, 200, 300, 400, 500, 600, 700, 800, 900]) == 1233
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 100, 200, 300, 400, 500, 600, 700, 800, 900]) == 1233: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [876, 768, 687, 867, 678, 786, 543, 456, 345, 435, 543, 534]) == 1743
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [876, 768, 687, 867, 678, 786, 543, 456, 345, 435, 543, 534]) == 1743: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 54321, 11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == 87654
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 54321, 11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == 87654: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1111111111, 111111111, 11111111, 1111111, 111111, 11111, 1111, 111, 11, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1111111111, 111111111, 11111111, 1111111, 111111, 11111, 1111, 111, 11, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [54321, 21345, 32145, 45321, 14523, 51423, 23451, 34512, 45123, 12354]) == 105744
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [54321, 21345, 32145, 45321, 14523, 51423, 23451, 34512, 45123, 12354]) == 105744: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111, 11111111111]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111, 11111111111]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 456, 654, 789, 987, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 456, 654, 789, 987, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [500000000, 499999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999999999]) == 500000005
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [500000000, 499999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999999999]) == 500000005: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 21, 30, 13, 31, 40, 24, 42, 33, 50]) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 21, 30, 13, 31, 40, 24, 42, 33, 50]) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 111, 222, 333]) == 543
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 111, 222, 333]) == 543: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 90, 900, 9000, 90000, 900000, 9000000, 90000000, 900000000]) == 990000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 90, 900, 9000, 90000, 900000, 9000000, 90000000, 900000000]) == 990000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [199, 288, 377, 466, 555, 644, 733, 822, 911, 1000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [199, 288, 377, 466, 555, 644, 733, 822, 911, 1000]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 312, 231]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 312, 231]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 54321, 23451, 15432, 67890, 98760, 89076, 76980, 32145, 54312]) == 187836
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 54321, 23451, 15432, 67890, 98760, 89076, 76980, 32145, 54312]) == 187836: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 12345678, 1234567, 123456, 12345, 1234, 123, 12, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 12345678, 1234567, 123456, 12345, 1234, 123, 12, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 231, 312, 456, 654, 546, 465, 564, 645, 789, 987, 897, 798, 879, 978]) == 1965
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 231, 312, 456, 654, 546, 465, 564, 645, 789, 987, 897, 798, 879, 978]) == 1965: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 123456789, 234567891, 345678912, 456789123]) == 1444443444
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 123456789, 234567891, 345678912, 456789123]) == 1444443444: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 81, 123, 321, 132, 213, 231, 312]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 81, 123, 321, 132, 213, 231, 312]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 123456789, 987654321]) == 1975308642
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 123456789, 987654321]) == 1975308642: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100, 101, 110, 111, 200, 201, 210, 211, 300, 301, 310, 311]) == 611
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100, 101, 110, 111, 200, 201, 210, 211, 300, 301, 310, 311]) == 611: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 27, 36, 45, 54, 63, 72, 81, 90]) == 171
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 27, 36, 45, 54, 63, 72, 81, 90]) == 171: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 543
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 543: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99999999, 9999999, 999999, 99999, 9999, 999, 99, 9, 88888888, 8888888, 888888, 88888, 8888, 888, 88, 8]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99999999, 9999999, 999999, 99999, 9999, 999, 99, 9, 88888888, 8888888, 888888, 88888, 8888, 888, 88, 8]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == 9675
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == 9675: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12, 21, 13, 31, 14, 41, 15, 51, 16, 61, 17, 71, 18, 81, 19, 91]) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12, 21, 13, 31, 14, 41, 15, 51, 16, 61, 17, 71, 18, 81, 19, 91]) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 110, 1110, 1011, 11100, 11110, 10111]) == 21221
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 110, 1110, 1011, 11100, 11110, 10111]) == 21221: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 9999999999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 9999999999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 234, 345, 456, 567, 678, 789, 890, 901, 102]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 234, 345, 456, 567, 678, 789, 890, 901, 102]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004, 100000005]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004, 100000005]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999, 888, 777, 666, 555, 444, 333, 222, 111, 0]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999, 888, 777, 666, 555, 444, 333, 222, 111, 0]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 111222333, 444555666, 777888999]) == 1432209987
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 111222333, 444555666, 777888999]) == 1432209987: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123456789, 987654321, 234567891, 123456782, 111111111]) == 1222222212
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123456789, 987654321, 234567891, 123456782, 111111111]) == 1222222212: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 456, 654, 789, 987, 234, 432, 567, 765, 890, 980]) == 1870
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 456, 654, 789, 987, 234, 432, 567, 765, 890, 980]) == 1870: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [100000000, 200000000, 300000000, 111111111, 222222222, 333333333]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [100000000, 200000000, 300000000, 111111111, 222222222, 333333333]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [98765, 56789, 12345, 54321, 67890, 9876, 6789, 1234, 5678, 2345]) == 155554
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [98765, 56789, 12345, 54321, 67890, 9876, 6789, 1234, 5678, 2345]) == 155554: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [56, 65, 74, 47, 83, 38, 92, 29, 101, 110]) == 211
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [56, 65, 74, 47, 83, 38, 92, 29, 101, 110]) == 211: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [876543210, 123456789, 111222333, 444555666, 777888999, 555555555, 666666666]) == 1000111221
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [876543210, 123456789, 111222333, 444555666, 777888999, 555555555, 666666666]) == 1000111221: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [12345, 54321, 1234, 4321, 123, 321, 12, 21, 1, 0]) == 66666
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [12345, 54321, 1234, 4321, 123, 321, 12, 21, 1, 0]) == 66666: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 1230, 1203, 1023, 10023, 100023, 1000023, 10000023, 100000023]) == 110000046
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 1230, 1203, 1023, 10023, 100023, 1000023, 10000023, 100000023]) == 110000046: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [112, 121, 211, 221, 212, 122, 333, 444, 555, 666, 777, 888, 999, 1001, 1010, 1100]) == 2110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [112, 121, 211, 221, 212, 122, 333, 444, 555, 666, 777, 888, 999, 1001, 1010, 1100]) == 2110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 231, 312, 111, 222, 333, 444]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 231, 312, 111, 222, 333, 444]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009, 1101, 2202, 3303, 4404, 5505]) == 10410
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009, 1101, 2202, 3303, 4404, 5505]) == 10410: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 110, 202, 220, 303, 330, 404, 440, 505, 550]) == 1055
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 110, 202, 220, 303, 330, 404, 440, 505, 550]) == 1055: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1234, 4321, 2134, 1324, 2341, 3412, 3421, 4231, 4123, 2431]) == 8552
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1234, 4321, 2134, 1324, 2341, 3412, 3421, 4231, 4123, 2431]) == 8552: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 132, 231, 312, 12, 21, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 633
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 132, 231, 312, 12, 21, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 633: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [123, 321, 213, 456, 654, 564, 999, 888, 777, 111]) == 1218
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [123, 321, 213, 456, 654, 564, 999, 888, 777, 111]) == 1218: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [987, 654, 321, 432, 789, 123]) == 1776
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [987, 654, 321, 432, 789, 123]) == 1776: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [88, 88, 88, 88, 88, 88, 88, 88, 88, 88]) == 176
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [88, 88, 88, 88, 88, 88, 88, 88, 88, 88]) == 176: {e}')
+    
+    total += 1
+    try:
+        result = candidate(nums = [1000000000, 999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(nums = [1000000000, 999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(nums = [99, 18, 81, 27]) == 108
+    assert candidate(nums = [55, 23, 45, 55, 23]) == 110
+    assert candidate(nums = [55, 23, 45, 55]) == 110
+    assert candidate(nums = [111, 222, 333, 444]) == -1
+    assert candidate(nums = [1000000000]) == -1
+    assert candidate(nums = [5, 5, 5, 5, 5]) == 10
+    assert candidate(nums = [999999999, 999999999]) == 1999999998
+    assert candidate(nums = [1, 2, 3, 4, 5]) == -1
+    assert candidate(nums = [999999999, 111111111, 222222222]) == -1
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == -1
+    assert candidate(nums = [99, 18, 81, 27, 72]) == 153
+    assert candidate(nums = [9, 99, 999, 9999]) == -1
+    assert candidate(nums = [100, 200, 300, 400, 500]) == -1
+    assert candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+    assert candidate(nums = [89, 98, 76, 67, 54, 45, 32, 23, 10, 1]) == 187
+    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5]) == 10
+    assert candidate(nums = [55, 23, 32, 44, 55]) == 110
+    assert candidate(nums = [55, 23, 45, 67, 89, 90, 11]) == 135
+    assert candidate(nums = [123, 321, 213, 132, 231, 312]) == 633
+    assert candidate(nums = [10, 12, 19, 14]) == -1
+    assert candidate(nums = [18, 43, 36, 13, 7]) == 54
+    assert candidate(nums = [123, 321, 213]) == 534
+    assert candidate(nums = [55, 23, 45, 67, 89, 90]) == 135
+    assert candidate(nums = [123, 321, 213, 132, 312, 231]) == 633
+    assert candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1
+    assert candidate(nums = [123456789, 987654321, 234567891, 123456789, 987654321]) == 1975308642
+    assert candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876
+    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100
+    assert candidate(nums = [55555, 44444, 33333, 22222, 11111, 66666, 77777, 88888, 99999]) == -1
+    assert candidate(nums = [12345, 54321, 13452, 21435, 23541, 32145, 42315, 52314, 34512, 54123]) == 108444
+    assert candidate(nums = [12345, 54321, 23451, 45123, 34512, 123456, 654321, 234516, 165432, 321654, 654123, 412365, 564321, 123654, 654312]) == 1308633
+    assert candidate(nums = [123, 321, 231, 312, 132, 213, 456, 654, 564, 546, 465, 645, 789, 987, 897, 879, 798, 978]) == 1965
+    assert candidate(nums = [1001, 1100, 1010, 1001, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+    assert candidate(nums = [123456789, 987654321, 234567891, 345678912, 456789123, 567891234, 678912345, 789123456, 891234567]) == 1878888888
+    assert candidate(nums = [1000000001, 1000000011, 1000000111, 1000001111, 1000011111, 1000111111, 1001111111, 1011111111, 1111111111]) == -1
+    assert candidate(nums = [1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999, 10000]) == -1
+    assert candidate(nums = [123, 132, 213, 231, 312, 321, 456, 465, 546, 564, 645, 654, 789, 798, 879, 897, 978, 987, 101, 110, 1001, 1010, 1100]) == 2110
+    assert candidate(nums = [555555555, 222222222, 333333333, 444444444, 55555555, 22222222, 33333333, 44444444, 5555555, 2222222, 3333333, 4444444]) == -1
+    assert candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111]) == -1
+    assert candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == 1100000000
+    assert candidate(nums = [123, 321, 213, 132, 312, 231, 111, 222, 333]) == 633
+    assert candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1998
+    assert candidate(nums = [1001, 1100, 1010, 10001, 9999, 8888, 7777, 6666, 5555, 4444, 3333, 2222, 1111]) == 11101
+    assert candidate(nums = [99, 999, 9999, 99999, 999999]) == -1
+    assert candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999, 123456789, 987654321]) == 1543209876
+    assert candidate(nums = [1234, 4321, 2341, 1432, 1243, 2413, 3412, 4123, 1342, 3241]) == 8444
+    assert candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444]) == -1
+    assert candidate(nums = [987654321, 123456789, 98765432, 12345678, 9876543, 1234567]) == 1111111110
+    assert candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+    assert candidate(nums = [11112, 22223, 33334, 44445, 55556, 66667, 77778, 88889, 99990]) == 177768
+    assert candidate(nums = [123, 321, 111, 456, 654, 789, 987]) == 1776
+    assert candidate(nums = [987654321, 123456789, 111222333, 333222111, 444444444, 555555555]) == 1543209876
+    assert candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 100, 200, 300, 400, 500, 600, 700, 800, 900]) == 1233
+    assert candidate(nums = [876, 768, 687, 867, 678, 786, 543, 456, 345, 435, 543, 534]) == 1743
+    assert candidate(nums = [12345, 54321, 11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == 87654
+    assert candidate(nums = [1111111111, 111111111, 11111111, 1111111, 111111, 11111, 1111, 111, 11, 1]) == -1
+    assert candidate(nums = [54321, 21345, 32145, 45321, 14523, 51423, 23451, 34512, 45123, 12354]) == 105744
+    assert candidate(nums = [111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111, 11111111111]) == -1
+    assert candidate(nums = [123, 321, 456, 654, 789, 987, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 1875
+    assert candidate(nums = [500000000, 499999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999999999]) == 500000005
+    assert candidate(nums = [12, 21, 30, 13, 31, 40, 24, 42, 33, 50]) == 75
+    assert candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999]) == -1
+    assert candidate(nums = [123, 321, 213, 111, 222, 333]) == 543
+    assert candidate(nums = [999, 111, 222, 333, 444, 555, 666, 777, 888]) == -1
+    assert candidate(nums = [9, 90, 900, 9000, 90000, 900000, 9000000, 90000000, 900000000]) == 990000000
+    assert candidate(nums = [123456789, 987654321, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == 1543209876
+    assert candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999]) == -1
+    assert candidate(nums = [199, 288, 377, 466, 555, 644, 733, 822, 911, 1000]) == -1
+    assert candidate(nums = [123, 321, 213, 132, 312, 231]) == 633
+    assert candidate(nums = [12345, 54321, 23451, 15432, 67890, 98760, 89076, 76980, 32145, 54312]) == 187836
+    assert candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888]) == -1
+    assert candidate(nums = [123456789, 12345678, 1234567, 123456, 12345, 1234, 123, 12, 1]) == -1
+    assert candidate(nums = [123, 321, 213, 132, 231, 312, 456, 654, 546, 465, 564, 645, 789, 987, 897, 798, 879, 978]) == 1965
+    assert candidate(nums = [987654321, 123456789, 234567891, 345678912, 456789123]) == 1444443444
+    assert candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 81, 123, 321, 132, 213, 231, 312]) == 633
+    assert candidate(nums = [123456789, 987654321, 123456789, 987654321]) == 1975308642
+    assert candidate(nums = [100, 101, 110, 111, 200, 201, 210, 211, 300, 301, 310, 311]) == 611
+    assert candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000
+    assert candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 18, 27, 36, 45, 54, 63, 72, 81, 90]) == 171
+    assert candidate(nums = [123, 321, 213, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 543
+    assert candidate(nums = [99999999, 9999999, 999999, 99999, 9999, 999, 99, 9, 88888888, 8888888, 888888, 88888, 8888, 888, 88, 8]) == -1
+    assert candidate(nums = [111, 222, 333, 444, 555, 666, 777, 888, 999, 1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == 9675
+    assert candidate(nums = [12, 21, 13, 31, 14, 41, 15, 51, 16, 61, 17, 71, 18, 81, 19, 91]) == 110
+    assert candidate(nums = [9, 99, 999, 9999, 99999, 999999, 9999999]) == -1
+    assert candidate(nums = [1001, 110, 1110, 1011, 11100, 11110, 10111]) == 21221
+    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1100
+    assert candidate(nums = [99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 9999999999]) == -1
+    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 31
+    assert candidate(nums = [123, 234, 345, 456, 567, 678, 789, 890, 901, 102]) == -1
+    assert candidate(nums = [100000000, 100000001, 100000002, 100000003, 100000004, 100000005]) == -1
+    assert candidate(nums = [1001, 1010, 1100, 2002, 2020, 2200, 3003, 3030, 3300]) == 6330
+    assert candidate(nums = [999, 888, 777, 666, 555, 444, 333, 222, 111, 0]) == -1
+    assert candidate(nums = [123456789, 987654321, 111222333, 444555666, 777888999]) == 1432209987
+    assert candidate(nums = [123456789, 987654321, 234567891, 123456782, 111111111]) == 1222222212
+    assert candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009]) == -1
+    assert candidate(nums = [123, 321, 456, 654, 789, 987, 234, 432, 567, 765, 890, 980]) == 1870
+    assert candidate(nums = [100000000, 200000000, 300000000, 111111111, 222222222, 333333333]) == -1
+    assert candidate(nums = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) == 1100000000
+    assert candidate(nums = [98765, 56789, 12345, 54321, 67890, 9876, 6789, 1234, 5678, 2345]) == 155554
+    assert candidate(nums = [56, 65, 74, 47, 83, 38, 92, 29, 101, 110]) == 211
+    assert candidate(nums = [99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 99990]) == -1
+    assert candidate(nums = [1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+    assert candidate(nums = [876543210, 123456789, 111222333, 444555666, 777888999, 555555555, 666666666]) == 1000111221
+    assert candidate(nums = [999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000]) == -1
+    assert candidate(nums = [12345, 54321, 1234, 4321, 123, 321, 12, 21, 1, 0]) == 66666
+    assert candidate(nums = [999999999, 111111111, 222222222, 333333333, 444444444, 555555555]) == -1
+    assert candidate(nums = [123, 1230, 1203, 1023, 10023, 100023, 1000023, 10000023, 100000023]) == 110000046
+    assert candidate(nums = [112, 121, 211, 221, 212, 122, 333, 444, 555, 666, 777, 888, 999, 1001, 1010, 1100]) == 2110
+    assert candidate(nums = [123, 321, 213, 132, 231, 312, 111, 222, 333, 444]) == 633
+    assert candidate(nums = [111111111, 222222222, 333333333, 444444444, 555555555, 666666666, 777777777, 888888888, 999999999]) == -1
+    assert candidate(nums = [1001, 2002, 3003, 4004, 5005, 6006, 7007, 8008, 9009, 1101, 2202, 3303, 4404, 5505]) == 10410
+    assert candidate(nums = [101, 110, 202, 220, 303, 330, 404, 440, 505, 550]) == 1055
+    assert candidate(nums = [1234, 4321, 2134, 1324, 2341, 3412, 3421, 4231, 4123, 2431]) == 8552
+    assert candidate(nums = [101, 202, 303, 404, 505, 606, 707, 808, 909]) == -1
+    assert candidate(nums = [123, 321, 213, 132, 231, 312, 12, 21, 111, 222, 333, 444, 555, 666, 777, 888, 999]) == 633
+    assert candidate(nums = [11111, 22222, 33333, 44444, 55555, 66666, 77777, 88888, 99999]) == -1
+    assert candidate(nums = [987654321, 98765432, 9876543, 987654, 98765, 9876, 987, 98, 9]) == -1
+    assert candidate(nums = [123, 321, 213, 456, 654, 564, 999, 888, 777, 111]) == 1218
+    assert candidate(nums = [987, 654, 321, 432, 789, 123]) == 1776
+    assert candidate(nums = [88, 88, 88, 88, 88, 88, 88, 88, 88, 88]) == 176
+    assert candidate(nums = [1000000000, 999999999, 888888888, 777777777, 666666666, 555555555, 444444444, 333333333, 222222222, 111111111, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10, 1]) == 1100000000
+
+

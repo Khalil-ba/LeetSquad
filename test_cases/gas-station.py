@@ -1,0 +1,878 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5],cost = [3, 4, 5, 1, 2]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5],cost = [3, 4, 5, 1, 2]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1],cost = [1, 1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1],cost = [1, 1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 1, 2, 3, 4],cost = [4, 5, 1, 2, 3]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 1, 2, 3, 4],cost = [4, 5, 1, 2, 3]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5],cost = [5, 4, 3, 2, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5],cost = [5, 4, 3, 2, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 3, 4],cost = [3, 4, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 3, 4],cost = [3, 4, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 8, 2, 8],cost = [6, 5, 6, 6]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 8, 2, 8],cost = [6, 5, 6, 6]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50],cost = [15, 25, 35, 45, 55]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50],cost = [15, 25, 35, 45, 55]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 1, 1],cost = [1, 2, 2]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 1, 1],cost = [1, 2, 2]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 1, 2, 3, 4],cost = [3, 4, 5, 1, 2]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 1, 2, 3, 4],cost = [3, 4, 5, 1, 2]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 3, 4],cost = [3, 4, 4]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 3, 4],cost = [3, 4, 4]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [101, 99, 101, 99, 101, 99, 101, 99, 101, 99]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [101, 99, 101, 99, 101, 99, 101, 99, 101, 99]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 50, 20, 5, 10],cost = [10, 20, 50, 100, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 50, 20, 5, 10],cost = [10, 20, 50, 100, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],cost = [19, 19, 19, 19, 19, 19, 19, 19, 19, 20]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],cost = [19, 19, 19, 19, 19, 19, 19, 19, 19, 20]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 50, 25, 75, 200, 300],cost = [200, 150, 200, 20, 100, 50]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 50, 25, 75, 200, 300],cost = [200, 150, 200, 20, 100, 50]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140],cost = [100, 110, 120, 130, 140, 150, 160, 170, 180, 190]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140],cost = [100, 110, 120, 130, 140, 150, 160, 170, 180, 190]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50],cost = [50, 10, 20, 30, 40]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50],cost = [50, 10, 20, 30, 40]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 30, 20, 10, 5, 40, 10, 30, 20, 10],cost = [15, 25, 10, 15, 10, 30, 10, 20, 15, 15]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 30, 20, 10, 5, 40, 10, 30, 20, 10],cost = [15, 25, 10, 15, 10, 30, 10, 20, 15, 15]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 2, 3, 4, 5, 6, 7, 8, 10, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 2, 3, 4, 5, 6, 7, 8, 10, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 8, 2, 8, 4],cost = [6, 5, 6, 6, 8]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 8, 2, 8, 4],cost = [6, 5, 6, 6, 8]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 3, 4, 4, 1, 1, 2, 2],cost = [3, 3, 3, 3, 2, 2, 2, 2]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 3, 4, 4, 1, 1, 2, 2],cost = [3, 3, 3, 3, 2, 2, 2, 2]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 10, 10, 10, 1],cost = [10, 1, 1, 1, 10]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 10, 10, 10, 1],cost = [10, 1, 1, 1, 10]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 3, 4, 4, 5, 5, 6, 6, 7, 7],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 3, 4, 4, 5, 5, 6, 6, 7, 7],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 200, 300, 400, 500],cost = [500, 100, 200, 300, 400]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 200, 300, 400, 500],cost = [500, 100, 200, 300, 400]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [30, 25, 20, 15, 10, 5, 0],cost = [5, 10, 15, 20, 25, 30, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [30, 25, 20, 15, 10, 5, 0],cost = [5, 10, 15, 20, 25, 30, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],cost = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],cost = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50],cost = [9, 19, 29, 39, 49]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50],cost = [9, 19, 29, 39, 49]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50],cost = [5, 10, 15, 20, 25]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50],cost = [5, 10, 15, 20, 25]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [90, 80, 70, 60, 50, 40, 30, 20, 10, 150]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [90, 80, 70, 60, 50, 40, 30, 20, 10, 150]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 3, 4, 5, 1, 6],cost = [3, 4, 5, 1, 6, 2]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 3, 4, 5, 1, 6],cost = [3, 4, 5, 1, 6, 2]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [15, 20, 5, 20, 15, 20, 15, 20, 15, 20],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [15, 20, 5, 20, 15, 20, 15, 20, 15, 20],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],cost = [5, 3, 5, 3, 9, 2, 6, 5, 3, 5, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],cost = [5, 3, 5, 3, 9, 2, 6, 5, 3, 5, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [99, 99, 99, 99, 99, 99, 99, 99, 99, 100]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [99, 99, 99, 99, 99, 99, 99, 99, 99, 100]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 0, 10, 0, 10],cost = [0, 10, 0, 10, 0]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 0, 10, 0, 10],cost = [0, 10, 0, 10, 0]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 100]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 100]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50],cost = [40, 30, 20, 10, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50],cost = [40, 30, 20, 10, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [15, 10, 10, 10, 10],cost = [10, 10, 10, 15, 10]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [15, 10, 10, 10, 10],cost = [10, 10, 10, 15, 10]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4, 4, 4, 4, 4, 5]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4, 4, 4, 4, 4, 5]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [8, 6, 7, 4, 5],cost = [5, 6, 7, 3, 4]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [8, 6, 7, 4, 5],cost = [5, 6, 7, 3, 4]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 8, 2, 8, 4, 7, 6, 6, 1, 4],cost = [4, 4, 5, 7, 1, 5, 4, 4, 5, 4]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 8, 2, 8, 4, 7, 6, 6, 1, 4],cost = [4, 4, 5, 7, 1, 5, 4, 4, 5, 4]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],cost = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],cost = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 10, 5, 15],cost = [20, 15, 10, 5, 15, 10]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 10, 5, 15],cost = [20, 15, 10, 5, 15, 10]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 3, 4, 5, 1, 2],cost = [4, 1, 5, 1, 2, 3]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 3, 4, 5, 1, 2],cost = [4, 1, 5, 1, 2, 3]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [20, 30, 10, 40, 50, 60],cost = [50, 10, 60, 10, 20, 30]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [20, 30, 10, 40, 50, 60],cost = [50, 10, 60, 10, 20, 30]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 5, 7, 2, 8, 10, 6, 4, 12, 9],cost = [4, 4, 8, 5, 5, 6, 7, 8, 3, 2]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 5, 7, 2, 8, 10, 6, 4, 12, 9],cost = [4, 4, 8, 5, 5, 6, 7, 8, 3, 2]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 20]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 20]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20],cost = [11, 9, 11, 9, 11, 9, 11, 9, 11, 9]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20],cost = [11, 9, 11, 9, 11, 9, 11, 9, 11, 9]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 5, 5, 5, 5, 5, 5],cost = [6, 6, 6, 6, 6, 6, 6]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 5, 5, 5, 5, 5, 5],cost = [6, 6, 6, 6, 6, 6, 6]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4]) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4]) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 20]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 20]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 2, 3, 4, 5, 6, 7, 8, 9]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [4, 3, 2, 1, 5, 6, 7],cost = [5, 4, 3, 2, 6, 7, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [4, 3, 2, 1, 5, 6, 7],cost = [5, 4, 3, 2, 6, 7, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [3, 4, 5, 6, 7, 8, 9, 10, 2]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [3, 4, 5, 6, 7, 8, 9, 10, 2]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [30, 20, 10, 40, 50, 20, 10, 60, 70, 80],cost = [20, 30, 40, 50, 60, 70, 80, 90, 10, 10]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [30, 20, 10, 40, 50, 20, 10, 60, 70, 80],cost = [20, 30, 40, 50, 60, 70, 80, 90, 10, 10]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],cost = [400, 450, 500, 50, 100, 150, 200, 250, 300, 350]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],cost = [400, 450, 500, 50, 100, 150, 200, 250, 300, 350]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [100, 20, 10, 15, 5],cost = [70, 15, 10, 10, 5]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [100, 20, 10, 15, 5],cost = [70, 15, 10, 10, 5]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 6, 3, 4, 5, 2, 8],cost = [2, 5, 4, 3, 6, 1, 5]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 6, 3, 4, 5, 2, 8],cost = [2, 5, 4, 3, 6, 1, 5]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 6, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 6, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [110, 9, 19, 29, 39, 49, 59, 69, 79, 89]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [110, 9, 19, 29, 39, 49, 59, 69, 79, 89]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],cost = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],cost = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 5, 7, 3, 8, 4, 6],cost = [6, 2, 4, 8, 7, 3, 5]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 5, 7, 3, 8, 4, 6],cost = [6, 2, 4, 8, 7, 3, 5]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],cost = [14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14]) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],cost = [14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14]) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 2, 6, 5, 10, 1],cost = [6, 5, 4, 3, 1, 2]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 2, 6, 5, 10, 1],cost = [6, 5, 4, 3, 1, 2]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [20, 20, 20, 20, 20],cost = [15, 15, 15, 15, 15]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [20, 20, 20, 20, 20],cost = [15, 15, 15, 15, 15]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],cost = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],cost = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 4, 5, 3, 1],cost = [3, 4, 3, 2, 2]) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 4, 5, 3, 1],cost = [3, 4, 3, 2, 2]) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [3, 2, 6, 5, 4],cost = [2, 3, 4, 5, 3]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [3, 2, 6, 5, 4],cost = [2, 3, 4, 5, 3]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [20, 30, 10, 40, 50],cost = [35, 15, 25, 20, 40]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [20, 30, 10, 40, 50],cost = [35, 15, 25, 20, 40]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [8, 1, 3, 5, 2, 6, 7],cost = [7, 2, 5, 4, 1, 3, 6]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [8, 1, 3, 5, 2, 6, 7],cost = [7, 2, 5, 4, 1, 3, 6]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [50, 30, 10, 20, 40],cost = [30, 40, 15, 25, 30]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [50, 30, 10, 20, 40],cost = [30, 40, 15, 25, 30]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [2, 3, 6, 5, 1, 3, 4],cost = [3, 4, 3, 1, 2, 4, 3]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [2, 3, 6, 5, 1, 3, 4],cost = [3, 4, 3, 1, 2, 4, 3]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1, 3, 5, 7, 9],cost = [9, 7, 5, 3, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1, 3, 5, 7, 9],cost = [9, 7, 5, 3, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(gas = [1000, 1000, 1000, 1000, 1000],cost = [999, 999, 999, 999, 5000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(gas = [1000, 1000, 1000, 1000, 1000],cost = [999, 999, 999, 999, 5000]) == -1: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(gas = [1, 2, 3, 4, 5],cost = [3, 4, 5, 1, 2]) == 3
+    assert candidate(gas = [1, 1, 1, 1],cost = [1, 1, 1, 1]) == 3
+    assert candidate(gas = [1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1]) == 4
+    assert candidate(gas = [5, 1, 2, 3, 4],cost = [4, 5, 1, 2, 3]) == 2
+    assert candidate(gas = [1, 2, 3, 4, 5],cost = [5, 4, 3, 2, 1]) == 3
+    assert candidate(gas = [2, 3, 4],cost = [3, 4, 3]) == -1
+    assert candidate(gas = [5, 8, 2, 8],cost = [6, 5, 6, 6]) == 3
+    assert candidate(gas = [0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0]) == 4
+    assert candidate(gas = [10, 20, 30, 40, 50],cost = [15, 25, 35, 45, 55]) == -1
+    assert candidate(gas = [3, 1, 1],cost = [1, 2, 2]) == 0
+    assert candidate(gas = [10, 1, 2, 3, 4],cost = [3, 4, 5, 1, 2]) == 4
+    assert candidate(gas = [3, 3, 4],cost = [3, 4, 4]) == -1
+    assert candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [101, 99, 101, 99, 101, 99, 101, 99, 101, 99]) == 9
+    assert candidate(gas = [100, 50, 20, 5, 10],cost = [10, 20, 50, 100, 5]) == 4
+    assert candidate(gas = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],cost = [19, 19, 19, 19, 19, 19, 19, 19, 19, 20]) == 9
+    assert candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) == 9
+    assert candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+    assert candidate(gas = [100, 50, 25, 75, 200, 300],cost = [200, 150, 200, 20, 100, 50]) == 3
+    assert candidate(gas = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140],cost = [100, 110, 120, 130, 140, 150, 160, 170, 180, 190]) == -1
+    assert candidate(gas = [10, 20, 30, 40, 50],cost = [50, 10, 20, 30, 40]) == 1
+    assert candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == -1
+    assert candidate(gas = [6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6]) == 0
+    assert candidate(gas = [10, 30, 20, 10, 5, 40, 10, 30, 20, 10],cost = [15, 25, 10, 15, 10, 30, 10, 20, 15, 15]) == 7
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 2, 3, 4, 5, 6, 7, 8, 10, 1]) == 9
+    assert candidate(gas = [5, 8, 2, 8, 4],cost = [6, 5, 6, 6, 8]) == -1
+    assert candidate(gas = [3, 3, 4, 4, 1, 1, 2, 2],cost = [3, 3, 3, 3, 2, 2, 2, 2]) == 7
+    assert candidate(gas = [1, 10, 10, 10, 1],cost = [10, 1, 1, 1, 10]) == 2
+    assert candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 9
+    assert candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 19
+    assert candidate(gas = [3, 3, 4, 4, 5, 5, 6, 6, 7, 7],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9
+    assert candidate(gas = [100, 200, 300, 400, 500],cost = [500, 100, 200, 300, 400]) == 1
+    assert candidate(gas = [30, 25, 20, 15, 10, 5, 0],cost = [5, 10, 15, 20, 25, 30, 1]) == -1
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],cost = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 10
+    assert candidate(gas = [10, 20, 30, 40, 50],cost = [9, 19, 29, 39, 49]) == 4
+    assert candidate(gas = [10, 20, 30, 40, 50],cost = [5, 10, 15, 20, 25]) == 4
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 8
+    assert candidate(gas = [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 0
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 5
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [90, 80, 70, 60, 50, 40, 30, 20, 10, 150]) == -1
+    assert candidate(gas = [2, 3, 4, 5, 1, 6],cost = [3, 4, 5, 1, 6, 2]) == 5
+    assert candidate(gas = [15, 20, 5, 20, 15, 20, 15, 20, 15, 20],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 9
+    assert candidate(gas = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5],cost = [5, 3, 5, 3, 9, 2, 6, 5, 3, 5, 3]) == -1
+    assert candidate(gas = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],cost = [99, 99, 99, 99, 99, 99, 99, 99, 99, 100]) == 9
+    assert candidate(gas = [10, 0, 10, 0, 10],cost = [0, 10, 0, 10, 0]) == 4
+    assert candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 100]) == -1
+    assert candidate(gas = [10, 20, 30, 40, 50],cost = [40, 30, 20, 10, 5]) == 4
+    assert candidate(gas = [15, 10, 10, 10, 10],cost = [10, 10, 10, 15, 10]) == 4
+    assert candidate(gas = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4, 4, 4, 4, 4, 5]) == 9
+    assert candidate(gas = [8, 6, 7, 4, 5],cost = [5, 6, 7, 3, 4]) == 4
+    assert candidate(gas = [5, 8, 2, 8, 4, 7, 6, 6, 1, 4],cost = [4, 4, 5, 7, 1, 5, 4, 4, 5, 4]) == 9
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],cost = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 8
+    assert candidate(gas = [1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2]) == -1
+    assert candidate(gas = [10, 20, 30, 10, 5, 15],cost = [20, 15, 10, 5, 15, 10]) == 2
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 9
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
+    assert candidate(gas = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+    assert candidate(gas = [3, 3, 4, 5, 1, 2],cost = [4, 1, 5, 1, 2, 3]) == 3
+    assert candidate(gas = [20, 30, 10, 40, 50, 60],cost = [50, 10, 60, 10, 20, 30]) == 4
+    assert candidate(gas = [3, 5, 7, 2, 8, 10, 6, 4, 12, 9],cost = [4, 4, 8, 5, 5, 6, 7, 8, 3, 2]) == 9
+    assert candidate(gas = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 20]) == -1
+    assert candidate(gas = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == 19
+    assert candidate(gas = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20],cost = [11, 9, 11, 9, 11, 9, 11, 9, 11, 9]) == 9
+    assert candidate(gas = [5, 5, 5, 5, 5, 5, 5],cost = [6, 6, 6, 6, 6, 6, 6]) == -1
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4]) == 11
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 20]) == 7
+    assert candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+    assert candidate(gas = [2, 2, 2, 2, 2],cost = [1, 1, 1, 1, 1]) == 4
+    assert candidate(gas = [4, 3, 2, 1, 5, 6, 7],cost = [5, 4, 3, 2, 6, 7, 1]) == 6
+    assert candidate(gas = [2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [3, 4, 5, 6, 7, 8, 9, 10, 2]) == 8
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5
+    assert candidate(gas = [30, 20, 10, 40, 50, 20, 10, 60, 70, 80],cost = [20, 30, 40, 50, 60, 70, 80, 90, 10, 10]) == -1
+    assert candidate(gas = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],cost = [400, 450, 500, 50, 100, 150, 200, 250, 300, 350]) == 3
+    assert candidate(gas = [100, 20, 10, 15, 5],cost = [70, 15, 10, 10, 5]) == 4
+    assert candidate(gas = [1, 6, 3, 4, 5, 2, 8],cost = [2, 5, 4, 3, 6, 1, 5]) == 6
+    assert candidate(gas = [1, 6, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 7
+    assert candidate(gas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],cost = [110, 9, 19, 29, 39, 49, 59, 69, 79, 89]) == -1
+    assert candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 9
+    assert candidate(gas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],cost = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]) == 9
+    assert candidate(gas = [2, 5, 7, 3, 8, 4, 6],cost = [6, 2, 4, 8, 7, 3, 5]) == 1
+    assert candidate(gas = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15],cost = [14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14]) == 19
+    assert candidate(gas = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 1]) == -1
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 5
+    assert candidate(gas = [3, 2, 6, 5, 10, 1],cost = [6, 5, 4, 3, 1, 2]) == 4
+    assert candidate(gas = [20, 20, 20, 20, 20],cost = [15, 15, 15, 15, 15]) == 4
+    assert candidate(gas = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],cost = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == 9
+    assert candidate(gas = [2, 4, 5, 3, 1],cost = [3, 4, 3, 2, 2]) == 2
+    assert candidate(gas = [3, 2, 6, 5, 4],cost = [2, 3, 4, 5, 3]) == 4
+    assert candidate(gas = [20, 30, 10, 40, 50],cost = [35, 15, 25, 20, 40]) == 3
+    assert candidate(gas = [8, 1, 3, 5, 2, 6, 7],cost = [7, 2, 5, 4, 1, 3, 6]) == 5
+    assert candidate(gas = [50, 30, 10, 20, 40],cost = [30, 40, 15, 25, 30]) == 4
+    assert candidate(gas = [5, 5, 5, 5, 5],cost = [4, 4, 4, 4, 4]) == 4
+    assert candidate(gas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],cost = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1]) == 14
+    assert candidate(gas = [2, 3, 6, 5, 1, 3, 4],cost = [3, 4, 3, 1, 2, 4, 3]) == 3
+    assert candidate(gas = [1, 3, 5, 7, 9],cost = [9, 7, 5, 3, 1]) == 3
+    assert candidate(gas = [1000, 1000, 1000, 1000, 1000],cost = [999, 999, 999, 999, 5000]) == -1
+
+

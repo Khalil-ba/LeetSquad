@@ -1,0 +1,1094 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -100, 100, -100, 100, 100],k = 2) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -100, 100, -100, 100, 100],k = 2) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -2, -3, -4, -5],k = 3) == -3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -2, -3, -4, -5],k = 3) == -3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 2) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 2) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5],k = 1) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5],k = 1) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -100, 100, -100, 100],k = 1) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -100, 100, -100, 100],k = 1) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6],k = 2) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6],k = 2) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -2, -3, -4, -5],k = 2) == -4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -2, -3, -4, -5],k = 2) == -4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 4) == -7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 4) == -7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-2, -3, -1],k = 2) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-2, -3, -1],k = 2) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5],k = 2) == 190
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5],k = 2) == 190: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, 2, -10, -5, 1],k = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, 2, -10, -5, 1],k = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -50, 200, -100, 300],k = 2) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -50, 200, -100, 300],k = 2) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 5) == -6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 5) == -6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],k = 6) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],k = 6) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 14) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 14) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 4) == 360
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 4) == 360: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500],k = 5) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500],k = 5) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 3) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 3) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, -1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19],k = 2) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, -1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19],k = 2) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 7) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 7) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -10, 50, -20, 30, -40, 20, -30, 10, -5],k = 4) == 140
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -10, 50, -20, 30, -40, 20, -30, 10, -5],k = 4) == 140: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [50, -20, 30, -10, 40, -30, 20],k = 3) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [50, -20, 30, -10, 40, -30, 20],k = 3) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],k = 4) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],k = 4) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80],k = 3) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80],k = 3) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100, -105, -110, -115, -120, -125, -130, -135, -140, -145, -150],k = 11) == -100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100, -105, -110, -115, -120, -125, -130, -135, -140, -145, -150],k = 11) == -100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [50, -50, 50, -50, 50, -50, 50, -50, 50, -50],k = 5) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [50, -50, 50, -50, 50, -50, 50, -50, 50, -50],k = 5) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100],k = 8) == 900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100],k = 8) == 900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100],k = 3) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100],k = 3) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 2) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 2) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [2, 3, 5, 8, 13, 21, -34, 55, -89, 144, -233, 377],k = 4) == 440
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [2, 3, 5, 8, 13, 21, -34, 55, -89, 144, -233, 377],k = 4) == 440: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10],k = 4) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10],k = 4) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 5) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 5) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 5) == -80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 5) == -80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 3) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 3) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 1) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 1) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, 50, -30, 20, -10, 40, -50, 60, -70, 80],k = 5) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, 50, -30, 20, -10, 40, -50, 60, -70, 80],k = 5) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5],k = 2) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5],k = 2) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 7) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 7) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 8) == 1192
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 8) == 1192: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80],k = 3) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80],k = 3) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400],k = 4) == 2800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400],k = 4) == 2800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80, -90, 100, -110, 120, -130, 140, -150, 160, -170, 180, -190, 200],k = 9) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80, -90, 100, -110, 120, -130, 140, -150, 160, -170, 180, -190, 200],k = 9) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [50, -20, 30, -10, 40, -30, 20, -10, 50],k = 3) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [50, -20, 30, -10, 40, -30, 20, -10, 50],k = 3) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, 10, 20, 30, 40, 50],k = 6) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, 10, 20, 30, 40, 50],k = 6) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [500, -100, 200, -300, 400, -500, 600, -700, 800, -900],k = 6) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [500, -100, 200, -300, 400, -500, 600, -700, 800, -900],k = 6) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [3, 4, -2, 5, -7, 10, -15, 20],k = 3) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [3, 4, -2, 5, -7, 10, -15, 20],k = 3) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 9) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 9) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 2) == -900
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 2) == -900: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 8) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 8) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -50, 200, -100, 300, 400, -200, 500, -300, 600, 700, -400, 800, 900, -500, 1000],k = 8) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -50, 200, -100, 300, 400, -200, 500, -300, 600, 700, -400, 800, 900, -500, 1000],k = 8) == 1500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, 10, -20, 15, -10, 5, 25, -20, 30],k = 3) == 45
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, 10, -20, 15, -10, 5, 25, -20, 30],k = 3) == 45: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -900, 800, -700, 600, -500, 400, -300, 200, -100],k = 7) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -900, 800, -700, 600, -500, 400, -300, 200, -100],k = 7) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 9) == 110
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 9) == 110: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1],k = 9) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1],k = 9) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [50, 20, -10, 5, -30, 25, 15, -5, 10, 5, -15],k = 6) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [50, 20, -10, 5, -30, 25, 15, -5, 10, 5, -15],k = 6) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 0, -100, 200, 0, -200, 300, 0, -300, 400, 0, -400, 500, 0, -500, 600, 0, -600, 700, 0],k = 10) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 0, -100, 200, 0, -200, 300, 0, -300, 400, 0, -400, 500, 0, -500, 600, 0, -600, 700, 0],k = 10) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -5, 15, -10, 20, -25, 30],k = 2) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -5, 15, -10, 20, -25, 30],k = 2) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 7) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 7) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -100, 200, -200, 300, -300, 400, -400, 500, -500],k = 3) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -100, 200, -200, 300, -300, 400, -400, 500, -500],k = 3) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 9) == 1100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 9) == 1100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 6) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 6) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60, 70, -70, 80, -80, 90, -90, 100, -100],k = 3) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60, 70, -70, 80, -80, 90, -90, 100, -100],k = 3) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 2) == 5000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 2) == 5000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 10) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 10) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 1) == 5500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 1) == 5500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 3, -4, 5, -6, 7, -8, 9],k = 7) == 989
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 3, -4, 5, -6, 7, -8, 9],k = 7) == 989: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 7) == 80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 7) == 80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 4, -8],k = 5) == 969
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 4, -8],k = 5) == 969: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, -1, 4, -2, 3, -3, 2, -1, 1, -2],k = 2) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, -1, 4, -2, 3, -3, 2, -1, 1, -2],k = 2) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-100, 200, -300, 400, -500, 600, -700, 800, -900, 1000],k = 5) == 1000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-100, 200, -300, 400, -500, 600, -700, 800, -900, 1000],k = 5) == 1000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125],k = 2) == 1875
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125],k = 2) == 1875: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [900, 800, 700, 600, 500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [900, 800, 700, 600, 500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1],k = 7) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1],k = 7) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 2) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 2) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 9) == 330
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 9) == 330: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 32, -32, 16, -16, 8, -8, 4, -4, 2, -2, 1, -1],k = 5) == 775
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 32, -32, 16, -16, 8, -8, 4, -4, 2, -2, 1, -1],k = 5) == 775: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 62, -62, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1],k = 7) == 882
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 62, -62, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1],k = 7) == 882: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 3) == -80
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 3) == -80: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 19) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 19) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100],k = 6) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100],k = 6) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],k = 10) == -11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],k = 10) == -11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 5) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 5) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [500, -500, 500, -500, 500, -500, 500, -500, 500],k = 2) == 2500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [500, -500, 500, -500, 500, -500, 500, -500, 500],k = 2) == 2500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 6) == 440
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 6) == 440: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30],k = 10) == 57
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30],k = 10) == 57: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-500, -400, -300, -200, -100, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900],k = 6) == 1200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-500, -400, -300, -200, -100, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900],k = 6) == 1200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 9) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 9) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100],k = 7) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100],k = 7) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 1) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 1) == 1500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == -60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == -60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 1) == -100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 1) == -100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [5, 15, -25, 35, -45, 55, -65, 75, -85, 95, -105],k = 5) == 95
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [5, 15, -25, 35, -45, 55, -65, 75, -85, 95, -105],k = 5) == 95: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 6) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 6) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25, -30, 30, -35, 35, -40],k = 5) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25, -30, 30, -35, 35, -40],k = 5) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50, -55, 60, -65, 70, -75, 80, -85, 90, -95, 100],k = 5) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50, -55, 60, -65, 70, -75, 80, -85, 90, -95, 100],k = 5) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 4) == 150
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 4) == 150: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 9) == -200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 9) == -200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80],k = 4) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80],k = 4) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 13, -13, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20],k = 12) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 13, -13, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20],k = 12) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20],k = 7) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20],k = 7) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19, 20],k = 8) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19, 20],k = 8) == 36: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(energy = [100, -100, 100, -100, 100, 100],k = 2) == 300
+    assert candidate(energy = [-1, -2, -3, -4, -5],k = 3) == -3
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 2) == 30
+    assert candidate(energy = [1, 2, 3, 4, 5],k = 1) == 15
+    assert candidate(energy = [100, -100, 100, -100, 100],k = 1) == 100
+    assert candidate(energy = [1, 2, 3, 4, 5, 6],k = 2) == 12
+    assert candidate(energy = [-1, -2, -3, -4, -5],k = 2) == -4
+    assert candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 4) == -7
+    assert candidate(energy = [-2, -3, -1],k = 2) == -1
+    assert candidate(energy = [100, -100, 50, -50, 25, -25, 10, -10, 5, -5],k = 2) == 190
+    assert candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 1) == 0
+    assert candidate(energy = [5, 2, -10, -5, 1],k = 3) == 3
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18
+    assert candidate(energy = [100, -50, 200, -100, 300],k = 2) == 600
+    assert candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 5) == -6
+    assert candidate(energy = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],k = 6) == -1
+    assert candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 14) == 2
+    assert candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 4) == 360
+    assert candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10],k = 5) == 10
+    assert candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500],k = 5) == 1000
+    assert candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 3) == 15
+    assert candidate(energy = [5, -1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19],k = 2) == 95
+    assert candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 7) == 1
+    assert candidate(energy = [100, -10, 50, -20, 30, -40, 20, -30, 10, -5],k = 4) == 140
+    assert candidate(energy = [50, -20, 30, -10, 40, -30, 20],k = 3) == 60
+    assert candidate(energy = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],k = 4) == 55
+    assert candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80],k = 3) == 80
+    assert candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100, -105, -110, -115, -120, -125, -130, -135, -140, -145, -150],k = 11) == -100
+    assert candidate(energy = [50, -50, 50, -50, 50, -50, 50, -50, 50, -50],k = 5) == 50
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 5) == 150
+    assert candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100],k = 8) == 900
+    assert candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100],k = 3) == 100
+    assert candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 2) == 150
+    assert candidate(energy = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],k = 5) == 0
+    assert candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 12
+    assert candidate(energy = [2, 3, 5, 8, 13, 21, -34, 55, -89, 144, -233, 377],k = 4) == 440
+    assert candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10],k = 4) == 15
+    assert candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],k = 5) == 3000
+    assert candidate(energy = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80, -85, -90, -95, -100],k = 5) == -80
+    assert candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 3) == 90
+    assert candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 1) == 100
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 4) == 18
+    assert candidate(energy = [-10, 50, -30, 20, -10, 40, -50, 60, -70, 80],k = 5) == 80
+    assert candidate(energy = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5],k = 2) == 9
+    assert candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150],k = 7) == 150
+    assert candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],k = 8) == 1192
+    assert candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80],k = 3) == 70
+    assert candidate(energy = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],k = 10) == 15
+    assert candidate(energy = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400],k = 4) == 2800
+    assert candidate(energy = [500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 300
+    assert candidate(energy = [10, 20, -30, 40, -50, 60, -70, 80, -90, 100, -110, 120, -130, 140, -150, 160, -170, 180, -190, 200],k = 9) == 200
+    assert candidate(energy = [50, -20, 30, -10, 40, -30, 20, -10, 50],k = 3) == 60
+    assert candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, 10, 20, 30, 40, 50],k = 6) == 50
+    assert candidate(energy = [500, -100, 200, -300, 400, -500, 600, -700, 800, -900],k = 6) == 1100
+    assert candidate(energy = [3, 4, -2, 5, -7, 10, -15, 20],k = 3) == 20
+    assert candidate(energy = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],k = 9) == 10
+    assert candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 2) == -900
+    assert candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 8) == 2000
+    assert candidate(energy = [100, -50, 200, -100, 300, 400, -200, 500, -300, 600, 700, -400, 800, 900, -500, 1000],k = 8) == 1500
+    assert candidate(energy = [5, 10, -20, 15, -10, 5, 25, -20, 30],k = 3) == 45
+    assert candidate(energy = [1000, -900, 800, -700, 600, -500, 400, -300, 200, -100],k = 7) == 700
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 9) == 110
+    assert candidate(energy = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1],k = 9) == 1
+    assert candidate(energy = [50, 20, -10, 5, -30, 25, 15, -5, 10, 5, -15],k = 6) == 65
+    assert candidate(energy = [100, 0, -100, 200, 0, -200, 300, 0, -300, 400, 0, -400, 500, 0, -500, 600, 0, -600, 700, 0],k = 10) == 700
+    assert candidate(energy = [10, -5, 15, -10, 20, -25, 30],k = 2) == 75
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 7) == 39
+    assert candidate(energy = [100, -100, 200, -200, 300, -300, 400, -400, 500, -500],k = 3) == 500
+    assert candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 9) == 1100
+    assert candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15],k = 6) == 27
+    assert candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50, 60, -60, 70, -70, 80, -80, 90, -90, 100, -100],k = 3) == 100
+    assert candidate(energy = [1000, -1000, 1000, -1000, 1000, -1000, 1000, -1000, 1000],k = 2) == 5000
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],k = 10) == 600
+    assert candidate(energy = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],k = 1) == 5500
+    assert candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 10) == 5
+    assert candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 3, -4, 5, -6, 7, -8, 9],k = 7) == 989
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 7) == 80
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180
+    assert candidate(energy = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -2, 4, -8],k = 5) == 969
+    assert candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 3) == 1
+    assert candidate(energy = [5, -1, 4, -2, 3, -3, 2, -1, 1, -2],k = 2) == 15
+    assert candidate(energy = [-100, 200, -300, 400, -500, 600, -700, 800, -900, 1000],k = 5) == 1000
+    assert candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125],k = 2) == 1875
+    assert candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 4
+    assert candidate(energy = [900, 800, 700, 600, 500, 400, 300, 200, 100, 0, -100, -200, -300, -400, -500],k = 5) == 1200
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1],k = 7) == 9
+    assert candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 2) == 10
+    assert candidate(energy = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 5) == 4
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 9) == 330
+    assert candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 63, -63, 32, -32, 16, -16, 8, -8, 4, -4, 2, -2, 1, -1],k = 5) == 775
+    assert candidate(energy = [1000, -1000, 500, -500, 250, -250, 125, -125, 62, -62, 31, -31, 15, -15, 7, -7, 3, -3, 1, -1],k = 7) == 882
+    assert candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 3) == -80
+    assert candidate(energy = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == 60
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 19) == 21
+    assert candidate(energy = [-100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100],k = 6) == 300
+    assert candidate(energy = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],k = 10) == -11
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 5) == 15
+    assert candidate(energy = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50],k = 5) == 50
+    assert candidate(energy = [500, -500, 500, -500, 500, -500, 500, -500, 500],k = 2) == 2500
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],k = 6) == 440
+    assert candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30],k = 10) == 57
+    assert candidate(energy = [-500, -400, -300, -200, -100, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900],k = 6) == 1200
+    assert candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 9) == 1
+    assert candidate(energy = [100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100, -100, 100],k = 7) == 100
+    assert candidate(energy = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],k = 1) == 1500
+    assert candidate(energy = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],k = 4) == 5
+    assert candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 5) == -60
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],k = 4) == 180
+    assert candidate(energy = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],k = 1) == -100
+    assert candidate(energy = [5, 15, -25, 35, -45, 55, -65, 75, -85, 95, -105],k = 5) == 95
+    assert candidate(energy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 6) == 44
+    assert candidate(energy = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25, -30, 30, -35, 35, -40],k = 5) == 35
+    assert candidate(energy = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50, -55, 60, -65, 70, -75, 80, -85, 90, -95, 100],k = 5) == 100
+    assert candidate(energy = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100],k = 4) == 150
+    assert candidate(energy = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000],k = 9) == -200
+    assert candidate(energy = [-10, 20, -30, 40, -50, 60, -70, 80],k = 4) == 120
+    assert candidate(energy = [0, 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 13, -13, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20],k = 12) == 44
+    assert candidate(energy = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],k = 5) == 300
+    assert candidate(energy = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20],k = 7) == 19
+    assert candidate(energy = [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10, -11, 12, -13, 14, -15, 16, -17, 18, -19, 20],k = 8) == 36
+
+

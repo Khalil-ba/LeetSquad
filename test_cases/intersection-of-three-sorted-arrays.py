@@ -1,0 +1,770 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [197, 418, 523, 876, 1356],arr2 = [501, 880, 1593, 1710, 1870],arr3 = [521, 682, 1337, 1395, 1764]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [197, 418, 523, 876, 1356],arr2 = [501, 880, 1593, 1710, 1870],arr3 = [521, 682, 1337, 1395, 1764]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7],arr2 = [1, 3, 5, 7],arr3 = [1, 3, 5, 7]) == [1, 3, 5, 7]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7],arr2 = [1, 3, 5, 7],arr3 = [1, 3, 5, 7]) == [1, 3, 5, 7]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 4, 6, 8, 10],arr3 = [1, 2, 3, 4, 5]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 4, 6, 8, 10],arr3 = [1, 2, 3, 4, 5]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50],arr3 = [10, 20, 30, 40, 50]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50],arr3 = [10, 20, 30, 40, 50]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 6, 9, 14],arr2 = [2, 6, 10, 14],arr3 = [3, 6, 11, 14]) == [6, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 6, 9, 14],arr2 = [2, 6, 10, 14],arr3 = [3, 6, 11, 14]) == [6, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 7, 10],arr2 = [2, 4, 6, 8],arr3 = [3, 4, 5, 9]) == [4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 7, 10],arr2 = [2, 4, 6, 8],arr3 = [3, 4, 5, 9]) == [4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [1, 3, 5, 7, 9],arr3 = [1, 3, 5, 7, 9]) == [1, 3, 5, 7, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [1, 3, 5, 7, 9],arr3 = [1, 3, 5, 7, 9]) == [1, 3, 5, 7, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300],arr2 = [100, 200, 300],arr3 = [100, 200, 300]) == [100, 200, 300]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300],arr2 = [100, 200, 300],arr3 = [100, 200, 300]) == [100, 200, 300]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3],arr2 = [4, 5, 6],arr3 = [7, 8, 9]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3],arr2 = [4, 5, 6],arr3 = [7, 8, 9]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [1, 2, 5, 7, 9],arr3 = [1, 3, 4, 5, 8]) == [1, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [1, 2, 5, 7, 9],arr3 = [1, 3, 4, 5, 8]) == [1, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [1, 6, 11, 16, 21]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [1, 6, 11, 16, 21]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 10, 15, 20, 25],arr2 = [5, 10, 15, 20, 25],arr3 = [5, 10, 15, 20, 25]) == [5, 10, 15, 20, 25]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 10, 15, 20, 25],arr2 = [5, 10, 15, 20, 25],arr3 = [5, 10, 15, 20, 25]) == [5, 10, 15, 20, 25]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40],arr2 = [15, 25, 35, 45],arr3 = [20, 30, 40, 50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40],arr2 = [15, 25, 35, 45],arr3 = [20, 30, 40, 50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 10, 15],arr2 = [5, 10, 20],arr3 = [10, 15, 25]) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 10, 15],arr2 = [5, 10, 20],arr3 = [10, 15, 25]) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [3, 5, 6, 9, 10]) == [3, 5, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [3, 5, 6, 9, 10]) == [3, 5, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],arr3 = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]) == [9, 10, 11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],arr3 = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]) == [9, 10, 11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70],arr2 = [10, 20, 30, 40, 50, 60, 70],arr3 = [10, 20, 30, 40, 50, 60, 70]) == [10, 20, 30, 40, 50, 60, 70]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70],arr2 = [10, 20, 30, 40, 50, 60, 70],arr3 = [10, 20, 30, 40, 50, 60, 70]) == [10, 20, 30, 40, 50, 60, 70]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [100, 250, 300, 350, 500],arr3 = [100, 300, 500, 600, 700]) == [100, 300, 500]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [100, 250, 300, 350, 500],arr3 = [100, 300, 500, 600, 700]) == [100, 300, 500]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [3, 6, 9, 12, 15, 18],arr3 = [2, 5, 8, 11, 14, 17]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [3, 6, 9, 12, 15, 18],arr3 = [2, 5, 8, 11, 14, 17]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 8, 12, 16, 20, 24, 28, 32, 36],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == [4, 8, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 8, 12, 16, 20, 24, 28, 32, 36],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == [4, 8, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101, 201, 301, 401, 501, 601, 701, 801, 901, 1001],arr2 = [101, 202, 302, 402, 502, 602, 702, 802, 902, 1002],arr3 = [101, 203, 303, 403, 503, 603, 703, 803, 903, 1003]) == [101]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101, 201, 301, 401, 501, 601, 701, 801, 901, 1001],arr2 = [101, 202, 302, 402, 502, 602, 702, 802, 902, 1002],arr3 = [101, 203, 303, 403, 503, 603, 703, 803, 903, 1003]) == [101]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400],arr2 = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300],arr3 = [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]) == [500, 600, 700, 800, 900, 1000, 1100, 1200]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400],arr2 = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300],arr3 = [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]) == [500, 600, 700, 800, 900, 1000, 1100, 1200]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39],arr2 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37],arr3 = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39],arr2 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37],arr3 = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [2, 4, 8, 16, 32, 64, 128],arr2 = [1, 2, 4, 8, 16, 32, 64],arr3 = [0, 2, 4, 8, 16, 32, 64, 128]) == [2, 4, 8, 16, 32, 64]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [2, 4, 8, 16, 32, 64, 128],arr2 = [1, 2, 4, 8, 16, 32, 64],arr3 = [0, 2, 4, 8, 16, 32, 64, 128]) == [2, 4, 8, 16, 32, 64]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33],arr2 = [3, 7, 11, 15, 19, 23, 27, 31, 35],arr3 = [2, 6, 10, 14, 18, 22, 26, 30, 34]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33],arr2 = [3, 7, 11, 15, 19, 23, 27, 31, 35],arr3 = [2, 6, 10, 14, 18, 22, 26, 30, 34]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [2, 5, 8, 11, 14, 17],arr3 = [3, 6, 9, 12, 15, 18]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [2, 5, 8, 11, 14, 17],arr3 = [3, 6, 9, 12, 15, 18]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58]) == [1, 7, 13, 19]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58]) == [1, 7, 13, 19]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 15, 25, 35, 45, 55, 65],arr2 = [5, 20, 30, 40, 50, 60, 70],arr3 = [5, 25, 35, 45, 55, 65, 75]) == [5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 15, 25, 35, 45, 55, 65],arr2 = [5, 20, 30, 40, 50, 60, 70],arr3 = [5, 25, 35, 45, 55, 65, 75]) == [5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [1, 3, 5, 6, 9]) == [3, 5, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [1, 3, 5, 6, 9]) == [3, 5, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 7, 10, 13, 16, 19],arr2 = [2, 5, 8, 11, 14, 17, 20],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 7, 10, 13, 16, 19],arr2 = [2, 5, 8, 11, 14, 17, 20],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [12, 22, 32, 42, 52]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [12, 22, 32, 42, 52]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [2, 4, 6, 8, 10],arr2 = [1, 2, 3, 4, 5],arr3 = [0, 2, 4, 6, 8]) == [2, 4]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [2, 4, 6, 8, 10],arr2 = [1, 2, 3, 4, 5],arr3 = [0, 2, 4, 6, 8]) == [2, 4]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr3 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr3 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],arr3 = [10, 30, 50, 70, 90, 110, 130, 150, 170, 190]) == [10, 70]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],arr3 = [10, 30, 50, 70, 90, 110, 130, 150, 170, 190]) == [10, 70]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101, 202, 303, 404, 505, 606, 707, 808, 909],arr2 = [101, 203, 305, 407, 509, 611, 713, 815, 917],arr3 = [101, 204, 306, 408, 510, 612, 714, 816, 918]) == [101]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101, 202, 303, 404, 505, 606, 707, 808, 909],arr2 = [101, 203, 305, 407, 509, 611, 713, 815, 917],arr3 = [101, 204, 306, 408, 510, 612, 714, 816, 918]) == [101]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [3, 6, 9, 12, 15, 18, 21],arr2 = [2, 6, 10, 14, 18, 22],arr3 = [1, 6, 11, 16, 21]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [3, 6, 9, 12, 15, 18, 21],arr2 = [2, 6, 10, 14, 18, 22],arr3 = [1, 6, 11, 16, 21]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 4, 6, 9, 11, 13, 17, 20],arr2 = [3, 4, 7, 11, 12, 15, 19, 20],arr3 = [2, 4, 5, 11, 14, 16, 17, 18]) == [4, 11]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 4, 6, 9, 11, 13, 17, 20],arr2 = [3, 4, 7, 11, 12, 15, 19, 20],arr3 = [2, 4, 5, 11, 14, 16, 17, 18]) == [4, 11]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000],arr2 = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000],arr2 = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [3, 7, 11, 15, 19, 23, 27],arr2 = [2, 5, 11, 15, 18, 23, 26],arr3 = [1, 11, 15, 16, 19, 23, 28]) == [11, 15, 23]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [3, 7, 11, 15, 19, 23, 27],arr2 = [2, 5, 11, 15, 18, 23, 26],arr3 = [1, 11, 15, 16, 19, 23, 28]) == [11, 15, 23]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == [6]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == [6]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [3, 6, 9, 12, 15, 18],arr2 = [6, 12, 18, 24, 30],arr3 = [9, 12, 15, 18, 21]) == [12, 18]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [3, 6, 9, 12, 15, 18],arr2 = [6, 12, 18, 24, 30],arr3 = [9, 12, 15, 18, 21]) == [12, 18]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [200, 400, 600, 800, 1000],arr2 = [100, 300, 500, 700, 900],arr3 = [150, 350, 550, 750, 950]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [200, 400, 600, 800, 1000],arr2 = [100, 300, 500, 700, 900],arr3 = [150, 350, 550, 750, 950]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101],arr3 = [1, 21, 41, 61, 81, 101, 121, 141, 161, 181, 201]) == [1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101],arr3 = [1, 21, 41, 61, 81, 101, 121, 141, 161, 181, 201]) == [1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],arr3 = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],arr3 = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],arr2 = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55],arr3 = [1, 14, 21, 28, 35, 42, 49, 56, 63, 70]) == [49]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],arr2 = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55],arr3 = [1, 14, 21, 28, 35, 42, 49, 56, 63, 70]) == [49]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [500, 1000, 1500, 2000],arr2 = [400, 900, 1400, 1900],arr3 = [600, 1100, 1600, 2100]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [500, 1000, 1500, 2000],arr2 = [400, 900, 1400, 1900],arr3 = [600, 1100, 1600, 2100]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500],arr3 = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [600]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500],arr3 = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [600]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr3 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr3 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],arr3 = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185]) == [5, 65]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],arr3 = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185]) == [5, 65]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [10, 20, 30, 40, 50]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [10, 20, 30, 40, 50]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15, 30]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15, 30]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15]) == [6, 12]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15]) == [6, 12]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [200, 300, 400, 500, 600]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [200, 300, 400, 500, 600]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr3 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == [11, 12, 13, 14, 15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr3 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == [11, 12, 13, 14, 15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],arr2 = [100, 102, 104, 106, 108, 110, 112, 114, 116, 118],arr3 = [99, 102, 105, 108, 111, 114, 117, 120, 123, 126]) == [102, 108]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],arr2 = [100, 102, 104, 106, 108, 110, 112, 114, 116, 118],arr3 = [99, 102, 105, 108, 111, 114, 117, 120, 123, 126]) == [102, 108]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [125, 225, 325, 425, 525]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [125, 225, 325, 425, 525]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109],arr3 = [10, 22, 34, 46, 58, 70, 82, 94, 106, 118]) == [10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109],arr3 = [10, 22, 34, 46, 58, 70, 82, 94, 106, 118]) == [10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 10, 15, 20, 25],arr3 = [10, 20, 30, 40, 50]) == [10, 20]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 10, 15, 20, 25],arr3 = [10, 20, 30, 40, 50]) == [10, 20]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [500, 700, 900, 1100, 1300],arr2 = [300, 500, 700, 900, 1100],arr3 = [100, 300, 500, 700, 900]) == [500, 700, 900]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [500, 700, 900, 1100, 1300],arr2 = [300, 500, 700, 900, 1100],arr3 = [100, 300, 500, 700, 900]) == [500, 700, 900]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == [15]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == [15]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17],arr3 = [0, 2, 4, 6, 8, 10, 12, 14, 16]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17],arr3 = [0, 2, 4, 6, 8, 10, 12, 14, 16]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [1, 3, 5, 7, 9, 11, 13],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [1, 3, 5, 7, 9, 11, 13],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []: {e}')
+    
+    total += 1
+    try:
+        result = candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950]) == []
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950]) == []: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(arr1 = [197, 418, 523, 876, 1356],arr2 = [501, 880, 1593, 1710, 1870],arr3 = [521, 682, 1337, 1395, 1764]) == []
+    assert candidate(arr1 = [1, 3, 5, 7],arr2 = [1, 3, 5, 7],arr3 = [1, 3, 5, 7]) == [1, 3, 5, 7]
+    assert candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 4, 6, 8, 10],arr3 = [1, 2, 3, 4, 5]) == []
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50],arr3 = [10, 20, 30, 40, 50]) == [10, 20, 30, 40, 50]
+    assert candidate(arr1 = [1, 6, 9, 14],arr2 = [2, 6, 10, 14],arr3 = [3, 6, 11, 14]) == [6, 14]
+    assert candidate(arr1 = [1, 4, 7, 10],arr2 = [2, 4, 6, 8],arr3 = [3, 4, 5, 9]) == [4]
+    assert candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [1, 3, 5, 7, 9],arr3 = [1, 3, 5, 7, 9]) == [1, 3, 5, 7, 9]
+    assert candidate(arr1 = [100, 200, 300],arr2 = [100, 200, 300],arr3 = [100, 200, 300]) == [100, 200, 300]
+    assert candidate(arr1 = [1, 2, 3],arr2 = [4, 5, 6],arr3 = [7, 8, 9]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5],arr2 = [1, 2, 5, 7, 9],arr3 = [1, 3, 4, 5, 8]) == [1, 5]
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [1, 6, 11, 16, 21]) == []
+    assert candidate(arr1 = [5, 10, 15, 20, 25],arr2 = [5, 10, 15, 20, 25],arr3 = [5, 10, 15, 20, 25]) == [5, 10, 15, 20, 25]
+    assert candidate(arr1 = [10, 20, 30, 40],arr2 = [15, 25, 35, 45],arr3 = [20, 30, 40, 50]) == []
+    assert candidate(arr1 = [5, 10, 15],arr2 = [5, 10, 20],arr3 = [10, 15, 25]) == [10]
+    assert candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [3, 5, 6, 9, 10]) == [3, 5, 9]
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],arr3 = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]) == [9, 10, 11, 12, 13, 14, 15]
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70],arr2 = [10, 20, 30, 40, 50, 60, 70],arr3 = [10, 20, 30, 40, 50, 60, 70]) == [10, 20, 30, 40, 50, 60, 70]
+    assert candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [100, 250, 300, 350, 500],arr3 = [100, 300, 500, 600, 700]) == [100, 300, 500]
+    assert candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [3, 6, 9, 12, 15, 18],arr3 = [2, 5, 8, 11, 14, 17]) == []
+    assert candidate(arr1 = [1, 4, 8, 12, 16, 20, 24, 28, 32, 36],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == [4, 8, 12]
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]) == []
+    assert candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33, 37],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == []
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]) == []
+    assert candidate(arr1 = [101, 201, 301, 401, 501, 601, 701, 801, 901, 1001],arr2 = [101, 202, 302, 402, 502, 602, 702, 802, 902, 1002],arr3 = [101, 203, 303, 403, 503, 603, 703, 803, 903, 1003]) == [101]
+    assert candidate(arr1 = [500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400],arr2 = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300],arr3 = [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]) == [500, 600, 700, 800, 900, 1000, 1100, 1200]
+    assert candidate(arr1 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39],arr2 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37],arr3 = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38]) == []
+    assert candidate(arr1 = [2, 4, 8, 16, 32, 64, 128],arr2 = [1, 2, 4, 8, 16, 32, 64],arr3 = [0, 2, 4, 8, 16, 32, 64, 128]) == [2, 4, 8, 16, 32, 64]
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == [10, 20, 30, 40, 50]
+    assert candidate(arr1 = [1, 5, 9, 13, 17, 21, 25, 29, 33],arr2 = [3, 7, 11, 15, 19, 23, 27, 31, 35],arr3 = [2, 6, 10, 14, 18, 22, 26, 30, 34]) == []
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108]) == []
+    assert candidate(arr1 = [1, 4, 7, 10, 13, 16],arr2 = [2, 5, 8, 11, 14, 17],arr3 = [3, 6, 9, 12, 15, 18]) == []
+    assert candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58]) == [1, 7, 13, 19]
+    assert candidate(arr1 = [5, 15, 25, 35, 45, 55, 65],arr2 = [5, 20, 30, 40, 50, 60, 70],arr3 = [5, 25, 35, 45, 55, 65, 75]) == [5]
+    assert candidate(arr1 = [1, 3, 5, 7, 9],arr2 = [2, 3, 5, 8, 9],arr3 = [1, 3, 5, 6, 9]) == [3, 5, 9]
+    assert candidate(arr1 = [1, 4, 7, 10, 13, 16, 19],arr2 = [2, 5, 8, 11, 14, 17, 20],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 15, 25, 35, 45],arr3 = [12, 22, 32, 42, 52]) == []
+    assert candidate(arr1 = [2, 4, 6, 8, 10],arr2 = [1, 2, 3, 4, 5],arr3 = [0, 2, 4, 6, 8]) == [2, 4]
+    assert candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr3 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]) == [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 25, 40, 55, 70, 85, 100, 115, 130, 145],arr3 = [10, 30, 50, 70, 90, 110, 130, 150, 170, 190]) == [10, 70]
+    assert candidate(arr1 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+    assert candidate(arr1 = [101, 202, 303, 404, 505, 606, 707, 808, 909],arr2 = [101, 203, 305, 407, 509, 611, 713, 815, 917],arr3 = [101, 204, 306, 408, 510, 612, 714, 816, 918]) == [101]
+    assert candidate(arr1 = [3, 6, 9, 12, 15, 18, 21],arr2 = [2, 6, 10, 14, 18, 22],arr3 = [1, 6, 11, 16, 21]) == [6]
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],arr3 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == []
+    assert candidate(arr1 = [1, 4, 6, 9, 11, 13, 17, 20],arr2 = [3, 4, 7, 11, 12, 15, 19, 20],arr3 = [2, 4, 5, 11, 14, 16, 17, 18]) == [4, 11]
+    assert candidate(arr1 = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000],arr2 = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240]) == []
+    assert candidate(arr1 = [3, 7, 11, 15, 19, 23, 27],arr2 = [2, 5, 11, 15, 18, 23, 26],arr3 = [1, 11, 15, 16, 19, 23, 28]) == [11, 15, 23]
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == []
+    assert candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950],arr3 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]) == [6]
+    assert candidate(arr1 = [3, 6, 9, 12, 15, 18],arr2 = [6, 12, 18, 24, 30],arr3 = [9, 12, 15, 18, 21]) == [12, 18]
+    assert candidate(arr1 = [200, 400, 600, 800, 1000],arr2 = [100, 300, 500, 700, 900],arr3 = [150, 350, 550, 750, 950]) == []
+    assert candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]) == [12]
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],arr3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]) == []
+    assert candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr2 = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101],arr3 = [1, 21, 41, 61, 81, 101, 121, 141, 161, 181, 201]) == [1]
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15]
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],arr3 = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == []
+    assert candidate(arr1 = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70],arr2 = [1, 7, 13, 19, 25, 31, 37, 43, 49, 55],arr3 = [1, 14, 21, 28, 35, 42, 49, 56, 63, 70]) == [49]
+    assert candidate(arr1 = [500, 1000, 1500, 2000],arr2 = [400, 900, 1400, 1900],arr3 = [600, 1100, 1600, 2100]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [5, 6, 7, 8, 9, 10]
+    assert candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500],arr3 = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]) == [600]
+    assert candidate(arr1 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],arr3 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],arr3 = [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]) == []
+    assert candidate(arr1 = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95],arr2 = [5, 20, 35, 50, 65, 80, 95, 110, 125, 140],arr3 = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185]) == [5, 65]
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],arr3 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == [10, 20, 30, 40, 50]
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == []
+    assert candidate(arr1 = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == [15, 30]
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15]) == [6, 12]
+    assert candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [200, 300, 400, 500, 600]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],arr3 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == [11, 12, 13, 14, 15]
+    assert candidate(arr1 = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],arr2 = [100, 102, 104, 106, 108, 110, 112, 114, 116, 118],arr3 = [99, 102, 105, 108, 111, 114, 117, 120, 123, 126]) == [102, 108]
+    assert candidate(arr1 = [100, 200, 300, 400, 500],arr2 = [150, 250, 350, 450, 550],arr3 = [125, 225, 325, 425, 525]) == []
+    assert candidate(arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],arr2 = [10, 21, 32, 43, 54, 65, 76, 87, 98, 109],arr3 = [10, 22, 34, 46, 58, 70, 82, 94, 106, 118]) == [10]
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [5, 10, 15, 20, 25],arr3 = [10, 20, 30, 40, 50]) == [10, 20]
+    assert candidate(arr1 = [500, 700, 900, 1100, 1300],arr2 = [300, 500, 700, 900, 1100],arr3 = [100, 300, 500, 700, 900]) == [500, 700, 900]
+    assert candidate(arr1 = [10, 20, 30, 40, 50],arr2 = [15, 25, 35, 45, 55],arr3 = [20, 30, 40, 50, 60]) == []
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],arr2 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45],arr3 = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]) == [15]
+    assert candidate(arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],arr3 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == []
+    assert candidate(arr1 = [2, 4, 6, 8, 10, 12, 14, 16, 18],arr2 = [1, 3, 5, 7, 9, 11, 13, 15, 17],arr3 = [0, 2, 4, 6, 8, 10, 12, 14, 16]) == []
+    assert candidate(arr1 = [1, 3, 5, 7, 9, 11, 13],arr2 = [2, 4, 6, 8, 10, 12, 14],arr3 = [3, 6, 9, 12, 15, 18, 21]) == []
+    assert candidate(arr1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],arr3 = [50, 150, 250, 350, 450, 550, 650, 750, 850, 950]) == []
+
+

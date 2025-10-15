@@ -1,0 +1,851 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(buses = [50, 60, 70],passengers = [5, 10, 20, 30, 40],capacity = 5) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [50, 60, 70],passengers = [5, 10, 20, 30, 40],capacity = 5) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [3, 5, 7],passengers = [2, 4, 6, 8],capacity = 1) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [3, 5, 7],passengers = [2, 4, 6, 8],capacity = 1) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [2, 4, 6, 8, 10],passengers = [1, 3, 5, 7, 9],capacity = 1) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [2, 4, 6, 8, 10],passengers = [1, 3, 5, 7, 9],capacity = 1) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [3, 8, 15, 25],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [3, 8, 15, 25],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20],passengers = [2, 17, 18, 19],capacity = 2) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20],passengers = [2, 17, 18, 19],capacity = 2) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40],passengers = [5, 10, 15, 20, 25, 30, 35, 40],capacity = 1) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40],passengers = [5, 10, 15, 20, 25, 30, 35, 40],capacity = 1) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200],passengers = [99, 101, 102, 103],capacity = 2) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200],passengers = [99, 101, 102, 103],capacity = 2) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100],passengers = [99],capacity = 1) == 98
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100],passengers = [99],capacity = 1) == 98: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 20],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 20],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [30],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 3) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [30],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 3) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100],passengers = [10],capacity = 1) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100],passengers = [10],capacity = 1) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 30, 10],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 2) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 30, 10],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 2) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [10, 20, 30, 40, 50],capacity = 1) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [10, 20, 30, 40, 50],capacity = 1) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450],capacity = 5) == 349
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450],capacity = 5) == 349: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],capacity = 2) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],capacity = 2) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 25, 35, 45, 55],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 25, 35, 45, 55],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],capacity = 1) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],capacity = 1) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 12, 19, 26, 33],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],capacity = 2) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 12, 19, 26, 33],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],capacity = 2) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 19, 29, 39, 49],capacity = 1) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 19, 29, 39, 49],capacity = 1) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],capacity = 3) == 399
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],capacity = 3) == 399: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 30, 45, 60, 75],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capacity = 3) == 75
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 30, 45, 60, 75],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capacity = 3) == 75: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 20, 30, 40],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],capacity = 2) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 20, 30, 40],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],capacity = 2) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 1) == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 1) == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 5) == 43
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 5) == 43: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 5) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 5) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300],passengers = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 189
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300],passengers = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 189: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300],passengers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],capacity = 2) == 299
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300],passengers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],capacity = 2) == 299: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [12, 24, 36, 48, 60],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60],capacity = 5) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [12, 24, 36, 48, 60],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60],capacity = 5) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [30, 60, 90, 120, 150],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],capacity = 4) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [30, 60, 90, 120, 150],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],capacity = 4) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],capacity = 2) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],capacity = 2) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 30, 45, 60, 75],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 5) == 74
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 30, 45, 60, 75],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 5) == 74: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 1) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 1) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],capacity = 2) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],capacity = 2) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [50, 60, 70, 80, 90],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90],capacity = 10) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [50, 60, 70, 80, 90],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90],capacity = 10) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 1) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 1) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54],capacity = 1) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54],capacity = 1) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300],passengers = [50, 99, 101, 149, 151, 299, 301],capacity = 2) == 298
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300],passengers = [50, 99, 101, 149, 151, 299, 301],capacity = 2) == 298: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 50, 70, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 5) == 94
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 50, 70, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 5) == 94: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104],capacity = 3) == 63
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104],capacity = 3) == 63: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 10) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 10) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],capacity = 10) == 489
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],capacity = 10) == 489: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55],capacity = 3) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55],capacity = 3) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],capacity = 2) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],capacity = 2) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45],passengers = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45],passengers = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 2) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 2) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 25, 50, 75, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 1) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 25, 50, 75, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 1) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99],capacity = 1) == 98
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99],capacity = 1) == 98: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150],capacity = 3) == 134
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150],capacity = 3) == 134: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450],capacity = 1) == 449
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450],capacity = 1) == 449: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capacity = 1) == 39
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capacity = 1) == 39: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310],capacity = 10) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310],capacity = 10) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 120, 140, 160, 180],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 179
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 120, 140, 160, 180],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 179: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 15) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 15) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 3) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 3) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],capacity = 4) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],capacity = 4) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 10, 20, 25],passengers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 10, 20, 25],passengers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300],passengers = [50, 150, 250, 350],capacity = 3) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300],passengers = [50, 150, 250, 350],capacity = 3) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45],passengers = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60],capacity = 2) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45],passengers = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60],capacity = 2) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 25, 40, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 6) == 48
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 25, 40, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 6) == 48: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 15, 25, 35, 45, 55, 65],capacity = 2) == 60
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 15, 25, 35, 45, 55, 65],capacity = 2) == 60: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49],capacity = 3) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49],capacity = 3) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [15, 30, 45, 60],passengers = [3, 4, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 5) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [15, 30, 45, 60],passengers = [3, 4, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 5) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 99
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 99: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 5, 7, 10, 15, 18, 20, 22, 25, 30, 32, 35, 40, 42, 45],capacity = 3) == 41
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 5, 7, 10, 15, 18, 20, 22, 25, 30, 32, 35, 40, 42, 45],capacity = 3) == 41: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 4) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 4) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],capacity = 3) == 29
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],capacity = 3) == 29: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 3) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 3) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55],capacity = 1) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55],capacity = 1) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 4) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 4) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200],capacity = 50) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200],capacity = 50) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],capacity = 1) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],capacity = 1) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99],capacity = 1) == 44
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99],capacity = 1) == 44: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [3, 8, 15, 25, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [3, 8, 15, 25, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [1000, 2000, 3000],passengers = [500, 1500, 2500, 3500, 4500],capacity = 2) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [1000, 2000, 3000],passengers = [500, 1500, 2500, 3500, 4500],capacity = 2) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],capacity = 3) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],capacity = 3) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 2) == 49
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 2) == 49: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109],capacity = 2) == 38
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109],capacity = 2) == 38: {e}')
+    
+    total += 1
+    try:
+        result = candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 1) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 1) == 24: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(buses = [50, 60, 70],passengers = [5, 10, 20, 30, 40],capacity = 5) == 70
+    assert candidate(buses = [3, 5, 7],passengers = [2, 4, 6, 8],capacity = 1) == 5
+    assert candidate(buses = [2, 4, 6, 8, 10],passengers = [1, 3, 5, 7, 9],capacity = 1) == 8
+    assert candidate(buses = [3, 8, 15, 25],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 5) == 0
+    assert candidate(buses = [10, 20],passengers = [2, 17, 18, 19],capacity = 2) == 16
+    assert candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 3) == 0
+    assert candidate(buses = [10, 20, 30, 40],passengers = [5, 10, 15, 20, 25, 30, 35, 40],capacity = 1) == 19
+    assert candidate(buses = [100, 200],passengers = [99, 101, 102, 103],capacity = 2) == 100
+    assert candidate(buses = [100],passengers = [99],capacity = 1) == 98
+    assert candidate(buses = [5, 10, 20],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0
+    assert candidate(buses = [30],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 3) == 12
+    assert candidate(buses = [100],passengers = [10],capacity = 1) == 9
+    assert candidate(buses = [20, 30, 10],passengers = [19, 13, 26, 4, 25, 11, 21],capacity = 2) == 20
+    assert candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 38
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [10, 20, 30, 40, 50],capacity = 1) == 49
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450, 50, 150, 250, 350, 450],capacity = 5) == 349
+    assert candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],capacity = 2) == 50
+    assert candidate(buses = [15, 25, 35, 45, 55],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 55
+    assert candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],capacity = 1) == 18
+    assert candidate(buses = [5, 12, 19, 26, 33],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],capacity = 2) == 26
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 19, 29, 39, 49],capacity = 1) == 48
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500],capacity = 3) == 399
+    assert candidate(buses = [15, 30, 45, 60, 75],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],capacity = 3) == 75
+    assert candidate(buses = [5, 10, 20, 30, 40],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60],capacity = 2) == 26
+    assert candidate(buses = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 1) == 19
+    assert candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 5) == 43
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 5) == 48
+    assert candidate(buses = [100, 200, 300],passengers = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],capacity = 5) == 189
+    assert candidate(buses = [100, 200, 300],passengers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],capacity = 2) == 299
+    assert candidate(buses = [12, 24, 36, 48, 60],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60],capacity = 5) == 49
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],capacity = 5) == 0
+    assert candidate(buses = [30, 60, 90, 120, 150],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150],capacity = 4) == 99
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 500
+    assert candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],capacity = 2) == 49
+    assert candidate(buses = [15, 30, 45, 60, 75],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 5) == 74
+    assert candidate(buses = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 1) == 18
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],capacity = 2) == 44
+    assert candidate(buses = [50, 60, 70, 80, 90],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90],capacity = 10) == 0
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125],capacity = 1) == 49
+    assert candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54],capacity = 1) == 28
+    assert candidate(buses = [100, 200, 300],passengers = [50, 99, 101, 149, 151, 299, 301],capacity = 2) == 298
+    assert candidate(buses = [20, 50, 70, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 5) == 94
+    assert candidate(buses = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104],capacity = 3) == 63
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 49
+    assert candidate(buses = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 10) == 500
+    assert candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],capacity = 10) == 489
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 1) == 0
+    assert candidate(buses = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 4) == 0
+    assert candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 5) == 0
+    assert candidate(buses = [15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55],capacity = 3) == 28
+    assert candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],capacity = 2) == 18
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],capacity = 2) == 18
+    assert candidate(buses = [5, 15, 25, 35, 45],passengers = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44],capacity = 4) == 35
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 3) == 0
+    assert candidate(buses = [20, 40, 60, 80, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],capacity = 2) == 18
+    assert candidate(buses = [10, 25, 50, 75, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 1) == 0
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99],capacity = 1) == 98
+    assert candidate(buses = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],passengers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150],capacity = 3) == 134
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [50, 150, 250, 350, 450],capacity = 1) == 449
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],capacity = 1) == 39
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310],capacity = 10) == 500
+    assert candidate(buses = [100, 120, 140, 160, 180],passengers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300],capacity = 10) == 179
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 15) == 0
+    assert candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100],capacity = 3) == 99
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],capacity = 4) == 0
+    assert candidate(buses = [5, 10, 20, 25],passengers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],capacity = 3) == 1
+    assert candidate(buses = [100, 200, 300],passengers = [50, 150, 250, 350],capacity = 3) == 300
+    assert candidate(buses = [5, 15, 25, 35, 45],passengers = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60],capacity = 2) == 35
+    assert candidate(buses = [10, 25, 40, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 6) == 48
+    assert candidate(buses = [20, 30, 40, 50, 60],passengers = [5, 15, 25, 35, 45, 55, 65],capacity = 2) == 60
+    assert candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 3, 5, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49],capacity = 3) == 40
+    assert candidate(buses = [5, 15, 25, 35, 45, 55],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55],capacity = 3) == 0
+    assert candidate(buses = [15, 30, 45, 60],passengers = [3, 4, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59],capacity = 5) == 38
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],capacity = 2) == 99
+    assert candidate(buses = [5, 15, 25, 35, 45],passengers = [2, 5, 7, 10, 15, 18, 20, 22, 25, 30, 32, 35, 40, 42, 45],capacity = 3) == 41
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],capacity = 4) == 50
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50],capacity = 3) == 29
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 5) == 0
+    assert candidate(buses = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],capacity = 5) == 0
+    assert candidate(buses = [100, 200, 300, 400],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],capacity = 3) == 0
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 15, 25, 35, 45, 55],capacity = 1) == 44
+    assert candidate(buses = [10, 20, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9],capacity = 4) == 30
+    assert candidate(buses = [100, 200, 300, 400, 500],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200],capacity = 50) == 500
+    assert candidate(buses = [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],passengers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],capacity = 1) == 21
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99],capacity = 1) == 44
+    assert candidate(buses = [3, 8, 15, 25, 30, 40, 50],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],capacity = 5) == 0
+    assert candidate(buses = [1000, 2000, 3000],passengers = [500, 1500, 2500, 3500, 4500],capacity = 2) == 3000
+    assert candidate(buses = [10, 15, 20, 25, 30],passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],capacity = 3) == 30
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 2) == 49
+    assert candidate(buses = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],passengers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109],capacity = 2) == 38
+    assert candidate(buses = [10, 20, 30, 40, 50],passengers = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],capacity = 1) == 24
+
+

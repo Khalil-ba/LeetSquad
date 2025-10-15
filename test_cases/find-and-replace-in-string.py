@@ -1,0 +1,878 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd",indices = [0, 2],sources = ['a', 'cd'],targets = ['eee', 'ffff']) == "eeebffff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd",indices = [0, 2],sources = ['a', 'cd'],targets = ['eee', 'ffff']) == "eeebffff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd",indices = [0, 1, 2, 3],sources = ['a', 'b', 'c', 'd'],targets = ['aa', 'bb', 'cc', 'dd']) == "aabbccdd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd",indices = [0, 1, 2, 3],sources = ['a', 'b', 'c', 'd'],targets = ['aa', 'bb', 'cc', 'dd']) == "aabbccdd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcd",indices = [0, 2],sources = ['ab', 'ec'],targets = ['eee', 'ffff']) == "eeecd"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcd",indices = [0, 2],sources = ['ab', 'ec'],targets = ['eee', 'ffff']) == "eeecd": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "vmokgggqzp",indices = [3, 5, 1],sources = ['kg', 'gggg', 'mo'],targets = ['s', 'so', 'bfr']) == "vbfrsggqzp"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "vmokgggqzp",indices = [3, 5, 1],sources = ['kg', 'gggg', 'mo'],targets = ['s', 'so', 'bfr']) == "vbfrsggqzp": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hello",indices = [1, 4],sources = ['el', 'o'],targets = ['ll', 'oo']) == "hllloo"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hello",indices = [1, 4],sources = ['el', 'o'],targets = ['ll', 'oo']) == "hllloo": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'BB', 'CC']) == "AABBCC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'BB', 'CC']) == "AABBCC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaabbbbb",indices = [0, 5],sources = ['aaaaa', 'bbbbb'],targets = ['z', 'y']) == "zy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaabbbbb",indices = [0, 5],sources = ['aaaaa', 'bbbbb'],targets = ['z', 'y']) == "zy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhiijjkkllmmnnoopp",indices = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],sources = ['bb', 'dd', 'ff', 'hh', 'jj', 'll', 'nn', 'pp'],targets = ['XX', 'YY', 'ZZ', 'WW', 'VV', 'UU', 'TT', 'SS']) == "aabbccddeeffgghhiijjkkllmmnnoopp"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhiijjkkllmmnnoopp",indices = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],sources = ['bb', 'dd', 'ff', 'hh', 'jj', 'll', 'nn', 'pp'],targets = ['XX', 'YY', 'ZZ', 'WW', 'VV', 'UU', 'TT', 'SS']) == "aabbccddeeffgghhiijjkkllmmnnoopp": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",indices = [0, 4, 9],sources = ['pro', 'gra', 'ing'],targets = ['123', '456', '789']) == "123gramming"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",indices = [0, 4, 9],sources = ['pro', 'gra', 'ing'],targets = ['123', '456', '789']) == "123gramming": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xylophone",indices = [2, 4],sources = ['lo', 'ph'],targets = ['LOLO', 'PH']) == "xyLOLOPHone"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xylophone",indices = [2, 4],sources = ['lo', 'ph'],targets = ['LOLO', 'PH']) == "xyLOLOPHone": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [0, 4, 10],sources = ['mis', 'issi', 'i'],targets = ['xxx', 'yyy', 'zzz']) == "xxxsyyyppzzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [0, 4, 10],sources = ['mis', 'issi', 'i'],targets = ['xxx', 'yyy', 'zzz']) == "xxxsyyyppzzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "banana",indices = [0, 1, 2, 3, 4, 5],sources = ['b', 'a', 'n', 'a', 'n', 'a'],targets = ['B', 'A', 'N', 'A', 'N', 'A']) == "BANANA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "banana",indices = [0, 1, 2, 3, 4, 5],sources = ['b', 'a', 'n', 'a', 'n', 'a'],targets = ['B', 'A', 'N', 'A', 'N', 'A']) == "BANANA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "helloworld",indices = [0, 5],sources = ['hello', 'world'],targets = ['HELLO', 'WORLD']) == "HELLOWORLD"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "helloworld",indices = [0, 5],sources = ['hello', 'world'],targets = ['HELLO', 'WORLD']) == "HELLOWORLD": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithms",indices = [2, 6, 8],sources = ['gor', 'rith', 'ms'],targets = ['GOR', 'RITH', 'MS']) == "alGORithMS"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithms",indices = [2, 6, 8],sources = ['gor', 'rith', 'ms'],targets = ['GOR', 'RITH', 'MS']) == "alGORithMS": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mi', 'iss', 'ippi'],targets = ['MMM', 'NNN', 'OOO']) == "MMMssNNNippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mi', 'iss', 'ippi'],targets = ['MMM', 'NNN', 'OOO']) == "MMMssNNNippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzzzz",indices = [0, 2, 4, 6, 8],sources = ['zz', 'zz', 'zz', 'zz', 'zz'],targets = ['1', '2', '3', '4', '5']) == "12345"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzzzz",indices = [0, 2, 4, 6, 8],sources = ['zz', 'zz', 'zz', 'zz', 'zz'],targets = ['1', '2', '3', '4', '5']) == "12345": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg",indices = [1, 2, 3, 4, 5],sources = ['b', 'c', 'd', 'e', 'f'],targets = ['B', 'C', 'D', 'E', 'F']) == "aBCDEFg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg",indices = [1, 2, 3, 4, 5],sources = ['b', 'c', 'd', 'e', 'f'],targets = ['B', 'C', 'D', 'E', 'F']) == "aBCDEFg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx', 'wv']) == "xyyzzxwv"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx', 'wv']) == "xyyzzxwv": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgh",indices = [1, 3, 5, 7],sources = ['bc', 'fg', 'h', 'a'],targets = ['X', 'Y', 'Z', 'W']) == "aXdefgh"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgh",indices = [1, 3, 5, 7],sources = ['bc', 'fg', 'h', 'a'],targets = ['X', 'Y', 'Z', 'W']) == "aXdefgh": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['12', '34', '56', '78', '90']) == "1234567890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['12', '34', '56', '78', '90']) == "1234567890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yx', 'xy', 'yx', 'xy']) == "xyyxxyyxxy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yx', 'xy', 'yx', 'xy']) == "xyyxxyyxxy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'gh', 'jk', 'l'],targets = ['2', '3', '4', '5', '6']) == "a2defghijk"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'gh', 'jk', 'l'],targets = ['2', '3', '4', '5', '6']) == "a2defghijk": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['A', 'B', 'C', 'D', 'E']) == "ABCDE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['A', 'B', 'C', 'D', 'E']) == "ABCDE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'iss'],targets = ['42', '43']) == "miss42ippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'iss'],targets = ['42', '43']) == "miss42ippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'ef', 'hi'],targets = ['BCD', 'EFG', 'HIJ']) == "aBCDdEFGgHIJj"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'ef', 'hi'],targets = ['BCD', 'EFG', 'HIJ']) == "aBCDdEFGgHIJj": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mming'],targets = ['123', '456', '789']) == "123456789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mming'],targets = ['123', '456', '789']) == "123456789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'th'],targets = ['hola', 'allahuakbar']) == "holalloallahuakbarere"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'th'],targets = ['hola', 'allahuakbar']) == "holalloallahuakbarere": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeff",indices = [0, 3, 6, 9],sources = ['aab', 'bcd', 'cde', 'def'],targets = ['AAB', 'BCD', 'CDE', 'DEF']) == "AABbccddeeff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeff",indices = [0, 3, 6, 9],sources = ['aab', 'bcd', 'cde', 'def'],targets = ['AAB', 'BCD', 'CDE', 'DEF']) == "AABbccddeeff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "XXXYYYZZZWWW"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "XXXYYYZZZWWW": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9, 11],sources = ['ab', 'cd', 'ef', 'de', 'fg', 'ef'],targets = ['12', '34', '56', '43', '65', '65']) == "a12bccd43eff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9, 11],sources = ['ab', 'cd', 'ef', 'de', 'fg', 'ef'],targets = ['12', '34', '56', '43', '65', '65']) == "a12bccd43eff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'issi'],targets = ['3', '4']) == "miss3ippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'issi'],targets = ['3', '4']) == "miss3ippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgh",indices = [1, 4, 6],sources = ['bc', 'ef', 'gh'],targets = ['12', '34', '56']) == "a12d3456"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgh",indices = [1, 4, 6],sources = ['bc', 'ef', 'gh'],targets = ['12', '34', '56']) == "a12d3456": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisatest",indices = [2, 6, 9],sources = ['is', 'is', 'est'],targets = ['IS', 'IS', 'EST']) == "thISisatest"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisatest",indices = [2, 6, 9],sources = ['is', 'is', 'est'],targets = ['IS', 'IS', 'EST']) == "thISisatest": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thequickbrownfox",indices = [4, 9, 15],sources = ['qui', 'bro', 'fox'],targets = ['QUI', 'BRO', 'FOX']) == "thequickbrownfox"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thequickbrownfox",indices = [4, 9, 15],sources = ['qui', 'bro', 'fox'],targets = ['QUI', 'BRO', 'FOX']) == "thequickbrownfox": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'xy', 'xy', 'xy', 'xy']) == "xyxyxyxyxy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'xy', 'xy', 'xy', 'xy']) == "xyxyxyxyxy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellothere",indices = [1, 5, 8],sources = ['ell', 'the', 'er'],targets = ['123', '456', '789']) == "h123o456re"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellothere",indices = [1, 5, 8],sources = ['ell', 'the', 'er'],targets = ['123', '456', '789']) == "h123o456re": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeffgghhii",indices = [0, 2, 4, 6, 8, 10, 12, 14, 16],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II']) == "AABBCCDDEEFFGGHHII"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeffgghhii",indices = [0, 2, 4, 6, 8, 10, 12, 14, 16],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II']) == "AABBCCDDEEFFGGHHII": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk",indices = [0, 4, 8],sources = ['abc', 'efg', 'ijk'],targets = ['123', '456', '789']) == "123d456h789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk",indices = [0, 4, 8],sources = ['abc', 'efg', 'ijk'],targets = ['123', '456', '789']) == "123d456h789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['BCD', 'EFG', 'FGH', 'HIJ']) == "aBCDEFGFGHHIJj"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['BCD', 'EFG', 'FGH', 'HIJ']) == "aBCDEFGFGHHIJj": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeff",indices = [0, 2, 4, 6, 8, 10],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF']) == "AABBCCDDEEFF"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeff",indices = [0, 2, 4, 6, 8, 10],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF']) == "AABBCCDDEEFF": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ba', 'ab', 'ba', 'ab'],targets = ['A', 'B', 'C', 'D', 'E']) == "AabCabE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ba', 'ab', 'ba', 'ab'],targets = ['A', 'B', 'C', 'D', 'E']) == "AabCabE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "replacements",indices = [0, 5, 9],sources = ['rep', 'lac', 'tions'],targets = ['REP', 'LAC', 'TIONS']) == "REPlacements"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "replacements",indices = [0, 5, 9],sources = ['rep', 'lac', 'tions'],targets = ['REP', 'LAC', 'TIONS']) == "REPlacements": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mis', 'sis', 'sip'],targets = ['miss', 'sis', 'sip']) == "misssissippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mis', 'sis', 'sip'],targets = ['miss', 'sis', 'sip']) == "misssissippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisateststring",indices = [0, 4, 8, 12],sources = ['this', 'is', 'a', 'test'],targets = ['1', '2', '3', '4']) == "12ateststring"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisateststring",indices = [0, 4, 8, 12],sources = ['this', 'is', 'a', 'test'],targets = ['1', '2', '3', '4']) == "12ateststring": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [4, 6],sources = ['issi', 'issi'],targets = ['XXXX', 'YYYY']) == "missXXXXppi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [4, 6],sources = ['issi', 'issi'],targets = ['XXXX', 'YYYY']) == "missXXXXppi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "ababab",indices = [0, 2, 4],sources = ['ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx']) == "xyyzzx"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "ababab",indices = [0, 2, 4],sources = ['ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx']) == "xyyzzx": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgh",indices = [1, 4, 7],sources = ['bc', 'ef', 'h'],targets = ['BBB', 'EEE', 'HHH']) == "aBBBdEEEgHHH"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgh",indices = [1, 4, 7],sources = ['bc', 'ef', 'h'],targets = ['BBB', 'EEE', 'HHH']) == "aBBBdEEEgHHH": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'AA', 'AA']) == "AAAAAA"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'AA', 'AA']) == "AAAAAA": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'bye']) == "hibye"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'bye']) == "hibye": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaa",indices = [0, 1, 2, 3, 4, 5],sources = ['a', 'a', 'a', 'a', 'a', 'a'],targets = ['b', 'c', 'd', 'e', 'f', 'g']) == "bcdefg"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaa",indices = [0, 1, 2, 3, 4, 5],sources = ['a', 'a', 'a', 'a', 'a', 'a'],targets = ['b', 'c', 'd', 'e', 'f', 'g']) == "bcdefg": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],sources = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],targets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']) == "ABCDEFGHIJ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],sources = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],targets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']) == "ABCDEFGHIJ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk",indices = [0, 5, 10],sources = ['abc', 'fgh', 'ijk'],targets = ['123', '456', '789']) == "123de456ijk"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk",indices = [0, 5, 10],sources = ['abc', 'fgh', 'ijk'],targets = ['123', '456', '789']) == "123de456ijk": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "replaceeverything",indices = [0, 7, 14],sources = ['rep', 'ev', 'ing'],targets = ['REPLACE', 'EVERY', 'THING']) == "REPLACElaceEVERYerythTHING"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "replaceeverything",indices = [0, 7, 14],sources = ['rep', 'ev', 'ing'],targets = ['REPLACE', 'EVERY', 'THING']) == "REPLACElaceEVERYerythTHING": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [3, 7],sources = ['def', 'hij'],targets = ['12345', '67890']) == "abc12345g67890"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [3, 7],sources = ['def', 'hij'],targets = ['12345', '67890']) == "abc12345g67890": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaabbbbcccc",indices = [0, 4, 8],sources = ['aaaa', 'bbbb', 'cccc'],targets = ['AAAA', 'BBBB', 'CCCC']) == "AAAABBBBCCCC"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaabbbbcccc",indices = [0, 4, 8],sources = ['aaaa', 'bbbb', 'cccc'],targets = ['AAAA', 'BBBB', 'CCCC']) == "AAAABBBBCCCC": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'efg', 'ij'],targets = ['XX', 'YYY', 'ZZ']) == "aXXdYYYhij"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'efg', 'ij'],targets = ['XX', 'YYY', 'ZZ']) == "aXXdYYYhij": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xxxyyyzzz",indices = [0, 3, 6],sources = ['xxx', 'yyy', 'zzz'],targets = ['aaa', 'bbb', 'ccc']) == "aaabbbccc"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xxxyyyzzz",indices = [0, 3, 6],sources = ['xxx', 'yyy', 'zzz'],targets = ['aaa', 'bbb', 'ccc']) == "aaabbbccc": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hello_world",indices = [0, 6],sources = ['hello', 'world'],targets = ['hi', 'earth']) == "hi_earth"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hello_world",indices = [0, 6],sources = ['hello', 'world'],targets = ['hi', 'earth']) == "hi_earth": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [0, 4, 7],sources = ['mi', 'issi', 'issi'],targets = ['MMMM', 'IIII', 'XXXX']) == "MMMMssIIIIppi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [0, 4, 7],sources = ['mi', 'issi', 'issi'],targets = ['MMMM', 'IIII', 'XXXX']) == "MMMMssIIIIppi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "thisisatest",indices = [0, 2, 4, 6, 8, 10],sources = ['this', 'is', 'a', 'test', 'xx', 'xx'],targets = ['that', 'was', 'the', 'exam', 'yy', 'zz']) == "thatisatest"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "thisisatest",indices = [0, 2, 4, 6, 8, 10],sources = ['this', 'is', 'a', 'test', 'xx', 'xx'],targets = ['that', 'was', 'the', 'exam', 'yy', 'zz']) == "thatisatest": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hello', 'hello', 'hello'],targets = ['hi', 'ho', 'ha']) == "hihoha"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hello', 'hello', 'hello'],targets = ['hi', 'ho', 'ha']) == "hihoha": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefgabcdefg",indices = [0, 7],sources = ['abcdefg', 'abcdefg'],targets = ['ABCDEFG', 'ABCDEFG']) == "ABCDEFGABCDEFG"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefgabcdefg",indices = [0, 7],sources = ['abcdefg', 'abcdefg'],targets = ['ABCDEFG', 'ABCDEFG']) == "ABCDEFGABCDEFG": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['1', '2', '3', '4']) == "1234"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['1', '2', '3', '4']) == "1234": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [1, 4, 7],sources = ['is', 'is', 'is'],targets = ['aa', 'bb', 'cc']) == "maasbbsippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [1, 4, 7],sources = ['is', 'is', 'is'],targets = ['aa', 'bb', 'cc']) == "maasbbsippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "oneonetwoonetwoone",indices = [0, 4, 8, 12],sources = ['one', 'one', 'two', 'two'],targets = ['111', '222', '333', '444']) == "111onetwoone444one"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "oneonetwoonetwoone",indices = [0, 4, 8, 12],sources = ['one', 'one', 'two', 'two'],targets = ['111', '222', '333', '444']) == "111onetwoone444one": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hel', 'ell', 'llo'],targets = ['H', 'E', 'L']) == "Hlohellohello"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hel', 'ell', 'llo'],targets = ['H', 'E', 'L']) == "Hlohellohello": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['PRO', 'GRA', 'MMI', 'NG']) == "PROGRAMMING"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['PRO', 'GRA', 'MMI', 'NG']) == "PROGRAMMING": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', '00', '11', '22']) == "xyzw001122"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', '00', '11', '22']) == "xyzw001122": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "alabama",indices = [0, 2, 4],sources = ['al', 'ba', 'ma'],targets = ['AL', 'BA', 'MA']) == "ALabama"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "alabama",indices = [0, 2, 4],sources = ['al', 'ba', 'ma'],targets = ['AL', 'BA', 'MA']) == "ALabama": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abracadabra",indices = [0, 3, 7, 10],sources = ['abra', 'cad', 'abr', 'a'],targets = ['1', '2', '3', '4']) == "1cad34"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abracadabra",indices = [0, 3, 7, 10],sources = ['abra', 'cad', 'abr', 'a'],targets = ['1', '2', '3', '4']) == "1cad34": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [0, 4, 8],sources = ['mis', 'iss', 'ippi'],targets = ['misss', 'issii', 'ipppi']) == "missssissiiippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [0, 4, 8],sources = ['mis', 'iss', 'ippi'],targets = ['misss', 'issii', 'ipppi']) == "missssissiiippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['1', '2', '3', '4']) == "12mming"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['1', '2', '3', '4']) == "12mming": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'g', 'am', 'mm'],targets = ['code', 'G', 'AM', 'MM']) == "codeGrAMming"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'g', 'am', 'mm'],targets = ['code', 'G', 'AM', 'MM']) == "codeGrAMming": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'there'],targets = ['HELLO', 'THERE']) == "HELLOlloTHERE"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'there'],targets = ['HELLO', 'THERE']) == "HELLOlloTHERE": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "mississippi",indices = [4, 6],sources = ['is', 'ip'],targets = ['IS', 'IP']) == "missISsippi"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "mississippi",indices = [4, 6],sources = ['is', 'ip'],targets = ['IS', 'IP']) == "missISsippi": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "foobarbaz",indices = [0, 3, 6],sources = ['foo', 'bar', 'baz'],targets = ['FOO', 'BAR', 'BAZ']) == "FOOBARBAZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "foobarbaz",indices = [0, 3, 6],sources = ['foo', 'bar', 'baz'],targets = ['FOO', 'BAR', 'BAZ']) == "FOOBARBAZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['XX', 'YY', 'ZZ', 'WW']) == "XXYYZZWW"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['XX', 'YY', 'ZZ', 'WW']) == "XXYYZZWW": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'world']) == "hiworld"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'world']) == "hiworld": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "banana",indices = [0, 2, 4],sources = ['ba', 'na', 'na'],targets = ['xx', 'yy', 'zz']) == "xxyyzz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "banana",indices = [0, 2, 4],sources = ['ba', 'na', 'na'],targets = ['xx', 'yy', 'zz']) == "xxyyzz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [2, 4, 6, 8],sources = ['cd', 'ef', 'gh', 'ij'],targets = ['1234', '5678', '91011', '121314']) == "ab1234567891011121314"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [2, 4, 6, 8],sources = ['cd', 'ef', 'gh', 'ij'],targets = ['1234', '5678', '91011', '121314']) == "ab1234567891011121314": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "banana",indices = [1, 3],sources = ['an', 'na'],targets = ['xx', 'yy']) == "bxxana"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "banana",indices = [1, 3],sources = ['an', 'na'],targets = ['xx', 'yy']) == "bxxana": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "algorithms",indices = [1, 3, 5, 7],sources = ['l', 'g', 'm', 'th'],targets = ['X', 'Y', 'Z', 'ABC']) == "aXgorithms"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "algorithms",indices = [1, 3, 5, 7],sources = ['l', 'g', 'm', 'th'],targets = ['X', 'Y', 'Z', 'ABC']) == "aXgorithms": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abracadabra",indices = [0, 5, 7],sources = ['abra', 'a', 'abra'],targets = ['zzzz', 'x', 'yyyy']) == "zzzzcxdyyyy"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abracadabra",indices = [0, 5, 7],sources = ['abra', 'a', 'abra'],targets = ['zzzz', 'x', 'yyyy']) == "zzzzcxdyyyy": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['XX', 'YY', 'ZZ', 'QQ']) == "aXXYYZZQQj"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['XX', 'YY', 'ZZ', 'QQ']) == "aXXYYZZQQj": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "banana",indices = [1, 3, 5],sources = ['an', 'an', 'a'],targets = ['XX', 'YY', 'ZZ']) == "bXXYYZZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "banana",indices = [1, 3, 5],sources = ['an', 'an', 'a'],targets = ['XX', 'YY', 'ZZ']) == "bXXYYZZ": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', 'XY', 'ZW', 'IJ']) == "axybccddeeff"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', 'XY', 'ZW', 'IJ']) == "axybccddeeff": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abc', 'fgh', 'klm', 'pqr', 'uvw'],targets = ['123', '456', '789', '012', '345']) == "123de456ij789no012st345xyz"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abc', 'fgh', 'klm', 'pqr', 'uvw'],targets = ['123', '456', '789', '012', '345']) == "123de456ij789no012st345xyz": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abracadabra",indices = [0, 3, 7],sources = ['abr', 'aca', 'bra'],targets = ['A', 'B', 'C']) == "ABdabra"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abracadabra",indices = [0, 3, 7],sources = ['abr', 'aca', 'bra'],targets = ['A', 'B', 'C']) == "ABdabra": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy'],targets = ['11111', '22222', '33333', '44444', '55555']) == "1111122222333334444455555z"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy'],targets = ['11111', '22222', '33333', '44444', '55555']) == "1111122222333334444455555z": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "programmingisfun",indices = [3, 10, 15],sources = ['gram', 'is', 'fun'],targets = ['code', 'was', 'great']) == "procodemingisfun"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "programmingisfun",indices = [3, 10, 15],sources = ['gram', 'is', 'fun'],targets = ['code', 'was', 'great']) == "procodemingisfun": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['1', '2', '3']) == "123"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['1', '2', '3']) == "123": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefg",indices = [0, 3, 5],sources = ['abc', 'de', 'fg'],targets = ['xyz', 'qrs', 'tuv']) == "xyzqrstuv"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefg",indices = [0, 3, 5],sources = ['abc', 'de', 'fg'],targets = ['xyz', 'qrs', 'tuv']) == "xyzqrstuv": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['123', '456', '789']) == "123456789"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['123', '456', '789']) == "123456789": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "zzzzzzzz",indices = [0, 1, 2, 3, 4, 5, 6],sources = ['zz', 'zz', 'zz', 'zz', 'zz', 'zz', 'zz'],targets = ['ZZ', 'YY', 'XX', 'WW', 'VV', 'UU', 'TT']) == "ZZXXVVTT"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "zzzzzzzz",indices = [0, 1, 2, 3, 4, 5, 6],sources = ['zz', 'zz', 'zz', 'zz', 'zz', 'zz', 'zz'],targets = ['ZZ', 'YY', 'XX', 'WW', 'VV', 'UU', 'TT']) == "ZZXXVVTT": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "abcdefghij",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'hi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "aXXXdefghij"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "abcdefghij",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'hi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "aXXXdefghij": {e}')
+    
+    total += 1
+    try:
+        result = candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['XYZ', 'XYZ', 'XYZ']) == "XYZXYZXYZ"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['XYZ', 'XYZ', 'XYZ']) == "XYZXYZXYZ": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(s = "abcd",indices = [0, 2],sources = ['a', 'cd'],targets = ['eee', 'ffff']) == "eeebffff"
+    assert candidate(s = "abcd",indices = [0, 1, 2, 3],sources = ['a', 'b', 'c', 'd'],targets = ['aa', 'bb', 'cc', 'dd']) == "aabbccdd"
+    assert candidate(s = "abcd",indices = [0, 2],sources = ['ab', 'ec'],targets = ['eee', 'ffff']) == "eeecd"
+    assert candidate(s = "vmokgggqzp",indices = [3, 5, 1],sources = ['kg', 'gggg', 'mo'],targets = ['s', 'so', 'bfr']) == "vbfrsggqzp"
+    assert candidate(s = "hello",indices = [1, 4],sources = ['el', 'o'],targets = ['ll', 'oo']) == "hllloo"
+    assert candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'BB', 'CC']) == "AABBCC"
+    assert candidate(s = "aaaaabbbbb",indices = [0, 5],sources = ['aaaaa', 'bbbbb'],targets = ['z', 'y']) == "zy"
+    assert candidate(s = "aabbccddeeffgghhiijjkkllmmnnoopp",indices = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],sources = ['bb', 'dd', 'ff', 'hh', 'jj', 'll', 'nn', 'pp'],targets = ['XX', 'YY', 'ZZ', 'WW', 'VV', 'UU', 'TT', 'SS']) == "aabbccddeeffgghhiijjkkllmmnnoopp"
+    assert candidate(s = "programming",indices = [0, 4, 9],sources = ['pro', 'gra', 'ing'],targets = ['123', '456', '789']) == "123gramming"
+    assert candidate(s = "xylophone",indices = [2, 4],sources = ['lo', 'ph'],targets = ['LOLO', 'PH']) == "xyLOLOPHone"
+    assert candidate(s = "mississippi",indices = [0, 4, 10],sources = ['mis', 'issi', 'i'],targets = ['xxx', 'yyy', 'zzz']) == "xxxsyyyppzzz"
+    assert candidate(s = "banana",indices = [0, 1, 2, 3, 4, 5],sources = ['b', 'a', 'n', 'a', 'n', 'a'],targets = ['B', 'A', 'N', 'A', 'N', 'A']) == "BANANA"
+    assert candidate(s = "helloworld",indices = [0, 5],sources = ['hello', 'world'],targets = ['HELLO', 'WORLD']) == "HELLOWORLD"
+    assert candidate(s = "algorithms",indices = [2, 6, 8],sources = ['gor', 'rith', 'ms'],targets = ['GOR', 'RITH', 'MS']) == "alGORithMS"
+    assert candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mi', 'iss', 'ippi'],targets = ['MMM', 'NNN', 'OOO']) == "MMMssNNNippi"
+    assert candidate(s = "zzzzzzzzzz",indices = [0, 2, 4, 6, 8],sources = ['zz', 'zz', 'zz', 'zz', 'zz'],targets = ['1', '2', '3', '4', '5']) == "12345"
+    assert candidate(s = "abcdefg",indices = [1, 2, 3, 4, 5],sources = ['b', 'c', 'd', 'e', 'f'],targets = ['B', 'C', 'D', 'E', 'F']) == "aBCDEFg"
+    assert candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx', 'wv']) == "xyyzzxwv"
+    assert candidate(s = "abcdefgh",indices = [1, 3, 5, 7],sources = ['bc', 'fg', 'h', 'a'],targets = ['X', 'Y', 'Z', 'W']) == "aXdefgh"
+    assert candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['12', '34', '56', '78', '90']) == "1234567890"
+    assert candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'yx', 'xy', 'yx', 'xy']) == "xyyxxyyxxy"
+    assert candidate(s = "abcdefghijk",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'gh', 'jk', 'l'],targets = ['2', '3', '4', '5', '6']) == "a2defghijk"
+    assert candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['A', 'B', 'C', 'D', 'E']) == "ABCDE"
+    assert candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'iss'],targets = ['42', '43']) == "miss42ippi"
+    assert candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'ef', 'hi'],targets = ['BCD', 'EFG', 'HIJ']) == "aBCDdEFGgHIJj"
+    assert candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mming'],targets = ['123', '456', '789']) == "123456789"
+    assert candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'th'],targets = ['hola', 'allahuakbar']) == "holalloallahuakbarere"
+    assert candidate(s = "aabbccddeeff",indices = [0, 3, 6, 9],sources = ['aab', 'bcd', 'cde', 'def'],targets = ['AAB', 'BCD', 'CDE', 'DEF']) == "AABbccddeeff"
+    assert candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "XXXYYYZZZWWW"
+    assert candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9, 11],sources = ['ab', 'cd', 'ef', 'de', 'fg', 'ef'],targets = ['12', '34', '56', '43', '65', '65']) == "a12bccd43eff"
+    assert candidate(s = "mississippi",indices = [4, 6],sources = ['iss', 'issi'],targets = ['3', '4']) == "miss3ippi"
+    assert candidate(s = "abcdefgh",indices = [1, 4, 6],sources = ['bc', 'ef', 'gh'],targets = ['12', '34', '56']) == "a12d3456"
+    assert candidate(s = "thisisatest",indices = [2, 6, 9],sources = ['is', 'is', 'est'],targets = ['IS', 'IS', 'EST']) == "thISisatest"
+    assert candidate(s = "thequickbrownfox",indices = [4, 9, 15],sources = ['qui', 'bro', 'fox'],targets = ['QUI', 'BRO', 'FOX']) == "thequickbrownfox"
+    assert candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ab', 'ab', 'ab', 'ab'],targets = ['xy', 'xy', 'xy', 'xy', 'xy']) == "xyxyxyxyxy"
+    assert candidate(s = "hellothere",indices = [1, 5, 8],sources = ['ell', 'the', 'er'],targets = ['123', '456', '789']) == "h123o456re"
+    assert candidate(s = "aabbccddeeffgghhii",indices = [0, 2, 4, 6, 8, 10, 12, 14, 16],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II']) == "AABBCCDDEEFFGGHHII"
+    assert candidate(s = "abcdefghijk",indices = [0, 4, 8],sources = ['abc', 'efg', 'ijk'],targets = ['123', '456', '789']) == "123d456h789"
+    assert candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['BCD', 'EFG', 'FGH', 'HIJ']) == "aBCDEFGFGHHIJj"
+    assert candidate(s = "aabbccddeeff",indices = [0, 2, 4, 6, 8, 10],sources = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff'],targets = ['AA', 'BB', 'CC', 'DD', 'EE', 'FF']) == "AABBCCDDEEFF"
+    assert candidate(s = "ababababab",indices = [0, 2, 4, 6, 8],sources = ['ab', 'ba', 'ab', 'ba', 'ab'],targets = ['A', 'B', 'C', 'D', 'E']) == "AabCabE"
+    assert candidate(s = "replacements",indices = [0, 5, 9],sources = ['rep', 'lac', 'tions'],targets = ['REP', 'LAC', 'TIONS']) == "REPlacements"
+    assert candidate(s = "mississippi",indices = [0, 4, 6],sources = ['mis', 'sis', 'sip'],targets = ['miss', 'sis', 'sip']) == "misssissippi"
+    assert candidate(s = "thisisateststring",indices = [0, 4, 8, 12],sources = ['this', 'is', 'a', 'test'],targets = ['1', '2', '3', '4']) == "12ateststring"
+    assert candidate(s = "mississippi",indices = [4, 6],sources = ['issi', 'issi'],targets = ['XXXX', 'YYYY']) == "missXXXXppi"
+    assert candidate(s = "ababab",indices = [0, 2, 4],sources = ['ab', 'ab', 'ab'],targets = ['xy', 'yz', 'zx']) == "xyyzzx"
+    assert candidate(s = "abcdefgh",indices = [1, 4, 7],sources = ['bc', 'ef', 'h'],targets = ['BBB', 'EEE', 'HHH']) == "aBBBdEEEgHHH"
+    assert candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['AA', 'AA', 'AA']) == "AAAAAA"
+    assert candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'bye']) == "hibye"
+    assert candidate(s = "aaaaaa",indices = [0, 1, 2, 3, 4, 5],sources = ['a', 'a', 'a', 'a', 'a', 'a'],targets = ['b', 'c', 'd', 'e', 'f', 'g']) == "bcdefg"
+    assert candidate(s = "abcdefghij",indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],sources = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],targets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']) == "ABCDEFGHIJ"
+    assert candidate(s = "abcdefghijk",indices = [0, 5, 10],sources = ['abc', 'fgh', 'ijk'],targets = ['123', '456', '789']) == "123de456ijk"
+    assert candidate(s = "replaceeverything",indices = [0, 7, 14],sources = ['rep', 'ev', 'ing'],targets = ['REPLACE', 'EVERY', 'THING']) == "REPLACElaceEVERYerythTHING"
+    assert candidate(s = "abcdefghij",indices = [3, 7],sources = ['def', 'hij'],targets = ['12345', '67890']) == "abc12345g67890"
+    assert candidate(s = "aaaabbbbcccc",indices = [0, 4, 8],sources = ['aaaa', 'bbbb', 'cccc'],targets = ['AAAA', 'BBBB', 'CCCC']) == "AAAABBBBCCCC"
+    assert candidate(s = "abcdefghij",indices = [1, 4, 7],sources = ['bc', 'efg', 'ij'],targets = ['XX', 'YYY', 'ZZ']) == "aXXdYYYhij"
+    assert candidate(s = "xxxyyyzzz",indices = [0, 3, 6],sources = ['xxx', 'yyy', 'zzz'],targets = ['aaa', 'bbb', 'ccc']) == "aaabbbccc"
+    assert candidate(s = "hello_world",indices = [0, 6],sources = ['hello', 'world'],targets = ['hi', 'earth']) == "hi_earth"
+    assert candidate(s = "mississippi",indices = [0, 4, 7],sources = ['mi', 'issi', 'issi'],targets = ['MMMM', 'IIII', 'XXXX']) == "MMMMssIIIIppi"
+    assert candidate(s = "thisisatest",indices = [0, 2, 4, 6, 8, 10],sources = ['this', 'is', 'a', 'test', 'xx', 'xx'],targets = ['that', 'was', 'the', 'exam', 'yy', 'zz']) == "thatisatest"
+    assert candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hello', 'hello', 'hello'],targets = ['hi', 'ho', 'ha']) == "hihoha"
+    assert candidate(s = "abcdefgabcdefg",indices = [0, 7],sources = ['abcdefg', 'abcdefg'],targets = ['ABCDEFG', 'ABCDEFG']) == "ABCDEFGABCDEFG"
+    assert candidate(s = "abcdefghijk",indices = [0, 3, 6, 9],sources = ['abc', 'def', 'ghi', 'jk'],targets = ['1', '2', '3', '4']) == "1234"
+    assert candidate(s = "mississippi",indices = [1, 4, 7],sources = ['is', 'is', 'is'],targets = ['aa', 'bb', 'cc']) == "maasbbsippi"
+    assert candidate(s = "oneonetwoonetwoone",indices = [0, 4, 8, 12],sources = ['one', 'one', 'two', 'two'],targets = ['111', '222', '333', '444']) == "111onetwoone444one"
+    assert candidate(s = "hellohellohello",indices = [0, 5, 10],sources = ['hel', 'ell', 'llo'],targets = ['H', 'E', 'L']) == "Hlohellohello"
+    assert candidate(s = "programming",indices = [0, 3, 6, 9],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['PRO', 'GRA', 'MMI', 'NG']) == "PROGRAMMING"
+    assert candidate(s = "abcdefghij",indices = [0, 2, 4, 6, 8],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', '00', '11', '22']) == "xyzw001122"
+    assert candidate(s = "alabama",indices = [0, 2, 4],sources = ['al', 'ba', 'ma'],targets = ['AL', 'BA', 'MA']) == "ALabama"
+    assert candidate(s = "abracadabra",indices = [0, 3, 7, 10],sources = ['abra', 'cad', 'abr', 'a'],targets = ['1', '2', '3', '4']) == "1cad34"
+    assert candidate(s = "mississippi",indices = [0, 4, 8],sources = ['mis', 'iss', 'ippi'],targets = ['misss', 'issii', 'ipppi']) == "missssissiiippi"
+    assert candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'gra', 'mmi', 'ng'],targets = ['1', '2', '3', '4']) == "12mming"
+    assert candidate(s = "programming",indices = [0, 3, 5, 8],sources = ['pro', 'g', 'am', 'mm'],targets = ['code', 'G', 'AM', 'MM']) == "codeGrAMming"
+    assert candidate(s = "hellothere",indices = [0, 5],sources = ['he', 'there'],targets = ['HELLO', 'THERE']) == "HELLOlloTHERE"
+    assert candidate(s = "mississippi",indices = [4, 6],sources = ['is', 'ip'],targets = ['IS', 'IP']) == "missISsippi"
+    assert candidate(s = "foobarbaz",indices = [0, 3, 6],sources = ['foo', 'bar', 'baz'],targets = ['FOO', 'BAR', 'BAZ']) == "FOOBARBAZ"
+    assert candidate(s = "abababab",indices = [0, 2, 4, 6],sources = ['ab', 'ab', 'ab', 'ab'],targets = ['XX', 'YY', 'ZZ', 'WW']) == "XXYYZZWW"
+    assert candidate(s = "hellothere",indices = [0, 5],sources = ['hello', 'there'],targets = ['hi', 'world']) == "hiworld"
+    assert candidate(s = "banana",indices = [0, 2, 4],sources = ['ba', 'na', 'na'],targets = ['xx', 'yy', 'zz']) == "xxyyzz"
+    assert candidate(s = "abcdefghij",indices = [2, 4, 6, 8],sources = ['cd', 'ef', 'gh', 'ij'],targets = ['1234', '5678', '91011', '121314']) == "ab1234567891011121314"
+    assert candidate(s = "banana",indices = [1, 3],sources = ['an', 'na'],targets = ['xx', 'yy']) == "bxxana"
+    assert candidate(s = "algorithms",indices = [1, 3, 5, 7],sources = ['l', 'g', 'm', 'th'],targets = ['X', 'Y', 'Z', 'ABC']) == "aXgorithms"
+    assert candidate(s = "abracadabra",indices = [0, 5, 7],sources = ['abra', 'a', 'abra'],targets = ['zzzz', 'x', 'yyyy']) == "zzzzcxdyyyy"
+    assert candidate(s = "abcdefghij",indices = [1, 3, 5, 7],sources = ['bc', 'de', 'fg', 'hi'],targets = ['XX', 'YY', 'ZZ', 'QQ']) == "aXXYYZZQQj"
+    assert candidate(s = "banana",indices = [1, 3, 5],sources = ['an', 'an', 'a'],targets = ['XX', 'YY', 'ZZ']) == "bXXYYZZ"
+    assert candidate(s = "aabbccddeeff",indices = [1, 3, 5, 7, 9],sources = ['ab', 'cd', 'ef', 'gh', 'ij'],targets = ['xy', 'zw', 'XY', 'ZW', 'IJ']) == "axybccddeeff"
+    assert candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abc', 'fgh', 'klm', 'pqr', 'uvw'],targets = ['123', '456', '789', '012', '345']) == "123de456ij789no012st345xyz"
+    assert candidate(s = "abracadabra",indices = [0, 3, 7],sources = ['abr', 'aca', 'bra'],targets = ['A', 'B', 'C']) == "ABdabra"
+    assert candidate(s = "abcdefghijklmnopqrstuvwxyz",indices = [0, 5, 10, 15, 20],sources = ['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy'],targets = ['11111', '22222', '33333', '44444', '55555']) == "1111122222333334444455555z"
+    assert candidate(s = "programmingisfun",indices = [3, 10, 15],sources = ['gram', 'is', 'fun'],targets = ['code', 'was', 'great']) == "procodemingisfun"
+    assert candidate(s = "aaaaaa",indices = [0, 2, 4],sources = ['aa', 'aa', 'aa'],targets = ['1', '2', '3']) == "123"
+    assert candidate(s = "abcdefg",indices = [0, 3, 5],sources = ['abc', 'de', 'fg'],targets = ['xyz', 'qrs', 'tuv']) == "xyzqrstuv"
+    assert candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['123', '456', '789']) == "123456789"
+    assert candidate(s = "zzzzzzzz",indices = [0, 1, 2, 3, 4, 5, 6],sources = ['zz', 'zz', 'zz', 'zz', 'zz', 'zz', 'zz'],targets = ['ZZ', 'YY', 'XX', 'WW', 'VV', 'UU', 'TT']) == "ZZXXVVTT"
+    assert candidate(s = "abcdefghij",indices = [1, 3, 5, 7, 9],sources = ['bc', 'ef', 'hi', 'jk'],targets = ['XXX', 'YYY', 'ZZZ', 'WWW']) == "aXXXdefghij"
+    assert candidate(s = "xyzxyzxyz",indices = [0, 3, 6],sources = ['xyz', 'xyz', 'xyz'],targets = ['XYZ', 'XYZ', 'XYZ']) == "XYZXYZXYZ"
+
+

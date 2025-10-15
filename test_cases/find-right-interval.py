@@ -1,0 +1,1031 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 1], [0, 2], [1, 3], [2, 4], [3, 5]]) == [2, 3, 4, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 1], [0, 2], [1, 3], [2, 4], [3, 5]]) == [2, 3, 4, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 10], [2, 3], [1, 5], [8, 12]]) == [-1, 0, 0, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 10], [2, 3], [1, 5], [8, 12]]) == [-1, 0, 0, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[10, 20], [20, 30], [5, 15], [30, 40]]) == [1, 3, 1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[10, 20], [20, 30], [5, 15], [30, 40]]) == [1, 3, 1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [4, 7], [8, 10], [9, 12]]) == [1, 2, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [4, 7], [8, 10], [9, 12]]) == [1, 2, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == [1, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == [1, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 5], [6, 6], [7, 7], [8, 8]]) == [0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 5], [6, 6], [7, 7], [8, 8]]) == [0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[3, 4], [2, 3], [1, 2]]) == [-1, 0, 1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[3, 4], [2, 3], [1, 2]]) == [-1, 0, 1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8]]) == [-1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8]]) == [-1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 5], [6, 8], [9, 10]]) == [1, 2, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 5], [6, 8], [9, 10]]) == [1, 2, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == [1, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == [1, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 4], [2, 3], [3, 4]]) == [-1, 2, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 4], [2, 3], [3, 4]]) == [-1, 2, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2]]) == [-1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2]]) == [-1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1000000, 1000001], [999999, 1000000], [999998, 999999], [999997, 999998], [999996, 999997]]) == [-1, 0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1000000, 1000001], [999999, 1000000], [999998, 999999], [999997, 999998], [999996, 999997]]) == [-1, 0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 10], [15, 20], [25, 30], [10, 15], [20, 25], [30, 35]]) == [3, 4, 5, 1, 2, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 10], [15, 20], [25, 30], [10, 15], [20, 25], [30, 35]]) == [3, 4, 5, 1, 2, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60], [61, 70], [71, 80], [81, 90], [91, 100], [101, 110], [111, 120], [121, 130], [131, 140], [141, 150], [151, 160], [161, 170], [171, 180], [181, 190], [191, 200]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60], [61, 70], [71, 80], [81, 90], [91, 100], [101, 110], [111, 120], [121, 130], [131, 140], [141, 150], [151, 160], [161, 170], [171, 180], [181, 190], [191, 200]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998]]) == [-1, 0, 1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998]]) == [-1, 0, 1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, 0], [-5, -2], [0, 5], [5, 10]]) == [2, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, 0], [-5, -2], [0, 5], [5, 10]]) == [2, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 6], [4, 7], [1, 10], [2, 8], [3, 9], [6, 11]]) == [5, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 6], [4, 7], [1, 10], [2, 8], [3, 9], [6, 11]]) == [5, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, 5, 6, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, 5, 6, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 0], [-3, -2], [-5, -4], [-7, -6], [-9, -8], [0, 1], [1, 2], [2, 3], [3, 4]]) == [5, 0, 1, 2, 3, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 0], [-3, -2], [-5, -4], [-7, -6], [-9, -8], [0, 1], [1, 2], [2, 3], [3, 4]]) == [5, 0, 1, 2, 3, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]]) == [1, 3, 5, 7, 9, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]]) == [1, 3, 5, 7, 9, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000]]) == [1, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000]]) == [1, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2000], [2, 1999], [3, 1998], [4, 1997], [5, 1996], [6, 1995], [7, 1994], [8, 1993], [9, 1992]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2000], [2, 1999], [3, 1998], [4, 1997], [5, 1996], [6, 1995], [7, 1994], [8, 1993], [9, 1992]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 100], [2, 98], [3, 96], [4, 94], [5, 92], [6, 90], [7, 88], [8, 86], [9, 84], [10, 82]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 100], [2, 98], [3, 96], [4, 94], [5, 92], [6, 90], [7, 88], [8, 86], [9, 84], [10, 82]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1000000], [100000, 2000000], [200000, 3000000], [300000, 4000000], [400000, 5000000]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1000000], [100000, 2000000], [200000, 3000000], [300000, 4000000], [400000, 5000000]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-9, -4], [-8, -3], [-7, -2], [-6, -1], [0, 5], [6, 10]]) == [5, 5, 5, 5, 5, 6, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-9, -4], [-8, -3], [-7, -2], [-6, -1], [0, 5], [6, 10]]) == [5, 5, 5, 5, 5, 6, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000]]) == [1, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000]]) == [1, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [4, 5, 6, 7, 8, 9, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [4, 5, 6, 7, 8, 9, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, -1], [-4, 0], [-3, 1], [-2, 2], [-1, 3], [0, 4]]) == [4, 5, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, -1], [-4, 0], [-3, 1], [-2, 2], [-1, 3], [0, 4]]) == [4, 5, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1000000], [2, 999999], [3, 999998], [4, 999997], [5, 999996], [6, 999995], [7, 999994], [8, 999993], [9, 999992], [10, 999991]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1000000], [2, 999999], [3, 999998], [4, 999997], [5, 999996], [6, 999995], [7, 999994], [8, 999993], [9, 999992], [10, 999991]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000, -900], [-901, -800], [-801, -700], [-701, -600], [-601, -500], [-501, -400], [-401, -300]]) == [2, 3, 4, 5, 6, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000, -900], [-901, -800], [-801, -700], [-701, -600], [-601, -500], [-501, -400], [-401, -300]]) == [2, 3, 4, 5, 6, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000, 1000], [-500, 500], [-100, 100], [-50, 50], [-10, 10], [-5, 5], [-2, 2], [-1, 1], [0, 0]]) == [-1, -1, -1, -1, -1, -1, -1, -1, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000, 1000], [-500, 500], [-100, 100], [-50, 50], [-10, 10], [-5, 5], [-2, 2], [-1, 1], [0, 0]]) == [-1, -1, -1, -1, -1, -1, -1, -1, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, 0], [-4, 1], [-3, 2], [-2, 3], [-1, 4], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14]]) == [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, 0], [-4, 1], [-3, 2], [-2, 3], [-1, 4], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14]]) == [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, 0], [0, 5], [-10, -5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35]]) == [1, 3, 0, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, 0], [0, 5], [-10, -5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35]]) == [1, 3, 0, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-8, -2], [-6, 0], [-3, 3], [1, 7], [4, 10], [5, 9], [8, 12]]) == [3, 4, 4, 5, 7, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-8, -2], [-6, 0], [-3, 3], [1, 7], [4, 10], [5, 9], [8, 12]]) == [3, 4, 4, 5, 7, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -900000], [-900000, -800000], [-800000, -700000], [-700000, -600000], [-600000, -500000]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -900000], [-900000, -800000], [-800000, -700000], [-700000, -600000], [-600000, -500000]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998], [99996, 99997]]) == [-1, 0, 1, 2, 3]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998], [99996, 99997]]) == [-1, 0, 1, 2, 3]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, 0], [-4, -1], [-3, -2], [-2, -3], [-1, -4], [0, -5]]) == [5, 4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, 0], [-4, -1], [-3, -2], [-2, -3], [-1, -4], [0, -5]]) == [5, 4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100, 200], [201, 300], [301, 400], [401, 500], [501, 600], [601, 700]]) == [1, 2, 3, 4, 5, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100, 200], [201, 300], [301, 400], [401, 500], [501, 600], [601, 700]]) == [1, 2, 3, 4, 5, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1000000, -1000000], [-1000000, 1000000], [500000, 600000], [600000, 700000]]) == [1, 0, 3, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1000000, -1000000], [-1000000, 1000000], [500000, 600000], [600000, 700000]]) == [1, 0, 3, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-8, -3], [-6, -1], [0, 5], [2, 7]]) == [3, 3, 3, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-8, -3], [-6, -1], [0, 5], [2, 7]]) == [3, 3, 3, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-7, -2], [-3, -1], [0, 4], [5, 10]]) == [2, 3, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-7, -2], [-3, -1], [0, 4], [5, 10]]) == [2, 3, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-5, -1], [-1, 0], [0, 5], [5, 10]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-5, -1], [-1, 0], [0, 5], [5, 10]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55], [55, 60]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55], [55, 60]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [4, 6], [7, 9], [10, 12], [13, 15], [16, 18], [19, 21]]) == [1, 2, 3, 4, 5, 6, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [4, 6], [7, 9], [10, 12], [13, 15], [16, 18], [19, 21]]) == [1, 2, 3, 4, 5, 6, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 20], [21, 30], [31, 40], [41, 50], [51, 60]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 20], [21, 30], [31, 40], [41, 50], [51, 60]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, -5], [-8, -4], [-7, -3], [-3, -1]]) == [3, 3, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, -5], [-8, -4], [-7, -3], [-3, -1]]) == [3, 3, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[10, 15], [5, 10], [2, 5], [-3, 2], [-10, -3], [-20, -10], [-30, -20]]) == [-1, 0, 1, 2, 3, 4, 5]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[10, 15], [5, 10], [2, 5], [-3, 2], [-10, -3], [-20, -10], [-30, -20]]) == [-1, 0, 1, 2, 3, 4, 5]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -900000], [-800000, -700000], [-600000, -500000], [-400000, -300000], [-200000, -100000]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -900000], [-800000, -700000], [-600000, -500000], [-400000, -300000], [-200000, -100000]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992]]) == [1, 2, 3, 4, 5, 6, 7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 5], [5, 9], [9, 13], [13, 17], [17, 21], [21, 25]]) == [1, 2, 3, 4, 5, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 5], [5, 9], [9, 13], [13, 17], [17, 21], [21, 25]]) == [1, 2, 3, 4, 5, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, -3], [-3, -1], [-1, 1], [1, 3], [3, 5]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, -3], [-3, -1], [-1, 1], [1, 3], [3, 5]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [4, 7], [8, 11], [12, 15], [16, 19], [20, 23]]) == [1, 2, 3, 4, 5, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [4, 7], [8, 11], [12, 15], [16, 19], [20, 23]]) == [1, 2, 3, 4, 5, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-50, -20], [-30, -10], [-25, -15], [-40, -35], [-1, 5], [6, 10]]) == [4, 4, 4, 1, 5, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-50, -20], [-30, -10], [-25, -15], [-40, -35], [-1, 5], [6, 10]]) == [4, 4, 4, 1, 5, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [10, 11], [20, 21], [30, 31], [40, 41], [50, 51], [60, 61], [70, 71], [80, 81], [90, 91]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [10, 11], [20, 21], [30, 31], [40, 41], [50, 51], [60, 61], [70, 71], [80, 81], [90, 91]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50], [52, 53], [55, 56], [58, 59]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50], [52, 53], [55, 56], [58, 59]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1000, 1001], [1002, 1003], [1004, 1005], [1006, 1007], [1008, 1009], [1010, 1011], [1012, 1013], [1014, 1015], [1016, 1017], [1018, 1019]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1000, 1001], [1002, 1003], [1004, 1005], [1006, 1007], [1008, 1009], [1010, 1011], [1012, 1013], [1014, 1015], [1016, 1017], [1018, 1019]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 4], [4, 5], [6, 7], [8, 10], [10, 15], [15, 20], [20, 30], [30, 40], [40, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 4], [4, 5], [6, 7], [8, 10], [10, 15], [15, 20], [20, 30], [30, 40], [40, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[100, 150], [200, 250], [50, 100], [0, 50], [250, 300], [150, 200], [300, 350]]) == [5, 4, 0, 2, 6, 1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[100, 150], [200, 250], [50, 100], [0, 50], [250, 300], [150, 200], [300, 350]]) == [5, 4, 0, 2, 6, 1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, 0], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == [5, 3, 4, 5, 6, 7, 8, 9, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, 0], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == [5, 3, 4, 5, 6, 7, 8, 9, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, 0], [-5, -1], [0, 5], [5, 10], [10, 15]]) == [2, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, 0], [-5, -1], [0, 5], [5, 10], [10, 15]]) == [2, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 10], [20, 25], [10, 15], [15, 20], [0, 5], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50]]) == [2, 5, 3, 1, 0, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 10], [20, 25], [10, 15], [15, 20], [0, 5], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50]]) == [2, 5, 3, 1, 0, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-5, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 5], [5, 8], [8, 10]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-5, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 5], [5, 8], [8, 10]]) == [1, 2, 3, 4, 5, 6, 7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[10, 15], [20, 25], [12, 18], [16, 20], [21, 23], [19, 24], [25, 30], [28, 35]]) == [3, 6, 5, 1, 6, 6, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[10, 15], [20, 25], [12, 18], [16, 20], [21, 23], [19, 24], [25, 30], [28, 35]]) == [3, 6, 5, 1, 6, 6, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000], [4000001, 5000000]]) == [1, 2, 3, 4, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000], [4000001, 5000000]]) == [1, 2, 3, 4, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991], [-999990, -999989], [-999988, -999987], [-999986, -999985], [-999984, -999983]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991], [-999990, -999989], [-999988, -999987], [-999986, -999985], [-999984, -999983]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1000000, 1000001], [500000, 500001], [250000, 250001], [125000, 125001], [62500, 62501], [31250, 31251], [15625, 15626], [7812, 7813], [3906, 3907], [1953, 1954]]) == [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1000000, 1000001], [500000, 500001], [250000, 250001], [125000, 125001], [62500, 62501], [31250, 31251], [15625, 15626], [7812, 7813], [3906, 3907], [1953, 1954]]) == [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 1000000], [-1000000, -1], [0, 0], [500000, 600000], [-600000, -500000]]) == [-1, 2, 2, -1, 2]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 1000000], [-1000000, -1], [0, 0], [500000, 600000], [-600000, -500000]]) == [-1, 2, 2, -1, 2]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [1, 2, 3, 4, 5, 6, 7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 10], [2, 11], [3, 12], [4, 13], [5, 14]]) == [-1, -1, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 10], [2, 11], [3, 12], [4, 13], [5, 14]]) == [-1, -1, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-100, -50], [-51, -1], [-101, -60], [0, 10], [-1, 0], [50, 100], [101, 150], [151, 200]]) == [4, 4, 1, 5, 3, 6, 7, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-100, -50], [-51, -1], [-101, -60], [0, 10], [-1, 0], [50, 100], [101, 150], [151, 200]]) == [4, 4, 1, 5, 3, 6, 7, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000], [-750000, -250000], [-250000, 250000], [250000, 750000]]) == [1, 2, 3, -1, 5, 6, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000], [-750000, -250000], [-250000, 250000], [250000, 750000]]) == [1, 2, 3, -1, 5, 6, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-10, 0], [0, 10], [10, 20], [20, 30]]) == [1, 2, 3, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-10, 0], [0, 10], [10, 20], [20, 30]]) == [1, 2, 3, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 2], [0, 3], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14], [14, 16], [16, 18]]) == [2, 3, 3, 4, 5, 6, 7, 8, 9, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 2], [0, 3], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14], [14, 16], [16, 18]]) == [2, 3, 3, 4, 5, 6, 7, 8, 9, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-1, 2], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12]]) == [3, 4, 5, 6, 7, 8, 9, 10, -1, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-1, 2], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12]]) == [3, 4, 5, 6, 7, 8, 9, 10, -1, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[5, 15], [10, 20], [15, 25], [20, 30], [25, 35]]) == [2, 3, 4, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[5, 15], [10, 20], [15, 25], [20, 30], [25, 35]]) == [2, 3, 4, -1, -1]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(intervals = [[-100, 0], [-50, 50], [0, 100], [50, 150], [100, 200], [150, 250]]) == [2, 3, 4, 5, -1, -1]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(intervals = [[-100, 0], [-50, 50], [0, 100], [50, 150], [100, 200], [150, 250]]) == [2, 3, 4, 5, -1, -1]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(intervals = [[-1, 1], [0, 2], [1, 3], [2, 4], [3, 5]]) == [2, 3, 4, -1, -1]
+    assert candidate(intervals = [[5, 10], [2, 3], [1, 5], [8, 12]]) == [-1, 0, 0, -1]
+    assert candidate(intervals = [[10, 20], [20, 30], [5, 15], [30, 40]]) == [1, 3, 1, -1]
+    assert candidate(intervals = [[1, 3], [4, 7], [8, 10], [9, 12]]) == [1, 2, -1, -1]
+    assert candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10]]) == [1, 2, 3, -1]
+    assert candidate(intervals = [[5, 5], [6, 6], [7, 7], [8, 8]]) == [0, 1, 2, 3]
+    assert candidate(intervals = [[3, 4], [2, 3], [1, 2]]) == [-1, 0, 1]
+    assert candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8]]) == [-1, -1, -1, -1]
+    assert candidate(intervals = [[1, 5], [6, 8], [9, 10]]) == [1, 2, -1]
+    assert candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3]]) == [1, 2, 3, -1]
+    assert candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [-1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[-10, -5], [-5, 0], [0, 5], [5, 10], [10, 15]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, -1, -1]
+    assert candidate(intervals = [[1, 4], [2, 3], [3, 4]]) == [-1, 2, -1]
+    assert candidate(intervals = [[1, 2]]) == [-1]
+    assert candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[1000000, 1000001], [999999, 1000000], [999998, 999999], [999997, 999998], [999996, 999997]]) == [-1, 0, 1, 2, 3]
+    assert candidate(intervals = [[5, 10], [15, 20], [25, 30], [10, 15], [20, 25], [30, 35]]) == [3, 4, 5, 1, 2, -1]
+    assert candidate(intervals = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60], [61, 70], [71, 80], [81, 90], [91, 100], [101, 110], [111, 120], [121, 130], [131, 140], [141, 150], [151, 160], [161, 170], [171, 180], [181, 190], [191, 200]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+    assert candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998]]) == [-1, 0, 1, 2]
+    assert candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+    assert candidate(intervals = [[-10, 0], [-5, -2], [0, 5], [5, 10]]) == [2, 2, 3, -1]
+    assert candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[5, 6], [4, 7], [1, 10], [2, 8], [3, 9], [6, 11]]) == [5, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]
+    assert candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20], [21, 22], [23, 24], [25, 26], [27, 28], [29, 30], [31, 32], [33, 34], [35, 36], [37, 38], [39, 40]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+    assert candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, -1]
+    assert candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[1, 100], [50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400]]) == [2, 3, 4, 5, 6, -1, -1]
+    assert candidate(intervals = [[-1, 0], [-3, -2], [-5, -4], [-7, -6], [-9, -8], [0, 1], [1, 2], [2, 3], [3, 4]]) == [5, 0, 1, 2, 3, 6, 7, 8, -1]
+    assert candidate(intervals = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10], [6, 12], [7, 14], [8, 16], [9, 18], [10, 20]]) == [1, 3, 5, 7, 9, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000]]) == [1, 2, 3, -1]
+    assert candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1]
+    assert candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14], [15, 15]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    assert candidate(intervals = [[1, 2000], [2, 1999], [3, 1998], [4, 1997], [5, 1996], [6, 1995], [7, 1994], [8, 1993], [9, 1992]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 100], [2, 98], [3, 96], [4, 94], [5, 92], [6, 90], [7, 88], [8, 86], [9, 84], [10, 82]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 1000000], [100000, 2000000], [200000, 3000000], [300000, 4000000], [400000, 5000000]]) == [-1, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 3], [3, 5], [5, 7], [7, 9], [9, 11], [11, 13], [13, 15], [15, 17], [17, 19], [19, 21]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[-10, -5], [-9, -4], [-8, -3], [-7, -2], [-6, -1], [0, 5], [6, 10]]) == [5, 5, 5, 5, 5, 6, -1]
+    assert candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000]]) == [1, 2, 3, -1]
+    assert candidate(intervals = [[1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14]]) == [4, 5, 6, 7, 8, 9, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], [11, 11]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert candidate(intervals = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert candidate(intervals = [[-5, -1], [-4, 0], [-3, 1], [-2, 2], [-1, 3], [0, 4]]) == [4, 5, -1, -1, -1, -1]
+    assert candidate(intervals = [[1, 1000000], [2, 999999], [3, 999998], [4, 999997], [5, 999996], [6, 999995], [7, 999994], [8, 999993], [9, 999992], [10, 999991]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-1000, -900], [-901, -800], [-801, -700], [-701, -600], [-601, -500], [-501, -400], [-401, -300]]) == [2, 3, 4, 5, 6, -1, -1]
+    assert candidate(intervals = [[-1000, 1000], [-500, 500], [-100, 100], [-50, 50], [-10, 10], [-5, 5], [-2, 2], [-1, 1], [0, 0]]) == [-1, -1, -1, -1, -1, -1, -1, -1, 8]
+    assert candidate(intervals = [[1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-5, 0], [-4, 1], [-3, 2], [-2, 3], [-1, 4], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14]]) == [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-5, 0], [0, 5], [-10, -5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35]]) == [1, 3, 0, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[-10, -5], [-8, -2], [-6, 0], [-3, 3], [1, 7], [4, 10], [5, 9], [8, 12]]) == [3, 4, 4, 5, 7, -1, -1, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, -1]
+    assert candidate(intervals = [[-1000000, -900000], [-900000, -800000], [-800000, -700000], [-700000, -600000], [-600000, -500000]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[100000, 100001], [99999, 100000], [99998, 99999], [99997, 99998], [99996, 99997]]) == [-1, 0, 1, 2, 3]
+    assert candidate(intervals = [[-5, 0], [-4, -1], [-3, -2], [-2, -3], [-1, -4], [0, -5]]) == [5, 4, 3, 2, 1, 0]
+    assert candidate(intervals = [[100, 200], [201, 300], [301, 400], [401, 500], [501, 600], [601, 700]]) == [1, 2, 3, 4, 5, -1]
+    assert candidate(intervals = [[1000000, -1000000], [-1000000, 1000000], [500000, 600000], [600000, 700000]]) == [1, 0, 3, 0]
+    assert candidate(intervals = [[-10, -5], [-8, -3], [-6, -1], [0, 5], [2, 7]]) == [3, 3, 3, -1, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[-10, -5], [-7, -2], [-3, -1], [0, 4], [5, 10]]) == [2, 3, 3, 4, -1]
+    assert candidate(intervals = [[-10, -5], [-5, -1], [-1, 0], [0, 5], [5, 10]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50], [50, 55], [55, 60]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+    assert candidate(intervals = [[-5, -4], [-4, -3], [-3, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]
+    assert candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]
+    assert candidate(intervals = [[100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500]]) == [2, 3, 4, 5, 6, -1, -1]
+    assert candidate(intervals = [[1, 3], [4, 6], [7, 9], [10, 12], [13, 15], [16, 18], [19, 21]]) == [1, 2, 3, 4, 5, 6, -1]
+    assert candidate(intervals = [[1, 20], [21, 30], [31, 40], [41, 50], [51, 60]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16], [6, 15], [7, 14], [8, 13], [9, 12], [10, 11]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-10, -5], [-8, -4], [-7, -3], [-3, -1]]) == [3, 3, 3, -1]
+    assert candidate(intervals = [[10, 15], [5, 10], [2, 5], [-3, 2], [-10, -3], [-20, -10], [-30, -20]]) == [-1, 0, 1, 2, 3, 4, 5]
+    assert candidate(intervals = [[-1000000, -900000], [-800000, -700000], [-600000, -500000], [-400000, -300000], [-200000, -100000]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[-1000, -999], [-999, -998], [-998, -997], [-997, -996], [-996, -995], [-995, -994], [-994, -993], [-993, -992]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+    assert candidate(intervals = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[1, 5], [5, 9], [9, 13], [13, 17], [17, 21], [21, 25]]) == [1, 2, 3, 4, 5, -1]
+    assert candidate(intervals = [[-5, -3], [-3, -1], [-1, 1], [1, 3], [3, 5]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[1, 3], [4, 7], [8, 11], [12, 15], [16, 19], [20, 23]]) == [1, 2, 3, 4, 5, -1]
+    assert candidate(intervals = [[-50, -20], [-30, -10], [-25, -15], [-40, -35], [-1, 5], [6, 10]]) == [4, 4, 4, 1, 5, -1]
+    assert candidate(intervals = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96], [6, 95], [7, 94], [8, 93], [9, 92]]) == [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[1, 2], [10, 11], [20, 21], [30, 31], [40, 41], [50, 51], [60, 61], [70, 71], [80, 81], [90, 91]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[1, 2], [4, 5], [7, 8], [10, 11], [13, 14], [16, 17], [19, 20], [22, 23], [25, 26], [28, 29], [31, 32], [34, 35], [37, 38], [40, 41], [43, 44], [46, 47], [49, 50], [52, 53], [55, 56], [58, 59]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1]
+    assert candidate(intervals = [[1, 10], [2, 9], [3, 8], [4, 7], [5, 6], [6, 5], [7, 4], [8, 3], [9, 2], [10, 1]]) == [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    assert candidate(intervals = [[1000, 1001], [1002, 1003], [1004, 1005], [1006, 1007], [1008, 1009], [1010, 1011], [1012, 1013], [1014, 1015], [1016, 1017], [1018, 1019]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[1, 4], [4, 5], [6, 7], [8, 10], [10, 15], [15, 20], [20, 30], [30, 40], [40, 50]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[100, 150], [200, 250], [50, 100], [0, 50], [250, 300], [150, 200], [300, 350]]) == [5, 4, 0, 2, 6, 1, -1]
+    assert candidate(intervals = [[-5, 0], [-4, -2], [-3, -1], [-2, 0], [-1, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6]]) == [5, 3, 4, 5, 6, 7, 8, 9, -1, -1]
+    assert candidate(intervals = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[-10, 0], [-5, -1], [0, 5], [5, 10], [10, 15]]) == [2, 2, 3, 4, -1]
+    assert candidate(intervals = [[1, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, -1]
+    assert candidate(intervals = [[-1, 0], [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
+    assert candidate(intervals = [[5, 10], [20, 25], [10, 15], [15, 20], [0, 5], [25, 30], [30, 35], [35, 40], [40, 45], [45, 50]]) == [2, 5, 3, 1, 0, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[-5, -2], [-2, -1], [-1, 0], [0, 1], [1, 2], [2, 5], [5, 8], [8, 10]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+    assert candidate(intervals = [[10, 15], [20, 25], [12, 18], [16, 20], [21, 23], [19, 24], [25, 30], [28, 35]]) == [3, 6, 5, 1, 6, 6, -1, -1]
+    assert candidate(intervals = [[1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14]]) == [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -1]
+    assert candidate(intervals = [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[1, 1000000], [1000001, 2000000], [2000001, 3000000], [3000001, 4000000], [4000001, 5000000]]) == [1, 2, 3, 4, -1]
+    assert candidate(intervals = [[-1000000, -999999], [-999998, -999997], [-999996, -999995], [-999994, -999993], [-999992, -999991], [-999990, -999989], [-999988, -999987], [-999986, -999985], [-999984, -999983]]) == [1, 2, 3, 4, 5, 6, 7, 8, -1]
+    assert candidate(intervals = [[1000000, 1000001], [500000, 500001], [250000, 250001], [125000, 125001], [62500, 62501], [31250, 31251], [15625, 15626], [7812, 7813], [3906, 3907], [1953, 1954]]) == [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    assert candidate(intervals = [[1, 1000000], [-1000000, -1], [0, 0], [500000, 600000], [-600000, -500000]]) == [-1, 2, 2, -1, 2]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]]) == [1, 2, 3, 4, 5, 6, 7, -1]
+    assert candidate(intervals = [[1, 10], [2, 11], [3, 12], [4, 13], [5, 14]]) == [-1, -1, -1, -1, -1]
+    assert candidate(intervals = [[-100, -50], [-51, -1], [-101, -60], [0, 10], [-1, 0], [50, 100], [101, 150], [151, 200]]) == [4, 4, 1, 5, 3, 6, 7, -1]
+    assert candidate(intervals = [[-1000000, -500000], [-500000, 0], [0, 500000], [500000, 1000000], [-750000, -250000], [-250000, 250000], [250000, 750000]]) == [1, 2, 3, -1, 5, 6, -1]
+    assert candidate(intervals = [[-10, 0], [0, 10], [10, 20], [20, 30]]) == [1, 2, 3, -1]
+    assert candidate(intervals = [[-1, 2], [0, 3], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14], [14, 16], [16, 18]]) == [2, 3, 3, 4, 5, 6, 7, 8, 9, -1]
+    assert candidate(intervals = [[-1, 2], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12]]) == [3, 4, 5, 6, 7, 8, 9, 10, -1, -1, -1]
+    assert candidate(intervals = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1]
+    assert candidate(intervals = [[5, 15], [10, 20], [15, 25], [20, 30], [25, 35]]) == [2, 3, 4, -1, -1]
+    assert candidate(intervals = [[-100, 0], [-50, 50], [0, 100], [50, 150], [100, 200], [150, 250]]) == [2, 3, 4, 5, -1, -1]
+
+

@@ -1,0 +1,788 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'cab', 'bca', 'xyz', 'zyx', 'yxz']) == ['abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'cab', 'bca', 'xyz', 'zyx', 'yxz']) == ['abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'cba', 'bca', 'xyz', 'zyx']) == ['abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'cba', 'bca', 'xyz', 'zyx']) == ['abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['unique', 'words', 'here', 'now']) == ['unique', 'words', 'here', 'now']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['unique', 'words', 'here', 'now']) == ['unique', 'words', 'here', 'now']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['test', 'sett', 'tset', 'ttew']) == ['test', 'ttew']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['test', 'sett', 'tset', 'ttew']) == ['test', 'ttew']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same', 'same', 'same']) == ['same']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same', 'same', 'same']) == ['same']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcabc', 'bcaacb', 'bacbac', 'cababc']) == ['aabbcc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcabc', 'bcaacb', 'bacbac', 'cababc']) == ['aabbcc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['test', 'sett', 'tset', 'stet', 'ttes']) == ['test']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['test', 'sett', 'tset', 'stet', 'ttes']) == ['test']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']) == ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']) == ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'billion', 'oellh', 'llheo', 'note', 'tone']) == ['hello', 'billion', 'oellh', 'note']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'billion', 'oellh', 'llheo', 'note', 'tone']) == ['hello', 'billion', 'oellh', 'note']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'cab', 'bac', 'bca', 'xyz']) == ['abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'cab', 'bac', 'bca', 'xyz']) == ['abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nohtyp']) == ['hello', 'world', 'python']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nohtyp']) == ['hello', 'world', 'python']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abba', 'baba', 'bbaa', 'cd', 'cd']) == ['abba', 'cd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abba', 'baba', 'bbaa', 'cd', 'cd']) == ['abba', 'cd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee']) == ['deed', 'deep']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee']) == ['deed', 'deep']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'worlc']) == ['hello', 'world', 'worlc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'worlc']) == ['hello', 'world', 'worlc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['same', 'same', 'same', 'same']) == ['same']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['same', 'same', 'same', 'same']) == ['same']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'cba', 'bac', 'bca', 'cab', 'acb']) == ['abc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'cba', 'bac', 'bca', 'cab', 'acb']) == ['abc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a', 'aaaa', 'aaa']) == ['aaa', 'aa', 'a', 'aaaa', 'aaa']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a', 'aaaa', 'aaa']) == ['aaa', 'aa', 'a', 'aaaa', 'aaa']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz']) == ['aabbcc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz']) == ['aabbcc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl']) == ['listen', 'google']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl']) == ['listen', 'google']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'cab', 'bac', 'bca', 'acb', 'cba']) == ['abc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'cab', 'bac', 'bca', 'acb', 'cba']) == ['abc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaa', 'aa', 'a']) == ['aaa', 'aa', 'a']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaa', 'aa', 'a']) == ['aaa', 'aa', 'a']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['deed', 'deed', 'deed', 'deed', 'deed']) == ['deed']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['deed', 'deed', 'deed', 'deed', 'deed']) == ['deed']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'werld', 'hello', 'olleh', 'dlrow', 'world', 'rowld', 'dlrow', 'hello', 'hello', 'world', 'world', 'world', 'dlrow', 'dlrow', 'dlrow', 'dlrow']) == ['hello', 'world', 'werld', 'hello', 'dlrow', 'hello', 'world']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'werld', 'hello', 'olleh', 'dlrow', 'world', 'rowld', 'dlrow', 'hello', 'hello', 'world', 'world', 'world', 'dlrow', 'dlrow', 'dlrow', 'dlrow']) == ['hello', 'world', 'werld', 'hello', 'dlrow', 'hello', 'world']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'tac', 'act', 'rat', 'car']) == ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'rat', 'car']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'tac', 'act', 'rat', 'car']) == ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'rat', 'car']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['racecar', 'carrace', 'acecar', 'enlist', 'inlets', 'silent', 'google', 'gooegl', 'abc', 'bac', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz', 'listen', 'silent', 'enlist']) == ['racecar', 'acecar', 'enlist', 'google', 'abc', 'xyz', 'listen']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['racecar', 'carrace', 'acecar', 'enlist', 'inlets', 'silent', 'google', 'gooegl', 'abc', 'bac', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz', 'listen', 'silent', 'enlist']) == ['racecar', 'acecar', 'enlist', 'google', 'abc', 'xyz', 'listen']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'mnop']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'mnop']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba']) == ['ab']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba']) == ['ab']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'olleh', 'loleh', 'ohell', 'ehlol', 'world', 'dlrow', 'rowld', 'owlrd', 'wrold', 'hello', 'olleh', 'loleh', 'ohell', 'ehlol']) == ['hello', 'world', 'hello']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'olleh', 'loleh', 'ohell', 'ehlol', 'world', 'dlrow', 'rowld', 'owlrd', 'wrold', 'hello', 'olleh', 'loleh', 'ohell', 'ehlol']) == ['hello', 'world', 'hello']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'zyxw', 'wxyz']) == ['listen', 'google', 'abc', 'xyz', 'zyxw']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'zyxw', 'wxyz']) == ['listen', 'google', 'abc', 'xyz', 'zyxw']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['abcd', 'mnop']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['abcd', 'mnop']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes']) == ['aabbcc', 'xyz', 'test']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes']) == ['aabbcc', 'xyz', 'test']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'bca', 'acb', 'cba', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'bca', 'acb', 'cba', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'tar', 'art', 'star', 'rats', 'tars', 'arts', 'tsar', 'chart', 'arch', 'cart', 'ract', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'gnik', 'pink', 'kimp', 'pink', 'knip', 'kpin']) == ['rat', 'star', 'chart', 'arch', 'cart', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'pink', 'kimp', 'pink']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'tar', 'art', 'star', 'rats', 'tars', 'arts', 'tsar', 'chart', 'arch', 'cart', 'ract', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'gnik', 'pink', 'kimp', 'pink', 'knip', 'kpin']) == ['rat', 'star', 'chart', 'arch', 'cart', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'pink', 'kimp', 'pink']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'par', 'arp', 'arc', 'rac', 'cat', 'tac', 'act', 'cta', 'atc', 'tca', 'pqr', 'qrp', 'rpq', 'prq', 'rqp', 'qpr', 'aabb', 'bbaa', 'abab', 'abba', 'aaaa', 'bbba', 'baab', 'aabb', 'baba', 'bbaa', 'cd', 'cd', 'efg', 'feg', 'gfe', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']) == ['rat', 'car', 'par', 'arc', 'cat', 'pqr', 'aabb', 'aaaa', 'bbba', 'baab', 'cd', 'efg', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'par', 'arp', 'arc', 'rac', 'cat', 'tac', 'act', 'cta', 'atc', 'tca', 'pqr', 'qrp', 'rpq', 'prq', 'rqp', 'qpr', 'aabb', 'bbaa', 'abab', 'abba', 'aaaa', 'bbba', 'baab', 'aabb', 'baba', 'bbaa', 'cd', 'cd', 'efg', 'feg', 'gfe', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']) == ['rat', 'car', 'par', 'arc', 'cat', 'pqr', 'aabb', 'aaaa', 'bbba', 'baab', 'cd', 'efg', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['race', 'care', 'acre', 'racecar', 'carrace', 'racecar', 'carrace', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz', 'zyxzyx', 'xzyzyz', 'yzyzyx']) == ['race', 'racecar', 'abc', 'xyz', 'zyxzyx', 'xzyzyz', 'yzyzyx']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['race', 'care', 'acre', 'racecar', 'carrace', 'racecar', 'carrace', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz', 'zyxzyx', 'xzyzyz', 'yzyzyx']) == ['race', 'racecar', 'abc', 'xyz', 'zyxzyx', 'xzyzyz', 'yzyzyx']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'bac', 'cba', 'bca', 'cab', 'acb', 'xyz', 'zyx', 'yxz']) == ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'bac', 'cba', 'bca', 'cab', 'acb', 'xyz', 'zyx', 'yxz']) == ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'tack', 'rack', 'track', 'chart', 'cart']) == ['rat', 'dog', 'cat', 'tack', 'rack', 'track', 'chart', 'cart']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'tack', 'rack', 'track', 'chart', 'cart']) == ['rat', 'dog', 'cat', 'tack', 'rack', 'track', 'chart', 'cart']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce']) == ['abcde']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce']) == ['abcde']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana']) == ['anagram']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana']) == ['anagram']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['python', 'typhon', 'hypton', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth']) == ['python', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['python', 'typhon', 'hypton', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth']) == ['python', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['dormitory', 'dirtyroom', 'dirtyroom', 'dormitory', 'dirtyroom', 'dirtyroom', 'dormitory']) == ['dormitory']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['dormitory', 'dirtyroom', 'dirtyroom', 'dormitory', 'dirtyroom', 'dirtyroom', 'dormitory']) == ['dormitory']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aaaaa', 'aaabb', 'aabba', 'abbaa', 'baaab', 'baaba', 'bbaaa', 'abcde', 'edcba', 'decba', 'cbade', 'badec']) == ['aaaaa', 'aaabb', 'abcde']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aaaaa', 'aaabb', 'aabba', 'abbaa', 'baaab', 'baaba', 'bbaaa', 'abcde', 'edcba', 'decba', 'cbade', 'badec']) == ['aaaaa', 'aaabb', 'abcde']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['race', 'care', 'acre', 'barc', 'racecar', 'carrace', 'racecar', 'carecar', 'abcde', 'edcba', 'bcdea', 'deabc', 'acdeb', 'decab']) == ['race', 'barc', 'racecar', 'abcde']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['race', 'care', 'acre', 'barc', 'racecar', 'carrace', 'racecar', 'carecar', 'abcde', 'edcba', 'bcdea', 'deabc', 'acdeb', 'decab']) == ['race', 'barc', 'racecar', 'abcde']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcabc', 'baccab', 'abccba', 'bacabc', 'aabbcc', 'abcd', 'dcba', 'cdab', 'bcda', 'badc', 'cabd']) == ['aabbcc', 'abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcabc', 'baccab', 'abccba', 'bacabc', 'aabbcc', 'abcd', 'dcba', 'cdab', 'bcda', 'badc', 'cabd']) == ['aabbcc', 'abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['rat', 'dog', 'cat', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['rat', 'dog', 'cat', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcdefghijklmnopqrstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba', 'mnopqrstuvwxyzabcdefghijkl', 'defghijklmnopqrstuvwxyzabc', 'jklmnopqrstuvwxyzabcdefghi', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']) == ['abcdefghijklmnopqrstuvwxyz', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcdefghijklmnopqrstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba', 'mnopqrstuvwxyzabcdefghijkl', 'defghijklmnopqrstuvwxyzabc', 'jklmnopqrstuvwxyzabcdefghi', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']) == ['abcdefghijklmnopqrstuvwxyz', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nothpy', 'java', 'avaj', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['hello', 'world', 'python', 'java', 'abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nothpy', 'java', 'avaj', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['hello', 'world', 'python', 'java', 'abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['anagram', 'nagaram', 'margana', 'ramnaga', 'gnamar', 'gnamar', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra']) == ['anagram', 'gnamar']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['anagram', 'nagaram', 'margana', 'ramnaga', 'gnamar', 'gnamar', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra']) == ['anagram', 'gnamar']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'zyx', 'xyz']) == ['listen', 'google', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'zyx', 'xyz']) == ['listen', 'google', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'baccab', 'cbaabc', 'abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz']) == ['aabbcc', 'abc', 'xyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'baccab', 'cbaabc', 'abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz']) == ['aabbcc', 'abc', 'xyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'uvw', 'vuw', 'wuv']) == ['listen', 'google', 'abc', 'xyz', 'uvw']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'uvw', 'vuw', 'wuv']) == ['listen', 'google', 'abc', 'xyz', 'uvw']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot']) == ['python']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot']) == ['python']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'inlets']) == ['listen', 'google', 'inlets']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'inlets']) == ['listen', 'google', 'inlets']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcabc', 'baccab', 'cabcab', 'abacbc', 'bbacac', 'acbbca', 'aabbbc', 'aabbbc', 'aabbbc']) == ['aabbcc', 'aabbbc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcabc', 'baccab', 'cabcab', 'abacbc', 'bbacac', 'acbbca', 'aabbbc', 'aabbbc', 'aabbbc']) == ['aabbcc', 'aabbbc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'cadb', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'cadb', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcabc', 'baccab', 'xyz', 'zyx', 'yxz', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'xyz', 'mnop']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcabc', 'baccab', 'xyz', 'zyx', 'yxz', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'xyz', 'mnop']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['abc', 'abcd', 'zzzz', 'zzz', 'zz', 'z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['abc', 'abcd', 'zzzz', 'zzz', 'zz', 'z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['ab', 'ba', 'aabb', 'bbaa', 'abab', 'baba', 'abba', 'baab', 'ab', 'ba']) == ['ab', 'aabb', 'ab']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['ab', 'ba', 'aabb', 'bbaa', 'abab', 'baba', 'abba', 'baab', 'ab', 'ba']) == ['ab', 'aabb', 'ab']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'baccab', 'abcabc', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc']) == ['aabbcc', 'abc']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'baccab', 'abcabc', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc']) == ['aabbcc', 'abc']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'abcabc', 'baccab', 'ccabba', 'cabacb', 'abcabc', 'aabbcc', 'xyzxyz', 'zyxzyx', 'yxzyxz', 'zyxzyx']) == ['aabbcc', 'xyzxyz']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'abcabc', 'baccab', 'ccabba', 'cabacb', 'abcabc', 'aabbcc', 'xyzxyz', 'zyxzyx', 'yxzyxz', 'zyxzyx']) == ['aabbcc', 'xyzxyz']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['anagram', 'nagaram', 'margana', 'gnarama', 'granama', 'aaagmnr', 'ab', 'ba', 'abc', 'cba', 'abcd', 'dcba', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee', 'aabbcc', 'baccab', 'abcabc', 'rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['anagram', 'ab', 'abc', 'abcd', 'xyz', 'test', 'deed', 'deep', 'aabbcc', 'rat', 'dog', 'cat', 'abcd', 'zzzz', 'zzz', 'zz', 'z']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['anagram', 'nagaram', 'margana', 'gnarama', 'granama', 'aaagmnr', 'ab', 'ba', 'abc', 'cba', 'abcd', 'dcba', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee', 'aabbcc', 'baccab', 'abcabc', 'rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['anagram', 'ab', 'abc', 'abcd', 'xyz', 'test', 'deed', 'deep', 'aabbcc', 'rat', 'dog', 'cat', 'abcd', 'zzzz', 'zzz', 'zz', 'z']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['word', 'drow', 'dwor', 'owrd', 'abcd', 'dcba', 'cadb', 'bdac', 'abcd', 'dcba', 'cabd', 'bdac']) == ['word', 'abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['word', 'drow', 'dwor', 'owrd', 'abcd', 'dcba', 'cadb', 'bdac', 'abcd', 'dcba', 'cabd', 'bdac']) == ['word', 'abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'abcd', 'abdc', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'abcd', 'abdc', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram']) == ['anagram']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram']) == ['anagram']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['evil', 'vile', 'live', 'veil', 'liVE', 'EVIL']) == ['evil', 'liVE', 'EVIL']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['evil', 'vile', 'live', 'veil', 'liVE', 'EVIL']) == ['evil', 'liVE', 'EVIL']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda', 'abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda']) == ['abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda', 'abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda']) == ['abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'arc', 'rca', 'arc', 'cat', 'tac', 'act', 'dog', 'god', 'god', 'ogd']) == ['rat', 'car', 'cat', 'dog']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'arc', 'rca', 'arc', 'cat', 'tac', 'act', 'dog', 'god', 'god', 'ogd']) == ['rat', 'car', 'cat', 'dog']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'lobinin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'llinbon', 'lobinln', 'nilonbl', 'nonlibl', 'oblinln', 'nlonbil', 'oninlb', 'nobinll', 'binlonl', 'onlibnl', 'nbinlol', 'inlboon', 'libnoln', 'onilnbl', 'inlobnl', 'lnoibnl', 'nobllin', 'oinlnbl', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil', 'ilnob', 'lnoib', 'nlobi', 'olnib', 'blnio', 'bnlio', 'nliob', 'libon', 'inlob', 'onilb', 'nobil', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno', 'inlob', 'onilb', 'nobli', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno']) == ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'oninlb', 'nobinll', 'inlboon', 'libnoln', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'lobinin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'llinbon', 'lobinln', 'nilonbl', 'nonlibl', 'oblinln', 'nlonbil', 'oninlb', 'nobinll', 'binlonl', 'onlibnl', 'nbinlol', 'inlboon', 'libnoln', 'onilnbl', 'inlobnl', 'lnoibnl', 'nobllin', 'oinlnbl', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil', 'ilnob', 'lnoib', 'nlobi', 'olnib', 'blnio', 'bnlio', 'nliob', 'libon', 'inlob', 'onilb', 'nobil', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno', 'inlob', 'onilb', 'nobli', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno']) == ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'oninlb', 'nobinll', 'inlboon', 'libnoln', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabb', 'abab', 'bbaa', 'abcd', 'dcba', 'cdab', 'bcda', 'mnop', 'ponm', 'opnm', 'nmop', 'qrst', 'srqt', 'qstr', 'tqrs', 'stqr', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['aabb', 'abcd', 'mnop', 'qrst', 'abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabb', 'abab', 'bbaa', 'abcd', 'dcba', 'cdab', 'bcda', 'mnop', 'ponm', 'opnm', 'nmop', 'qrst', 'srqt', 'qstr', 'tqrs', 'stqr', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['aabb', 'abcd', 'mnop', 'qrst', 'abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['triangle', 'integral', 'integral', 'integral', 'triangle', 'integral']) == ['triangle']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['triangle', 'integral', 'integral', 'integral', 'triangle', 'integral']) == ['triangle']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee']) == ['listen', 'google', 'abc', 'xyz', 'test', 'deed', 'deep']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee']) == ['listen', 'google', 'abc', 'xyz', 'test', 'deed', 'deep']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee', 'abcd', 'dcba', 'cbad', 'adcb', 'bacd', 'cabd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['deed', 'deep', 'abcd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee', 'abcd', 'dcba', 'cbad', 'adcb', 'bacd', 'cabd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['deed', 'deep', 'abcd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['aabbcc', 'bbaacc', 'abcabc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']) == ['aabbcc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['aabbcc', 'bbaacc', 'abcabc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']) == ['aabbcc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']: {e}')
+    
+    total += 1
+    try:
+        result = candidate(words = ['anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam', 'anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam']) == ['anagram', 'gnarham', 'ramnaga', 'mangnra', 'anagram', 'gnarham', 'ramnaga', 'mangnra']
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(words = ['anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam', 'anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam']) == ['anagram', 'gnarham', 'ramnaga', 'mangnra', 'anagram', 'gnarham', 'ramnaga', 'mangnra']: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(words = ['abc', 'cab', 'bca', 'xyz', 'zyx', 'yxz']) == ['abc', 'xyz']
+    assert candidate(words = ['abc', 'cba', 'bca', 'xyz', 'zyx']) == ['abc', 'xyz']
+    assert candidate(words = ['unique', 'words', 'here', 'now']) == ['unique', 'words', 'here', 'now']
+    assert candidate(words = ['test', 'sett', 'tset', 'ttew']) == ['test', 'ttew']
+    assert candidate(words = ['same', 'same', 'same', 'same', 'same']) == ['same']
+    assert candidate(words = ['a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e']
+    assert candidate(words = ['aabbcc', 'abcabc', 'bcaacb', 'bacbac', 'cababc']) == ['aabbcc']
+    assert candidate(words = ['test', 'sett', 'tset', 'stet', 'ttes']) == ['test']
+    assert candidate(words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']) == ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+    assert candidate(words = ['hello', 'billion', 'oellh', 'llheo', 'note', 'tone']) == ['hello', 'billion', 'oellh', 'note']
+    assert candidate(words = ['abc', 'cab', 'bac', 'bca', 'xyz']) == ['abc', 'xyz']
+    assert candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']
+    assert candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nohtyp']) == ['hello', 'world', 'python']
+    assert candidate(words = ['abba', 'baba', 'bbaa', 'cd', 'cd']) == ['abba', 'cd']
+    assert candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee']) == ['deed', 'deep']
+    assert candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'worlc']) == ['hello', 'world', 'worlc']
+    assert candidate(words = ['same', 'same', 'same', 'same']) == ['same']
+    assert candidate(words = ['abc', 'cba', 'bac', 'bca', 'cab', 'acb']) == ['abc']
+    assert candidate(words = ['aaa', 'aa', 'a', 'aaaa', 'aaa']) == ['aaa', 'aa', 'a', 'aaaa', 'aaa']
+    assert candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz']) == ['aabbcc', 'xyz']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl']) == ['listen', 'google']
+    assert candidate(words = ['abc', 'cab', 'bac', 'bca', 'acb', 'cba']) == ['abc']
+    assert candidate(words = ['aaa', 'aa', 'a']) == ['aaa', 'aa', 'a']
+    assert candidate(words = ['deed', 'deed', 'deed', 'deed', 'deed']) == ['deed']
+    assert candidate(words = ['hello', 'world', 'dlrow', 'owrld', 'werld', 'hello', 'olleh', 'dlrow', 'world', 'rowld', 'dlrow', 'hello', 'hello', 'world', 'world', 'world', 'dlrow', 'dlrow', 'dlrow', 'dlrow']) == ['hello', 'world', 'werld', 'hello', 'dlrow', 'hello', 'world']
+    assert candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']
+    assert candidate(words = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']) == ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+    assert candidate(words = ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'tac', 'act', 'rat', 'car']) == ['rat', 'car', 'tar', 'arc', 'art', 'cat', 'rat', 'car']
+    assert candidate(words = ['racecar', 'carrace', 'acecar', 'enlist', 'inlets', 'silent', 'google', 'gooegl', 'abc', 'bac', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz', 'listen', 'silent', 'enlist']) == ['racecar', 'acecar', 'enlist', 'google', 'abc', 'xyz', 'listen']
+    assert candidate(words = ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'aabbc', 'aabc', 'abc', 'ab', 'a', 'abcd', 'mnop']
+    assert candidate(words = ['ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba', 'ab', 'ba']) == ['ab']
+    assert candidate(words = ['hello', 'olleh', 'loleh', 'ohell', 'ehlol', 'world', 'dlrow', 'rowld', 'owlrd', 'wrold', 'hello', 'olleh', 'loleh', 'ohell', 'ehlol']) == ['hello', 'world', 'hello']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'zyxw', 'wxyz']) == ['listen', 'google', 'abc', 'xyz', 'zyxw']
+    assert candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['abcd', 'mnop']
+    assert candidate(words = ['aabbcc', 'baccab', 'abcabc', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes']) == ['aabbcc', 'xyz', 'test']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'bca', 'acb', 'cba', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+    assert candidate(words = ['rat', 'tar', 'art', 'star', 'rats', 'tars', 'arts', 'tsar', 'chart', 'arch', 'cart', 'ract', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'gnik', 'pink', 'kimp', 'pink', 'knip', 'kpin']) == ['rat', 'star', 'chart', 'arch', 'cart', 'track', 'krat', 'tract', 'crat', 'carr', 'rack', 'crab', 'back', 'bark', 'park', 'parking', 'arking', 'king', 'pink', 'kimp', 'pink']
+    assert candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'par', 'arp', 'arc', 'rac', 'cat', 'tac', 'act', 'cta', 'atc', 'tca', 'pqr', 'qrp', 'rpq', 'prq', 'rqp', 'qpr', 'aabb', 'bbaa', 'abab', 'abba', 'aaaa', 'bbba', 'baab', 'aabb', 'baba', 'bbaa', 'cd', 'cd', 'efg', 'feg', 'gfe', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']) == ['rat', 'car', 'par', 'arc', 'cat', 'pqr', 'aabb', 'aaaa', 'bbba', 'baab', 'cd', 'efg', 'geg', 'eee', 'fff', 'ggg', 'hhh', 'iii', 'jjj', 'kkk', 'lll', 'mmm', 'nnn', 'ooo', 'ppp', 'qqq', 'rrr', 'sss', 'ttt', 'uuu', 'vvv', 'www', 'xxx', 'yyy', 'zzz']
+    assert candidate(words = ['race', 'care', 'acre', 'racecar', 'carrace', 'racecar', 'carrace', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz', 'zyxzyx', 'xzyzyz', 'yzyzyx']) == ['race', 'racecar', 'abc', 'xyz', 'zyxzyx', 'xzyzyz', 'yzyzyx']
+    assert candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+    assert candidate(words = ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'bac', 'cba', 'bca', 'cab', 'acb', 'xyz', 'zyx', 'yxz']) == ['aaaa', 'aaab', 'aabb', 'abbb', 'bbbb', 'bbb', 'bb', 'b', 'a', 'abc', 'xyz']
+    assert candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'tack', 'rack', 'track', 'chart', 'cart']) == ['rat', 'dog', 'cat', 'tack', 'rack', 'track', 'chart', 'cart']
+    assert candidate(words = ['abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce', 'abcde', 'edcba', 'decba', 'acdeb', 'badce']) == ['abcde']
+    assert candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana']) == ['anagram']
+    assert candidate(words = ['python', 'typhon', 'hypton', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth', 'ypthon', 'phonto', 'opynth']) == ['python', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth', 'phonto', 'opynth']
+    assert candidate(words = ['dormitory', 'dirtyroom', 'dirtyroom', 'dormitory', 'dirtyroom', 'dirtyroom', 'dormitory']) == ['dormitory']
+    assert candidate(words = ['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+    assert candidate(words = ['aaaaa', 'aaabb', 'aabba', 'abbaa', 'baaab', 'baaba', 'bbaaa', 'abcde', 'edcba', 'decba', 'cbade', 'badec']) == ['aaaaa', 'aaabb', 'abcde']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['listen', 'google', 'abc', 'xyz']
+    assert candidate(words = ['race', 'care', 'acre', 'barc', 'racecar', 'carrace', 'racecar', 'carecar', 'abcde', 'edcba', 'bcdea', 'deabc', 'acdeb', 'decab']) == ['race', 'barc', 'racecar', 'abcde']
+    assert candidate(words = ['triangle', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral', 'integral']) == ['triangle']
+    assert candidate(words = ['aabbcc', 'abcabc', 'baccab', 'abccba', 'bacabc', 'aabbcc', 'abcd', 'dcba', 'cdab', 'bcda', 'badc', 'cabd']) == ['aabbcc', 'abcd']
+    assert candidate(words = ['abcd', 'dcba', 'abcd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+    assert candidate(words = ['rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'yxz']) == ['rat', 'dog', 'cat', 'abc', 'xyz']
+    assert candidate(words = ['abcdefghijklmnopqrstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba', 'mnopqrstuvwxyzabcdefghijkl', 'defghijklmnopqrstuvwxyzabc', 'jklmnopqrstuvwxyzabcdefghi', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'nopqrstuvwxyzabcdefghijklm', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']) == ['abcdefghijklmnopqrstuvwxyz', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno', 'mnopqrstuvwxyzabcdefghijklmno', 'opqrstuvwxyzabcdefghijklmno', 'pqrsutvwxyzabcdefghijklmno']
+    assert candidate(words = ['hello', 'olleh', 'world', 'dlrow', 'python', 'nothpy', 'java', 'avaj', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['hello', 'world', 'python', 'java', 'abcd']
+    assert candidate(words = ['anagram', 'nagaram', 'margana', 'ramnaga', 'gnamar', 'gnamar', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra', 'gnamra']) == ['anagram', 'gnamar']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'bca', 'cab', 'xyz', 'zyx', 'zyx', 'xyz']) == ['listen', 'google', 'abc', 'xyz']
+    assert candidate(words = ['aabbcc', 'baccab', 'cbaabc', 'abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'xyz', 'zyx', 'yxz', 'zyx', 'xyz']) == ['aabbcc', 'abc', 'xyz']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'uvw', 'vuw', 'wuv']) == ['listen', 'google', 'abc', 'xyz', 'uvw']
+    assert candidate(words = ['abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd', 'abcd', 'dcba', 'bacd', 'cadb', 'abdc', 'cabd']) == ['abcd']
+    assert candidate(words = ['python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot', 'python', 'typhon', 'nohtyp', 'ypthon', 'hypnot']) == ['python']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'inlets']) == ['listen', 'google', 'inlets']
+    assert candidate(words = ['aabbcc', 'abcabc', 'baccab', 'cabcab', 'abacbc', 'bbacac', 'acbbca', 'aabbbc', 'aabbbc', 'aabbbc']) == ['aabbcc', 'aabbbc']
+    assert candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'cadb', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['abcd']
+    assert candidate(words = ['aabbcc', 'abcabc', 'baccab', 'xyz', 'zyx', 'yxz', 'mnop', 'ponm', 'omnp', 'nmop', 'mpno', 'pmno']) == ['aabbcc', 'xyz', 'mnop']
+    assert candidate(words = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['abc', 'abcd', 'zzzz', 'zzz', 'zz', 'z']
+    assert candidate(words = ['ab', 'ba', 'aabb', 'bbaa', 'abab', 'baba', 'abba', 'baab', 'ab', 'ba']) == ['ab', 'aabb', 'ab']
+    assert candidate(words = ['aabbcc', 'baccab', 'abcabc', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'cab', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc', 'bac', 'abc']) == ['aabbcc', 'abc']
+    assert candidate(words = ['abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca', 'abcd', 'dcba', 'abdc', 'cbad', 'bcad', 'adbc', 'dabc', 'cdab', 'dacb', 'cadb', 'acbd', 'bdac', 'bdca']) == ['abcd']
+    assert candidate(words = ['aabbcc', 'abcabc', 'baccab', 'ccabba', 'cabacb', 'abcabc', 'aabbcc', 'xyzxyz', 'zyxzyx', 'yxzyxz', 'zyxzyx']) == ['aabbcc', 'xyzxyz']
+    assert candidate(words = ['anagram', 'nagaram', 'margana', 'gnarama', 'granama', 'aaagmnr', 'ab', 'ba', 'abc', 'cba', 'abcd', 'dcba', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee', 'aabbcc', 'baccab', 'abcabc', 'rat', 'tar', 'art', 'dog', 'god', 'cat', 'act', 'tac', 'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 'bacd', 'badc', 'bcad', 'bcda', 'bdac', 'bdca', 'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba', 'zzzz', 'zzz', 'zz', 'z']) == ['anagram', 'ab', 'abc', 'abcd', 'xyz', 'test', 'deed', 'deep', 'aabbcc', 'rat', 'dog', 'cat', 'abcd', 'zzzz', 'zzz', 'zz', 'z']
+    assert candidate(words = ['word', 'drow', 'dwor', 'owrd', 'abcd', 'dcba', 'cadb', 'bdac', 'abcd', 'dcba', 'cabd', 'bdac']) == ['word', 'abcd']
+    assert candidate(words = ['abcd', 'dcba', 'abcd', 'abdc', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['abcd']
+    assert candidate(words = ['anagram', 'nagaram', 'margana', 'anagram', 'nagaram', 'margana', 'anagram', 'nagaram']) == ['anagram']
+    assert candidate(words = ['evil', 'vile', 'live', 'veil', 'liVE', 'EVIL']) == ['evil', 'liVE', 'EVIL']
+    assert candidate(words = ['abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda', 'abcd', 'dcba', 'cdab', 'bacd', 'adcb', 'cbad', 'bcda']) == ['abcd']
+    assert candidate(words = ['rat', 'tar', 'art', 'car', 'arc', 'arc', 'rca', 'arc', 'cat', 'tac', 'act', 'dog', 'god', 'god', 'ogd']) == ['rat', 'car', 'cat', 'dog']
+    assert candidate(words = ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'lobinin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'llinbon', 'lobinln', 'nilonbl', 'nonlibl', 'oblinln', 'nlonbil', 'oninlb', 'nobinll', 'binlonl', 'onlibnl', 'nbinlol', 'inlboon', 'libnoln', 'onilnbl', 'inlobnl', 'lnoibnl', 'nobllin', 'oinlnbl', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil', 'ilnob', 'lnoib', 'nlobi', 'olnib', 'blnio', 'bnlio', 'nliob', 'libon', 'inlob', 'onilb', 'nobil', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno', 'inlob', 'onilb', 'nobli', 'inobl', 'onlbi', 'nobil', 'lobin', 'linbo', 'inolb', 'nolbi', 'libno']) == ['hello', 'billion', 'nillion', 'illonbi', 'onbilin', 'nnoblli', 'olnibin', 'ollinbi', 'bloninl', 'bnoloni', 'noblinl', 'oninlb', 'nobinll', 'inlboon', 'libnoln', 'onilb', 'nlibl', 'inlbn', 'lnbol', 'onbil']
+    assert candidate(words = ['aabb', 'abab', 'bbaa', 'abcd', 'dcba', 'cdab', 'bcda', 'mnop', 'ponm', 'opnm', 'nmop', 'qrst', 'srqt', 'qstr', 'tqrs', 'stqr', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd']) == ['aabb', 'abcd', 'mnop', 'qrst', 'abcd']
+    assert candidate(words = ['triangle', 'integral', 'integral', 'integral', 'triangle', 'integral']) == ['triangle']
+    assert candidate(words = ['listen', 'silent', 'enlist', 'google', 'gooegl', 'abc', 'cab', 'bac', 'xyz', 'zyx', 'yxz', 'test', 'sett', 'tset', 'stet', 'ttes', 'deed', 'deep', 'peed', 'depe', 'dpee']) == ['listen', 'google', 'abc', 'xyz', 'test', 'deed', 'deep']
+    assert candidate(words = ['deed', 'deep', 'peed', 'depe', 'dpee', 'abcd', 'dcba', 'cbad', 'adcb', 'bacd', 'cabd', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == ['deed', 'deep', 'abcd']
+    assert candidate(words = ['aabbcc', 'bbaacc', 'abcabc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']) == ['aabbcc', 'cccccc', 'bbbaaa', 'aabbcc', 'ccbbdd']
+    assert candidate(words = ['anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam', 'anagram', 'nagaram', 'margana', 'gnarham', 'ramnaga', 'gramana', 'amnagar', 'mangara', 'gnarama', 'ramagna', 'amnagra', 'agranam', 'mangnra', 'gnanram', 'rangnam']) == ['anagram', 'gnarham', 'ramnaga', 'mangnra', 'anagram', 'gnarham', 'ramnaga', 'mangnra']
+
+

@@ -1,0 +1,581 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(n = 6,threshold = 0,queries = [[4, 5], [3, 4], [3, 2], [2, 6], [1, 3]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,threshold = 0,queries = [[4, 5], [3, 4], [3, 2], [2, 6], [1, 3]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10,threshold = 3,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10,threshold = 3,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 50,queries = [[1, 2], [51, 100], [49, 99]]) == [False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 50,queries = [[1, 2], [51, 100], [49, 99]]) == [False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 6,threshold = 2,queries = [[1, 4], [2, 5], [3, 6]]) == [False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 6,threshold = 2,queries = [[1, 4], [2, 5], [3, 6]]) == [False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5,threshold = 1,queries = [[4, 5], [4, 5], [3, 2], [2, 3], [3, 4]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5,threshold = 1,queries = [[4, 5], [4, 5], [3, 2], [2, 3], [3, 4]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 50,queries = [[1, 99], [2, 98], [3, 97], [4, 96]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 50,queries = [[1, 99], [2, 98], [3, 97], [4, 96]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3000,threshold = 1500,queries = [[1501, 2250], [1502, 2251], [1503, 2252], [1504, 2253], [1505, 2254], [1506, 2255], [1507, 2256], [1508, 2257], [1509, 2258], [1510, 2259]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3000,threshold = 1500,queries = [[1501, 2250], [1502, 2251], [1503, 2252], [1504, 2253], [1505, 2254], [1506, 2255], [1507, 2256], [1508, 2257], [1509, 2258], [1510, 2259]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 1000,queries = [[1, 2000], [3000, 4000], [5000, 6000], [7000, 8000], [9000, 10000]]) == [False, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 1000,queries = [[1, 2000], [3000, 4000], [5000, 6000], [7000, 8000], [9000, 10000]]) == [False, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,threshold = 5,queries = [[6, 12], [10, 20], [14, 28], [18, 36], [22, 44]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,threshold = 5,queries = [[6, 12], [10, 20], [14, 28], [18, 36], [22, 44]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 999,threshold = 333,queries = [[1, 334], [2, 335], [3, 336], [4, 337], [5, 338], [6, 339]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 999,threshold = 333,queries = [[1, 334], [2, 335], [3, 336], [4, 337], [5, 338], [6, 339]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 0,queries = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 0,queries = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 1000,queries = [[1000, 2000], [3000, 4000], [4999, 5000]]) == [False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 1000,queries = [[1000, 2000], [3000, 4000], [4999, 5000]]) == [False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 25,queries = [[26, 52], [27, 54], [28, 56], [29, 58], [30, 60]]) == [True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 25,queries = [[26, 52], [27, 54], [28, 56], [29, 58], [30, 60]]) == [True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 1,queries = [[2, 4], [3, 6], [5, 10], [7, 14], [8, 16], [9, 18], [10, 20], [11, 22], [12, 24], [13, 26]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 1,queries = [[2, 4], [3, 6], [5, 10], [7, 14], [8, 16], [9, 18], [10, 20], [11, 22], [12, 24], [13, 26]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[1, 6000], [2, 6001], [3, 6002], [4, 6003], [5, 6004], [6, 6005]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[1, 6000], [2, 6001], [3, 6002], [4, 6003], [5, 6004], [6, 6005]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 250,queries = [[150, 300], [200, 400], [500, 750], [800, 900], [100, 900]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 250,queries = [[150, 300], [200, 400], [500, 750], [800, 900], [100, 900]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 501], [3, 502], [4, 503], [5, 504], [6, 505]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 501], [3, 502], [4, 503], [5, 504], [6, 505]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 9999,queries = [[1, 10000], [2, 9999], [3, 9998], [4, 9997]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 9999,queries = [[1, 10000], [2, 9999], [3, 9998], [4, 9997]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496], [256, 495]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496], [256, 495]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[1000, 9000], [5000, 6000], [1, 2], [9999, 10000]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[1000, 9000], [5000, 6000], [1, 2], [9999, 10000]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 100,queries = [[100, 200], [50, 150], [300, 600], [1, 2], [4999, 5000]]) == [False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 100,queries = [[100, 200], [50, 150], [300, 600], [1, 2], [4999, 5000]]) == [False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 750], [3, 900], [4, 950], [5, 999]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 750], [3, 900], [4, 950], [5, 999]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 2000,queries = [[1, 3000], [2, 4000], [3, 4500], [4, 4900], [5, 4999]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 2000,queries = [[1, 3000], [2, 4000], [3, 4500], [4, 4900], [5, 4999]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 50,threshold = 10,queries = [[11, 22], [13, 26], [15, 30], [7, 14], [21, 42]]) == [True, True, True, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 50,threshold = 10,queries = [[11, 22], [13, 26], [15, 30], [7, 14], [21, 42]]) == [True, True, True, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 250,queries = [[125, 250], [375, 500], [625, 750], [875, 1000], [1125, 1250]]) == [False, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 250,queries = [[125, 250], [375, 500], [625, 750], [875, 1000], [1125, 1250]]) == [False, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 200,queries = [[500, 750], [250, 501], [750, 1000], [1, 999]]) == [True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 200,queries = [[500, 750], [250, 501], [750, 1000], [1, 999]]) == [True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 0,queries = [[1, 9999], [2, 9998], [3, 9997], [4, 9996], [5, 9995], [6, 9994], [7, 9993], [8, 9992], [9, 9991], [10, 9990]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 0,queries = [[1, 9999], [2, 9998], [3, 9997], [4, 9996], [5, 9995], [6, 9994], [7, 9993], [8, 9992], [9, 9991], [10, 9990]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[5100, 9900], [5200, 9800], [5300, 9700], [5400, 9600], [5500, 9500]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[5100, 9900], [5200, 9800], [5300, 9700], [5400, 9600], [5500, 9500]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 1000,queries = [[1200, 2400], [1500, 3000], [2500, 4000], [3500, 4500], [1000, 4000]]) == [True, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 1000,queries = [[1200, 2400], [1500, 3000], [2500, 4000], [3500, 4500], [1000, 4000]]) == [True, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 5,queries = [[1, 1000], [2, 999], [3, 998], [4, 997], [5, 996]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 5,queries = [[1, 1000], [2, 999], [3, 998], [4, 997], [5, 996]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 10,queries = [[1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 10,queries = [[1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 50,queries = [[1, 50], [2, 50], [3, 50], [4, 50], [5, 50], [6, 50], [7, 50], [8, 50]]) == [False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 50,queries = [[1, 50], [2, 50], [3, 50], [4, 50], [5, 50], [6, 50], [7, 50], [8, 50]]) == [False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [1000, 3000], [2500, 5000]]) == [False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [1000, 3000], [2500, 5000]]) == [False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,threshold = 100,queries = [[100, 200], [300, 400], [500, 600], [700, 800], [900, 1000], [1100, 1200], [1300, 1400], [1500, 1600], [1700, 1800], [1900, 2000]]) == [False, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,threshold = 100,queries = [[100, 200], [300, 400], [500, 600], [700, 800], [900, 1000], [1100, 1200], [1300, 1400], [1500, 1600], [1700, 1800], [1900, 2000]]) == [False, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 20,queries = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 20,queries = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 20,threshold = 19,queries = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 20,threshold = 19,queries = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,threshold = 1000,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,threshold = 1000,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 1000,queries = [[2000, 3000], [1001, 2001], [4000, 5000], [999, 4999]]) == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 1000,queries = [[2000, 3000], [1001, 2001], [4000, 5000], [999, 4999]]) == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8000,threshold = 4000,queries = [[4001, 8000], [4002, 7999], [4003, 7998], [4004, 7997], [4005, 7996], [4006, 7995]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8000,threshold = 4000,queries = [[4001, 8000], [4002, 7999], [4003, 7998], [4004, 7997], [4005, 7996], [4006, 7995]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,threshold = 100,queries = [[50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550], [500, 600]]) == [False, False, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,threshold = 100,queries = [[50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550], [500, 600]]) == [False, False, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 5,queries = [[1, 3], [2, 4], [5, 7], [8, 10], [11, 13], [14, 16], [17, 19], [20, 22], [23, 25], [26, 28], [29, 31], [32, 34], [35, 37], [38, 40], [41, 43], [44, 46], [47, 49], [50, 52], [53, 55], [56, 58], [59, 61], [62, 64], [65, 67], [68, 70], [71, 73], [74, 76], [77, 79], [80, 82], [83, 85], [86, 88], [89, 91], [92, 94], [95, 97], [98, 100]]) == [False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 5,queries = [[1, 3], [2, 4], [5, 7], [8, 10], [11, 13], [14, 16], [17, 19], [20, 22], [23, 25], [26, 28], [29, 31], [32, 34], [35, 37], [38, 40], [41, 43], [44, 46], [47, 49], [50, 52], [53, 55], [56, 58], [59, 61], [62, 64], [65, 67], [68, 70], [71, 73], [74, 76], [77, 79], [80, 82], [83, 85], [86, 88], [89, 91], [92, 94], [95, 97], [98, 100]]) == [False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 50,queries = [[51, 101], [52, 102], [53, 103], [54, 104], [55, 105], [56, 106], [57, 107], [58, 108], [59, 109], [60, 110]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 50,queries = [[51, 101], [52, 102], [53, 103], [54, 104], [55, 105], [56, 106], [57, 107], [58, 108], [59, 109], [60, 110]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == [False, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == [False, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 500,queries = [[10, 20], [30, 50], [25, 75], [500, 1000], [999, 1000]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 500,queries = [[10, 20], [30, 50], [25, 75], [500, 1000], [999, 1000]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 50,queries = [[51, 100], [52, 99], [53, 98], [54, 97], [55, 96], [56, 95], [57, 94], [58, 93], [59, 92], [60, 91]]) == [True, True, False, False, True, True, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 50,queries = [[51, 100], [52, 99], [53, 98], [54, 97], [55, 96], [56, 95], [57, 94], [58, 93], [59, 92], [60, 91]]) == [True, True, False, False, True, True, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 8000,threshold = 4000,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 8000,threshold = 4000,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 3000,threshold = 1500,queries = [[1501, 2000], [1502, 2500], [1503, 3000], [2000, 3000], [1504, 1505], [1506, 1507]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 3000,threshold = 1500,queries = [[1501, 2000], [1502, 2500], [1503, 3000], [2000, 3000], [1504, 1505], [1506, 1507]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 2000,queries = [[2001, 4000], [2002, 4001], [2003, 4002], [2004, 4003], [2005, 4004], [2006, 4005], [2007, 4006], [2008, 4007], [2009, 4008], [2010, 4009]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 2000,queries = [[2001, 4000], [2002, 4001], [2003, 4002], [2004, 4003], [2005, 4004], [2006, 4005], [2007, 4006], [2008, 4007], [2009, 4008], [2010, 4009]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[1, 7000], [2, 8000], [3, 9000], [4, 9500], [5, 9999]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[1, 7000], [2, 8000], [3, 9000], [4, 9500], [5, 9999]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[1, 5001], [2, 5002], [3, 5003], [4, 5004], [5, 5005]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[1, 5001], [2, 5002], [3, 5003], [4, 5004], [5, 5005]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 99,queries = [[1, 100]]) == [False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 99,queries = [[1, 100]]) == [False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 2,queries = [[3, 6], [5, 10], [7, 14], [9, 18], [11, 22], [13, 26], [15, 30], [17, 34], [19, 38], [21, 42]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 2,queries = [[3, 6], [5, 10], [7, 14], [9, 18], [11, 22], [13, 26], [15, 30], [17, 34], [19, 38], [21, 42]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 10000,threshold = 5000,queries = [[5001, 5002], [5003, 5004], [5005, 5006], [5007, 5008], [5009, 5010]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 10000,threshold = 5000,queries = [[5001, 5002], [5003, 5004], [5005, 5006], [5007, 5008], [5009, 5010]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 2500,queries = [[1, 500], [1000, 1500], [2000, 2500], [3000, 3500], [4000, 4500], [4500, 5000]]) == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 2500,queries = [[1, 500], [1000, 1500], [2000, 2500], [3000, 3500], [4000, 4500], [4500, 5000]]) == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 300,queries = [[101, 202], [303, 404], [505, 606], [707, 808], [909, 1000]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 300,queries = [[101, 202], [303, 404], [505, 606], [707, 808], [909, 1000]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 100,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 100,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,threshold = 0,queries = [[1, 1999], [2, 1998], [3, 1997], [4, 1996], [5, 1995], [6, 1994], [7, 1993], [8, 1992], [9, 1991], [10, 1990]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,threshold = 0,queries = [[1, 1999], [2, 1998], [3, 1997], [4, 1996], [5, 1995], [6, 1994], [7, 1993], [8, 1992], [9, 1991], [10, 1990]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [2, 2502], [3, 2503], [4, 2504], [5, 2505]]) == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [2, 2502], [3, 2503], [4, 2504], [5, 2505]]) == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 2000,threshold = 1,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [False, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 2000,threshold = 1,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [False, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 150,threshold = 50,queries = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110], [110, 120], [120, 130], [130, 140], [140, 150]]) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 150,threshold = 50,queries = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110], [110, 120], [120, 130], [130, 140], [140, 150]]) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 1000,threshold = 0,queries = [[1, 999], [2, 998], [3, 997], [4, 996], [5, 995], [10, 100], [50, 150], [200, 300], [700, 800], [900, 1000]]) == [True, True, True, True, True, True, True, True, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 1000,threshold = 0,queries = [[1, 999], [2, 998], [3, 997], [4, 996], [5, 995], [10, 100], [50, 150], [200, 300], [700, 800], [900, 1000]]) == [True, True, True, True, True, True, True, True, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(n = 500,threshold = 250,queries = [[1, 251], [2, 252], [3, 253], [4, 254], [5, 255], [250, 499], [251, 498], [252, 497], [253, 496], [254, 495]]) == [False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(n = 500,threshold = 250,queries = [[1, 251], [2, 252], [3, 253], [4, 254], [5, 255], [250, 499], [251, 498], [252, 497], [253, 496], [254, 495]]) == [False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(n = 6,threshold = 0,queries = [[4, 5], [3, 4], [3, 2], [2, 6], [1, 3]]) == [True, True, True, True, True]
+    assert candidate(n = 10,threshold = 3,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]
+    assert candidate(n = 100,threshold = 50,queries = [[1, 2], [51, 100], [49, 99]]) == [False, False, False]
+    assert candidate(n = 6,threshold = 2,queries = [[1, 4], [2, 5], [3, 6]]) == [False, False, True]
+    assert candidate(n = 5,threshold = 1,queries = [[4, 5], [4, 5], [3, 2], [2, 3], [3, 4]]) == [False, False, False, False, False]
+    assert candidate(n = 100,threshold = 50,queries = [[1, 99], [2, 98], [3, 97], [4, 96]]) == [False, False, False, False]
+    assert candidate(n = 3000,threshold = 1500,queries = [[1501, 2250], [1502, 2251], [1503, 2252], [1504, 2253], [1505, 2254], [1506, 2255], [1507, 2256], [1508, 2257], [1509, 2258], [1510, 2259]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 1000,queries = [[1, 2000], [3000, 4000], [5000, 6000], [7000, 8000], [9000, 10000]]) == [False, True, True, True, True]
+    assert candidate(n = 50,threshold = 5,queries = [[6, 12], [10, 20], [14, 28], [18, 36], [22, 44]]) == [True, True, True, True, True]
+    assert candidate(n = 999,threshold = 333,queries = [[1, 334], [2, 335], [3, 336], [4, 337], [5, 338], [6, 339]]) == [False, False, False, False, False, False]
+    assert candidate(n = 100,threshold = 0,queries = [[1, 100], [2, 99], [3, 98], [4, 97], [5, 96]]) == [True, True, True, True, True]
+    assert candidate(n = 5000,threshold = 1000,queries = [[1000, 2000], [3000, 4000], [4999, 5000]]) == [False, False, False]
+    assert candidate(n = 100,threshold = 25,queries = [[26, 52], [27, 54], [28, 56], [29, 58], [30, 60]]) == [True, True, True, True, True]
+    assert candidate(n = 1000,threshold = 1,queries = [[2, 4], [3, 6], [5, 10], [7, 14], [8, 16], [9, 18], [10, 20], [11, 22], [12, 24], [13, 26]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 10000,threshold = 5000,queries = [[1, 6000], [2, 6001], [3, 6002], [4, 6003], [5, 6004], [6, 6005]]) == [False, False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 250,queries = [[150, 300], [200, 400], [500, 750], [800, 900], [100, 900]]) == [False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 501], [3, 502], [4, 503], [5, 504], [6, 505]]) == [False, False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 9999,queries = [[1, 10000], [2, 9999], [3, 9998], [4, 9997]]) == [False, False, False, False]
+    assert candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496], [256, 495]]) == [False, False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 5000,queries = [[1000, 9000], [5000, 6000], [1, 2], [9999, 10000]]) == [False, False, False, False]
+    assert candidate(n = 5000,threshold = 100,queries = [[100, 200], [50, 150], [300, 600], [1, 2], [4999, 5000]]) == [False, False, True, False, False]
+    assert candidate(n = 1000,threshold = 250,queries = [[1, 500], [2, 750], [3, 900], [4, 950], [5, 999]]) == [False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 2000,queries = [[1, 3000], [2, 4000], [3, 4500], [4, 4900], [5, 4999]]) == [False, False, False, False, False]
+    assert candidate(n = 50,threshold = 10,queries = [[11, 22], [13, 26], [15, 30], [7, 14], [21, 42]]) == [True, True, True, False, True]
+    assert candidate(n = 5000,threshold = 250,queries = [[125, 250], [375, 500], [625, 750], [875, 1000], [1125, 1250]]) == [False, True, True, True, True]
+    assert candidate(n = 1000,threshold = 200,queries = [[500, 750], [250, 501], [750, 1000], [1, 999]]) == [True, False, True, False]
+    assert candidate(n = 10000,threshold = 0,queries = [[1, 9999], [2, 9998], [3, 9997], [4, 9996], [5, 9995], [6, 9994], [7, 9993], [8, 9992], [9, 9991], [10, 9990]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 10000,threshold = 5000,queries = [[5100, 9900], [5200, 9800], [5300, 9700], [5400, 9600], [5500, 9500]]) == [False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 1000,queries = [[1200, 2400], [1500, 3000], [2500, 4000], [3500, 4500], [1000, 4000]]) == [True, True, False, False, False]
+    assert candidate(n = 1000,threshold = 5,queries = [[1, 1000], [2, 999], [3, 998], [4, 997], [5, 996]]) == [False, False, False, False, False]
+    assert candidate(n = 100,threshold = 10,queries = [[1, 11], [2, 12], [3, 13], [4, 14], [5, 15]]) == [False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 50,queries = [[1, 50], [2, 50], [3, 50], [4, 50], [5, 50], [6, 50], [7, 50], [8, 50]]) == [False, False, False, False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [1000, 3000], [2500, 5000]]) == [False, False, False]
+    assert candidate(n = 2000,threshold = 100,queries = [[100, 200], [300, 400], [500, 600], [700, 800], [900, 1000], [1100, 1200], [1300, 1400], [1500, 1600], [1700, 1800], [1900, 2000]]) == [False, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 100,threshold = 20,queries = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]]) == [False, False, False, False, False]
+    assert candidate(n = 20,threshold = 19,queries = [[1, 20], [2, 19], [3, 18], [4, 17], [5, 16]]) == [False, False, False, False, False]
+    assert candidate(n = 2000,threshold = 1000,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]) == [False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 1000,queries = [[2000, 3000], [1001, 2001], [4000, 5000], [999, 4999]]) == [False, False, False, False]
+    assert candidate(n = 8000,threshold = 4000,queries = [[4001, 8000], [4002, 7999], [4003, 7998], [4004, 7997], [4005, 7996], [4006, 7995]]) == [False, False, False, False, False, False]
+    assert candidate(n = 2000,threshold = 100,queries = [[50, 150], [100, 200], [150, 250], [200, 300], [250, 350], [300, 400], [350, 450], [400, 500], [450, 550], [500, 600]]) == [False, False, True, True, True, True, True, True, True, True]
+    assert candidate(n = 1000,threshold = 5,queries = [[1, 3], [2, 4], [5, 7], [8, 10], [11, 13], [14, 16], [17, 19], [20, 22], [23, 25], [26, 28], [29, 31], [32, 34], [35, 37], [38, 40], [41, 43], [44, 46], [47, 49], [50, 52], [53, 55], [56, 58], [59, 61], [62, 64], [65, 67], [68, 70], [71, 73], [74, 76], [77, 79], [80, 82], [83, 85], [86, 88], [89, 91], [92, 94], [95, 97], [98, 100]]) == [False, False, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 10000,threshold = 50,queries = [[51, 101], [52, 102], [53, 103], [54, 104], [55, 105], [56, 106], [57, 107], [58, 108], [59, 109], [60, 110]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 10000,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]]) == [False, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 1000,threshold = 500,queries = [[10, 20], [30, 50], [25, 75], [500, 1000], [999, 1000]]) == [False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 50,queries = [[51, 100], [52, 99], [53, 98], [54, 97], [55, 96], [56, 95], [57, 94], [58, 93], [59, 92], [60, 91]]) == [True, True, False, False, True, True, False, False, False, True]
+    assert candidate(n = 8000,threshold = 4000,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, False, False, False, False]
+    assert candidate(n = 3000,threshold = 1500,queries = [[1501, 2000], [1502, 2500], [1503, 3000], [2000, 3000], [1504, 1505], [1506, 1507]]) == [False, False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 2000,queries = [[2001, 4000], [2002, 4001], [2003, 4002], [2004, 4003], [2005, 4004], [2006, 4005], [2007, 4006], [2008, 4007], [2009, 4008], [2010, 4009]]) == [False, False, False, False, False, False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 5000,queries = [[1, 7000], [2, 8000], [3, 9000], [4, 9500], [5, 9999]]) == [False, False, False, False, False]
+    assert candidate(n = 10000,threshold = 5000,queries = [[1, 5001], [2, 5002], [3, 5003], [4, 5004], [5, 5005]]) == [False, False, False, False, False]
+    assert candidate(n = 100,threshold = 99,queries = [[1, 100]]) == [False]
+    assert candidate(n = 5000,threshold = 2,queries = [[3, 6], [5, 10], [7, 14], [9, 18], [11, 22], [13, 26], [15, 30], [17, 34], [19, 38], [21, 42]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 10000,threshold = 5000,queries = [[5001, 5002], [5003, 5004], [5005, 5006], [5007, 5008], [5009, 5010]]) == [False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 2500,queries = [[1, 500], [1000, 1500], [2000, 2500], [3000, 3500], [4000, 4500], [4500, 5000]]) == [False, False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 300,queries = [[101, 202], [303, 404], [505, 606], [707, 808], [909, 1000]]) == [False, False, False, False, False]
+    assert candidate(n = 100,threshold = 1,queries = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]) == [False, True, True, True, True]
+    assert candidate(n = 2000,threshold = 0,queries = [[1, 1999], [2, 1998], [3, 1997], [4, 1996], [5, 1995], [6, 1994], [7, 1993], [8, 1992], [9, 1991], [10, 1990]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 500,threshold = 250,queries = [[251, 500], [252, 499], [253, 498], [254, 497], [255, 496]]) == [False, False, False, False, False]
+    assert candidate(n = 5000,threshold = 2500,queries = [[1, 2501], [2, 2502], [3, 2503], [4, 2504], [5, 2505]]) == [False, False, False, False, False]
+    assert candidate(n = 2000,threshold = 1,queries = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16], [17, 18], [19, 20]]) == [False, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 150,threshold = 50,queries = [[10, 20], [20, 30], [30, 40], [40, 50], [50, 60], [60, 70], [70, 80], [80, 90], [90, 100], [100, 110], [110, 120], [120, 130], [130, 140], [140, 150]]) == [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+    assert candidate(n = 1000,threshold = 0,queries = [[1, 999], [2, 998], [3, 997], [4, 996], [5, 995], [10, 100], [50, 150], [200, 300], [700, 800], [900, 1000]]) == [True, True, True, True, True, True, True, True, True, True]
+    assert candidate(n = 500,threshold = 250,queries = [[1, 251], [2, 252], [3, 253], [4, 254], [5, 255], [250, 499], [251, 498], [252, 497], [253, 496], [254, 495]]) == [False, False, False, False, False, False, False, False, False, False]
+
+

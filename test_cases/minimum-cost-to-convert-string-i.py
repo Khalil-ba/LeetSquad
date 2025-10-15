@@ -1,0 +1,860 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(source = "abcd",target = "abce",original = ['a'],changed = ['e'],cost = [10000]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcd",target = "abce",original = ['a'],changed = ['e'],cost = [10000]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaa",target = "bbbb",original = ['a', 'c'],changed = ['c', 'b'],cost = [1, 2]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaa",target = "bbbb",original = ['a', 'c'],changed = ['c', 'b'],cost = [1, 2]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abc",target = "def",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 1, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abc",target = "def",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 1, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcd",target = "acbe",original = ['a', 'b', 'c', 'c', 'e', 'd'],changed = ['b', 'c', 'b', 'e', 'b', 'e'],cost = [2, 5, 5, 1, 2, 20]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcd",target = "acbe",original = ['a', 'b', 'c', 'c', 'e', 'd'],changed = ['b', 'c', 'b', 'e', 'b', 'e'],cost = [2, 5, 5, 1, 2, 20]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "zzz",target = "aaa",original = ['z', 'z', 'z'],changed = ['a', 'b', 'a'],cost = [2, 3, 1]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "zzz",target = "aaa",original = ['z', 'z', 'z'],changed = ['a', 'b', 'a'],cost = [2, 3, 1]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aabbccddeeff",target = "zzzzyyyxxx",original = ['a', 'b', 'c', 'd', 'e', 'f', 'z', 'y', 'x'],changed = ['z', 'y', 'x', 'z', 'y', 'x', 'a', 'b', 'c'],cost = [100, 200, 300, 400, 500, 600, 1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aabbccddeeff",target = "zzzzyyyxxx",original = ['a', 'b', 'c', 'd', 'e', 'f', 'z', 'y', 'x'],changed = ['z', 'y', 'x', 'z', 'y', 'x', 'a', 'b', 'c'],cost = [100, 200, 300, 400, 500, 600, 1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "hello",target = "ohell",original = ['h', 'e', 'l', 'o'],changed = ['o', 'l', 'e', 'h'],cost = [10, 20, 30, 40]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "hello",target = "ohell",original = ['h', 'e', 'l', 'o'],changed = ['o', 'l', 'e', 'h'],cost = [10, 20, 30, 40]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaabbbbbcccc",target = "bbbbbccccddddd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'a'],cost = [1, 1, 1, 1]) == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaabbbbbcccc",target = "bbbbbccccddddd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'a'],cost = [1, 1, 1, 1]) == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1000000, 1000000]) == 10000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1000000, 1000000]) == 10000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabc",target = "defdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 1800
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabc",target = "defdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 1800: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 351
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 351: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd'],changed = ['w', 'o', 'o', 'd', 'r', 'r', 'r', 'l', 'l', 'h'],cost = [7, 5, 1, 1, 6, 8, 4, 9, 2, 3]) == 31
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd'],changed = ['w', 'o', 'o', 'd', 'r', 'r', 'r', 'l', 'l', 'h'],cost = [7, 5, 1, 1, 6, 8, 4, 9, 2, 3]) == 31: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 4, 3, 2, 1]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 4, 3, 2, 1]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabc",target = "abcabcabcabc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [10, 20, 30]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabc",target = "abcabcabcabc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [10, 20, 30]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "sourcestring",target = "targetstri",original = ['s', 'o', 'u', 'r', 'c', 'e', 't', 'a', 'g', 'i', 'n'],changed = ['t', 'a', 'r', 'g', 'e', 't', 's', 'o', 'u', 'n', 'g'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "sourcestring",target = "targetstri",original = ['s', 'o', 'u', 'r', 'c', 'e', 't', 'a', 'g', 'i', 'n'],changed = ['t', 'a', 'r', 'g', 'e', 't', 's', 'o', 'u', 'n', 'g'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaa",target = "bbbbbb",original = ['a', 'a', 'a', 'a', 'a', 'a'],changed = ['b', 'c', 'd', 'e', 'f', 'g'],cost = [1, 10, 100, 1000, 10000, 100000]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaa",target = "bbbbbb",original = ['a', 'a', 'a', 'a', 'a', 'a'],changed = ['b', 'c', 'd', 'e', 'f', 'g'],cost = [1, 10, 100, 1000, 10000, 100000]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaabbbccc",target = "bbbaaaccb",original = ['a', 'b', 'c'],changed = ['b', 'a', 'b'],cost = [1, 2, 3]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaabbbccc",target = "bbbaaaccb",original = ['a', 'b', 'c'],changed = ['b', 'a', 'b'],cost = [1, 2, 3]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "zzzzzzzzzz",target = "aaaaaaaaaa",original = ['z', 'a'],changed = ['a', 'z'],cost = [1000000, 1]) == 10000000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "zzzzzzzzzz",target = "aaaaaaaaaa",original = ['z', 'a'],changed = ['a', 'z'],cost = [1000000, 1]) == 10000000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abacabadabacaba",target = "zyxzyxzyxzyxzyx",original = ['a', 'b', 'c'],changed = ['z', 'y', 'x'],cost = [1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abacabadabacaba",target = "zyxzyxzyxzyxzyx",original = ['a', 'b', 'c'],changed = ['z', 'y', 'x'],cost = [1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaabbbbbccccc",target = "bbbbbaaaaaccccc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 27
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaabbbbbccccc",target = "bbbbbaaaaaccccc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 27: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdabcdabcd",target = "dcbaabcddcba",original = ['a', 'b', 'c', 'd'],changed = ['d', 'c', 'b', 'a'],cost = [1, 2, 3, 4]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdabcdabcd",target = "dcbaabcddcba",original = ['a', 'b', 'c', 'd'],changed = ['d', 'c', 'b', 'a'],cost = [1, 2, 3, 4]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "conversion",target = "converting",original = ['v', 's', 'i'],changed = ['r', 't', 'n'],cost = [15, 25, 35]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "conversion",target = "converting",original = ['v', 's', 'i'],changed = ['r', 't', 'n'],cost = [15, 25, 35]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "zzzzzzzzzzzzzzzzzzzz",original = ['z'],changed = ['z'],cost = [1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "zzzzzzzzzzzzzzzzzzzz",original = ['z'],changed = ['z'],cost = [1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 1, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 1, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaabbbbb",target = "bbbaaaaab",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 2]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaabbbbb",target = "bbbaaaaab",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 2]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "programming",target = "debugging",original = ['p', 'r', 'o', 'g', 'a', 'm', 'd', 'e', 'b', 'u', 'i', 'n'],changed = ['d', 'e', 'b', 'u', 'g', 'g', 'i', 'n', 'g', 'p', 'r', 'o'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 171
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "programming",target = "debugging",original = ['p', 'r', 'o', 'g', 'a', 'm', 'd', 'e', 'b', 'u', 'i', 'n'],changed = ['d', 'e', 'b', 'u', 'g', 'g', 'i', 'n', 'g', 'p', 'r', 'o'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 171: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abababab",target = "babababa",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 1]) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abababab",target = "babababa",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 1]) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "example",target = "sample",original = ['e', 'x', 'a', 'm', 'p', 'l'],changed = ['s', 'a', 'm', 'p', 'l', 'e'],cost = [1000, 2000, 3000, 4000, 5000, 6000]) == 21000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "example",target = "sample",original = ['e', 'x', 'a', 'm', 'p', 'l'],changed = ['s', 'a', 'm', 'p', 'l', 'e'],cost = [1000, 2000, 3000, 4000, 5000, 6000]) == 21000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "ghijklmnop",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e', 'f'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "ghijklmnop",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e', 'f'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "mmmmmmmmmmmmmmmmmmmm",target = "nnnnnnnnnnnnnnnnnnnn",original = ['m', 'n'],changed = ['n', 'm'],cost = [10, 1]) == 200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "mmmmmmmmmmmmmmmmmmmm",target = "nnnnnnnnnnnnnnnnnnnn",original = ['m', 'n'],changed = ['n', 'm'],cost = [10, 1]) == 200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 5, 5, 5, 5]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 5, 5, 5, 5]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [3, 4, 5]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [3, 4, 5]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "complexstring",target = "simpleststr",original = ['c', 'o', 'm', 'p', 'l', 'e', 'x', 's', 't', 'r', 'i', 'n', 'g'],changed = ['s', 'i', 'm', 'p', 'l', 'e', 's', 't', 'r', 'i', 'n', 'g', 'c'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == 1830
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "complexstring",target = "simpleststr",original = ['c', 'o', 'm', 'p', 'l', 'e', 'x', 's', 't', 'r', 'i', 'n', 'g'],changed = ['s', 'i', 'm', 'p', 'l', 'e', 's', 't', 'r', 'i', 'n', 'g', 'c'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == 1830: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaa",target = "bbbbb",original = ['a', 'a', 'a', 'a', 'a'],changed = ['b', 'b', 'b', 'b', 'b'],cost = [1, 2, 3, 4, 5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaa",target = "bbbbb",original = ['a', 'a', 'a', 'a', 'a'],changed = ['b', 'b', 'b', 'b', 'b'],cost = [1, 2, 3, 4, 5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "abcdefghijklmnopqrstuvwxyzb",original = ['a', 'z'],changed = ['b', 'a'],cost = [10, 20]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "abcdefghijklmnopqrstuvwxyzb",original = ['a', 'z'],changed = ['b', 'a'],cost = [10, 20]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "testing",target = "success",original = ['t', 'e', 's', 'i', 'n', 'c'],changed = ['s', 's', 'c', 's', 'c', 's'],cost = [10, 20, 30, 40, 50, 60]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "testing",target = "success",original = ['t', 'e', 's', 'i', 'n', 'c'],changed = ['s', 's', 'c', 's', 'c', 's'],cost = [10, 20, 30, 40, 50, 60]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "aaaaaaaaaaaaaaaaaaaa",original = ['z'],changed = ['a'],cost = [1]) == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "aaaaaaaaaaaaaaaaaaaa",original = ['z'],changed = ['a'],cost = [1]) == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdef",target = "fedcba",original = ['a', 'b', 'c', 'd', 'e', 'f'],changed = ['f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6]) == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdef",target = "fedcba",original = ['a', 'b', 'c', 'd', 'e', 'f'],changed = ['f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6]) == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefg",target = "hijklmn",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['h', 'i', 'j', 'k', 'l', 'm', 'n'],cost = [1, 1, 1, 1, 1, 1, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefg",target = "hijklmn",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['h', 'i', 'j', 'k', 'l', 'm', 'n'],cost = [1, 1, 1, 1, 1, 1, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdabcdabcd",target = "zzzzzzzzzzzz",original = ['a', 'b', 'c', 'd'],changed = ['z', 'z', 'z', 'z'],cost = [1, 2, 3, 4]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdabcdabcd",target = "zzzzzzzzzzzz",original = ['a', 'b', 'c', 'd'],changed = ['z', 'z', 'z', 'z'],cost = [1, 2, 3, 4]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'l', 'r', 'h', 'o', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'l', 'r', 'h', 'o', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "xyxzy",target = "yxyzx",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [1, 1, 1]) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "xyxzy",target = "yxyzx",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [1, 1, 1]) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "programming",target = "algorithm",original = ['p', 'r', 'o', 'g', 'a', 'm', 'i', 'n', 't', 'l', 'e'],changed = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 'p', 'e'],cost = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 110]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "programming",target = "algorithm",original = ['p', 'r', 'o', 'g', 'a', 'm', 'i', 'n', 't', 'l', 'e'],changed = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 'p', 'e'],cost = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 110]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "xyxyxy",target = "yzyzyz",original = ['x', 'y'],changed = ['y', 'z'],cost = [10, 20]) == 90
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "xyxyxy",target = "yzyzyz",original = ['x', 'y'],changed = ['y', 'z'],cost = [10, 20]) == 90: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcde",target = "aaaaa",original = ['a', 'b', 'c', 'd', 'e'],changed = ['a', 'a', 'a', 'a', 'a'],cost = [1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcde",target = "aaaaa",original = ['a', 'b', 'c', 'd', 'e'],changed = ['a', 'a', 'a', 'a', 'a'],cost = [1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaa",target = "zzzzzzzzzz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaa",target = "zzzzzzzzzz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abacabadabacaba",target = "xyzxyzyxzyzyxzy",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [10, 20, 30]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abacabadabacaba",target = "xyzxyzyxzyzyxzy",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [10, 20, 30]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "hellohellohello",target = "worldworldworld",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'o', 'h', 'e', 'l'],cost = [5, 15, 25, 35, 45, 55, 65]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "hellohellohello",target = "worldworldworld",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'o', 'h', 'e', 'l'],cost = [5, 15, 25, 35, 45, 55, 65]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "mississippi",target = "sssmmmipipi",original = ['m', 'i', 's', 'p'],changed = ['s', 'm', 'i', 'p'],cost = [2, 3, 4, 5]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "mississippi",target = "sssmmmipipi",original = ['m', 'i', 's', 'p'],changed = ['s', 'm', 'i', 'p'],cost = [2, 3, 4, 5]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'r', 'o', 'l', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'r', 'o', 'l', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "quickbrownfox",target = "jumpingoverlazy",original = ['q', 'u', 'i', 'c', 'k', 'b', 'r', 'o', 'w', 'n', 'f', 'o', 'x'],changed = ['j', 'u', 'm', 'p', 'i', 'n', 'g', 'v', 'e', 'r', 'l', 'a', 'z'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "quickbrownfox",target = "jumpingoverlazy",original = ['q', 'u', 'i', 'c', 'k', 'b', 'r', 'o', 'w', 'n', 'f', 'o', 'x'],changed = ['j', 'u', 'm', 'p', 'i', 'n', 'g', 'v', 'e', 'r', 'l', 'a', 'z'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'e'],cost = [1, 2, 3, 4]) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'e'],cost = [1, 2, 3, 4]) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abracadabra",target = "zabzazaba",original = ['a', 'b', 'c', 'd', 'r'],changed = ['z', 'a', 'a', 'a', 'a'],cost = [10, 20, 30, 40, 5]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abracadabra",target = "zabzazaba",original = ['a', 'b', 'c', 'd', 'r'],changed = ['z', 'a', 'a', 'a', 'a'],cost = [10, 20, 30, 40, 5]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "mississippi",target = "hississippi",original = ['m'],changed = ['h'],cost = [5]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "mississippi",target = "hississippi",original = ['m'],changed = ['h'],cost = [5]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "xyxyxyxyxyxyxyxyxy",target = "yzyzyzyzyzyzyzyzyz",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [5, 4, 3]) == 81
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "xyxyxyxyxyxyxyxyxy",target = "yzyzyzyzyzyzyzyzyz",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [5, 4, 3]) == 81: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "conversion",target = "transformation",original = ['c', 'o', 'n', 'v', 'e', 'r', 's', 'i', 'o', 'n'],changed = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'r', 'm', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 480
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "conversion",target = "transformation",original = ['c', 'o', 'n', 'v', 'e', 'r', 's', 'i', 'o', 'n'],changed = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'r', 'm', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 480: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabcabcabc",target = "defdefdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 2, 3]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabcabcabc",target = "defdefdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 2, 3]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "algorithm",target = "algorithm",original = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm'],changed = ['m', 'a', 'l', 'g', 'o', 'r', 'i', 't', 'h'],cost = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "algorithm",target = "algorithm",original = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm'],changed = ['m', 'a', 'l', 'g', 'o', 'r', 'i', 't', 'h'],cost = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "repeated",target = "rotating",original = ['e', 'p', 't', 'a', 'd'],changed = ['o', 'a', 'i', 't', 'n'],cost = [5, 7, 3, 9, 12]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "repeated",target = "rotating",original = ['e', 'p', 't', 'a', 'd'],changed = ['o', 'a', 'i', 't', 'n'],cost = [5, 7, 3, 9, 12]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260]) == 3510
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260]) == 3510: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "fedcbaghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['e', 'd', 'c', 'b', 'a', 'j', 'i', 'h', 'g', 'f'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "fedcbaghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['e', 'd', 'c', 'b', 'a', 'j', 'i', 'h', 'g', 'f'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abababababababababab",target = "bcbcbcbcbcbcbcbcbcbc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abababababababababab",target = "bcbcbcbcbcbcbcbcbcbc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "bcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 26
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "bcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 26: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaabbbbcccc",target = "bbccccddddee",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 2, 3]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaabbbbcccc",target = "bbccccddddee",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 2, 3]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b'],changed = ['b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a'],cost = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1]) == 36
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b'],changed = ['b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a'],cost = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1]) == 36: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "zyxwvutsrqponmlkjihgfedcbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "zyxwvutsrqponmlkjihgfedcbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "transform",target = "convert",original = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'm'],changed = ['c', 'o', 'n', 'v', 'e', 'r', 't', 'd'],cost = [4, 2, 1, 3, 6, 5, 7, 8]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "transform",target = "convert",original = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'm'],changed = ['c', 'o', 'n', 'v', 'e', 'r', 't', 'd'],cost = [4, 2, 1, 3, 6, 5, 7, 8]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabcabcabcabcabcabcabc",target = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 600
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabcabcabcabcabcabcabc",target = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 600: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabcabc",target = "defdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 3000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabcabc",target = "defdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 3000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 5, 15, 25]) == 240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 5, 15, 25]) == 240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "python",target = "java",original = ['p', 'y', 't', 'h', 'o', 'n', 'j', 'a', 'v'],changed = ['j', 'a', 'v', 'a', 'v', 'a', 'p', 'y', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "python",target = "java",original = ['p', 'y', 't', 'h', 'o', 'n', 'j', 'a', 'v'],changed = ['j', 'a', 'v', 'a', 'v', 'a', 'p', 'y', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [100, 200, 300]) == 2000
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [100, 200, 300]) == 2000: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "programming",target = "ppppppppppp",original = ['p', 'r', 'o', 'g', 'a', 'm'],changed = ['p', 'p', 'p', 'p', 'p', 'p'],cost = [1, 2, 3, 4, 5, 6]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "programming",target = "ppppppppppp",original = ['p', 'r', 'o', 'g', 'a', 'm'],changed = ['p', 'p', 'p', 'p', 'p', 'p'],cost = [1, 2, 3, 4, 5, 6]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",target = "zzzzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeeeddccbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",target = "zzzzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeeeddccbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [100, 200, 300]) == -1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [100, 200, 300]) == -1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefghij",target = "klmnopqrst",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 550
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefghij",target = "klmnopqrst",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 550: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcde",target = "fghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['f', 'g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e'],cost = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcde",target = "fghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['f', 'g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e'],cost = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "abcdefg",target = "gfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [7, 6, 5, 4, 3, 2, 1]) == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "abcdefg",target = "gfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [7, 6, 5, 4, 3, 2, 1]) == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(source = "aaaaabbbbbaaaaa",target = "bbbbbbaaaaabbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [100, 150]) == 1500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(source = "aaaaabbbbbaaaaa",target = "bbbbbbaaaaabbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [100, 150]) == 1500: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(source = "abcd",target = "abce",original = ['a'],changed = ['e'],cost = [10000]) == -1
+    assert candidate(source = "aaaa",target = "bbbb",original = ['a', 'c'],changed = ['c', 'b'],cost = [1, 2]) == 12
+    assert candidate(source = "abc",target = "def",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 1, 1]) == 3
+    assert candidate(source = "abcd",target = "acbe",original = ['a', 'b', 'c', 'c', 'e', 'd'],changed = ['b', 'c', 'b', 'e', 'b', 'e'],cost = [2, 5, 5, 1, 2, 20]) == 28
+    assert candidate(source = "zzz",target = "aaa",original = ['z', 'z', 'z'],changed = ['a', 'b', 'a'],cost = [2, 3, 1]) == 3
+    assert candidate(source = "aabbccddeeff",target = "zzzzyyyxxx",original = ['a', 'b', 'c', 'd', 'e', 'f', 'z', 'y', 'x'],changed = ['z', 'y', 'x', 'z', 'y', 'x', 'a', 'b', 'c'],cost = [100, 200, 300, 400, 500, 600, 1, 2, 3]) == -1
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+    assert candidate(source = "hello",target = "ohell",original = ['h', 'e', 'l', 'o'],changed = ['o', 'l', 'e', 'h'],cost = [10, 20, 30, 40]) == -1
+    assert candidate(source = "aaaaabbbbbcccc",target = "bbbbbccccddddd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'a'],cost = [1, 1, 1, 1]) == 15
+    assert candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1000000, 1000000]) == 10000000
+    assert candidate(source = "abcabcabc",target = "defdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 1800
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 351
+    assert candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd'],changed = ['w', 'o', 'o', 'd', 'r', 'r', 'r', 'l', 'l', 'h'],cost = [7, 5, 1, 1, 6, 8, 4, 9, 2, 3]) == 31
+    assert candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 4, 3, 2, 1]) == 12
+    assert candidate(source = "abcabcabcabc",target = "abcabcabcabc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [10, 20, 30]) == 0
+    assert candidate(source = "sourcestring",target = "targetstri",original = ['s', 'o', 'u', 'r', 'c', 'e', 't', 'a', 'g', 'i', 'n'],changed = ['t', 'a', 'r', 'g', 'e', 't', 's', 'o', 'u', 'n', 'g'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == 21
+    assert candidate(source = "aaaaaa",target = "bbbbbb",original = ['a', 'a', 'a', 'a', 'a', 'a'],changed = ['b', 'c', 'd', 'e', 'f', 'g'],cost = [1, 10, 100, 1000, 10000, 100000]) == 6
+    assert candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+    assert candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+    assert candidate(source = "aaabbbccc",target = "bbbaaaccb",original = ['a', 'b', 'c'],changed = ['b', 'a', 'b'],cost = [1, 2, 3]) == 12
+    assert candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 0
+    assert candidate(source = "zzzzzzzzzz",target = "aaaaaaaaaa",original = ['z', 'a'],changed = ['a', 'z'],cost = [1000000, 1]) == 10000000
+    assert candidate(source = "abacabadabacaba",target = "zyxzyxzyxzyxzyx",original = ['a', 'b', 'c'],changed = ['z', 'y', 'x'],cost = [1, 2, 3]) == -1
+    assert candidate(source = "aaaaaabbbbbccccc",target = "bbbbbaaaaaccccc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 27
+    assert candidate(source = "abcdabcdabcd",target = "dcbaabcddcba",original = ['a', 'b', 'c', 'd'],changed = ['d', 'c', 'b', 'a'],cost = [1, 2, 3, 4]) == 20
+    assert candidate(source = "conversion",target = "converting",original = ['v', 's', 'i'],changed = ['r', 't', 'n'],cost = [15, 25, 35]) == -1
+    assert candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "zzzzzzzzzzzzzzzzzzzz",original = ['z'],changed = ['z'],cost = [1]) == 0
+    assert candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 1, 1]) == 6
+    assert candidate(source = "aaaaaabbbbb",target = "bbbaaaaab",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 2]) == 7
+    assert candidate(source = "programming",target = "debugging",original = ['p', 'r', 'o', 'g', 'a', 'm', 'd', 'e', 'b', 'u', 'i', 'n'],changed = ['d', 'e', 'b', 'u', 'g', 'g', 'i', 'n', 'g', 'p', 'r', 'o'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 171
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == -1
+    assert candidate(source = "abababab",target = "babababa",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 1]) == 8
+    assert candidate(source = "aaaaaaaaaa",target = "bbbbbbbbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [1, 10]) == 10
+    assert candidate(source = "example",target = "sample",original = ['e', 'x', 'a', 'm', 'p', 'l'],changed = ['s', 'a', 'm', 'p', 'l', 'e'],cost = [1000, 2000, 3000, 4000, 5000, 6000]) == 21000
+    assert candidate(source = "abcdefghij",target = "ghijklmnop",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e', 'f'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == -1
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+    assert candidate(source = "mmmmmmmmmmmmmmmmmmmm",target = "nnnnnnnnnnnnnnnnnnnn",original = ['m', 'n'],changed = ['n', 'm'],cost = [10, 1]) == 200
+    assert candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [5, 5, 5, 5, 5]) == 20
+    assert candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [3, 4, 5]) == -1
+    assert candidate(source = "complexstring",target = "simpleststr",original = ['c', 'o', 'm', 'p', 'l', 'e', 'x', 's', 't', 'r', 'i', 'n', 'g'],changed = ['s', 'i', 'm', 'p', 'l', 'e', 's', 't', 'r', 'i', 'n', 'g', 'c'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == 1830
+    assert candidate(source = "abcdefghij",target = "abcdefghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 0
+    assert candidate(source = "aaaaa",target = "bbbbb",original = ['a', 'a', 'a', 'a', 'a'],changed = ['b', 'b', 'b', 'b', 'b'],cost = [1, 2, 3, 4, 5]) == 5
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "abcdefghijklmnopqrstuvwxyzb",original = ['a', 'z'],changed = ['b', 'a'],cost = [10, 20]) == 10
+    assert candidate(source = "testing",target = "success",original = ['t', 'e', 's', 'i', 'n', 'c'],changed = ['s', 's', 'c', 's', 'c', 's'],cost = [10, 20, 30, 40, 50, 60]) == -1
+    assert candidate(source = "zzzzzzzzzzzzzzzzzzzz",target = "aaaaaaaaaaaaaaaaaaaa",original = ['z'],changed = ['a'],cost = [1]) == 20
+    assert candidate(source = "abcdef",target = "fedcba",original = ['a', 'b', 'c', 'd', 'e', 'f'],changed = ['f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6]) == 21
+    assert candidate(source = "abcdefg",target = "hijklmn",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['h', 'i', 'j', 'k', 'l', 'm', 'n'],cost = [1, 1, 1, 1, 1, 1, 1]) == 7
+    assert candidate(source = "abcdabcdabcd",target = "zzzzzzzzzzzz",original = ['a', 'b', 'c', 'd'],changed = ['z', 'z', 'z', 'z'],cost = [1, 2, 3, 4]) == 30
+    assert candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'l', 'r', 'h', 'o', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1
+    assert candidate(source = "xyxzy",target = "yxyzx",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [1, 1, 1]) == 6
+    assert candidate(source = "programming",target = "algorithm",original = ['p', 'r', 'o', 'g', 'a', 'm', 'i', 'n', 't', 'l', 'e'],changed = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 'p', 'e'],cost = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 110]) == -1
+    assert candidate(source = "xyxyxy",target = "yzyzyz",original = ['x', 'y'],changed = ['y', 'z'],cost = [10, 20]) == 90
+    assert candidate(source = "abcde",target = "aaaaa",original = ['a', 'b', 'c', 'd', 'e'],changed = ['a', 'a', 'a', 'a', 'a'],cost = [1, 1, 1, 1, 1]) == 4
+    assert candidate(source = "aaaaaaaaaa",target = "zzzzzzzzzz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 10
+    assert candidate(source = "abacabadabacaba",target = "xyzxyzyxzyzyxzy",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [10, 20, 30]) == -1
+    assert candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 55
+    assert candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 240
+    assert candidate(source = "hellohellohello",target = "worldworldworld",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'o', 'h', 'e', 'l'],cost = [5, 15, 25, 35, 45, 55, 65]) == -1
+    assert candidate(source = "abcdefghij",target = "jihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 55
+    assert candidate(source = "mississippi",target = "sssmmmipipi",original = ['m', 'i', 's', 'p'],changed = ['s', 'm', 'i', 'p'],cost = [2, 3, 4, 5]) == -1
+    assert candidate(source = "hello",target = "world",original = ['h', 'e', 'l', 'o', 'w', 'r', 'd'],changed = ['w', 'r', 'd', 'r', 'o', 'l', 'l'],cost = [1, 2, 3, 4, 5, 6, 7]) == -1
+    assert candidate(source = "quickbrownfox",target = "jumpingoverlazy",original = ['q', 'u', 'i', 'c', 'k', 'b', 'r', 'o', 'w', 'n', 'f', 'o', 'x'],changed = ['j', 'u', 'm', 'p', 'i', 'n', 'g', 'v', 'e', 'r', 'l', 'a', 'z'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]) == -1
+    assert candidate(source = "aabbcc",target = "bbccdd",original = ['a', 'b', 'c', 'd'],changed = ['b', 'c', 'd', 'e'],cost = [1, 2, 3, 4]) == 12
+    assert candidate(source = "abracadabra",target = "zabzazaba",original = ['a', 'b', 'c', 'd', 'r'],changed = ['z', 'a', 'a', 'a', 'a'],cost = [10, 20, 30, 40, 5]) == -1
+    assert candidate(source = "mississippi",target = "hississippi",original = ['m'],changed = ['h'],cost = [5]) == 5
+    assert candidate(source = "xyxyxyxyxyxyxyxyxy",target = "yzyzyzyzyzyzyzyzyz",original = ['x', 'y', 'z'],changed = ['y', 'z', 'x'],cost = [5, 4, 3]) == 81
+    assert candidate(source = "conversion",target = "transformation",original = ['c', 'o', 'n', 'v', 'e', 'r', 's', 'i', 'o', 'n'],changed = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'r', 'm', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 480
+    assert candidate(source = "abcabcabcabcabcabc",target = "defdefdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [1, 2, 3]) == 36
+    assert candidate(source = "algorithm",target = "algorithm",original = ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm'],changed = ['m', 'a', 'l', 'g', 'o', 'r', 'i', 't', 'h'],cost = [9, 8, 7, 6, 5, 4, 3, 2, 1]) == 0
+    assert candidate(source = "repeated",target = "rotating",original = ['e', 'p', 't', 'a', 'd'],changed = ['o', 'a', 'i', 't', 'n'],cost = [5, 7, 3, 9, 12]) == -1
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260]) == 3510
+    assert candidate(source = "abcdefghij",target = "fedcbaghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['e', 'd', 'c', 'b', 'a', 'j', 'i', 'h', 'g', 'f'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == -1
+    assert candidate(source = "abababababababababab",target = "bcbcbcbcbcbcbcbcbcbc",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [1, 2, 3]) == 30
+    assert candidate(source = "abcde",target = "edcba",original = ['a', 'b', 'c', 'd', 'e'],changed = ['e', 'd', 'c', 'b', 'a'],cost = [1, 1, 1, 1, 1]) == 4
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "bcdefghijklmnopqrstuvwxyza",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a'],cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 26
+    assert candidate(source = "aaaabbbbcccc",target = "bbccccddddee",original = ['a', 'b', 'c'],changed = ['b', 'c', 'd'],cost = [1, 2, 3]) == -1
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+    assert candidate(source = "aaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b'],changed = ['b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a'],cost = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1]) == 36
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyza",target = "zyxwvutsrqponmlkjihgfedcbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "abcdefghijklmnopqrstuvwxyz",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],cost = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == 0
+    assert candidate(source = "transform",target = "convert",original = ['t', 'r', 'a', 'n', 's', 'f', 'o', 'm'],changed = ['c', 'o', 'n', 'v', 'e', 'r', 't', 'd'],cost = [4, 2, 1, 3, 6, 5, 7, 8]) == 28
+    assert candidate(source = "abcabcabcabcabcabcabcabcabcabc",target = "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 40, 50, 60]) == 600
+    assert candidate(source = "abcabcabcabcabc",target = "defdefdefdefdef",original = ['a', 'b', 'c'],changed = ['d', 'e', 'f'],cost = [100, 200, 300]) == 3000
+    assert candidate(source = "abcabcabcabc",target = "xyzxyzxyzxyz",original = ['a', 'b', 'c', 'x', 'y', 'z'],changed = ['x', 'y', 'z', 'a', 'b', 'c'],cost = [10, 20, 30, 5, 15, 25]) == 240
+    assert candidate(source = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == 351
+    assert candidate(source = "python",target = "java",original = ['p', 'y', 't', 'h', 'o', 'n', 'j', 'a', 'v'],changed = ['j', 'a', 'v', 'a', 'v', 'a', 'p', 'y', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90]) == 100
+    assert candidate(source = "aaaaaaaaaaaaaaaaaaaa",target = "bbbbbbbbbbbbbbbbbbbb",original = ['a', 'b', 'c'],changed = ['b', 'c', 'a'],cost = [100, 200, 300]) == 2000
+    assert candidate(source = "programming",target = "ppppppppppp",original = ['p', 'r', 'o', 'g', 'a', 'm'],changed = ['p', 'p', 'p', 'p', 'p', 'p'],cost = [1, 2, 3, 4, 5, 6]) == -1
+    assert candidate(source = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",target = "zzzzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeeeddccbaa",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],changed = ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == -1
+    assert candidate(source = "abacabadabacaba",target = "xyzxyzxyzxyzxyz",original = ['a', 'b', 'c'],changed = ['x', 'y', 'z'],cost = [100, 200, 300]) == -1
+    assert candidate(source = "abcdefghij",target = "klmnopqrst",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'],cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 550
+    assert candidate(source = "abcde",target = "fghij",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],changed = ['f', 'g', 'h', 'i', 'j', 'a', 'b', 'c', 'd', 'e'],cost = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == 1500
+    assert candidate(source = "abcdefg",target = "gfedcba",original = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],changed = ['g', 'f', 'e', 'd', 'c', 'b', 'a'],cost = [7, 6, 5, 4, 3, 2, 1]) == 24
+    assert candidate(source = "aaaaabbbbbaaaaa",target = "bbbbbbaaaaabbbb",original = ['a', 'b'],changed = ['b', 'a'],cost = [100, 150]) == 1500
+
+

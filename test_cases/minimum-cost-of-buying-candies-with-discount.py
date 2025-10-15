@@ -1,0 +1,878 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(cost = [100]) == 100
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100]) == 100: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 25, 75, 100, 125]) == 300
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 25, 75, 100, 125]) == 300: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1]) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1]) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50]) == 120
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50]) == 120: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20]) == 30
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20]) == 30: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1]) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1]) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 100, 100, 100, 100, 100]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 100, 100, 100, 100, 100]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 5]) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 5]) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [3, 2, 1]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [3, 2, 1]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2]) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2]) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 25, 75, 100, 200]) == 375
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 25, 75, 100, 200]) == 375: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3]) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3]) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [6, 5, 7, 9, 2, 2]) == 23
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [6, 5, 7, 9, 2, 2]) == 23: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75]) == 1483
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75]) == 1483: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51]) == 2575
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51]) == 2575: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]) == 1700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]) == 1700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [3, 6, 1, 9, 4, 8, 2, 7, 5, 10]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [3, 6, 1, 9, 4, 8, 2, 7, 5, 10]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9, 5, 0, 2, 8, 8, 4, 1, 9, 7, 1, 6, 9, 3, 9, 9, 3, 7, 5, 1, 0, 5, 8, 2, 0, 9, 7, 4, 9, 4, 4, 5, 9, 2, 3, 0, 7, 8, 1, 6, 4, 0, 6, 2, 8, 4, 1]) == 241
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9, 5, 0, 2, 8, 8, 4, 1, 9, 7, 1, 6, 9, 3, 9, 9, 3, 7, 5, 1, 0, 5, 8, 2, 0, 9, 7, 4, 9, 4, 4, 5, 9, 2, 3, 0, 7, 8, 1, 6, 4, 0, 6, 2, 8, 4, 1]) == 241: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 130
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 130: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [30, 15, 45, 10, 25, 55, 5, 35, 20, 40, 60, 65, 50, 70, 75, 80, 85, 90, 95, 100, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]) == 2433
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [30, 15, 45, 10, 25, 55, 5, 35, 20, 40, 60, 65, 50, 70, 75, 80, 85, 90, 95, 100, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]) == 2433: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]) == 5292
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]) == 5292: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5, 94, 6, 93, 7, 92, 8, 91, 9, 90, 10]) == 700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5, 94, 6, 93, 7, 92, 8, 91, 9, 90, 10]) == 700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3333
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3333: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 350
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 350: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10]) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10]) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [3, 6, 1, 8, 2, 7, 4, 5, 9]) == 33
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [3, 6, 1, 8, 2, 7, 4, 5, 9]) == 33: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 56
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 56: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 1, 100, 2, 100, 3, 100, 4, 100, 5, 100, 6, 100, 7, 100, 8, 100, 9, 100, 10]) == 737
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 1, 100, 2, 100, 3, 100, 4, 100, 5, 100, 6, 100, 7, 100, 8, 100, 9, 100, 10]) == 737: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]) == 3200
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]) == 3200: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [45, 45, 45, 45, 45, 45, 45, 45, 45, 45]) == 315
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [45, 45, 45, 45, 45, 45, 45, 45, 45, 45]) == 315: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [8, 6, 7, 5, 3, 0, 9]) == 28
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [8, 6, 7, 5, 3, 0, 9]) == 28: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10]) == 4037
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10]) == 4037: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 42
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 42: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96, 6, 95, 7, 94, 8, 93, 9, 92, 10, 91]) == 707
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96, 6, 95, 7, 94, 8, 93, 9, 92, 10, 91]) == 707: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 50, 25, 10, 5, 1, 100, 50, 25, 10, 5, 1]) == 301
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 50, 25, 10, 5, 1, 100, 50, 25, 10, 5, 1]) == 301: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 760
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 760: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3]) == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3]) == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 225
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 225: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5, 95, 6, 94, 7, 93, 8, 92, 9, 91, 10]) == 707
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5, 95, 6, 94, 7, 93, 8, 92, 9, 91, 10]) == 707: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]) == 528
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]) == 528: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 84
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 84: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 20, 30, 10, 40, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 20, 30, 10, 40, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [30, 40, 10, 50, 60, 20]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [30, 40, 10, 50, 60, 20]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) == 65
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) == 65: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50]) == 2567
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50]) == 2567: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 40, 30, 20, 10, 5, 4, 3, 2, 1]) == 128
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 40, 30, 20, 10, 5, 4, 3, 2, 1]) == 128: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 935
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 935: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10, 15, 14, 13]) == 85
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10, 15, 14, 13]) == 85: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 3, 2, 4, 6, 5, 7, 9, 8, 11, 13, 12, 15, 17, 16, 19, 21, 20, 23, 25, 24, 27, 29, 28, 31, 33, 32, 35, 37, 36, 39, 41, 40, 43, 45, 44, 47, 49, 48, 50]) == 680
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 3, 2, 4, 6, 5, 7, 9, 8, 11, 13, 12, 15, 17, 16, 19, 21, 20, 23, 25, 24, 27, 29, 28, 31, 33, 32, 35, 37, 36, 39, 41, 40, 43, 45, 44, 47, 49, 48, 50]) == 680: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 850
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 850: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70]) == 1700
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70]) == 1700: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [45, 30, 10, 20, 50, 60, 15, 25, 35, 40]) == 240
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [45, 30, 10, 20, 50, 60, 15, 25, 35, 40]) == 240: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 77
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 77: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 100, 100, 99, 99, 99, 98, 98, 98, 97, 97, 97, 96, 96, 96, 95, 95, 95, 94, 94, 94, 93, 93, 93, 92, 92, 92, 91, 91, 91, 90, 90, 90, 89, 89, 89, 88, 88, 88, 87, 87, 87, 86, 86, 86, 85, 85, 85]) == 2960
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 100, 100, 99, 99, 99, 98, 98, 98, 97, 97, 97, 96, 96, 96, 95, 95, 95, 94, 94, 94, 93, 93, 93, 92, 92, 92, 91, 91, 91, 90, 90, 90, 89, 89, 89, 88, 88, 88, 87, 87, 87, 86, 86, 86, 85, 85, 85]) == 2960: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]) == 3400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]) == 3400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 15, 14, 13, 12, 11]) == 85
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 15, 14, 13, 12, 11]) == 85: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [30, 10, 20, 40, 50, 60]) == 160
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [30, 10, 20, 40, 50, 60]) == 160: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [30, 10, 40, 20, 50, 60, 70]) == 210
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [30, 10, 40, 20, 50, 60, 70]) == 210: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [45, 30, 75, 60, 90, 15, 10, 5]) == 255
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [45, 30, 75, 60, 90, 15, 10, 5]) == 255: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 1400
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 1400: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 25, 75, 100, 200, 150, 80, 120, 90, 60, 30, 180, 140, 110, 40]) == 1035
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 25, 75, 100, 200, 150, 80, 120, 90, 60, 30, 180, 140, 110, 40]) == 1035: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 85
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 85: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 320
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 320: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 947
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 947: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 3500
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 3500: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 867
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 867: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [23, 45, 12, 89, 34, 78, 67, 56, 90, 11]) == 370
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [23, 45, 12, 89, 34, 78, 67, 56, 90, 11]) == 370: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 70
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 70: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [8, 12, 15, 7, 10, 14, 9]) == 55
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [8, 12, 15, 7, 10, 14, 9]) == 55: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 560
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 560: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 43
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 43: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 735
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 735: {e}')
+    
+    total += 1
+    try:
+        result = candidate(cost = [42, 23, 65, 12, 89, 34, 78, 56, 90, 21, 33, 55, 77, 66, 88, 44, 55, 66, 77, 88]) == 808
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(cost = [42, 23, 65, 12, 89, 34, 78, 56, 90, 21, 33, 55, 77, 66, 88, 44, 55, 66, 77, 88]) == 808: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(cost = [100]) == 100
+    assert candidate(cost = [50, 25, 75, 100, 125]) == 300
+    assert candidate(cost = [1, 1, 1, 1, 1, 1]) == 4
+    assert candidate(cost = [10, 20, 30, 40, 50]) == 120
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663
+    assert candidate(cost = [10, 20]) == 30
+    assert candidate(cost = [1]) == 1
+    assert candidate(cost = [100, 100, 100, 100, 100, 100]) == 400
+    assert candidate(cost = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]) == 560
+    assert candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 7
+    assert candidate(cost = [5, 5]) == 10
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40
+    assert candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40
+    assert candidate(cost = [3, 2, 1]) == 5
+    assert candidate(cost = [1, 2]) == 3
+    assert candidate(cost = [50, 25, 75, 100, 200]) == 375
+    assert candidate(cost = [1, 2, 3]) == 5
+    assert candidate(cost = [6, 5, 7, 9, 2, 2]) == 23
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75]) == 1483
+    assert candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51]) == 2575
+    assert candidate(cost = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50]) == 700
+    assert candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 70
+    assert candidate(cost = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]) == 1700
+    assert candidate(cost = [3, 6, 1, 9, 4, 8, 2, 7, 5, 10]) == 40
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 663
+    assert candidate(cost = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9, 5, 0, 2, 8, 8, 4, 1, 9, 7, 1, 6, 9, 3, 9, 9, 3, 7, 5, 1, 0, 5, 8, 2, 0, 9, 7, 4, 9, 4, 4, 5, 9, 2, 3, 0, 7, 8, 1, 6, 4, 0, 6, 2, 8, 4, 1]) == 241
+    assert candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 130
+    assert candidate(cost = [30, 15, 45, 10, 25, 55, 5, 35, 20, 40, 60, 65, 50, 70, 75, 80, 85, 90, 95, 100, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]) == 2433
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]) == 5292
+    assert candidate(cost = [99, 1, 98, 2, 97, 3, 96, 4, 95, 5, 94, 6, 93, 7, 92, 8, 91, 9, 90, 10]) == 700
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 3333
+    assert candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14
+    assert candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 350
+    assert candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10]) == 56
+    assert candidate(cost = [10, 20, 30, 40, 50, 60]) == 160
+    assert candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400
+    assert candidate(cost = [3, 6, 1, 8, 2, 7, 4, 5, 9]) == 33
+    assert candidate(cost = [3, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) == 56
+    assert candidate(cost = [100, 1, 100, 2, 100, 3, 100, 4, 100, 5, 100, 6, 100, 7, 100, 8, 100, 9, 100, 10]) == 737
+    assert candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]) == 3200
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 40
+    assert candidate(cost = [45, 45, 45, 45, 45, 45, 45, 45, 45, 45]) == 315
+    assert candidate(cost = [8, 6, 7, 5, 3, 0, 9]) == 28
+    assert candidate(cost = [100, 1, 200, 2, 300, 3, 400, 4, 500, 5, 600, 6, 700, 7, 800, 8, 900, 9, 1000, 10]) == 4037
+    assert candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 42
+    assert candidate(cost = [1, 100, 2, 99, 3, 98, 4, 97, 5, 96, 6, 95, 7, 94, 8, 93, 9, 92, 10, 91]) == 707
+    assert candidate(cost = [100, 50, 25, 10, 5, 1, 100, 50, 25, 10, 5, 1]) == 301
+    assert candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90]) == 760
+    assert candidate(cost = [1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3]) == 17
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 225
+    assert candidate(cost = [100, 1, 99, 2, 98, 3, 97, 4, 96, 5, 95, 6, 94, 7, 93, 8, 92, 9, 91, 10]) == 707
+    assert candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 14
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253
+    assert candidate(cost = [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]) == 528
+    assert candidate(cost = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 84
+    assert candidate(cost = [50, 20, 30, 10, 40, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470
+    assert candidate(cost = [30, 40, 10, 50, 60, 20]) == 160
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) == 65
+    assert candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50]) == 2567
+    assert candidate(cost = [50, 40, 30, 20, 10, 5, 4, 3, 2, 1]) == 128
+    assert candidate(cost = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 935
+    assert candidate(cost = [1, 3, 2, 6, 5, 4, 9, 8, 7, 12, 11, 10, 15, 14, 13]) == 85
+    assert candidate(cost = [1, 3, 2, 4, 6, 5, 7, 9, 8, 11, 13, 12, 15, 17, 16, 19, 21, 20, 23, 25, 24, 27, 29, 28, 31, 33, 32, 35, 37, 36, 39, 41, 40, 43, 45, 44, 47, 49, 48, 50]) == 680
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80]) == 1253
+    assert candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == 850
+    assert candidate(cost = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70]) == 1700
+    assert candidate(cost = [45, 30, 10, 20, 50, 60, 15, 25, 35, 40]) == 240
+    assert candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 77
+    assert candidate(cost = [100, 100, 100, 99, 99, 99, 98, 98, 98, 97, 97, 97, 96, 96, 96, 95, 95, 95, 94, 94, 94, 93, 93, 93, 92, 92, 92, 91, 91, 91, 90, 90, 90, 89, 89, 89, 88, 88, 88, 87, 87, 87, 86, 86, 86, 85, 85, 85]) == 2960
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]) == 3400
+    assert candidate(cost = [5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 15, 14, 13, 12, 11]) == 85
+    assert candidate(cost = [30, 10, 20, 40, 50, 60]) == 160
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 147
+    assert candidate(cost = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]) == 400
+    assert candidate(cost = [30, 10, 40, 20, 50, 60, 70]) == 210
+    assert candidate(cost = [45, 30, 75, 60, 90, 15, 10, 5]) == 255
+    assert candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 400
+    assert candidate(cost = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]) == 500
+    assert candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 1400
+    assert candidate(cost = [50, 25, 75, 100, 200, 150, 80, 120, 90, 60, 30, 180, 140, 110, 40]) == 1035
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 85
+    assert candidate(cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 320
+    assert candidate(cost = [5, 4, 3, 2, 1, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86]) == 947
+    assert candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == 1470
+    assert candidate(cost = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]) == 3500
+    assert candidate(cost = [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 867
+    assert candidate(cost = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == 40
+    assert candidate(cost = [23, 45, 12, 89, 34, 78, 67, 56, 90, 11]) == 370
+    assert candidate(cost = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]) == 70
+    assert candidate(cost = [8, 12, 15, 7, 10, 14, 9]) == 55
+    assert candidate(cost = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == 560
+    assert candidate(cost = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 43
+    assert candidate(cost = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]) == 50
+    assert candidate(cost = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]) == 735
+    assert candidate(cost = [42, 23, 65, 12, 89, 34, 78, 56, 90, 21, 33, 55, 77, 66, 88, 44, 55, 66, 77, 88]) == 808
+
+

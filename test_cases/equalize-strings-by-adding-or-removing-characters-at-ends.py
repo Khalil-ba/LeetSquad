@@ -1,0 +1,1337 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(initial = "hello",target = "billion") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hello",target = "billion") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbcc",target = "abc") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbcc",target = "abc") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaa",target = "aaa") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaa",target = "aaa") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "a",target = "b") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "a",target = "b") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "hello",target = "world") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hello",target = "world") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcabc",target = "abc") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcabc",target = "abc") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "same",target = "same") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "same",target = "same") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "hello",target = "olelh") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hello",target = "olelh") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcd",target = "dcb") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcd",target = "dcb") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "def") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "def") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "ab",target = "ba") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "ab",target = "ba") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcabc",target = "bcbcbc") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcabc",target = "bcbcbc") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "",target = "a") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "",target = "a") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "ababab",target = "bababa") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "ababab",target = "bababa") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "abcde") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "abcde") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xyz",target = "xyz") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xyz",target = "xyz") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcd",target = "dcba") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcd",target = "dcba") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "a",target = "a") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "a",target = "a") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "ab",target = "a") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "ab",target = "a") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "a",target = "") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "a",target = "") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "axxy",target = "yabx") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "axxy",target = "yabx") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcd",target = "dabc") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcd",target = "dabc") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abac",target = "cab") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abac",target = "cab") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "hello",target = "ollhe") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hello",target = "ollhe") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcabc",target = "bcb") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcabc",target = "bcb") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcde",target = "cdef") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcde",target = "cdef") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdef",target = "defabc") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdef",target = "defabc") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "a",target = "z") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "a",target = "z") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "",target = "") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "",target = "") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "aabbcc") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "aabbcc") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "banana",target = "anana") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "banana",target = "anana") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdabcd",target = "cdabcdab") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdabcd",target = "cdabcdab") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacaxaba",target = "axabaca") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacaxaba",target = "axabaca") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "test",target = "sett") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "test",target = "sett") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xylophone",target = "phonelox") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xylophone",target = "phonelox") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xyzzzz",target = "zzzzzx") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xyzzzz",target = "zzzzzx") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "ppississimm") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "ppississimm") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xylophone",target = "phonekey") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xylophone",target = "phonekey") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccddeeff",target = "ccddeeffaa") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccddeeff",target = "ccddeeffaa") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "programming",target = "mingpro") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "programming",target = "mingpro") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaaabbbbbccccc",target = "cccccbbbbbaaaaa") == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaaabbbbbccccc",target = "cccccbbbbbaaaaa") == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "qwertyuiop",target = "poiuytrewq") == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "qwertyuiop",target = "poiuytrewq") == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghij",target = "defghijk") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghij",target = "defghijk") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "banana",target = "ananab") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "banana",target = "ananab") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "ghijklm") == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "ghijklm") == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "level",target = "devel") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "level",target = "devel") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "programming",target = "grammingp") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "programming",target = "grammingp") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "longstring",target = "longstr") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "longstring",target = "longstr") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "zzzzzzzzzz",target = "zzzzz") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "zzzzzzzzzz",target = "zzzzz") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijk",target = "ijklmnopq") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijk",target = "ijklmnopq") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "defgabc") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "defgabc") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacabadabacaba",target = "dabacab") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacabadabacaba",target = "dabacab") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghij",target = "ijklmnopqr") == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghij",target = "ijklmnopqr") == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghi",target = "efgjklmno") == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghi",target = "efgjklmno") == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "programming",target = "grammingpro") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "programming",target = "grammingpro") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccdd",target = "bbccddaabb") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccdd",target = "bbccddaabb") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghi",target = "efghij") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghi",target = "efghij") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "zzzzz",target = "zzz") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "zzzzz",target = "zzz") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "zzzzzzz",target = "zzzz") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "zzzzzzz",target = "zzzz") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacabadabacaba",target = "bacabadabacab") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacabadabacaba",target = "bacabadabacab") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "racecar",target = "racecar") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "racecar",target = "racecar") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijk",target = "defghij") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijk",target = "defghij") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdef",target = "ghijklmno") == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdef",target = "ghijklmno") == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccddeeff",target = "ffeeddccbaaa") == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccddeeff",target = "ffeeddccbaaa") == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcabcabcabc",target = "bcabcabcabcab") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcabcabcabc",target = "bcabcabcabcab") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "rotor",target = "rotorrotor") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "rotor",target = "rotorrotor") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "python",target = "nothyp") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "python",target = "nothyp") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xylophone",target = "neolphoxyl") == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xylophone",target = "neolphoxyl") == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "xyzabc") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "xyzabc") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abracadabra",target = "aracadabra") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abracadabra",target = "aracadabra") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "zyxwvut") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "zyxwvut") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "efgxyz") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "efgxyz") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "refer",target = "refer") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "refer",target = "refer") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "abcdef") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "abcdef") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccdd",target = "ddbbaacc") == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccdd",target = "ddbbaacc") == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdef",target = "xyzuvw") == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdef",target = "xyzuvw") == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "ppismiss") == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "ppismiss") == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xylophone",target = "phone") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xylophone",target = "phone") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "random",target = "madoran") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "random",target = "madoran") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccddeeff",target = "ffeeddccbbaa") == 20
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccddeeff",target = "ffeeddccbbaa") == 20: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "ssissippi") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "ssissippi") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "supercalifragilisticexpialidocious",target = "califragilisticexpialidocioussuper") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "supercalifragilisticexpialidocious",target = "califragilisticexpialidocioussuper") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdabcdabcd",target = "ddddabcabcab") == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdabcdabcd",target = "ddddabcabcab") == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "ghfedcba") == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "ghfedcba") == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbcc",target = "bbccaa") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbcc",target = "bbccaa") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "loremipsum",target = "sumip") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "loremipsum",target = "sumip") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacaxabay",target = "abayabacax") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacaxabay",target = "abayabacax") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacabadabacaba",target = "bacabadabacabaa") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacabadabacaba",target = "bacabadabacabaa") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xylophone",target = "phonelogy") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xylophone",target = "phonelogy") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "ppimissis") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "ppimissis") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefg",target = "gfedcba") == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefg",target = "gfedcba") == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "racecar",target = "race") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "racecar",target = "race") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "qwertyuiop",target = "poiuytrew") == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "qwertyuiop",target = "poiuytrew") == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcde",target = "edcba") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcde",target = "edcba") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdef",target = "abc") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdef",target = "abc") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccddeeffgghhiijj",target = "cdefg") == 21
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccddeeffgghhiijj",target = "cdefg") == 21: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "deed",target = "deeeed") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "deed",target = "deeeed") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "programming",target = "mingprogram") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "programming",target = "mingprogram") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abc",target = "abcabcabc") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abc",target = "abcabcabc") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijk",target = "nopqrstuvwxyz") == 24
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijk",target = "nopqrstuvwxyz") == 24: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefgh",target = "efghabcd") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefgh",target = "efghabcd") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "ssippi") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "ssippi") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "qwertyuiop",target = "poiuwerty") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "qwertyuiop",target = "poiuwerty") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aabbccddeeffgg",target = "ggffeeddccbaab") == 22
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aabbccddeeffgg",target = "ggffeeddccbaab") == 22: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijk",target = "abcdefghikj") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijk",target = "abcdefghikj") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaaa",target = "bbbbb") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaaa",target = "bbbbb") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abababab",target = "babababa") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abababab",target = "babababa") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdabc",target = "bcabcda") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdabc",target = "bcabcda") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "rotor",target = "rotator") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "rotor",target = "rotator") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaabbbb",target = "bbbbaaaa") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaabbbb",target = "bbbbaaaa") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaaaaaaaaaaaaaaaaa",target = "aaaaaaaaaaaaaaaaaab") == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaaaaaaaaaaaaaaaaa",target = "aaaaaaaaaaaaaaaaaab") == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdef",target = "fedcba") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdef",target = "fedcba") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "mnopqrstuvwxyzabcde") == 17
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "mnopqrstuvwxyzabcde") == 17: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "algorithm",target = "rhythm") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "algorithm",target = "rhythm") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abacaxabacax",target = "acaxbacaba") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abacaxabacax",target = "acaxbacaba") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "racecar",target = "ecar") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "racecar",target = "ecar") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abracadabra",target = "acadabra") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abracadabra",target = "acadabra") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "algorithm",target = "logarithm") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "algorithm",target = "logarithm") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "madam",target = "madame") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "madam",target = "madame") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba") == 50
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba") == 50: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "thisisatest",target = "testisthis") == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "thisisatest",target = "testisthis") == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abracadabra",target = "arabacadrab") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abracadabra",target = "arabacadrab") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcabcabcabc",target = "bcabcbcabcbc") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcabcabcabc",target = "bcabcbcabcbc") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefgh",target = "hgfedcba") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefgh",target = "hgfedcba") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "mississippi",target = "pip") == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "mississippi",target = "pip") == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "qwertyuiop",target = "asdfghjkl") == 19
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "qwertyuiop",target = "asdfghjkl") == 19: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "deified",target = "deifie") == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "deified",target = "deifie") == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "hellohello",target = "hello") == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hellohello",target = "hello") == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdexyzabcdexyz",target = "xyzabcdexyzabcde") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdexyzabcdexyz",target = "xyzabcdexyzabcde") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "xyzuvw",target = "uvwzyx") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "xyzuvw",target = "uvwzyx") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghi",target = "def") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghi",target = "def") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaaaaa",target = "bbbbbbb") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaaaaa",target = "bbbbbbb") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "",target = "abc") == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "",target = "abc") == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abracadabra",target = "cadab") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abracadabra",target = "cadab") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "shorter",target = "longerstring") == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "shorter",target = "longerstring") == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "hello",target = "olleh") == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "hello",target = "olleh") == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "aaaaa",target = "bbbb") == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "aaaaa",target = "bbbb") == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "noon",target = "noon") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "noon",target = "noon") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "longerstring",target = "shorter") == 15
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "longerstring",target = "shorter") == 15: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "thisisatest",target = "estthi") == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "thisisatest",target = "estthi") == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "kayak",target = "akayk") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "kayak",target = "akayk") == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abracadabra",target = "cadabraabra") == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abracadabra",target = "cadabraabra") == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "abcdefghijk",target = "ghijkl") == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "abcdefghijk",target = "ghijkl") == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "samestring",target = "samestring") == 0
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "samestring",target = "samestring") == 0: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "thisisateststring",target = "teststringthisisa") == 14
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "thisisateststring",target = "teststringthisisa") == 14: {e}')
+    
+    total += 1
+    try:
+        result = candidate(initial = "zzzzzzzz",target = "zzzz") == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(initial = "zzzzzzzz",target = "zzzz") == 4: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(initial = "hello",target = "billion") == 8
+    assert candidate(initial = "aabbcc",target = "abc") == 5
+    assert candidate(initial = "aaa",target = "aaa") == 0
+    assert candidate(initial = "a",target = "b") == 2
+    assert candidate(initial = "hello",target = "world") == 8
+    assert candidate(initial = "abcabc",target = "abc") == 3
+    assert candidate(initial = "same",target = "same") == 0
+    assert candidate(initial = "hello",target = "olelh") == 6
+    assert candidate(initial = "abcd",target = "dcb") == 5
+    assert candidate(initial = "abc",target = "def") == 6
+    assert candidate(initial = "ab",target = "ba") == 2
+    assert candidate(initial = "abcabc",target = "bcbcbc") == 8
+    assert candidate(initial = "",target = "a") == 1
+    assert candidate(initial = "ababab",target = "bababa") == 2
+    assert candidate(initial = "abc",target = "abcde") == 2
+    assert candidate(initial = "xyz",target = "xyz") == 0
+    assert candidate(initial = "abcd",target = "dcba") == 6
+    assert candidate(initial = "a",target = "a") == 0
+    assert candidate(initial = "ab",target = "a") == 1
+    assert candidate(initial = "a",target = "") == 1
+    assert candidate(initial = "axxy",target = "yabx") == 6
+    assert candidate(initial = "abcd",target = "dabc") == 2
+    assert candidate(initial = "abac",target = "cab") == 3
+    assert candidate(initial = "hello",target = "ollhe") == 6
+    assert candidate(initial = "abcabc",target = "bcb") == 5
+    assert candidate(initial = "abcde",target = "cdef") == 3
+    assert candidate(initial = "abcdef",target = "defabc") == 6
+    assert candidate(initial = "a",target = "z") == 2
+    assert candidate(initial = "",target = "") == 0
+    assert candidate(initial = "abc",target = "aabbcc") == 5
+    assert candidate(initial = "banana",target = "anana") == 1
+    assert candidate(initial = "abcdabcd",target = "cdabcdab") == 4
+    assert candidate(initial = "abacaxaba",target = "axabaca") == 6
+    assert candidate(initial = "test",target = "sett") == 6
+    assert candidate(initial = "xylophone",target = "phonelox") == 7
+    assert candidate(initial = "xyzzzz",target = "zzzzzx") == 4
+    assert candidate(initial = "mississippi",target = "ppississimm") == 8
+    assert candidate(initial = "xylophone",target = "phonekey") == 7
+    assert candidate(initial = "aabbccddeeff",target = "ccddeeffaa") == 6
+    assert candidate(initial = "programming",target = "mingpro") == 10
+    assert candidate(initial = "aaaaabbbbbccccc",target = "cccccbbbbbaaaaa") == 20
+    assert candidate(initial = "qwertyuiop",target = "poiuytrewq") == 18
+    assert candidate(initial = "abcdefghij",target = "defghijk") == 4
+    assert candidate(initial = "banana",target = "ananab") == 2
+    assert candidate(initial = "abcdefg",target = "ghijklm") == 12
+    assert candidate(initial = "level",target = "devel") == 2
+    assert candidate(initial = "programming",target = "grammingp") == 4
+    assert candidate(initial = "longstring",target = "longstr") == 3
+    assert candidate(initial = "zzzzzzzzzz",target = "zzzzz") == 5
+    assert candidate(initial = "abcdefghijk",target = "ijklmnopq") == 14
+    assert candidate(initial = "abcdefg",target = "defgabc") == 6
+    assert candidate(initial = "abacabadabacaba",target = "dabacab") == 8
+    assert candidate(initial = "abcdefghij",target = "ijklmnopqr") == 16
+    assert candidate(initial = "abcdefghi",target = "efgjklmno") == 12
+    assert candidate(initial = "programming",target = "grammingpro") == 6
+    assert candidate(initial = "aabbccdd",target = "bbccddaabb") == 6
+    assert candidate(initial = "abcdefghi",target = "efghij") == 5
+    assert candidate(initial = "zzzzz",target = "zzz") == 2
+    assert candidate(initial = "zzzzzzz",target = "zzzz") == 3
+    assert candidate(initial = "abc",target = "") == 3
+    assert candidate(initial = "abacabadabacaba",target = "bacabadabacab") == 2
+    assert candidate(initial = "racecar",target = "racecar") == 0
+    assert candidate(initial = "abcdefghijk",target = "defghij") == 4
+    assert candidate(initial = "abcdef",target = "ghijklmno") == 15
+    assert candidate(initial = "aabbccddeeff",target = "ffeeddccbaaa") == 20
+    assert candidate(initial = "abcabcabcabc",target = "bcabcabcabcab") == 3
+    assert candidate(initial = "rotor",target = "rotorrotor") == 5
+    assert candidate(initial = "python",target = "nothyp") == 8
+    assert candidate(initial = "xylophone",target = "neolphoxyl") == 13
+    assert candidate(initial = "abcdefg",target = "xyzabc") == 7
+    assert candidate(initial = "abracadabra",target = "aracadabra") == 3
+    assert candidate(initial = "abcdefg",target = "zyxwvut") == 14
+    assert candidate(initial = "abcdefg",target = "efgxyz") == 7
+    assert candidate(initial = "refer",target = "refer") == 0
+    assert candidate(initial = "abc",target = "abcdef") == 3
+    assert candidate(initial = "aabbccdd",target = "ddbbaacc") == 12
+    assert candidate(initial = "abcdef",target = "xyzuvw") == 12
+    assert candidate(initial = "mississippi",target = "ppismiss") == 11
+    assert candidate(initial = "xylophone",target = "phone") == 4
+    assert candidate(initial = "random",target = "madoran") == 7
+    assert candidate(initial = "aabbccddeeff",target = "ffeeddccbbaa") == 20
+    assert candidate(initial = "mississippi",target = "ssissippi") == 2
+    assert candidate(initial = "supercalifragilisticexpialidocious",target = "califragilisticexpialidocioussuper") == 10
+    assert candidate(initial = "abcdabcdabcd",target = "ddddabcabcab") == 16
+    assert candidate(initial = "abcdefg",target = "ghfedcba") == 13
+    assert candidate(initial = "aabbcc",target = "bbccaa") == 4
+    assert candidate(initial = "loremipsum",target = "sumip") == 9
+    assert candidate(initial = "abacaxabay",target = "abayabacax") == 8
+    assert candidate(initial = "abacabadabacaba",target = "bacabadabacabaa") == 2
+    assert candidate(initial = "xylophone",target = "phonelogy") == 8
+    assert candidate(initial = "mississippi",target = "ppimissis") == 8
+    assert candidate(initial = "abcdefg",target = "gfedcba") == 12
+    assert candidate(initial = "racecar",target = "race") == 3
+    assert candidate(initial = "qwertyuiop",target = "poiuytrew") == 17
+    assert candidate(initial = "abcde",target = "edcba") == 8
+    assert candidate(initial = "abcdef",target = "abc") == 3
+    assert candidate(initial = "aabbccddeeffgghhiijj",target = "cdefg") == 21
+    assert candidate(initial = "deed",target = "deeeed") == 4
+    assert candidate(initial = "programming",target = "mingprogram") == 8
+    assert candidate(initial = "abc",target = "abcabcabc") == 6
+    assert candidate(initial = "abcdefghijk",target = "nopqrstuvwxyz") == 24
+    assert candidate(initial = "abcdefgh",target = "efghabcd") == 8
+    assert candidate(initial = "mississippi",target = "ssippi") == 5
+    assert candidate(initial = "qwertyuiop",target = "poiuwerty") == 9
+    assert candidate(initial = "aabbccddeeffgg",target = "ggffeeddccbaab") == 22
+    assert candidate(initial = "abcdefghijk",target = "abcdefghikj") == 4
+    assert candidate(initial = "aaaaa",target = "bbbbb") == 10
+    assert candidate(initial = "abababab",target = "babababa") == 2
+    assert candidate(initial = "abcdabc",target = "bcabcda") == 4
+    assert candidate(initial = "rotor",target = "rotator") == 6
+    assert candidate(initial = "aaaabbbb",target = "bbbbaaaa") == 8
+    assert candidate(initial = "aaaaaaaaaaaaaaaaaaa",target = "aaaaaaaaaaaaaaaaaab") == 2
+    assert candidate(initial = "abcdef",target = "fedcba") == 10
+    assert candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "mnopqrstuvwxyzabcde") == 17
+    assert candidate(initial = "algorithm",target = "rhythm") == 9
+    assert candidate(initial = "abacaxabacax",target = "acaxbacaba") == 14
+    assert candidate(initial = "racecar",target = "ecar") == 3
+    assert candidate(initial = "abracadabra",target = "acadabra") == 3
+    assert candidate(initial = "algorithm",target = "logarithm") == 8
+    assert candidate(initial = "madam",target = "madame") == 1
+    assert candidate(initial = "abcdefghijklmnopqrstuvwxyz",target = "zyxwvutsrqponmlkjihgfedcba") == 50
+    assert candidate(initial = "thisisatest",target = "testisthis") == 13
+    assert candidate(initial = "abracadabra",target = "arabacadrab") == 14
+    assert candidate(initial = "abcabcabcabc",target = "bcabcbcabcbc") == 14
+    assert candidate(initial = "abcdefgh",target = "hgfedcba") == 14
+    assert candidate(initial = "mississippi",target = "pip") == 10
+    assert candidate(initial = "qwertyuiop",target = "asdfghjkl") == 19
+    assert candidate(initial = "deified",target = "deifie") == 1
+    assert candidate(initial = "hellohello",target = "hello") == 5
+    assert candidate(initial = "abcdexyzabcdexyz",target = "xyzabcdexyzabcde") == 6
+    assert candidate(initial = "xyzuvw",target = "uvwzyx") == 6
+    assert candidate(initial = "abcdefghi",target = "def") == 6
+    assert candidate(initial = "aaaaaaa",target = "bbbbbbb") == 14
+    assert candidate(initial = "",target = "abc") == 3
+    assert candidate(initial = "abracadabra",target = "cadab") == 6
+    assert candidate(initial = "shorter",target = "longerstring") == 15
+    assert candidate(initial = "hello",target = "olleh") == 6
+    assert candidate(initial = "aaaaa",target = "bbbb") == 9
+    assert candidate(initial = "noon",target = "noon") == 0
+    assert candidate(initial = "longerstring",target = "shorter") == 15
+    assert candidate(initial = "thisisatest",target = "estthi") == 11
+    assert candidate(initial = "kayak",target = "akayk") == 4
+    assert candidate(initial = "abracadabra",target = "cadabraabra") == 8
+    assert candidate(initial = "abcdefghijk",target = "ghijkl") == 7
+    assert candidate(initial = "samestring",target = "samestring") == 0
+    assert candidate(initial = "thisisateststring",target = "teststringthisisa") == 14
+    assert candidate(initial = "zzzzzzzz",target = "zzzz") == 4
+
+

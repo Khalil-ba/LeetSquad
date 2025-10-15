@@ -1,0 +1,1031 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['foo', 'bar', 'baz'],sentence2 = ['foo', 'bar', 'qux'],similarPairs = [['baz', 'qux']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['foo', 'bar', 'baz'],sentence2 = ['foo', 'bar', 'qux'],similarPairs = [['baz', 'qux']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a'],sentence2 = ['a'],similarPairs = []) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a'],sentence2 = ['a'],similarPairs = []) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['c', 'b', 'a'],similarPairs = [['a', 'c'], ['b', 'b'], ['c', 'a']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['c', 'b', 'a'],similarPairs = [['a', 'c'], ['b', 'b'], ['c', 'a']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'very', 'delicious', 'meal'],sentence2 = ['a', 'really', 'tasty', 'dinner'],similarPairs = [['great', 'good'], ['extraordinary', 'good'], ['well', 'good'], ['wonderful', 'good'], ['excellent', 'good'], ['fine', 'good'], ['nice', 'good'], ['any', 'one'], ['some', 'one'], ['unique', 'one'], ['the', 'one'], ['an', 'one'], ['single', 'one'], ['a', 'one'], ['truck', 'car'], ['wagon', 'car'], ['automobile', 'car'], ['auto', 'car'], ['vehicle', 'car'], ['entertain', 'have'], ['drink', 'have'], ['eat', 'have'], ['take', 'have'], ['fruits', 'meal'], ['brunch', 'meal'], ['breakfast', 'meal'], ['food', 'meal'], ['dinner', 'meal'], ['super', 'meal'], ['lunch', 'meal'], ['possess', 'own'], ['keep', 'own'], ['have', 'own'], ['extremely', 'very'], ['actually', 'very'], ['really', 'very'], ['super', 'very']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'very', 'delicious', 'meal'],sentence2 = ['a', 'really', 'tasty', 'dinner'],similarPairs = [['great', 'good'], ['extraordinary', 'good'], ['well', 'good'], ['wonderful', 'good'], ['excellent', 'good'], ['fine', 'good'], ['nice', 'good'], ['any', 'one'], ['some', 'one'], ['unique', 'one'], ['the', 'one'], ['an', 'one'], ['single', 'one'], ['a', 'one'], ['truck', 'car'], ['wagon', 'car'], ['automobile', 'car'], ['auto', 'car'], ['vehicle', 'car'], ['entertain', 'have'], ['drink', 'have'], ['eat', 'have'], ['take', 'have'], ['fruits', 'meal'], ['brunch', 'meal'], ['breakfast', 'meal'], ['food', 'meal'], ['dinner', 'meal'], ['super', 'meal'], ['lunch', 'meal'], ['possess', 'own'], ['keep', 'own'], ['have', 'own'], ['extremely', 'very'], ['actually', 'very'], ['really', 'very'], ['super', 'very']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a'],sentence2 = ['b'],similarPairs = [['a', 'b']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a'],sentence2 = ['b'],similarPairs = [['a', 'b']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = []) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = []) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['man', 'went', 'to', 'the', 'market'],sentence2 = ['person', 'traveled', 'to', 'the', 'store'],similarPairs = [['man', 'person'], ['went', 'traveled'], ['market', 'store'], ['person', 'man']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['man', 'went', 'to', 'the', 'market'],sentence2 = ['person', 'traveled', 'to', 'the', 'store'],similarPairs = [['man', 'person'], ['went', 'traveled'], ['market', 'store'], ['person', 'man']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'a']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'a']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'birthday', 'friend'],sentence2 = ['joyful', 'celebration', 'pal'],similarPairs = [['happy', 'joyful'], ['birthday', 'celebration'], ['friend', 'pal']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'birthday', 'friend'],sentence2 = ['joyful', 'celebration', 'pal'],similarPairs = [['happy', 'joyful'], ['birthday', 'celebration'], ['friend', 'pal']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['x', 'y', 'z', 'w'],similarPairs = [['a', 'x'], ['b', 'y'], ['c', 'z'], ['d', 'w'], ['a', 'y']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['x', 'y', 'z', 'w'],similarPairs = [['a', 'x'], ['b', 'y'], ['c', 'z'], ['d', 'w'], ['a', 'y']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['fast', 'running', 'car'],sentence2 = ['quick', 'moving', 'automobile'],similarPairs = [['fast', 'quick'], ['running', 'moving'], ['car', 'automobile'], ['quick', 'swift'], ['moving', 'racing'], ['automobile', 'vehicle']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['fast', 'running', 'car'],sentence2 = ['quick', 'moving', 'automobile'],similarPairs = [['fast', 'quick'], ['running', 'moving'], ['car', 'automobile'], ['quick', 'swift'], ['moving', 'racing'], ['automobile', 'vehicle']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Eve', 'went', 'to', 'the', 'store'],similarPairs = [['Alice', 'Eve'], ['market', 'store'], ['went', 'proceeded']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Eve', 'went', 'to', 'the', 'store'],similarPairs = [['Alice', 'Eve'], ['market', 'store'], ['went', 'proceeded']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['she', 'loves', 'to', 'run', 'fast'],sentence2 = ['she', 'adores', 'to', 'sprint', 'quickly'],similarPairs = [['loves', 'adores'], ['run', 'sprint'], ['fast', 'quickly'], ['quick', 'swift']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['she', 'loves', 'to', 'run', 'fast'],sentence2 = ['she', 'adores', 'to', 'sprint', 'quickly'],similarPairs = [['loves', 'adores'], ['run', 'sprint'], ['fast', 'quickly'], ['quick', 'swift']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'berry', 'fruit'],similarPairs = [['apple', 'fruit'], ['banana', 'berry'], ['cherry', 'fruit'], ['fruit', 'berry'], ['berry', 'cherry'], ['cherry', 'apple'], ['banana', 'apple']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'berry', 'fruit'],similarPairs = [['apple', 'fruit'], ['banana', 'berry'], ['cherry', 'fruit'], ['fruit', 'berry'], ['berry', 'cherry'], ['cherry', 'apple'], ['banana', 'apple']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'am', 'a', 'software', 'engineer'],sentence2 = ['I', 'am', 'a', 'programmer', 'coder'],similarPairs = [['software', 'programmer'], ['programmer', 'coder']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'am', 'a', 'software', 'engineer'],sentence2 = ['I', 'am', 'a', 'programmer', 'coder'],similarPairs = [['software', 'programmer'], ['programmer', 'coder']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['complex', 'sentence', 'test'],sentence2 = ['complicated', 'phrase', 'evaluation'],similarPairs = [['complex', 'complicated'], ['sentence', 'phrase'], ['test', 'evaluation']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['complex', 'sentence', 'test'],sentence2 = ['complicated', 'phrase', 'evaluation'],similarPairs = [['complex', 'complicated'], ['sentence', 'phrase'], ['test', 'evaluation']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'nimble'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['rapid', 'speedy'], ['speedy', 'nimble'], ['nimble', 'rapid'], ['swift', 'quick'], ['quick', 'fast']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'nimble'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['rapid', 'speedy'], ['speedy', 'nimble'], ['nimble', 'rapid'], ['swift', 'quick'], ['quick', 'fast']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['she', 'is', 'happy', 'and', 'excited'],sentence2 = ['her', 'emotions', 'are', 'joyful', 'and', 'elated'],similarPairs = [['she', 'her'], ['happy', 'joyful'], ['excited', 'elated']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['she', 'is', 'happy', 'and', 'excited'],sentence2 = ['her', 'emotions', 'are', 'joyful', 'and', 'elated'],similarPairs = [['she', 'her'], ['happy', 'joyful'], ['excited', 'elated']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red'], ['banana', 'fruit']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red'], ['banana', 'fruit']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['John', 'bought', 'a', 'red', 'apple'],sentence2 = ['John', 'acquired', 'an', 'crimson', 'fruit'],similarPairs = [['bought', 'acquired'], ['red', 'crimson'], ['apple', 'fruit']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['John', 'bought', 'a', 'red', 'apple'],sentence2 = ['John', 'acquired', 'an', 'crimson', 'fruit'],similarPairs = [['bought', 'acquired'], ['red', 'crimson'], ['apple', 'fruit']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'a', 'b'],sentence2 = ['c', 'd', 'c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'a', 'b'],sentence2 = ['c', 'd', 'c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['kitten', 'puppy', 'pup'],similarPairs = [['cat', 'kitten'], ['dog', 'puppy'], ['dog', 'pup'], ['puppy', 'pup']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['kitten', 'puppy', 'pup'],similarPairs = [['cat', 'kitten'], ['dog', 'puppy'], ['dog', 'pup'], ['puppy', 'pup']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['unbelievable', 'performance', 'incredible', 'cast'],sentence2 = ['astonishing', 'show', 'remarkable', 'actors'],similarPairs = [['unbelievable', 'astonishing'], ['performance', 'show'], ['incredible', 'remarkable'], ['cast', 'actors']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['unbelievable', 'performance', 'incredible', 'cast'],sentence2 = ['astonishing', 'show', 'remarkable', 'actors'],similarPairs = [['unbelievable', 'astonishing'], ['performance', 'show'], ['incredible', 'remarkable'], ['cast', 'actors']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3'], ['one', '3'], ['three', '1']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3'], ['one', '3'], ['three', '1']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'quick', 'brown', 'fox'],sentence2 = ['a', 'fast', 'brown', 'fox'],similarPairs = [['quick', 'fast'], ['slow', 'slow']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'quick', 'brown', 'fox'],sentence2 = ['a', 'fast', 'brown', 'fox'],similarPairs = [['quick', 'fast'], ['slow', 'slow']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'a', 'a', 'a'],sentence2 = ['b', 'b', 'b', 'b'],similarPairs = [['a', 'b']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'a', 'a', 'a'],sentence2 = ['b', 'b', 'b', 'b'],similarPairs = [['a', 'b']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'is', 'a', 'fruit'],sentence2 = ['banana', 'is', 'a', 'fruit'],similarPairs = [['apple', 'banana'], ['fruit', 'produce'], ['produce', 'edible']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'is', 'a', 'fruit'],sentence2 = ['banana', 'is', 'a', 'fruit'],similarPairs = [['apple', 'banana'], ['fruit', 'produce'], ['produce', 'edible']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['alice', 'loves', 'bob'],sentence2 = ['bob', 'is', 'loved', 'by', 'alice'],similarPairs = [['loves', 'is', 'loved']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['alice', 'loves', 'bob'],sentence2 = ['bob', 'is', 'loved', 'by', 'alice'],similarPairs = [['loves', 'is', 'loved']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['cat', 'dog', 'bird'],sentence2 = ['feline', 'canine', 'avian'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['bird', 'avian'], ['feline', 'cat'], ['canine', 'dog'], ['avian', 'bird']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['cat', 'dog', 'bird'],sentence2 = ['feline', 'canine', 'avian'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['bird', 'avian'], ['feline', 'cat'], ['canine', 'dog'], ['avian', 'bird']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['quick', 'fast', 'swift'],sentence2 = ['swift', 'quick', 'fast'],similarPairs = [['quick', 'fast'], ['fast', 'swift']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['quick', 'fast', 'swift'],sentence2 = ['swift', 'quick', 'fast'],similarPairs = [['quick', 'fast'], ['fast', 'swift']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['swift', 'cinnamon', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['brown', 'cinnamon'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['swift', 'cinnamon', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['brown', 'cinnamon'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['giant', 'massive', 'enormous'],similarPairs = [['big', 'large'], ['large', 'huge'], ['huge', 'giant'], ['giant', 'massive'], ['massive', 'enormous']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['giant', 'massive', 'enormous'],similarPairs = [['big', 'large'], ['large', 'huge'], ['huge', 'giant'], ['giant', 'massive'], ['massive', 'enormous']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['feline', 'canine', 'rodent'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent'], ['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['feline', 'canine', 'rodent'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent'], ['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['good', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['good', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['he', 'is', 'very', 'happy'],sentence2 = ['he', 'feels', 'extremely', 'joyful'],similarPairs = [['is', 'feels'], ['very', 'extremely'], ['happy', 'joyful'], ['joyful', 'cheerful']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['he', 'is', 'very', 'happy'],sentence2 = ['he', 'feels', 'extremely', 'joyful'],similarPairs = [['is', 'feels'], ['very', 'extremely'], ['happy', 'joyful'], ['joyful', 'cheerful']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['same', 'length', 'but', 'different'],sentence2 = ['same', 'length', 'but', 'distinct'],similarPairs = [['different', 'distinct']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['same', 'length', 'but', 'different'],sentence2 = ['same', 'length', 'but', 'distinct'],similarPairs = [['different', 'distinct']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['big', 'red', 'ball'],sentence2 = ['large', 'scarlet', 'sphere'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['ball', 'sphere'], ['large', 'huge'], ['scarlet', 'crimson'], ['sphere', 'globe']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['big', 'red', 'ball'],sentence2 = ['large', 'scarlet', 'sphere'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['ball', 'sphere'], ['large', 'huge'], ['scarlet', 'crimson'], ['sphere', 'globe']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['the', 'quick', 'brown', 'fox'],sentence2 = ['the', 'fast', 'dark', 'canine'],similarPairs = [['quick', 'fast'], ['brown', 'dark'], ['fox', 'canine']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['the', 'quick', 'brown', 'fox'],sentence2 = ['the', 'fast', 'dark', 'canine'],similarPairs = [['quick', 'fast'], ['brown', 'dark'], ['fox', 'canine']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'joyful', 'elated'],sentence2 = ['ecstatic', 'cheerful', 'blissful'],similarPairs = [['happy', 'joyful'], ['joyful', 'elated'], ['ecstatic', 'blissful'], ['blissful', 'cheerful'], ['cheerful', 'ecstatic']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'joyful', 'elated'],sentence2 = ['ecstatic', 'cheerful', 'blissful'],similarPairs = [['happy', 'joyful'], ['joyful', 'elated'], ['ecstatic', 'blissful'], ['blissful', 'cheerful'], ['cheerful', 'ecstatic']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c'], ['a', 'b'], ['c', 'd']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c'], ['a', 'b'], ['c', 'd']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'dog', 'barks'],sentence2 = ['joyful', 'canine', 'yelps'],similarPairs = [['happy', 'joyful'], ['dog', 'canine'], ['barks', 'yelps'], ['joyful', 'content'], ['canine', 'pooch'], ['yelps', 'howls']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'dog', 'barks'],sentence2 = ['joyful', 'canine', 'yelps'],similarPairs = [['happy', 'joyful'], ['dog', 'canine'], ['barks', 'yelps'], ['joyful', 'content'], ['canine', 'pooch'], ['yelps', 'howls']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'is', 'a', 'test'],similarPairs = []) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'is', 'a', 'test'],similarPairs = []) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['sun', 'moon', 'stars'],sentence2 = ['celestial', 'lunar', 'cosmic'],similarPairs = [['sun', 'celestial'], ['moon', 'lunar'], ['stars', 'cosmic'], ['lunar', 'moon'], ['cosmic', 'stars'], ['celestial', 'sun']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['sun', 'moon', 'stars'],sentence2 = ['celestial', 'lunar', 'cosmic'],similarPairs = [['sun', 'celestial'], ['moon', 'lunar'], ['stars', 'cosmic'], ['lunar', 'moon'], ['cosmic', 'stars'], ['celestial', 'sun']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'and', 'excited'],sentence2 = ['joyful', 'and', 'elated'],similarPairs = [['happy', 'joyful'], ['excited', 'elated'], ['happy', 'cheerful'], ['joyful', 'ecstatic'], ['excited', 'thrilled']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'and', 'excited'],sentence2 = ['joyful', 'and', 'elated'],similarPairs = [['happy', 'joyful'], ['excited', 'elated'], ['happy', 'cheerful'], ['joyful', 'ecstatic'], ['excited', 'thrilled']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['unique'],sentence2 = ['unique'],similarPairs = [['unique', 'distinct'], ['distinct', 'singular']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['unique'],sentence2 = ['unique'],similarPairs = [['unique', 'distinct'], ['distinct', 'singular']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['complex', 'algorithm', 'design'],sentence2 = ['advanced', 'procedure', 'architecture'],similarPairs = [['complex', 'advanced'], ['algorithm', 'procedure'], ['design', 'architecture'], ['advanced', 'sophisticated'], ['procedure', 'routine'], ['architecture', 'blueprint']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['complex', 'algorithm', 'design'],sentence2 = ['advanced', 'procedure', 'architecture'],similarPairs = [['complex', 'advanced'], ['algorithm', 'procedure'], ['design', 'architecture'], ['advanced', 'sophisticated'], ['procedure', 'routine'], ['architecture', 'blueprint']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['they', 'are', 'going', 'to', 'the', 'beach'],sentence2 = ['they', 'head', 'to', 'the', 'beach'],similarPairs = [['are', 'head'], ['going', 'to'], ['the', 'beach'], ['beach', 'shore']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['they', 'are', 'going', 'to', 'the', 'beach'],sentence2 = ['they', 'head', 'to', 'the', 'beach'],similarPairs = [['are', 'head'], ['going', 'to'], ['the', 'beach'], ['beach', 'shore']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'canine', 'leaps', 'above', 'the', 'idle', 'canine'],similarPairs = [['quick', 'swift'], ['fox', 'canine'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'canine', 'leaps', 'above', 'the', 'idle', 'canine'],similarPairs = [['quick', 'swift'], ['fox', 'canine'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['red', 'blue', 'green'],sentence2 = ['color1', 'color2', 'color3'],similarPairs = [['red', 'color1'], ['blue', 'color2'], ['green', 'color3'], ['color1', 'color2'], ['color2', 'color3'], ['color3', 'color1']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['red', 'blue', 'green'],sentence2 = ['color1', 'color2', 'color3'],similarPairs = [['red', 'color1'], ['blue', 'color2'], ['green', 'color3'], ['color1', 'color2'], ['color2', 'color3'], ['color3', 'color1']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyous', 'blissful', 'merry'],similarPairs = [['happy', 'joyful'], ['joyful', 'joyous'], ['joyous', 'blissful'], ['blissful', 'merry'], ['cheerful', 'merry']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyous', 'blissful', 'merry'],similarPairs = [['happy', 'joyful'], ['joyful', 'joyous'], ['joyous', 'blissful'], ['blissful', 'merry'], ['cheerful', 'merry']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['run', 'jump', 'leap'],sentence2 = ['sprint', 'hop', 'bound'],similarPairs = [['run', 'sprint'], ['jump', 'hop'], ['leap', 'bound']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['run', 'jump', 'leap'],sentence2 = ['sprint', 'hop', 'bound'],similarPairs = [['run', 'sprint'], ['jump', 'hop'], ['leap', 'bound']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['similar', 'sentences', 'are', 'fun'],sentence2 = ['analogous', 'phrases', 'are', 'enjoyable'],similarPairs = [['similar', 'analogous'], ['sentences', 'phrases'], ['fun', 'enjoyable'], ['are', 'are']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['similar', 'sentences', 'are', 'fun'],sentence2 = ['analogous', 'phrases', 'are', 'enjoyable'],similarPairs = [['similar', 'analogous'], ['sentences', 'phrases'], ['fun', 'enjoyable'], ['are', 'are']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['the', 'cat', 'jumped', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'feline', 'leaped', 'above', 'the', 'idle', 'canine'],similarPairs = [['cat', 'feline'], ['jumped', 'leaped'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['the', 'cat', 'jumped', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'feline', 'leaped', 'above', 'the', 'idle', 'canine'],similarPairs = [['cat', 'feline'], ['jumped', 'leaped'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['orange', 'pear', 'plum'],similarPairs = [['apple', 'orange'], ['banana', 'pear'], ['cherry', 'plum']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['orange', 'pear', 'plum'],similarPairs = [['apple', 'orange'], ['banana', 'pear'], ['cherry', 'plum']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'enjoy', 'reading', 'books'],sentence2 = ['I', 'love', 'reading', 'volumes'],similarPairs = [['enjoy', 'love'], ['books', 'volumes'], ['book', 'novel'], ['novel', 'work'], ['work', 'composition']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'enjoy', 'reading', 'books'],sentence2 = ['I', 'love', 'reading', 'volumes'],similarPairs = [['enjoy', 'love'], ['books', 'volumes'], ['book', 'novel'], ['novel', 'work'], ['work', 'composition']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['f', 'g', 'h', 'i', 'j'],similarPairs = [['a', 'f'], ['b', 'g'], ['c', 'h'], ['d', 'i'], ['e', 'j'], ['a', 'j'], ['b', 'i'], ['c', 'h'], ['d', 'g'], ['e', 'f']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['f', 'g', 'h', 'i', 'j'],similarPairs = [['a', 'f'], ['b', 'g'], ['c', 'h'], ['d', 'i'], ['e', 'j'], ['a', 'j'], ['b', 'i'], ['c', 'h'], ['d', 'g'], ['e', 'f']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'orange', 'banana'],sentence2 = ['peach', 'tangerine', 'yellowfruit'],similarPairs = [['apple', 'peach'], ['orange', 'tangerine'], ['banana', 'yellowfruit'], ['peach', 'apple'], ['tangerine', 'orange'], ['yellowfruit', 'banana']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'orange', 'banana'],sentence2 = ['peach', 'tangerine', 'yellowfruit'],similarPairs = [['apple', 'peach'], ['orange', 'tangerine'], ['banana', 'yellowfruit'], ['peach', 'apple'], ['tangerine', 'orange'], ['yellowfruit', 'banana']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'sad', 'angry'],sentence2 = ['joyful', 'melancholy', 'irritated'],similarPairs = [['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated'], ['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'sad', 'angry'],sentence2 = ['joyful', 'melancholy', 'irritated'],similarPairs = [['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated'], ['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful'], ['cheerful', 'happy']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful'], ['cheerful', 'happy']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'fast'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['swift', 'rapid'], ['rapid', 'speedy']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'fast'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['swift', 'rapid'], ['rapid', 'speedy']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['amazing', 'performance', 'in', 'the', 'movie'],sentence2 = ['fantastic', 'act', 'during', 'the', 'film'],similarPairs = [['amazing', 'fantastic'], ['performance', 'act'], ['movie', 'film']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['amazing', 'performance', 'in', 'the', 'movie'],sentence2 = ['fantastic', 'act', 'during', 'the', 'film'],similarPairs = [['amazing', 'fantastic'], ['performance', 'act'], ['movie', 'film']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['analogous', 'words', 'in', 'these', 'sentences'],sentence2 = ['corresponding', 'terms', 'within', 'these', 'phrases'],similarPairs = [['analogous', 'corresponding'], ['words', 'terms'], ['sentences', 'phrases']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['analogous', 'words', 'in', 'these', 'sentences'],sentence2 = ['corresponding', 'terms', 'within', 'these', 'phrases'],similarPairs = [['analogous', 'corresponding'], ['words', 'terms'], ['sentences', 'phrases']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['example', 'of', 'a', 'long', 'sentence', 'that', 'will', 'be', 'used', 'to', 'test', 'the', 'system'],sentence2 = ['sample', 'of', 'a', 'lengthy', 'utterance', 'which', 'will', 'be', 'utilized', 'to', 'evaluate', 'the', 'program'],similarPairs = [['example', 'sample'], ['long', 'lengthy'], ['sentence', 'utterance'], ['will', 'will'], ['be', 'be'], ['used', 'utilized'], ['to', 'to'], ['test', 'evaluate'], ['the', 'the'], ['system', 'program']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['example', 'of', 'a', 'long', 'sentence', 'that', 'will', 'be', 'used', 'to', 'test', 'the', 'system'],sentence2 = ['sample', 'of', 'a', 'lengthy', 'utterance', 'which', 'will', 'be', 'utilized', 'to', 'evaluate', 'the', 'program'],similarPairs = [['example', 'sample'], ['long', 'lengthy'], ['sentence', 'utterance'], ['will', 'will'], ['be', 'be'], ['used', 'utilized'], ['to', 'to'], ['test', 'evaluate'], ['the', 'the'], ['system', 'program']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['python', 'programming', 'is', 'fun'],sentence2 = ['coding', 'scripting', 'is', 'entertaining'],similarPairs = [['python', 'coding'], ['programming', 'scripting'], ['fun', 'entertaining']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['python', 'programming', 'is', 'fun'],sentence2 = ['coding', 'scripting', 'is', 'entertaining'],similarPairs = [['python', 'coding'], ['programming', 'scripting'], ['fun', 'entertaining']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['d', 'c', 'b', 'a'],similarPairs = [['a', 'd'], ['b', 'c'], ['c', 'b'], ['d', 'a']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['d', 'c', 'b', 'a'],similarPairs = [['a', 'd'], ['b', 'c'], ['c', 'b'], ['d', 'a']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'd'], ['d', 'e']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'd'], ['d', 'e']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['transitive', 'example', 'here'],sentence2 = ['transitive', 'relation', 'here'],similarPairs = [['example', 'relation'], ['relation', 'example'], ['example', 'here'], ['here', 'example']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['transitive', 'example', 'here'],sentence2 = ['transitive', 'relation', 'here'],similarPairs = [['example', 'relation'], ['relation', 'example'], ['example', 'here'], ['here', 'example']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['John', 'went', 'to', 'the', 'store'],sentence2 = ['John', 'proceeded', 'to', 'the', 'market'],similarPairs = [['went', 'proceeded'], ['store', 'market'], ['John', 'he']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['John', 'went', 'to', 'the', 'store'],sentence2 = ['John', 'proceeded', 'to', 'the', 'market'],similarPairs = [['went', 'proceeded'], ['store', 'market'], ['John', 'he']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['we', 'will', 'meet', 'at', 'the', 'park'],sentence2 = ['we', 'shall', 'congregate', 'in', 'the', 'park'],similarPairs = [['will', 'shall'], ['meet', 'congregate'], ['at', 'in'], ['park', 'field']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['we', 'will', 'meet', 'at', 'the', 'park'],sentence2 = ['we', 'shall', 'congregate', 'in', 'the', 'park'],similarPairs = [['will', 'shall'], ['meet', 'congregate'], ['at', 'in'], ['park', 'field']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['beautiful', 'pretty', 'attractive'],sentence2 = ['handsome', 'appealing', 'beautiful'],similarPairs = [['beautiful', 'pretty'], ['pretty', 'attractive'], ['handsome', 'appealing'], ['appealing', 'beautiful']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['beautiful', 'pretty', 'attractive'],sentence2 = ['handsome', 'appealing', 'beautiful'],similarPairs = [['beautiful', 'pretty'], ['pretty', 'attractive'], ['handsome', 'appealing'], ['appealing', 'beautiful']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['e', 'd', 'c', 'b', 'a'],similarPairs = [['a', 'e'], ['b', 'd'], ['c', 'c'], ['d', 'b'], ['e', 'a']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['e', 'd', 'c', 'b', 'a'],similarPairs = [['a', 'e'], ['b', 'd'], ['c', 'c'], ['d', 'b'], ['e', 'a']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['auto', 'machine', 'car'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['auto', 'machine'], ['machine', 'car']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['auto', 'machine', 'car'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['auto', 'machine'], ['machine', 'car']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['I', 'have', 'a', 'lot', 'of', 'work', 'to', 'do'],sentence2 = ['I', 'have', 'many', 'tasks', 'to', 'complete'],similarPairs = [['lot', 'many'], ['work', 'tasks'], ['do', 'complete'], ['to', 'for']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['I', 'have', 'a', 'lot', 'of', 'work', 'to', 'do'],sentence2 = ['I', 'have', 'many', 'tasks', 'to', 'complete'],similarPairs = [['lot', 'many'], ['work', 'tasks'], ['do', 'complete'], ['to', 'for']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw'], ['def', 'rst'], ['ghi', 'qpo'], ['jkl', 'xyz']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw'], ['def', 'rst'], ['ghi', 'qpo'], ['jkl', 'xyz']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['unique', 'set', 'of', 'words'],sentence2 = ['distinct', 'collection', 'of', 'terminology'],similarPairs = [['unique', 'distinct'], ['set', 'collection'], ['words', 'terminology'], ['distinct', 'one_of_a_kind'], ['collection', 'ensemble']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['unique', 'set', 'of', 'words'],sentence2 = ['distinct', 'collection', 'of', 'terminology'],similarPairs = [['unique', 'distinct'], ['set', 'collection'], ['words', 'terminology'], ['distinct', 'one_of_a_kind'], ['collection', 'ensemble']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'test', 'a', 'is'],similarPairs = [['is', 'test'], ['a', 'is'], ['test', 'a']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'test', 'a', 'is'],similarPairs = [['is', 'test'], ['a', 'is'], ['test', 'a']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['long', 'sentence', 'with', 'many', 'words'],sentence2 = ['extended', 'phrase', 'with', 'numerous', 'terms'],similarPairs = [['long', 'extended'], ['sentence', 'phrase'], ['many', 'numerous'], ['words', 'terms']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['long', 'sentence', 'with', 'many', 'words'],sentence2 = ['extended', 'phrase', 'with', 'numerous', 'terms'],similarPairs = [['long', 'extended'], ['sentence', 'phrase'], ['many', 'numerous'], ['words', 'terms']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'f'], ['b', 'e']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'f'], ['b', 'e']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['Alice', 'loves', 'Bob'],sentence2 = ['Alice', 'adores', 'Bob'],similarPairs = [['loves', 'adores'], ['Alice', 'she'], ['Bob', 'he']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['Alice', 'loves', 'Bob'],sentence2 = ['Alice', 'adores', 'Bob'],similarPairs = [['loves', 'adores'], ['Alice', 'she'], ['Bob', 'he']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['good', 'excellent', 'great'],sentence2 = ['fantastic', 'superior', 'excellent'],similarPairs = [['good', 'excellent'], ['excellent', 'great'], ['fantastic', 'superior'], ['superior', 'excellent']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['good', 'excellent', 'great'],sentence2 = ['fantastic', 'superior', 'excellent'],similarPairs = [['good', 'excellent'], ['excellent', 'great'], ['fantastic', 'superior'], ['superior', 'excellent']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['red', 'green', 'blue'],sentence2 = ['crimson', 'emerald', 'azure'],similarPairs = [['red', 'crimson'], ['green', 'emerald'], ['blue', 'azure']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['red', 'green', 'blue'],sentence2 = ['crimson', 'emerald', 'azure'],similarPairs = [['red', 'crimson'], ['green', 'emerald'], ['blue', 'azure']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['let', 'us', 'go'],sentence2 = ['let', 'us', 'walk'],similarPairs = [['go', 'walk']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['let', 'us', 'go'],sentence2 = ['let', 'us', 'walk'],similarPairs = [['go', 'walk']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['the', 'big', 'red', 'dog'],sentence2 = ['the', 'large', 'scarlet', 'canine'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'enormous'], ['red', 'crimson'], ['dog', 'puppy']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['the', 'big', 'red', 'dog'],sentence2 = ['the', 'large', 'scarlet', 'canine'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'enormous'], ['red', 'crimson'], ['dog', 'puppy']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['truck', 'motor', 'vehicle'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['truck', 'motor'], ['motor', 'vehicle']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['truck', 'motor', 'vehicle'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['truck', 'motor'], ['motor', 'vehicle']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = []) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = []) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['world', 'globe'], ['hello', 'hola']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['world', 'globe'], ['hello', 'hola']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['uno', 'dos', 'tres'],similarPairs = [['one', 'uno'], ['two', 'dos'], ['three', 'tres'], ['one', 'tres']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['uno', 'dos', 'tres'],similarPairs = [['one', 'uno'], ['two', 'dos'], ['three', 'tres'], ['one', 'tres']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['complex', 'sentence', 'with', 'multiple', 'words'],sentence2 = ['elaborate', 'utterance', 'with', 'numerous', 'terms'],similarPairs = [['complex', 'elaborate'], ['sentence', 'utterance'], ['multiple', 'numerous'], ['words', 'terms']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['complex', 'sentence', 'with', 'multiple', 'words'],sentence2 = ['elaborate', 'utterance', 'with', 'numerous', 'terms'],similarPairs = [['complex', 'elaborate'], ['sentence', 'utterance'], ['multiple', 'numerous'], ['words', 'terms']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog'], ['dog', 'cat']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog'], ['dog', 'cat']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Alice', 'visited', 'the', 'supermarket'],similarPairs = [['went', 'visited'], ['market', 'supermarket'], ['Alice', 'Bob']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Alice', 'visited', 'the', 'supermarket'],similarPairs = [['went', 'visited'], ['market', 'supermarket'], ['Alice', 'Bob']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['enormous', 'gigantic', 'massive'],similarPairs = [['big', 'large'], ['large', 'huge'], ['enormous', 'gigantic'], ['gigantic', 'massive'], ['massive', 'enormous']]) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['enormous', 'gigantic', 'massive'],similarPairs = [['big', 'large'], ['large', 'huge'], ['enormous', 'gigantic'], ['gigantic', 'massive'], ['massive', 'enormous']]) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['A', 'B', 'C', 'D'],sentence2 = ['W', 'X', 'Y', 'Z'],similarPairs = [['A', 'W'], ['B', 'X'], ['C', 'Y'], ['D', 'Z'], ['A', 'X'], ['B', 'W'], ['C', 'Z'], ['D', 'Y']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['A', 'B', 'C', 'D'],sentence2 = ['W', 'X', 'Y', 'Z'],similarPairs = [['A', 'W'], ['B', 'X'], ['C', 'Y'], ['D', 'Z'], ['A', 'X'], ['B', 'W'], ['C', 'Z'], ['D', 'Y']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['coding', 'is', 'fun'],sentence2 = ['programming', 'is', 'fun'],similarPairs = [['coding', 'programming'], ['coding', 'programming']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['coding', 'is', 'fun'],sentence2 = ['programming', 'is', 'fun'],similarPairs = [['coding', 'programming'], ['coding', 'programming']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['tiny', 'green', 'leaf'],sentence2 = ['small', 'emerald', 'blade'],similarPairs = [['tiny', 'small'], ['green', 'emerald'], ['leaf', 'blade'], ['small', 'minute'], ['emerald', 'jade'], ['blade', 'sheet']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['tiny', 'green', 'leaf'],sentence2 = ['small', 'emerald', 'blade'],similarPairs = [['tiny', 'small'], ['green', 'emerald'], ['leaf', 'blade'], ['small', 'minute'], ['emerald', 'jade'], ['blade', 'sheet']]) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(sentence1 = ['quick', 'brown', 'fox'],sentence2 = ['rapid', 'chestnut', 'vulpine'],similarPairs = [['quick', 'rapid'], ['brown', 'chestnut'], ['fox', 'vulpine'], ['rapid', 'swift'], ['chestnut', 'mahogany'], ['vulpine', 'feline']]) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(sentence1 = ['quick', 'brown', 'fox'],sentence2 = ['rapid', 'chestnut', 'vulpine'],similarPairs = [['quick', 'rapid'], ['brown', 'chestnut'], ['fox', 'vulpine'], ['rapid', 'swift'], ['chestnut', 'mahogany'], ['vulpine', 'feline']]) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False
+    assert candidate(sentence1 = ['foo', 'bar', 'baz'],sentence2 = ['foo', 'bar', 'qux'],similarPairs = [['baz', 'qux']]) == True
+    assert candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+    assert candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'hunterXhunter'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == False
+    assert candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['fine', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+    assert candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth']]) == True
+    assert candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd']]) == True
+    assert candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True
+    assert candidate(sentence1 = ['a'],sentence2 = ['a'],similarPairs = []) == True
+    assert candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['c', 'b', 'a'],similarPairs = [['a', 'c'], ['b', 'b'], ['c', 'a']]) == True
+    assert candidate(sentence1 = ['a', 'very', 'delicious', 'meal'],sentence2 = ['a', 'really', 'tasty', 'dinner'],similarPairs = [['great', 'good'], ['extraordinary', 'good'], ['well', 'good'], ['wonderful', 'good'], ['excellent', 'good'], ['fine', 'good'], ['nice', 'good'], ['any', 'one'], ['some', 'one'], ['unique', 'one'], ['the', 'one'], ['an', 'one'], ['single', 'one'], ['a', 'one'], ['truck', 'car'], ['wagon', 'car'], ['automobile', 'car'], ['auto', 'car'], ['vehicle', 'car'], ['entertain', 'have'], ['drink', 'have'], ['eat', 'have'], ['take', 'have'], ['fruits', 'meal'], ['brunch', 'meal'], ['breakfast', 'meal'], ['food', 'meal'], ['dinner', 'meal'], ['super', 'meal'], ['lunch', 'meal'], ['possess', 'own'], ['keep', 'own'], ['have', 'own'], ['extremely', 'very'], ['actually', 'very'], ['really', 'very'], ['super', 'very']]) == False
+    assert candidate(sentence1 = ['a'],sentence2 = ['b'],similarPairs = [['a', 'b']]) == True
+    assert candidate(sentence1 = ['I', 'love', 'leetcode'],sentence2 = ['I', 'love', 'onepiece'],similarPairs = [['manga', 'onepiece'], ['platform', 'anime'], ['leetcode', 'platform'], ['anime', 'manga']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = []) == True
+    assert candidate(sentence1 = ['man', 'went', 'to', 'the', 'market'],sentence2 = ['person', 'traveled', 'to', 'the', 'store'],similarPairs = [['man', 'person'], ['went', 'traveled'], ['market', 'store'], ['person', 'man']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c'],sentence2 = ['a', 'b', 'c'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'a']]) == True
+    assert candidate(sentence1 = ['happy', 'birthday', 'friend'],sentence2 = ['joyful', 'celebration', 'pal'],similarPairs = [['happy', 'joyful'], ['birthday', 'celebration'], ['friend', 'pal']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['x', 'y', 'z', 'w'],similarPairs = [['a', 'x'], ['b', 'y'], ['c', 'z'], ['d', 'w'], ['a', 'y']]) == True
+    assert candidate(sentence1 = ['fast', 'running', 'car'],sentence2 = ['quick', 'moving', 'automobile'],similarPairs = [['fast', 'quick'], ['running', 'moving'], ['car', 'automobile'], ['quick', 'swift'], ['moving', 'racing'], ['automobile', 'vehicle']]) == True
+    assert candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful']]) == True
+    assert candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Eve', 'went', 'to', 'the', 'store'],similarPairs = [['Alice', 'Eve'], ['market', 'store'], ['went', 'proceeded']]) == True
+    assert candidate(sentence1 = ['she', 'loves', 'to', 'run', 'fast'],sentence2 = ['she', 'adores', 'to', 'sprint', 'quickly'],similarPairs = [['loves', 'adores'], ['run', 'sprint'], ['fast', 'quickly'], ['quick', 'swift']]) == True
+    assert candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog']]) == True
+    assert candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'berry', 'fruit'],similarPairs = [['apple', 'fruit'], ['banana', 'berry'], ['cherry', 'fruit'], ['fruit', 'berry'], ['berry', 'cherry'], ['cherry', 'apple'], ['banana', 'apple']]) == True
+    assert candidate(sentence1 = ['I', 'am', 'a', 'software', 'engineer'],sentence2 = ['I', 'am', 'a', 'programmer', 'coder'],similarPairs = [['software', 'programmer'], ['programmer', 'coder']]) == False
+    assert candidate(sentence1 = ['complex', 'sentence', 'test'],sentence2 = ['complicated', 'phrase', 'evaluation'],similarPairs = [['complex', 'complicated'], ['sentence', 'phrase'], ['test', 'evaluation']]) == True
+    assert candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'nimble'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['rapid', 'speedy'], ['speedy', 'nimble'], ['nimble', 'rapid'], ['swift', 'quick'], ['quick', 'fast']]) == False
+    assert candidate(sentence1 = ['she', 'is', 'happy', 'and', 'excited'],sentence2 = ['her', 'emotions', 'are', 'joyful', 'and', 'elated'],similarPairs = [['she', 'her'], ['happy', 'joyful'], ['excited', 'elated']]) == False
+    assert candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red'], ['banana', 'fruit']]) == True
+    assert candidate(sentence1 = ['John', 'bought', 'a', 'red', 'apple'],sentence2 = ['John', 'acquired', 'an', 'crimson', 'fruit'],similarPairs = [['bought', 'acquired'], ['red', 'crimson'], ['apple', 'fruit']]) == False
+    assert candidate(sentence1 = ['a', 'b', 'a', 'b'],sentence2 = ['c', 'd', 'c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c']]) == True
+    assert candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['kitten', 'puppy', 'pup'],similarPairs = [['cat', 'kitten'], ['dog', 'puppy'], ['dog', 'pup'], ['puppy', 'pup']]) == False
+    assert candidate(sentence1 = ['unbelievable', 'performance', 'incredible', 'cast'],sentence2 = ['astonishing', 'show', 'remarkable', 'actors'],similarPairs = [['unbelievable', 'astonishing'], ['performance', 'show'], ['incredible', 'remarkable'], ['cast', 'actors']]) == True
+    assert candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3'], ['one', '3'], ['three', '1']]) == True
+    assert candidate(sentence1 = ['a', 'quick', 'brown', 'fox'],sentence2 = ['a', 'fast', 'brown', 'fox'],similarPairs = [['quick', 'fast'], ['slow', 'slow']]) == True
+    assert candidate(sentence1 = ['a', 'a', 'a', 'a'],sentence2 = ['b', 'b', 'b', 'b'],similarPairs = [['a', 'b']]) == True
+    assert candidate(sentence1 = ['apple', 'is', 'a', 'fruit'],sentence2 = ['banana', 'is', 'a', 'fruit'],similarPairs = [['apple', 'banana'], ['fruit', 'produce'], ['produce', 'edible']]) == True
+    assert candidate(sentence1 = ['alice', 'loves', 'bob'],sentence2 = ['bob', 'is', 'loved', 'by', 'alice'],similarPairs = [['loves', 'is', 'loved']]) == False
+    assert candidate(sentence1 = ['cat', 'dog', 'bird'],sentence2 = ['feline', 'canine', 'avian'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['bird', 'avian'], ['feline', 'cat'], ['canine', 'dog'], ['avian', 'bird']]) == True
+    assert candidate(sentence1 = ['quick', 'fast', 'swift'],sentence2 = ['swift', 'quick', 'fast'],similarPairs = [['quick', 'fast'], ['fast', 'swift']]) == True
+    assert candidate(sentence1 = ['quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['swift', 'cinnamon', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['brown', 'cinnamon'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True
+    assert candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['giant', 'massive', 'enormous'],similarPairs = [['big', 'large'], ['large', 'huge'], ['huge', 'giant'], ['giant', 'massive'], ['massive', 'enormous']]) == True
+    assert candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw']]) == True
+    assert candidate(sentence1 = ['cat', 'dog', 'mouse'],sentence2 = ['feline', 'canine', 'rodent'],similarPairs = [['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent'], ['cat', 'feline'], ['dog', 'canine'], ['mouse', 'rodent']]) == True
+    assert candidate(sentence1 = ['great', 'acting', 'skills'],sentence2 = ['good', 'drama', 'talent'],similarPairs = [['great', 'good'], ['fine', 'good'], ['drama', 'acting'], ['skills', 'talent']]) == True
+    assert candidate(sentence1 = ['he', 'is', 'very', 'happy'],sentence2 = ['he', 'feels', 'extremely', 'joyful'],similarPairs = [['is', 'feels'], ['very', 'extremely'], ['happy', 'joyful'], ['joyful', 'cheerful']]) == True
+    assert candidate(sentence1 = ['same', 'length', 'but', 'different'],sentence2 = ['same', 'length', 'but', 'distinct'],similarPairs = [['different', 'distinct']]) == True
+    assert candidate(sentence1 = ['big', 'red', 'ball'],sentence2 = ['large', 'scarlet', 'sphere'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['ball', 'sphere'], ['large', 'huge'], ['scarlet', 'crimson'], ['sphere', 'globe']]) == True
+    assert candidate(sentence1 = ['the', 'quick', 'brown', 'fox'],sentence2 = ['the', 'fast', 'dark', 'canine'],similarPairs = [['quick', 'fast'], ['brown', 'dark'], ['fox', 'canine']]) == True
+    assert candidate(sentence1 = ['happy', 'joyful', 'elated'],sentence2 = ['ecstatic', 'cheerful', 'blissful'],similarPairs = [['happy', 'joyful'], ['joyful', 'elated'], ['ecstatic', 'blissful'], ['blissful', 'cheerful'], ['cheerful', 'ecstatic']]) == False
+    assert candidate(sentence1 = ['a', 'b'],sentence2 = ['c', 'd'],similarPairs = [['a', 'c'], ['b', 'd'], ['a', 'd'], ['b', 'c'], ['a', 'b'], ['c', 'd']]) == True
+    assert candidate(sentence1 = ['happy', 'dog', 'barks'],sentence2 = ['joyful', 'canine', 'yelps'],similarPairs = [['happy', 'joyful'], ['dog', 'canine'], ['barks', 'yelps'], ['joyful', 'content'], ['canine', 'pooch'], ['yelps', 'howls']]) == True
+    assert candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'is', 'a', 'test'],similarPairs = []) == True
+    assert candidate(sentence1 = ['sun', 'moon', 'stars'],sentence2 = ['celestial', 'lunar', 'cosmic'],similarPairs = [['sun', 'celestial'], ['moon', 'lunar'], ['stars', 'cosmic'], ['lunar', 'moon'], ['cosmic', 'stars'], ['celestial', 'sun']]) == True
+    assert candidate(sentence1 = ['happy', 'and', 'excited'],sentence2 = ['joyful', 'and', 'elated'],similarPairs = [['happy', 'joyful'], ['excited', 'elated'], ['happy', 'cheerful'], ['joyful', 'ecstatic'], ['excited', 'thrilled']]) == True
+    assert candidate(sentence1 = ['unique'],sentence2 = ['unique'],similarPairs = [['unique', 'distinct'], ['distinct', 'singular']]) == True
+    assert candidate(sentence1 = ['complex', 'algorithm', 'design'],sentence2 = ['advanced', 'procedure', 'architecture'],similarPairs = [['complex', 'advanced'], ['algorithm', 'procedure'], ['design', 'architecture'], ['advanced', 'sophisticated'], ['procedure', 'routine'], ['architecture', 'blueprint']]) == True
+    assert candidate(sentence1 = ['they', 'are', 'going', 'to', 'the', 'beach'],sentence2 = ['they', 'head', 'to', 'the', 'beach'],similarPairs = [['are', 'head'], ['going', 'to'], ['the', 'beach'], ['beach', 'shore']]) == False
+    assert candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'canine', 'leaps', 'above', 'the', 'idle', 'canine'],similarPairs = [['quick', 'swift'], ['fox', 'canine'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True
+    assert candidate(sentence1 = ['red', 'blue', 'green'],sentence2 = ['color1', 'color2', 'color3'],similarPairs = [['red', 'color1'], ['blue', 'color2'], ['green', 'color3'], ['color1', 'color2'], ['color2', 'color3'], ['color3', 'color1']]) == True
+    assert candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyous', 'blissful', 'merry'],similarPairs = [['happy', 'joyful'], ['joyful', 'joyous'], ['joyous', 'blissful'], ['blissful', 'merry'], ['cheerful', 'merry']]) == True
+    assert candidate(sentence1 = ['run', 'jump', 'leap'],sentence2 = ['sprint', 'hop', 'bound'],similarPairs = [['run', 'sprint'], ['jump', 'hop'], ['leap', 'bound']]) == True
+    assert candidate(sentence1 = ['similar', 'sentences', 'are', 'fun'],sentence2 = ['analogous', 'phrases', 'are', 'enjoyable'],similarPairs = [['similar', 'analogous'], ['sentences', 'phrases'], ['fun', 'enjoyable'], ['are', 'are']]) == True
+    assert candidate(sentence1 = ['the', 'cat', 'jumped', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'feline', 'leaped', 'above', 'the', 'idle', 'canine'],similarPairs = [['cat', 'feline'], ['jumped', 'leaped'], ['over', 'above'], ['lazy', 'idle'], ['dog', 'canine']]) == True
+    assert candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['orange', 'pear', 'plum'],similarPairs = [['apple', 'orange'], ['banana', 'pear'], ['cherry', 'plum']]) == True
+    assert candidate(sentence1 = ['I', 'enjoy', 'reading', 'books'],sentence2 = ['I', 'love', 'reading', 'volumes'],similarPairs = [['enjoy', 'love'], ['books', 'volumes'], ['book', 'novel'], ['novel', 'work'], ['work', 'composition']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['f', 'g', 'h', 'i', 'j'],similarPairs = [['a', 'f'], ['b', 'g'], ['c', 'h'], ['d', 'i'], ['e', 'j'], ['a', 'j'], ['b', 'i'], ['c', 'h'], ['d', 'g'], ['e', 'f']]) == True
+    assert candidate(sentence1 = ['apple', 'orange', 'banana'],sentence2 = ['peach', 'tangerine', 'yellowfruit'],similarPairs = [['apple', 'peach'], ['orange', 'tangerine'], ['banana', 'yellowfruit'], ['peach', 'apple'], ['tangerine', 'orange'], ['yellowfruit', 'banana']]) == True
+    assert candidate(sentence1 = ['happy', 'sad', 'angry'],sentence2 = ['joyful', 'melancholy', 'irritated'],similarPairs = [['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated'], ['happy', 'joyful'], ['sad', 'melancholy'], ['angry', 'irritated']]) == True
+    assert candidate(sentence1 = ['happy', 'joyful', 'cheerful'],sentence2 = ['joyful', 'happy', 'cheerful'],similarPairs = [['happy', 'joyful'], ['joyful', 'cheerful'], ['cheerful', 'happy']]) == True
+    assert candidate(sentence1 = ['fast', 'quick', 'swift'],sentence2 = ['rapid', 'speedy', 'fast'],similarPairs = [['fast', 'quick'], ['quick', 'swift'], ['swift', 'rapid'], ['rapid', 'speedy']]) == True
+    assert candidate(sentence1 = ['amazing', 'performance', 'in', 'the', 'movie'],sentence2 = ['fantastic', 'act', 'during', 'the', 'film'],similarPairs = [['amazing', 'fantastic'], ['performance', 'act'], ['movie', 'film']]) == False
+    assert candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth']]) == True
+    assert candidate(sentence1 = ['analogous', 'words', 'in', 'these', 'sentences'],sentence2 = ['corresponding', 'terms', 'within', 'these', 'phrases'],similarPairs = [['analogous', 'corresponding'], ['words', 'terms'], ['sentences', 'phrases']]) == False
+    assert candidate(sentence1 = ['example', 'of', 'a', 'long', 'sentence', 'that', 'will', 'be', 'used', 'to', 'test', 'the', 'system'],sentence2 = ['sample', 'of', 'a', 'lengthy', 'utterance', 'which', 'will', 'be', 'utilized', 'to', 'evaluate', 'the', 'program'],similarPairs = [['example', 'sample'], ['long', 'lengthy'], ['sentence', 'utterance'], ['will', 'will'], ['be', 'be'], ['used', 'utilized'], ['to', 'to'], ['test', 'evaluate'], ['the', 'the'], ['system', 'program']]) == False
+    assert candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True
+    assert candidate(sentence1 = ['python', 'programming', 'is', 'fun'],sentence2 = ['coding', 'scripting', 'is', 'entertaining'],similarPairs = [['python', 'coding'], ['programming', 'scripting'], ['fun', 'entertaining']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['d', 'c', 'b', 'a'],similarPairs = [['a', 'd'], ['b', 'c'], ['c', 'b'], ['d', 'a']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = [['a', 'b'], ['b', 'c'], ['c', 'd'], ['d', 'e']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h']]) == True
+    assert candidate(sentence1 = ['transitive', 'example', 'here'],sentence2 = ['transitive', 'relation', 'here'],similarPairs = [['example', 'relation'], ['relation', 'example'], ['example', 'here'], ['here', 'example']]) == True
+    assert candidate(sentence1 = ['John', 'went', 'to', 'the', 'store'],sentence2 = ['John', 'proceeded', 'to', 'the', 'market'],similarPairs = [['went', 'proceeded'], ['store', 'market'], ['John', 'he']]) == True
+    assert candidate(sentence1 = ['we', 'will', 'meet', 'at', 'the', 'park'],sentence2 = ['we', 'shall', 'congregate', 'in', 'the', 'park'],similarPairs = [['will', 'shall'], ['meet', 'congregate'], ['at', 'in'], ['park', 'field']]) == True
+    assert candidate(sentence1 = ['beautiful', 'pretty', 'attractive'],sentence2 = ['handsome', 'appealing', 'beautiful'],similarPairs = [['beautiful', 'pretty'], ['pretty', 'attractive'], ['handsome', 'appealing'], ['appealing', 'beautiful']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['e', 'd', 'c', 'b', 'a'],similarPairs = [['a', 'e'], ['b', 'd'], ['c', 'c'], ['d', 'b'], ['e', 'a']]) == True
+    assert candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['auto', 'machine', 'car'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['auto', 'machine'], ['machine', 'car']]) == True
+    assert candidate(sentence1 = ['I', 'have', 'a', 'lot', 'of', 'work', 'to', 'do'],sentence2 = ['I', 'have', 'many', 'tasks', 'to', 'complete'],similarPairs = [['lot', 'many'], ['work', 'tasks'], ['do', 'complete'], ['to', 'for']]) == False
+    assert candidate(sentence1 = ['abc', 'def', 'ghi', 'jkl'],sentence2 = ['xyz', 'uvw', 'rst', 'qpo'],similarPairs = [['abc', 'xyz'], ['def', 'uvw'], ['ghi', 'rst'], ['jkl', 'qpo'], ['abc', 'uvw'], ['def', 'rst'], ['ghi', 'qpo'], ['jkl', 'xyz']]) == True
+    assert candidate(sentence1 = ['unique', 'set', 'of', 'words'],sentence2 = ['distinct', 'collection', 'of', 'terminology'],similarPairs = [['unique', 'distinct'], ['set', 'collection'], ['words', 'terminology'], ['distinct', 'one_of_a_kind'], ['collection', 'ensemble']]) == True
+    assert candidate(sentence1 = ['this', 'is', 'a', 'test'],sentence2 = ['this', 'test', 'a', 'is'],similarPairs = [['is', 'test'], ['a', 'is'], ['test', 'a']]) == True
+    assert candidate(sentence1 = ['long', 'sentence', 'with', 'many', 'words'],sentence2 = ['extended', 'phrase', 'with', 'numerous', 'terms'],similarPairs = [['long', 'extended'], ['sentence', 'phrase'], ['many', 'numerous'], ['words', 'terms']]) == True
+    assert candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['hello', 'earth'], ['hi', 'world']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd'],sentence2 = ['e', 'f', 'g', 'h'],similarPairs = [['a', 'e'], ['b', 'f'], ['c', 'g'], ['d', 'h'], ['a', 'f'], ['b', 'e']]) == True
+    assert candidate(sentence1 = ['Alice', 'loves', 'Bob'],sentence2 = ['Alice', 'adores', 'Bob'],similarPairs = [['loves', 'adores'], ['Alice', 'she'], ['Bob', 'he']]) == True
+    assert candidate(sentence1 = ['good', 'excellent', 'great'],sentence2 = ['fantastic', 'superior', 'excellent'],similarPairs = [['good', 'excellent'], ['excellent', 'great'], ['fantastic', 'superior'], ['superior', 'excellent']]) == True
+    assert candidate(sentence1 = ['red', 'green', 'blue'],sentence2 = ['crimson', 'emerald', 'azure'],similarPairs = [['red', 'crimson'], ['green', 'emerald'], ['blue', 'azure']]) == True
+    assert candidate(sentence1 = ['let', 'us', 'go'],sentence2 = ['let', 'us', 'walk'],similarPairs = [['go', 'walk']]) == True
+    assert candidate(sentence1 = ['the', 'big', 'red', 'dog'],sentence2 = ['the', 'large', 'scarlet', 'canine'],similarPairs = [['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'large'], ['red', 'scarlet'], ['dog', 'canine'], ['big', 'enormous'], ['red', 'crimson'], ['dog', 'puppy']]) == True
+    assert candidate(sentence1 = ['car', 'vehicle', 'automobile'],sentence2 = ['truck', 'motor', 'vehicle'],similarPairs = [['car', 'vehicle'], ['vehicle', 'automobile'], ['truck', 'motor'], ['motor', 'vehicle']]) == True
+    assert candidate(sentence1 = ['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'],sentence2 = ['the', 'swift', 'brown', 'fox', 'leaps', 'above', 'the', 'idle', 'dog'],similarPairs = [['quick', 'swift'], ['jumps', 'leaps'], ['over', 'above'], ['lazy', 'idle']]) == True
+    assert candidate(sentence1 = ['a', 'b', 'c', 'd', 'e'],sentence2 = ['a', 'b', 'c', 'd', 'e'],similarPairs = []) == True
+    assert candidate(sentence1 = ['hello', 'world'],sentence2 = ['hi', 'earth'],similarPairs = [['hello', 'hi'], ['world', 'earth'], ['world', 'globe'], ['hello', 'hola']]) == True
+    assert candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['1', '2', '3'],similarPairs = [['one', '1'], ['two', '2'], ['three', '3']]) == True
+    assert candidate(sentence1 = ['one', 'two', 'three'],sentence2 = ['uno', 'dos', 'tres'],similarPairs = [['one', 'uno'], ['two', 'dos'], ['three', 'tres'], ['one', 'tres']]) == True
+    assert candidate(sentence1 = ['complex', 'sentence', 'with', 'multiple', 'words'],sentence2 = ['elaborate', 'utterance', 'with', 'numerous', 'terms'],similarPairs = [['complex', 'elaborate'], ['sentence', 'utterance'], ['multiple', 'numerous'], ['words', 'terms']]) == True
+    assert candidate(sentence1 = ['cat', 'dog', 'fish'],sentence2 = ['dog', 'cat', 'fish'],similarPairs = [['cat', 'dog'], ['dog', 'cat']]) == True
+    assert candidate(sentence1 = ['Alice', 'went', 'to', 'the', 'market'],sentence2 = ['Alice', 'visited', 'the', 'supermarket'],similarPairs = [['went', 'visited'], ['market', 'supermarket'], ['Alice', 'Bob']]) == False
+    assert candidate(sentence1 = ['apple', 'banana', 'cherry'],sentence2 = ['fruit', 'yellow', 'red'],similarPairs = [['apple', 'fruit'], ['banana', 'yellow'], ['cherry', 'red']]) == True
+    assert candidate(sentence1 = ['big', 'large', 'huge'],sentence2 = ['enormous', 'gigantic', 'massive'],similarPairs = [['big', 'large'], ['large', 'huge'], ['enormous', 'gigantic'], ['gigantic', 'massive'], ['massive', 'enormous']]) == False
+    assert candidate(sentence1 = ['A', 'B', 'C', 'D'],sentence2 = ['W', 'X', 'Y', 'Z'],similarPairs = [['A', 'W'], ['B', 'X'], ['C', 'Y'], ['D', 'Z'], ['A', 'X'], ['B', 'W'], ['C', 'Z'], ['D', 'Y']]) == True
+    assert candidate(sentence1 = ['coding', 'is', 'fun'],sentence2 = ['programming', 'is', 'fun'],similarPairs = [['coding', 'programming'], ['coding', 'programming']]) == True
+    assert candidate(sentence1 = ['tiny', 'green', 'leaf'],sentence2 = ['small', 'emerald', 'blade'],similarPairs = [['tiny', 'small'], ['green', 'emerald'], ['leaf', 'blade'], ['small', 'minute'], ['emerald', 'jade'], ['blade', 'sheet']]) == True
+    assert candidate(sentence1 = ['quick', 'brown', 'fox'],sentence2 = ['rapid', 'chestnut', 'vulpine'],similarPairs = [['quick', 'rapid'], ['brown', 'chestnut'], ['fox', 'vulpine'], ['rapid', 'swift'], ['chestnut', 'mahogany'], ['vulpine', 'feline']]) == True
+
+

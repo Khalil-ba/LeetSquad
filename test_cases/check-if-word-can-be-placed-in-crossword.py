@@ -1,0 +1,1220 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a'], ['b'], ['c'], ['d'], ['e']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a'], ['b'], ['c'], ['d'], ['e']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "ihg") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "ihg") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', ' ', 'a'], [' ', ' ', ' '], ['a', ' ', 'a']],word = "aba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', ' ', 'a'], [' ', ' ', ' '], ['a', ' ', 'a']],word = "aba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], ['#', ' ', '#']],word = "cba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], ['#', ' ', '#']],word = "cba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "def") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "def") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], ['g', 'h', 'i']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], ['g', 'h', 'i']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' '], ['#', 'a', '#'], [' ', ' ', ' ']],word = "a") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' '], ['#', 'a', '#'], [' ', ' ', ' ']],word = "a") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#']],word = "a") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#']],word = "a") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#']],word = "test") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#']],word = "test") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#'], [' ', ' ', ' '], ['#', '#', '#']],word = "ab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#'], [' ', ' ', ' '], ['#', '#', '#']],word = "ab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "test") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "test") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "python") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "python") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], ['#', '#', 'd', '#', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], ['#', '#', 'd', '#', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', '#', '#', '#', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', '#', '#', ' ']],word = "test") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', '#', '#', '#', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', '#', '#', ' ']],word = "test") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#']],word = "abcdefg") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#']],word = "abcdefg") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', 'a', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', 'a', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', 'a', '#'], ['b', ' ', 'c'], ['#', 'd', '#'], [' ', 'e', ' ']],word = "abcde") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', 'a', '#'], ['b', ' ', 'c'], ['#', 'd', '#'], [' ', 'e', ' ']],word = "abcde") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "find") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "find") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', ' ', ' ', '#']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', ' ', ' ', '#']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "a") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "a") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], [' ', ' ', ' '], [' ', ' ', ' '], ['#', 'a', 'b']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], [' ', ' ', ' '], [' ', ' ', ' '], ['#', 'a', 'b']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', ' ', '#', ' '], ['#', ' ', '#', ' ', '#', '#'], [' ', '#', ' ', '#', ' ', ' '], ['#', '#', ' ', '#', ' ', '#']],word = "hello") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', ' ', '#', ' '], ['#', ' ', '#', ' ', '#', '#'], [' ', '#', ' ', '#', ' ', ' '], ['#', '#', ' ', '#', ' ', '#']],word = "hello") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "ghijkl") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "ghijkl") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "hello") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "hello") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], [' ', ' ', ' '], ['d', 'e', 'f'], ['#', ' ', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], [' ', ' ', ' '], ['d', 'e', 'f'], ['#', ' ', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' '], [' ', ' ', ' ', ' '], [' ', ' ', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' '], [' ', ' ', ' ', ' '], [' ', ' ', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', 'a'], ['#', '#', 'b', 'c']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', 'a'], ['#', '#', 'b', 'c']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['c', 'b', 'a', ' ', ' '], [' ', 'd', 'e', 'f', ' '], ['#', ' ', '#', ' ', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['c', 'b', 'a', ' ', ' '], [' ', 'd', 'e', 'f', ' '], ['#', ' ', '#', ' ', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', ' ', '#'], ['#', '#', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', ' ', '#'], ['#', '#', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#'], ['#', '#', '#']],word = "ab") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#'], ['#', '#', '#']],word = "ab") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', '#', '#', ' ', '#'], ['#', ' ', '#', 'a', '#', ' ', '#'], ['#', ' ', '#', 'b', '#', ' ', '#'], ['#', ' ', '#', 'c', '#', ' ', '#'], ['#', '#', '#', '#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', '#', '#', ' ', '#'], ['#', ' ', '#', 'a', '#', ' ', '#'], ['#', ' ', '#', 'b', '#', ' ', '#'], ['#', ' ', '#', 'c', '#', ' ', '#'], ['#', '#', '#', '#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', 'a', '#'], ['#', '#', '#'], ['#', 'a', '#']],word = "aa") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', 'a', '#'], ['#', '#', '#'], ['#', 'a', '#']],word = "aa") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ac") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ac") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', 'b', '#'], [' ', ' ', ' ', ' '], ['#', 'd', 'c', '#']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', 'b', '#'], [' ', ' ', ' ', ' '], ['#', 'd', 'c', '#']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', 'a', ' ', 'b', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "ab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', 'a', ' ', 'b', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "ab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', 'a', ' ', ' ', ' ', '#'], ['#', '#', ' ', 'b', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', 'a', ' ', ' ', ' ', '#'], ['#', '#', ' ', 'b', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', '#', ' ', '#', ' ']],word = "test") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', '#', ' ', '#', ' ']],word = "test") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['e', 'd', 'c', 'b', 'a'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['e', 'd', 'c', 'b', 'a'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "cba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "cba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', ' ', ' ', '#'], ['#', ' ', ' ', 'b', '#'], ['#', ' ', 'c', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', ' ', ' ', '#'], ['#', ' ', ' ', 'b', '#'], ['#', ' ', 'c', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', 'a', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', 'c', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "play") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', 'a', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', 'c', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "play") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', '#', '#', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', '#', '#', '#', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', '#', '#', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', '#', '#', '#', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "mnopqr") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "mnopqr") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', '#'], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "word") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', '#'], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "word") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', ' ', 'b', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', 'c', ' ', ' ', 'd', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', ' ', 'b', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', 'c', ' ', ' ', 'd', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcdefghi") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcdefghi") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], [' ', ' ', ' ', 'c']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], [' ', ' ', ' ', 'c']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "python") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "python") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ']],word = "world") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ']],word = "world") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', 'a', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "banana") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', 'a', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "banana") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'a', '#', 'b', '#', 'c', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'd', '#', 'e', '#', 'f', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'a', '#', 'b', '#', 'c', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'd', '#', 'e', '#', 'f', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', 'a', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', 'a', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', ' ', 'd', 'e'], ['#', '#', 'c', '#', '#'], ['e', 'd', ' ', 'b', 'a'], ['#', '#', 'c', '#', '#'], ['a', 'b', ' ', 'd', 'e']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', ' ', 'd', 'e'], ['#', '#', 'c', '#', '#'], ['e', 'd', ' ', 'b', 'a'], ['#', '#', 'c', '#', '#'], ['a', 'b', ' ', 'd', 'e']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', '#', '#', ' '], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], [' ', '#', '#', '#', ' ']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', '#', '#', ' '], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], [' ', '#', '#', '#', ' ']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', '#', ' '], ['#', 'b', '#', ' '], ['#', 'c', '#', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', '#', ' '], ['#', 'b', '#', ' '], ['#', 'c', '#', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'd', 'e', 'f', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'd', 'e', 'f', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', 'a', '#', 'b', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'c', '#', 'd', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'e', '#', 'f', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', 'a', '#', 'b', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'c', '#', 'd', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'e', '#', 'f', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#']],word = "game") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#']],word = "game") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'k', ' ', ' ', 'l', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'm'], ['#', '#', '#', '#', '#', '#', '#']],word = "klm") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'k', ' ', ' ', 'l', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'm'], ['#', '#', '#', '#', '#', '#', '#']],word = "klm") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', 'a', ' '], ['#', ' ', '#'], [' ', 'b', ' '], ['#', ' ', '#']],word = "aba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', 'a', ' '], ['#', ' ', '#'], [' ', 'b', ' '], ['#', ' ', '#']],word = "aba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "a") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "a") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'b', '#', 'c'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', 'd', '#', 'e', '#', 'f'], [' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'b', '#', 'c'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', 'd', '#', 'e', '#', 'f'], [' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "world") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "world") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', 'j'], ['#', ' ', '#', ' ', '#', ' ', 'i'], ['#', ' ', ' ', ' ', ' ', ' ', 'h'], ['#', ' ', '#', ' ', '#', ' ', 'g'], ['#', ' ', ' ', ' ', ' ', ' ', 'f'], ['#', '#', '#', '#', '#', '#', '#']],word = "ghij") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', 'j'], ['#', ' ', '#', ' ', '#', ' ', 'i'], ['#', ' ', ' ', ' ', ' ', ' ', 'h'], ['#', ' ', '#', ' ', '#', ' ', 'g'], ['#', ' ', ' ', ' ', ' ', ' ', 'f'], ['#', '#', '#', '#', '#', '#', '#']],word = "ghij") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], [' ', ' ', ' '], [' ', ' ', '#'], [' ', '#', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], [' ', ' ', ' '], [' ', ' ', '#'], [' ', '#', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], [' ', 'a', '#', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], [' ', 'a', '#', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "aaa") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "aaa") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], [' ', 'g', ' ', 'h', ' ', 'i', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#', '#']],word = "ghji") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], [' ', 'g', ' ', 'h', ' ', 'i', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#', '#']],word = "ghji") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', ' '], ['#', ' ', '#', ' '], ['#', ' ', ' ', ' '], ['#', '#', '#', '#']],word = "code") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', ' '], ['#', ' ', '#', ' '], ['#', ' ', ' ', ' '], ['#', '#', '#', '#']],word = "code") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', 'a', 'b', 'c'], ['#', 'd', 'e', 'f'], ['#', 'g', 'h', 'i'], ['#', 'j', 'k', 'l']],word = "mnop") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', 'a', 'b', 'c'], ['#', 'd', 'e', 'f'], ['#', 'g', 'h', 'i'], ['#', 'j', 'k', 'l']],word = "mnop") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' '], ['#', ' ', 'a', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' '], ['#', ' ', 'a', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'n', ' ', ' ', 'o', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'p'], ['#', '#', '#', '#', '#', '#', '#']],word = "pon") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'n', ' ', ' ', 'o', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'p'], ['#', '#', '#', '#', '#', '#', '#']],word = "pon") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abcdefgh") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abcdefgh") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], ['a', 'b', 'c', 'd']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], ['a', 'b', 'c', 'd']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', ' ', 'c'], ['b', ' ', 'd'], [' ', ' ', ' ']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', ' ', 'c'], ['b', ' ', 'd'], [' ', ' ', ' ']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "abacaba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "abacaba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'b', ' ', 'c', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'd', ' ', 'e', ' ', 'f', ' ']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'b', ' ', 'c', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'd', ' ', 'e', ' ', 'f', ' ']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "race") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "race") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', '#'], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#']],word = "word") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', '#'], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#']],word = "word") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'g', '#', 'h', '#', 'i', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'j', '#', 'k', '#', 'l', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "ghijkl") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'g', '#', 'h', '#', 'i', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'j', '#', 'k', '#', 'l', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "ghijkl") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#']],word = "word") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#']],word = "word") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', ' ', ' '], [' ', ' ', ' ', ' ']],word = "a") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', ' ', ' '], [' ', ' ', ' ', ' ']],word = "a") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', '#'], ['#', 'b', 'c', '#'], ['#', ' ', ' ', '#'], ['#', 'd', ' ', 'e']],word = "bcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', '#'], ['#', 'b', 'c', '#'], ['#', ' ', ' ', '#'], ['#', 'd', ' ', 'e']],word = "bcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "hello") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "hello") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c', 'd', 'e'], ['#', '#', '#', '#', '#'], ['e', 'd', 'c', 'b', 'a'], ['#', '#', '#', '#', '#'], ['a', 'b', 'c', 'd', 'e']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c', 'd', 'e'], ['#', '#', '#', '#', '#'], ['e', 'd', 'c', 'b', 'a'], ['#', '#', '#', '#', '#'], ['a', 'b', 'c', 'd', 'e']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#'], ['a', ' ', 'a'], ['#', ' ', '#'], ['b', ' ', 'b'], ['#', '#', '#']],word = "aba") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#'], ['a', ' ', 'a'], ['#', ' ', '#'], ['b', ' ', 'b'], ['#', '#', '#']],word = "aba") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "java") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "java") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'a', ' '], ['#', ' ', '#', ' ', '#'], [' ', 'b', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'a', ' '], ['#', ' ', '#', ' ', '#'], [' ', 'b', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', 'b', 'c', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', 'b', 'c', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', ' ', 'a', 'b', ' ', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "ab") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', ' ', 'a', 'b', ' ', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "ab") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', '#', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', ' ', ' ']],word = "hello") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', '#', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', ' ', ' ']],word = "hello") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "a") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "a") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', ' ', ' ', '#'], [' ', 'b', ' ', '#'], [' ', ' ', 'c', ' '], ['#', '#', '#', '#']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', ' ', ' ', '#'], [' ', 'b', ' ', '#'], [' ', ' ', 'c', ' '], ['#', '#', '#', '#']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "car") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "car") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']],word = "a") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']],word = "a") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['a', 'b', 'c'], ['d', '#', 'e'], ['f', 'g', 'h'], ['i', 'j', 'k']],word = "def") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['a', 'b', 'c'], ['d', '#', 'e'], ['f', 'g', 'h'], ['i', 'j', 'k']],word = "def") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', '#', 'a', '#', ' '], [' ', '#', ' ', '#', ' '], [' ', '#', 'b', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ba") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', '#', 'a', '#', ' '], [' ', '#', ' ', '#', ' '], [' ', '#', 'b', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ba") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], ['a', ' ', 'b'], ['#', ' ', '#'], ['c', ' ', 'd'], ['#', ' ', '#']],word = "abcd") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], ['a', ' ', 'b'], ['#', ' ', '#'], ['c', ' ', 'd'], ['#', ' ', '#']],word = "abcd") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#'], ['f', 'e', 'd'], [' ', ' ', ' '], ['c', 'b', 'a'], ['#', ' ', '#']],word = "abcdef") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#'], ['f', 'e', 'd'], [' ', ' ', ' '], ['c', 'b', 'a'], ['#', ' ', '#']],word = "abcdef") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', 'c', '#'], [' ', '#', ' ', '#', ' '], ['#', ' ', '#', 'a', '#']],word = "ca") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', 'c', '#'], [' ', '#', ' ', '#', ' '], ['#', ' ', '#', 'a', '#']],word = "ca") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c'], [' ', ' ', ' ', ' ']],word = "abc") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c'], [' ', ' ', ' ', ' ']],word = "abc") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#']],word = "abcde") == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'c', 'b', 'a', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'c', 'b', 'a', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "cross") == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "cross") == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True
+    assert candidate(board = [['a'], ['b'], ['c'], ['d'], ['e']],word = "abcde") == True
+    assert candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', ' ', 'c']],word = "ca") == True
+    assert candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "ihg") == True
+    assert candidate(board = [['a', ' ', 'a'], [' ', ' ', ' '], ['a', ' ', 'a']],word = "aba") == True
+    assert candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], ['#', ' ', '#']],word = "cba") == True
+    assert candidate(board = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']],word = "def") == True
+    assert candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], ['g', 'h', 'i']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' '], ['#', 'a', '#'], [' ', ' ', ' ']],word = "a") == True
+    assert candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#']],word = "a") == True
+    assert candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True
+    assert candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False
+    assert candidate(board = [[' ', '#', 'a'], [' ', '#', 'c'], [' ', '#', 'a']],word = "ac") == False
+    assert candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#']],word = "test") == False
+    assert candidate(board = [['#', '#', '#'], [' ', ' ', ' '], ['#', '#', '#']],word = "ab") == False
+    assert candidate(board = [['#', ' ', '#'], [' ', ' ', '#'], ['#', 'c', ' ']],word = "abc") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "test") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "python") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True
+    assert candidate(board = [['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], ['#', '#', 'd', '#', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == True
+    assert candidate(board = [[' ', ' ', '#', '#', '#', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', '#', '#', ' ']],word = "test") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#']],word = "abcdefg") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', 'a', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [['#', 'a', '#'], ['b', ' ', 'c'], ['#', 'd', '#'], [' ', 'e', ' ']],word = "abcde") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "find") == False
+    assert candidate(board = [[' ', '#', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', ' ', ' ', '#']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "a") == False
+    assert candidate(board = [['a', 'b', 'c'], ['#', '#', '#'], [' ', ' ', ' '], [' ', ' ', ' '], ['#', 'a', 'b']],word = "abc") == True
+    assert candidate(board = [[' ', '#', ' ', ' ', '#', ' '], ['#', ' ', '#', ' ', '#', '#'], [' ', '#', ' ', '#', ' ', ' '], ['#', '#', ' ', '#', ' ', '#']],word = "hello") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "ghijkl") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', ' ', ' '], ['#', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "hello") == True
+    assert candidate(board = [['#', ' ', '#'], ['a', 'b', 'c'], [' ', ' ', ' '], ['d', 'e', 'f'], ['#', ' ', '#']],word = "abcdef") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+    assert candidate(board = [['#', ' ', '#', ' '], [' ', ' ', ' ', ' '], [' ', ' ', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], ['#', ' ', ' ', 'c']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', 'a'], ['#', '#', 'b', 'c']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['a', 'b', 'c', 'd', 'e'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "ab") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['c', 'b', 'a', ' ', ' '], [' ', 'd', 'e', 'f', ' '], ['#', ' ', '#', ' ', '#']],word = "abcdef") == False
+    assert candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', ' ', '#'], ['#', '#', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', ' ']],word = "abc") == False
+    assert candidate(board = [['#', '#', '#'], ['#', ' ', '#'], ['#', ' ', '#'], ['#', '#', '#']],word = "ab") == True
+    assert candidate(board = [['#', '#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', '#', '#', ' ', '#'], ['#', ' ', '#', 'a', '#', ' ', '#'], ['#', ' ', '#', 'b', '#', ' ', '#'], ['#', ' ', '#', 'c', '#', ' ', '#'], ['#', '#', '#', '#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [['#', 'a', '#'], ['#', '#', '#'], ['#', 'a', '#']],word = "aa") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ac") == True
+    assert candidate(board = [[' ', ' ', ' ', ' '], ['#', 'a', 'b', '#'], [' ', ' ', ' ', ' '], ['#', 'd', 'c', '#']],word = "abcd") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', 'a', ' ', 'b', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "ab") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', 'a', ' ', ' ', ' ', '#'], ['#', '#', ' ', 'b', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abc") == True
+    assert candidate(board = [[' ', '#', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', '#', ' ', '#', ' ']],word = "test") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['e', 'd', 'c', 'b', 'a'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "cba") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', ' ', ' ', '#'], ['#', ' ', ' ', 'b', '#'], ['#', ' ', 'c', ' ', '#'], ['#', '#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', 'a', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', 'c', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "play") == False
+    assert candidate(board = [[' ', '#', '#', '#', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', '#', '#', '#', ' ']],word = "abc") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "mnopqr") == True
+    assert candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+    assert candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', '#'], ['#', ' ', ' ', '#'], ['#', '#', '#', '#']],word = "word") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', ' ', 'b', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', 'c', ' ', ' ', 'd', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "abcd") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcdefghi") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', 'a', ' ', ' '], [' ', ' ', 'b', ' '], [' ', ' ', ' ', 'c']],word = "abc") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "python") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ']],word = "world") == True
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "abcdef") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', ' ', 'a', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#']],word = "banana") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'a', '#', 'b', '#', 'c', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'd', '#', 'e', '#', 'f', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abcdef") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], ['#', '#', 'b', '#', '#'], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+    assert candidate(board = [[' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', '#', ' ', ' ', ' '], [' ', ' ', ' ', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', 'a', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+    assert candidate(board = [['a', 'b', ' ', 'd', 'e'], ['#', '#', 'c', '#', '#'], ['e', 'd', ' ', 'b', 'a'], ['#', '#', 'c', '#', '#'], ['a', 'b', ' ', 'd', 'e']],word = "abcde") == True
+    assert candidate(board = [[' ', '#', '#', '#', ' '], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], [' ', '#', '#', '#', ' ']],word = "abcd") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', '#', ' '], ['#', 'b', '#', ' '], ['#', 'c', '#', ' ']],word = "abc") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+    assert candidate(board = [['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'd', 'e', 'f', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abcdef") == False
+    assert candidate(board = [['#', 'a', '#', 'b', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'c', '#', 'd', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'e', '#', 'f', '#']],word = "abcdef") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']],word = "abcd") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#'], ['#', ' ', ' ', ' ', '#']],word = "game") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'k', ' ', ' ', 'l', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'm'], ['#', '#', '#', '#', '#', '#', '#']],word = "klm") == True
+    assert candidate(board = [['#', ' ', '#'], [' ', 'a', ' '], ['#', ' ', '#'], [' ', 'b', ' '], ['#', ' ', '#']],word = "aba") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "a") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' '], ['#', 'a', '#', 'b', '#', 'c'], [' ', ' ', ' ', ' ', ' ', ' '], ['#', 'd', '#', 'e', '#', 'f'], [' ', ' ', ' ', ' ', ' ', ' ']],word = "abcdef") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "world") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', 'j'], ['#', ' ', '#', ' ', '#', ' ', 'i'], ['#', ' ', ' ', ' ', ' ', ' ', 'h'], ['#', ' ', '#', ' ', '#', ' ', 'g'], ['#', ' ', ' ', ' ', ' ', ' ', 'f'], ['#', '#', '#', '#', '#', '#', '#']],word = "ghij") == False
+    assert candidate(board = [['#', ' ', '#'], [' ', ' ', ' '], [' ', ' ', '#'], [' ', '#', ' ']],word = "abc") == True
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], [' ', 'a', '#', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "aaa") == True
+    assert candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], [' ', 'g', ' ', 'h', ' ', 'i', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#', '#', '#']],word = "ghji") == True
+    assert candidate(board = [['#', '#', '#', '#'], ['#', ' ', ' ', ' '], ['#', ' ', '#', ' '], ['#', ' ', ' ', ' '], ['#', '#', '#', '#']],word = "code") == False
+    assert candidate(board = [['#', 'a', 'b', 'c'], ['#', 'd', 'e', 'f'], ['#', 'g', 'h', 'i'], ['#', 'j', 'k', 'l']],word = "mnop") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "abcd") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' '], ['#', ' ', 'a', ' ', ' '], ['#', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', ' ']],word = "abc") == False
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', 'a', '#', 'b', '#'], ['#', '#', '#', '#', '#'], ['#', 'c', '#', 'd', '#'], ['#', '#', '#', '#', '#']],word = "abcd") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', ' '], ['#', ' ', 'n', ' ', ' ', 'o', ' '], ['#', ' ', ' ', ' ', ' ', ' ', 'p'], ['#', '#', '#', '#', '#', '#', '#']],word = "pon") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c', '#'], [' ', ' ', ' ', ' ', ' ']],word = "abc") == True
+    assert candidate(board = [['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#'], ['#', '#', ' ', '#', '#', ' ', '#'], ['#', ' ', ' ', ' ', ' ', ' ', '#']],word = "abcdefgh") == False
+    assert candidate(board = [[' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], [' ', ' ', ' ', '#'], ['a', 'b', 'c', 'd']],word = "abcd") == True
+    assert candidate(board = [['a', ' ', 'c'], ['b', ' ', 'd'], [' ', ' ', ' ']],word = "abcd") == False
+    assert candidate(board = [[' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' ']],word = "abacaba") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'b', ' ', 'c', ' '], ['#', ' ', '#', ' ', '#', ' ', '#'], [' ', 'd', ' ', 'e', ' ', 'f', ' ']],word = "abcdef") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', 'a', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', 'c', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "race") == False
+    assert candidate(board = [['#', ' ', ' ', '#'], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', ' ', ' ', '#']],word = "word") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'g', '#', 'h', '#', 'i', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', 'j', '#', 'k', '#', 'l', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "ghijkl") == False
+    assert candidate(board = [['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#']],word = "word") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', '#', ' ', ' '], [' ', ' ', ' ', ' ']],word = "a") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#']],word = "abcde") == True
+    assert candidate(board = [[' ', ' ', ' ', '#'], ['#', 'b', 'c', '#'], ['#', ' ', ' ', '#'], ['#', 'd', ' ', 'e']],word = "bcde") == True
+    assert candidate(board = [['#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#']],word = "hello") == False
+    assert candidate(board = [['a', 'b', 'c', 'd', 'e'], ['#', '#', '#', '#', '#'], ['e', 'd', 'c', 'b', 'a'], ['#', '#', '#', '#', '#'], ['a', 'b', 'c', 'd', 'e']],word = "abcde") == True
+    assert candidate(board = [['#', '#', '#'], ['a', ' ', 'a'], ['#', ' ', '#'], ['b', ' ', 'b'], ['#', '#', '#']],word = "aba") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', '#', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "java") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', ' ', 'a', ' '], ['#', ' ', '#', ' ', '#'], [' ', 'b', ' ', 'b', ' '], ['#', ' ', '#', ' ', '#']],word = "abba") == False
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'a', 'b', 'c', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+    assert candidate(board = [['#', '#', '#', '#', '#', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', ' ', 'a', 'b', ' ', '#'], ['#', ' ', ' ', ' ', ' ', '#'], ['#', '#', '#', '#', '#', '#']],word = "ab") == False
+    assert candidate(board = [[' ', ' ', '#', ' ', ' '], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], [' ', ' ', '#', ' ', ' ']],word = "hello") == True
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], ['#', ' ', 'a', ' ', '#'], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' ']],word = "a") == True
+    assert candidate(board = [['a', ' ', ' ', '#'], [' ', 'b', ' ', '#'], [' ', ' ', 'c', ' '], ['#', '#', '#', '#']],word = "abc") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', ' ', ' ', '#'], [' ', ' ', ' ', ' ', ' '], ['#', ' ', '#', ' ', '#']],word = "car") == True
+    assert candidate(board = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']],word = "a") == False
+    assert candidate(board = [['a', 'b', 'c'], ['d', '#', 'e'], ['f', 'g', 'h'], ['i', 'j', 'k']],word = "def") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], [' ', '#', 'a', '#', ' '], [' ', '#', ' ', '#', ' '], [' ', '#', 'b', '#', ' '], [' ', ' ', ' ', ' ', ' ']],word = "ba") == False
+    assert candidate(board = [['#', ' ', '#'], ['a', ' ', 'b'], ['#', ' ', '#'], ['c', ' ', 'd'], ['#', ' ', '#']],word = "abcd") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', '#', '#', ' '], [' ', '#', '#', ' '], [' ', ' ', ' ', ' ']],word = "abcd") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#'], ['#', ' ', '#', ' ', '#', ' ', '#']],word = "abc") == False
+    assert candidate(board = [['#', ' ', '#'], ['f', 'e', 'd'], [' ', ' ', ' '], ['c', 'b', 'a'], ['#', ' ', '#']],word = "abcdef") == False
+    assert candidate(board = [[' ', '#', ' ', '#', ' '], ['#', 'a', '#', 'c', '#'], [' ', '#', ' ', '#', ' '], ['#', ' ', '#', 'a', '#']],word = "ca") == False
+    assert candidate(board = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], ['#', 'a', 'b', 'c'], [' ', ' ', ' ', ' ']],word = "abc") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#'], [' ', ' ', ' ', ' ', '#'], ['#', ' ', '#', ' ', '#']],word = "abcde") == True
+    assert candidate(board = [['#', ' ', '#', ' ', '#'], [' ', 'c', 'b', 'a', ' '], ['#', ' ', '#', ' ', '#']],word = "abc") == False
+    assert candidate(board = [[' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' '], ['#', '#', '#', '#', '#'], [' ', ' ', ' ', ' ', ' ']],word = "cross") == True
+
+

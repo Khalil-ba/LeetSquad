@@ -1,0 +1,887 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1],k = 1) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1],k = 1) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],k = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],k = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 3, 2, 2, 2, 3, 3],k = 4) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 3, 2, 2, 2, 3, 3],k = 4) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2],k = 2) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2],k = 2) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [4, 2, 1, 2, 3, 3, 2, 4, 1],k = 4) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [4, 2, 1, 2, 3, 3, 2, 4, 1],k = 4) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],k = 10) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],k = 10) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],k = 3) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],k = 3) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1],k = 1) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1],k = 1) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 5, 5, 5, 5],k = 5) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 5, 5, 5, 5],k = 5) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 4, 3, 2, 1],k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 4, 3, 2, 1],k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5],k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5],k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 3, 2, 3, 2, 1],k = 3) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 3, 2, 3, 2, 1],k = 3) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 1, 3, 4, 2, 5, 1, 3, 4, 2, 5, 1, 3, 4, 2],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 1, 3, 4, 2, 5, 1, 3, 4, 2, 5, 1, 3, 4, 2],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],k = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],k = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 18
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 18: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],k = 100000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],k = 100000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 4, 3, 2, 1, 1, 2, 3, 4, 4, 3, 2, 1],k = 4) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 4, 3, 2, 1, 1, 2, 3, 4, 4, 3, 2, 1],k = 4) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4],k = 4) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4],k = 4) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [3, 1, 2, 1, 3, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [3, 1, 2, 1, 3, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 2, 1, 3, 1, 2, 3, 4, 2, 1, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 2, 1, 3, 1, 2, 3, 4, 2, 1, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5],k = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5],k = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 10) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 10) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 5, 5, 5, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 5, 5, 5, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 8
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 8: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 30) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 30) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 35
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 35: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1],k = 15) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1],k = 15) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7],k = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7],k = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1],k = 100000) == 1
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1],k = 100000) == 1: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 15) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 15) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4],k = 4) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4],k = 4) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 13
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 13: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 3, 2, 4, 2, 1, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 3, 2, 4, 2, 1, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],k = 2) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],k = 2) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1],k = 7) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1],k = 7) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 7
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 7: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15],k = 15) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15],k = 15) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 3, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4],k = 4) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 3, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4],k = 4) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 1, 1, 2, 2, 3, 3],k = 6) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 1, 1, 2, 2, 3, 3],k = 6) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 2, 1, 3, 3, 1, 2, 3, 4, 4, 1, 2, 3, 4, 5, 5, 1, 2, 3, 4, 5, 6, 6, 1, 2, 3, 4, 5, 6, 7, 7],k = 7) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 2, 1, 3, 3, 1, 2, 3, 4, 4, 1, 2, 3, 4, 5, 5, 1, 2, 3, 4, 5, 6, 6, 1, 2, 3, 4, 5, 6, 7, 7],k = 7) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4],k = 4) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4],k = 4) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],k = 5) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],k = 5) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6],k = 6) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6],k = 6) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7],k = 7) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7],k = 7) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 2, 1, 3, 3, 3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 6
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 2, 1, 3, 3, 3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 6: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],k = 3) == 16
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],k = 3) == 16: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 9
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 9: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 12
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 12: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 11
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 11: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [5, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4],k = 5) == 5
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [5, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4],k = 5) == 5: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 4
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 4: {e}')
+    
+    total += 1
+    try:
+        result = candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10],k = 20) == 2
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10],k = 20) == 2: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2
+    assert candidate(rolls = [1, 1, 1, 1, 1],k = 1) == 6
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 4
+    assert candidate(rolls = [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],k = 6) == 3
+    assert candidate(rolls = [1, 1, 3, 2, 2, 2, 3, 3],k = 4) == 1
+    assert candidate(rolls = [1, 1, 2, 2],k = 2) == 2
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 11
+    assert candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 3
+    assert candidate(rolls = [4, 2, 1, 2, 3, 3, 2, 4, 1],k = 4) == 3
+    assert candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 4
+    assert candidate(rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],k = 10) == 1
+    assert candidate(rolls = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],k = 3) == 1
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3
+    assert candidate(rolls = [1],k = 1) == 2
+    assert candidate(rolls = [5, 5, 5, 5, 5],k = 5) == 1
+    assert candidate(rolls = [5, 4, 3, 2, 1],k = 5) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5],k = 5) == 2
+    assert candidate(rolls = [1, 3, 2, 3, 2, 1],k = 3) == 3
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 9
+    assert candidate(rolls = [5, 1, 3, 4, 2, 5, 1, 3, 4, 2, 5, 1, 3, 4, 2],k = 5) == 4
+    assert candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9
+    assert candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 5
+    assert candidate(rolls = [1, 2, 3, 4, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],k = 6) == 3
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 18
+    assert candidate(rolls = [100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991, 100000, 99999, 99998, 99997, 99996, 99995, 99994, 99993, 99992, 99991],k = 100000) == 1
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 4, 3, 2, 1, 1, 2, 3, 4, 4, 3, 2, 1],k = 4) == 5
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 8
+    assert candidate(rolls = [1, 2, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 4, 2, 1, 3, 2, 4],k = 4) == 12
+    assert candidate(rolls = [3, 1, 2, 1, 3, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 10
+    assert candidate(rolls = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5],k = 5) == 5
+    assert candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10
+    assert candidate(rolls = [1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 3
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 6
+    assert candidate(rolls = [1, 2, 2, 1, 3, 1, 2, 3, 4, 2, 1, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3
+    assert candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],k = 4) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 5
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5],k = 10) == 3
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 2
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 10) == 2
+    assert candidate(rolls = [5, 5, 5, 5, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 5
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 3
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 12
+    assert candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],k = 5) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 8
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],k = 30) == 3
+    assert candidate(rolls = [5, 3, 1, 4, 2, 5, 3, 1, 4, 2, 5, 3, 1, 4, 2],k = 5) == 4
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 35
+    assert candidate(rolls = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 5
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1],k = 15) == 3
+    assert candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4
+    assert candidate(rolls = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7],k = 7) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2, 3, 3, 4, 4],k = 4) == 6
+    assert candidate(rolls = [1],k = 100000) == 1
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],k = 15) == 4
+    assert candidate(rolls = [2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4],k = 4) == 11
+    assert candidate(rolls = [5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4],k = 5) == 4
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 3
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 13
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 16
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],k = 10) == 4
+    assert candidate(rolls = [1, 3, 2, 4, 2, 1, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 6
+    assert candidate(rolls = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],k = 2) == 11
+    assert candidate(rolls = [7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1, 7, 6, 5, 4, 3, 2, 1],k = 7) == 6
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 7
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15],k = 15) == 2
+    assert candidate(rolls = [1, 3, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4, 4, 2, 3, 1, 4, 2, 3, 1, 2, 4],k = 4) == 10
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 1, 1, 2, 2, 3, 3],k = 6) == 2
+    assert candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 5
+    assert candidate(rolls = [1, 2, 2, 1, 3, 3, 1, 2, 3, 4, 4, 1, 2, 3, 4, 5, 5, 1, 2, 3, 4, 5, 6, 6, 1, 2, 3, 4, 5, 6, 7, 7],k = 7) == 2
+    assert candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 3
+    assert candidate(rolls = [3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4, 3, 1, 2, 4],k = 4) == 6
+    assert candidate(rolls = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],k = 5) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6],k = 6) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2],k = 5) == 4
+    assert candidate(rolls = [7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7],k = 7) == 5
+    assert candidate(rolls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],k = 10) == 4
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 9
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],k = 20) == 3
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],k = 1) == 16
+    assert candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 12
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],k = 6) == 3
+    assert candidate(rolls = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],k = 5) == 4
+    assert candidate(rolls = [1, 2, 2, 1, 3, 3, 3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 6
+    assert candidate(rolls = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1],k = 5) == 4
+    assert candidate(rolls = [3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1],k = 3) == 16
+    assert candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 9
+    assert candidate(rolls = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],k = 4) == 12
+    assert candidate(rolls = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],k = 3) == 11
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],k = 10) == 4
+    assert candidate(rolls = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],k = 4) == 2
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 10
+    assert candidate(rolls = [5, 1, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4],k = 5) == 5
+    assert candidate(rolls = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],k = 5) == 4
+    assert candidate(rolls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10],k = 20) == 2
+
+

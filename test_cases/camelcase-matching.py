@@ -1,0 +1,1040 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FB") == [True, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FB") == [True, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBa") == [True, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBa") == [True, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBaT") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBaT") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Interleaving', 'InTerLeaVing', 'InterLeaving', 'InterLEAVING'],pattern = "InLeV") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Interleaving', 'InTerLeaVing', 'InterLeaving', 'InterLEAVING'],pattern = "InLeV") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MixedCASE', 'MxCs', 'MxCASE', 'MixCsE', 'MxCsECASE'],pattern = "MxCsE") == [False, False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MixedCASE', 'MxCs', 'MxCASE', 'MixCsE', 'MxCsECASE'],pattern = "MxCsE") == [False, False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AaAaAaAaAa', 'aAaAaAaAa', 'AaAaAaA', 'AaAa', 'Aa'],pattern = "Aa") == [False, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AaAaAaAaAa', 'aAaAaAaAa', 'AaAaAaA', 'AaAa', 'Aa'],pattern = "Aa") == [False, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['samePattern', 'samePatternEverywhere', 'same', 'pattern'],pattern = "sP") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['samePattern', 'samePatternEverywhere', 'same', 'pattern'],pattern = "sP") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'CompPat', 'ComplexPatt', 'ComplPtn', 'CompPattn'],pattern = "CompPtn") == [True, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'CompPat', 'ComplexPatt', 'ComplPtn', 'CompPattn'],pattern = "CompPtn") == [True, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['SoftwareEngineering', 'softwareENGINEERING', 'SoftWaReEnGiNeErInG', 'SOFTWAREENGINEERING'],pattern = "SWE") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['SoftwareEngineering', 'softwareENGINEERING', 'SoftWaReEnGiNeErInG', 'SOFTWAREENGINEERING'],pattern = "SWE") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PatternMatching', 'Pattern', 'Pat', 'PatMatch', 'PatternMatchInString'],pattern = "Pat") == [False, True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PatternMatching', 'Pattern', 'Pat', 'PatMatch', 'PatternMatchInString'],pattern = "Pat") == [False, True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['testCase', 'testCase1', 'testCase2', 'testCase3', 'testCase4'],pattern = "testCase") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['testCase', 'testCase1', 'testCase2', 'testCase3', 'testCase4'],pattern = "testCase") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['xYzAbCdEfG', 'xYzAbCdEfGhI', 'xYzAbCd', 'xYzAbCdEfGhIjK', 'xYzAbCdEfGhIjKlM'],pattern = "xYzAbCd") == [False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['xYzAbCdEfG', 'xYzAbCdEfGhI', 'xYzAbCd', 'xYzAbCdEfGhIjK', 'xYzAbCdEfGhIjKlM'],pattern = "xYzAbCd") == [False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPM") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPM") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPatternMatching', 'ComplexPattern', 'ComplexMatch', 'PatternMatching', 'PatternMatch'],pattern = "CPM") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPatternMatching', 'ComplexPattern', 'ComplexMatch', 'PatternMatching', 'PatternMatch'],pattern = "CPM") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Java', 'JavaScript', 'JavaS', 'JavaScr', 'JavaScriptAndMore'],pattern = "JS") == [False, True, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Java', 'JavaScript', 'JavaS', 'JavaScr', 'JavaScriptAndMore'],pattern = "JS") == [False, True, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestCase1', 'TestCase2', 'TestCase3', 'testCase4', 'testCase5', 'testCase6'],pattern = "TestCase") == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestCase1', 'TestCase2', 'TestCase3', 'testCase4', 'testCase5', 'testCase6'],pattern = "TestCase") == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCase', 'CamelCasePattern', 'Camel', 'Case'],pattern = "CCP") == [False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCase', 'CamelCasePattern', 'Camel', 'Case'],pattern = "CCP") == [False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MultipleUpperCaseLetters', 'MultipleLowerCaseLetters', 'MixOfUpperAndLowerCase', 'OnlyUpperCase', 'OnlyLowerCase'],pattern = "MUCL") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MultipleUpperCaseLetters', 'MultipleLowerCaseLetters', 'MixOfUpperAndLowerCase', 'OnlyUpperCase', 'OnlyLowerCase'],pattern = "MUCL") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['LongPatternMatchingExample', 'LongPattern', 'Long', 'LongPatternExample', 'LongPatternMatchingExampleInPython'],pattern = "Long") == [False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['LongPatternMatchingExample', 'LongPattern', 'Long', 'LongPatternExample', 'LongPatternMatchingExampleInPython'],pattern = "Long") == [False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CH") == [True, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CH") == [True, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECMc") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECMc") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ABcDeFgHiJkLmNoPqRsTuVwXyZ', 'abcdefgHIJKLmnopQRstUVwxYZ', 'AbCdEfGhIjKlMnOpQrStUvWxYz'],pattern = "AbCdEfG") == [False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ABcDeFgHiJkLmNoPqRsTuVwXyZ', 'abcdefgHIJKLmnopQRstUVwxYZ', 'AbCdEfGhIjKlMnOpQrStUvWxYz'],pattern = "AbCdEfG") == [False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MixedCasePattern', 'Mixed', 'Case', 'Pattern', 'MixedPatternCase'],pattern = "Mix") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MixedCasePattern', 'Mixed', 'Case', 'Pattern', 'MixedPatternCase'],pattern = "Mix") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ExamplePattern', 'Ex', 'ExPat', 'Example', 'PatternExample'],pattern = "Ex") == [False, True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ExamplePattern', 'Ex', 'ExPat', 'Example', 'PatternExample'],pattern = "Ex") == [False, True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['DeepLearning', 'deepLEARNING', 'DeEpLeArNiNg', 'DEEPLEARNING'],pattern = "DL") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['DeepLearning', 'deepLEARNING', 'DeEpLeArNiNg', 'DEEPLEARNING'],pattern = "DL") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['veryComplexPattern', 'veryComplexPat', 'veryComp', 'very'],pattern = "vCP") == [True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['veryComplexPattern', 'veryComplexPat', 'veryComp', 'very'],pattern = "vCP") == [True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['LeetCode', 'Leet_Code', 'Leet_Co_Dee', 'L_C_D', 'L_C_D_E_T'],pattern = "LCDE") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['LeetCode', 'Leet_Code', 'Leet_Co_Dee', 'L_C_D', 'L_C_D_E_T'],pattern = "LCDE") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPatternMatching', 'Complex', 'Pat', 'ComplexPat', 'PatternComplex'],pattern = "Com") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPatternMatching', 'Complex', 'Pat', 'ComplexPat', 'PatternComplex'],pattern = "Com") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAaAaAaA', 'AAAAAAAA', 'aAaAaAa', 'AaAaAaAaAaAaAaAa', 'aAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa'],pattern = "aAaAaAaA") == [True, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAaAaAaA', 'AAAAAAAA', 'aAaAaAa', 'AaAaAaAaAaAaAaAa', 'aAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa'],pattern = "aAaAaAaA") == [True, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCase', 'camelCase', 'Camelcase', 'camelCASE'],pattern = "Camel") == [False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCase', 'camelCase', 'Camelcase', 'camelCASE'],pattern = "Camel") == [False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCaseExample', 'CamelCase', 'CamelExample', 'ExampleCamel', 'Camel'],pattern = "CamEx") == [False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCaseExample', 'CamelCase', 'CamelExample', 'ExampleCamel', 'Camel'],pattern = "CamEx") == [False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCase', 'Camel', 'CamelCasePattern', 'CamelPattern', 'PatternCamel'],pattern = "Cam") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCase', 'Camel', 'CamelCasePattern', 'CamelPattern', 'PatternCamel'],pattern = "Cam") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Match', 'MaTch', 'MatCh', 'MatcH', 'MatchiNg'],pattern = "Match") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Match', 'MaTch', 'MatCh', 'MatcH', 'MatchiNg'],pattern = "Match") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcC', 'aabbcc', 'aaBbCc', 'aAaBbCc', 'aAbbcC'],pattern = "abc") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcC', 'aabbcc', 'aaBbCc', 'aAaBbCc', 'aAbbcC'],pattern = "abc") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['testCase', 'TestCase', 'testCase1', 'testCase2', 'testCase3'],pattern = "tc") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['testCase', 'TestCase', 'testCase1', 'testCase2', 'testCase3'],pattern = "tc") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['VariableLength', 'VarLen', 'VarLenPattern', 'VL', 'VariablePatLen'],pattern = "VarPatLen") == [False, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['VariableLength', 'VarLen', 'VarLenPattern', 'VL', 'VariablePatLen'],pattern = "VarPatLen") == [False, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['lowerCasePattern', 'lowercasepattern', 'LOWERCASEPATTERN', 'lowerCASE'],pattern = "lCP") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['lowerCasePattern', 'lowercasepattern', 'LOWERCASEPATTERN', 'lowerCASE'],pattern = "lCP") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Python', 'PythoN', 'PythOn', 'PyThOn', 'PYTHOn', 'PYTHOnS'],pattern = "PyTh") == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Python', 'PythoN', 'PythOn', 'PyThOn', 'PYTHOn', 'PYTHOnS'],pattern = "PyTh") == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcCdDeEfF', 'aabbccddeeff', 'Aabbccddeeff', 'aAbbccddeeff'],pattern = "aBcDeF") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcCdDeEfF', 'aabbccddeeff', 'Aabbccddeeff', 'aAbbccddeeff'],pattern = "aBcDeF") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Programming', 'PrograMMing', 'PROGRAMMING', 'programming'],pattern = "PrM") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Programming', 'PrograMMing', 'PROGRAMMING', 'programming'],pattern = "PrM") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['helloWorld', 'HELLOworld', 'hElLoWoRlD', 'HeLLoWoRLd', 'HELLOWORLD'],pattern = "hELo") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['helloWorld', 'HELLOworld', 'hElLoWoRlD', 'HeLLoWoRLd', 'HELLOWORLD'],pattern = "hELo") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbB', 'aabb', 'AABB', 'aAaA'],pattern = "aAbB") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbB', 'aabb', 'AABB', 'aAaA'],pattern = "aAbB") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcCdDeE', 'aabbccddeeff', 'AaBbCcDdEeFf', 'AABBCCDDEEFF'],pattern = "aBcDeF") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcCdDeE', 'aabbccddeeff', 'AaBbCcDdEeFf', 'AABBCCDDEEFF'],pattern = "aBcDeF") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['DataScience', 'Data_Science', 'DaSc', 'DaTaSci', 'DaTaSceNiCe'],pattern = "DaS") == [True, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['DataScience', 'Data_Science', 'DaSc', 'DaTaSci', 'DaTaSceNiCe'],pattern = "DaS") == [True, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AlGoRiThM', 'algoRiThm', 'AlgorIthM', 'Algorithm'],pattern = "AlGoRiThM") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AlGoRiThM', 'algoRiThm', 'AlgorIthM', 'Algorithm'],pattern = "AlGoRiThM") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ThisIsJustARandomQuery', 'ThisIsJustAQuery', 'ThisIsARandomQuery', 'ThisJustARandomQuery', 'ThisIsJustARandomQ'],pattern = "TIJARQ") == [True, False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ThisIsJustARandomQuery', 'ThisIsJustAQuery', 'ThisIsARandomQuery', 'ThisJustARandomQuery', 'ThisIsJustARandomQ'],pattern = "TIJARQ") == [True, False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'ComplexPAttern', 'ComplexPattern1', 'ComplexPattern2', 'ComplexPattern3'],pattern = "ComplexPat") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'ComplexPAttern', 'ComplexPattern1', 'ComplexPattern2', 'ComplexPattern3'],pattern = "ComplexPat") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['QuantumComputing', 'quantumCOMPUTING', 'QuAnTuMCoMpUtInG', 'QUANTUMCOMPUTING'],pattern = "QC") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['QuantumComputing', 'quantumCOMPUTING', 'QuAnTuMCoMpUtInG', 'QUANTUMCOMPUTING'],pattern = "QC") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'complexPattern', 'ComplexPATTERN', 'complexpATTERN', 'ComplexpAtTeRn'],pattern = "CP") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'complexPattern', 'ComplexPATTERN', 'complexpATTERN', 'ComplexpAtTeRn'],pattern = "CP") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],pattern = "a") == [True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],pattern = "a") == [True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkLmNoPqR', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ'],pattern = "aBcDeFgHiJ") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkLmNoPqR', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ'],pattern = "aBcDeFgHiJ") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECq") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECq") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECM") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECM") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Pattern', 'Pattern1', 'Pattern2', 'Pattern3', 'Pattern4'],pattern = "Pattern") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Pattern', 'Pattern1', 'Pattern2', 'Pattern3', 'Pattern4'],pattern = "Pattern") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ArtificialIntelligence', 'artificialINTELLIGENCE', 'ArTiFiCiAlInTeLlIgEnCe', 'ARTIFICIALINTELLIGENCE'],pattern = "AI") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ArtificialIntelligence', 'artificialINTELLIGENCE', 'ArTiFiCiAlInTeLlIgEnCe', 'ARTIFICIALINTELLIGENCE'],pattern = "AI") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPMc") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPMc") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['camelMatch', 'CamelMatch', 'camelMATCH', 'CamelMATCH', 'camelMatchTEST'],pattern = "CMt") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['camelMatch', 'CamelMatch', 'camelMATCH', 'CamelMATCH', 'camelMatchTEST'],pattern = "CMt") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MiXeDcAsE', 'MiXeDcAsEc', 'MiXeDcAsEcc', 'MiXeDcAsEcce', 'MiXeDcAsEcces', 'MiXeDcAsEccese'],pattern = "MiXeDcAsEcces") == [False, False, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MiXeDcAsE', 'MiXeDcAsEc', 'MiXeDcAsEcc', 'MiXeDcAsEcce', 'MiXeDcAsEcces', 'MiXeDcAsEccese'],pattern = "MiXeDcAsEcces") == [False, False, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['upperCASE', 'UpperCASE', 'upperCase', 'UPPERcase', 'uPPERCase'],pattern = "uPR") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['upperCASE', 'UpperCASE', 'upperCase', 'UPPERcase', 'uPPERCase'],pattern = "uPR") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AbCdEfGh', 'AbCdEfGhIj', 'AbCdEfGhIjKl', 'AbCdEfGhIjKlMn'],pattern = "ACEGIK") == [False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AbCdEfGh', 'AbCdEfGhIj', 'AbCdEfGhIjKl', 'AbCdEfGhIjKlMn'],pattern = "ACEGIK") == [False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['SubsequenceMatching', 'SubseqMatch', 'SubSeqMatch', 'SbqMtch', 'SubsqMtch'],pattern = "SbqMtch") == [True, True, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['SubsequenceMatching', 'SubseqMatch', 'SubSeqMatch', 'SbqMtch', 'SubsqMtch'],pattern = "SbqMtch") == [True, True, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPq") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPq") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['xYzXyZ', 'xyzyxzyx', 'XYXYXY', 'xyXyXy'],pattern = "XyZ") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['xYzXyZ', 'xyzyxzyx', 'XYXYXY', 'xyXyXy'],pattern = "XyZ") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['multipleUpperCases', 'multipleUPPERCASES', 'MULTIPLEUPPERCASES', 'multipleUPPER'],pattern = "mUC") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['multipleUpperCases', 'multipleUPPERCASES', 'MULTIPLEUPPERCASES', 'multipleUPPER'],pattern = "mUC") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelMatch', 'camelMatch', 'CaMeLmAtCh', 'CAMELMATCH', 'camelMATCH'],pattern = "CaM") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelMatch', 'camelMatch', 'CaMeLmAtCh', 'CAMELMATCH', 'camelMATCH'],pattern = "CaM") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PatternMatching', 'PatternMATching', 'PatternMATCHing', 'PatternMATCHINg'],pattern = "PatternMATCHINg") == [False, False, False, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PatternMatching', 'PatternMATching', 'PatternMATCHing', 'PatternMATCHINg'],pattern = "PatternMATCHINg") == [False, False, False, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPq") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPq") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['XyZ', 'XYZabc', 'xYzAbC', 'xyZabc', 'XyZABC'],pattern = "XyZ") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['XyZ', 'XYZabc', 'xYzAbC', 'xyZabc', 'XyZABC'],pattern = "XyZ") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MachineLearning', 'machineLEARNING', 'MaChInELeArNiNg', 'MACHINELEARNING'],pattern = "ML") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MachineLearning', 'machineLEARNING', 'MaChInELeArNiNg', 'MACHINELEARNING'],pattern = "ML") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcFj") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcFj") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['SamePatternSamePattern', 'SamePattern', 'Pattern', 'Same', ''],pattern = "SPSP") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['SamePatternSamePattern', 'SamePattern', 'Pattern', 'Same', ''],pattern = "SPSP") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CamelCasePattern', 'CamelCasePatternMatch', 'CamelCasePatt'],pattern = "CCPM") == [True, False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CamelCasePattern', 'CamelCasePatternMatch', 'CamelCasePatt'],pattern = "CCPM") == [True, False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AbCdEfG', 'AbcDeFG', 'AbCDefg', 'AbcDefgHiJk', 'AbCdEfGhIjk'],pattern = "ACEG") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AbCdEfG', 'AbcDeFG', 'AbCDefg', 'AbcDefgHiJk', 'AbCdEfGhIjk'],pattern = "ACEG") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPM") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPM") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCase', 'camelCase', 'CamelCASE', 'CAMELcase'],pattern = "CaC") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCase', 'camelCase', 'CamelCASE', 'CAMELcase'],pattern = "CaC") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'],pattern = "aBcEfHjLpTz") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'],pattern = "aBcEfHjLpTz") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['OneTwoThreeFourFiveSixSevenEightNineTen', 'OneTwoThreeFourFiveSixSevenEightNine', 'OneTwoThreeFourFiveSixSevenEight', 'OneTwoThreeFourFiveSixSeven', 'OneTwoThreeFourFiveSix'],pattern = "OTFSF") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['OneTwoThreeFourFiveSixSevenEightNineTen', 'OneTwoThreeFourFiveSixSevenEightNine', 'OneTwoThreeFourFiveSixSevenEight', 'OneTwoThreeFourFiveSixSeven', 'OneTwoThreeFourFiveSix'],pattern = "OTFSF") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CAMELCASEPATTERNMATCHING', 'camelcasepatternmatching'],pattern = "CamElCaSePaTtErNmAtChInG") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CAMELCASEPATTERNMATCHING', 'camelcasepatternmatching'],pattern = "CamElCaSePaTtErNmAtChInG") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY'],pattern = "aBcDeFgHiJkLmNoPqRsTuVwXyZ") == [False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY'],pattern = "aBcDeFgHiJkLmNoPqRsTuVwXyZ") == [False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AnotherExample', 'Another', 'An', 'AnotherExampleString', 'ExampleAnotherString'],pattern = "An") == [False, True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AnotherExample', 'Another', 'An', 'AnotherExampleString', 'ExampleAnotherString'],pattern = "An") == [False, True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestCase', 'Test', 'TestCasePattern', 'TestPattern', 'PatternTest'],pattern = "Tes") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestCase', 'Test', 'TestCasePattern', 'TestPattern', 'PatternTest'],pattern = "Tes") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MachineLearning', 'ML', 'MaChine_Learning', 'MachLeaRning', 'MachineLearNiNg'],pattern = "MLe") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MachineLearning', 'ML', 'MaChine_Learning', 'MachLeaRning', 'MachineLearNiNg'],pattern = "MLe") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PatternMatching', 'PatternMatchingExample', 'PatMatch', 'PatMatchEx'],pattern = "PM") == [True, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PatternMatching', 'PatternMatchingExample', 'PatMatch', 'PatMatchEx'],pattern = "PM") == [True, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['abAB', 'abab', 'ABab', 'abABab', 'abABAB'],pattern = "abAB") == [True, False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['abAB', 'abab', 'ABab', 'abABab', 'abABAB'],pattern = "abAB") == [True, False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PatternMatchingIsFun', 'PatternMatching', 'PatternMatchingIs', 'PatternIsFun', 'PatternMatchingFun'],pattern = "PMIF") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PatternMatchingIsFun', 'PatternMatching', 'PatternMatchingIs', 'PatternIsFun', 'PatternMatchingFun'],pattern = "PMIF") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AlGoRiThM', 'algoR', 'alGOrIthM', 'aLGOrIth', 'AlgOrIthM'],pattern = "aGI") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AlGoRiThM', 'algoR', 'alGOrIthM', 'aLGOrIth', 'AlgOrIthM'],pattern = "aGI") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcDFgHj") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcDFgHj") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PaTtErN123', 'Pattern123', 'pAtTeRn123', 'PaTtErN', 'Pattern', 'pAtTeRn'],pattern = "PaTtErN") == [False, False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PaTtErN123', 'Pattern123', 'pAtTeRn123', 'PaTtErN', 'Pattern', 'pAtTeRn'],pattern = "PaTtErN") == [False, False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aBCdEf', 'abcdef', 'abDef', 'aBcDE', 'aBcDeF', 'aBcDEf'],pattern = "aBcEf") == [False, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aBCdEf', 'abcdef', 'abDef', 'aBcDE', 'aBcDeF', 'aBcDEf'],pattern = "aBcEf") == [False, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestCasesWithDifferentLengths', 'TestCasesWithDifferentLength', 'TestCasesWithDifferent', 'TestCasesWith', 'TestCases'],pattern = "TCWDL") == [True, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestCasesWithDifferentLengths', 'TestCasesWithDifferentLength', 'TestCasesWithDifferent', 'TestCasesWith', 'TestCases'],pattern = "TCWDL") == [True, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Pattern', 'pattern', 'PatternMatch', 'PAtTERNmAtCH', 'PaTtErNmAtCh'],pattern = "PaT") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Pattern', 'pattern', 'PatternMatch', 'PAtTERNmAtCH', 'PaTtErNmAtCh'],pattern = "PaT") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['ComputerVision', 'computerVISION', 'CoMpUtErViSiOn', 'COMPUTERVISION'],pattern = "CV") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['ComputerVision', 'computerVISION', 'CoMpUtErViSiOn', 'COMPUTERVISION'],pattern = "CV") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Xylophone', 'xylophone', 'XyLopHone', 'XyLoPhone', 'xyLoPhOnE'],pattern = "XyLoPhOnE") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Xylophone', 'xylophone', 'XyLopHone', 'XyLoPhone', 'xyLoPhOnE'],pattern = "XyLoPhOnE") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CoMpLeXqUeRiEs', 'complexqueries', 'CoMpLeXqUeRiE', 'CoMpLeXqUeRiEz', 'CoMpLeXqUeRiEsZ', 'CoMpLeXqUeRiEsZz'],pattern = "CoMpLeXqUeRiEs") == [True, False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CoMpLeXqUeRiEs', 'complexqueries', 'CoMpLeXqUeRiE', 'CoMpLeXqUeRiEz', 'CoMpLeXqUeRiEsZ', 'CoMpLeXqUeRiEsZz'],pattern = "CoMpLeXqUeRiEs") == [True, False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHq") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHq") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['OpenAI', 'Open_Artificial_Intelligence', 'O_A_I', 'OpenA', 'OpenAIAI'],pattern = "OAI") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['OpenAI', 'Open_Artificial_Intelligence', 'O_A_I', 'OpenA', 'OpenAIAI'],pattern = "OAI") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['looongPattern', 'looongPattern', 'longPattern', 'lOnGPattern', 'LoNgPatTerN'],pattern = "LoNgPat") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['looongPattern', 'looongPattern', 'longPattern', 'lOnGPattern', 'LoNgPatTerN'],pattern = "LoNgPat") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['Algorithm', 'AlgoRhythm', 'AlGoRiThM', 'ALGORITHM'],pattern = "AlGM") == [False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['Algorithm', 'AlgoRhythm', 'AlGoRiThM', 'ALGORITHM'],pattern = "AlGM") == [False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestString', 'TestingString', 'TeststrIng', 'TstStr', 'TestStrng'],pattern = "TstStr") == [True, True, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestString', 'TestingString', 'TeststrIng', 'TstStr', 'TestStrng'],pattern = "TstStr") == [True, True, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['OneTwoThreeFour', 'OTFT', 'OneTwoF', 'OneTwoThrFor', 'OTFTF'],pattern = "OTFT") == [False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['OneTwoThreeFour', 'OTFT', 'OneTwoF', 'OneTwoThrFor', 'OTFTF'],pattern = "OTFT") == [False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['qWeRtY', 'qwerty', 'QwErTy', 'QwErTyUiOp'],pattern = "qWeRtY") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['qWeRtY', 'qwerty', 'QwErTy', 'QwErTyUiOp'],pattern = "qWeRtY") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPMc") == [False, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPMc") == [False, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['NaturalLanguageProcessing', 'naturalLANGUAGEPROCESSING', 'NaTuRaLlAnGuAgEPrOcEsSiNg', 'NATURALLANGUAGEPROCESSING'],pattern = "NLP") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['NaturalLanguageProcessing', 'naturalLANGUAGEPROCESSING', 'NaTuRaLlAnGuAgEPrOcEsSiNg', 'NATURALLANGUAGEPROCESSING'],pattern = "NLP") == [True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MIXEDcase', 'MiXEDcase', 'MiXeDCase', 'MIXeDCase', 'MiXEdCASE'],pattern = "MXc") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MIXEDcase', 'MiXEDcase', 'MiXeDCase', 'MIXeDCase', 'MiXEdCASE'],pattern = "MXc") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['MiXeDcASe', 'MiXeDCase', 'MiXeD', 'MiX', 'MixeDCase'],pattern = "MiX") == [False, False, False, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['MiXeDcASe', 'MiXeDCase', 'MiXeD', 'MiX', 'MixeDCase'],pattern = "MiX") == [False, False, False, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAaAaA', 'aaaaaa', 'Aaaaaa', 'aAaaaa', 'aaaaAa'],pattern = "aAa") == [False, False, False, True, True]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAaAaA', 'aaaaaa', 'Aaaaaa', 'aAaaaa', 'aaaaAa'],pattern = "aAa") == [False, False, False, True, True]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHH") == [False, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHH") == [False, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['PatternMatching', 'PatMat', 'PatrnMtch', 'PatternMtching', 'PatMatch'],pattern = "PtnMtch") == [True, False, True, True, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['PatternMatching', 'PatMat', 'PatrnMtch', 'PatternMtching', 'PatMatch'],pattern = "PtnMtch") == [True, False, True, True, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AlphabetPattern', 'Al', 'Alpha', 'Pattern', 'AlphabetPatternInString'],pattern = "Al") == [False, True, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AlphabetPattern', 'Al', 'Alpha', 'Pattern', 'AlphabetPatternInString'],pattern = "Al") == [False, True, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['lowercase', 'Lowercase', 'LOWERCASE', 'lowerCASE', 'lowERCASE'],pattern = "lwr") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['lowercase', 'Lowercase', 'LOWERCASE', 'lowerCASE', 'lowERCASE'],pattern = "lwr") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['aAbBcCdDeEfFgG', 'aBcDeFg', 'aBcD', 'aB', 'a'],pattern = "aBcD") == [False, False, True, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['aAbBcCdDeEfFgG', 'aBcDeFg', 'aBcD', 'aB', 'a'],pattern = "aBcD") == [False, False, True, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['AlGoRiThM', 'algorithm', 'AlGoRiThMs', 'AlGoRiThMuS', 'algorithms', 'AlGoRiThmSUs', 'AlGoRiThMuSiC'],pattern = "AlGoRiThMuS") == [False, False, False, True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['AlGoRiThM', 'algorithm', 'AlGoRiThMs', 'AlGoRiThMuS', 'algorithms', 'AlGoRiThmSUs', 'AlGoRiThMuSiC'],pattern = "AlGoRiThMuS") == [False, False, False, True, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['exampleQuery', 'ExampleQUERY', 'exampleQUERY', 'exampleQueryTest', 'exampleQueryTestTest'],pattern = "eQ") == [True, False, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['exampleQuery', 'ExampleQUERY', 'exampleQUERY', 'exampleQueryTest', 'exampleQueryTestTest'],pattern = "eQ") == [True, False, False, False, False]: {e}')
+    
+    total += 1
+    try:
+        result = candidate(queries = ['DataStructure', 'dataStructure', 'DataSTRUCTURE', 'DATAstructure'],pattern = "DtS") == [True, False, False, False]
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(queries = ['DataStructure', 'dataStructure', 'DataSTRUCTURE', 'DATAstructure'],pattern = "DtS") == [True, False, False, False]: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FB") == [True, False, True, True, False]
+    assert candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBa") == [True, False, True, False, False]
+    assert candidate(queries = ['FooBar', 'FooBarTest', 'FootBall', 'FrameBuffer', 'ForceFeedBack'],pattern = "FoBaT") == [False, True, False, False, False]
+    assert candidate(queries = ['Interleaving', 'InTerLeaVing', 'InterLeaving', 'InterLEAVING'],pattern = "InLeV") == [False, False, False, False]
+    assert candidate(queries = ['MixedCASE', 'MxCs', 'MxCASE', 'MixCsE', 'MxCsECASE'],pattern = "MxCsE") == [False, False, False, True, False]
+    assert candidate(queries = ['AaAaAaAaAa', 'aAaAaAaAa', 'AaAaAaA', 'AaAa', 'Aa'],pattern = "Aa") == [False, False, False, False, True]
+    assert candidate(queries = ['samePattern', 'samePatternEverywhere', 'same', 'pattern'],pattern = "sP") == [True, False, False, False]
+    assert candidate(queries = ['ComplexPattern', 'CompPat', 'ComplexPatt', 'ComplPtn', 'CompPattn'],pattern = "CompPtn") == [True, False, False, True, True]
+    assert candidate(queries = ['SoftwareEngineering', 'softwareENGINEERING', 'SoftWaReEnGiNeErInG', 'SOFTWAREENGINEERING'],pattern = "SWE") == [False, False, False, False]
+    assert candidate(queries = ['PatternMatching', 'Pattern', 'Pat', 'PatMatch', 'PatternMatchInString'],pattern = "Pat") == [False, True, True, False, False]
+    assert candidate(queries = ['testCase', 'testCase1', 'testCase2', 'testCase3', 'testCase4'],pattern = "testCase") == [True, False, False, False, False]
+    assert candidate(queries = ['xYzAbCdEfG', 'xYzAbCdEfGhI', 'xYzAbCd', 'xYzAbCdEfGhIjK', 'xYzAbCdEfGhIjKlM'],pattern = "xYzAbCd") == [False, False, True, False, False]
+    assert candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPM") == [False, False, True, True, False]
+    assert candidate(queries = ['ComplexPatternMatching', 'ComplexPattern', 'ComplexMatch', 'PatternMatching', 'PatternMatch'],pattern = "CPM") == [True, False, False, False, False]
+    assert candidate(queries = ['Java', 'JavaScript', 'JavaS', 'JavaScr', 'JavaScriptAndMore'],pattern = "JS") == [False, True, True, True, False]
+    assert candidate(queries = ['TestCase1', 'TestCase2', 'TestCase3', 'testCase4', 'testCase5', 'testCase6'],pattern = "TestCase") == [False, False, False, False, False, False]
+    assert candidate(queries = ['CamelCase', 'CamelCasePattern', 'Camel', 'Case'],pattern = "CCP") == [False, True, False, False]
+    assert candidate(queries = ['MultipleUpperCaseLetters', 'MultipleLowerCaseLetters', 'MixOfUpperAndLowerCase', 'OnlyUpperCase', 'OnlyLowerCase'],pattern = "MUCL") == [True, False, False, False, False]
+    assert candidate(queries = ['LongPatternMatchingExample', 'LongPattern', 'Long', 'LongPatternExample', 'LongPatternMatchingExampleInPython'],pattern = "Long") == [False, False, True, False, False]
+    assert candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CH") == [True, False, True, True, False]
+    assert candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECMc") == [False, False, True, True, False]
+    assert candidate(queries = ['ABcDeFgHiJkLmNoPqRsTuVwXyZ', 'abcdefgHIJKLmnopQRstUVwxYZ', 'AbCdEfGhIjKlMnOpQrStUvWxYz'],pattern = "AbCdEfG") == [False, False, False]
+    assert candidate(queries = ['MixedCasePattern', 'Mixed', 'Case', 'Pattern', 'MixedPatternCase'],pattern = "Mix") == [False, True, False, False, False]
+    assert candidate(queries = ['ExamplePattern', 'Ex', 'ExPat', 'Example', 'PatternExample'],pattern = "Ex") == [False, True, False, True, False]
+    assert candidate(queries = ['DeepLearning', 'deepLEARNING', 'DeEpLeArNiNg', 'DEEPLEARNING'],pattern = "DL") == [True, False, False, False]
+    assert candidate(queries = ['veryComplexPattern', 'veryComplexPat', 'veryComp', 'very'],pattern = "vCP") == [True, True, False, False]
+    assert candidate(queries = ['LeetCode', 'Leet_Code', 'Leet_Co_Dee', 'L_C_D', 'L_C_D_E_T'],pattern = "LCDE") == [False, False, False, False, False]
+    assert candidate(queries = ['ComplexPatternMatching', 'Complex', 'Pat', 'ComplexPat', 'PatternComplex'],pattern = "Com") == [False, True, False, False, False]
+    assert candidate(queries = ['aAaAaAaA', 'AAAAAAAA', 'aAaAaAa', 'AaAaAaAaAaAaAaAa', 'aAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAa', 'AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa'],pattern = "aAaAaAaA") == [True, False, False, False, False, False, False]
+    assert candidate(queries = ['CamelCase', 'camelCase', 'Camelcase', 'camelCASE'],pattern = "Camel") == [False, False, True, False]
+    assert candidate(queries = ['CamelCaseExample', 'CamelCase', 'CamelExample', 'ExampleCamel', 'Camel'],pattern = "CamEx") == [False, False, True, False, False]
+    assert candidate(queries = ['CamelCase', 'Camel', 'CamelCasePattern', 'CamelPattern', 'PatternCamel'],pattern = "Cam") == [False, True, False, False, False]
+    assert candidate(queries = ['Match', 'MaTch', 'MatCh', 'MatcH', 'MatchiNg'],pattern = "Match") == [True, False, False, False, False]
+    assert candidate(queries = ['aAbBcC', 'aabbcc', 'aaBbCc', 'aAaBbCc', 'aAbbcC'],pattern = "abc") == [False, True, False, False, False]
+    assert candidate(queries = ['testCase', 'TestCase', 'testCase1', 'testCase2', 'testCase3'],pattern = "tc") == [False, False, False, False, False]
+    assert candidate(queries = ['VariableLength', 'VarLen', 'VarLenPattern', 'VL', 'VariablePatLen'],pattern = "VarPatLen") == [False, False, False, False, True]
+    assert candidate(queries = ['lowerCasePattern', 'lowercasepattern', 'LOWERCASEPATTERN', 'lowerCASE'],pattern = "lCP") == [True, False, False, False]
+    assert candidate(queries = ['Python', 'PythoN', 'PythOn', 'PyThOn', 'PYTHOn', 'PYTHOnS'],pattern = "PyTh") == [False, False, False, False, False, False]
+    assert candidate(queries = ['aAbBcCdDeEfF', 'aabbccddeeff', 'Aabbccddeeff', 'aAbbccddeeff'],pattern = "aBcDeF") == [False, False, False, False]
+    assert candidate(queries = ['Programming', 'PrograMMing', 'PROGRAMMING', 'programming'],pattern = "PrM") == [False, False, False, False]
+    assert candidate(queries = ['helloWorld', 'HELLOworld', 'hElLoWoRlD', 'HeLLoWoRLd', 'HELLOWORLD'],pattern = "hELo") == [False, False, False, False, False]
+    assert candidate(queries = ['aAbB', 'aabb', 'AABB', 'aAaA'],pattern = "aAbB") == [True, False, False, False]
+    assert candidate(queries = ['aAbBcCdDeE', 'aabbccddeeff', 'AaBbCcDdEeFf', 'AABBCCDDEEFF'],pattern = "aBcDeF") == [False, False, False, False]
+    assert candidate(queries = ['DataScience', 'Data_Science', 'DaSc', 'DaTaSci', 'DaTaSceNiCe'],pattern = "DaS") == [True, False, True, False, False]
+    assert candidate(queries = ['AlGoRiThM', 'algoRiThm', 'AlgorIthM', 'Algorithm'],pattern = "AlGoRiThM") == [True, False, False, False]
+    assert candidate(queries = ['ThisIsJustARandomQuery', 'ThisIsJustAQuery', 'ThisIsARandomQuery', 'ThisJustARandomQuery', 'ThisIsJustARandomQ'],pattern = "TIJARQ") == [True, False, False, False, True]
+    assert candidate(queries = ['ComplexPattern', 'ComplexPAttern', 'ComplexPattern1', 'ComplexPattern2', 'ComplexPattern3'],pattern = "ComplexPat") == [True, False, False, False, False]
+    assert candidate(queries = ['QuantumComputing', 'quantumCOMPUTING', 'QuAnTuMCoMpUtInG', 'QUANTUMCOMPUTING'],pattern = "QC") == [True, False, False, False]
+    assert candidate(queries = ['ComplexPattern', 'complexPattern', 'ComplexPATTERN', 'complexpATTERN', 'ComplexpAtTeRn'],pattern = "CP") == [True, False, False, False, False]
+    assert candidate(queries = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],pattern = "a") == [True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+    assert candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkLmNoPqR', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ'],pattern = "aBcDeFgHiJ") == [True, False, False, False, False]
+    assert candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECq") == [False, False, False, False, False]
+    assert candidate(queries = ['EdgeCase', 'EdgeCaseQuery', 'EdgeCaseMatch', 'EdgeCaseMismatch', 'EdgeCaseCase'],pattern = "ECM") == [False, False, True, True, False]
+    assert candidate(queries = ['Pattern', 'Pattern1', 'Pattern2', 'Pattern3', 'Pattern4'],pattern = "Pattern") == [True, False, False, False, False]
+    assert candidate(queries = ['ArtificialIntelligence', 'artificialINTELLIGENCE', 'ArTiFiCiAlInTeLlIgEnCe', 'ARTIFICIALINTELLIGENCE'],pattern = "AI") == [True, False, False, False]
+    assert candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPMc") == [False, False, True, True, False]
+    assert candidate(queries = ['camelMatch', 'CamelMatch', 'camelMATCH', 'CamelMATCH', 'camelMatchTEST'],pattern = "CMt") == [False, True, False, False, False]
+    assert candidate(queries = ['MiXeDcAsE', 'MiXeDcAsEc', 'MiXeDcAsEcc', 'MiXeDcAsEcce', 'MiXeDcAsEcces', 'MiXeDcAsEccese'],pattern = "MiXeDcAsEcces") == [False, False, False, False, True, True]
+    assert candidate(queries = ['upperCASE', 'UpperCASE', 'upperCase', 'UPPERcase', 'uPPERCase'],pattern = "uPR") == [False, False, False, False, False]
+    assert candidate(queries = ['AbCdEfGh', 'AbCdEfGhIj', 'AbCdEfGhIjKl', 'AbCdEfGhIjKlMn'],pattern = "ACEGIK") == [False, False, True, False]
+    assert candidate(queries = ['SubsequenceMatching', 'SubseqMatch', 'SubSeqMatch', 'SbqMtch', 'SubsqMtch'],pattern = "SbqMtch") == [True, True, False, True, True]
+    assert candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPq") == [False, False, False, False, False]
+    assert candidate(queries = ['xYzXyZ', 'xyzyxzyx', 'XYXYXY', 'xyXyXy'],pattern = "XyZ") == [False, False, False, False]
+    assert candidate(queries = ['multipleUpperCases', 'multipleUPPERCASES', 'MULTIPLEUPPERCASES', 'multipleUPPER'],pattern = "mUC") == [True, False, False, False]
+    assert candidate(queries = ['CamelMatch', 'camelMatch', 'CaMeLmAtCh', 'CAMELMATCH', 'camelMATCH'],pattern = "CaM") == [True, False, False, False, False]
+    assert candidate(queries = ['PatternMatching', 'PatternMATching', 'PatternMATCHing', 'PatternMATCHINg'],pattern = "PatternMATCHINg") == [False, False, False, True]
+    assert candidate(queries = ['ComplexPattern', 'ComplexPatternQuery', 'ComplexPatternMatch', 'ComplexPatternMismatch', 'ComplexPatternCase'],pattern = "CPq") == [False, False, False, False, False]
+    assert candidate(queries = ['XyZ', 'XYZabc', 'xYzAbC', 'xyZabc', 'XyZABC'],pattern = "XyZ") == [True, False, False, False, False]
+    assert candidate(queries = ['MachineLearning', 'machineLEARNING', 'MaChInELeArNiNg', 'MACHINELEARNING'],pattern = "ML") == [True, False, False, False]
+    assert candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcFj") == [False, False, False, False, False]
+    assert candidate(queries = ['SamePatternSamePattern', 'SamePattern', 'Pattern', 'Same', ''],pattern = "SPSP") == [True, False, False, False, False]
+    assert candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CamelCasePattern', 'CamelCasePatternMatch', 'CamelCasePatt'],pattern = "CCPM") == [True, False, False, True, False]
+    assert candidate(queries = ['AbCdEfG', 'AbcDeFG', 'AbCDefg', 'AbcDefgHiJk', 'AbCdEfGhIjk'],pattern = "ACEG") == [True, False, False, False, False]
+    assert candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPM") == [False, False, True, True, False]
+    assert candidate(queries = ['CamelCase', 'camelCase', 'CamelCASE', 'CAMELcase'],pattern = "CaC") == [True, False, False, False]
+    assert candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'],pattern = "aBcEfHjLpTz") == [False, False, False, False, False]
+    assert candidate(queries = ['OneTwoThreeFourFiveSixSevenEightNineTen', 'OneTwoThreeFourFiveSixSevenEightNine', 'OneTwoThreeFourFiveSixSevenEight', 'OneTwoThreeFourFiveSixSeven', 'OneTwoThreeFourFiveSix'],pattern = "OTFSF") == [False, False, False, False, False]
+    assert candidate(queries = ['CamelCasePatternMatching', 'camelCasePatternMatching', 'CAMELCASEPATTERNMATCHING', 'camelcasepatternmatching'],pattern = "CamElCaSePaTtErNmAtChInG") == [False, False, False, False]
+    assert candidate(queries = ['aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ', 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY'],pattern = "aBcDeFgHiJkLmNoPqRsTuVwXyZ") == [False, False]
+    assert candidate(queries = ['AnotherExample', 'Another', 'An', 'AnotherExampleString', 'ExampleAnotherString'],pattern = "An") == [False, True, True, False, False]
+    assert candidate(queries = ['TestCase', 'Test', 'TestCasePattern', 'TestPattern', 'PatternTest'],pattern = "Tes") == [False, True, False, False, False]
+    assert candidate(queries = ['MachineLearning', 'ML', 'MaChine_Learning', 'MachLeaRning', 'MachineLearNiNg'],pattern = "MLe") == [True, False, False, False, False]
+    assert candidate(queries = ['PatternMatching', 'PatternMatchingExample', 'PatMatch', 'PatMatchEx'],pattern = "PM") == [True, False, True, False]
+    assert candidate(queries = ['abAB', 'abab', 'ABab', 'abABab', 'abABAB'],pattern = "abAB") == [True, False, False, True, False]
+    assert candidate(queries = ['PatternMatchingIsFun', 'PatternMatching', 'PatternMatchingIs', 'PatternIsFun', 'PatternMatchingFun'],pattern = "PMIF") == [True, False, False, False, False]
+    assert candidate(queries = ['AlGoRiThM', 'algoR', 'alGOrIthM', 'aLGOrIth', 'AlgOrIthM'],pattern = "aGI") == [False, False, False, False, False]
+    assert candidate(queries = ['aBcDeFgHiJ', 'aBcDeFgHiJkL', 'aBcDeFgHiJkLmN', 'aBcDeFgHiJkLmNoP', 'aBcDeFgHiJkLmNoPqR'],pattern = "aBcDFgHj") == [False, False, False, False, False]
+    assert candidate(queries = ['PaTtErN123', 'Pattern123', 'pAtTeRn123', 'PaTtErN', 'Pattern', 'pAtTeRn'],pattern = "PaTtErN") == [False, False, False, True, False, False]
+    assert candidate(queries = ['aBCdEf', 'abcdef', 'abDef', 'aBcDE', 'aBcDeF', 'aBcDEf'],pattern = "aBcEf") == [False, False, False, False, False, False]
+    assert candidate(queries = ['TestCasesWithDifferentLengths', 'TestCasesWithDifferentLength', 'TestCasesWithDifferent', 'TestCasesWith', 'TestCases'],pattern = "TCWDL") == [True, True, False, False, False]
+    assert candidate(queries = ['Pattern', 'pattern', 'PatternMatch', 'PAtTERNmAtCH', 'PaTtErNmAtCh'],pattern = "PaT") == [False, False, False, False, False]
+    assert candidate(queries = ['ComputerVision', 'computerVISION', 'CoMpUtErViSiOn', 'COMPUTERVISION'],pattern = "CV") == [True, False, False, False]
+    assert candidate(queries = ['Xylophone', 'xylophone', 'XyLopHone', 'XyLoPhone', 'xyLoPhOnE'],pattern = "XyLoPhOnE") == [False, False, False, False, False]
+    assert candidate(queries = ['CoMpLeXqUeRiEs', 'complexqueries', 'CoMpLeXqUeRiE', 'CoMpLeXqUeRiEz', 'CoMpLeXqUeRiEsZ', 'CoMpLeXqUeRiEsZz'],pattern = "CoMpLeXqUeRiEs") == [True, False, False, False, False, False]
+    assert candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHq") == [False, False, False, False, False]
+    assert candidate(queries = ['OpenAI', 'Open_Artificial_Intelligence', 'O_A_I', 'OpenA', 'OpenAIAI'],pattern = "OAI") == [True, False, False, False, False]
+    assert candidate(queries = ['looongPattern', 'looongPattern', 'longPattern', 'lOnGPattern', 'LoNgPatTerN'],pattern = "LoNgPat") == [False, False, False, False, False]
+    assert candidate(queries = ['Algorithm', 'AlgoRhythm', 'AlGoRiThM', 'ALGORITHM'],pattern = "AlGM") == [False, False, False, False]
+    assert candidate(queries = ['TestString', 'TestingString', 'TeststrIng', 'TstStr', 'TestStrng'],pattern = "TstStr") == [True, True, False, True, True]
+    assert candidate(queries = ['OneTwoThreeFour', 'OTFT', 'OneTwoF', 'OneTwoThrFor', 'OTFTF'],pattern = "OTFT") == [False, True, False, False, False]
+    assert candidate(queries = ['qWeRtY', 'qwerty', 'QwErTy', 'QwErTyUiOp'],pattern = "qWeRtY") == [True, False, False, False]
+    assert candidate(queries = ['TestPattern', 'TestPatternQuery', 'TestPatternMatch', 'TestPatternMismatch', 'TestPatternCase'],pattern = "TPMc") == [False, False, True, True, False]
+    assert candidate(queries = ['NaturalLanguageProcessing', 'naturalLANGUAGEPROCESSING', 'NaTuRaLlAnGuAgEPrOcEsSiNg', 'NATURALLANGUAGEPROCESSING'],pattern = "NLP") == [True, False, False, False]
+    assert candidate(queries = ['MIXEDcase', 'MiXEDcase', 'MiXeDCase', 'MIXeDCase', 'MiXEdCASE'],pattern = "MXc") == [False, False, False, False, False]
+    assert candidate(queries = ['MiXeDcASe', 'MiXeDCase', 'MiXeD', 'MiX', 'MixeDCase'],pattern = "MiX") == [False, False, False, True, False]
+    assert candidate(queries = ['aAaAaA', 'aaaaaa', 'Aaaaaa', 'aAaaaa', 'aaaaAa'],pattern = "aAa") == [False, False, False, True, True]
+    assert candidate(queries = ['CamelHump', 'CamelHumpQuery', 'CamelHouse', 'CamelHousekeeping', 'CamelHorseRace'],pattern = "CHH") == [False, False, False, False, False]
+    assert candidate(queries = ['PatternMatching', 'PatMat', 'PatrnMtch', 'PatternMtching', 'PatMatch'],pattern = "PtnMtch") == [True, False, True, True, False]
+    assert candidate(queries = ['AlphabetPattern', 'Al', 'Alpha', 'Pattern', 'AlphabetPatternInString'],pattern = "Al") == [False, True, True, False, False]
+    assert candidate(queries = ['lowercase', 'Lowercase', 'LOWERCASE', 'lowerCASE', 'lowERCASE'],pattern = "lwr") == [True, False, False, False, False]
+    assert candidate(queries = ['aAbBcCdDeEfFgG', 'aBcDeFg', 'aBcD', 'aB', 'a'],pattern = "aBcD") == [False, False, True, False, False]
+    assert candidate(queries = ['AlGoRiThM', 'algorithm', 'AlGoRiThMs', 'AlGoRiThMuS', 'algorithms', 'AlGoRiThmSUs', 'AlGoRiThMuSiC'],pattern = "AlGoRiThMuS") == [False, False, False, True, False, False, False]
+    assert candidate(queries = ['exampleQuery', 'ExampleQUERY', 'exampleQUERY', 'exampleQueryTest', 'exampleQueryTestTest'],pattern = "eQ") == [True, False, False, False, False]
+    assert candidate(queries = ['DataStructure', 'dataStructure', 'DataSTRUCTURE', 'DATAstructure'],pattern = "DtS") == [True, False, False, False]
+
+

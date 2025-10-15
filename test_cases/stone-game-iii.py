@@ -1,0 +1,932 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -100, 1, 100]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -100, 1, 100]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 3, 7, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 3, 7, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 3, 1, 4, 2]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 3, 1, 4, 2]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, -2, -3, -4]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, -2, -3, -4]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 6]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 6]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 3, -6, 7, 2, 8, -1, 4, 10]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 3, -6, 7, 2, 8, -1, 4, 10]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -1000, 1000, -1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -1000, 1000, -1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 7]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 7]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, -9]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, -9]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, -2, -3, -4, -5]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, -2, -3, -4, -5]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [3, 2, 10, 4]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [3, 2, 10, 4]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 10, -5, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 10, -5, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [3, -2, 5, 1, -4, 6, -3, 2, 5, -1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [3, -2, 5, 1, -4, 6, -3, 2, 5, -1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400, 1500]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400, 1500]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -999, 998, -997, 996, -995, 994, -993, 992, -991]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -999, 998, -997, 996, -995, 994, -993, 992, -991]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 10, -5, 20, 25, -30, 35, -40, 45, 50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 10, -5, 20, 25, -30, 35, -40, 45, 50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, -1, 3, -4, 2, 10, -7, 8, -2, 6]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, -1, 3, -4, 2, 10, -7, 8, -2, 6]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 3, 2, 4, 1, 3, 2, 1, 2, 3, 4, 5, 1, 2, 3]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 3, 2, 4, 1, 3, 2, 1, 2, 3, 4, 5, 1, 2, 3]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, -99, 100, -99, 100, -99, 100, -99, 100, -99]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, -99, 100, -99, 100, -99, 100, -99, 100, -99]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 15, -5, 20, -10, 25, -15, 30, -20, 35]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 15, -5, 20, -10, 25, -15, 30, -20, 35]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, -50, 200, -150, 300, -200, 400, -250, 500, -300, 600, -350, 700, -400, 800]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, -50, 200, -150, 300, -200, 400, -250, 500, -300, 600, -350, 700, -400, 800]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [3, 1, 5, 4, 2, 6, 7, 8, 9, 10]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [3, 1, 5, 4, 2, 6, 7, 8, 9, 10]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, -100, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, -100, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500, -1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500, -1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-10, 100, -20, 200, -30, 300, -40, 400, -50, 500]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-10, 100, -20, 200, -30, 300, -40, 400, -50, 500]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 7, -3, 12, 15, -10, 8, 11, -2, 6, 14, 1, -5, 9, -7]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 7, -3, 12, 15, -10, 8, 11, -2, 6, 14, 1, -5, 9, -7]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-100, -200, -300, 400, 500, 600, -700, -800, 900, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-100, -200, -300, 400, 500, 600, -700, -800, 900, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 200, 300, 400, -1000, 500, 600, 700, -800, 900, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 200, 300, 400, -1000, 500, 600, 700, -800, 900, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200, 210, -220, 230, -240, 250]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200, 210, -220, 230, -240, 250]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, -30]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, -30]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-10, 10, -20, 20, -30, 30, -40, 40, -50, 50]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-10, 10, -20, 20, -30, 30, -40, 40, -50, 50]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, -2, 4, -1, 3, -3, 2, 1, -5, 6, 7, -8, 9]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, -2, 4, -1, 3, -3, 2, 1, -5, 6, 7, -8, 9]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [500, 250, -100, 200, -150, 300, -50, 100, -200, 300, 500]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [500, 250, -100, 200, -150, 300, -50, 100, -200, 300, 500]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, -3, 2, 7, -8, 10, -15, 20, -25, 30]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, -3, 2, 7, -8, 10, -15, 20, -25, 30]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-5, 10, 20, -15, 30, 25, -20, 40, -35, 50, -45, 60, -55]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-5, 10, 20, -15, 30, 25, -20, 40, -35, 50, -45, 60, -55]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 200, 300, -100, -200, -300, 400, 500, 600, -400, -500, -600]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 200, 300, -100, -200, -300, 400, 500, 600, -400, -500, -600]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Tie"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Tie": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1000, -500, 2000, -1000, 3000, -1500, 4000, -2000, 5000, -2500, 6000, -3000, 7000, -3500, 8000, -4000, 9000, -4500, 10000, -5000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1000, -500, 2000, -1000, 3000, -1500, 4000, -2000, 5000, -2500, 6000, -3000, 7000, -3500, 8000, -4000, 9000, -4500, 10000, -5000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [5, -2, 3, 1, 4, -1, 7, -3, 2, 6, -5]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [5, -2, 3, 1, 4, -1, 7, -3, 2, 6, -5]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [-999, 1000, -999, 1000, -999, 1000, -999, 1000, -999, 1000]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [-999, 1000, -999, 1000, -999, 1000, -999, 1000, -999, 1000]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20]) == "Alice": {e}')
+    
+    total += 1
+    try:
+        result = candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == "Alice"
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == "Alice": {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [1]) == "Alice"
+    assert candidate(stoneValue = [1, -100, 1, 100]) == "Tie"
+    assert candidate(stoneValue = [5, 3, 7, 1]) == "Alice"
+    assert candidate(stoneValue = [5, 3, 1, 4, 2]) == "Alice"
+    assert candidate(stoneValue = [0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == "Tie"
+    assert candidate(stoneValue = [-1, -2, -3, -4]) == "Tie"
+    assert candidate(stoneValue = [1, 2, 3, 6]) == "Tie"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice"
+    assert candidate(stoneValue = [5, 3, -6, 7, 2, 8, -1, 4, 10]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == "Bob"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+    assert candidate(stoneValue = [1000, -1000, 1000, -1000]) == "Alice"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, 7]) == "Bob"
+    assert candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, -9]) == "Alice"
+    assert candidate(stoneValue = [-1, -2, -3, -4, -5]) == "Bob"
+    assert candidate(stoneValue = [3, 2, 10, 4]) == "Alice"
+    assert candidate(stoneValue = [1000, -1000, 1000, -1000, 1000]) == "Alice"
+    assert candidate(stoneValue = [5, 10, -5, 1]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == "Alice"
+    assert candidate(stoneValue = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8]) == "Alice"
+    assert candidate(stoneValue = [3, -2, 5, 1, -4, 6, -3, 2, 5, -1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5, 1, 4, -6, 3, 2, -5]) == "Alice"
+    assert candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000, 1100, -1200, 1300, -1400, 1500]) == "Alice"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Alice"
+    assert candidate(stoneValue = [1000, 999, 998, 997, 996, 995, 994, 993, 992, 991, 990, 989, 988, 987, 986, 985, 984, 983, 982, 981]) == "Alice"
+    assert candidate(stoneValue = [1000, -999, 998, -997, 996, -995, 994, -993, 992, -991]) == "Alice"
+    assert candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]) == "Tie"
+    assert candidate(stoneValue = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1]) == "Alice"
+    assert candidate(stoneValue = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [5, 10, -5, 20, 25, -30, 35, -40, 45, 50]) == "Alice"
+    assert candidate(stoneValue = [5, -1, 3, -4, 2, 10, -7, 8, -2, 6]) == "Alice"
+    assert candidate(stoneValue = [5, 3, 2, 4, 1, 3, 2, 1, 2, 3, 4, 5, 1, 2, 3]) == "Alice"
+    assert candidate(stoneValue = [100, -99, 100, -99, 100, -99, 100, -99, 100, -99]) == "Alice"
+    assert candidate(stoneValue = [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500]) == "Alice"
+    assert candidate(stoneValue = [10, 15, -5, 20, -10, 25, -15, 30, -20, 35]) == "Alice"
+    assert candidate(stoneValue = [100, -50, 200, -150, 300, -200, 400, -250, 500, -300, 600, -350, 700, -400, 800]) == "Alice"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob"
+    assert candidate(stoneValue = [3, 1, 5, 4, 2, 6, 7, 8, 9, 10]) == "Alice"
+    assert candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, -100, -90, -80, -70, -60, -50, -40, -30, -20, -10]) == "Tie"
+    assert candidate(stoneValue = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8]) == "Alice"
+    assert candidate(stoneValue = [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]) == "Tie"
+    assert candidate(stoneValue = [-5, -10, -15, -20, -25, -30, -35, -40, -45, -50]) == "Alice"
+    assert candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) == "Bob"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+    assert candidate(stoneValue = [1000, -500, 250, -125, 62, -31, 15, -7, 3, -1, 0, 1, -3, 7, -15, 31, -62, 125, -250, 500, -1000]) == "Alice"
+    assert candidate(stoneValue = [-10, 100, -20, 200, -30, 300, -40, 400, -50, 500]) == "Alice"
+    assert candidate(stoneValue = [5, 7, -3, 12, 15, -10, 8, 11, -2, 6, 14, 1, -5, 9, -7]) == "Alice"
+    assert candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25]) == "Alice"
+    assert candidate(stoneValue = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]) == "Tie"
+    assert candidate(stoneValue = [-100, -200, -300, 400, 500, 600, -700, -800, 900, 1000]) == "Alice"
+    assert candidate(stoneValue = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) == "Alice"
+    assert candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice"
+    assert candidate(stoneValue = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]) == "Bob"
+    assert candidate(stoneValue = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == "Alice"
+    assert candidate(stoneValue = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]) == "Alice"
+    assert candidate(stoneValue = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89]) == "Alice"
+    assert candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100]) == "Alice"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]) == "Alice"
+    assert candidate(stoneValue = [100, 200, 300, 400, -1000, 500, 600, 700, -800, 900, 1000]) == "Alice"
+    assert candidate(stoneValue = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) == "Alice"
+    assert candidate(stoneValue = [100, -200, 300, -400, 500, -600, 700, -800, 900, -1000]) == "Alice"
+    assert candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]) == "Alice"
+    assert candidate(stoneValue = [10, -20, 30, -40, 50, -60, 70, -80, 90, -100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200, 210, -220, 230, -240, 250]) == "Alice"
+    assert candidate(stoneValue = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20]) == "Tie"
+    assert candidate(stoneValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Tie"
+    assert candidate(stoneValue = [-5, 10, -15, 20, -25, 30, -35, 40, -45, 50]) == "Alice"
+    assert candidate(stoneValue = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100, -110, -120, -130, -140, -150]) == "Tie"
+    assert candidate(stoneValue = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) == "Alice"
+    assert candidate(stoneValue = [-100, -200, -300, -400, -500, -600, -700, -800, -900, -1000]) == "Alice"
+    assert candidate(stoneValue = [-10, 20, -30, 40, -50, 60, -70, 80, -90, 100, 110, -120, 130, -140, 150, -160, 170, -180, 190, -200]) == "Alice"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+    assert candidate(stoneValue = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, -30]) == "Alice"
+    assert candidate(stoneValue = [-10, 10, -20, 20, -30, 30, -40, 40, -50, 50]) == "Tie"
+    assert candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50]) == "Tie"
+    assert candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20, 21, -22, 23, -24, 25, -26, 27, -28, 29, -30]) == "Alice"
+    assert candidate(stoneValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == "Alice"
+    assert candidate(stoneValue = [5, -2, 4, -1, 3, -3, 2, 1, -5, 6, 7, -8, 9]) == "Alice"
+    assert candidate(stoneValue = [500, 250, -100, 200, -150, 300, -50, 100, -200, 300, 500]) == "Alice"
+    assert candidate(stoneValue = [5, -3, 2, 7, -8, 10, -15, 20, -25, 30]) == "Alice"
+    assert candidate(stoneValue = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100]) == "Alice"
+    assert candidate(stoneValue = [-5, 10, 20, -15, 30, 25, -20, 40, -35, 50, -45, 60, -55]) == "Alice"
+    assert candidate(stoneValue = [100, 200, 300, -100, -200, -300, 400, 500, 600, -400, -500, -600]) == "Alice"
+    assert candidate(stoneValue = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, -1000, -900, -800, -700, -600, -500, -400, -300, -200, -100]) == "Tie"
+    assert candidate(stoneValue = [-50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50, 50, -50]) == "Alice"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Tie"
+    assert candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15]) == "Alice"
+    assert candidate(stoneValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == "Alice"
+    assert candidate(stoneValue = [1000, -500, 2000, -1000, 3000, -1500, 4000, -2000, 5000, -2500, 6000, -3000, 7000, -3500, 8000, -4000, 9000, -4500, 10000, -5000]) == "Alice"
+    assert candidate(stoneValue = [5, -2, 3, 1, 4, -1, 7, -3, 2, 6, -5]) == "Alice"
+    assert candidate(stoneValue = [-999, 1000, -999, 1000, -999, 1000, -999, 1000, -999, 1000]) == "Alice"
+    assert candidate(stoneValue = [10, -10, 20, -20, 30, -30, 40, -40, 50, -50]) == "Alice"
+    assert candidate(stoneValue = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20]) == "Alice"
+    assert candidate(stoneValue = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]) == "Alice"
+
+

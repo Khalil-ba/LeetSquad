@@ -1,0 +1,995 @@
+def calculate_accuracy(candidate):
+    """
+    Calculate accuracy by running all test cases and counting pass/fail
+    Returns: (passed_count, total_count, accuracy_percentage)
+    """
+    passed = 0
+    total = 0
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['10:00', '11:00'],event2 = ['14:00', '15:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['10:00', '11:00'],event2 = ['14:00', '15:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['01:15', '02:00'],event2 = ['02:00', '03:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['01:15', '02:00'],event2 = ['02:00', '03:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '11:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '11:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:45', '06:45'],event2 = ['06:45', '07:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:45', '06:45'],event2 = ['06:45', '07:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:00', '09:00'],event2 = ['07:00', '08:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:00', '09:00'],event2 = ['07:00', '08:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '23:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '23:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:00', '15:00'],event2 = ['14:00', '16:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:00', '15:00'],event2 = ['14:00', '16:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:00', '12:30'],event2 = ['12:15', '12:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:00', '12:30'],event2 = ['12:15', '12:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['01:00', '02:00'],event2 = ['01:20', '03:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['01:00', '02:00'],event2 = ['01:20', '03:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:00', '14:00'],event2 = ['14:00', '15:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:00', '14:00'],event2 = ['14:00', '15:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '09:30'],event2 = ['09:30', '10:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '09:30'],event2 = ['09:30', '10:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['16:00', '17:00'],event2 = ['16:30', '17:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['16:00', '17:00'],event2 = ['16:30', '17:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:00', '13:00'],event2 = ['12:30', '13:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:00', '13:00'],event2 = ['12:30', '13:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:30', '15:30'],event2 = ['14:00', '16:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:30', '15:30'],event2 = ['14:00', '16:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:00', '09:00'],event2 = ['09:00', '10:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:00', '09:00'],event2 = ['09:00', '10:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:00', '13:00'],event2 = ['13:00', '14:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:00', '13:00'],event2 = ['13:00', '14:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:01', '23:59'],event2 = ['12:00', '12:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:01', '23:59'],event2 = ['12:00', '12:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:00', '12:00'],event2 = ['12:00', '12:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:00', '12:00'],event2 = ['12:00', '12:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['22:00', '23:00'],event2 = ['21:30', '22:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['22:00', '23:00'],event2 = ['21:30', '22:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['01:00', '02:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['01:00', '02:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '13:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '13:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:30', '06:00'],event2 = ['05:45', '06:15']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:30', '06:00'],event2 = ['05:45', '06:15']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['01:00', '02:00'],event2 = ['00:59', '01:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['01:00', '02:00'],event2 = ['00:59', '01:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:55', '00:10'],event2 = ['23:45', '00:05']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:55', '00:10'],event2 = ['23:45', '00:05']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '17:00'],event2 = ['08:30', '09:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '17:00'],event2 = ['08:30', '09:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:00', '16:00'],event2 = ['15:30', '17:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:00', '16:00'],event2 = ['15:30', '17:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['15:00', '16:00'],event2 = ['14:00', '15:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['15:00', '16:00'],event2 = ['14:00', '15:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:00', '15:00'],event2 = ['13:00', '14:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:00', '15:00'],event2 = ['13:00', '14:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:59', '00:01'],event2 = ['00:00', '00:01']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:59', '00:01'],event2 = ['00:00', '00:01']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '11:59'],event2 = ['12:00', '23:59']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '11:59'],event2 = ['12:00', '23:59']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:45', '10:45'],event2 = ['10:30', '11:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:45', '10:45'],event2 = ['10:30', '11:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:00', '07:00'],event2 = ['06:00', '06:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:00', '07:00'],event2 = ['06:00', '06:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '00:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '00:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['07:30', '08:00'],event2 = ['07:45', '08:15']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['07:30', '08:00'],event2 = ['07:45', '08:15']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '18:00'],event2 = ['17:59', '18:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '18:00'],event2 = ['17:59', '18:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['06:00', '07:00'],event2 = ['06:00', '06:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['06:00', '07:00'],event2 = ['06:00', '06:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:01', '00:59'],event2 = ['00:30', '01:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:01', '00:59'],event2 = ['00:30', '01:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:30', '00:30'],event2 = ['23:00', '23:59']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:30', '00:30'],event2 = ['23:00', '23:59']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:30', '10:15'],event2 = ['10:00', '10:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:30', '10:15'],event2 = ['10:00', '10:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:00', '14:00'],event2 = ['13:45', '14:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:00', '14:00'],event2 = ['13:45', '14:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:00', '13:00'],event2 = ['12:30', '14:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:00', '13:00'],event2 = ['12:30', '14:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:30', '15:30'],event2 = ['15:00', '16:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:30', '15:30'],event2 = ['15:00', '16:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['20:00', '21:00'],event2 = ['19:00', '20:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['20:00', '21:00'],event2 = ['19:00', '20:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:00', '12:00'],event2 = ['09:00', '10:59']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:00', '12:00'],event2 = ['09:00', '10:59']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:59', '23:59'],event2 = ['23:59', '00:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:59', '23:59'],event2 = ['23:59', '00:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '09:00'],event2 = ['09:00', '09:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '09:00'],event2 = ['09:00', '09:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:30', '09:45'],event2 = ['09:30', '10:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:30', '09:45'],event2 = ['09:30', '10:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['07:15', '07:45'],event2 = ['07:45', '08:15']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['07:15', '07:45'],event2 = ['07:45', '08:15']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '00:01'],event2 = ['00:00', '00:02']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '00:01'],event2 = ['00:00', '00:02']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['18:30', '19:00'],event2 = ['19:00', '19:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['18:30', '19:00'],event2 = ['19:00', '19:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:45', '15:15'],event2 = ['15:15', '15:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:45', '15:15'],event2 = ['15:15', '15:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['17:45', '18:15'],event2 = ['18:15', '18:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['17:45', '18:15'],event2 = ['18:15', '18:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['03:00', '04:00'],event2 = ['02:30', '03:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['03:00', '04:00'],event2 = ['02:30', '03:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['01:00', '02:00'],event2 = ['23:59', '01:30']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['01:00', '02:00'],event2 = ['23:59', '01:30']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:15']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:15']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:00', '09:00'],event2 = ['07:59', '08:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:00', '09:00'],event2 = ['07:59', '08:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:00', '15:00'],event2 = ['13:59', '14:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:00', '15:00'],event2 = ['13:59', '14:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:45', '12:15'],event2 = ['12:15', '12:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:45', '12:15'],event2 = ['12:15', '12:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:30', '06:30'],event2 = ['06:20', '07:20']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:30', '06:30'],event2 = ['06:20', '07:20']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '24:00'],event2 = ['00:00', '24:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '24:00'],event2 = ['00:00', '24:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:30', '14:30'],event2 = ['14:30', '15:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:30', '14:30'],event2 = ['14:30', '15:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:45', '09:45'],event2 = ['09:45', '10:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:45', '09:45'],event2 = ['09:45', '10:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:45', '14:45'],event2 = ['14:45', '15:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:45', '14:45'],event2 = ['14:45', '15:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['12:30', '13:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['12:30', '13:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['13:15', '14:45'],event2 = ['14:00', '15:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['13:15', '14:45'],event2 = ['14:00', '15:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '17:00'],event2 = ['10:00', '15:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '17:00'],event2 = ['10:00', '15:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['06:00', '06:59'],event2 = ['07:00', '08:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['06:00', '06:59'],event2 = ['07:00', '08:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['22:00', '22:59'],event2 = ['22:59', '23:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['22:00', '22:59'],event2 = ['22:59', '23:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:00', '13:00'],event2 = ['12:00', '14:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:00', '13:00'],event2 = ['12:00', '14:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['17:00', '18:00'],event2 = ['16:30', '17:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['17:00', '18:00'],event2 = ['16:30', '17:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['03:00', '04:00'],event2 = ['03:59', '04:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['03:00', '04:00'],event2 = ['03:59', '04:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['06:00', '07:00'],event2 = ['05:59', '06:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['06:00', '07:00'],event2 = ['05:59', '06:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:55', '23:59'],event2 = ['23:56', '00:05']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:55', '23:59'],event2 = ['23:56', '00:05']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:45', '23:59'],event2 = ['23:50', '00:10']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:45', '23:59'],event2 = ['23:50', '00:10']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['15:30', '16:30'],event2 = ['15:00', '15:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['15:30', '16:30'],event2 = ['15:00', '15:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '17:00'],event2 = ['17:00', '18:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '17:00'],event2 = ['17:00', '18:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:00', '11:01'],event2 = ['11:00', '11:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:00', '11:01'],event2 = ['11:00', '11:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '17:00'],event2 = ['12:00', '13:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '17:00'],event2 = ['12:00', '13:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:00', '11:30'],event2 = ['11:30', '12:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:00', '11:30'],event2 = ['11:30', '12:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:30', '06:00'],event2 = ['06:00', '06:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:30', '06:00'],event2 = ['06:00', '06:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['05:30', '06:30'],event2 = ['06:29', '07:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['05:30', '06:30'],event2 = ['06:29', '07:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:15']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:15']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '23:59'],event2 = ['00:00', '23:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '23:59'],event2 = ['00:00', '23:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:45', '12:45'],event2 = ['11:30', '11:45']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:45', '12:45'],event2 = ['11:30', '11:45']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['15:30', '15:30'],event2 = ['15:30', '15:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['15:30', '15:30'],event2 = ['15:30', '15:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:00', '13:00'],event2 = ['11:00', '12:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:00', '13:00'],event2 = ['11:00', '12:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['14:00', '15:00'],event2 = ['15:00', '16:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['14:00', '15:00'],event2 = ['15:00', '16:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['21:00', '22:00'],event2 = ['20:00', '21:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['21:00', '22:00'],event2 = ['20:00', '21:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['19:00', '20:00'],event2 = ['20:00', '21:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['19:00', '20:00'],event2 = ['20:00', '21:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['08:30', '09:15'],event2 = ['09:15', '10:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['08:30', '09:15'],event2 = ['09:15', '10:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['06:00', '07:00'],event2 = ['07:00', '08:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['06:00', '07:00'],event2 = ['07:00', '08:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:30']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:30']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['01:00', '02:00'],event2 = ['02:01', '03:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['01:00', '02:00'],event2 = ['02:01', '03:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['09:00', '10:00'],event2 = ['10:00', '11:00']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['09:00', '10:00'],event2 = ['10:00', '11:00']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '12:00'],event2 = ['12:00', '23:59']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '12:00'],event2 = ['12:00', '23:59']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['23:59', '00:01'],event2 = ['23:58', '00:00']) == False
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['23:59', '00:01'],event2 = ['23:58', '00:00']) == False: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:01', '23:59'],event2 = ['23:59', '00:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:01', '23:59'],event2 = ['23:59', '00:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['10:00', '10:30'],event2 = ['09:59', '10:01']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['10:00', '10:30'],event2 = ['09:59', '10:01']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['00:00', '00:01'],event2 = ['00:01', '00:02']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['00:00', '00:01'],event2 = ['00:01', '00:02']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['11:55', '12:05'],event2 = ['12:00', '12:10']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['11:55', '12:05'],event2 = ['12:00', '12:10']) == True: {e}')
+    
+    total += 1
+    try:
+        result = candidate(event1 = ['12:34', '12:34'],event2 = ['12:34', '12:34']) == True
+        if result:
+            passed += 1
+    except Exception as e:
+        print(f'Error in candidate(event1 = ['12:34', '12:34'],event2 = ['12:34', '12:34']) == True: {e}')
+    
+    accuracy = (passed / total * 100) if total > 0 else 0
+    return passed, total, accuracy
+
+def check(candidate):
+    assert candidate(event1 = ['10:00', '11:00'],event2 = ['14:00', '15:00']) == False
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:01']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:00']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '12:30']) == True
+    assert candidate(event1 = ['01:15', '02:00'],event2 = ['02:00', '03:00']) == True
+    assert candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '11:00']) == True
+    assert candidate(event1 = ['05:45', '06:45'],event2 = ['06:45', '07:45']) == True
+    assert candidate(event1 = ['08:00', '09:00'],event2 = ['07:00', '08:30']) == True
+    assert candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '23:59']) == True
+    assert candidate(event1 = ['13:00', '15:00'],event2 = ['14:00', '16:00']) == True
+    assert candidate(event1 = ['12:00', '12:30'],event2 = ['12:15', '12:45']) == True
+    assert candidate(event1 = ['01:00', '02:00'],event2 = ['01:20', '03:00']) == True
+    assert candidate(event1 = ['13:00', '14:00'],event2 = ['14:00', '15:00']) == True
+    assert candidate(event1 = ['09:00', '09:30'],event2 = ['09:30', '10:00']) == True
+    assert candidate(event1 = ['16:00', '17:00'],event2 = ['16:30', '17:30']) == True
+    assert candidate(event1 = ['12:00', '13:00'],event2 = ['12:30', '13:30']) == True
+    assert candidate(event1 = ['13:30', '15:30'],event2 = ['14:00', '16:00']) == True
+    assert candidate(event1 = ['08:00', '09:00'],event2 = ['09:00', '10:00']) == True
+    assert candidate(event1 = ['12:00', '13:00'],event2 = ['13:00', '14:00']) == True
+    assert candidate(event1 = ['00:01', '23:59'],event2 = ['12:00', '12:01']) == True
+    assert candidate(event1 = ['12:00', '12:00'],event2 = ['12:00', '12:00']) == True
+    assert candidate(event1 = ['22:00', '23:00'],event2 = ['21:30', '22:30']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['01:00', '02:00']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['12:00', '13:00']) == True
+    assert candidate(event1 = ['05:30', '06:00'],event2 = ['05:45', '06:15']) == True
+    assert candidate(event1 = ['01:00', '02:00'],event2 = ['00:59', '01:01']) == True
+    assert candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:30']) == True
+    assert candidate(event1 = ['23:55', '00:10'],event2 = ['23:45', '00:05']) == False
+    assert candidate(event1 = ['09:00', '17:00'],event2 = ['08:30', '09:30']) == True
+    assert candidate(event1 = ['14:00', '16:00'],event2 = ['15:30', '17:00']) == True
+    assert candidate(event1 = ['15:00', '16:00'],event2 = ['14:00', '15:30']) == True
+    assert candidate(event1 = ['14:00', '15:00'],event2 = ['13:00', '14:00']) == True
+    assert candidate(event1 = ['23:59', '00:01'],event2 = ['00:00', '00:01']) == False
+    assert candidate(event1 = ['00:00', '11:59'],event2 = ['12:00', '23:59']) == False
+    assert candidate(event1 = ['09:45', '10:45'],event2 = ['10:30', '11:30']) == True
+    assert candidate(event1 = ['05:00', '07:00'],event2 = ['06:00', '06:59']) == True
+    assert candidate(event1 = ['23:59', '23:59'],event2 = ['23:59', '00:00']) == False
+    assert candidate(event1 = ['08:00', '09:00'],event2 = ['08:00', '08:59']) == True
+    assert candidate(event1 = ['07:30', '08:00'],event2 = ['07:45', '08:15']) == True
+    assert candidate(event1 = ['09:00', '18:00'],event2 = ['17:59', '18:01']) == True
+    assert candidate(event1 = ['06:00', '07:00'],event2 = ['06:00', '06:59']) == True
+    assert candidate(event1 = ['00:01', '00:59'],event2 = ['00:30', '01:00']) == True
+    assert candidate(event1 = ['23:30', '00:30'],event2 = ['23:00', '23:59']) == False
+    assert candidate(event1 = ['09:30', '10:15'],event2 = ['10:00', '10:45']) == True
+    assert candidate(event1 = ['13:00', '14:00'],event2 = ['13:45', '14:45']) == True
+    assert candidate(event1 = ['11:00', '13:00'],event2 = ['12:30', '14:00']) == True
+    assert candidate(event1 = ['14:30', '15:30'],event2 = ['15:00', '16:00']) == True
+    assert candidate(event1 = ['20:00', '21:00'],event2 = ['19:00', '20:00']) == True
+    assert candidate(event1 = ['11:00', '12:00'],event2 = ['09:00', '10:59']) == False
+    assert candidate(event1 = ['11:59', '23:59'],event2 = ['23:59', '00:00']) == False
+    assert candidate(event1 = ['09:00', '09:00'],event2 = ['09:00', '09:00']) == True
+    assert candidate(event1 = ['08:30', '09:45'],event2 = ['09:30', '10:30']) == True
+    assert candidate(event1 = ['07:15', '07:45'],event2 = ['07:45', '08:15']) == True
+    assert candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:00']) == True
+    assert candidate(event1 = ['00:00', '00:01'],event2 = ['00:00', '00:02']) == True
+    assert candidate(event1 = ['18:30', '19:00'],event2 = ['19:00', '19:30']) == True
+    assert candidate(event1 = ['14:45', '15:15'],event2 = ['15:15', '15:45']) == True
+    assert candidate(event1 = ['17:45', '18:15'],event2 = ['18:15', '18:45']) == True
+    assert candidate(event1 = ['03:00', '04:00'],event2 = ['02:30', '03:30']) == True
+    assert candidate(event1 = ['01:00', '02:00'],event2 = ['23:59', '01:30']) == False
+    assert candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:00']) == True
+    assert candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:15']) == True
+    assert candidate(event1 = ['08:30', '09:30'],event2 = ['09:00', '09:30']) == True
+    assert candidate(event1 = ['08:00', '09:00'],event2 = ['07:59', '08:01']) == True
+    assert candidate(event1 = ['14:00', '15:00'],event2 = ['13:59', '14:01']) == True
+    assert candidate(event1 = ['11:45', '12:15'],event2 = ['12:15', '12:45']) == True
+    assert candidate(event1 = ['05:30', '06:30'],event2 = ['06:20', '07:20']) == True
+    assert candidate(event1 = ['00:00', '24:00'],event2 = ['00:00', '24:00']) == True
+    assert candidate(event1 = ['13:30', '14:30'],event2 = ['14:30', '15:30']) == True
+    assert candidate(event1 = ['08:45', '09:45'],event2 = ['09:45', '10:45']) == True
+    assert candidate(event1 = ['13:45', '14:45'],event2 = ['14:45', '15:45']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['12:30', '13:30']) == True
+    assert candidate(event1 = ['13:15', '14:45'],event2 = ['14:00', '15:30']) == True
+    assert candidate(event1 = ['09:00', '17:00'],event2 = ['10:00', '15:00']) == True
+    assert candidate(event1 = ['06:00', '06:59'],event2 = ['07:00', '08:00']) == False
+    assert candidate(event1 = ['22:00', '22:59'],event2 = ['22:59', '23:59']) == True
+    assert candidate(event1 = ['11:00', '13:00'],event2 = ['12:00', '14:00']) == True
+    assert candidate(event1 = ['17:00', '18:00'],event2 = ['16:30', '17:00']) == True
+    assert candidate(event1 = ['03:00', '04:00'],event2 = ['03:59', '04:01']) == True
+    assert candidate(event1 = ['06:00', '07:00'],event2 = ['05:59', '06:01']) == True
+    assert candidate(event1 = ['23:55', '23:59'],event2 = ['23:56', '00:05']) == False
+    assert candidate(event1 = ['23:45', '23:59'],event2 = ['23:50', '00:10']) == False
+    assert candidate(event1 = ['15:30', '16:30'],event2 = ['15:00', '15:30']) == True
+    assert candidate(event1 = ['09:00', '17:00'],event2 = ['17:00', '18:00']) == True
+    assert candidate(event1 = ['11:00', '11:01'],event2 = ['11:00', '11:01']) == True
+    assert candidate(event1 = ['09:00', '17:00'],event2 = ['12:00', '13:00']) == True
+    assert candidate(event1 = ['11:00', '11:30'],event2 = ['11:30', '12:00']) == True
+    assert candidate(event1 = ['05:30', '06:00'],event2 = ['06:00', '06:30']) == True
+    assert candidate(event1 = ['05:30', '06:30'],event2 = ['06:29', '07:30']) == True
+    assert candidate(event1 = ['09:30', '10:30'],event2 = ['10:00', '10:15']) == True
+    assert candidate(event1 = ['00:00', '23:59'],event2 = ['00:00', '23:59']) == True
+    assert candidate(event1 = ['11:45', '12:45'],event2 = ['11:30', '11:45']) == True
+    assert candidate(event1 = ['15:30', '15:30'],event2 = ['15:30', '15:30']) == True
+    assert candidate(event1 = ['12:00', '13:00'],event2 = ['11:00', '12:59']) == True
+    assert candidate(event1 = ['14:00', '15:00'],event2 = ['15:00', '16:00']) == True
+    assert candidate(event1 = ['21:00', '22:00'],event2 = ['20:00', '21:00']) == True
+    assert candidate(event1 = ['19:00', '20:00'],event2 = ['20:00', '21:00']) == True
+    assert candidate(event1 = ['08:30', '09:15'],event2 = ['09:15', '10:00']) == True
+    assert candidate(event1 = ['06:00', '07:00'],event2 = ['07:00', '08:00']) == True
+    assert candidate(event1 = ['18:00', '19:00'],event2 = ['17:30', '18:30']) == True
+    assert candidate(event1 = ['01:00', '02:00'],event2 = ['02:01', '03:00']) == False
+    assert candidate(event1 = ['09:00', '10:00'],event2 = ['10:00', '11:00']) == True
+    assert candidate(event1 = ['00:00', '12:00'],event2 = ['12:00', '23:59']) == True
+    assert candidate(event1 = ['23:59', '00:01'],event2 = ['23:58', '00:00']) == False
+    assert candidate(event1 = ['00:01', '23:59'],event2 = ['23:59', '00:01']) == True
+    assert candidate(event1 = ['10:00', '10:30'],event2 = ['09:59', '10:01']) == True
+    assert candidate(event1 = ['00:00', '00:01'],event2 = ['00:01', '00:02']) == True
+    assert candidate(event1 = ['11:55', '12:05'],event2 = ['12:00', '12:10']) == True
+    assert candidate(event1 = ['12:34', '12:34'],event2 = ['12:34', '12:34']) == True
+
+
