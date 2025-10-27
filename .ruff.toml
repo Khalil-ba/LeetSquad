@@ -1,0 +1,27 @@
+#  Ruff configuration file. See the ruff docs (https://docs.astral.sh/ruff/configuration/#configuring-ruff) for defaults.
+
+extend-exclude = ["dataset/test_cases/*"]
+
+line-length = 88
+indent-width = 4
+
+[lint]
+select = [
+    "F",  # pyflakes
+    "E",  # pycodestyle (Error)
+    "W",  # pycodestyle (Warning)
+    "C9", # McCabe Complexity
+    "I",  # isort
+]
+
+ignore = [
+    "E203",
+    "E402",
+    "E111",
+    "E114",
+    "E117",
+    "W191",
+]
+
+[lint.mccabe]
+max-complexity = 14

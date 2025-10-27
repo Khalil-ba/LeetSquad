@@ -3,17 +3,19 @@ from enum import IntEnum
 
 class Complexity(IntEnum):
     """
-    Enumeration of common algorithmic time/space complexities, ordered by asymptotic growth rate.
+    Enumeration of common algorithmic time/space complexities, ordered by asymptotic
+    growth rate.
     """
-    CONSTANT       = 0   # O(1)
-    LOGARITHMIC    = 1   # O(log n)
-    SQRT           = 2   # O(√n)
-    LINEAR         = 3   # O(n)
-    LINEARITHMIC   = 4   # O(n log n)
-    QUADRATIC      = 5   # O(n^2)
-    CUBIC          = 6   # O(n^3)
-    EXPONENTIAL    = 7   # O(2^n)
-    FACTORIAL      = 8   # O(n!)
+
+    CONSTANT = 0  # O(1)
+    LOGARITHMIC = 1  # O(log n)
+    SQRT = 2  # O(√n)
+    LINEAR = 3  # O(n)
+    LINEARITHMIC = 4  # O(n log n)
+    QUADRATIC = 5  # O(n^2)
+    CUBIC = 6  # O(n^3)
+    EXPONENTIAL = 7  # O(2^n)
+    FACTORIAL = 8  # O(n!)
 
     def __str__(self) -> str:
         mapping = {

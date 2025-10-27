@@ -1,30 +1,18 @@
 # Combined LeetCode Problem Utils
 # Auto-generated from all unique prompts in the dataset
 
-# === Prompt 1 ===
-import random
-import functools
-import collections
-import string
-import math
-import datetime
+# ruff: noqa: F401, F403
 
-from typing import *
-from functools import *
-from collections import *
-from itertools import *
-from heapq import *
-from bisect import *
-from string import *
-from operator import *
-from math import *
+from heapq import deque
 
-inf = float('inf')
+inf = float("inf")
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 def list_node(values: list):
     if not values:
@@ -37,6 +25,7 @@ def list_node(values: list):
         p = node
     return head
 
+
 def is_same_list(p1, p2):
     if p1 is None and p2 is None:
         return True
@@ -44,11 +33,13 @@ def is_same_list(p1, p2):
         return False
     return p1.val == p2.val and is_same_list(p1.next, p2.next)
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 def tree_node(values: list):
     if not values:
@@ -69,6 +60,7 @@ def tree_node(values: list):
         i += 1
     return root
 
+
 def is_same_tree(p, q):
     if not p and not q:
         return True
@@ -78,6 +70,3 @@ def is_same_tree(p, q):
         return False
     else:
         return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
-
-
-

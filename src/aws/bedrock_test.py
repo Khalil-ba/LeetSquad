@@ -2,7 +2,8 @@ from bedrock_client import BedrockClient
 
 #####################################################################
 # Use this file as a Bedrock playground or test your AWS connection #
-##################################################################### 
+#####################################################################
+
 
 def main():
     bedrock_client = BedrockClient()
@@ -14,5 +15,5 @@ def main():
     print(response)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
