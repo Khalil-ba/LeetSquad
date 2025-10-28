@@ -22,3 +22,5 @@ urllib3==2.5.0
     # via botocore
 a2a-sdk
 uvicorn
+starlette 
+sse-starlette
