@@ -8,10 +8,8 @@ from a2a.types import (
     AgentCapabilities,
     AgentCard,
     AgentSkill,
-    AgentExecutor,
-    ExecuteRequest,
-    TaskOutput,
 )
+from agent_executor import AgentExecutor  # type: ignore[import-untyped]
 
 
 class LeetCodeSolutionExecutor(AgentExecutor):
@@ -19,37 +17,40 @@ class LeetCodeSolutionExecutor(AgentExecutor):
         self.solutions_dir = Path(solutions_dir)
         self.solutions_dir.mkdir(exist_ok=True)
     
-    async def execute(self, request: ExecuteRequest) -> TaskOutput:
+    async def execute(self, request):
         task_id = request.input_data.get("task_id")
         
         if not task_id:
-            return TaskOutput(
-                output_data={"error": "task_id is required"},
-                output_mode="text"
-            )
+            return {
+                "output_data": {"error": "task_id is required"},
+                "output_mode": "text"
+            }
         
         solution_file = self.solutions_dir / f"{task_id}.txt"
         
         if not solution_file.exists():
-            return TaskOutput(
-                output_data={"error": f"Solution not found for task_id: {task_id}"},
-                output_mode="text"
-            )
+            return {
+                "output_data": {"error": f"Solution not found for task_id: {task_id}"},
+                "output_mode": "text"
+            }
         
         solution = solution_file.read_text()
         
-        return TaskOutput(
-            output_data={
+        return {
+            "output_data": {
                 "task_id": task_id,
                 "solution": solution
             },
-            output_mode="text",
-            artifacts=[{
+            "output_mode": "text",
+            "artifacts": [{
                 "type": "code",
                 "content": solution,
                 "filename": f"{task_id}_solution.py"
             }]
-        )
+        }
+    
+    async def cancel(self, task_id: str):
+        pass
 
 
 if __name__ == '__main__':
