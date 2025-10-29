@@ -2,7 +2,7 @@ import json
 import textwrap
 
 from aws.bedrock_client import BedrockClient
-from utils.complexity import Complexity
+from utility.complexity import Complexity
 
 
 class LLMJudge:
