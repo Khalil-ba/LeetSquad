@@ -4,7 +4,9 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ## 1. Environment Setup
 
-This section provides instructions for setting up the runtime of the green agent.
+This section provides instructions for setting up the runtime of the green agent. 
+
+**Important: All commands below assume you are running from the project’s root directory.**
 
 ### 1.1 AWS Credentials Setup
 
@@ -39,6 +41,12 @@ This project uses **uv** to manage packages. To set up the Python runtime, simpl
 
 Alternatively, you can also use **pip** to install all required packages `pip install -r requirements.txt`.
 
+### 1.3 Start the Server
+
+To start the green agent server, run `uv run python src/start_server.py`.
+
+To interact with this server, modify `test_server.py` and run `uv run src/python test_server.py`.
+
 ## 2. Agent Interaction
 
 The communication between green and white agents is handled through A2A protocol.
@@ -49,10 +57,71 @@ The green agent exposes the following skills:
 - process_answer
 
 ### 2.1 Register
-The white agent invokes this skill to register itself with the green agent. 
+
+The white agent invokes this skill to register itself with the green agent. Upon receiving the request, the green agent will assign an ID to the white agent.
+
+Input schema:
+
+```json
+{
+    "skill": "register",
+    "name": "<white agent name>"
+}
+```
+
+Output schema:
+
+```json
+{
+    "id": "<assigned ID>"
+}
+```
 
 ### 2.2 Distribute Problem
+
 The white agent invokes this skill to get a new coding problem from the green agent.
 
+Input schema:
+
+```json
+{
+    "id": "<assigned ID>",
+    "name": "<white agent name, acts as a simple auth token>"
+}
+```
+
+Output schema:
+
+```json
+{
+    "status": "accepted/rejected",
+    "error": "<reason for rejection, only exists if rejected>",
+    "problem_description": "<problem description>",
+    "starter_code": "<starter code>",
+    "entry_point": "<entry point in starter code>",
+    "prompt": "<prompt>"
+}
+```
+
 ### 2.3 Process Answer
+
 The white agent invokes this skill to submit its answer to the green agent. The green agent will then evaluate the generated code based on its correctness and readability, and record the scores.
+
+Input schema:
+
+```json
+{
+    "id": "<assigned ID>",
+    "name": "<white agent name, acts as a simple auth token>",
+    "solution": "<generated code>"
+}
+```
+
+Output schema:
+
+```json
+{
+    "status": "accepted/rejected",
+    "error": "<reason for rejection, only exists if rejected>"
+}
+```

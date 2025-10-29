@@ -11,21 +11,29 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
     def __init__(self):
         self.agent = CodingEvaluationAgent()
 
+
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
         message = context.get_user_input()
         input = json.loads(message)
-        skill_name = input.get("skill")
 
-        if skill_name == "register":
-            result = await self.agent.register(input)
-        elif skill_name == "distribute_problem":
-            result = await self.agent.distribute_problem(input)
-        elif skill_name == "process_answer":
-            result = await self.agent.process_answer(input)
-        else:
-            result = "Invalid skill"
+        # TODO: validate input schema
+
+        skill = input.get("skill")
+        match skill:
+            case "register":
+                result = await self.agent.register(input)
+            case "distribute_problem":
+                result = await self.agent.distribute_problem(input)
+            case "process_answer":
+                result = await self.agent.process_answer(input)
+            case _:
+                result = json.dumps({
+                    "status": "rejected",
+                    "error": "Invalid skill"
+                })
 
         await event_queue.enqueue_event(new_agent_text_message(result))
+
 
     async def cancel(self, context: RequestContext, event_queue: EventQueue) -> None:
         pass
