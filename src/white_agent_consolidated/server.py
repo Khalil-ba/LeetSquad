@@ -1,8 +1,8 @@
 """A2A Server for the LeetCode Solver White Agent"""
 
 import logging
-import uvicorn
 
+import uvicorn
 from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 solve_problem_skill = AgentSkill(
     id="solve_problem",
     name="Solve LeetCode Problems",
-    description="Continuously requests and solves LeetCode problems from the green agent",
+    description="Continuously requests and solves LeetCode problems from green agent",
     tags=["leetcode", "coding", "problem-solving"],
     examples=["solve_problem", "start solving", "begin problem loop"],
 )
@@ -29,7 +29,10 @@ solve_problem_skill = AgentSkill(
 # Define the agent card
 agent_card = AgentCard(
     name="LeetCode Solver Agent",
-    description="White agent that continuously solves LeetCode problems by interacting with the green agent",
+    description=(
+        "White agent that continuously solves LeetCode problems by interacting with "
+        "the green agent"
+    ),
     url="http://localhost:9998/",
     version="1.0.0",
     default_input_modes=["text"],
@@ -69,7 +72,7 @@ def start_server(
     )
 
     logger.info(f"Starting LeetCode Solver Server on {host}:{port}")
-    logger.info(f"Green agent expected at: http://localhost:9999")
+    logger.info("Green agent expected at: http://localhost:9999")
     logger.info("Server will wait idle until 'solve_problem' skill is invoked")
 
     # Start the server

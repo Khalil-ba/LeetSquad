@@ -2,7 +2,7 @@
 
 import json
 import logging
-from typing import Dict, Any
+from typing import Any, Dict
 from uuid import uuid4
 
 import httpx

@@ -35,12 +35,7 @@ class DynamoDBClient:
         return response.get("Item", None)
 
     def insert_registration(self, id, name):
-        self.registration_table.put_item(
-            Item={
-                "id": id,
-                "name": name
-            }
-        )
+        self.registration_table.put_item(Item={"id": id, "name": name})
 
     def insert_progress(self, id, task_id, start_time=None):
         self.progress_table.put_item(
@@ -82,7 +77,7 @@ class DynamoDBClient:
                 f.result()
 
     def _recreate_table(self, table_name, range_key=False):
-        waiter_config = {'Delay': 3, 'MaxAttempts': 20}
+        waiter_config = {"Delay": 3, "MaxAttempts": 20}
 
         print(f"Recreating {table_name} table...")
         try:
@@ -90,14 +85,18 @@ class DynamoDBClient:
         except self.client.exceptions.ResourceNotFoundException:
             pass
 
-        waiter = self.client.get_waiter('table_not_exists')
+        waiter = self.client.get_waiter("table_not_exists")
         waiter.wait(TableName=table_name, WaiterConfig=waiter_config)
 
         if range_key:
-            key_schema = [{"AttributeName": "id", "KeyType": "HASH"},
-                          {"AttributeName": "task_id", "KeyType": "RANGE"}]
-            attribute_definitions = [{"AttributeName": "id", "AttributeType": "S"},
-                                     {"AttributeName": "task_id", "AttributeType": "S"}]
+            key_schema = [
+                {"AttributeName": "id", "KeyType": "HASH"},
+                {"AttributeName": "task_id", "KeyType": "RANGE"},
+            ]
+            attribute_definitions = [
+                {"AttributeName": "id", "AttributeType": "S"},
+                {"AttributeName": "task_id", "AttributeType": "S"},
+            ]
         else:
             key_schema = [{"AttributeName": "id", "KeyType": "HASH"}]
             attribute_definitions = [{"AttributeName": "id", "AttributeType": "S"}]
@@ -106,9 +105,9 @@ class DynamoDBClient:
             TableName=table_name,
             KeySchema=key_schema,
             AttributeDefinitions=attribute_definitions,
-            BillingMode="PAY_PER_REQUEST"
+            BillingMode="PAY_PER_REQUEST",
         )
 
-        waiter = self.client.get_waiter('table_exists')
+        waiter = self.client.get_waiter("table_exists")
         waiter.wait(TableName=table_name, WaiterConfig=waiter_config)
         print(f"Done creating {table_name} table")

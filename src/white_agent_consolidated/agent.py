@@ -1,7 +1,7 @@
 """Core LeetCode Solver Agent that interacts with the green agent"""
 
 import logging
-from typing import Dict, Any
+from typing import Any, Dict
 
 from .green_client import GreenAgentClient
 
@@ -55,7 +55,8 @@ class LeetCodeSolverAgent:
 
                     logger.info(f"Received problem: {problem_desc[:50]}...")
                     logger.info(
-                        f"Using starter code as solution (length: {len(starter_code)} chars)"
+                        f"Using starter code as solution (length: {len(starter_code)}"
+                        " chars)"
                     )
 
                     self.problems_attempted += 1
@@ -71,7 +72,7 @@ class LeetCodeSolverAgent:
 
                     if answer_status == "finished":
                         logger.info(
-                            "Green agent returned 'finished' status after submission. Ending loop."
+                            "Green agent returned 'finished' after submission. End loop"
                         )
                         break
 
