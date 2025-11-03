@@ -1,4 +1,4 @@
-from bedrock_client import BedrockClient
+from .bedrock_client import BedrockClient
 
 #####################################################################
 # Use this file as a Bedrock playground or test your AWS connection #

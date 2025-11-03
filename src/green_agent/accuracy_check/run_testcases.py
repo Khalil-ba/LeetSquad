@@ -29,3 +29,4 @@ def test_accuracy(task_id: str, soln_func):
     passed, total, accuracy = test_cases.calculate_accuracy(soln_func)
     print(f"Accuracy: {accuracy:.1f}% ({passed}/{total})")
     print(f"Passed: {passed}/{total} ({accuracy:.1f}%)")
+    return accuracy

@@ -4,13 +4,12 @@ from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
 from a2a.utils import new_agent_text_message
 
-from a2a_server.agent import CodingEvaluationAgent
+from .agent import CodingEvaluationAgent
 
 
 class CodingEvaluationAgentExecutor(AgentExecutor):
     def __init__(self):
         self.agent = CodingEvaluationAgent()
-
 
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
         message = context.get_user_input()
@@ -27,13 +26,9 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
             case "process_answer":
                 result = await self.agent.process_answer(input)
             case _:
-                result = json.dumps({
-                    "status": "rejected",
-                    "error": "Invalid skill"
-                })
+                result = json.dumps({"status": "rejected", "error": "Invalid skill"})
 
         await event_queue.enqueue_event(new_agent_text_message(result))
-
 
     async def cancel(self, context: RequestContext, event_queue: EventQueue) -> None:
         pass

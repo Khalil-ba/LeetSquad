@@ -1,8 +1,8 @@
 import json
 import textwrap
 
-from aws.bedrock_client import BedrockClient
-from utility.complexity import Complexity
+from ..aws.bedrock_client import BedrockClient
+from ..utility.complexity import Complexity
 
 
 class LLMJudge:
@@ -104,8 +104,8 @@ class LLMJudge:
         """
     )
 
-    def __init__(self, verbose=False):
-        self.llm_client = BedrockClient()
+    def __init__(self, model_id=None, verbose=False):
+        self.llm_client = BedrockClient(model_id=model_id)
         self.verbose = verbose
 
     def analyze_complexity(self, code: str) -> dict:

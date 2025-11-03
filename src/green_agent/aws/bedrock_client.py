@@ -2,14 +2,15 @@ import json
 
 import boto3
 
+DEFAULT_MODEL_ID = "anthropic.claude-3-5-haiku-20241022-v1:0"
+
 
 class BedrockClient:
-    MODEL_ID = "anthropic.claude-3-5-haiku-20241022-v1:0"
-
-    def __init__(self, region="us-west-2"):
+    def __init__(self, model_id=None, region="us-west-2"):
         """
         Initialize the Bedrock clinet
         """
+        self.model_id = model_id or DEFAULT_MODEL_ID
         self.region = region
         self.client = boto3.client("bedrock-runtime", region_name=region)
 
@@ -40,7 +41,7 @@ class BedrockClient:
         }
 
         response = self.client.invoke_model(
-            modelId=self.MODEL_ID,
+            modelId=self.model_id,
             body=json.dumps(body),
             contentType="application/json",
             accept="application/json",
