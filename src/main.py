@@ -5,15 +5,8 @@ import logging
 import sys
 
 import click
-import uvicorn
-from a2a.server.apps import A2AStarletteApplication
-from a2a.server.request_handlers import DefaultRequestHandler
-from a2a.server.tasks import InMemoryTaskStore
 
-from .green_agent.a2a_server.agent_executor import (
-    CodingEvaluationAgentExecutor,
-)
-from .green_agent.a2a_server.docs import agent_card as green_agent_card
+from .green_agent.start_server import start_server as start_green_server
 from .run_servers import launch_both_agents
 from .run_test import run_green_tests
 from .white_agent_consolidated.server import start_server as start_white_server
@@ -41,17 +34,7 @@ def launch():
 @click.option("--host", default="0.0.0.0", help="Host to bind to")
 @click.option("--port", default=9999, help="Port to listen on")
 def launch_green(host: str, port: int):
-    """Start the green agent (coding evaluation agent)"""
-    logger.info(f"Starting green agent on {host}:{port}")
-
-    request_handler = DefaultRequestHandler(
-        agent_executor=CodingEvaluationAgentExecutor(),
-        task_store=InMemoryTaskStore(),
-    )
-    server = A2AStarletteApplication(
-        agent_card=green_agent_card, http_handler=request_handler
-    )
-    uvicorn.run(server.build(), host=host, port=port)
+    start_green_server(host=host, port=port)
 
 
 @launch.command(name="white")
