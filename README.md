@@ -4,9 +4,9 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ## 1. Environment Setup
 
-This section provides instructions for setting up the runtime of the green agent. 
+This section provides instructions for setting up the runtime of the agents.
 
-**Important: All commands below assume you are running from the project’s root directory.**
+**Important: All commands below assume you are running from the project's root directory.**
 
 ### 1.1 AWS Credentials Setup
 
@@ -37,21 +37,62 @@ For Mac:
 
 ### 1.2 Python Runtime
 
-This project uses **uv** to manage packages. To set up the Python runtime, simply run `uv sync` to create a virtual environment.
+This project uses **uv** to manage packages. To set up the Python runtime:
 
-Alternatively, you can also use **pip** to install all required packages `pip install -r requirements.txt`.
+1. Create a virtual environment: `uv venv`
+2. Activate virtual environment: `source .venv/bin/activate`
+3. Install dependencies: `uv sync`
 
-### 1.3 Start the Server
+Alternatively, you can use **pip**: `pip install -r requirements.txt`
 
-To start the green agent server, run `uv run python src/start_server.py`.
+**Development Tools:**
 
-To interact with this server, modify `test_server.py` and run `uv run src/python test_server.py`.
+- Format code: `uv run ruff format` (auto-formats with ruff)
+- Lint code: `uv run ruff check`
+- Add dependencies: Add to `pyproject.toml`, then run `uv lock` followed by `uv sync`
+- Update requirements.txt: `uv pip compile pyproject.toml -o requirements.txt` (for pip users only, not needed once everyone uses uv)
+
+We use pinned dependencies (via `uv.lock`) to ensure reproducibility across developers and deployment environments.
+
+### 1.3 CLI Commands
+
+The main entry point is `python -m src.main` with the following commands:
+
+**Launch Commands** (primary workflow):
+
+```bash
+# Start green agent (evaluation server)
+python -m src.main launch green [--host HOST] [--port PORT]
+
+# Start white agent (solver)
+python -m src.main launch white [--host HOST] [--port PORT] [--agent-id ID] [--agent-name NAME]
+
+# Start both agents
+python -m src.main launch both [--green-port PORT] [--white-port PORT]
+```
+
+**Test Commands** (quick testing, green only for now):
+
+```bash
+# Run tests on green agent
+python -m src.main test green \
+  [--model MODEL_ID] \
+  [--skip-tests] \
+  [--skip-llm-judge] \
+  [--limit N] \
+  [--task-id ID] \
+  [--agents agent1,agent2] \
+  [--csv-path PATH]
+```
+
+**Note:** The test workflow is currently more developed but should eventually converge with the launch workflow to call the same underlying logic. For production use, prefer the `launch` commands.
 
 ## 2. Agent Interaction
 
 The communication between green and white agents is handled through A2A protocol.
 
 The green agent exposes the following skills:
+
 - register
 - distribute_problem
 - process_answer
