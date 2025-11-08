@@ -25,6 +25,8 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
                 result = await self.agent.distribute_problem(input)
             case "process_answer":
                 result = await self.agent.process_answer(input)
+            case "start_benchmarking":
+                result = await self.agent.start_benchmarking(input)
             case _:
                 result = json.dumps({"status": "rejected", "error": "Invalid skill"})
 
