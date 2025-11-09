@@ -49,17 +49,6 @@ async def test_green_agent() -> None:
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
-        # Test: Distribute Problem (w/o answer submitted)
-        print_header("Testing: distribute problem w/o answer submitted")
-        distribute_input = {
-            "skill": "distribute_problem",
-            "name": "dummy_agent",
-            "id": id,
-        }
-        response = await send_message(client, distribute_input)
-        response_message = retrieve_message(response)
-        print(f"Response: {json.dumps(response_message, indent=4)}")
-
         # Test: Submit Answer
         print_header("Testing: submit answer")
         solution = textwrap.dedent(
@@ -82,6 +71,17 @@ async def test_green_agent() -> None:
             "solution": solution,
         }
         response = await send_message(client, submit_input)
+        response_message = retrieve_message(response)
+        print(f"Response: {json.dumps(response_message, indent=4)}")
+
+        # Test: Distribute Problem
+        print_header("Testing: distribute 1st problem")
+        distribute_input = {
+            "skill": "distribute_problem",
+            "name": "dummy_agent",
+            "id": id,
+        }
+        response = await send_message(client, distribute_input)
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 

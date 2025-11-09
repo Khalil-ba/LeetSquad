@@ -156,11 +156,9 @@ class BenchmarkingManager:
         logger.info(f"Distributed problem {problem['task_id']} to agent {agent_id}")
 
         return {
-            "task_id": problem["task_id"],
             "problem_description": problem["problem_description"],
             "starter_code": problem["starter_code"],
             "entry_point": problem["entry_point"],
-            "prompt": problem["query"],
         }
 
     def submit_answer(self, agent_id: str, agent_name: str, solution: str) -> None:

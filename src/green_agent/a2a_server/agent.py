@@ -90,13 +90,7 @@ class CodingEvaluationAgent:
             # Get next problem
             try:
                 problem = manager.get_next_problem(agent_id)
-                result = {
-                    "status": "accepted",
-                    "problem_description": problem["problem_description"],
-                    "starter_code": problem["starter_code"],
-                    "entry_point": problem["entry_point"],
-                    "prompt": problem["prompt"],
-                }
+                result = {"status": "accepted", **problem}
                 return json.dumps(result)
             except ValueError as e:  # ValueError is client-side error
                 return json.dumps({"status": "rejected", "error": str(e)})
