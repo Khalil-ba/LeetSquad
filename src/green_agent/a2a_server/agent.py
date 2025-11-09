@@ -124,15 +124,14 @@ class CodingEvaluationAgent:
 
             # Submit answer for evaluation (includes all validation)
             try:
-                results = manager.submit_answer(agent_id, agent_name, solution)
-                logger.info(f"Processed answer for agent {agent_id}: {results}")
+                manager.submit_answer(agent_id, agent_name, solution)
                 return json.dumps({"status": "accepted"})
             except ValueError as e:
                 return json.dumps({"status": "rejected", "error": str(e)})
 
         except Exception as e:
-            logger.error(f"Error processing answer: {e}")
-            return json.dumps({"status": "rejected", "error": str(e)})
+            logger.error(f"Internal error processing answer: {e}")
+            return json.dumps({"status": "rejected", "error": "Server-side error"})
 
     async def start_benchmarking(self, input) -> str:
         """

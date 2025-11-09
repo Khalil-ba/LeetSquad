@@ -1,5 +1,6 @@
 import asyncio
 import json
+import textwrap
 from uuid import uuid4
 
 import httpx
@@ -56,6 +57,31 @@ async def test_green_agent() -> None:
             "id": id,
         }
         response = await send_message(client, distribute_input)
+        response_message = retrieve_message(response)
+        print(f"Response: {json.dumps(response_message, indent=4)}")
+
+        # Test: Submit Answer
+        print_header("Testing: submit answer")
+        solution = textwrap.dedent(
+            """
+            class Solution:
+                def twoSum(self, nums: List[int], target: int) -> List[int]:
+                    num_map = {}
+                    for i, num in enumerate(nums):
+                        complement = target - num
+                        if complement in num_map:
+                            return [num_map[complement], i]
+                        else:
+                            num_map[num] = i
+            """
+        )
+        submit_input = {
+            "skill": "process_answer",
+            "name": "dummy_agent",
+            "id": id,
+            "solution": solution,
+        }
+        response = await send_message(client, submit_input)
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 

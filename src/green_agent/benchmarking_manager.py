@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 import csv
 import json
 import logging
@@ -42,12 +43,14 @@ class BenchmarkingManager:
         self.judge = (
             LLMJudge(model_id=model, verbose=False) if not skip_llm_judge else None
         )
+        self.llm_judge_executor = ThreadPoolExecutor(max_workers=10)
 
         # In-memory storage (designed for easy migration to DB)
         self._agents: Dict[str, str] = {}  # agent_id -> agent_name
         self._progress: Dict[str, int] = {}  # agent_id -> current_index
         self._pending: Dict[str, str] = {}  # agent_id -> pending_task_id
         self._results: Dict[str, Dict[str, Dict]] = {}  # agent_id -> {task_id -> scores}
+        self._detailed_results: Dict[str, Dict[str, Dict]] = {}  # detailed LLM results
         self._dataset: List[Dict] = []  # loaded problems
 
         # Load dataset
@@ -88,6 +91,7 @@ class BenchmarkingManager:
         self._agents[agent_id] = agent_name
         self._progress[agent_id] = 0
         self._results[agent_id] = {}
+        self._detailed_results[agent_id] = {}
         logger.info(f"Registered agent: {agent_name} (ID: {agent_id})")
 
     def is_registered(self, agent_id: str) -> bool:
@@ -159,17 +163,15 @@ class BenchmarkingManager:
             "prompt": problem["query"],
         }
 
-    def submit_answer(self, agent_id: str, agent_name: str, solution: str) -> Dict:
+    def submit_answer(self, agent_id: str, agent_name: str, solution: str) -> None:
         """
-        Evaluate a solution, store results, and advance agent progress.
+        Receive a solution and advance agent progress.
+        Start an asynchronous eval progress.
 
         Args:
             agent_id: Agent identifier
             agent_name: Agent name
             solution: Code solution to evaluate
-
-        Returns:
-            Dict with evaluation results
 
         Raises:
             ValueError: If agent not registered, credentials invalid,
@@ -179,7 +181,7 @@ class BenchmarkingManager:
             raise ValueError("Agent not registered")
 
         if not self.validate_agent(agent_id, agent_name):
-            raise ValueError("Name does not match ID")
+            raise ValueError("Agent name does not match ID")
 
         if agent_id not in self._pending:
             raise ValueError("No pending problem to submit answer for")
@@ -187,41 +189,64 @@ class BenchmarkingManager:
         # Get the pending task
         task_id = self._pending[agent_id]
 
-        logger.info(f"Evaluating solution for task {task_id} from agent {agent_id}")
+        # Start eval process asynchronously (not blocking networking call)
+        self.llm_judge_executor.submit(self._evaluate_answer, agent_id, task_id, solution)
 
+        # Clear pending and advance progress
+        del self._pending[agent_id]
+        self._progress[agent_id] += 1
+
+        logger.info(f"Received solution for task {task_id} from agent {agent_id}")
+
+    def _evaluate_answer(self, agent_id: str, task_id: str, solution: str) -> None:
+        """
+        Evaluate a solution and stores the results.
+
+        Args:
+            agent_id: Agent identifier
+            task_id: Task identifier
+            solution: Code solution to evaluate
+        """
         # Evaluate the solution
         tests_percent = None
         time_complexity_num = None
         space_complexity_num = None
         readability_overall = None
+        self._detailed_results[agent_id][task_id] = {}
 
         # Run test cases
         if not self.skip_tests:
             try:
                 soln_func = str_to_func(solution)
-                accuracy = test_accuracy(task_id, soln_func)
+                passed, total, accuracy = test_accuracy(task_id, soln_func)
                 tests_percent = (
                     round(float(accuracy), 1) if accuracy is not None else None
                 )
-                logger.info(f"Test accuracy: {tests_percent}%")
+                self._detailed_results[agent_id][task_id]["accuracy"] = {
+                    "passed": passed,
+                    "total": total,
+                }
             except Exception as e:
-                logger.error(f"Error testing accuracy for {agent_id}:{task_id}: {e}")
+                logger.error(
+                    f"[async] Error testing accuracy for {agent_id}:{task_id}: {e}"
+                )
 
         # Run LLM judge analysis
         if not self.skip_llm_judge and self.judge is not None:
             try:
-                logger.info("Analyzing time & space complexity...")
                 complexity = self.judge.analyze_complexity(solution)
-                logger.info(json.dumps(complexity, indent=2))
+                readability = self.judge.analyze_readability(solution)
+
                 time_complexity_num = int(complexity["time"]["complexity_enum"])
                 space_complexity_num = int(complexity["space"]["complexity_enum"])
-
-                logger.info("Analyzing readability...")
-                readability = self.judge.analyze_readability(solution)
-                logger.info(json.dumps(readability, indent=2))
                 readability_overall = int(readability.get("overall", 0))
+
+                self._detailed_results[agent_id][task_id]["complexity"] = complexity
+                self._detailed_results[agent_id][task_id]["readability"] = readability
             except Exception as e:
-                logger.error(f"Error in LLM analysis for {agent_id}:{task_id}: {e}")
+                logger.error(
+                    f"[async] Error in LLM analysis for {agent_id}:{task_id}: {e}"
+                )
 
         # Store results
         results = {
@@ -231,14 +256,9 @@ class BenchmarkingManager:
             "readability_overall": readability_overall,
         }
         self._results[agent_id][task_id] = results
-
-        # Clear pending and advance progress
-        del self._pending[agent_id]
-        self._progress[agent_id] += 1
-
-        logger.info(f"Stored results for {agent_id}:{task_id}")
-
-        return results
+        logger.info(
+            f"[async] Evaluated solution for task {task_id} from agent {agent_id}. Result: {results}"
+        )
 
     def get_results(self, agent_id: Optional[str] = None) -> Dict:
         """

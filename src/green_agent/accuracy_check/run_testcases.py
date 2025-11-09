@@ -26,7 +26,4 @@ def test_accuracy(task_id: str, soln_func):
     )
     test_cases = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(test_cases)
-    passed, total, accuracy = test_cases.calculate_accuracy(soln_func)
-    print(f"Accuracy: {accuracy:.1f}% ({passed}/{total})")
-    print(f"Passed: {passed}/{total} ({accuracy:.1f}%)")
-    return accuracy
+    return test_cases.calculate_accuracy(soln_func)
