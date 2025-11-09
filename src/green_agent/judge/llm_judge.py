@@ -160,9 +160,7 @@ class LLMJudge:
             response = self.llm_client.generate(self.COMPLEXITY_PROMPT + code)
             validated = transform_llm_output(response)
             if validated is None:
-                raise Exception(
-                    "LLM failed to generate valid time & space complexities"
-                )
+                raise Exception("LLM failed to generate valid time & space complexities")
 
         return validated
 

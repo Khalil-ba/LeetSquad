@@ -22,7 +22,5 @@ def start_server(host: str, port: int):
         agent_executor=CodingEvaluationAgentExecutor(),
         task_store=InMemoryTaskStore(),
     )
-    server = A2AStarletteApplication(
-        agent_card=agent_card, http_handler=request_handler
-    )
+    server = A2AStarletteApplication(agent_card=agent_card, http_handler=request_handler)
     uvicorn.run(server.build(), host=host, port=port)

@@ -49,9 +49,7 @@ class LeetCodeSolverAgent:
 
                     # Step 2: Extract starter code (our dummy solution)
                     starter_code = problem_response.get("starter_code", "")
-                    problem_desc = problem_response.get(
-                        "problem_description", "Unknown"
-                    )
+                    problem_desc = problem_response.get("problem_description", "Unknown")
 
                     logger.info(f"Received problem: {problem_desc[:50]}...")
                     logger.info(

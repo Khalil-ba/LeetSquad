@@ -31,10 +31,7 @@ async def test_green_agent() -> None:
 
         # Test: Register skill
         print_header("Testing: register dummy_agent")
-        register_input = {
-            "skill": "register",
-            "name": "dummy_agent"
-        }
+        register_input = {"skill": "register", "name": "dummy_agent"}
         response = await send_message(client, register_input)
         response_message = retrieve_message(response)
         print(f"Response: {response_message}")
@@ -45,7 +42,7 @@ async def test_green_agent() -> None:
         distribute_input = {
             "skill": "distribute_problem",
             "name": "dummy_agent",
-            "id": id
+            "id": id,
         }
         response = await send_message(client, distribute_input)
         response_message = retrieve_message(response)
@@ -56,7 +53,7 @@ async def test_green_agent() -> None:
         distribute_input = {
             "skill": "distribute_problem",
             "name": "dummy_agent",
-            "id": id
+            "id": id,
         }
         response = await send_message(client, distribute_input)
         response_message = retrieve_message(response)
@@ -83,19 +80,19 @@ async def send_message(a2a_client, input_dict: dict):
             "messageId": uuid4().hex,
         },
     }
-    request = SendMessageRequest(
-        id=str(uuid4()), params=MessageSendParams(**input)
-    )
+    request = SendMessageRequest(id=str(uuid4()), params=MessageSendParams(**input))
     response = await a2a_client.send_message(request)
     return response
+
 
 def retrieve_message(response):
     """
     Unpacks the response from green agent and retrieves the message.
     """
-    result_dict = response.model_dump(mode='json', exclude_none=True)
-    text_json_str = result_dict['result']['parts'][0]['text']
+    result_dict = response.model_dump(mode="json", exclude_none=True)
+    text_json_str = result_dict["result"]["parts"][0]["text"]
     return json.loads(text_json_str)
+
 
 def print_header(header: str):
     """

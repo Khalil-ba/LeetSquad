@@ -350,9 +350,7 @@ class BenchmarkingManager:
                         complexity = self.judge.analyze_complexity(code_str)
                         logger.info(json.dumps(complexity, indent=2))
                         time_complexity_num = int(complexity["time"]["complexity_enum"])
-                        space_complexity_num = int(
-                            complexity["space"]["complexity_enum"]
-                        )
+                        space_complexity_num = int(complexity["space"]["complexity_enum"])
 
                         logger.info("\nAnalyzing readability...")
                         readability = self.judge.analyze_readability(code_str)

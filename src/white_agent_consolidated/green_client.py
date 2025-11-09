@@ -75,9 +75,7 @@ class GreenAgentClient:
 
         raise RuntimeError(f"No valid response from green agent for skill: {skill}")
 
-    async def distribute_problem(
-        self, agent_id: str, agent_name: str
-    ) -> Dict[str, Any]:
+    async def distribute_problem(self, agent_id: str, agent_name: str) -> Dict[str, Any]:
         """
         Request a problem from the green agent.
 

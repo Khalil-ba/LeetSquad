@@ -33,9 +33,7 @@ class BedrockClient:
         Send a prompt to the LLM and return the generated text.
         """
         body = {
-            "messages": [
-                {"role": "user", "content": [{"type": "text", "text": prompt}]}
-            ],
+            "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}]}],
             "max_tokens": max_tokens,
             "anthropic_version": "bedrock-2023-05-31",
         }

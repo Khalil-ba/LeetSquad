@@ -67,9 +67,7 @@ def start_server(
     )
 
     # Create A2A server application
-    server = A2AStarletteApplication(
-        agent_card=agent_card, http_handler=request_handler
-    )
+    server = A2AStarletteApplication(agent_card=agent_card, http_handler=request_handler)
 
     logger.info(f"Starting LeetCode Solver Server on {host}:{port}")
     logger.info("Green agent expected at: http://localhost:9999")

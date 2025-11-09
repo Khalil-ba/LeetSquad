@@ -48,9 +48,7 @@ async def main() -> None:
             logger.info("Successfully fetched public agent card:")
             logger.info(_public_card.model_dump_json(indent=2, exclude_none=True))
             final_agent_card_to_use = _public_card
-            logger.info(
-                "\nUsing PUBLIC agent card for client initialization (default)."
-            )
+            logger.info("\nUsing PUBLIC agent card for client initialization (default).")
 
             if _public_card.supports_authenticated_extended_card:
                 try:
@@ -65,9 +63,7 @@ async def main() -> None:
                         relative_card_path=EXTENDED_AGENT_CARD_PATH,
                         http_kwargs={"headers": auth_headers_dict},
                     )
-                    logger.info(
-                        "Successfully fetched authenticated extended agent card:"
-                    )
+                    logger.info("Successfully fetched authenticated extended agent card:")
                     logger.info(
                         _extended_card.model_dump_json(indent=2, exclude_none=True)
                     )
@@ -89,17 +85,13 @@ async def main() -> None:
                 )
 
         except Exception as e:
-            logger.error(
-                f"Critical error fetching public agent card: {e}", exc_info=True
-            )
+            logger.error(f"Critical error fetching public agent card: {e}", exc_info=True)
             raise RuntimeError(
                 "Failed to fetch the public agent card. Cannot continue."
             ) from e
 
         # --8<-- [start:send_message]
-        client = A2AClient(
-            httpx_client=httpx_client, agent_card=final_agent_card_to_use
-        )
+        client = A2AClient(httpx_client=httpx_client, agent_card=final_agent_card_to_use)
         logger.info("A2AClient initialized.")
 
         send_message_payload: dict[str, Any] = {
