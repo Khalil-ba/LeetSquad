@@ -2,7 +2,7 @@
 
 extend-exclude = ["dataset/test_cases/*"]
 
-line-length = 88
+line-length = 90
 indent-width = 4
 
 [lint]

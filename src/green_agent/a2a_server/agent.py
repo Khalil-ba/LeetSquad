@@ -44,9 +44,12 @@ class CodingEvaluationAgent:
         See README.md for input and output schema.
         """
         try:
+            if "name" not in input:
+                return json.dumps({"status": "rejected", "error": "Missing name"})
+
             # Generate random ID for white agent
             agent_id = uuid.uuid4().hex[:8]
-            agent_name = input.get("name", "unknown")
+            agent_name = input.get("name")
 
             # Register with manager
             manager = self.get_manager()
@@ -55,8 +58,8 @@ class CodingEvaluationAgent:
             result = {"status": "accepted", "id": agent_id}
             return json.dumps(result)
         except Exception as e:
-            logger.error(f"Error registering agent: {e}")
-            return json.dumps({"status": "rejected", "error": str(e)})
+            logger.error(f"Internal error registering agent: {e}")
+            return json.dumps({"status": "rejected", "error": "Server-side error"})
 
     async def distribute_problem(self, input) -> str:
         """
@@ -75,16 +78,13 @@ class CodingEvaluationAgent:
             # Check if agent is registered
             if not manager.is_registered(agent_id):
                 return json.dumps(
-                    {
-                        "status": "rejected",
-                        "error": "Agent not registered. Please register first.",
-                    }
+                    {"status": "rejected", "error": "Agent ID not registered"}
                 )
 
             # Validate agent credentials
             if not manager.validate_agent(agent_id, agent_name):
                 return json.dumps(
-                    {"status": "rejected", "error": "Name does not match ID."}
+                    {"status": "rejected", "error": "Agent name does not match ID."}
                 )
 
             # Get next problem
@@ -98,12 +98,12 @@ class CodingEvaluationAgent:
                     "prompt": problem["prompt"],
                 }
                 return json.dumps(result)
-            except ValueError as e:
+            except ValueError as e:  # ValueError is client-side error
                 return json.dumps({"status": "rejected", "error": str(e)})
 
         except Exception as e:
-            logger.error(f"Error distributing problem: {e}")
-            return json.dumps({"status": "rejected", "error": str(e)})
+            logger.error(f"Internal error distributing problem: {e}")
+            return json.dumps({"status": "rejected", "error": "Server-side error"})
 
     async def process_answer(self, input) -> str:
         """

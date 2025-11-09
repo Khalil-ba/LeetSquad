@@ -1,5 +1,3 @@
-"""Benchmarking manager for tracking agent progress and evaluating solutions"""
-
 import csv
 import json
 import logging
@@ -49,8 +47,7 @@ class BenchmarkingManager:
         self._agents: Dict[str, str] = {}  # agent_id -> agent_name
         self._progress: Dict[str, int] = {}  # agent_id -> current_index
         self._pending: Dict[str, str] = {}  # agent_id -> pending_task_id
-        # agent_id -> {task_id -> scores}
-        self._results: Dict[str, Dict[str, Dict]] = {}
+        self._results: Dict[str, Dict[str, Dict]] = {}  # agent_id -> {task_id -> scores}
         self._dataset: List[Dict] = []  # loaded problems
 
         # Load dataset
@@ -62,12 +59,10 @@ class BenchmarkingManager:
             with open(self.csv_path, "r", encoding="utf-8") as f:
                 reader = csv.reader(f)
                 next(reader)  # Skip header
-
                 for row in reader:
                     if len(row) < 5:
-                        logger.warning("Row is too short, skipping...")
+                        logger.warning("Encountered invalid row, skipping...")
                         continue
-
                     self._dataset.append(
                         {
                             "task_id": row[0],
@@ -77,11 +72,9 @@ class BenchmarkingManager:
                             "query": row[4],
                         }
                     )
-
             logger.info(f"Loaded {len(self._dataset)} problems from {self.csv_path}")
-
         except FileNotFoundError:
-            logger.error(f"CSV file not found: {self.csv_path}")
+            logger.error(f"Dataset CSV file not found: {self.csv_path}")
             raise
 
     def register_agent(self, agent_id: str, agent_name: str) -> None:
@@ -111,7 +104,7 @@ class BenchmarkingManager:
 
     def validate_agent(self, agent_id: str, agent_name: str) -> bool:
         """
-        Validate agent credentials.
+        Validate agent credentials (ID and name for now).
 
         Args:
             agent_id: Agent identifier
@@ -133,7 +126,8 @@ class BenchmarkingManager:
             Dict with problem details
 
         Raises:
-            ValueError: If agent has a pending problem or reached end of dataset
+            ValueError: If client-side error (e.g. has a pending problem,
+            reached end of dataset, not registered, etc.)
         """
         if not self.is_registered(agent_id):
             raise ValueError("Agent not registered")
