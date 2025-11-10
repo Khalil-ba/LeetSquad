@@ -1,6 +1,6 @@
-from concurrent.futures import ThreadPoolExecutor
 import csv
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, List, Optional
 
 from .accuracy_check.run_testcases import str_to_func, test_accuracy
@@ -21,9 +21,10 @@ class BenchmarkingManager:
     def __init__(
         self,
         csv_path: str = "dataset/LeetCodeQuestions.csv",
-        model: Optional[str] = None,
+        llm_judge_model: Optional[str] = None,
         skip_tests: bool = False,
         skip_llm_judge: bool = False,
+        limit_problems: Optional[int] = None,
     ):
         """
         Initialize the benchmarking manager.
@@ -33,6 +34,7 @@ class BenchmarkingManager:
             model: Model ID to use for LLM judge
             skip_tests: Skip running test cases
             skip_llm_judge: Skip LLM judgement
+            limit_problems: Only load the specified number of problems
         """
         self.csv_path = csv_path
         self.skip_tests = skip_tests
@@ -40,8 +42,11 @@ class BenchmarkingManager:
 
         # Initialize LLM judge if needed
         self.judge = (
-            LLMJudge(model_id=model, verbose=False) if not skip_llm_judge else None
+            LLMJudge(model_id=llm_judge_model, verbose=False)
+            if not skip_llm_judge
+            else None
         )
+        # keep max_workers small due to AWS Bedrock quota limit
         self.llm_judge_executor = ThreadPoolExecutor(max_workers=1)
 
         # In-memory storage (designed for easy migration to DB)
@@ -53,10 +58,25 @@ class BenchmarkingManager:
         self._dataset: List[Dict] = []  # loaded problems
 
         # Load dataset
-        self._load_dataset()
+        self._load_dataset(limit_problems)
 
-    def _load_dataset(self) -> None:
-        """Load the dataset from CSV file."""
+        # Log args
+        logger.info(
+            "Initialized BenchmarkingManager with following args: "
+            f"csv_path={csv_path}, "
+            f"llm_judge_model={llm_judge_model}, "
+            f"skip_tests={skip_tests}, "
+            f"skip_llm_judge={skip_llm_judge}, "
+            f"limit_problems={limit_problems}"
+        )
+
+    def _load_dataset(self, limit_problems: Optional[int]) -> None:
+        """
+        Load the dataset from CSV file.
+
+        Args:
+            limit_problems: Only load the specified number of problems
+        """
         try:
             with open(self.csv_path, "r", encoding="utf-8") as f:
                 reader = csv.reader(f)
@@ -74,6 +94,8 @@ class BenchmarkingManager:
                             "query": row[4],
                         }
                     )
+                    if limit_problems and len(self._dataset) >= limit_problems:
+                        break
             logger.info(f"Loaded {len(self._dataset)} problems from {self.csv_path}")
         except FileNotFoundError:
             logger.error(f"Dataset CSV file not found: {self.csv_path}")
@@ -255,8 +277,10 @@ class BenchmarkingManager:
         }
         self._results[agent_id][task_id] = results
         logger.info(
-            f"[async] Evaluated solution for task {task_id} from agent {agent_id}. Result: {results}"
+            f"[async] Evaluated solution for task {task_id} from agent {agent_id}. "
+            f"Result: {results}"
         )
+
 
     def get_results(self, agent_id: Optional[str] = None) -> Dict:
         """

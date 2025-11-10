@@ -1,6 +1,8 @@
+# ruff: noqa: E501
 """CLI entry point for LeetSquad"""
 
 import logging
+
 import click
 
 # Configure logging
@@ -22,12 +24,31 @@ def launch():
 
 
 @launch.command(name="green")
-@click.option("--host", default="0.0.0.0", help="Host to bind to")
-@click.option("--port", default=9999, help="Port to listen on")
-def launch_green(host: str, port: int):
+@click.option("--host", default="0.0.0.0", type=str, show_default=True, help="Host to bind to")
+@click.option("--port", default=9999, type=int, show_default=True, help="Port to listen on")
+@click.option("--skip-tests/--use-tests", default=False, show_default=True, help="Whether to skip accuracy tests")
+@click.option("--skip-llm-judge/--use-llm-judge", default=False, show_default=True, help="Whether to skip LLM judge")
+@click.option("--llm-judge-model", default=None, type=str, help="Model for LLM judge")
+@click.option("--limit-problems", default=None, type=int, help="Number of problems to use")
+def launch_green(
+    host: str,
+    port: int,
+    skip_tests: bool,
+    skip_llm_judge: bool,
+    llm_judge_model: str | None,
+    limit_problems: int | None,
+):
     """Start the green agent server (for multiprocessing)"""
     from .green_agent.start_server import start_server
-    start_server(host, port)
+
+    start_server(
+        host,
+        port,
+        skip_tests=skip_tests,
+        skip_llm_judge=skip_llm_judge,
+        llm_judge_model=llm_judge_model,
+        limit_problems=limit_problems,
+    )
 
 
 @launch.command(name="white")
@@ -38,6 +59,7 @@ def launch_green(host: str, port: int):
 def launch_white(host: str, port: int, agent_id: str, agent_name: str):
     """Start the white agent (LeetCode solver agent)"""
     from .white_agent.server import start_server
+
     start_server(host, port, agent_id, agent_name)
 
 

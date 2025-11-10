@@ -110,6 +110,13 @@ class LLMJudge:
     )
 
     def __init__(self, model_id=None, verbose=False):
+        """
+        Initializes LLM Judge.
+
+        Args:
+            model_id: Bedrock model ID. Use None for default.
+            verbose: if True, allow one retry for bad LLM output.
+        """
         self.llm_client = BedrockClient(model_id=model_id)
         self.verbose = verbose
 

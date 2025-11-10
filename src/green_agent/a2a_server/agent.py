@@ -15,26 +15,28 @@ class CodingEvaluationAgent:
     def get_manager(cls) -> BenchmarkingManager:
         """Get or create the singleton BenchmarkingManager instance."""
         if cls._manager is None:
-            cls._manager = BenchmarkingManager()
+            raise RuntimeError("BenchmarkingManager not initialized.")
         return cls._manager
 
     @classmethod
     def initialize_manager(
         cls,
         csv_path: str = "dataset/LeetCodeQuestions.csv",
-        model: str = None,
+        llm_judge_model: str = None,
         skip_tests: bool = False,
         skip_llm_judge: bool = False,
+        limit_problems=None,
     ) -> None:
         """
         Initialize the manager with custom settings.
-        Should be called before any agent operations.
+        Must be called before any agent operations.
         """
         cls._manager = BenchmarkingManager(
             csv_path=csv_path,
-            model=model,
+            llm_judge_model=llm_judge_model,
             skip_tests=skip_tests,
             skip_llm_judge=skip_llm_judge,
+            limit_problems=limit_problems,
         )
 
     async def register(self, input) -> str:

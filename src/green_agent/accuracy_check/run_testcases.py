@@ -26,11 +26,10 @@ def _safe_load_module(name: str, path: str) -> None:
         # Keep going; missing utils will surface during test run
         pass
 
+
 _safe_load_module(
     "testcase_utils",
-    os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "testcase_utils.py")
-    ),
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "testcase_utils.py")),
 )
 
 # Make helpers available to exec(code_str, globals(), ...)

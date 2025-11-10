@@ -9,22 +9,17 @@ class BedrockClient:
     def __init__(self, model_id=None, region="us-west-2"):
         """
         Initialize the Bedrock client
-        
+
         Args:
             model_id: Model ID to use (defaults to DEFAULT_MODEL_ID)
             region: AWS region (defaults to us-west-2)
         """
         self.model_id = model_id or DEFAULT_MODEL_ID
         self.region = region
-        
+
         # Setting max_retries=0 disables boto3's automatic retries
         # This allows application-level retry logic to handle throttling
-        config = Config(
-            retries={
-                'max_attempts': 1,
-                'mode': 'standard'
-            }
-        )
+        config = Config(retries={"max_attempts": 1, "mode": "standard"})
         self.client = boto3.client("bedrock-runtime", region_name=region, config=config)
 
     def list_models(self):
@@ -46,7 +41,7 @@ class BedrockClient:
         Send a prompt to the LLM and return the generated text.
         """
         content = [{"text": message}]
-        
+
         response = self.client.converse(
             modelId=self.model_id,
             system=[{"text": system_prompt}],

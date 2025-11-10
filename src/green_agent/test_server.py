@@ -15,6 +15,7 @@ the green agent. To use, run these commands from the root dir in order:
 2. uv run python -m src.green_agent.test_server
 """
 
+
 async def test_green_agent() -> None:
     base_url = "http://localhost:9999"
 

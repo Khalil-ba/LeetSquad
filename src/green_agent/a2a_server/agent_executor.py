@@ -8,7 +8,8 @@ from .agent import CodingEvaluationAgent
 
 
 class CodingEvaluationAgentExecutor(AgentExecutor):
-    def __init__(self):
+    def __init__(self, **benchmarking_kwargs):
+        CodingEvaluationAgent.initialize_manager(**benchmarking_kwargs)
         self.agent = CodingEvaluationAgent()
 
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
