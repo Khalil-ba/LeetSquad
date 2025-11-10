@@ -8,28 +8,19 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ### 1.1. AWS Setup
 
-The green agent uses AWS Bedrock for LLM access and DynamoDB for data storage. The Bedrock & DynamoDB clients will fail if you do not set up AWS credentials properly.
-
-To obtain AWS credentials (assuming you already have an AWS account):
+The green agent uses AWS Bedrock for LLM access. You MUST configure AWS credentials to run the green agent. To obtain AWS credentials (assuming you already have an AWS account):
 
 1. Open AWS console
 2. Go to IAM -> Users -> username -> Security credentials
 3. Click on 'Create access key'
-4. Save your access key ID and secret access key
+4. Copy your access key ID and secret access key
+5. Create `.env` file under project root folder and configure:
+```
+AWS_ACCESS_KEY_ID="<replace>"
+AWS_SECRET_ACCESS_KEY="<replace>"
+```
 
-For Windows:
-
-1. Open a terminal in Powershell
-2. run `pip install awscli`
-3. run `aws configure`
-4. Configure your AWS access key ID and secret access key
-
-For Mac:
-
-1. Open a terminal
-2. run `brew update` and then `brew install awscli`
-3. run `aws configure`
-4. Configure your AWS access key ID and secret access key
+*For CS 294 course staff: please contact the author if you need temporary AWS credentials*
 
 ### 1.2. Python Runtime Setup
 

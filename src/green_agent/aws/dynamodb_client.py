@@ -2,6 +2,10 @@ import concurrent
 from datetime import datetime
 
 import boto3
+from dotenv import load_dotenv
+
+# Loads AWS credentials from .env
+load_dotenv()
 
 
 class DynamoDBClient:

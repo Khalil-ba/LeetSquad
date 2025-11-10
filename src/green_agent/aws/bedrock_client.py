@@ -1,8 +1,12 @@
 import boto3
 from botocore.config import Config
+from dotenv import load_dotenv
 
 # DEFAULT_MODEL_ID = "anthropic.claude-3-5-haiku-20241022-v1:0"
 DEFAULT_MODEL_ID = "deepseek.v3-v1:0"
+
+# Loads AWS credentials from .env
+load_dotenv()
 
 
 class BedrockClient:
