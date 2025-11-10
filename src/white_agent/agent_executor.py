@@ -1,40 +1,72 @@
+"""Agent executor for A2A framework integration"""
+
+import json
+import logging
+
 from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
 from a2a.utils import new_agent_text_message
 
+from .agent import LeetCodeSolverAgent
 
-# --8<-- [start:HelloWorldAgent]
-class HelloWorldAgent:
-    """Hello World Agent."""
-
-    async def invoke(self) -> str:
-        return "Hello World"
+logger = logging.getLogger(__name__)
 
 
-# --8<-- [end:HelloWorldAgent]
+class LeetCodeSolverExecutor(AgentExecutor):
+    """
+    Executor that wraps LeetCodeSolverAgent for A2A framework.
 
+    This executor handles incoming A2A requests and routes them to the appropriate
+    agent method based on the requested skill.
+    """
 
-# --8<-- [start:HelloWorldAgentExecutor_init]
-class HelloWorldAgentExecutor(AgentExecutor):
-    """Test AgentProxy Implementation."""
+    def __init__(
+        self, agent_id: str = "white_agent_001", agent_name: str = "LeetCodeSolver"
+    ):
+        self.agent = LeetCodeSolverAgent(agent_id=agent_id, agent_name=agent_name)
 
-    def __init__(self):
-        self.agent = HelloWorldAgent()
+    async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
+        """
+        Execute the requested skill.
 
-    # --8<-- [end:HelloWorldAgentExecutor_init]
-    # --8<-- [start:HelloWorldAgentExecutor_execute]
-    async def execute(
-        self,
-        context: RequestContext,
-        event_queue: EventQueue,
-    ) -> None:
-        result = await self.agent.invoke()
-        await event_queue.enqueue_event(new_agent_text_message(result))
+        Currently supports:
+        - solve_problem: Starts the continuous problem-solving loop
+        """
+        try:
+            # Get user input from context
+            message = context.get_user_input()
 
-    # --8<-- [end:HelloWorldAgentExecutor_execute]
+            # Try to parse as JSON to extract skill, or treat as plain command
+            try:
+                input_data = json.loads(message)
+                skill = input_data.get("skill", message.strip())
+            except json.JSONDecodeError:
+                skill = message.strip()
 
-    # --8<-- [start:HelloWorldAgentExecutor_cancel]
+            logger.info(f"Executing skill: {skill}")
+
+            # Route to appropriate skill
+            if skill == "solve_problem":
+                result = await self.agent.solve_problem()
+                result_message = json.dumps({"status": "success", "data": result})
+            else:
+                result_message = json.dumps(
+                    {"status": "error", "error": f"Unknown skill: {skill}"}
+                )
+
+            # Send result back through event queue
+            await event_queue.enqueue_event(new_agent_text_message(result_message))
+
+        except Exception as e:
+            logger.error(f"Error executing skill: {e}", exc_info=True)
+            error_message = json.dumps({"status": "error", "error": str(e)})
+            await event_queue.enqueue_event(new_agent_text_message(error_message))
+
     async def cancel(self, context: RequestContext, event_queue: EventQueue) -> None:
-        raise Exception("cancel not supported")
-
-    # --8<-- [end:HelloWorldAgentExecutor_cancel]
+        """Cancel execution - not implemented"""
+        logger.warning("Cancel requested but not implemented")
+        await event_queue.enqueue_event(
+            new_agent_text_message(
+                json.dumps({"status": "error", "error": "Cancel not supported"})
+            )
+        )

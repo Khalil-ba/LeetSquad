@@ -37,7 +37,7 @@ def launch_green(host: str, port: int):
 @click.option("--agent-name", default="LeetCodeSolver", help="Agent name")
 def launch_white(host: str, port: int, agent_id: str, agent_name: str):
     """Start the white agent (LeetCode solver agent)"""
-    from .white_agent_consolidated.server import start_server
+    from .white_agent.server import start_server
     start_server(host, port, agent_id, agent_name)
 
 
