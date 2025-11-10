@@ -1,14 +1,12 @@
-# leetcode-benchmark
+# LeetSquad
 
 Group project for Agentic AI. We're building a green (eval) agent that benchmarks white (participant) agents on code generation capabilities using Leetcode problems.
 
-## 1. Environment Setup
-
-This section provides instructions for setting up the runtime of the agents.
-
 **Important: All commands below assume you are running from the project's root directory.**
 
-### 1.1 AWS Credentials Setup
+## 1. Setup
+
+### 1.1. AWS Setup
 
 The green agent uses AWS Bedrock for LLM access and DynamoDB for data storage. The Bedrock & DynamoDB clients will fail if you do not set up AWS credentials properly.
 
@@ -33,62 +31,49 @@ For Mac:
 3. run `aws configure`
 4. Configure your AWS access key ID and secret access key
 
-`bedrock_test.py` is provided as a playground for Bedrock. You can also use it to test if AWS credentials have been set up properly on your machine.
+### 1.2. Python Runtime Setup
 
-### 1.2 Python Environment
+```bash
+# Create a virtual environment
+uv venv
 
-This project uses **uv** to manage packages. To set up the Python runtime:
+# Activate virtual environment
+source .venv/bin/activate
 
-1. Create a virtual environment: `uv venv`
-2. Activate virtual environment: `source .venv/bin/activate`
-3. Install dependencies: `uv sync`
+# Install dependencies
+uv sync
+```
 
-Alternatively, if you prefer using a conda environment, you can install required dependencies by running: `pip install -r requirements.txt`
-
-**Development Tools:**
-
-- Format code: `uv run ruff format` (auto-formats with ruff)
-- Lint code: `uv run ruff check`
-- Add dependencies: Add to `pyproject.toml`, then run `uv lock` followed by `uv sync`
-- Update requirements.txt: `uv pip compile pyproject.toml -o requirements.txt` (for pip users only, not needed once everyone uses uv)
-
-We use pinned dependencies (via `uv.lock`) to ensure reproducibility across developers and deployment environments.
-
-## 2.1 CLI Commands
-
-The main entry point is `src.main` with the following CLI commands (assuming you've set up **uv** as described in section 1.2):
-
-**Launch Commands** (primary workflow):
+## 2. Usage
 
 ```bash
 # Start green agent (evaluation agent)
-uv run python -m src.main launch green [--host HOST] [--port PORT]
+uv run python -m src.main launch green [--optional-params]
 
 # Start white agent (solver agent)
-uv run python -m src.main launch white [--host HOST] [--port PORT] [--agent-id ID] [--agent-name NAME]
+uv run python -m src.main launch white [--optional-params]
 
-# Retrieve benchmarking results
+# Retrieve benchmarking results from green agent
 uv run python -m src.green_agent.report_results
 ```
 
-**Test Commands** (quick testing, green only for now):
+To see optional param usage:
 
 ```bash
-# Run tests on green agent
+uv run python -m src.main launch green --help
+uv run python -m src.main launch white --help
+```
+
+Once the green agent is running:
+
+```bash
+# Run some simple test cases on green agent
 uv run python -m src.green_agent.test_server
 ```
 
-**Note:** The test workflow is currently more developed but should eventually converge with the launch workflow to call the same underlying logic. For production use, prefer the `launch` commands.
-
 ## 3. Agent Interaction
 
-The communication between green and white agents is handled through A2A protocol.
-
-The green agent exposes the following skills:
-
-- register
-- distribute_problem
-- process_answer
+The communication between green and white agents is handled through A2A protocol. The green agent exposes the following skills:
 
 ### 3.1 Register
 
@@ -182,4 +167,18 @@ Output schema:
     "error": "<reason for rejection, only exists if rejected>",
     "results": "<benchmarking results>"
 }
+```
+
+## 4. For Developers
+
+```bash
+# Lint code
+uv run ruff check
+
+# Auto-format code
+uv run ruff format
+
+# To add a new dependency, modify `pyproject.toml` file , then run
+uv lock
+uv sync
 ```
