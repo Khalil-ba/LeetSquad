@@ -3,7 +3,7 @@
 
 # ruff: noqa: F401, F403
 
-from heapq import deque
+from collections import deque
 
 inf = float("inf")
 

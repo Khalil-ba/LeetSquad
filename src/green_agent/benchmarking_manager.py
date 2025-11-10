@@ -210,7 +210,8 @@ class BenchmarkingManager:
         time_complexity_num = None
         space_complexity_num = None
         readability_overall = None
-        self._detailed_results[agent_id][task_id] = {}
+        if task_id not in self._detailed_results[agent_id]:
+            self._detailed_results[agent_id][task_id] = {}
 
         # Run test cases
         if not self.skip_tests:

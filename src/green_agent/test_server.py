@@ -8,6 +8,12 @@ from a2a.client import A2ACardResolver, A2AClient
 from a2a.types import MessageSendParams, SendMessageRequest
 from a2a.utils.constants import AGENT_CARD_WELL_KNOWN_PATH
 
+"""
+A runnable file that spins up a simple white agent and tests its interaction with
+the green agent. To use, run these commands from the root dir in order:
+1. uv run python -m src.main launch green
+2. uv run python -m src.green_agent.test_server
+"""
 
 async def test_green_agent() -> None:
     base_url = "http://localhost:9999"
@@ -75,13 +81,53 @@ async def test_green_agent() -> None:
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
         # Test: Distribute Problem
-        print_header("Testing: distribute 1st problem")
+        print_header("Testing: distribute 2nd problem")
         distribute_input = {
             "skill": "distribute_problem",
             "name": "dummy_agent",
             "id": id,
         }
         response = await send_message(client, distribute_input)
+        response_message = retrieve_message(response)
+        print(f"Response: {json.dumps(response_message, indent=4)}")
+
+        # Test: Submit Answer
+        print_header("Testing: submit answer")
+        solution = textwrap.dedent(
+            """
+            class Solution:
+                def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+                    dummy = ListNode(0)
+                    cur = dummy
+                    carry = 0
+
+                    # Loop until both lists are exhausted and no carry remains
+                    while l1 is not None or l2 is not None or carry != 0:
+                        v1 = l1.val if l1 is not None else 0
+                        v2 = l2.val if l2 is not None else 0
+
+                        total = v1 + v2 + carry
+                        carry = total // 10
+                        digit = total % 10
+
+                        cur.next = ListNode(digit)
+                        cur = cur.next
+
+                        if l1 is not None:
+                            l1 = l1.next
+                        if l2 is not None:
+                            l2 = l2.next
+
+                    return dummy.next
+            """
+        )
+        submit_input = {
+            "skill": "process_answer",
+            "name": "dummy_agent",
+            "id": id,
+            "solution": solution,
+        }
+        response = await send_message(client, submit_input)
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
