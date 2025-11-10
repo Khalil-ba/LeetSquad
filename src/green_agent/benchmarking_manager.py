@@ -42,7 +42,7 @@ class BenchmarkingManager:
         self.judge = (
             LLMJudge(model_id=model, verbose=False) if not skip_llm_judge else None
         )
-        self.llm_judge_executor = ThreadPoolExecutor(max_workers=10)
+        self.llm_judge_executor = ThreadPoolExecutor(max_workers=1)
 
         # In-memory storage (designed for easy migration to DB)
         self._agents: Dict[str, str] = {}  # agent_id -> agent_name

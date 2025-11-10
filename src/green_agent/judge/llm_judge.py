@@ -1,8 +1,11 @@
 import json
+import logging
 import textwrap
 
 from ..aws.bedrock_client import BedrockClient
 from ..utility.complexity import Complexity
+
+logger = logging.getLogger(__name__)
 
 
 class LLMJudge:
@@ -23,6 +26,8 @@ class LLMJudge:
         - Write complexity in Big-O notation. Use the letter n as default input size.
             Valid values are: O(1), O(log n), O(√n), O(n), O(n log n), O(n^2), O(n^3),
             O(2^n), O(n!)
+        - If there are more than one input size (e.g. m and n), drop the non-dominant
+            one and write complexity in terms of n only.
         - Include a one-sentence justification for your conclusion.
 
         Your output MUST be a valid JSON object of the following format. Do not include
@@ -148,16 +153,15 @@ class LLMJudge:
                 return None
 
         # prompt the LLM and parse response into a dict
-        response = self.llm_client.generate(self.COMPLEXITY_PROMPT + code)
+        response = self.llm_client.generate(self.COMPLEXITY_PROMPT, code)
         validated = transform_llm_output(response)
 
         # allow one retry if the LLM output is invalid
-        if validated is None:
-            if self.verbose:
-                print("Received invalid response:")
-                print(response)
-            print("Retrying LLM generation...")
-            response = self.llm_client.generate(self.COMPLEXITY_PROMPT + code)
+        if validated is None and self.verbose:
+            logger.info("Received invalid response:")
+            logger.info(response)
+            logger.info("Retrying LLM generation...")
+            response = self.llm_client.generate(self.COMPLEXITY_PROMPT, code)
             validated = transform_llm_output(response)
             if validated is None:
                 raise Exception("LLM failed to generate valid time & space complexities")
@@ -217,16 +221,15 @@ class LLMJudge:
                 return None
 
         # prompt the LLM and parse response into a dict
-        response = self.llm_client.generate(self.READABILITY_PROMPT + code)
+        response = self.llm_client.generate(self.READABILITY_PROMPT, code)
         validated = transform_llm_output(response)
 
         # allow one retry if the LLM output is invalid
-        if validated is None:
-            if self.verbose:
-                print("Received invalid response:")
-                print(response)
-            print("Retrying LLM generation...")
-            response = self.llm_client.generate(self.READABILITY_PROMPT + code)
+        if validated is None and self.verbose:
+            logger.info("Received invalid response:")
+            logger.info(response)
+            logger.info("Retrying LLM generation...")
+            response = self.llm_client.generate(self.READABILITY_PROMPT, code)
             validated = transform_llm_output(response)
             if validated is None:
                 raise Exception("LLM failed to generate valid readability scores")

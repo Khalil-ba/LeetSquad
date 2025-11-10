@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "a2a_sdk[http-server]>=0.3.10",
-    "boto3>=1.34.0",
+    "boto3>=1.40.0",
     "click>=8.1.0",
     "fastapi>=0.100.0",
     "ruff>=0.14.0",
