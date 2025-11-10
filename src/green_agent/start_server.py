@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 def start_server(host: str, port: int):
     """Start the green agent (coding evaluation agent)"""
+    
     logger.info(f"Starting green agent on {host}:{port}")
 
     request_handler = DefaultRequestHandler(

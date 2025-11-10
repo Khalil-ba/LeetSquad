@@ -35,7 +35,7 @@ For Mac:
 
 `bedrock_test.py` is provided as a playground for Bedrock. You can also use it to test if AWS credentials have been set up properly on your machine.
 
-### 1.2 Python Runtime
+### 1.2 Python Environment
 
 This project uses **uv** to manage packages. To set up the Python runtime:
 
@@ -43,7 +43,7 @@ This project uses **uv** to manage packages. To set up the Python runtime:
 2. Activate virtual environment: `source .venv/bin/activate`
 3. Install dependencies: `uv sync`
 
-Alternatively, you can use **pip**: `pip install -r requirements.txt`
+Alternatively, if you prefer using a conda environment, you can install required dependencies by running: `pip install -r requirements.txt`
 
 **Development Tools:**
 
@@ -54,40 +54,30 @@ Alternatively, you can use **pip**: `pip install -r requirements.txt`
 
 We use pinned dependencies (via `uv.lock`) to ensure reproducibility across developers and deployment environments.
 
-### 1.3 CLI Commands
+## 2.1 CLI Commands
 
-The main entry point is `python -m src.main` with the following commands:
+The main entry point is `src.main` with the following CLI commands (assuming you've set up **uv** as described in section 1.2):
 
 **Launch Commands** (primary workflow):
 
 ```bash
 # Start green agent (evaluation server)
-python -m src.main launch green [--host HOST] [--port PORT]
+uv run python -m src.main launch green [--host HOST] [--port PORT]
 
 # Start white agent (solver)
-python -m src.main launch white [--host HOST] [--port PORT] [--agent-id ID] [--agent-name NAME]
-
-# Start both agents
-python -m src.main launch both [--green-port PORT] [--white-port PORT]
+uv run python -m src.main launch white [--host HOST] [--port PORT] [--agent-id ID] [--agent-name NAME]
 ```
 
 **Test Commands** (quick testing, green only for now):
 
 ```bash
 # Run tests on green agent
-python -m src.main test green \
-  [--model MODEL_ID] \
-  [--skip-tests] \
-  [--skip-llm-judge] \
-  [--limit N] \
-  [--task-id ID] \
-  [--agents agent1,agent2] \
-  [--csv-path PATH]
+uv run python -m src.green_agent.test_server
 ```
 
 **Note:** The test workflow is currently more developed but should eventually converge with the launch workflow to call the same underlying logic. For production use, prefer the `launch` commands.
 
-## 2. Agent Interaction
+## 3. Agent Interaction
 
 The communication between green and white agents is handled through A2A protocol.
 
@@ -97,7 +87,7 @@ The green agent exposes the following skills:
 - distribute_problem
 - process_answer
 
-### 2.1 Register
+### 3.1 Register
 
 The white agent invokes this skill to register itself with the green agent. Upon receiving the request, the green agent will assign an ID to the white agent.
 
@@ -114,11 +104,12 @@ Output schema:
 
 ```json
 {
+    "status": "accepted",
     "id": "<assigned ID>"
 }
 ```
 
-### 2.2 Distribute Problem
+### 3.2 Distribute Problem
 
 The white agent invokes this skill to get a new coding problem from the green agent.
 
@@ -139,12 +130,11 @@ Output schema:
     "error": "<reason for rejection, only exists if rejected>",
     "problem_description": "<problem description>",
     "starter_code": "<starter code>",
-    "entry_point": "<entry point in starter code>",
-    "prompt": "<prompt>"
+    "entry_point": "<entry point in starter code>"
 }
 ```
 
-### 2.3 Process Answer
+### 3.3 Process Answer
 
 The white agent invokes this skill to submit its answer to the green agent. The green agent will then evaluate the generated code based on its correctness and readability, and record the scores.
 
