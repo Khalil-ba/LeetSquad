@@ -1,4 +1,5 @@
 import csv
+import json
 import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, List, Optional
@@ -281,7 +282,7 @@ class BenchmarkingManager:
             f"Result: {results}"
         )
 
-
+    # TODO: this function can be deleted in favor of report_results
     def get_results(self, agent_id: Optional[str] = None) -> Dict:
         """
         Get evaluation results.
@@ -305,3 +306,9 @@ class BenchmarkingManager:
                 all_results[key] = scores
 
         return all_results
+
+    # TODO: implement this function. Some ideas:
+    #  - Aggregate results for each agent ID
+    #  - Think of a way to incorporate complexity
+    def report_results(self) -> str:
+        return json.dumps(self._results, indent=4)

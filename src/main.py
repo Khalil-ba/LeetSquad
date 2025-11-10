@@ -1,4 +1,3 @@
-# ruff: noqa: E501
 """CLI entry point for LeetSquad"""
 
 import logging
@@ -26,10 +25,10 @@ def launch():
 @launch.command(name="green")
 @click.option("--host", default="0.0.0.0", type=str, show_default=True, help="Host to bind to")
 @click.option("--port", default=9999, type=int, show_default=True, help="Port to listen on")
-@click.option("--skip-tests/--use-tests", default=False, show_default=True, help="Whether to skip accuracy tests")
-@click.option("--skip-llm-judge/--use-llm-judge", default=False, show_default=True, help="Whether to skip LLM judge")
-@click.option("--llm-judge-model", default=None, type=str, help="Model for LLM judge")
-@click.option("--limit-problems", default=None, type=int, help="Number of problems to use")
+@click.option("--skip-tests", default=False, type=bool, show_default=True, help="Whether to skip accuracy tests")
+@click.option("--skip-llm-judge", default=False, type=bool, show_default=True, help="Whether to skip LLM judge")
+@click.option("--llm-judge-model", default=None, type=str, show_default=True, help="Model for LLM judge")
+@click.option("--limit-problems", default=None, type=int, show_default=True, help="Number of problems to use")
 def launch_green(
     host: str,
     port: int,

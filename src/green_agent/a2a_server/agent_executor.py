@@ -16,8 +16,6 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
         message = context.get_user_input()
         input = json.loads(message)
 
-        # TODO: validate input schema
-
         skill = input.get("skill")
         match skill:
             case "register":
@@ -26,8 +24,9 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
                 result = await self.agent.distribute_problem(input)
             case "process_answer":
                 result = await self.agent.process_answer(input)
-            case "start_benchmarking":
-                result = await self.agent.start_benchmarking(input)
+            case "report_results":
+                # TODO: add authentication (this skill shouldn't be used by white agents)
+                result = await self.agent.report_results(input)
             case _:
                 result = json.dumps({"status": "rejected", "error": "Invalid skill"})
 

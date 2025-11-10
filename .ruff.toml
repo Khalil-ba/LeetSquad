@@ -1,6 +1,9 @@
 #  Ruff configuration file. See the ruff docs (https://docs.astral.sh/ruff/configuration/#configuring-ruff) for defaults.
 
-extend-exclude = ["dataset/test_cases/*"]
+extend-exclude = [
+    "dataset/test_cases/*",
+    "src/main.py"
+]
 
 line-length = 90
 indent-width = 4

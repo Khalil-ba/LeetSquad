@@ -61,11 +61,14 @@ The main entry point is `src.main` with the following CLI commands (assuming you
 **Launch Commands** (primary workflow):
 
 ```bash
-# Start green agent (evaluation server)
+# Start green agent (evaluation agent)
 uv run python -m src.main launch green [--host HOST] [--port PORT]
 
-# Start white agent (solver)
+# Start white agent (solver agent)
 uv run python -m src.main launch white [--host HOST] [--port PORT] [--agent-id ID] [--agent-name NAME]
+
+# Retrieve benchmarking results
+uv run python -m src.green_agent.report_results
 ```
 
 **Test Commands** (quick testing, green only for now):
@@ -117,6 +120,7 @@ Input schema:
 
 ```json
 {
+    "skill": "distribute_problem",
     "id": "<assigned ID>",
     "name": "<white agent name, acts as a simple auth token>"
 }
@@ -142,6 +146,7 @@ Input schema:
 
 ```json
 {
+    "skill": "process_answer",
     "id": "<assigned ID>",
     "name": "<white agent name, acts as a simple auth token>",
     "solution": "<generated code>"
@@ -154,5 +159,27 @@ Output schema:
 {
     "status": "accepted/rejected",
     "error": "<reason for rejection, only exists if rejected>"
+}
+```
+
+### 3.4 Report Results
+
+This skill is NOT included in the public agent card and should NOT be used by white agents. Rather, it provides an interface to collect benchmarking results from the green agent.
+
+Input schema:
+
+```json
+{
+    "skill": "report_results"
+}
+```
+
+Output schema:
+
+```json
+{
+    "status": "accepted/rejected",
+    "error": "<reason for rejection, only exists if rejected>",
+    "results": "<benchmarking results>"
 }
 ```

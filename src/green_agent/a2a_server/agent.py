@@ -127,3 +127,16 @@ class CodingEvaluationAgent:
         except Exception as e:
             logger.error(f"Internal error processing answer: {e}")
             return json.dumps({"status": "rejected", "error": "Server-side error"})
+
+    async def report_results(self, input) -> str:
+        """
+        Report the benchmarking results.
+        See README.md for input and output schema.
+        """
+        try:
+            manager = self.get_manager()
+            results = manager.report_results()
+            return json.dumps({"status": "accepted", "results": results})
+        except Exception as e:
+            logger.error(f"Internal error processing answer: {e}")
+            return json.dumps({"status": "rejected", "error": "Server-side error"})
