@@ -47,7 +47,7 @@ async def test_green_agent() -> None:
         results = json.loads(text_json_str).get("results")
 
         # Print results to console (can be changed to a file)
-        print(results)
+        print(json.dumps(results, indent=4))
 
 
 if __name__ == "__main__":

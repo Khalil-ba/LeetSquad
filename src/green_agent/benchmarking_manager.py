@@ -307,8 +307,142 @@ class BenchmarkingManager:
 
         return all_results
 
-    # TODO: implement this function. Some ideas:
-    #  - Aggregate results for each agent ID
-    #  - Think of a way to incorporate complexity
-    def report_results(self) -> str:
-        return json.dumps(self._results, indent=4)
+    # Aggregate results for all agents and overall summary
+    def report_results(self) -> Dict:
+        """Return aggregated benchmarking results across all registered agents.
+
+        Structure:
+        {
+          "agents": {
+             "<agent_id>": {
+                 "name": "<agent_name>",
+                 "problems_scored": <int>,
+                 "tests": {
+                     "total_passed": <int>,
+                     "total": <int>,
+                     "percent": <float|null>,
+                     "avg_tests_percent": <float|null>
+                 },
+                 "llm": {
+                     "avg_readability_overall": <float|null>
+                 }
+             },
+             ...
+          },
+          "overall": { ...same fields aggregated across agents... }
+        }
+        """
+        agents_summary: Dict[str, Dict] = {}
+
+        overall_total_passed = 0
+        overall_total_tests = 0
+        overall_tests_percents: List[float] = []
+        overall_readability_scores: List[int] = []
+        overall_problems_scored = 0
+
+        for agent_id, task_results in self._results.items():
+            agent_name = self._agents.get(agent_id, agent_id)
+
+            total_passed = 0
+            total_tests = 0
+            tests_percents: List[float] = []
+            time_complexities: List[int] = []
+            space_complexities: List[int] = []
+            readability_scores: List[int] = []
+
+            # Pull accuracy details from detailed results if available
+            detailed = self._detailed_results.get(agent_id, {})
+
+            for task_id, scores in task_results.items():
+                # Tests percent at per-task level
+                tp = scores.get("tests_percent")
+                if isinstance(tp, (int, float)):
+                    tests_percents.append(float(tp))
+                    overall_tests_percents.append(float(tp))
+
+                # Sum passed/total when recorded in detailed results
+                acc = detailed.get(task_id, {}).get("accuracy", {})
+                p = acc.get("passed")
+                t = acc.get("total")
+                if isinstance(p, int) and isinstance(t, int):
+                    total_passed += p
+                    total_tests += t
+
+                # LLM judge aggregates when available
+                tc = scores.get("time_complexity")
+                sc = scores.get("space_complexity")
+                rd = scores.get("readability_overall")
+                if isinstance(tc, int):
+                    time_complexities.append(tc)
+                if isinstance(sc, int):
+                    space_complexities.append(sc)
+                if isinstance(rd, int):
+                    readability_scores.append(rd)
+                    overall_readability_scores.append(rd)
+
+            # Build per-agent summary
+            problems_scored = len(task_results)
+            agents_summary[agent_id] = {
+                "name": agent_name,
+                "problems_scored": problems_scored,
+                "tests": {
+                    "total_passed": total_passed,
+                    "total": total_tests,
+                    "percent": round(100.0 * total_passed / total_tests, 1)
+                    if total_tests > 0
+                    else None,
+                    "avg_tests_percent": round(
+                        sum(tests_percents) / len(tests_percents), 1
+                    )
+                    if tests_percents
+                    else None,
+                },
+                "llm": {
+                    "avg_time_complexity": round(
+                        sum(time_complexities) / len(time_complexities), 2
+                    )
+                    if time_complexities
+                    else None,
+                    "avg_space_complexity": round(
+                        sum(space_complexities) / len(space_complexities), 2
+                    )
+                    if space_complexities
+                    else None,
+                    "avg_readability_overall": round(
+                        sum(readability_scores) / len(readability_scores), 2
+                    )
+                    if readability_scores
+                    else None,
+                },
+            }
+
+            overall_total_passed += total_passed
+            overall_total_tests += total_tests
+            overall_problems_scored += problems_scored
+
+        overall = {
+            "agents_count": len(self._agents),
+            "problems_scored": overall_problems_scored,
+            "tests": {
+                "total_passed": overall_total_passed,
+                "total": overall_total_tests,
+                "percent": round(100.0 * overall_total_passed / overall_total_tests, 1)
+                if overall_total_tests > 0
+                else None,
+                "avg_tests_percent": round(
+                    sum(overall_tests_percents) / len(overall_tests_percents), 1
+                )
+                if overall_tests_percents
+                else None,
+            },
+            "llm": {
+                "avg_readability_overall": round(
+                    sum(overall_readability_scores) / len(overall_readability_scores),
+                    2,
+                )
+                if overall_readability_scores
+                else None,
+            },
+        }
+
+        return {"agents": agents_summary, "overall": overall}
