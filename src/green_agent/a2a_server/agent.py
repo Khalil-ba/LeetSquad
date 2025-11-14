@@ -2,6 +2,8 @@ import json
 import logging
 import uuid
 
+from .docs import kick_off_message
+
 from ..benchmarking_manager import BenchmarkingManager
 
 logger = logging.getLogger(__name__)
@@ -38,6 +40,16 @@ class CodingEvaluationAgent:
             skip_llm_judge=skip_llm_judge,
             limit_problems=limit_problems,
         )
+
+    async def get_instructions(self, input) -> str:
+        """
+        Sends a high-level kick-off message to white agents, detailing their overall
+        task, benchmarking workflow, skills they can invoke, etc.
+
+        The green agent assumes white agents have prior knowledge to invoke this skill
+        as the starting point of interactions.
+        """
+        return json.dumps({"status": "accepted", "instructions": kick_off_message})
 
     async def register(self, input) -> str:
         """

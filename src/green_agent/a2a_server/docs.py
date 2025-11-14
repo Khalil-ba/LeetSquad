@@ -1,25 +1,89 @@
+import json
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
 
+kick_off_message = """
+You are a participant agent (i.e. white agent) in a coding contest. Your task is to
+retrieve coding problems, solve them, and submit your answer to the evaluation agent
+(i.e. green agent). There are about 2800 problems and you should solve as many as
+possible.
+
+## High-Level Workflow
+The high-level workflow of this competition is:
+1. Register yourself
+2. Retrieve a coding problem
+3. Submit your answer
+4. Repeat 2-3 until there are no more problems left
+
+## Important Rules
+For each problem, you will receive a problem description, some starter code (i.e.
+scaffolding, and the evaluation entry point. Here are some things to keep in mind:
+- Make sure you follow the scaffolding, otherwise you will receive 0 points.
+- Your entire solution is treated as Python code. Therefore, do NOT wrap your code
+  around ``` or include any plain-text commentary - otherwise you will receive 0 points. 
+
+## Green Agent Skills
+You can invoke three skills on green agent:
+- register: register yourself and obtain a participant unique ID
+- distribute_problem: get your next coding problem to solve
+- process_answer: submit your answer to the problem
+
+Please refer to the public agent card for input schema when invoking the above skills.
+Your input must be a valid json object containing all required input fields.
+
+## Signal of Completion
+After you complete all problems, you will receive "No more problems available" the
+next time you invoke distribute_problem. Once you're done, no more further interactions
+are required.
+"""
+
 # Skills below are visible to the white agents
+get_instructions_skill = AgentSkill(
+    id="get_instructions",
+    name="Get Instructions",
+    description="Returns a kick-off message with high-level instructions for the white agent",
+    tags=["green agent", "kick-off", "instructions"],
+    examples=[json.dumps({"skill": "get_instructions"})],
+)
+
 register_skill = AgentSkill(
     id="register",
     name="Register",
     description="Register the white agent with the green agent",
-    tags=["register"],
+    tags=["green agent", "register"],
+    examples=[json.dumps({"skill": "register", "name": "<your agent name>"})],
 )
 
 distribute_problem_skill = AgentSkill(
     id="distribute_problem",
     name="Distribute Problem",
     description="Distribute a new coding problem to the white agent",
-    tags=["distribute_problem"],
+    tags=["green agent", "distribute problem"],
+    examples=[
+        json.dumps(
+            {
+                "skill": "distribute_problem",
+                "id": "<your assigned ID>",
+                "name": "<your agent name>",
+            }
+        )
+    ],
 )
 
 process_answer_skill = AgentSkill(
     id="process_answer",
     name="Process Answer",
     description="Process the answer from the white agent",
-    tags=["process_answer"],
+    tags=["green agent", "process answer"],
+    examples=[
+        json.dumps(
+            {
+                "skill": "process_answer",
+                "id": "<your assigned ID>",
+                "name": "<your agent name>",
+                "solution": "<your generated code>",
+            }
+        )
+    ],
 )
 
 # Public agent card
@@ -31,7 +95,12 @@ agent_card = AgentCard(
     default_input_modes=["text"],
     default_output_modes=["text"],
     capabilities=AgentCapabilities(streaming=False),
-    skills=[register_skill, distribute_problem_skill, process_answer_skill],
+    skills=[
+        get_instructions_skill,
+        register_skill,
+        distribute_problem_skill,
+        process_answer_skill,
+    ],
     supports_authenticated_extended_card=True,
 )
 
@@ -40,7 +109,7 @@ report_results_skill = AgentSkill(
     id="report_results",
     name="Report Results",
     description="Returns the current benchmarking results. Hidden to white agents.",
-    tags=["report_results", "extended"],
+    tags=["green agent", "report results", "extended"],
 )
 
 # Extended (hidden) agent card
@@ -48,6 +117,7 @@ extended_agent_card = agent_card.model_copy(
     update={
         "name": "Coding Evaluation Agent - Extended",
         "skills": [
+            get_instructions_skill,
             register_skill,
             distribute_problem_skill,
             process_answer_skill,

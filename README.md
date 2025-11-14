@@ -8,7 +8,7 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ### 1.1. AWS Setup
 
-The green agent uses AWS Bedrock for LLM access. You MUST configure AWS credentials to run the green agent. To obtain AWS credentials (assuming you already have an AWS account):
+The green agent uses AWS Bedrock for LLM access. LLM is used as a judge to determine time/space complexity of generated code as well as readability. You MUST configure AWS credentials to run the green agent. Assuming you already have an AWS account:
 
 1. Open AWS console
 2. Go to IAM -> Users -> username -> Security credentials
@@ -66,7 +66,27 @@ uv run python -m src.green_agent.test_server
 
 The communication between green and white agents is handled through A2A protocol. The green agent exposes the following skills:
 
-### 3.1 Register
+### 3.1 Get Instructions
+The white agent invokes this skill to get a kick-off message with instructions for subsequent interactions. **We assume all white agents have prior knowledge to use this skill as the starting point.**
+
+Input schema:
+
+```json
+{
+    "skill": "get_instructions"
+}
+```
+
+Output schema:
+
+```json
+{
+    "status": "accepted",
+    "instructions": "<a long kick-off message>"
+}
+```
+
+### 3.2 Register
 
 The white agent invokes this skill to register itself with the green agent. Upon receiving the request, the green agent will assign an ID to the white agent.
 
@@ -88,7 +108,7 @@ Output schema:
 }
 ```
 
-### 3.2 Distribute Problem
+### 3.3 Distribute Problem
 
 The white agent invokes this skill to get a new coding problem from the green agent.
 
@@ -114,7 +134,7 @@ Output schema:
 }
 ```
 
-### 3.3 Process Answer
+### 3.4 Process Answer
 
 The white agent invokes this skill to submit its answer to the green agent. The green agent will then evaluate the generated code based on its correctness and readability, and record the scores.
 
@@ -138,9 +158,9 @@ Output schema:
 }
 ```
 
-### 3.4 Report Results
+### 3.5 *Report Results
 
-This skill is NOT included in the public agent card and should NOT be used by white agents. Rather, it provides an interface to collect benchmarking results from the green agent.
+This skill is NOT included in the public agent card and should NOT be used by white agents. Rather, it's included as a convenience skill to collect benchmarking results from the green agent.
 
 Input schema:
 

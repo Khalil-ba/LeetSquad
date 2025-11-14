@@ -20,22 +20,26 @@ async def test_green_agent() -> None:
     base_url = "http://localhost:9999"
 
     async with httpx.AsyncClient() as httpx_client:
-        # Initialize A2ACardResolver
+        # Fetch Public Agent Card
         resolver = A2ACardResolver(
             httpx_client=httpx_client,
             base_url=base_url,
         )
-
-        # Fetch Public Agent Card
         print_header("Testing: fetch agent card")
         print(f"Fetching agent card from: {base_url}{AGENT_CARD_WELL_KNOWN_PATH}")
         agent_card = await resolver.get_agent_card()
         print("Agent card fetched successfully:")
-        # print(agent_card.model_dump_json(indent=2, exclude_none=True))
+        print(agent_card)
 
         # Initialize A2AClient
         client = A2AClient(httpx_client=httpx_client, agent_card=agent_card)
         print("A2AClient initialized.\n")
+
+        # Get kick-off message
+        print_header("Testing: get kick-off message")
+        response = await send_message(client, {"skill": "get_instructions"})
+        response_message = retrieve_message(response)
+        print(f"Response:\n{response_message}")
 
         # Test: Register skill
         print_header("Testing: register dummy_agent")

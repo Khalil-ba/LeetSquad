@@ -167,7 +167,9 @@ class BenchmarkingManager:
 
         # Check if agent has completed all problems
         if current_idx >= len(self._dataset):
-            raise ValueError("No more problems available")
+            return {
+                "message": "You have completed all problems. No more problems available."
+            }
 
         # Get the next problem
         problem = self._dataset[current_idx]
