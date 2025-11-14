@@ -284,31 +284,6 @@ class BenchmarkingManager:
             f"Result: {results}"
         )
 
-    # TODO: this function can be deleted in favor of report_results
-    def get_results(self, agent_id: Optional[str] = None) -> Dict:
-        """
-        Get evaluation results.
-
-        Args:
-            agent_id: Optional agent identifier. If None, returns all results.
-
-        Returns:
-            Dict with results for specified agent or all agents
-        """
-        if agent_id is not None:
-            if not self.is_registered(agent_id):
-                raise ValueError("Agent not registered")
-            return self._results[agent_id]
-
-        # Return all results in the format: agent_id:task_id -> scores
-        all_results = {}
-        for aid, task_results in self._results.items():
-            for task_id, scores in task_results.items():
-                key = f"{aid}:{task_id}"
-                all_results[key] = scores
-
-        return all_results
-
     # Aggregate results for all agents and overall summary
     def report_results(self) -> Dict:
         """Return aggregated benchmarking results across all registered agents.

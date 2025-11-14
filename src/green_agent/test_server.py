@@ -136,6 +136,13 @@ async def test_green_agent() -> None:
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
+        # Test: Report Results
+        await asyncio.sleep(10)  # wait for green agent to generate score
+        print_header("Testing: report result")
+        response = await send_message(client, {"skill": "report_results"})
+        response_message = retrieve_message(response)
+        print(f"Response: {json.dumps(response_message, indent=4)}")
+
 
 async def send_message(a2a_client, input_dict: dict):
     """
