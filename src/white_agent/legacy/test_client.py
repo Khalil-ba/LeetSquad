@@ -18,7 +18,6 @@ from a2a.utils.constants import (
 
 async def main() -> None:
     # Configure logging to show INFO level messages
-    logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(__name__)  # Get a logger instance
 
     # --8<-- [start:A2ACardResolver]

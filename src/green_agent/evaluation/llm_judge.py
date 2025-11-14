@@ -2,8 +2,8 @@ import json
 import logging
 import textwrap
 
-from ..aws.bedrock_client import BedrockClient
-from ..utility.complexity import Complexity
+from ..aws import BedrockClient
+from .utils.complexity import Complexity
 
 logger = logging.getLogger(__name__)
 

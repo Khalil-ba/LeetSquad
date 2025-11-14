@@ -8,7 +8,19 @@ from .agent import CodingEvaluationAgent
 
 
 class CodingEvaluationAgentExecutor(AgentExecutor):
+    """
+    Executor class for the CodingEvaluationAgent.
+
+    This class bridges the A2A agent execution framework with the green agent's
+    core evaluation logic. It receives A2A user requests, parses the skill invocation,
+    delegates the request to the appropriate method on CodingEvaluationAgent, and
+    returns the result to the event queue.
+    """
+
     def __init__(self, **benchmarking_kwargs):
+        """
+        Constructor args are used directly to initialize BenchmarkingManager
+        """
         CodingEvaluationAgent.initialize_manager(**benchmarking_kwargs)
         self.agent = CodingEvaluationAgent()
 

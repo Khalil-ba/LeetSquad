@@ -5,12 +5,8 @@ from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
 
-from .a2a_server.agent_executor import CodingEvaluationAgentExecutor
-from .a2a_server.docs import agent_card, extended_agent_card
+from ..a2a_server import CodingEvaluationAgentExecutor, agent_card, extended_agent_card
 
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
 logger = logging.getLogger(__name__)
 
 

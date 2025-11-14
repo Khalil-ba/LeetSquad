@@ -2,9 +2,9 @@ import json
 import logging
 import uuid
 
-from .docs import kick_off_message
+from .agent_docs import kick_off_message
 
-from ..benchmarking_manager import BenchmarkingManager
+from ..evaluation import BenchmarkingManager
 
 logger = logging.getLogger(__name__)
 

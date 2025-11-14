@@ -4,8 +4,8 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, List, Optional
 
-from .accuracy_check.run_testcases import str_to_func, test_accuracy
-from .judge.llm_judge import LLMJudge
+from .accuracy_check import str_to_func, test_accuracy
+from .llm_judge import LLMJudge
 
 logger = logging.getLogger(__name__)
 

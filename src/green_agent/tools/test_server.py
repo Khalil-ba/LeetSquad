@@ -1,4 +1,3 @@
-import asyncio
 import json
 import textwrap
 from uuid import uuid4
@@ -16,8 +15,8 @@ the green agent. To use, run these commands from the root dir in order:
 """
 
 
-async def test_green_agent() -> None:
-    base_url = "http://localhost:9999"
+async def test_green_agent(host: str, port: str) -> None:
+    base_url = f"http://{host}:{port}"
 
     async with httpx.AsyncClient() as httpx_client:
         # Fetch Public Agent Card
@@ -136,13 +135,6 @@ async def test_green_agent() -> None:
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
-        # Test: Report Results
-        await asyncio.sleep(10)  # wait for green agent to generate score
-        print_header("Testing: report result")
-        response = await send_message(client, {"skill": "report_results"})
-        response_message = retrieve_message(response)
-        print(f"Response: {json.dumps(response_message, indent=4)}")
-
 
 async def send_message(a2a_client, input_dict: dict):
     """
@@ -186,7 +178,3 @@ def print_header(header: str):
     print("=" * 50)
     print(header)
     print("=" * 50)
-
-
-if __name__ == "__main__":
-    asyncio.run(test_green_agent())

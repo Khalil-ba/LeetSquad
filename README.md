@@ -45,7 +45,7 @@ uv run python -m src.main launch green [--optional-params]
 uv run python -m src.main launch white [--optional-params]
 
 # Retrieve benchmarking results from green agent
-uv run python -m src.green_agent.report_results
+uv run python -m src.main report
 ```
 
 To see optional param usage:
@@ -59,7 +59,10 @@ Once the green agent is running:
 
 ```bash
 # Run some simple test cases on green agent
-uv run python -m src.green_agent.test_server
+uv run python -m src.main test green
+
+# Wait for a while and get aggregated results
+uv run python -m src.main report
 ```
 
 ## 3. Agent Interaction

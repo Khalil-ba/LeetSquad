@@ -1,4 +1,3 @@
-import asyncio
 import json
 from uuid import uuid4
 
@@ -12,7 +11,7 @@ A runnable file that collects benchmarking results from the green agent.
 """
 
 
-async def test_green_agent() -> None:
+async def report_results() -> None:
     base_url = "http://localhost:9999"
 
     async with httpx.AsyncClient() as httpx_client:
@@ -48,7 +47,3 @@ async def test_green_agent() -> None:
 
         # Print results to console (can be changed to a file)
         print(json.dumps(results, indent=4))
-
-
-if __name__ == "__main__":
-    asyncio.run(test_green_agent())

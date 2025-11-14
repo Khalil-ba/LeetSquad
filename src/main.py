@@ -1,18 +1,18 @@
 """CLI entry point for LeetSquad"""
 
 import logging
-
 import click
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s [%(levelname)s] %(message)s"
 )
+# Turn down logging from noisy libraries
+logging.getLogger("a2a").setLevel(logging.ERROR)
 
 
 @click.group()
 def cli():
-    """LeetSquad - Benchmark white agents on LeetCode problems"""
     pass
 
 
@@ -37,9 +37,8 @@ def launch_green(
     llm_judge_model: str | None,
     limit_problems: int | None,
 ):
-    """Start the green agent server (for multiprocessing)"""
-    from .green_agent.start_server import start_server
-
+    """Start the green agent (LeetCode eval agent)"""
+    from .green_agent.tools.start_server import start_server
     start_server(
         host,
         port,
@@ -49,17 +48,47 @@ def launch_green(
         limit_problems=limit_problems,
     )
 
-
 @launch.command(name="white")
-@click.option("--host", default="0.0.0.0", help="Host to bind to")
-@click.option("--port", default=9998, help="Port to listen on")
+@click.option("--host", default="localhost", help="Host to bind to")
+@click.option("--port", default=9999, help="Port to listen on")
 @click.option("--agent-id", default="white_agent_001", help="Agent ID")
 @click.option("--agent-name", default="LeetCodeSolver", help="Agent name")
 def launch_white(host: str, port: int, agent_id: str, agent_name: str):
     """Start the white agent (LeetCode solver agent)"""
     from .white_agent.server import start_server
-
     start_server(host, port, agent_id, agent_name)
+
+
+@cli.group()
+def test():
+    """Test agents (green or white)"""
+    pass
+
+
+@test.command(name="green")
+@click.option("--host", default="localhost", type=str)
+@click.option("--port", default=9999, type=int)
+def test_green(host: str, port: str):
+    """Run some predefined tests on green agent"""
+    from .green_agent.tools import test_green_agent
+    import asyncio
+    asyncio.run(test_green_agent(host, port))
+
+
+@test.command(name="white")
+@click.option("--host", default="localhost", type=str)
+@click.option("--port", default=9999, type=int)
+def test_white(host: str, port: str):
+    """Run some predefined tests on white agent"""
+    pass # to be implemented
+
+
+@cli.command(name="report")
+def report_results():
+    """Retrieve benchmark results from green agent"""
+    from .green_agent.tools import report_results
+    import asyncio
+    asyncio.run(report_results())
 
 
 if __name__ == "__main__":
