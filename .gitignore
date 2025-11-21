@@ -215,3 +215,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 token.txt
+
+.ab/
+requirements.txt
