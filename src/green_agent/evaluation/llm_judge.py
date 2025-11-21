@@ -2,7 +2,7 @@ import json
 import logging
 import textwrap
 
-from ..aws import BedrockClient
+from ..cloud import BedrockClient, OpenAIClient
 from .utils.complexity import Complexity
 
 logger = logging.getLogger(__name__)
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class LLMJudge:
     """
-    This class uses an LLM (via Bedrock) to analyze generated code.
+    This class uses an LLM (via OpenAI or Bedrock) to analyze generated code.
     """
 
     COMPLEXITY_PROMPT = textwrap.dedent(
@@ -99,15 +99,21 @@ class LLMJudge:
         """
     )
 
-    def __init__(self, model_id=None, verbose=False):
+    def __init__(self, provider=None, model_id=None, verbose=False):
         """
         Initializes LLM Judge.
 
         Args:
-            model_id: Bedrock model ID. Use None for default.
+            provider: use "aws" or "openai"
+            model_id: model ID. Use None for default.
             verbose: if True, allow one retry for bad LLM output.
         """
-        self.llm_client = BedrockClient(model_id=model_id)
+        if provider is None or provider == "openai":
+            self.llm_client = OpenAIClient(model_id=model_id)
+        elif provider == "aws":
+            self.llm_client = BedrockClient(model_id=model_id)
+        else:
+            raise ValueError("Invalid provider. Use `aws` or `openai`")
         self.verbose = verbose
 
     def analyze_complexity(self, code: str) -> dict:

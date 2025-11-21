@@ -28,6 +28,7 @@ def launch():
 @click.option("--skip-tests", default=False, type=bool, show_default=True, help="Whether to skip accuracy tests")
 @click.option("--skip-llm-judge", default=False, type=bool, show_default=True, help="Whether to skip LLM judge")
 @click.option("--llm-judge-model", default=None, type=str, show_default=True, help="Model for LLM judge")
+@click.option("--llm-provider", default=None, type=str, show_default=True, help="LLM provider (use openai or aws)")
 @click.option("--limit-problems", default=None, type=int, show_default=True, help="Number of problems to use")
 def launch_green(
     host: str,
@@ -35,6 +36,7 @@ def launch_green(
     skip_tests: bool,
     skip_llm_judge: bool,
     llm_judge_model: str | None,
+    llm_provider: str | None,
     limit_problems: int | None,
 ):
     """Start the green agent (LeetCode eval agent)"""
@@ -45,6 +47,7 @@ def launch_green(
         skip_tests=skip_tests,
         skip_llm_judge=skip_llm_judge,
         llm_judge_model=llm_judge_model,
+        llm_provider=llm_provider,
         limit_problems=limit_problems,
     )
 

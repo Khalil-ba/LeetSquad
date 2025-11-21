@@ -6,15 +6,23 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ## 1. Setup
 
-### 1.1. AWS Setup
+### 1.1. LLM API Key Setup
 
-The green agent uses AWS Bedrock for LLM access. LLM is used as a judge to determine time/space complexity of generated code as well as readability. You MUST configure AWS credentials to run the green agent. Assuming you already have an AWS account:
+The green agent uses LLM to evaluate time/space complexity and readability. The default LLM provider is OpenAI, but you can also use AWS Bedrock.
 
-1. Open AWS console
-2. Go to IAM -> Users -> username -> Security credentials
-3. Click on 'Create access key'
-4. Copy your access key ID and secret access key
-5. Create `.env` file under project root folder and configure:
+| Provider    | Default Model                    | Quality | Cost             | Latency  |
+|-------------|----------------------------------|---------|------------------|----------|
+| OpenAI      | GPT 5.1 Mini                     | Higher  | Slightly Higher  | Higher   |
+| AWS         | Qwen3 Coder 480B A35B Instruct   | Lower   | Slightly Lower   | Lower    |
+
+You MUST configure corresponding API key by creating a `.env` file under the project root folder. 
+
+If you choose OpenAI, add
+```
+OPENAI_API_KEY="<replace>"
+```
+
+If you choose AWS Bedrock, add
 ```
 AWS_ACCESS_KEY_ID="<replace>"
 AWS_SECRET_ACCESS_KEY="<replace>"

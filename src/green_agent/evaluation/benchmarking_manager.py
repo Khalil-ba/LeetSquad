@@ -23,6 +23,7 @@ class BenchmarkingManager:
         self,
         csv_path: str = "dataset/LeetCodeQuestions.csv",
         llm_judge_model: Optional[str] = None,
+        llm_provider: Optional[str] = None,
         skip_tests: bool = False,
         skip_llm_judge: bool = False,
         limit_problems: Optional[int] = None,
@@ -43,12 +44,12 @@ class BenchmarkingManager:
 
         # Initialize LLM judge if needed
         self.judge = (
-            LLMJudge(model_id=llm_judge_model, verbose=False)
+            LLMJudge(provider=llm_provider, model_id=llm_judge_model, verbose=False)
             if not skip_llm_judge
             else None
         )
-        # keep max_workers small due to AWS Bedrock quota limit
-        self.eval_executor = ThreadPoolExecutor(max_workers=1)
+        # adjust based on LLM quota - higher number allows more parallel calls
+        self.eval_executor = ThreadPoolExecutor(max_workers=3)
 
         # In-memory storage (designed for easy migration to DB)
         self._agents: Dict[str, str] = {}  # agent_id -> agent_name

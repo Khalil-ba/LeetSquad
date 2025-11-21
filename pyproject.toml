@@ -11,5 +11,6 @@ dependencies = [
     "fastapi>=0.100.0",
     "ruff>=0.14.0",
     "uvicorn>=0.23.0",
-    "dotenv"
+    "dotenv",
+    "openai>=2.8.0",
 ]
