@@ -65,15 +65,54 @@ class GreenAgentClient:
 
         # Send message and get response
         response = await self._client.send_message(request)
+        
+        # Extract text content from response
+        # Response structure: response.root.result.parts[0].root.text
+        if response.root and hasattr(response.root, 'result'):
+            result = response.root.result
+            if hasattr(result, 'parts') and result.parts:
+                for part in result.parts:
+                    if hasattr(part, 'root') and hasattr(part.root, 'text'):
+                        result_text = part.root.text
+                        return json.loads(result_text)
+
+        raise RuntimeError(f"No valid response from green agent for skill: {skill}")
+
+    '''async def _call_skill(self, skill: str, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Generic method to call a skill on the green agent"""
+        if not self._client:
+            raise RuntimeError("Client not initialized. Use async context manager.")
+
+        # Prepare payload with skill name and data
+        payload = {"skill": skill, **data}
+        message_text = json.dumps(payload)
+
+        # Create A2A message request
+        send_message_payload = {
+            "message": {
+                "role": "user",
+                "parts": [{"kind": "text", "text": message_text}],
+                "messageId": uuid4().hex,
+            }
+        }
+
+        request = SendMessageRequest(
+            id=str(uuid4()), params=MessageSendParams(**send_message_payload)
+        )
+
+        # Send message and get response
+        response = await self._client.send_message(request)
 
         # Extract text content from response
         if response.data and response.data.message and response.data.message.parts:
+            result = response.root.result
+        if hasattr(result, 'parts') and result.parts:
             for part in response.data.message.parts:
                 if hasattr(part, "text"):
                     result_text = part.text
                     return json.loads(result_text)
 
-        raise RuntimeError(f"No valid response from green agent for skill: {skill}")
+        raise RuntimeError(f"No valid response from green agent for skill: {skill}")'''
 
     async def distribute_problem(self, agent_id: str, agent_name: str) -> Dict[str, Any]:
         """
@@ -108,3 +147,15 @@ class GreenAgentClient:
         return await self._call_skill(
             "process_answer", {"id": agent_id, "name": agent_name, "solution": solution}
         )
+
+    async def register(self, agent_name: str) -> Dict[str, Any]:
+        """
+        Register with the green agent.
+        
+        Returns dict with keys:
+        - status: "accepted" | "rejected"
+        - id: str (if accepted)
+        - error: str (if rejected)
+        """
+        logger.info(f"Registering agent: {agent_name}")
+        return await self._call_skill("register", {"name": agent_name})
