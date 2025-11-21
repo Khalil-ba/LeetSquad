@@ -41,8 +41,8 @@ async def test_green_agent(host: str, port: str) -> None:
         print(f"Response:\n{response_message}")
 
         # Test: Register skill
-        print_header("Testing: register dummy_agent")
-        register_input = {"skill": "register", "name": "dummy_agent"}
+        print_header("Testing: register correct_agent")
+        register_input = {"skill": "register", "name": "correct_agent"}
         response = await send_message(client, register_input)
         response_message = retrieve_message(response)
         print(f"Response: {response_message}")
@@ -52,14 +52,14 @@ async def test_green_agent(host: str, port: str) -> None:
         print_header("Testing: distribute 1st problem")
         distribute_input = {
             "skill": "distribute_problem",
-            "name": "dummy_agent",
+            "name": "correct_agent",
             "id": id,
         }
         response = await send_message(client, distribute_input)
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
-        # Test: Submit Answer
+        # Test: Submit Answer (correct answer)
         print_header("Testing: submit answer")
         solution = textwrap.dedent(
             """
@@ -76,7 +76,7 @@ async def test_green_agent(host: str, port: str) -> None:
         )
         submit_input = {
             "skill": "process_answer",
-            "name": "dummy_agent",
+            "name": "correct_agent",
             "id": id,
             "solution": solution,
         }
@@ -88,14 +88,13 @@ async def test_green_agent(host: str, port: str) -> None:
         print_header("Testing: distribute 2nd problem")
         distribute_input = {
             "skill": "distribute_problem",
-            "name": "dummy_agent",
+            "name": "correct_agent",
             "id": id,
         }
         response = await send_message(client, distribute_input)
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
-        # Test: Submit Answer
         print_header("Testing: submit answer")
         solution = textwrap.dedent(
             """
@@ -127,7 +126,7 @@ async def test_green_agent(host: str, port: str) -> None:
         )
         submit_input = {
             "skill": "process_answer",
-            "name": "dummy_agent",
+            "name": "correct_agent",
             "id": id,
             "solution": solution,
         }
@@ -135,13 +134,108 @@ async def test_green_agent(host: str, port: str) -> None:
         response_message = retrieve_message(response)
         print(f"Response: {json.dumps(response_message, indent=4)}")
 
+        await two_sum_agent(
+            client,
+            "incorrect",
+            textwrap.dedent(
+                """
+                class Solution:
+                    def twoSum(self, nums: List[int], target: int) -> List[int]:
+                        num_map = {}
+                        for i, num in enumerate(nums):
+                            complement = target - num
+                            if complement in num_map:
+                                return [complement, num]
+                            else:
+                                num_map[num] = i
+                """
+            ),
+        )
+
+        await two_sum_agent(
+            client,
+            "correct_O(n^2)",
+            textwrap.dedent(
+                """
+                class Solution:
+                    def twoSum(self, nums: List[int], target: int) -> List[int]:
+                        n = len(nums)
+                        # We iterate i from left to right, matching the original function
+                        for i in range(n):
+                            last_j = None
+                            # Check all previous elements j < i
+                            for j in range(i):
+                                if nums[j] + nums[i] == target:
+                                    # Keep updating to get the *last* such j < i
+                                    last_j = j
+                            # As soon as we find at least one match for this i,
+                            # we return [last_j, i], matching the hashmap behavior.
+                            if last_j is not None:
+                                return [last_j, i]
+                """
+            ),
+        )
+
+        await two_sum_agent(
+            client,
+            "correct_bad_style",
+            textwrap.dedent(
+                """
+                class Solution:
+                    def twoSum(self, nums: List[int], target: int) -> List[int]:
+                        foobar = None
+                        foobar = {}
+                        for i, x in enumerate(nums):
+                            y = target - x
+                            if y in foobar:
+                                return [foobar[y], i]
+                            else:
+                                foobar[x] = i
+                                continue
+                """
+            ),
+        )
+
+
+async def two_sum_agent(client: A2AClient, agent_name: str, solution: str):
+    """
+    This helper function registers a new agent (with given name), retrieves the first
+    problem (two-sum), and submits the given answer
+    """
+    # Register
+    register_input = {"skill": "register", "name": agent_name}
+    response = await send_message(client, register_input)
+    response_message = retrieve_message(response)
+    id = response_message["id"]
+
+    # Retrieve the first (two-sum) problem
+    distribute_input = {
+        "skill": "distribute_problem",
+        "name": agent_name,
+        "id": id,
+    }
+    response = await send_message(client, distribute_input)
+    response_message = retrieve_message(response)
+
+    # Submit Answer
+    submit_input = {
+        "skill": "process_answer",
+        "name": agent_name,
+        "id": id,
+        "solution": solution,
+    }
+    response = await send_message(client, submit_input)
+    response_message = retrieve_message(response)
+
+    print_header(f"White agent {agent_name} successfully submitted solution for two-sum")
+
 
 async def send_message(a2a_client, input_dict: dict):
     """
     Sends a message to the green agent. Sample input:
     {
         "skill": "register",
-        "name": "dummy_agent"
+        "name": "correct_agent"
     }
     """
     input = {

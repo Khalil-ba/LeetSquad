@@ -48,7 +48,7 @@ class BenchmarkingManager:
             else None
         )
         # keep max_workers small due to AWS Bedrock quota limit
-        self.llm_judge_executor = ThreadPoolExecutor(max_workers=1)
+        self.eval_executor = ThreadPoolExecutor(max_workers=1)
 
         # In-memory storage (designed for easy migration to DB)
         self._agents: Dict[str, str] = {}  # agent_id -> agent_name
@@ -212,7 +212,7 @@ class BenchmarkingManager:
         task_id = self._pending[agent_id]
 
         # Start eval process asynchronously (not blocking networking call)
-        self.llm_judge_executor.submit(self._evaluate_answer, agent_id, task_id, solution)
+        self.eval_executor.submit(self._evaluate_answer, agent_id, task_id, solution)
 
         # Clear pending and advance progress
         del self._pending[agent_id]
@@ -280,7 +280,7 @@ class BenchmarkingManager:
         }
         self._results[agent_id][task_id] = results
         logger.info(
-            f"[async] Evaluated solution for task {task_id} from agent {agent_id}. "
+            f"[async] Evaluated solution for task {task_id} from agent {agent_id} ({self._agents[agent_id]}). "
             f"Result: {results}"
         )
 
