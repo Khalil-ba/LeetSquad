@@ -12,5 +12,7 @@ dependencies = [
     "ruff>=0.14.0",
     "uvicorn>=0.23.0",
     "earthshaker",
-    "dotenv"
+    "dotenv",
+    "python-dotenv>=1.2.1",
+    "openai>=2.8.0",
 ]
