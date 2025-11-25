@@ -6,13 +6,13 @@ from openai import OpenAI
 class OpenAIClient:
     DEFAULT_MODEL_ID = "gpt-5-mini"
 
-    def __init__(self, model_id=None) -> None:
+    def __init__(self, model_id=None, base_url=None) -> None:
         load_dotenv()  # load OPENAI_API_KEY from .env
         if "OPENAI_API_KEY" not in os.environ:
             raise EnvironmentError("Please configure OPENAI_API_KEY in .env")
 
         self.model_id = model_id or OpenAIClient.DEFAULT_MODEL_ID
-        self.client = OpenAI()
+        self.client = OpenAI(base_url=base_url)
 
     def generate(self, system_prompt, message, max_tokens=1000):
         request_params = {
