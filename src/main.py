@@ -5,10 +5,12 @@ import click
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s [%(levelname)s] %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(name)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S"
 )
 # Turn down logging from noisy libraries
 logging.getLogger("a2a").setLevel(logging.ERROR)
+logging.getLogger("httpx").setLevel(logging.ERROR)
 
 
 @click.group()
@@ -18,7 +20,19 @@ def cli():
 
 @cli.group()
 def launch():
-    """Launch agents (green, white, or both)"""
+    """Launch A2A web server"""
+    pass
+
+
+@cli.group()
+def run():
+    """Start agent execution"""
+    pass
+
+
+@cli.group()
+def test():
+    """Test agents"""
     pass
 
 
@@ -51,32 +65,29 @@ def launch_green(
         limit_problems=limit_problems,
     )
 
+
 @launch.command(name="white")
 @click.option("--host", default="0.0.0.0", help="Host to bind to")
 @click.option("--port", default=9998, help="Port to listen on")
-@click.option("--agent-name", default="LeetCodeSolver", help="Agent name")
-def launch_white(host: str, port: int, agent_name: str):
+@click.option("--name", default="LeetCodeSolver", help="Agent name")
+def launch_white(host: str, port: int, name: str):
     """Start the white agent (LeetCode solver agent)"""
     from .white_agent.tools import start_server
-    start_server(host, port, agent_name)
+    start_server(host, port, name)
     
-    
-@cli.group()
-def run():
-    pass
+
+@run.command(name="green")
+def start_white():
+    print("Green agent is already running.")
+
 
 @run.command(name="white")
 @click.option("--host", default="localhost", help="Host to bind to")
 @click.option("--port", default=9998, help="Port to listen on")
 def start_white(host: str, port: int):
     from .white_agent.tools import start_solving
-    start_solving(host, port)
-
-
-@cli.group()
-def test():
-    """Test agents (green or white)"""
-    pass
+    import asyncio
+    asyncio.run(start_solving(host, port))
 
 
 @test.command(name="green")
@@ -90,11 +101,8 @@ def test_green(host: str, port: str):
 
 
 @test.command(name="white")
-@click.option("--host", default="localhost", type=str)
-@click.option("--port", default=9999, type=int)
-def test_white(host: str, port: str):
-    """Run some predefined tests on white agent"""
-    pass # to be implemented
+def test_white():
+    print("White agent does not have a test.")
 
 
 @cli.command(name="report")
@@ -106,5 +114,4 @@ def report_results():
 
 
 if __name__ == "__main__":
-
     cli()

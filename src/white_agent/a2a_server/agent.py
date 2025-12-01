@@ -1,10 +1,15 @@
+import logging
+import asyncio
 from agents import Agent, Runner
 from dotenv import load_dotenv
 
 from ..agent_tools import register, retrieve_problem, submit_answer
 
+logger = logging.getLogger(__name__)
+
 # Loads OpenAI API key from .env
 load_dotenv()
+
 
 class CodingSolverAgent:
     def __init__(self, name: str) -> None:
@@ -43,9 +48,21 @@ class CodingSolverAgent:
             name=name,
             instructions=instructions,
             model="gpt-5-mini",
-            tools=[register, retrieve_problem, submit_answer]
+            tools=[register, retrieve_problem, submit_answer],
         )
+        self._start_lock = asyncio.Lock()
 
     async def start_solving(self) -> None:
-        result = await Runner.run(self.agent, input=f"your white agent name is: {self.name}.")
-        print(result.final_output)
+        if self._start_lock.locked():
+            logger.info("start_solving is already running; ignoring this call.")
+            return
+
+        async with self._start_lock:
+            result = await Runner.run(
+                self.agent,
+                input=f"your white agent name is: {self.name}.",
+            )
+            logger.info(
+                "White agent execution completed. Final output: %s",
+                result.final_output,
+            )

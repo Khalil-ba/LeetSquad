@@ -1,3 +1,4 @@
+import asyncio
 import json
 from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
@@ -17,7 +18,9 @@ class CodingSolverAgentExecutor(AgentExecutor):
         skill = input.get("skill")
         match skill:
             case "start_solving":
-                result = await self.agent.start_solving()
+                # start the solving process in the background
+                asyncio.create_task(self.agent.start_solving())
+                result = json.dumps({"status": "accepted"})
             case _:
                 result = json.dumps({"status": "rejected", "error": "Invalid skill"})
 

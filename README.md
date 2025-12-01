@@ -6,29 +6,15 @@ Group project for Agentic AI. We're building a green (eval) agent that benchmark
 
 ## 1. Setup
 
-### 1.1. LLM API Key Setup
+### 1.1. API Key Setup
 
-The green agent uses LLM to evaluate time/space complexity and readability. The default LLM provider is OpenAI, but you can also use AWS Bedrock.
+Create a `.env` file under the project root directory and configure:
 
-| Provider    | Default Model                    | Quality | Cost             | Latency  |
-|-------------|----------------------------------|---------|------------------|----------|
-| OpenAI      | GPT 5.1 Mini                     | Higher  | Slightly Higher  | Higher   |
-| AWS         | Qwen3 Coder 480B A35B Instruct   | Lower   | Slightly Lower   | Lower    |
-
-You MUST configure corresponding API key by creating a `.env` file under the project root folder. 
-
-If you choose OpenAI, add
 ```
-OPENAI_API_KEY="<replace>"
+OPENAI_API_KEY="<your API key>"
 ```
 
-If you choose AWS Bedrock, add
-```
-AWS_ACCESS_KEY_ID="<replace>"
-AWS_SECRET_ACCESS_KEY="<replace>"
-```
-
-*For CS 294 course staff: please contact the author if you need temporary AWS credentials*
+Both the green and white agent use LLM. The default model is GPT-5-Mini.
 
 ### 1.2. Python Runtime Setup
 
@@ -46,32 +32,20 @@ uv sync
 ## 2. Usage
 
 ```bash
-# Start green agent (evaluation agent)
+# 1. Launch green agent
 uv run python -m src.main launch green [--optional-params]
 
-# Start white agent (solver agent)
+# 2. In a separate terminal, launch white agent (it won't start solving problems yet)
 uv run python -m src.main launch white [--optional-params]
 
-# Retrieve benchmarking results from green agent
+# 3. In a separate terminal, signal white agent to begin solving problems
+uv run python -m src.main run white [--optional-params]
+
+# 4. Wait until completion and retrieve benchmarking results
 uv run python -m src.main report
 ```
 
-To see optional param usage:
-
-```bash
-uv run python -m src.main launch green --help
-uv run python -m src.main launch white --help
-```
-
-Once the green agent is running:
-
-```bash
-# Run some simple test cases on green agent
-uv run python -m src.main test green
-
-# Wait for a while and get aggregated results
-uv run python -m src.main report
-```
+Use `--help` to view the optional parameters for each command. You may also omit them to use the default settings.
 
 ## 3. Agent Interaction
 
@@ -203,4 +177,7 @@ uv run ruff format
 # To add a new dependency, modify `pyproject.toml` file , then run
 uv lock
 uv sync
+
+# Run test cases on green agent
+uv run python -m src.main test green
 ```

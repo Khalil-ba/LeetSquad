@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 def start_server(
     host: str = "0.0.0.0",
     port: int = 9998,
-    agent_name: str = "LeetCodeSolver",
+    name: str = "LeetCodeSolver",
 ):
     """
     Start the A2A server for the white agent.
@@ -25,11 +25,11 @@ def start_server(
         port: Port to listen on (default: 9998)
         name: Name of this agent instance
     """
-    logger.info(f"Initializing LeetCode Solver Agent: {agent_name}")
+    logger.info(f"Initializing LeetCode Solver Agent: {name}")
 
     # Create request handler with agent executor
     request_handler = DefaultRequestHandler(
-        agent_executor=CodingSolverAgentExecutor(name=agent_name),
+        agent_executor=CodingSolverAgentExecutor(name=name),
         task_store=InMemoryTaskStore(),
     )
 

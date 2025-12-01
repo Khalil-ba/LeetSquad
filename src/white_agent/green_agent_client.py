@@ -35,7 +35,6 @@ class GreenAgentClient:
         )
 
         agent_card = await resolver.get_agent_card()
-        logger.info(f"Connected to green agent: {agent_card.name}")
 
         self._client = A2AClient(httpx_client=self._httpx_client, agent_card=agent_card)
 
