@@ -52,14 +52,25 @@ def launch_green(
     )
 
 @launch.command(name="white")
-@click.option("--host", default="localhost", help="Host to bind to")
-@click.option("--port", default=9999, help="Port to listen on")
-@click.option("--agent-id", default="white_agent_001", help="Agent ID")
+@click.option("--host", default="0.0.0.0", help="Host to bind to")
+@click.option("--port", default=9998, help="Port to listen on")
 @click.option("--agent-name", default="LeetCodeSolver", help="Agent name")
-def launch_white(host: str, port: int, agent_id: str, agent_name: str):
+def launch_white(host: str, port: int, agent_name: str):
     """Start the white agent (LeetCode solver agent)"""
-    from .white_agent.server import start_server
-    start_server(host, port, agent_id, agent_name)
+    from .white_agent.tools import start_server
+    start_server(host, port, agent_name)
+    
+    
+@cli.group()
+def run():
+    pass
+
+@run.command(name="white")
+@click.option("--host", default="localhost", help="Host to bind to")
+@click.option("--port", default=9998, help="Port to listen on")
+def start_white(host: str, port: int):
+    from .white_agent.tools import start_solving
+    start_solving(host, port)
 
 
 @cli.group()
@@ -95,4 +106,5 @@ def report_results():
 
 
 if __name__ == "__main__":
+
     cli()
