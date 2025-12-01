@@ -22,7 +22,9 @@ async def start_solving(host="localhost", port=9998):
             ],
             "messageId": uuid4().hex,
         }
-        request = SendMessageRequest(id=str(uuid4()), params=MessageSendParams(message=message))
+        request = SendMessageRequest(
+            id=str(uuid4()), params=MessageSendParams(message=message)
+        )
         response = await client.send_message(request)
         result_dict = response.model_dump(mode="json", exclude_none=True)
         text_json_str = result_dict["result"]["parts"][0]["text"]

@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class GreenAgentClient:
     """
     Client for invoking the green agent's skills.
-    
+
     Sample Usage:
 
     async with GreenAgentClient() as client:
@@ -69,14 +69,14 @@ class GreenAgentClient:
 
         # Send message and get response
         response = await self._client.send_message(request)
-        
+
         # Extract text content from response
         # Response structure: response.root.result.parts[0].root.text
-        if response.root and hasattr(response.root, 'result'):
+        if response.root and hasattr(response.root, "result"):
             result = response.root.result
-            if hasattr(result, 'parts') and result.parts:
+            if hasattr(result, "parts") and result.parts:
                 for part in result.parts:
-                    if hasattr(part, 'root') and hasattr(part.root, 'text'):
+                    if hasattr(part, "root") and hasattr(part.root, "text"):
                         result_text = part.root.text
                         return json.loads(result_text)
 
@@ -119,7 +119,7 @@ class GreenAgentClient:
     async def register(self, agent_name: str) -> Dict[str, Any]:
         """
         Register with the green agent.
-        
+
         Returns dict with keys:
         - status: "accepted" | "rejected"
         - id: str (if accepted)
