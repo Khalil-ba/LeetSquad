@@ -47,6 +47,12 @@ uv run python -m src.main report
 
 Use `--help` to view the optional parameters for each command. You may also omit them to use the default settings.
 
+**Note:**
+
+- The full dataset contains 2,641 problems. By default, the green agent loads only 10. You can use `--limit-problems` to change this.
+- By default, the white agent may invoke green-agent skills up to 25 times (enough for 10 problems). You can adjust this using `--max-turns`.
+- As a rule of thumb: `max_turns = 2 × limit_problems + 5`
+
 ## 3. Agent Interaction
 
 The communication between green and white agents is handled through A2A protocol. The green agent exposes the following skills:

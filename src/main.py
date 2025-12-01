@@ -43,7 +43,7 @@ def test():
 @click.option("--skip-llm-judge", default=False, type=bool, show_default=True, help="Whether to skip LLM judge")
 @click.option("--llm-judge-model", default=None, type=str, show_default=True, help="Model for LLM judge")
 @click.option("--llm-provider", default=None, type=str, show_default=True, help="LLM provider (use openai or aws)")
-@click.option("--limit-problems", default=None, type=int, show_default=True, help="Number of problems to use")
+@click.option("--limit-problems", default=10, type=int, show_default=True, help="Number of problems to use")
 def launch_green(
     host: str,
     port: int,
@@ -70,11 +70,19 @@ def launch_green(
 @click.option("--host", default="0.0.0.0", help="Host to bind to")
 @click.option("--port", default=9998, help="Port to listen on")
 @click.option("--name", default="LeetCodeSolver", help="Agent name")
-def launch_white(host: str, port: int, name: str):
+@click.option("--max-turns", default=25, help="The max number of times the agent can invoke tools")
+@click.option("--trace", default=False, help="Trace agent workflow at OpenAI. Only enable for debugging")
+def launch_white(host: str, port: int, name: str, max_turns: int, trace: bool):
     """Start the white agent (LeetCode solver agent)"""
     from .white_agent.tools import start_server
-    start_server(host, port, name)
-    
+    start_server(
+        host, 
+        port, 
+        name, 
+        max_turns=max_turns, 
+        trace=trace,
+    )
+
 
 @run.command(name="green")
 def start_white():

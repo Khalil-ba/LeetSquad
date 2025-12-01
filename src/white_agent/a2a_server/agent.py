@@ -1,18 +1,16 @@
 import logging
 import asyncio
-from agents import Agent, Runner
+from agents import Agent, Runner, set_tracing_disabled
 from dotenv import load_dotenv
+
 
 from ..agent_tools import register, retrieve_problem, submit_answer
 
 logger = logging.getLogger(__name__)
 
-# Loads OpenAI API key from .env
-load_dotenv()
-
 
 class CodingSolverAgent:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, max_turns: int, trace: bool) -> None:
         instructions = """
         You are a participant agent (i.e. white agent) in a coding contest. Your task is to
         retrieve coding problems, solve them, and submit your answer to the evaluation agent
@@ -43,14 +41,19 @@ class CodingSolverAgent:
         next time you invoke retrieve_problem. Once you're done, no more further interactions
         are required.
         """
+        load_dotenv()  # Loads OpenAI API key from .env
+
+        self._start_lock = asyncio.Lock()
         self.name = name
+        self.max_turns = max_turns
         self.agent = Agent(
             name=name,
             instructions=instructions,
             model="gpt-5-mini",
             tools=[register, retrieve_problem, submit_answer],
         )
-        self._start_lock = asyncio.Lock()
+        if not trace:
+            set_tracing_disabled(True)
 
     async def start_solving(self) -> None:
         if self._start_lock.locked():
@@ -61,6 +64,7 @@ class CodingSolverAgent:
             result = await Runner.run(
                 self.agent,
                 input=f"your white agent name is: {self.name}.",
+                max_turns=self.max_turns,
             )
             logger.info(
                 "White agent execution completed. Final output: %s",

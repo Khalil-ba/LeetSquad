@@ -4,9 +4,6 @@ from datetime import datetime
 import boto3
 from dotenv import load_dotenv
 
-# Loads AWS credentials from .env
-load_dotenv()
-
 
 class DynamoDBClient:
     """
@@ -17,6 +14,8 @@ class DynamoDBClient:
     """
 
     def __init__(self, region="us-west-2", reset=False):
+        load_dotenv()  # Loads AWS credentials from .env
+
         if reset:
             self.client = boto3.client("dynamodb", region_name=region)
             self._setup()
