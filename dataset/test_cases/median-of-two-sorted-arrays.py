@@ -5,7 +5,7 @@ def calculate_accuracy(candidate):
     """
     passed = 0
     total = 0
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300],nums2 = [150, 250, 350]) == 225.0
@@ -13,7 +13,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300],nums2 = [150, 250, 350]) == 225.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [2],nums2 = []) == 2.0
@@ -21,7 +21,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [2],nums2 = []) == 2.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3],nums2 = [2]) == 2.0
@@ -29,7 +29,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3],nums2 = [2]) == 2.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5.5
@@ -37,7 +37,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1000000],nums2 = [-1000000]) == 0.0
@@ -45,7 +45,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1000000],nums2 = [-1000000]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 10.0
@@ -53,7 +53,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9],nums2 = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]) == 10.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7],nums2 = [2, 4, 6, 8]) == 4.5
@@ -61,7 +61,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7],nums2 = [2, 4, 6, 8]) == 4.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [10, 20, 30],nums2 = [5, 15, 25, 35, 45]) == 22.5
@@ -69,7 +69,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [10, 20, 30],nums2 = [5, 15, 25, 35, 45]) == 22.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [0, 0],nums2 = [0, 0]) == 0.0
@@ -77,7 +77,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [0, 0],nums2 = [0, 0]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
@@ -85,7 +85,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10]) == 5.5
@@ -93,7 +93,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10]) == 5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3],nums2 = [0, 4, 5, 6]) == 3.0
@@ -101,7 +101,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [0, 4, 5, 6]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [5, 6],nums2 = [1, 2, 3, 4, 7, 8]) == 4.5
@@ -109,7 +109,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [5, 6],nums2 = [1, 2, 3, 4, 7, 8]) == 4.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7],nums2 = [2, 4, 6, 8, 10]) == 5.0
@@ -117,7 +117,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7],nums2 = [2, 4, 6, 8, 10]) == 5.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6],nums2 = [0]) == 3.0
@@ -125,7 +125,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6],nums2 = [0]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3],nums2 = [4]) == 2.5
@@ -133,7 +133,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [4]) == 2.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2],nums2 = [3]) == 2.0
@@ -141,7 +141,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2],nums2 = [3]) == 2.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5],nums2 = [2, 4, 6]) == 3.5
@@ -149,7 +149,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5],nums2 = [2, 4, 6]) == 3.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [2, 3, 4]) == 2.5
@@ -157,7 +157,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [2, 3, 4]) == 2.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2],nums2 = [3, 4]) == 2.5
@@ -165,7 +165,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2],nums2 = [3, 4]) == 2.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45]) == 27.5
@@ -173,7 +173,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45]) == 27.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [],nums2 = [1]) == 1.0
@@ -181,7 +181,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [],nums2 = [1]) == 1.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10]) == 10.5
@@ -189,23 +189,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10]) == 10.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1000000, 1000001, 1000002, 1000003, 1000004],nums2 = [999999, 1000000, 1000005, 1000010]) == 1000002.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1000000, 1000001, 1000002, 1000003, 1000004],nums2 = [999999, 1000000, 1000005, 1000010]) == 1000002.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -999997, -999995, -999993, -999991]) == -999997.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -999997, -999995, -999993, -999991]) == -999997.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [5, 9, 11, 19],nums2 = [1, 3, 4, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18]) == 10.5
@@ -213,15 +197,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [5, 9, 11, 19],nums2 = [1, 3, 4, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18]) == 10.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-5, -3, -1],nums2 = [-6, -4, -2, 0]) == -3.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-5, -3, -1],nums2 = [-6, -4, -2, 0]) == -3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-7, -3, 2, 7, 12]) == 1.0
@@ -229,7 +205,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-7, -3, 2, 7, 12]) == 1.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5
@@ -237,7 +213,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10]) == 8.0
@@ -245,7 +221,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10]) == 8.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-1000000],nums2 = [0, 1000000]) == 0.0
@@ -253,7 +229,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-1000000],nums2 = [0, 1000000]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
@@ -261,15 +237,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-10, -9, -8, -7, -6],nums2 = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]) == -2.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-10, -9, -8, -7, -6],nums2 = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]) == -2.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
@@ -277,7 +245,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.0
@@ -285,7 +253,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 5, 9, 13],nums2 = [2, 6, 10, 14, 18]) == 9.0
@@ -293,7 +261,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 5, 9, 13],nums2 = [2, 6, 10, 14, 18]) == 9.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0
@@ -301,15 +269,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == 0.0
@@ -317,7 +277,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10.5
@@ -325,7 +285,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-5, -3, -1, 1, 3, 5],nums2 = [-6, -4, -2, 0, 2, 4, 6]) == 0.0
@@ -333,7 +293,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-5, -3, -1, 1, 3, 5],nums2 = [-6, -4, -2, 0, 2, 4, 6]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14, 16]) == 7.0
@@ -341,15 +301,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14, 16]) == 7.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [1000000]) == 500000.5
@@ -357,7 +309,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [1000000]) == 500000.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 37.5
@@ -365,7 +317,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 37.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = [26, 27, 28, 29, 30]) == 15.5
@@ -373,15 +325,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = [26, 27, 28, 29, 30]) == 15.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -1000000, -999999, -999998]) == -999999.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -1000000, -999999, -999998]) == -999999.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20]) == 10.5
@@ -389,7 +333,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25]) == 13.0
@@ -397,7 +341,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25]) == 13.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 25.5
@@ -405,7 +349,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 25.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15],nums2 = [2, 4, 6, 8, 10, 12, 14, 16]) == 8.5
@@ -413,7 +357,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15],nums2 = [2, 4, 6, 8, 10, 12, 14, 16]) == 8.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 20.5
@@ -421,7 +365,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 20.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [0, 2, 4, 6, 8]) == 4.5
@@ -429,7 +373,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [0, 2, 4, 6, 8]) == 4.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [5, 15, 25, 35, 45, 55]) == 55.0
@@ -437,7 +381,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [5, 15, 25, 35, 45, 55]) == 55.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 20.5
@@ -445,7 +389,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 20.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [],nums2 = [1, 3, 5, 7, 9]) == 5.0
@@ -453,15 +397,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [],nums2 = [1, 3, 5, 7, 9]) == 5.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5
@@ -469,7 +405,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0
@@ -477,7 +413,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5
@@ -485,15 +421,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45, 55]) == 30.0
@@ -501,7 +429,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45, 55]) == 30.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4.0
@@ -509,15 +437,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-1, -3, -5, -7, -9],nums2 = [-2, -4, -6, -8, -10]) == -5.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-1, -3, -5, -7, -9],nums2 = [-2, -4, -6, -8, -10]) == -5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11],nums2 = [2, 4, 6, 8, 10, 12]) == 6.5
@@ -525,7 +445,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11],nums2 = [2, 4, 6, 8, 10, 12]) == 6.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550, 650]) == 325.0
@@ -533,15 +453,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550, 650]) == 325.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],nums2 = [500, 1500, 2500, 3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500]) == 5500.0
@@ -549,15 +461,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],nums2 = [500, 1500, 2500, 3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500]) == 5500.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-10, -8, -6, -4, -2],nums2 = [-9, -7, -5, -3, -1]) == -5.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-10, -8, -6, -4, -2],nums2 = [-9, -7, -5, -3, -1]) == -5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1000000],nums2 = [999999]) == 999999.5
@@ -565,15 +469,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1000000],nums2 = [999999]) == 999999.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-5, -3, -1, 1, 3],nums2 = [-10, -8, -6, -4, -2]) == -3.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-5, -3, -1, 1, 3],nums2 = [-10, -8, -6, -4, -2]) == -3.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0
@@ -581,7 +477,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 5, 9, 13, 17],nums2 = [2, 6, 10, 14, 18]) == 9.5
@@ -589,15 +485,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 5, 9, 13, 17],nums2 = [2, 6, 10, 14, 18]) == 9.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1000000, 1000001, 1000002],nums2 = [999999, 1000000, 1000001, 1000002]) == 1000001.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1000000, 1000001, 1000002],nums2 = [999999, 1000000, 1000001, 1000002]) == 1000001.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100000, 100001, 100002, 100003, 100004],nums2 = [100005, 100006, 100007, 100008, 100009]) == 100004.5
@@ -605,7 +493,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100000, 100001, 100002, 100003, 100004],nums2 = [100005, 100006, 100007, 100008, 100009]) == 100004.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-5, -4, -3, -2, -1],nums2 = [0, 1, 2, 3, 4, 5]) == 0.0
@@ -613,15 +501,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-5, -4, -3, -2, -1],nums2 = [0, 1, 2, 3, 4, 5]) == 0.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [100000],nums2 = [-100000, -99999, -99998, -99997, -99996, -99995]) == -99997.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [100000],nums2 = [-100000, -99999, -99998, -99997, -99996, -99995]) == -99997.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = []) == 5.5
@@ -629,7 +509,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = []) == 5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0
@@ -637,7 +517,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10]) == 15.0
@@ -645,7 +525,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10]) == 15.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 5.5
@@ -653,15 +533,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 5.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-5, -3, 0, 8],nums2 = [-10, -4, 2, 6, 12]) == 0.0
@@ -669,7 +541,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-5, -3, 0, 8],nums2 = [-10, -4, 2, 6, 12]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 13.0
@@ -677,15 +549,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 13.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-1, 3, 5, 7, 9],nums2 = [-2, -4, -6, -8, -10]) == -5.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-1, 3, 5, 7, 9],nums2 = [-2, -4, -6, -8, -10]) == -5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]) == 25.5
@@ -693,7 +557,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]) == 25.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 2, 3, 3],nums2 = [2, 2, 3, 3, 4, 4, 5, 5]) == 3.0
@@ -701,7 +565,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 2, 3, 3],nums2 = [2, 2, 3, 3, 4, 4, 5, 5]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 6.5
@@ -709,7 +573,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 6.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
@@ -717,7 +581,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5.5
@@ -725,7 +589,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6, 7, 8, 9, 10]) == 5.5
@@ -733,7 +597,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6, 7, 8, 9, 10]) == 5.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = []) == 13.0
@@ -741,15 +605,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = []) == 13.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-5, 0, 3, 8, 12],nums2 = [-10, -1, 2, 4, 9, 14]) == 3.0
@@ -757,7 +613,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-5, 0, 3, 8, 12],nums2 = [-10, -1, 2, 4, 9, 14]) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [50, 60, 70, 80, 90],nums2 = [10, 20, 30, 40]) == 50.0
@@ -765,7 +621,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [50, 60, 70, 80, 90],nums2 = [10, 20, 30, 40]) == 50.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 18.0
@@ -773,7 +629,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 18.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 5, 7, 9, 11, 13],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 8.0
@@ -781,7 +637,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 5, 7, 9, 11, 13],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 8.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-20, -15, -1, 1, 6, 11, 15, 20]) == 1.0
@@ -789,7 +645,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-20, -15, -1, 1, 6, 11, 15, 20]) == 1.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12]) == 6.5
@@ -797,15 +653,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12]) == 6.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-1, -2, -3, -4, -5],nums2 = [-10, -9, -8, -7, -6]) == -3.5
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-1, -2, -3, -4, -5],nums2 = [-10, -9, -8, -7, -6]) == -3.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [0, 0, 0, 0],nums2 = [0, 0, 0, 0]) == 0.0
@@ -813,7 +661,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [0, 0, 0, 0],nums2 = [0, 0, 0, 0]) == 0.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [10, 20, 30, 40, 50, 60]) == 30.0
@@ -821,7 +669,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [10, 20, 30, 40, 50, 60]) == 30.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300],nums2 = [50, 150, 250, 350]) == 200.0
@@ -829,7 +677,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300],nums2 = [50, 150, 250, 350]) == 200.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]) == 12.0
@@ -837,7 +685,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]) == 12.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1.0
@@ -845,15 +693,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1.0: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [-100000, -99999, -99998],nums2 = [-99997, -99996, -99995, -99994, -99993, -99992]) == -99996.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [-100000, -99999, -99998],nums2 = [-99997, -99996, -99995, -99994, -99993, -99992]) == -99996.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = []) == 10.5
@@ -861,15 +701,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = []) == 10.5: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1],nums2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]) == 19.0
@@ -877,7 +709,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1],nums2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]) == 19.0: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 2, 2, 3, 4],nums2 = [2, 2, 3, 4, 5]) == 2.5
@@ -885,7 +717,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 2, 2, 3, 4],nums2 = [2, 2, 3, 4, 5]) == 2.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 6.5
@@ -893,7 +725,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 6.5: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums1 = [100, 200, 300, 400],nums2 = [50, 150, 250, 350, 450, 550]) == 275.0
@@ -901,7 +733,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums1 = [100, 200, 300, 400],nums2 = [50, 150, 250, 350, 450, 550]) == 275.0: {e}')
-    
+
     accuracy = (passed / total * 100) if total > 0 else 0
     return passed, total, accuracy
 
@@ -929,30 +761,23 @@ def check(candidate):
     assert candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45]) == 27.5
     assert candidate(nums1 = [],nums2 = [1]) == 1.0
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10]) == 10.5
-    assert candidate(nums1 = [1000000, 1000001, 1000002, 1000003, 1000004],nums2 = [999999, 1000000, 1000005, 1000010]) == 1000002.0
-    assert candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -999997, -999995, -999993, -999991]) == -999997.5
     assert candidate(nums1 = [5, 9, 11, 19],nums2 = [1, 3, 4, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18]) == 10.5
-    assert candidate(nums1 = [-5, -3, -1],nums2 = [-6, -4, -2, 0]) == -3.0
     assert candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-7, -3, 2, 7, 12]) == 1.0
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10]) == 8.0
     assert candidate(nums1 = [-1000000],nums2 = [0, 1000000]) == 0.0
     assert candidate(nums1 = [1],nums2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
-    assert candidate(nums1 = [-10, -9, -8, -7, -6],nums2 = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]) == -2.5
     assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
     assert candidate(nums1 = [1],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.0
     assert candidate(nums1 = [1, 5, 9, 13],nums2 = [2, 6, 10, 14, 18]) == 9.0
-    assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0
     assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == 8.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]) == 0.0
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) == 10.5
     assert candidate(nums1 = [-5, -3, -1, 1, 3, 5],nums2 = [-6, -4, -2, 0, 2, 4, 6]) == 0.0
     assert candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14, 16]) == 7.0
-    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) == 10.5
     assert candidate(nums1 = [1],nums2 = [1000000]) == 500000.5
     assert candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]) == 37.5
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = [26, 27, 28, 29, 30]) == 15.5
-    assert candidate(nums1 = [-1000000, -999999, -999998],nums2 = [-1000001, -1000000, -999999, -999998]) == -999999.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20]) == 10.5
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25]) == 13.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]) == 25.5
@@ -962,35 +787,25 @@ def check(candidate):
     assert candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [5, 15, 25, 35, 45, 55]) == 55.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],nums2 = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]) == 20.5
     assert candidate(nums1 = [],nums2 = [1, 3, 5, 7, 9]) == 5.0
-    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]) == 15.5
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5
     assert candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5
-    assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 20.5
     assert candidate(nums1 = [10, 20, 30, 40, 50],nums2 = [5, 15, 25, 35, 45, 55]) == 30.0
     assert candidate(nums1 = [1, 2, 3],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 4.0
-    assert candidate(nums1 = [-1, -3, -5, -7, -9],nums2 = [-2, -4, -6, -8, -10]) == -5.5
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11],nums2 = [2, 4, 6, 8, 10, 12]) == 6.5
     assert candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550, 650]) == 325.0
-    assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) == 15.5
     assert candidate(nums1 = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],nums2 = [500, 1500, 2500, 3500, 4500, 5500, 6500, 7500, 8500, 9500, 10500]) == 5500.0
-    assert candidate(nums1 = [-10, -8, -6, -4, -2],nums2 = [-9, -7, -5, -3, -1]) == -5.5
     assert candidate(nums1 = [1000000],nums2 = [999999]) == 999999.5
-    assert candidate(nums1 = [-5, -3, -1, 1, 3],nums2 = [-10, -8, -6, -4, -2]) == -3.5
     assert candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0
     assert candidate(nums1 = [1, 5, 9, 13, 17],nums2 = [2, 6, 10, 14, 18]) == 9.5
-    assert candidate(nums1 = [1000000, 1000001, 1000002],nums2 = [999999, 1000000, 1000001, 1000002]) == 1000001.0
     assert candidate(nums1 = [100000, 100001, 100002, 100003, 100004],nums2 = [100005, 100006, 100007, 100008, 100009]) == 100004.5
     assert candidate(nums1 = [-5, -4, -3, -2, -1],nums2 = [0, 1, 2, 3, 4, 5]) == 0.0
-    assert candidate(nums1 = [100000],nums2 = [-100000, -99999, -99998, -99997, -99996, -99995]) == -99997.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],nums2 = []) == 5.5
     assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],nums2 = [2, 4, 6, 8, 10]) == 15.0
     assert candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10]) == 5.5
-    assert candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5]) == 3.0
     assert candidate(nums1 = [-5, -3, 0, 8],nums2 = [-10, -4, 2, 6, 12]) == 0.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],nums2 = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) == 13.0
-    assert candidate(nums1 = [-1, 3, 5, 7, 9],nums2 = [-2, -4, -6, -8, -10]) == -5.5
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]) == 25.5
     assert candidate(nums1 = [1, 2, 2, 3, 3],nums2 = [2, 2, 3, 3, 4, 4, 5, 5]) == 3.0
     assert candidate(nums1 = [100, 200, 300],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]) == 6.5
@@ -998,25 +813,20 @@ def check(candidate):
     assert candidate(nums1 = [],nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 5.5
     assert candidate(nums1 = [1, 2, 3],nums2 = [4, 5, 6, 7, 8, 9, 10]) == 5.5
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],nums2 = []) == 13.0
-    assert candidate(nums1 = [100, 200, 300, 400, 500],nums2 = [50, 150, 250, 350, 450, 550]) == 300.0
     assert candidate(nums1 = [-5, 0, 3, 8, 12],nums2 = [-10, -1, 2, 4, 9, 14]) == 3.0
     assert candidate(nums1 = [50, 60, 70, 80, 90],nums2 = [10, 20, 30, 40]) == 50.0
     assert candidate(nums1 = [1, 3, 5],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]) == 18.0
     assert candidate(nums1 = [1, 5, 7, 9, 11, 13],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 8.0
     assert candidate(nums1 = [-10, -5, 0, 5, 10],nums2 = [-20, -15, -1, 1, 6, 11, 15, 20]) == 1.0
     assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = [6, 7, 8, 9, 10, 11, 12]) == 6.5
-    assert candidate(nums1 = [-1, -2, -3, -4, -5],nums2 = [-10, -9, -8, -7, -6]) == -3.5
     assert candidate(nums1 = [0, 0, 0, 0],nums2 = [0, 0, 0, 0]) == 0.0
     assert candidate(nums1 = [5, 15, 25, 35, 45],nums2 = [10, 20, 30, 40, 50, 60]) == 30.0
     assert candidate(nums1 = [100, 200, 300],nums2 = [50, 150, 250, 350]) == 200.0
     assert candidate(nums1 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],nums2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]) == 12.0
     assert candidate(nums1 = [1],nums2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) == 1.0
-    assert candidate(nums1 = [-100000, -99999, -99998],nums2 = [-99997, -99996, -99995, -99994, -99993, -99992]) == -99996.0
     assert candidate(nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],nums2 = []) == 10.5
-    assert candidate(nums1 = [1, 2, 3, 4, 5],nums2 = []) == 3.0
     assert candidate(nums1 = [1],nums2 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]) == 19.0
     assert candidate(nums1 = [1, 2, 2, 3, 4],nums2 = [2, 2, 3, 4, 5]) == 2.5
     assert candidate(nums1 = [1, 3, 5, 7, 9],nums2 = [2, 4, 6, 8, 10, 12, 14]) == 6.5
     assert candidate(nums1 = [100, 200, 300, 400],nums2 = [50, 150, 250, 350, 450, 550]) == 275.0
-
 
