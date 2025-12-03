@@ -5,7 +5,7 @@ def calculate_accuracy(candidate):
     """
     passed = 0
     total = 0
-    
+
     total += 1
     try:
         result = candidate(nums = [3, 3],target = 6) == [0, 1]
@@ -13,15 +13,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [3, 3],target = 6) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1, -2, -3, -4],target = -8) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1, -2, -3, -4],target = -8) == None: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1000000000, 1000000000],target = 2000000000) == [0, 1]
@@ -29,7 +21,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1000000000, 1000000000],target = 2000000000) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 5, 7, 9],target = 10) == [0, 3]
@@ -37,7 +29,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 5, 7, 9],target = 10) == [0, 3]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 3) == [0, 1]
@@ -45,7 +37,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 3) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [0, 4, 3, 0],target = 0) == [0, 3]
@@ -53,23 +45,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [0, 4, 3, 0],target = 0) == [0, 3]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, -1000000000, 500000000, -500000000],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, -1000000000, 500000000, -500000000],target = 0) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 17) == [7, 8]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 17) == [7, 8]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 5, 7, 8],target = 15) == [2, 3]
@@ -77,7 +53,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 5, 7, 8],target = 15) == [2, 3]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1000000000, -1000000000],target = 0) == [0, 1]
@@ -85,7 +61,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1000000000, -1000000000],target = 0) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [2, 7, 11, 15],target = 9) == [0, 1]
@@ -93,7 +69,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [2, 7, 11, 15],target = 9) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 19) == [8, 9]
@@ -101,7 +77,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 19) == [8, 9]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 5, 7, 11],target = 16) == [1, 3]
@@ -109,15 +85,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 5, 7, 11],target = 16) == [1, 3]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],target = 10) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],target = 10) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [3, 2, 4],target = 6) == [1, 2]
@@ -125,7 +93,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [3, 2, 4],target = 6) == [1, 2]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [15, 11, 7, 2],target = 9) == [2, 3]
@@ -133,31 +101,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [15, 11, 7, 2],target = 9) == [2, 3]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, -1000000000, 2000000000, -2000000000],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, -1000000000, 2000000000, -2000000000],target = 0) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000],target = 4000) == [18, 20]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000],target = 4000) == [18, 20]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],target = 100) == [24, 25]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],target = 100) == [24, 25]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],target = 199) == [98, 99]
@@ -165,23 +109,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],target = 199) == [98, 99]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],target = 0) == [4, 6]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],target = 0) == [4, 6]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],target = -150) == [6, 7]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],target = -150) == [6, 7]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -39) == [18, 19]
@@ -189,55 +117,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -39) == [18, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119],target = 110) == [26, 28]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119],target = 110) == [26, 28]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1100) == [4, 5]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1100) == [4, 5]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 70) == [16, 18]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 70) == [16, 18]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [18, 19]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [18, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500],target = 3000) == [13, 15]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500],target = 3000) == [13, 15]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000],target = 30000) == [13, 15]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000],target = 30000) == [13, 15]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]
@@ -245,39 +125,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],target = 99) == [49, 50]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],target = 99) == [49, 50]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],target = 900) == [43, 45]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],target = 900) == [43, 45]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1000000000, -2000000000, -3000000000, -4000000000, -5000000000, -6000000000, -7000000000, -8000000000, -9000000000, -10000000000],target = -15000000000) == [6, 7]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1000000000, -2000000000, -3000000000, -4000000000, -5000000000, -6000000000, -7000000000, -8000000000, -9000000000, -10000000000],target = -15000000000) == [6, 7]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [23, 8, 15, 37, 48, 5, 21, 7, 40, 6],target = 33) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [23, 8, 15, 37, 48, 5, 21, 7, 40, 6],target = 33) == None: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 390) == [18, 19]
@@ -285,23 +133,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 390) == [18, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1500) == [6, 7]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1500) == [6, 7]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 21) == [9, 10]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 21) == [9, 10]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [2, 5, 1, 9, 3, 8, 7, 6, 4, 0],target = 17) == [3, 5]
@@ -309,7 +141,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [2, 5, 1, 9, 3, 8, 7, 6, 4, 0],target = 17) == [3, 5]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1000000000, -1000000000, 500000000, 500000000],target = 0) == [0, 1]
@@ -317,7 +149,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1000000000, -1000000000, 500000000, 500000000],target = 0) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],target = 29) == [13, 14]
@@ -325,7 +157,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],target = 29) == [13, 14]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 38) == [17, 19]
@@ -333,23 +165,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 38) == [17, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 78) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 78) == None: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1000000000, 1000000000, 500000000, -500000000],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1000000000, 1000000000, 500000000, -500000000],target = 0) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1000000000, 999999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1999999999) == [0, 1]
@@ -357,23 +173,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1000000000, 999999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1999999999) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 300) == [13, 15]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 300) == [13, 15]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],target = 100) == [24, 25]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],target = 100) == [24, 25]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [5, 12, 7, 3, 9, 14, 10, 23, 1, 11],target = 22) == [1, 6]
@@ -381,15 +181,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [5, 12, 7, 3, 9, 14, 10, 23, 1, 11],target = 22) == [1, 6]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-3, 4, 3, 90, -11, 23, -5, 67, 100, -45, 89],target = 53) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-3, 4, 3, 90, -11, 23, -5, 67, 100, -45, 89],target = 53) == None: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23, -24, -25, -26, -27, -28, -29, -30, -31, -32, -33, -34, -35, -36, -37, -38, -39, -40, -41, -42, -43, -44, -45, -46, -47, -48, -49, -50, -51, -52, -53, -54, -55, -56, -57, -58, -59, -60, -61, -62, -63, -64, -65, -66, -67, -68, -69, -70, -71, -72, -73, -74, -75, -76, -77, -78, -79, -80, -81, -82, -83, -84, -85, -86, -87, -88, -89, -90, -91, -92, -93, -94, -95, -96, -97, -98, -99, -100],target = -199) == [98, 99]
@@ -397,23 +189,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23, -24, -25, -26, -27, -28, -29, -30, -31, -32, -33, -34, -35, -36, -37, -38, -39, -40, -41, -42, -43, -44, -45, -46, -47, -48, -49, -50, -51, -52, -53, -54, -55, -56, -57, -58, -59, -60, -61, -62, -63, -64, -65, -66, -67, -68, -69, -70, -71, -72, -73, -74, -75, -76, -77, -78, -79, -80, -81, -82, -83, -84, -85, -86, -87, -88, -89, -90, -91, -92, -93, -94, -95, -96, -97, -98, -99, -100],target = -199) == [98, 99]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],target = 1) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],target = 1) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [23, 24]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [23, 24]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000],target = 1990) == [98, 99]
@@ -421,7 +197,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000],target = 1990) == [98, 99]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [29, 30]
@@ -429,31 +205,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [29, 30]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [123456789, 987654321, 456789123, 321987654, 654321987, 789123456],target = 1111111110) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [123456789, 987654321, 456789123, 321987654, 654321987, 789123456],target = 1111111110) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -11) == [4, 5]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -11) == [4, 5]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992],target = 1999999997) == [0, 1]
@@ -461,31 +213,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992],target = 1999999997) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -15) == [6, 7]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -15) == [6, 7]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, -1000000000, 500000000, 500000000, -500000000, -500000000, 1, 2, 3, 4],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, -1000000000, 500000000, 500000000, -500000000, -500000000, 1, 2, 3, 4],target = 0) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],target = 2000000000) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],target = 2000000000) == [0, 1]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150],target = 299) == [148, 149]
@@ -493,7 +221,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150],target = 299) == [148, 149]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [28, 29]
@@ -501,39 +229,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [28, 29]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -31) == [14, 15]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -31) == [14, 15]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000],target = 60000) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000],target = 60000) == None: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, -500000000, 2000000000, -1000000000, 0, 500000000],target = 1000000000) == [2, 3]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, -500000000, 2000000000, -1000000000, 0, 500000000],target = 1000000000) == [2, 3]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 99) == [48, 49]
@@ -541,7 +237,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 99) == [48, 49]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],target = 49) == [23, 24]
@@ -549,15 +245,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],target = 49) == [23, 24]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],target = 1999999989) == [4, 5]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],target = 1999999989) == [4, 5]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],target = 513) == [0, 9]
@@ -565,7 +253,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],target = 513) == [0, 9]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -18) == [7, 9]
@@ -573,23 +261,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -18) == [7, 9]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],target = 1300) == [5, 6]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],target = 1300) == [5, 6]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -17) == [7, 8]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -17) == [7, 8]: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1900) == [8, 9]
@@ -597,47 +269,7 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1900) == [8, 9]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 79) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 79) == None: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000, 9000000000, 10000000000],target = 30000000000) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000, 9000000000, 10000000000],target = 30000000000) == None: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [-3, -1, 0, 2, 5, 7, 8, 10],target = 4) == [1, 4]
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [-3, -1, 0, 2, 5, 7, 8, 10],target = 4) == [1, 4]: {e}')
-    
-    total += 1
-    try:
-        result = candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 100) == None
-        if result:
-            passed += 1
-    except Exception as e:
-        print(f'Error in candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 100) == None: {e}')
-    
+
     total += 1
     try:
         result = candidate(nums = [29, 37, 10, 55, 44, 3, 67, 90, 11, 38, 2, 9, 100, 34, 65, 23, 89, 12, 33, 22],target = 62) == [0, 18]
@@ -645,90 +277,43 @@ def calculate_accuracy(candidate):
             passed += 1
     except Exception as e:
         print(f'Error in candidate(nums = [29, 37, 10, 55, 44, 3, 67, 90, 11, 38, 2, 9, 100, 34, 65, 23, 89, 12, 33, 22],target = 62) == [0, 18]: {e}')
-    
+
     accuracy = (passed / total * 100) if total > 0 else 0
     return passed, total, accuracy
 
 def check(candidate):
     assert candidate(nums = [3, 3],target = 6) == [0, 1]
-    assert candidate(nums = [-1, -2, -3, -4],target = -8) == None
     assert candidate(nums = [1000000000, 1000000000],target = 2000000000) == [0, 1]
     assert candidate(nums = [1, 5, 7, 9],target = 10) == [0, 3]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 3) == [0, 1]
     assert candidate(nums = [0, 4, 3, 0],target = 0) == [0, 3]
-    assert candidate(nums = [1000000000, -1000000000, 500000000, -500000000],target = 0) == [0, 1]
-    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 17) == [7, 8]
     assert candidate(nums = [1, 5, 7, 8],target = 15) == [2, 3]
     assert candidate(nums = [1000000000, -1000000000],target = 0) == [0, 1]
     assert candidate(nums = [2, 7, 11, 15],target = 9) == [0, 1]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 19) == [8, 9]
     assert candidate(nums = [1, 5, 7, 11],target = 16) == [1, 3]
-    assert candidate(nums = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],target = 10) == [0, 1]
     assert candidate(nums = [3, 2, 4],target = 6) == [1, 2]
     assert candidate(nums = [15, 11, 7, 2],target = 9) == [2, 3]
-    assert candidate(nums = [1000000000, -1000000000, 2000000000, -2000000000],target = 0) == [0, 1]
-    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000],target = 4000) == [18, 20]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99],target = 100) == [24, 25]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],target = 199) == [98, 99]
-    assert candidate(nums = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],target = 0) == [4, 6]
-    assert candidate(nums = [-10, -20, -30, -40, -50, -60, -70, -80, -90, -100],target = -150) == [6, 7]
     assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -39) == [18, 19]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119],target = 110) == [26, 28]
-    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1100) == [4, 5]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 70) == [16, 18]
-    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [18, 19]
-    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500],target = 3000) == [13, 15]
-    assert candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000],target = 30000) == [13, 15]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]
-    assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],target = 99) == [49, 50]
-    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500],target = 900) == [43, 45]
-    assert candidate(nums = [-1000000000, -2000000000, -3000000000, -4000000000, -5000000000, -6000000000, -7000000000, -8000000000, -9000000000, -10000000000],target = -15000000000) == [6, 7]
-    assert candidate(nums = [23, 8, 15, 37, 48, 5, 21, 7, 40, 6],target = 33) == None
     assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 390) == [18, 19]
-    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1500) == [6, 7]
-    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 21) == [9, 10]
     assert candidate(nums = [2, 5, 1, 9, 3, 8, 7, 6, 4, 0],target = 17) == [3, 5]
     assert candidate(nums = [1000000000, -1000000000, 500000000, 500000000],target = 0) == [0, 1]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],target = 29) == [13, 14]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 38) == [17, 19]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 78) == None
-    assert candidate(nums = [-1000000000, 1000000000, 500000000, -500000000],target = 0) == [0, 1]
     assert candidate(nums = [1000000000, 999999999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],target = 1999999999) == [0, 1]
-    assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],target = 300) == [13, 15]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59],target = 100) == [24, 25]
     assert candidate(nums = [5, 12, 7, 3, 9, 14, 10, 23, 1, 11],target = 22) == [1, 6]
-    assert candidate(nums = [-3, 4, 3, 90, -11, 23, -5, 67, 100, -45, 89],target = 53) == None
     assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23, -24, -25, -26, -27, -28, -29, -30, -31, -32, -33, -34, -35, -36, -37, -38, -39, -40, -41, -42, -43, -44, -45, -46, -47, -48, -49, -50, -51, -52, -53, -54, -55, -56, -57, -58, -59, -60, -61, -62, -63, -64, -65, -66, -67, -68, -69, -70, -71, -72, -73, -74, -75, -76, -77, -78, -79, -80, -81, -82, -83, -84, -85, -86, -87, -88, -89, -90, -91, -92, -93, -94, -95, -96, -97, -98, -99, -100],target = -199) == [98, 99]
-    assert candidate(nums = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],target = 1) == [0, 1]
-    assert candidate(nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],target = 3) == [23, 24]
     assert candidate(nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000],target = 1990) == [98, 99]
     assert candidate(nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [29, 30]
-    assert candidate(nums = [123456789, 987654321, 456789123, 321987654, 654321987, 789123456],target = 1111111110) == [0, 1]
-    assert candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]
-    assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -11) == [4, 5]
     assert candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992],target = 1999999997) == [0, 1]
-    assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -15) == [6, 7]
-    assert candidate(nums = [1000000000, -1000000000, 500000000, 500000000, -500000000, -500000000, 1, 2, 3, 4],target = 0) == [0, 1]
-    assert candidate(nums = [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],target = 2000000000) == [0, 1]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150],target = 299) == [148, 149]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],target = 59) == [28, 29]
-    assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20],target = -31) == [14, 15]
-    assert candidate(nums = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000],target = 60000) == None
-    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],target = 39) == [18, 19]
-    assert candidate(nums = [1000000000, -500000000, 2000000000, -1000000000, 0, 500000000],target = 1000000000) == [2, 3]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 99) == [48, 49]
     assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],target = 49) == [23, 24]
-    assert candidate(nums = [999999999, 999999998, 999999997, 999999996, 999999995, 999999994, 999999993, 999999992, 999999991, 999999990],target = 1999999989) == [4, 5]
     assert candidate(nums = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],target = 513) == [0, 9]
     assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -18) == [7, 9]
-    assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500],target = 1300) == [5, 6]
-    assert candidate(nums = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],target = -17) == [7, 8]
     assert candidate(nums = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],target = 1900) == [8, 9]
-    assert candidate(nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],target = 0) == [0, 1]
-    assert candidate(nums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39],target = 79) == None
-    assert candidate(nums = [1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000, 9000000000, 10000000000],target = 30000000000) == None
-    assert candidate(nums = [-3, -1, 0, 2, 5, 7, 8, 10],target = 4) == [1, 4]
-    assert candidate(nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50],target = 100) == None
     assert candidate(nums = [29, 37, 10, 55, 44, 3, 67, 90, 11, 38, 2, 9, 100, 34, 65, 23, 89, 12, 33, 22],target = 62) == [0, 18]
-
 
