@@ -81,5 +81,5 @@ class CodingSolverAgent:
                     "White agent execution completed. Final output: %s",
                     result.final_output,
                 )
-            except MaxTurnsExceeded:
-                logger.info("White agent execution completed (max turns exceeded).")
+            except MaxTurnsExceeded as ex:
+                logger.info("White agent execution terminated early. Error: %s", ex)
