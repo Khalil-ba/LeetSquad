@@ -5,8 +5,8 @@ import asyncio
 import dotenv
 dotenv.load_dotenv()
 
-from src.launcher import launch_evaluation
 from pydantic_settings import BaseSettings
+from src.launcher import launch_remote_evaluation
 
 class LeetSettings(BaseSettings):
     role: str = "unspecified"
@@ -50,7 +50,6 @@ def run():
 @app.command()
 def launch_remote(green_url: str, white_url: str):
     """Trigger remote agents to start evaluation (agents must already be running)"""
-    from launcher import launch_remote_evaluation
     asyncio.run(launch_remote_evaluation(green_url, white_url))
 
 if __name__ == "__main__":
