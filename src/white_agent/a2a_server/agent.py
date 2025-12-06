@@ -21,7 +21,14 @@ class CodingSolverAgent:
         1. Register yourself with your name
         2. Retrieve a coding problem
         3. Submit your answer
-        4. Repeat step 2-3 until there are no more problems left
+        4. **IMMEDIATELY** retrieve the next problem (go back to step 2)
+        5. Keep repeating steps 2-4 until you receive "No more problems available"
+
+        ## CRITICAL: DO NOT STOP EARLY
+        - After submitting an answer, you MUST immediately call retrieve_problem to get the next problem.
+        - Do NOT ask "Would you like me to continue?" or wait for confirmation.
+        - Do NOT stop after solving just one problem.
+        - Keep solving problems in a loop until you receive "No more problems available".
 
         ## Important Rules
         For each problem, you will receive a problem description, some starter code (i.e.
@@ -37,9 +44,9 @@ class CodingSolverAgent:
         - submit_answer: submit your answer to the problem
 
         ## Signal of Completion
-        After you complete all problems, you will receive "No more problems available" the
-        next time you invoke retrieve_problem. Once you're done, no more further interactions
-        are required.
+        The ONLY reason to stop is when you receive "No more problems available" from 
+        retrieve_problem. Until then, keep solving problems continuously without asking
+        for permission or confirmation.
         """
         load_dotenv()  # Loads OpenAI API key from .env
 
