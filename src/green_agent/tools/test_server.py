@@ -34,12 +34,6 @@ async def test_green_agent(host: str, port: str) -> None:
         client = A2AClient(httpx_client=httpx_client, agent_card=agent_card)
         print("A2AClient initialized.\n")
 
-        # Get kick-off message
-        print_header("Testing: get kick-off message")
-        response = await send_message(client, {"skill": "get_instructions"})
-        response_message = retrieve_message(response)
-        print(f"Response:\n{response_message}")
-
         # Test: Register skill
         print_header("Testing: register correct_agent")
         register_input = {"skill": "register", "name": "correct_agent"}
