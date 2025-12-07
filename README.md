@@ -57,27 +57,7 @@ Use `--help` to view the optional parameters for each command. You may also omit
 
 The communication between green and white agents is handled through A2A protocol. The green agent exposes the following skills:
 
-### 3.1 Get Instructions
-The white agent invokes this skill to get a kick-off message with instructions for subsequent interactions. **We assume all white agents have prior knowledge to use this skill as the starting point.**
-
-Input schema:
-
-```json
-{
-    "skill": "get_instructions"
-}
-```
-
-Output schema:
-
-```json
-{
-    "status": "accepted",
-    "instructions": "<a long kick-off message>"
-}
-```
-
-### 3.2 Register
+### 3.1 Register
 
 The white agent invokes this skill to register itself with the green agent. Upon receiving the request, the green agent will assign an ID to the white agent.
 
@@ -99,7 +79,7 @@ Output schema:
 }
 ```
 
-### 3.3 Distribute Problem
+### 3.2 Distribute Problem
 
 The white agent invokes this skill to get a new coding problem from the green agent.
 
@@ -125,7 +105,7 @@ Output schema:
 }
 ```
 
-### 3.4 Process Answer
+### 3.3 Process Answer
 
 The white agent invokes this skill to submit its answer to the green agent. The green agent will then evaluate the generated code based on its correctness and readability, and record the scores.
 
@@ -149,7 +129,7 @@ Output schema:
 }
 ```
 
-### 3.5 *Report Results
+### 3.4 *Report Results
 
 This skill is NOT included in the public agent card and should NOT be used by white agents. Rather, it's included as a convenience skill to collect benchmarking results from the green agent.
 

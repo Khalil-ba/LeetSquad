@@ -30,8 +30,6 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
 
         skill = input.get("skill")
         match skill:
-            case "get_instructions":
-                result = await self.agent.get_instructions(input)
             case "register":
                 result = await self.agent.register(input)
             case "distribute_problem":
