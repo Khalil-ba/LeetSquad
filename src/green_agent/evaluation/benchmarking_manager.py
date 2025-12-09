@@ -478,20 +478,26 @@ class BenchmarkingManager:
             time_status_counts = {"optimal": 0, "better": 0, "close": 0, "suboptimal": 0, "poor": 0, "unknown": 0}
             space_status_counts = {"optimal": 0, "better": 0, "close": 0, "suboptimal": 0, "poor": 0, "unknown": 0}
             
-            # By difficulty tracking
+            # By difficulty tracking (score = final_score with multiplier, raw_score = before multiplier)
             by_difficulty = {
-                "Easy": {"attempted": 0, "score": 0.0},
-                "Medium": {"attempted": 0, "score": 0.0},
-                "Hard": {"attempted": 0, "score": 0.0},
+                "Easy": {"attempted": 0, "score": 0.0, "raw_score": 0.0},
+                "Medium": {"attempted": 0, "score": 0.0, "raw_score": 0.0},
+                "Hard": {"attempted": 0, "score": 0.0, "raw_score": 0.0},
             }
 
             # Pull accuracy details from detailed results if available
             detailed = self._detailed_results.get(agent_id, {})
+            
+            # Track raw weighted scores (before difficulty multiplier)
+            raw_weighted_score_total = 0.0
 
             for task_id, scores in task_results.items():
                 # Accumulate final scores
                 final_score = scores.get("final_score", 0)
                 total_score += final_score
+                
+                # Accumulate raw weighted scores (before difficulty multiplier)
+                raw_weighted_score_total += scores.get("weighted_score", 0)
                 
                 # Correctness
                 correctness = scores.get("correctness_score", 0)
@@ -518,6 +524,7 @@ class BenchmarkingManager:
                 if difficulty in by_difficulty:
                     by_difficulty[difficulty]["attempted"] += 1
                     by_difficulty[difficulty]["score"] += final_score
+                    by_difficulty[difficulty]["raw_score"] += scores.get("weighted_score", 0)
 
                 # Sum passed/total when recorded in detailed results
                 acc = detailed.get(task_id, {}).get("accuracy", {})
@@ -532,10 +539,18 @@ class BenchmarkingManager:
             optimal_count = time_status_counts["optimal"] + time_status_counts["better"]
             better_count = time_status_counts["better"]
             
+            # raw_avg_score: average of weighted_score (before difficulty multiplier)
+            raw_avg_score = round(raw_weighted_score_total / problems_attempted, 1) if problems_attempted > 0 else 0
+            
+            # weighted_avg_score: average of final_score (with difficulty multiplier already applied)
+            weighted_avg_score = round(total_score / problems_attempted, 1) if problems_attempted > 0 else 0
+            
             agents_summary[agent_id] = {
                 "name": agent_name,
                 "problems_attempted": problems_attempted,
                 "total_score": round(total_score, 1),
+                "raw_avg_score": raw_avg_score,
+                "weighted_avg_score": weighted_avg_score,
                 "scores_breakdown": {
                     "correctness": {
                         "total": round(correctness_total, 1),
@@ -552,7 +567,8 @@ class BenchmarkingManager:
                     diff: {
                         "attempted": data["attempted"],
                         "score": round(data["score"], 1),
-                        "avg_score": round(data["score"] / data["attempted"], 1) if data["attempted"] > 0 else 0,
+                        "raw_avg_score": round(data["raw_score"] / data["attempted"], 1) if data["attempted"] > 0 else 0,
+                        "weighted_avg_score": round(data["score"] / data["attempted"], 1) if data["attempted"] > 0 else 0,
                     }
                     for diff, data in by_difficulty.items()
                 },
@@ -568,6 +584,8 @@ class BenchmarkingManager:
                 "agent_id": agent_id,
                 "name": agent_name,
                 "total_score": round(total_score, 1),
+                "raw_avg_score": raw_avg_score,
+                "weighted_avg_score": weighted_avg_score,
                 "problems_attempted": problems_attempted,
                 "problems_with_100_percent": sum(1 for s in task_results.values() if s.get("tests_percent") == 100),
                 "optimal_solutions": optimal_count,
