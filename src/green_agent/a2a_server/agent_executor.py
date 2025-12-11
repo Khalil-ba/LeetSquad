@@ -27,7 +27,7 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
 
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
         message = context.get_user_input()
-
+        input = {}
         try:
             input = json.loads(message)
         except json.JSONDecodeError as e:
@@ -45,6 +45,8 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
                         ),
                     }
                 )
+            await event_queue.enqueue_event(new_agent_text_message(result))
+            return
 
         skill = input.get("skill")
         match skill:
