@@ -1,5 +1,17 @@
 import json
+import os
+
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
+
+
+def get_agent_url() -> str:
+    """Get the agent URL from environment or use localhost fallback."""
+    cloudrun_host = os.getenv("CLOUDRUN_HOST")
+    if cloudrun_host:
+        https_enabled = os.getenv("HTTPS_ENABLED", "true").lower() == "true"
+        protocol = "https" if https_enabled else "http"
+        return f"{protocol}://{cloudrun_host}/"
+    return "http://localhost:9998/"
 
 
 start_solving_skill = AgentSkill(
@@ -23,8 +35,8 @@ start_solving_skill = AgentSkill(
 # Public agent card
 agent_card = AgentCard(
     name="Coding Solver Agent",
-    description="The solver agent that solves coding problems distributed by the green agent",
-    url="http://localhost:9998/",
+    description="Solver agent that solves coding problems distributed by the green agent",
+    url=get_agent_url(),
     version="1.0.0",
     default_input_modes=["text"],
     default_output_modes=["text"],

@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 from typing import Any, Dict
 from uuid import uuid4
 
@@ -8,6 +9,16 @@ from a2a.client import A2ACardResolver, A2AClient
 from a2a.types import MessageSendParams, SendMessageRequest
 
 logger = logging.getLogger(__name__)
+
+
+def get_green_agent_url() -> str:
+    """Get the green agent URL from environment or use localhost fallback."""
+    green_agent_host = os.getenv("GREEN_AGENT_HOST")
+    if green_agent_host:
+        https_enabled = os.getenv("HTTPS_ENABLED", "true").lower() == "true"
+        protocol = "https" if https_enabled else "http"
+        return f"{protocol}://{green_agent_host}"
+    return "http://localhost:9999"
 
 
 class GreenAgentClient:
@@ -20,8 +31,8 @@ class GreenAgentClient:
         result = await client.register(name)
     """
 
-    def __init__(self, base_url: str = "http://localhost:9999"):
-        self.base_url = base_url
+    def __init__(self, base_url: str | None = None):
+        self.base_url = base_url or get_green_agent_url()
         self._client: A2AClient | None = None
         self._httpx_client: httpx.AsyncClient | None = None
 
