@@ -1,4 +1,5 @@
 import json
+import re
 
 from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
@@ -26,7 +27,24 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
 
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
         message = context.get_user_input()
-        input = json.loads(message)
+
+        try:
+            input = json.loads(message)
+        except json.JSONDecodeError as e:
+            # AgentBeats blog says we should be able to specify our own assessment startup
+            # structure, but for now it is a hardcoded string with a tag <white_agent_url>
+            if message and parse_tags(message).get("white_agent_url"):
+                result = json.dumps({"status": "accepted"})
+            else:
+                result = json.dumps(
+                    {
+                        "status": "rejected",
+                        "error": (
+                            "Does not match AgentBeats startup string "
+                            f"or contain valid JSON: {str(e)}"
+                        ),
+                    }
+                )
 
         skill = input.get("skill")
         match skill:
@@ -46,3 +64,10 @@ class CodingEvaluationAgentExecutor(AgentExecutor):
 
     async def cancel(self, context: RequestContext, event_queue: EventQueue) -> None:
         pass
+
+
+def parse_tags(str_with_tags: str) -> dict[str, str]:
+    """the target str contains tags in the format of <tag_name> ... </tag_name>, parse them out and return a dict"""
+
+    tags = re.findall(r"<(.*?)>(.*?)</\1>", str_with_tags, re.DOTALL)
+    return {tag: content.strip() for tag, content in tags}
